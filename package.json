@@ -1,0 +1,28 @@
+{
+  "name": "il-web",
+  "version": "0.2.0-beta",
+  "description": "Shared styles and components for UIUC websites",
+  "repository": "https://github.com/il-marketing/il-web",
+  "author": "Office of Strategic Marketing and Branding <marketing@illinois.edu>",
+  "license": "NCSA",
+  "scripts": {
+    "approve-backstop": "backstop approve --config=tests/backstop/backstop.js",
+    "build": "encore prod",
+    "dev": "encore dev",
+    "start": "encore dev-server",
+    "test": "npm run test-jest && npm run test-backstop",
+    "test-backstop": "backstop test --config=tests/backstop/backstop.js",
+    "test-jest": "jest --config=tests/jest/jest-func.config.js"
+  },
+  "dependencies": {
+    "@symfony/webpack-encore": "^0.30.2",
+    "lit-element": "^2.3.1",
+    "node-sass": "^4.14.1",
+    "sass-loader": "^8.0.2"
+  },
+  "devDependencies": {
+    "backstopjs": "^4.5.1",
+    "jest": "^25.5.4",
+    "jest-puppeteer": "^4.4.0"
+  }
+}

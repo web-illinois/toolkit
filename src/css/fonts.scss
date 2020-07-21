@@ -1,0 +1,21 @@
+@import "fonts/fjalla-one";
+@import "fonts/montserrat";
+@import "fonts/source-sans";
+@import "fonts/source-serif";
+
+@mixin font-weight($weight: 400) {
+  font-weight: $weight;
+
+  @supports (font-variation-settings: normal) {
+    font-weight: normal;
+    font-variation-settings: 'wght' $weight;
+  }
+}
+
+:root {
+  --il-fjalla-one: "Fjalla One", sans-serif;
+  --il-montserrat: "Montserrat", sans-serif;
+  --il-montserrat-alt: "Montserrat Alternate", sans-serif;
+  --il-source-sans: 'Source Sans Variable', 'Source Sans', sans-serif;
+  --il-source-serif: 'Source Serif Variable', 'Source Serif', serif;
+}

@@ -1,0 +1,12 @@
+@import "reset";
+@import "colors";
+@import "fonts";
+@import "icons";
+
+:root {
+  --il-max-width: 1200px;
+}
+
+@import 'components/footer';
+@import 'components/header';
+@import 'components/unit-wordmark';

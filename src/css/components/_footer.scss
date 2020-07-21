@@ -1,0 +1,62 @@
+il-footer {
+
+  a {
+    @include reset-link;
+    text-decoration: underline;
+  }
+
+  .il-unit, .il-unit-name {
+    @include font-weight(700);
+
+    a {
+      text-decoration: none;
+    }
+  }
+
+  ul, dl {
+    @include reset-spacing;
+    margin-bottom: 1.5em;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  ul {
+    @include reset-list;
+
+    li {
+      @include reset-list;
+      margin-bottom: .5em;
+
+      &:last-of-type {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  dt {
+    @include reset-spacing;
+    clear: both;
+    float: left;
+    margin-right: .5em;
+
+    &::after {
+      content: ":";
+    }
+  }
+
+  dd {
+    @include reset-spacing;
+  }
+
+  *[slot=social] {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    a, il-social-link {
+      margin-right: 10px;
+    }
+  }
+}

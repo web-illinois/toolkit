@@ -1,0 +1,467 @@
+@font-face {
+  font-family: 'Montserrat';
+  font-weight: 200;
+  font-style: normal;
+  font-stretch: normal;
+  font-display: swap;
+  src: url('https://cdn.brand.illinois.edu/fonts/montserrat/montserrat-200.eot') format('embedded-opentype'),
+  url('https://cdn.brand.illinois.edu/fonts/montserrat/montserrat-200.woff2') format('woff2'),
+  url('https://cdn.brand.illinois.edu/fonts/montserrat/montserrat-200.woff') format('woff'),
+  url('https://cdn.brand.illinois.edu/fonts/montserrat/montserrat-200.otf') format('opentype'),
+  url('https://cdn.brand.illinois.edu/fonts/montserrat/montserrat-200.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Montserrat';
+  font-weight: 200;
+  font-style: italic;
+  font-stretch: normal;
+  font-display: swap;
+  src: url('https://cdn.brand.illinois.edu/fonts/montserrat/montserrat-200-italic.eot') format('embedded-opentype'),
+  url('https://cdn.brand.illinois.edu/fonts/montserrat/montserrat-200-italic.woff2') format('woff2'),
+  url('https://cdn.brand.illinois.edu/fonts/montserrat/montserrat-200-italic.woff') format('woff'),
+  url('https://cdn.brand.illinois.edu/fonts/montserrat/montserrat-200-italic.otf') format('opentype'),
+  url('https://cdn.brand.illinois.edu/fonts/montserrat/montserrat-200-italic.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Montserrat';
+  font-weight: 300;
+  font-style: normal;
+  font-stretch: normal;
+  font-display: swap;
+  src: url('https://cdn.brand.illinois.edu/fonts/montserrat/montserrat-300.eot') format('embedded-opentype'),
+  url('https://cdn.brand.illinois.edu/fonts/montserrat/montserrat-300.woff2') format('woff2'),
+  url('https://cdn.brand.illinois.edu/fonts/montserrat/montserrat-300.woff') format('woff'),
+  url('https://cdn.brand.illinois.edu/fonts/montserrat/montserrat-300.otf') format('opentype'),
+  url('https://cdn.brand.illinois.edu/fonts/montserrat/montserrat-300.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Montserrat';
+  font-weight: 300;
+  font-style: italic;
+  font-stretch: normal;
+  font-display: swap;
+  src: url('https://cdn.brand.illinois.edu/fonts/montserrat/montserrat-300-italic.eot') format('embedded-opentype'),
+  url('https://cdn.brand.illinois.edu/fonts/montserrat/montserrat-300-italic.woff2') format('woff2'),
+  url('https://cdn.brand.illinois.edu/fonts/montserrat/montserrat-300-italic.woff') format('woff'),
+  url('https://cdn.brand.illinois.edu/fonts/montserrat/montserrat-300-italic.otf') format('opentype'),
+  url('https://cdn.brand.illinois.edu/fonts/montserrat/montserrat-300-italic.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Montserrat';
+  font-weight: 400;
+  font-style: normal;
+  font-stretch: normal;
+  font-display: swap;
+  src: url('https://cdn.brand.illinois.edu/fonts/montserrat/montserrat-400.eot') format('embedded-opentype'),
+  url('https://cdn.brand.illinois.edu/fonts/montserrat/montserrat-400.woff2') format('woff2'),
+  url('https://cdn.brand.illinois.edu/fonts/montserrat/montserrat-400.woff') format('woff'),
+  url('https://cdn.brand.illinois.edu/fonts/montserrat/montserrat-400.otf') format('opentype'),
+  url('https://cdn.brand.illinois.edu/fonts/montserrat/montserrat-400.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Montserrat';
+  font-weight: 400;
+  font-style: normal;
+  font-stretch: normal;
+  font-display: swap;
+  src: url('https://cdn.brand.illinois.edu/fonts/montserrat/montserrat-400.eot') format('embedded-opentype'),
+  url('https://cdn.brand.illinois.edu/fonts/montserrat/montserrat-400.woff2') format('woff2'),
+  url('https://cdn.brand.illinois.edu/fonts/montserrat/montserrat-400.woff') format('woff'),
+  url('https://cdn.brand.illinois.edu/fonts/montserrat/montserrat-400.otf') format('opentype'),
+  url('https://cdn.brand.illinois.edu/fonts/montserrat/montserrat-400.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Montserrat';
+  font-weight: 400;
+  font-style: normal;
+  font-stretch: normal;
+  font-display: swap;
+  src: url('https://cdn.brand.illinois.edu/fonts/montserrat/montserrat-400.eot') format('embedded-opentype'),
+  url('https://cdn.brand.illinois.edu/fonts/montserrat/montserrat-400.woff2') format('woff2'),
+  url('https://cdn.brand.illinois.edu/fonts/montserrat/montserrat-400.woff') format('woff'),
+  url('https://cdn.brand.illinois.edu/fonts/montserrat/montserrat-400.otf') format('opentype'),
+  url('https://cdn.brand.illinois.edu/fonts/montserrat/montserrat-400.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Montserrat';
+  font-weight: 400;
+  font-style: italic;
+  font-stretch: normal;
+  font-display: swap;
+  src: url('https://cdn.brand.illinois.edu/fonts/montserrat/montserrat-400-italic.eot') format('embedded-opentype'),
+  url('https://cdn.brand.illinois.edu/fonts/montserrat/montserrat-400-italic.woff2') format('woff2'),
+  url('https://cdn.brand.illinois.edu/fonts/montserrat/montserrat-400-italic.woff') format('woff'),
+  url('https://cdn.brand.illinois.edu/fonts/montserrat/montserrat-400-italic.otf') format('opentype'),
+  url('https://cdn.brand.illinois.edu/fonts/montserrat/montserrat-400-italic.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Montserrat';
+  font-weight: 400;
+  font-style: italic;
+  font-stretch: normal;
+  font-display: swap;
+  src: url('https://cdn.brand.illinois.edu/fonts/montserrat/montserrat-400-italic.eot') format('embedded-opentype'),
+  url('https://cdn.brand.illinois.edu/fonts/montserrat/montserrat-400-italic.woff2') format('woff2'),
+  url('https://cdn.brand.illinois.edu/fonts/montserrat/montserrat-400-italic.woff') format('woff'),
+  url('https://cdn.brand.illinois.edu/fonts/montserrat/montserrat-400-italic.otf') format('opentype'),
+  url('https://cdn.brand.illinois.edu/fonts/montserrat/montserrat-400-italic.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Montserrat';
+  font-weight: 400;
+  font-style: italic;
+  font-stretch: normal;
+  font-display: swap;
+  src: url('https://cdn.brand.illinois.edu/fonts/montserrat/montserrat-400-italic.eot') format('embedded-opentype'),
+  url('https://cdn.brand.illinois.edu/fonts/montserrat/montserrat-400-italic.woff2') format('woff2'),
+  url('https://cdn.brand.illinois.edu/fonts/montserrat/montserrat-400-italic.woff') format('woff'),
+  url('https://cdn.brand.illinois.edu/fonts/montserrat/montserrat-400-italic.otf') format('opentype'),
+  url('https://cdn.brand.illinois.edu/fonts/montserrat/montserrat-400-italic.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Montserrat';
+  font-weight: 600;
+  font-style: normal;
+  font-stretch: normal;
+  font-display: swap;
+  src: url('https://cdn.brand.illinois.edu/fonts/montserrat/montserrat-600.eot') format('embedded-opentype'),
+  url('https://cdn.brand.illinois.edu/fonts/montserrat/montserrat-600.woff2') format('woff2'),
+  url('https://cdn.brand.illinois.edu/fonts/montserrat/montserrat-600.woff') format('woff'),
+  url('https://cdn.brand.illinois.edu/fonts/montserrat/montserrat-600.otf') format('opentype'),
+  url('https://cdn.brand.illinois.edu/fonts/montserrat/montserrat-600.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Montserrat';
+  font-weight: 600;
+  font-style: italic;
+  font-stretch: normal;
+  font-display: swap;
+  src: url('https://cdn.brand.illinois.edu/fonts/montserrat/montserrat-600-italic.eot') format('embedded-opentype'),
+  url('https://cdn.brand.illinois.edu/fonts/montserrat/montserrat-600-italic.woff2') format('woff2'),
+  url('https://cdn.brand.illinois.edu/fonts/montserrat/montserrat-600-italic.woff') format('woff'),
+  url('https://cdn.brand.illinois.edu/fonts/montserrat/montserrat-600-italic.otf') format('opentype'),
+  url('https://cdn.brand.illinois.edu/fonts/montserrat/montserrat-600-italic.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Montserrat';
+  font-weight: 700;
+  font-style: normal;
+  font-stretch: normal;
+  font-display: swap;
+  src: url('https://cdn.brand.illinois.edu/fonts/montserrat/montserrat-700.eot') format('embedded-opentype'),
+  url('https://cdn.brand.illinois.edu/fonts/montserrat/montserrat-700.woff2') format('woff2'),
+  url('https://cdn.brand.illinois.edu/fonts/montserrat/montserrat-700.woff') format('woff'),
+  url('https://cdn.brand.illinois.edu/fonts/montserrat/montserrat-700.otf') format('opentype'),
+  url('https://cdn.brand.illinois.edu/fonts/montserrat/montserrat-700.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Montserrat';
+  font-weight: 700;
+  font-style: italic;
+  font-stretch: normal;
+  font-display: swap;
+  src: url('https://cdn.brand.illinois.edu/fonts/montserrat/montserrat-700-italic.eot') format('embedded-opentype'),
+  url('https://cdn.brand.illinois.edu/fonts/montserrat/montserrat-700-italic.woff2') format('woff2'),
+  url('https://cdn.brand.illinois.edu/fonts/montserrat/montserrat-700-italic.woff') format('woff'),
+  url('https://cdn.brand.illinois.edu/fonts/montserrat/montserrat-700-italic.otf') format('opentype'),
+  url('https://cdn.brand.illinois.edu/fonts/montserrat/montserrat-700-italic.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Montserrat';
+  font-weight: 800;
+  font-style: normal;
+  font-stretch: normal;
+  font-display: swap;
+  src: url('https://cdn.brand.illinois.edu/fonts/montserrat/montserrat-800.eot') format('embedded-opentype'),
+  url('https://cdn.brand.illinois.edu/fonts/montserrat/montserrat-800.woff2') format('woff2'),
+  url('https://cdn.brand.illinois.edu/fonts/montserrat/montserrat-800.woff') format('woff'),
+  url('https://cdn.brand.illinois.edu/fonts/montserrat/montserrat-800.otf') format('opentype'),
+  url('https://cdn.brand.illinois.edu/fonts/montserrat/montserrat-800.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Montserrat';
+  font-weight: 800;
+  font-style: italic;
+  font-stretch: normal;
+  font-display: swap;
+  src: url('https://cdn.brand.illinois.edu/fonts/montserrat/montserrat-800-italic.eot') format('embedded-opentype'),
+  url('https://cdn.brand.illinois.edu/fonts/montserrat/montserrat-800-italic.woff2') format('woff2'),
+  url('https://cdn.brand.illinois.edu/fonts/montserrat/montserrat-800-italic.woff') format('woff'),
+  url('https://cdn.brand.illinois.edu/fonts/montserrat/montserrat-800-italic.otf') format('opentype'),
+  url('https://cdn.brand.illinois.edu/fonts/montserrat/montserrat-800-italic.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Montserrat';
+  font-weight: 900;
+  font-style: normal;
+  font-stretch: normal;
+  font-display: swap;
+  src: url('https://cdn.brand.illinois.edu/fonts/montserrat/montserrat-900.eot') format('embedded-opentype'),
+  url('https://cdn.brand.illinois.edu/fonts/montserrat/montserrat-900.woff2') format('woff2'),
+  url('https://cdn.brand.illinois.edu/fonts/montserrat/montserrat-900.woff') format('woff'),
+  url('https://cdn.brand.illinois.edu/fonts/montserrat/montserrat-900.otf') format('opentype'),
+  url('https://cdn.brand.illinois.edu/fonts/montserrat/montserrat-900.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Montserrat';
+  font-weight: 900;
+  font-style: italic;
+  font-stretch: normal;
+  font-display: swap;
+  src: url('https://cdn.brand.illinois.edu/fonts/montserrat/montserrat-900-italic.eot') format('embedded-opentype'),
+  url('https://cdn.brand.illinois.edu/fonts/montserrat/montserrat-900-italic.woff2') format('woff2'),
+  url('https://cdn.brand.illinois.edu/fonts/montserrat/montserrat-900-italic.woff') format('woff'),
+  url('https://cdn.brand.illinois.edu/fonts/montserrat/montserrat-900-italic.otf') format('opentype'),
+  url('https://cdn.brand.illinois.edu/fonts/montserrat/montserrat-900-italic.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Montserrat Alternate';
+  font-weight: 200;
+  font-style: normal;
+  font-stretch: normal;
+  font-display: swap;
+  src: url('https://cdn.brand.illinois.edu/fonts/montserrat/montserrat-alt-200.eot') format('embedded-opentype'),
+  url('https://cdn.brand.illinois.edu/fonts/montserrat/montserrat-alt-200.woff2') format('woff2'),
+  url('https://cdn.brand.illinois.edu/fonts/montserrat/montserrat-alt-200.woff') format('woff'),
+  url('https://cdn.brand.illinois.edu/fonts/montserrat/montserrat-alt-200.otf') format('opentype'),
+  url('https://cdn.brand.illinois.edu/fonts/montserrat/montserrat-alt-200.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Montserrat Alternate';
+  font-weight: 200;
+  font-style: italic;
+  font-stretch: normal;
+  font-display: swap;
+  src: url('https://cdn.brand.illinois.edu/fonts/montserrat/montserrat-alt-200-italic.eot') format('embedded-opentype'),
+  url('https://cdn.brand.illinois.edu/fonts/montserrat/montserrat-alt-200-italic.woff2') format('woff2'),
+  url('https://cdn.brand.illinois.edu/fonts/montserrat/montserrat-alt-200-italic.woff') format('woff'),
+  url('https://cdn.brand.illinois.edu/fonts/montserrat/montserrat-alt-200-italic.otf') format('opentype'),
+  url('https://cdn.brand.illinois.edu/fonts/montserrat/montserrat-alt-200-italic.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Montserrat Alternate';
+  font-weight: 300;
+  font-style: normal;
+  font-stretch: normal;
+  font-display: swap;
+  src: url('https://cdn.brand.illinois.edu/fonts/montserrat/montserrat-alt-300.eot') format('embedded-opentype'),
+  url('https://cdn.brand.illinois.edu/fonts/montserrat/montserrat-alt-300.woff2') format('woff2'),
+  url('https://cdn.brand.illinois.edu/fonts/montserrat/montserrat-alt-300.woff') format('woff'),
+  url('https://cdn.brand.illinois.edu/fonts/montserrat/montserrat-alt-300.otf') format('opentype'),
+  url('https://cdn.brand.illinois.edu/fonts/montserrat/montserrat-alt-300.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Montserrat Alternate';
+  font-weight: 300;
+  font-style: italic;
+  font-stretch: normal;
+  font-display: swap;
+  src: url('https://cdn.brand.illinois.edu/fonts/montserrat/montserrat-alt-300-italic.eot') format('embedded-opentype'),
+  url('https://cdn.brand.illinois.edu/fonts/montserrat/montserrat-alt-300-italic.woff2') format('woff2'),
+  url('https://cdn.brand.illinois.edu/fonts/montserrat/montserrat-alt-300-italic.woff') format('woff'),
+  url('https://cdn.brand.illinois.edu/fonts/montserrat/montserrat-alt-300-italic.otf') format('opentype'),
+  url('https://cdn.brand.illinois.edu/fonts/montserrat/montserrat-alt-300-italic.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Montserrat Alternate';
+  font-weight: 400;
+  font-style: normal;
+  font-stretch: normal;
+  font-display: swap;
+  src: url('https://cdn.brand.illinois.edu/fonts/montserrat/montserrat-alt-400.eot') format('embedded-opentype'),
+  url('https://cdn.brand.illinois.edu/fonts/montserrat/montserrat-alt-400.woff2') format('woff2'),
+  url('https://cdn.brand.illinois.edu/fonts/montserrat/montserrat-alt-400.woff') format('woff'),
+  url('https://cdn.brand.illinois.edu/fonts/montserrat/montserrat-alt-400.otf') format('opentype'),
+  url('https://cdn.brand.illinois.edu/fonts/montserrat/montserrat-alt-400.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Montserrat Alternate';
+  font-weight: 400;
+  font-style: normal;
+  font-stretch: normal;
+  font-display: swap;
+  src: url('https://cdn.brand.illinois.edu/fonts/montserrat/montserrat-alt-400.eot') format('embedded-opentype'),
+  url('https://cdn.brand.illinois.edu/fonts/montserrat/montserrat-alt-400.woff2') format('woff2'),
+  url('https://cdn.brand.illinois.edu/fonts/montserrat/montserrat-alt-400.woff') format('woff'),
+  url('https://cdn.brand.illinois.edu/fonts/montserrat/montserrat-alt-400.otf') format('opentype'),
+  url('https://cdn.brand.illinois.edu/fonts/montserrat/montserrat-alt-400.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Montserrat Alternate';
+  font-weight: 400;
+  font-style: normal;
+  font-stretch: normal;
+  font-display: swap;
+  src: url('https://cdn.brand.illinois.edu/fonts/montserrat/montserrat-alt-400.eot') format('embedded-opentype'),
+  url('https://cdn.brand.illinois.edu/fonts/montserrat/montserrat-alt-400.woff2') format('woff2'),
+  url('https://cdn.brand.illinois.edu/fonts/montserrat/montserrat-alt-400.woff') format('woff'),
+  url('https://cdn.brand.illinois.edu/fonts/montserrat/montserrat-alt-400.otf') format('opentype'),
+  url('https://cdn.brand.illinois.edu/fonts/montserrat/montserrat-alt-400.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Montserrat Alternate';
+  font-weight: 400;
+  font-style: italic;
+  font-stretch: normal;
+  font-display: swap;
+  src: url('https://cdn.brand.illinois.edu/fonts/montserrat/montserrat-alt-400-italic.eot') format('embedded-opentype'),
+  url('https://cdn.brand.illinois.edu/fonts/montserrat/montserrat-alt-400-italic.woff2') format('woff2'),
+  url('https://cdn.brand.illinois.edu/fonts/montserrat/montserrat-alt-400-italic.woff') format('woff'),
+  url('https://cdn.brand.illinois.edu/fonts/montserrat/montserrat-alt-400-italic.otf') format('opentype'),
+  url('https://cdn.brand.illinois.edu/fonts/montserrat/montserrat-alt-400-italic.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Montserrat Alternate';
+  font-weight: 400;
+  font-style: italic;
+  font-stretch: normal;
+  font-display: swap;
+  src: url('https://cdn.brand.illinois.edu/fonts/montserrat/montserrat-alt-400-italic.eot') format('embedded-opentype'),
+  url('https://cdn.brand.illinois.edu/fonts/montserrat/montserrat-alt-400-italic.woff2') format('woff2'),
+  url('https://cdn.brand.illinois.edu/fonts/montserrat/montserrat-alt-400-italic.woff') format('woff'),
+  url('https://cdn.brand.illinois.edu/fonts/montserrat/montserrat-alt-400-italic.otf') format('opentype'),
+  url('https://cdn.brand.illinois.edu/fonts/montserrat/montserrat-alt-400-italic.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Montserrat Alternate';
+  font-weight: 400;
+  font-style: italic;
+  font-stretch: normal;
+  font-display: swap;
+  src: url('https://cdn.brand.illinois.edu/fonts/montserrat/montserrat-alt-400-italic.eot') format('embedded-opentype'),
+  url('https://cdn.brand.illinois.edu/fonts/montserrat/montserrat-alt-400-italic.woff2') format('woff2'),
+  url('https://cdn.brand.illinois.edu/fonts/montserrat/montserrat-alt-400-italic.woff') format('woff'),
+  url('https://cdn.brand.illinois.edu/fonts/montserrat/montserrat-alt-400-italic.otf') format('opentype'),
+  url('https://cdn.brand.illinois.edu/fonts/montserrat/montserrat-alt-400-italic.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Montserrat Alternate';
+  font-weight: 600;
+  font-style: normal;
+  font-stretch: normal;
+  font-display: swap;
+  src: url('https://cdn.brand.illinois.edu/fonts/montserrat/montserrat-alt-600.eot') format('embedded-opentype'),
+  url('https://cdn.brand.illinois.edu/fonts/montserrat/montserrat-alt-600.woff2') format('woff2'),
+  url('https://cdn.brand.illinois.edu/fonts/montserrat/montserrat-alt-600.woff') format('woff'),
+  url('https://cdn.brand.illinois.edu/fonts/montserrat/montserrat-alt-600.otf') format('opentype'),
+  url('https://cdn.brand.illinois.edu/fonts/montserrat/montserrat-alt-600.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Montserrat Alternate';
+  font-weight: 600;
+  font-style: italic;
+  font-stretch: normal;
+  font-display: swap;
+  src: url('https://cdn.brand.illinois.edu/fonts/montserrat/montserrat-alt-600-italic.eot') format('embedded-opentype'),
+  url('https://cdn.brand.illinois.edu/fonts/montserrat/montserrat-alt-600-italic.woff2') format('woff2'),
+  url('https://cdn.brand.illinois.edu/fonts/montserrat/montserrat-alt-600-italic.woff') format('woff'),
+  url('https://cdn.brand.illinois.edu/fonts/montserrat/montserrat-alt-600-italic.otf') format('opentype'),
+  url('https://cdn.brand.illinois.edu/fonts/montserrat/montserrat-alt-600-italic.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Montserrat Alternate';
+  font-weight: 700;
+  font-style: normal;
+  font-stretch: normal;
+  font-display: swap;
+  src: url('https://cdn.brand.illinois.edu/fonts/montserrat/montserrat-alt-700.eot') format('embedded-opentype'),
+  url('https://cdn.brand.illinois.edu/fonts/montserrat/montserrat-alt-700.woff2') format('woff2'),
+  url('https://cdn.brand.illinois.edu/fonts/montserrat/montserrat-alt-700.woff') format('woff'),
+  url('https://cdn.brand.illinois.edu/fonts/montserrat/montserrat-alt-700.otf') format('opentype'),
+  url('https://cdn.brand.illinois.edu/fonts/montserrat/montserrat-alt-700.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Montserrat Alternate';
+  font-weight: 700;
+  font-style: italic;
+  font-stretch: normal;
+  font-display: swap;
+  src: url('https://cdn.brand.illinois.edu/fonts/montserrat/montserrat-alt-700-italic.eot') format('embedded-opentype'),
+  url('https://cdn.brand.illinois.edu/fonts/montserrat/montserrat-alt-700-italic.woff2') format('woff2'),
+  url('https://cdn.brand.illinois.edu/fonts/montserrat/montserrat-alt-700-italic.woff') format('woff'),
+  url('https://cdn.brand.illinois.edu/fonts/montserrat/montserrat-alt-700-italic.otf') format('opentype'),
+  url('https://cdn.brand.illinois.edu/fonts/montserrat/montserrat-alt-700-italic.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Montserrat Alternate';
+  font-weight: 800;
+  font-style: normal;
+  font-stretch: normal;
+  font-display: swap;
+  src: url('https://cdn.brand.illinois.edu/fonts/montserrat/montserrat-alt-800.eot') format('embedded-opentype'),
+  url('https://cdn.brand.illinois.edu/fonts/montserrat/montserrat-alt-800.woff2') format('woff2'),
+  url('https://cdn.brand.illinois.edu/fonts/montserrat/montserrat-alt-800.woff') format('woff'),
+  url('https://cdn.brand.illinois.edu/fonts/montserrat/montserrat-alt-800.otf') format('opentype'),
+  url('https://cdn.brand.illinois.edu/fonts/montserrat/montserrat-alt-800.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Montserrat Alternate';
+  font-weight: 800;
+  font-style: italic;
+  font-stretch: normal;
+  font-display: swap;
+  src: url('https://cdn.brand.illinois.edu/fonts/montserrat/montserrat-alt-800-italic.eot') format('embedded-opentype'),
+  url('https://cdn.brand.illinois.edu/fonts/montserrat/montserrat-alt-800-italic.woff2') format('woff2'),
+  url('https://cdn.brand.illinois.edu/fonts/montserrat/montserrat-alt-800-italic.woff') format('woff'),
+  url('https://cdn.brand.illinois.edu/fonts/montserrat/montserrat-alt-800-italic.otf') format('opentype'),
+  url('https://cdn.brand.illinois.edu/fonts/montserrat/montserrat-alt-800-italic.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Montserrat Alternate';
+  font-weight: 900;
+  font-style: normal;
+  font-stretch: normal;
+  font-display: swap;
+  src: url('https://cdn.brand.illinois.edu/fonts/montserrat/montserrat-alt-900.eot') format('embedded-opentype'),
+  url('https://cdn.brand.illinois.edu/fonts/montserrat/montserrat-alt-900.woff2') format('woff2'),
+  url('https://cdn.brand.illinois.edu/fonts/montserrat/montserrat-alt-900.woff') format('woff'),
+  url('https://cdn.brand.illinois.edu/fonts/montserrat/montserrat-alt-900.otf') format('opentype'),
+  url('https://cdn.brand.illinois.edu/fonts/montserrat/montserrat-alt-900.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Montserrat Alternate';
+  font-weight: 900;
+  font-style: italic;
+  font-stretch: normal;
+  font-display: swap;
+  src: url('https://cdn.brand.illinois.edu/fonts/montserrat/montserrat-alt-900-italic.eot') format('embedded-opentype'),
+  url('https://cdn.brand.illinois.edu/fonts/montserrat/montserrat-alt-900-italic.woff2') format('woff2'),
+  url('https://cdn.brand.illinois.edu/fonts/montserrat/montserrat-alt-900-italic.woff') format('woff'),
+  url('https://cdn.brand.illinois.edu/fonts/montserrat/montserrat-alt-900-italic.otf') format('opentype'),
+  url('https://cdn.brand.illinois.edu/fonts/montserrat/montserrat-alt-900-italic.ttf') format('truetype');
+}
