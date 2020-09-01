@@ -1,11 +1,4 @@
-@import "reset";
-@import "colors";
-@import "fonts";
-@import "icons";
-
-:root {
-  --il-max-width: 1200px;
-}
+@import "styles";
 
 @import 'components/footer';
 @import 'components/header';

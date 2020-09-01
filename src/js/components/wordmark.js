@@ -3,6 +3,9 @@ import {LitElement, html, css} from 'lit-element';
 class Wordmark extends LitElement {
     static get styles() {
         return css`
+svg {
+    display: block;
+}
 .block-i__fill {
     fill: var(--il-orange);
 }
