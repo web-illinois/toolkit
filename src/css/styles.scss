@@ -1,0 +1,28 @@
+@import "reset";
+@import "colors";
+@import "fonts";
+@import "icons";
+
+:root {
+  --il-max-width: 1200px;
+}
+
+.il-island {
+  margin: {
+    left: 20px;
+    right: 20px;
+  }
+  @media (min-width: 600px) {
+    margin: {
+      left: 50px;
+      right: 50px;
+    }
+  }
+  @media (min-width: 1300px) {
+    max-width: 1200px;
+    margin: {
+      left: auto;
+      right: auto;
+    }
+  }
+}

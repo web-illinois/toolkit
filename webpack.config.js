@@ -13,6 +13,7 @@ Encore
     .addStyleEntry('colors', './src/css/colors.scss')
     .addStyleEntry('fonts', './src/css/fonts.scss')
     .addStyleEntry('icons', './src/css/icons.scss')
+    .addStyleEntry('styles', './src/css/styles.scss')
     .disableSingleRuntimeChunk()
     .cleanupOutputBeforeBuild()
     //.enableBuildNotifications()
