@@ -1,8 +1,8 @@
 {
-  "name": "il-web",
-  "version": "0.2.0-beta",
-  "description": "Shared styles and components for UIUC websites",
-  "repository": "https://github.com/il-marketing/il-web",
+  "name": "toolkit",
+  "version": "1.1.0-beta",
+  "description": "Brand toolkit for the web",
+  "repository": "https://github.com/il-marketing/toolkit",
   "author": "Office of Strategic Marketing and Branding <marketing@illinois.edu>",
   "license": "NCSA",
   "scripts": {

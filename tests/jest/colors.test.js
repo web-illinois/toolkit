@@ -12,7 +12,7 @@ const getComputedColorHex = (page, id) => {
 
 describe('The color variables', () => {
     beforeAll(async () => {
-        await page.goto('http://localhost:8080/styles/colors.html');
+        await page.goto('http://localhost:8080/colors.html');
     });
     
     // il-orange
