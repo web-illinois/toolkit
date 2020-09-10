@@ -59,4 +59,10 @@ il-footer {
       margin-right: 10px;
     }
   }
+
+  *[slot=links] {
+    .optanon-show-settings {
+      display: inline-block;
+    }
+  }
 }

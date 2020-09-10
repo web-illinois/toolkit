@@ -9,7 +9,7 @@ if (!Encore.isRuntimeEnvironmentConfigured()) {
 Encore
     .setOutputPath('dist')
     .setPublicPath('/dist')
-    .addEntry('components', './src/js/index.js')
+    .addEntry('toolkit', './src/js/index.js')
     .addStyleEntry('colors', './src/css/colors.scss')
     .addStyleEntry('fonts', './src/css/fonts.scss')
     .addStyleEntry('icons', './src/css/icons.scss')
@@ -21,7 +21,16 @@ Encore
     //.enableVersioning(Encore.isProduction())
     .enableSassLoader()
     .configureDevServerOptions(options => {
-        options.contentBase = path.join(__dirname, 'html');
+        options.contentBase = [
+            path.join(__dirname, 'node_modules', 'bootstrap', 'dist'),
+            path.join(__dirname, 'html')
+        ];
+        options.contentBasePublicPath = [
+            '/vendor/bootstrap',
+            '/'
+        ];
+        options.liveReload = false;
+        options.serveIndex = true;
     })
 ;
 

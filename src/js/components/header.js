@@ -1,28 +1,42 @@
 import {LitElement, html, css} from 'lit-element';
+import './wordmark';
 import './unit-wordmark';
 
 class Header extends LitElement {
     static get properties() {
         return {
-            name: { type: String }
-        }
+            name: {type: String},
+            wordmark: {attribute: false}
+        };
+
     }
 
     static get styles() {
         return css`
-.campus {
-    background-color: var(--il-cloud);
+.header {
     border-top: 7px solid var(--il-orange);
 }
-.site {
-    background-color: white;   
+.campus {
+    background-color: var(--il-cloud);
 }
-.campus > div, .site > div {
-    box-sizing: border-box;
-    margin: 0 auto;
-    max-width: var(--il-max-width);
-    padding: 0 20px;
-    width: 100%;
+.header.default-wordmark .campus {
+    display: none;
+}
+.site {
+    background-color: white;
+    padding: 20px;
+}
+@media (min-width: 600px) {
+    .site {
+        padding-left: 50px;
+        padding-right: 50px;
+    }
+}
+@media (min-width: 1300px) {
+    .site {
+        padding-left: calc(50% - 600px);
+        padding-right: calc(50% - 600px);
+    }
 }
 .campus > div {
     padding: 4px 20px;
@@ -40,105 +54,41 @@ class Header extends LitElement {
     flex-direction: row;
     justify-content: space-between;
 }
-.site .identity {
-    flex-grow: 1;
-    font-family: var(--il-source-sans);
-    font-size: 16px;
-    font-weight: 600;
-    line-height: 18px;
-    padding: 15px 0 20px;
+.site > div > * {
+    flex: 1 1 auto;
 }
-.site .menu {
-    padding-left: 20px;
-}
-.site .identity ::slotted(*) {
-    font-size: inherit;
-    font-weight: inherit;
-    margin: 0;
-    padding: 0;
-}
-@supports (font-variation-settings: normal) {
-    .site .identity {
-        font-weight: normal;
-        font-variation-settings: "wght" 600;
-    }
-}
-@media (min-width: 360px) {
-    .campus > div {
-        font-size: 12px;
-    }
-}
-@media (min-width: 400px) {
-    .campus > div {
-        letter-spacing: 1.75px;
-    }
-}
-@media (min-width: 600px) {
-    .site > div {
-        display: block;
-    }
-    .site .identity {
-        font-size: 24px;
-        line-height: 26px;
-    }
-    .site .menu {
-        padding-left: 0;
-    }
+.content {
+    float: right;
 }
         `;
     }
 
     constructor() {
         super();
-        window.addEventListener('DOMContentLoaded', () => {
-            if (this.hasMenu()) {
-                this.getMenu().addEventListener('toggle', this.handleMenuToggle.bind(this));
-            }
-            if (this.hasSearch()) {
-                this.getSearch().addEventListener('toggle', this.handleSearchToggle.bind(this));
-            }
+        this.wordmark = 'default';
+        document.addEventListener('DOMContentLoaded', () => {
+            this.wordmark = this.hasCustomWordmark() ? 'custom' : 'default';
         });
     }
 
-    getMenu() {
-        return this.querySelector('il-menubar');
+    getCampusWordmark() {
+        return html`
+<div class="campus">
+        <div>
+            <span>University of Illinois</span>
+            <span>Urbana&hyphen;Champaign</span>
+        </div>
+</div>
+        `;
     }
 
-    getSearch() {
-        return this.querySelector('il-search');
-    }
-
-    handleMenuToggle(evt) {
-        if (evt.target.expanded && this.searchIsExpanded()) {
-            this.getSearch().collapse();
-        }
-    }
-
-    handleSearchToggle(evt) {
-        if (evt.target.expanded && this.menuIsExpanded()) {
-            this.getMenu().collapse();
-        }
-    }
-
-    hasMenu() {
-        return this.getMenu() !== null;
-    }
-
-    hasSearch() {
-        return this.getSearch() !== null;
-    }
-
-    menuIsExpanded() {
-        return this.hasMenu() && this.getMenu().expanded;
-    }
-
-    searchIsExpanded() {
-        return this.hasSearch() && this.getSearch().expanded;
+    hasCustomWordmark() {
+        return this.querySelector('[slot="wordmark"]') !== null;
     }
 
     render() {
         return html`
-<div class="header">
+<div class="header ${this.wordmark}-wordmark">
     <div class="campus">
         <div>
             <span>University of Illinois</span>
@@ -148,7 +98,14 @@ class Header extends LitElement {
     <div class="site">
         <div>
             <div class="identity">
-                <slot></slot>
+                <slot name="wordmark">
+                    <il-wordmark></il-wordmark>
+                </slot>
+            </div>
+            <div>
+                <div class="content">
+                    <slot></slot>
+                </div>
             </div>
         </div>
     </div>

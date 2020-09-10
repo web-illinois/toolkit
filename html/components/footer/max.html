@@ -8,9 +8,13 @@
     <link rel="stylesheet" href="/dist/components.css">
     <script src="/dist/components.js"></script>
 </head>
-<body style="margin:0;padding:0">
+<body class="il-page">
 <footer>
     <il-footer>
+
+        <p slot="parent-unit">
+            <a href="https://illinois.edu/">Granger College of Engineering</a>
+        </p>
 
         <nav slot="social">
             <il-social-link service="facebook" href="https://www.facebook.com/illinois.edu">Facebook</il-social-link>
@@ -25,22 +29,33 @@
             <il-social-link service="youtube" href="http://youtube.com/user/Illinois1867">YouTube</il-social-link>
         </nav>
 
-        <p class="il-unit-name">Office of Undergraduate Admissions</p>
-        <p>901 W Illinois Street, Urbana, IL 61801</p>
+        <div slot="info">
+            <p class="il-unit-name">Office of Undergraduate Admissions</p>
+            <p>901 W Illinois Street, Urbana, IL 61801</p>
 
-        <dl>
-            <dt>Office Hours</dt>
-            <dd>8:30am to 5:00pm, Monday-Friday (closed on all campus holidays)</dd>
+            <dl>
+                <dt>Office Hours</dt>
+                <dd>8:30am to 5:00pm, Monday-Friday (closed on all campus holidays)</dd>
 
-            <dt>Phone</dt>
-            <dd><a href="tel:+12173330302">217-333-0302</a></dd>
+                <dt>Phone</dt>
+                <dd><a href="tel:+12173330302">217-333-0302</a></dd>
 
-            <dt>Email</dt>
-            <dd><a href="mailto:admissions@illinois.edu">admissions@illinois.edu</a></dd>
+                <dt>Email</dt>
+                <dd><a href="mailto:admissions@illinois.edu">admissions@illinois.edu</a></dd>
 
-            <dt>Fax</dt>
-            <dd><a href="tel:+12172444614">217-244-4614</a></dd>
-        </dl>
+                <dt>Fax</dt>
+                <dd><a href="tel:+12172444614">217-244-4614</a></dd>
+            </dl>
+        </div>
+
+        <div slot="links">
+            <a href="#">Privacy</a>
+            <a href="#">College Bylaws</a>
+            <a href="#">Accreditation</a>
+            <a href="#">Login</a>
+            <a href="#">Copyright</a>
+            <a href="#">Accessibility</a>
+        </div>
 
     </il-footer>
 </footer>

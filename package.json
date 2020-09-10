@@ -12,7 +12,7 @@
     "start": "encore dev-server",
     "test": "npm run test-jest && npm run test-backstop",
     "test-backstop": "backstop test --config=tests/backstop/backstop.js",
-    "test-jest": "jest --config=tests/jest/jest-func.config.js"
+    "test-jest": "jest --config=tests/jest/jest.config.js"
   },
   "dependencies": {
     "@symfony/webpack-encore": "^0.30.2",
@@ -22,6 +22,7 @@
   },
   "devDependencies": {
     "backstopjs": "^4.5.1",
+    "bootstrap": "^4.5.2",
     "jest": "^25.5.4",
     "jest-puppeteer": "^4.4.0"
   }

@@ -7,6 +7,39 @@
   --il-max-width: 1200px;
 }
 
+.il-page {
+  @include reset-spacing;
+  min-height: 100vh;
+  max-width: 100vw;
+  display: grid;
+  grid-template-areas: "header" "main" "footer";
+  grid-template-rows: auto 1fr auto;
+
+  & > header {
+    grid-area: header;
+  }
+
+  & > main {
+    grid-area: main;
+    overflow: auto;
+    padding-left: 20px;
+    padding-right: 20px;
+
+    @media (min-width: 600px) {
+      padding-left: 50px;
+      padding-right: 50px;
+    }
+    @media (min-width: 1300px) {
+      padding-left: calc(50% - 600px);
+      padding-right: calc(50% - 600px);
+    }
+  }
+
+  & > footer {
+    grid-area: footer;
+  }
+}
+
 .il-island {
   margin: {
     left: 20px;

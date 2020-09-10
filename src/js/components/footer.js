@@ -9,18 +9,34 @@ class Footer extends LitElement {
     line-height: 1.5em;
     font-family: var(--il-source-sans);
 }
+
+.main, .parent-unit ::slotted(*), .links ::slotted(*) {
+    padding-left: 20px;
+    padding-right: 20px;
+}
+@media (min-width: 600px) {
+    .main, .parent-unit ::slotted(*), .links ::slotted(*) {
+        padding-left: 50px;
+        padding-right: 50px;
+    }
+}
+@media (min-width: 1300px) {
+    .main, .parent-unit ::slotted(*), .links ::slotted(*) {
+        padding-left: calc(50% - 600px);
+        padding-right: calc(50% - 600px);
+    }
+}
+
+
 .main {
     background-color: var(--il-cloud-1);
     color: var(--il-blue);
-    padding: 60px 20px;
+    padding-top: 60px;
+    padding-bottom: 60px;
 }
+
 .main > div {
     box-sizing: border-box;
-    margin: 0 auto;
-    max-width: var(--il-max-width);
-    padding: 0 20px;
-    width: 100%;
-
     display: grid;
     grid-gap: 30px;
 }
@@ -39,9 +55,6 @@ class Footer extends LitElement {
 }
 .info {
     grid-area: info;
-}
-.links {
-    grid-area: links;
 }
 .campus-wordmark {
     width: 235px;
@@ -68,6 +81,18 @@ class Footer extends LitElement {
         font-variation-settings: "wght" 700;
     }
 }
+.parent-unit ::slotted(*) {
+    background-color: var(--il-orange);
+    margin: 0;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+.links ::slotted(*) {
+    background-color: white;
+    margin: 0;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
         `;
     }
 
@@ -84,14 +109,21 @@ class Footer extends LitElement {
                     <slot name="social"></slot>
                 </div>
                 <div class="site">
-                    <slot></slot>
+                    <slot name="info"></slot>
                 </div>
             </div>
-            <div class="links">
-                <slot name="links"></slot>
+            <div class="content">
+                <slot></slot>
             </div>
         </div>
     </div>
+    <div class="parent-unit">
+        <slot name="parent-unit"></slot>
+    </div>
+    <div class="links">
+        <slot name="links"></slot>
+    </div>
+</div>
 </div>
         `;
     }
