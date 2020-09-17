@@ -1,5 +1,17 @@
 il-footer {
 
+  a {
+    color: inherit;
+
+    &:hover, &:focus {
+      color: var(--il-industrial-blue);
+    }
+
+    &:focus {
+      outline: 4px dashed var(--il-arches-blue);
+    }
+  }
+
   *[slot=contact] {
     font-size: 18px;
     color: var(--il-blue);
@@ -27,10 +39,6 @@ il-footer {
 
     dd {
       @include reset-spacing;
-    }
-
-    a {
-      color: inherit;
     }
 
     .il-unit-name {
@@ -80,7 +88,7 @@ il-footer {
       }
     }
 
-      a {
+    a {
       display: inline-block;
       padding: 8px;
       font: 14px var(--il-source-sans);
@@ -104,6 +112,10 @@ il-footer {
   *[slot=parent-unit] {
     a {
       color: inherit;
+
+      &:focus {
+        outline: 4px dashed var(--il-blue);
+      }
     }
   }
 }
@@ -131,10 +143,6 @@ il-footer {
         display: block;
         padding: 6px 0;
         border-bottom: 1px solid white;
-
-        &:focus {
-          outline: 4px dotted var(--il-arches-blue);
-        }
       }
     }
   }

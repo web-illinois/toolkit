@@ -67,7 +67,7 @@ class Footer extends LitElement {
     text-decoration: none;
 }
 .campus-wordmark a:focus {
-    outline: 4px dotted var(--il-arches-blue);
+    outline: 4px dashed var(--il-arches-blue);
 }
 .social {
     margin-bottom: 40px;

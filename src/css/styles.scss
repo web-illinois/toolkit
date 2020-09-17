@@ -70,6 +70,14 @@
   text-decoration: none;
   border-radius: .5em;
   font: bold 20px/2.2 var(--il-source-sans);
+
+  &:hover, &:focus {
+    background-color: var(--il-altgeld);
+  }
+
+  &:focus {
+    outline: 4px dotted var(--il-arches-blue);
+  }
 }
 
 .il-invisible {

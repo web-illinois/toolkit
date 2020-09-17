@@ -15,6 +15,9 @@ a {
     display: inline-block;
     position: relative;
 }
+a:focus {
+    outline: 4px dotted var(--il-arches-blue);
+}
 a.with-icon {
     height: 30px;
     overflow: hidden;
