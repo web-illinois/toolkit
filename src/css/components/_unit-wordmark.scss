@@ -1,31 +1,22 @@
 il-unit-wordmark {
-  .il-primary-unit {
+  > * {
     @include reset-spacing;
-    @include font-weight(400);
-    font-size: 14px;
+    display: block;
+    margin-bottom: .25em;
+    font-weight: 400;
+    line-height: 1.2em;
+  }
+  > *:last-child {
+    margin-bottom: 0;
+    font-weight: 600;
     line-height: 1em;
   }
-  .il-primary-unit:last-child, .il-secondary-unit {
-    @include reset-spacing;
-    @include font-weight(600);
-    font-size: 16px;
-    line-height: 1.1em;
+  * > {
+    display: inline !important;
   }
-  .il-primary-unit + .il-secondary-unit {
-    margin-top: 4px;
-  }
-  .il-primary-unit, .il-secondary-unit {
-    a {
-      @include reset-link;
-    }
-  }
-
-  @media (min-width: 480px) {
-    .il-primary-unit {
-      font-size: 16px;
-    }
-    .il-primary-unit:last-child, .il-secondary-unit {
-      font-size: 24px;
-    }
+  a {
+    @extend .il-link;
+    color: var(--il-blue) !important;
+    text-decoration: none !important;
   }
 }

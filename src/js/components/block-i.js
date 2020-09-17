@@ -3,6 +3,14 @@ import {LitElement, html, css} from 'lit-element';
 class BlockI extends LitElement {
     static get styles() {
         return css`
+:host {
+    display: block;
+}
+svg {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
 .outline {
     fill: var(--il-blue);
 }

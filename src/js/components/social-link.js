@@ -16,7 +16,7 @@ a {
     position: relative;
 }
 a:focus {
-    outline: 4px dotted var(--il-arches-blue);
+    outline: var(--il-dotted-focus-outline);
 }
 a.with-icon {
     height: 30px;
@@ -46,6 +46,7 @@ svg {
     fill: var(--il-blue);
     height: 100%;
     width: 100%;
+    transition: fill .3s;
 }
 a.with-icon:hover svg, a.with-icon:focus svg {
     fill: var(--il-industrial-blue);

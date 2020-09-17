@@ -4,7 +4,8 @@
 @import "icons";
 
 :root {
-  --il-max-width: 1200px;
+  --il-focus-outline: 3px dashed var(--il-arches-blue);
+  --il-dotted-focus-outline: 4px dotted var(--il-arches-blue);
 }
 
 .il-page {
@@ -56,19 +57,23 @@
 
 .il-link {
   color: var(--il-blue);
+  transition: color .3s;
 
   &:hover, &:focus {
     color: var(--il-industrial-blue);
   }
 
   &:focus {
-    outline: 4px dashed var(--il-arches-blue);
+    outline: var(--il-focus-outline);
   }
 }
 
+.il-links a {
+  @extend .il-link;
+}
 
 .il-button {
-  @include reset-spacing;
+  @include reset-link;
   background-color: var(--il-orange);
   color: white;
   display: inline-block;
@@ -76,16 +81,60 @@
   padding: 0 1.25em;
   text-decoration: none;
   border-radius: .5em;
+  border: 1px solid var(--il-orange);
   font: bold 20px/2.2 var(--il-source-sans);
+  transition: background-color .3s;
 
   &:hover, &:focus {
     background-color: var(--il-altgeld);
   }
 
   &:focus {
-    outline: 4px dotted var(--il-arches-blue);
+    outline: var(--il-dotted-focus-outline);
+  }
+
+  &--blue {
+    background-color: var(--il-industrial-blue) !important;
+    border-color: var(--il-industrial-blue) !important;
+
+    &:hover, &:focus {
+      background-color: var(--il-blue) !important;
+    }
+  }
+
+  &--cloud {
+    background-color: var(--il-cloud) !important;
+    border-color: var(--il-cloud) !important;
+    color: var(--il-blue) !important;
+
+    &:hover, &:focus {
+      background-color: var(--il-cloud-1) !important;
+    }
   }
 }
+
+.il-actions {
+  display: block;
+
+  ul {
+    @include reset-list();
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+
+  li {
+    @include reset-list-item;
+    margin: 0 20px 20px 0;
+  }
+
+  a {
+    @extend .il-button;
+  }
+}
+
 
 .il-invisible {
   position: absolute;

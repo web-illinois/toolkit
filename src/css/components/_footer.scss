@@ -1,15 +1,7 @@
 il-footer {
 
   a {
-    color: inherit;
-
-    &:hover, &:focus {
-      color: var(--il-industrial-blue);
-    }
-
-    &:focus {
-      outline: 4px dashed var(--il-arches-blue);
-    }
+    @extend .il-link;
   }
 
   *[slot=contact] {
@@ -114,7 +106,7 @@ il-footer {
       color: inherit;
 
       &:focus {
-        outline: 4px dashed var(--il-blue);
+        outline: 3px dashed var(--il-blue);
       }
     }
   }

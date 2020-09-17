@@ -9,45 +9,52 @@ samp {
     margin: 0 0 3rem;
     padding: 0;
 }
-samp il-wordmark {
+
+
+/* Wordmark */
+
+samp > * {
     background-color: white;
 }
 
-samp.wordmark--small il-wordmark {
-    width: 300px;
+samp.wordmark--small > * {
+    width: 240px;
 }
 
-samp.wordmark--medium il-wordmark {
-    width: 600px;
+samp.wordmark--medium > * {
+    width: 360px;
 }
 
-samp.wordmark--large il-wordmark {
-    width: 900px;
+samp.wordmark--large > * {
+    width: 720px;
 }
 
-samp.wordmark--small-height il-wordmark {
+samp.wordmark--small-height > * {
     height: 100px;
 }
 
-samp.wordmark--medium-height il-wordmark {
+samp.wordmark--medium-height > * {
     height: 200px;
 }
 
-samp.wordmark--large-height il-wordmark {
+samp.wordmark--large-height > * {
     height: 300px;
 }
 
-samp.wordmark--tall-fixed il-wordmark {
+samp.wordmark--tall-fixed > * {
     width: 200px;
     height: 400px;
 }
 
-samp.wordmark--square-fixed il-wordmark {
+samp.wordmark--square-fixed > * {
     width: 300px;
     height: 300px;
 }
 
-samp.wordmark--wide-fixed il-wordmark {
+samp.wordmark--wide-fixed > * {
     width: 800px;
     height: 100px;
 }
+
+
+/* Unit wordmarks */
