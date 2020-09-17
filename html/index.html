@@ -13,15 +13,43 @@
             padding: 2em;
         }
         .sections {
+            box-sizing: border-box;
             margin: 0 auto;
             padding: 50px;
+            max-width: 1300px;
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
+            grid-template-columns: 1fr;
+            grid-gap: 50px;
+            font-size: 18px;
         }
-        @media (min-width: 1200px) {
+        @media (min-width: 800px) {
             .sections {
-                grid-template-columns: repeat(4, 1fr);
+                grid-template-columns: repeat(3, 1fr);
             }
+        }
+        .sections h2 {
+            font-size: 24px;
+            font-weight: 600;
+            margin: 0 0 .5em;
+            text-transform: uppercase;
+        }
+        .sections h3 {
+            font-size: 18px;
+            font-weight: 600;
+            margin: 1.5em 0 .25em;
+            text-transform: uppercase;
+        }
+        .sections h2 + h3 {
+            margin-top: 0;
+        }
+        .sections ul {
+            margin: 0;
+            padding: 0;
+        }
+        .sections li {
+            list-style: none;
+            margin: 0;
+            padding: 0;
         }
     </style>
     <script src="/dist/toolkit.js"></script>
@@ -48,7 +76,7 @@
             <ul>
                 <li><a href="styles/colors.html">Colors</a></li>
                 <li><a href="styles/fonts.html">Fonts</a></li>
-                <li><a href="styles/icons.html">Icons</a></li>
+                <li><a href="icons/index.html">Icons</a></li>
                 <li><a href="styles/utility.html">Utility styles</a></li>
             </ul>
 
