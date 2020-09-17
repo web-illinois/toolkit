@@ -1,4 +1,24 @@
-@import 'fonts/il-icons';
+@font-face {
+  font-family: 'Illinois Icons Solid';
+  src:  url('https://cdn.brand.illinois.edu/icons/v1.0/fonts/Illinois-Icons-Solid.eot') format('embedded-opentype'),
+  url('https://cdn.brand.illinois.edu/icons/v1.0/fonts/Illinois-Icons-Solid.ttf') format('truetype'),
+  url('https://cdn.brand.illinois.edu/icons/v1.0/fonts/Illinois-Icons-Solid.woff') format('woff'),
+  url('https://cdn.brand.illinois.edu/icons/v1.0/fonts/Illinois-Icons-Solid.svg') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+@font-face {
+  font-family: 'Illinois Icons Line';
+  src:  url('https://cdn.brand.illinois.edu/icons/v1.0/fonts/Illinois-Icons-Line.eot') format('embedded-opentype'),
+  url('https://cdn.brand.illinois.edu/icons/v1.0/fonts/Illinois-Icons-Line.ttf') format('truetype'),
+  url('https://cdn.brand.illinois.edu/icons/v1.0/fonts/Illinois-Icons-Line.woff') format('woff'),
+  url('https://cdn.brand.illinois.edu/icons/v1.0/fonts/Illinois-Icons-Line.svg') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
 
 :root {
   --il-icons-solid: 'Illinois Icons Solid' !important;

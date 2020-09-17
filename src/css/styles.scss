@@ -59,3 +59,23 @@
     }
   }
 }
+
+.il-button {
+  @include reset-spacing;
+  background-color: var(--il-orange);
+  color: white;
+  display: inline-block;
+  white-space: nowrap;
+  padding: 0 1.25em;
+  text-decoration: none;
+  border-radius: .5em;
+  font: bold 20px/2.2 var(--il-source-sans);
+}
+
+.il-invisible {
+  position: absolute;
+  left: -999vw;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}

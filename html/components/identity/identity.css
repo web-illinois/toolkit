@@ -1,0 +1,53 @@
+body {
+    margin: 0;
+    padding: 3rem;
+    background-color: var(--il-cloud);
+}
+samp {
+    display: block;
+    position: relative;
+    margin: 0 0 3rem;
+    padding: 0;
+}
+samp il-wordmark {
+    background-color: white;
+}
+
+samp.wordmark--small il-wordmark {
+    width: 300px;
+}
+
+samp.wordmark--medium il-wordmark {
+    width: 600px;
+}
+
+samp.wordmark--large il-wordmark {
+    width: 900px;
+}
+
+samp.wordmark--small-height il-wordmark {
+    height: 100px;
+}
+
+samp.wordmark--medium-height il-wordmark {
+    height: 200px;
+}
+
+samp.wordmark--large-height il-wordmark {
+    height: 300px;
+}
+
+samp.wordmark--tall-fixed il-wordmark {
+    width: 200px;
+    height: 400px;
+}
+
+samp.wordmark--square-fixed il-wordmark {
+    width: 300px;
+    height: 300px;
+}
+
+samp.wordmark--wide-fixed il-wordmark {
+    width: 800px;
+    height: 100px;
+}

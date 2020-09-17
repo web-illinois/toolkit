@@ -5,11 +5,6 @@
 
 @mixin font-weight($weight: 400) {
   font-weight: $weight;
-
-  @supports (font-variation-settings: normal) {
-    font-weight: normal;
-    font-variation-settings: 'wght' $weight;
-  }
 }
 
 :root {

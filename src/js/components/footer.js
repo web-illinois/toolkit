@@ -38,7 +38,7 @@ class Footer extends LitElement {
 .main > div {
     box-sizing: border-box;
     display: grid;
-    grid-gap: 30px;
+    grid-gap: 50px;
 }
 @media (max-width: 599px) {
     .main > div {
@@ -57,13 +57,17 @@ class Footer extends LitElement {
     grid-area: info;
 }
 .campus-wordmark {
-    width: 235px;
+    width: 100%;
+    max-width: 235px;
     height: 61px;
     margin-bottom: 60px;
 }
 .campus-wordmark a {
     display: block;
     text-decoration: none;
+}
+.campus-wordmark a:focus {
+    outline: 4px dotted var(--il-arches-blue);
 }
 .social {
     margin-bottom: 40px;
@@ -75,17 +79,15 @@ class Footer extends LitElement {
 .site ::slotted(*:first-child) {
     font-weight: 700;
 }
-@supports (font-variation-settings: normal) {
-    .site ::slotted(*:first-child) {
-        font-weight: normal;
-        font-variation-settings: "wght" 700;
-    }
-}
 .parent-unit ::slotted(*) {
     background-color: var(--il-orange);
     margin: 0;
-    padding-top: 5px;
-    padding-bottom: 5px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font: bold 18px var(--il-montserrat);
+    letter-spacing: 1px;
+    color: white;
+    text-transform: uppercase;
 }
 .links ::slotted(*) {
     background-color: white;
@@ -109,7 +111,7 @@ class Footer extends LitElement {
                     <slot name="social"></slot>
                 </div>
                 <div class="site">
-                    <slot name="info"></slot>
+                    <slot name="contact"></slot>
                 </div>
             </div>
             <div class="content">
