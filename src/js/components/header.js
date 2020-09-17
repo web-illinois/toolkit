@@ -75,6 +75,9 @@ class Header extends LitElement {
 .site > div > * {
     flex: 1 1 auto;
 }
+.identity {
+    padding-right: 20px;
+}
 .content {
     float: right;
 }
