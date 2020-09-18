@@ -5,9 +5,10 @@
         <title>Color</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0">
         <link rel="icon" href="https://cdn.brand.illinois.edu/favicon.ico">
-        <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@500;700&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@300;500;700&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="dist/toolkit.css">
         <link rel="stylesheet" href="docs.css">
+        <link rel="stylesheet" href="colors.css">
         <style>
         </style>
         <script src="dist/toolkit.js"></script>
@@ -35,28 +36,271 @@
 
             <section class="doc-section">
 
-
-                <section class="doc-text il-formatted">
-
-                    <h2>Test pages</h2>
-
+                <div class="palette" id="orange">
                     <ul>
-                        <li><a href="tests/colors.html">All colors</a></li>
+                        <li>
+                            <article class="chip" style="border-color:var(--il-orange)">
+                                <code class="hex">#FF552E</code>
+                                <code>--il-orange</code>
+                                <p>Illini Orange</p>
+                            </article>
+                        </li>
+                        <li>
+                            <article class="chip" style="border-color:var(--il-altgeld)">
+                                <code class="hex">#DD3403</code>
+                                <code>--il-altgeld</code>
+                                <p>Altgeld</p>
+                            </article>
+                        </li>
                     </ul>
+                </div>
 
-                </section>
+                <div class="palette" id="blue">
+                    <ul>
+                        <li>
+                            <article class="chip" style="border-color:var(--il-blue)">
+                                <code class="hex">#13294B</code>
+                                <code>--il-blue</code>
+                                <p>Illini Blue</p>
+                            </article>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="palette" id="alma-mater">
+                    <ul>
+                        <li>
+                            <article class="chip" style="border-color:var(--il-alma-mater)">
+                                <code class="hex">#1E3877</code>
+                                <code>--il-alma-mater</code>
+                                <p>Alma Mater</p>
+                            </article>
+                        </li>
+                        <li>
+                            <article class="chip" style="border-color:var(--il-alma-mater-1)">
+                                <code class="hex">#4D69A0</code>
+                                <code>--il-alma-mater-1</code>
+                            </article>
+                        </li>
+                        <li>
+                            <article class="chip" style="border-color:var(--il-alma-mater-2)">
+                                <code class="hex">#849BC1</code>
+                                <code>--il-alma-mater-2</code>
+                            </article>
+                        </li>
+                        <li>
+                            <article class="chip" style="border-color:var(--il-alma-mater-3)">
+                                <code class="hex">#AFC7DB</code>
+                                <code>--il-alma-mater-3</code>
+                            </article>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="palette" id="industrial-blue">
+                    <ul>
+                        <li>
+                            <article class="chip" style="border-color:var(--il-industrial-blue)">
+                                <code class="hex">#1D58A7</code>
+                                <code>--il-industrial-blue</code>
+                                <p>Industrial Blue</p>
+                            </article>
+                        </li>
+                        <li>
+                            <article class="chip" style="border-color:var(--il-industrial-blue-1)">
+                                <code class="hex">#5783BC</code>
+                                <code>--il-industrial-blue-1</code>
+                            </article>
+                        </li>
+                        <li>
+                            <article class="chip" style="border-color:var(--il-industrial-blue-2)">
+                                <code class="hex">#90AED5</code>
+                                <code>--il-industrial-blue-2</code>
+                            </article>
+                        </li>
+                        <li>
+                            <article class="chip" style="border-color:var(--il-industrial-blue-3)">
+                                <code class="hex">#CAD9EF</code>
+                                <code>--il-industrial-blue-3</code>
+                            </article>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="palette" id="arches-blue">
+                    <ul>
+                        <li>
+                            <article class="chip" style="border-color:var(--il-arches-blue)">
+                                <code class="hex">#009FD4</code>
+                                <code>--il-arches-blue</code>
+                                <p>Arches Blue</p>
+                            </article>
+                        </li>
+                        <li>
+                            <article class="chip" style="border-color:var(--il-arches-blue-1)">
+                                <code class="hex">#7FC3E1</code>
+                                <code>--il-arches-blue-1</code>
+                            </article>
+                        </li>
+                        <li>
+                            <article class="chip" style="border-color:var(--il-arches-blue-2)">
+                                <code class="hex">#A6D7EB</code>
+                                <code>--il-arches-blue-2</code>
+                            </article>
+                        </li>
+                        <li>
+                            <article class="chip" style="border-color:var(--il-arches-blue-3)">
+                                <code class="hex">#D2EBF5</code>
+                                <code>--il-arches-blue-3</code>
+                            </article>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="palette" id="cloud">
+                    <ul>
+                        <li>
+                            <article class="chip" style="border-color:var(--il-cloud)">
+                                <code class="hex">#F8FAFC</code>
+                                <code>--il-cloud</code>
+                                <p>Cloud</p>
+                            </article>
+                        </li>
+                        <li>
+                            <article class="chip" style="border-color:var(--il-cloud-1)">
+                                <code class="hex">#E8E9EB</code>
+                                <code>--il-cloud-1</code>
+                            </article>
+                        </li>
+                        <li>
+                            <article class="chip" style="border-color:var(--il-cloud-2)">
+                                <code class="hex">#DDDEDE</code>
+                                <code>--il-cloud-2</code>
+                            </article>
+                        </li>
+                        <li>
+                            <article class="chip" style="border-color:var(--il-cloud-3)">
+                                <code class="hex">#D2D2D2</code>
+                                <code>--il-cloud-3</code>
+                            </article>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="palette" id="heritage-orange">
+                    <ul>
+                        <li>
+                            <article class="chip" style="border-color:var(--il-heritage-orange)">
+                                <code class="hex">#F5821E</code>
+                                <code>--il-heritage-orange</code>
+                                <p>Heritage Orange</p>
+                            </article>
+                        </li>
+                        <li>
+                            <article class="chip" style="border-color:var(--il-heritage-orange-1)">
+                                <code class="hex">#E56E15</code>
+                                <code>--il-heritage-orange-1</code>
+                            </article>
+                        </li>
+                        <li>
+                            <article class="chip" style="border-color:var(--il-heritage-orange-2)">
+                                <code class="hex">#CE5E11</code>
+                                <code>--il-heritage-orange-2</code>
+                            </article>
+                        </li>
+                        <li>
+                            <article class="chip" style="border-color:var(--il-heritage-orange-3)">
+                                <code class="hex">#B74D04</code>
+                                <code>--il-heritage-orange-3</code>
+                            </article>
+                        </li>
+                    </ul>
+                </div>
 
             </section>
+
+            <section class="doc-text il-formatted">
+                <h2>Test pages</h2>
+                <ul>
+                    <li><a href="tests/colors.html">All colors</a></li>
+                </ul>
+            </section>
+
         </main>
 
         <footer>
             <il-footer>
                 <section slot="contact">
                     <p><a href="https://marketing.illinois.edu/">Strategic Marketing and Branding</a></p>
+                    <p>707 S. Sixth Street, Suite 103, Champaign, IL 61820</p>
+                    <dl>
+                        <dt>Phone</dt>
+                        <dd><a href="tel:+12172446162">217-244-6162</a></dd>
+                        <dt>Email</dt>
+                        <dd><a href="mailto:marketing@illinois.edu">marketing@illinois.edu</a></dd>
+                    </dl>
                 </section>
+                <div class="il-footer-navigation">
+                    <nav>
+                        <h3>Quick access to:</h3>
+                        <ul>
+                            <li><a href="https://marketing.illinois.edu/brand/tools/training">Training opportunities</a>
+                            </li>
+                            <li><a href="https://marketing.illinois.edu/brand/tools/downloads">Downloads</a></li>
+                            <li><a href="https://marketing.illinois.edu/brand/tools/campaigns">Brand campaigns (coming
+                                soon)</a></li>
+                            <li><a href="https://marketing.illinois.edu/brand/tools/email-signature">Email signature</a>
+                            </li>
+                            <li>
+                                <a href="https://publicaffairs.illinois.edu/resources/writing-style-guide/" class="external">Writing
+                                    style guide</a></li>
+                        </ul>
+                    </nav>
+                </div>
             </il-footer>
         </footer>
 
+        <template id="compatibility-widget">
+            <div class="compatibility-widget">
+                <p class="heading">
+                    Explore accessible combinations
+                    <button>as a foreground color</button>
+                    <button>as a background color</button>
+                </p>
+                <div class="widget">
+                    <div class="options">
+
+                    </div>
+                    <div class="sample">
+                        <div class="preview">
+                            This is the sample text
+                        </div>
+                        <div class="code">
+                            color: var(<span class="fg-var"></span>);<br>
+                            background-color: var(<span class="bg-var"></span>);
+                        </div>
+                    </div>
+                    <div class="results">
+                        <dl>
+                            <dt>Ratio</dt>
+                            <dd class="ration">Unknown</dd>
+                            <dt>AA Normal</dt>
+                            <dd class="aa-normal">Unknown</dd>
+                            <dt>AA Large</dt>
+                            <dd class="aa-large">Unknown</dd>
+                            <dt>AAA Normal</dt>
+                            <dd class="aaa-normal">Unknown</dd>
+                            <dt>AAA Large</dt>
+                            <dd class="aaa-large">Unknown</dd>
+                        </dl>
+                        <a class="webaim">Check</a>
+                    </div>
+                </div>
+            </div>
+        </template>
+
+
         <script src="docs.js"></script>
+        <script src="colors.js"></script>
     </body>
 </html>

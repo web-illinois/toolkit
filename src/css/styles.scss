@@ -56,11 +56,15 @@
 
 
 .il-link {
-  color: var(--il-blue);
+  color: var(--il-industrial-blue);
   transition: color .3s;
 
+  &:visited {
+    color: var(--il-alma-mater);
+  }
+
   &:hover, &:focus {
-    color: var(--il-industrial-blue);
+    color: var(--il-altgeld);
   }
 
   &:focus {
