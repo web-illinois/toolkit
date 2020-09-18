@@ -72,13 +72,6 @@ class Footer extends LitElement {
 .social {
     margin-bottom: 40px;
 }
-.site ::slotted(p) {
-    margin: 0;
-    padding: 0;
-}
-.site ::slotted(*:first-child) {
-    font-weight: 700;
-}
 .parent-unit ::slotted(*) {
     background-color: var(--il-orange);
     margin: 0;

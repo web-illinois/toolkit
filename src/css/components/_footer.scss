@@ -12,6 +12,12 @@ il-footer {
       margin: 0;
       padding: 0;
       font-size: 1em;
+
+      &:first-child {
+        font-weight: 700;
+        font-size: 1.1em;
+        margin-bottom: 2px;
+      }
     }
 
     dl {

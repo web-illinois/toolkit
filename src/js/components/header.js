@@ -18,6 +18,7 @@ class Header extends LitElement {
 }
 .campus {
     background-color: var(--il-cloud);
+    border-bottom: 1px solid var(--il-cloud-1);
 }
 .header.default-wordmark .campus {
     display: none;
