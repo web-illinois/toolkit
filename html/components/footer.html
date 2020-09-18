@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Footer</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0">
+        <link rel="icon" href="https://cdn.brand.illinois.edu/favicon.ico">
+        <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@500;700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="../dist/toolkit.css">
+        <link rel="stylesheet" href="../docs.css">
+        <style>
+        </style>
+        <script src="/dist/toolkit.js"></script>
+    </head>
+    <body class="il-page docs">
+        <header>
+            <il-header>
+                <il-unit-wordmark slot="wordmark">
+                    <h1><a href="https://marketing.illinois.edu/">Strategic Marketing and Branding</a></h1>
+                </il-unit-wordmark>
+            </il-header>
+        </header>
+        <main>
+
+            <div class="il-page-title il-page-title--poster">
+                <nav class="il-breadcrumbs">
+                    <h2 class="il-invisible">You are here</h2>
+                    <ol>
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="../components.html">Components</a></li>
+                        <li>Footer</li>
+                    </ol>
+                </nav>
+                <h1>Footer</h1>
+            </div>
+
+            <section class="doc-section">
+
+                <div class="doc-text il-formatted">
+                    <h2>Structure</h2>
+                    <p>The footer has 5 areas for custom content:</p>
+                </div>
+
+                <div class="mockup" data-mockup-size="medium">
+                    <div class="mockup-controls">
+                        <button data-mockup-size="narrow" class="il-button il-button--light">Narrow</button>
+                        <button data-mockup-size="medium" class="il-button il-button--dark">Medium</button>
+                        <button data-mockup-size="wide" class="il-button il-button--light">Wide</button>
+                    </div>
+                    <div class="mockup-container">
+                        <div class="footer component-mockup">
+                            <div class="footer__main">
+                                <div class="footer__wordmark">
+                                    <il-wordmark></il-wordmark>
+                                </div>
+                                <div class="footer__social">
+                                    <a href="#social" class="component-mockup__slot">
+                                        slot="<span class="component-mockup__slot-name">social</span>"
+                                    </a>
+                                </div>
+                                <div class="footer__about">
+                                    <a href="#about" class="component-mockup__slot">
+                                        slot="<span class="component-mockup__slot-name">about</span>"
+                                    </a>
+                                </div>
+                                <div class="footer__default">
+                                    <a href="#default" class="component-mockup__slot component-mockup__slot--default">default slot</a>
+                                </div>
+                            </div>
+                            <div class="footer__parent">
+                                <a href="#parent" class="component-mockup__slot">
+                                    slot="<span class="component-mockup__slot-name">parent</span>"
+                                </a>
+                            </div>
+                            <div class="footer__links">
+                                <a href="#links" class="component-mockup__slot">
+                                    slot="<span class="component-mockup__slot-name">links</span>"
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="doc-text il-formatted">
+
+                    <ul class="slots">
+                        <li id="about">
+                            <h3>slot="<b>about</b>"<strong> (required)</strong></h3>
+                            <p>Unit name, address, contact information, important links</p>
+                        </li>
+                        <li id="social">
+                            <h3>slot="<b>social</b>"</h3>
+                            <p>Social media links</p>
+                        </li>
+                        <li id="parent">
+                            <h3>slot="<b>parent</b>"</h3>
+                            <p>Parent unit name</p>
+                        </li>
+                        <li id="links">
+                            <h3>slot="<b>links</b>"</h3>
+                            <p>Privacy policy, login, copyright</p>
+                        </li>
+                        <li id="default" class="default-slot">
+                            <h3>Default slot</h3>
+                            <p>Navigation, calls to action</p>
+                        </li>
+                    </ul>
+
+                    <h2>Test pages</h2>
+
+                    <ul>
+                        <li><a href="components/footer/max.html">Maximal</a></li>
+                        <li><a href="components/footer/min.html">Minimal</a></li>
+                        <li><a href="components/footer/onetrust.html">OneTrust button</a></li>
+                        <li><a href="components/footer/onetrust-with-links.html">OneTrust button with additional links</a></li>
+                    </ul>
+                </div>
+
+            </section>
+
+        </main>
+
+        <footer>
+            <il-footer>
+                <section slot="contact">
+                    <p><a href="https://marketing.illinois.edu/">Strategic Marketing and Branding</a></p>
+                </section>
+            </il-footer>
+        </footer>
+
+        <script src="../docs.js"></script>
+    </body>
+</html>

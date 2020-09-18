@@ -84,6 +84,7 @@
   border: 1px solid var(--il-orange);
   font: bold 1.25em/2.2 var(--il-source-sans);
   transition: background-color .3s;
+  cursor: pointer;
 
   &:hover, &:focus {
     background-color: var(--il-altgeld);
@@ -104,7 +105,7 @@
 
   &--light, &--cloud {
     background-color: var(--il-cloud) !important;
-    border-color: var(--il-cloud) !important;
+    border-color: var(--il-cloud-1) !important;
     color: var(--il-blue) !important;
 
     &:hover, &:focus {
@@ -259,3 +260,5 @@
     }
   }
 }
+
+@import "formatting";

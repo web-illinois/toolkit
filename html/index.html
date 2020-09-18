@@ -6,51 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0">
     <link rel="icon" href="https://cdn.brand.illinois.edu/favicon.ico">
     <link rel="stylesheet" href="/dist/toolkit.css">
+    <link rel="stylesheet" href="docs.css">
     <style>
-        body {
-            font: 18px var(--il-source-sans);
-            margin: 0;
-            padding: 2em;
-        }
-        .sections {
-            box-sizing: border-box;
-            margin: 0 auto;
-            padding: 50px;
-            max-width: 1300px;
-            display: grid;
-            grid-template-columns: 1fr;
-            grid-gap: 50px;
-            font-size: 18px;
-        }
-        @media (min-width: 800px) {
-            .sections {
-                grid-template-columns: repeat(3, 1fr);
-            }
-        }
-        .sections h2 {
-            font-size: 24px;
-            font-weight: 600;
-            margin: 0 0 .5em;
-            text-transform: uppercase;
-        }
-        .sections h3 {
-            font-size: 18px;
-            font-weight: 600;
-            margin: 1.5em 0 .25em;
-            text-transform: uppercase;
-        }
-        .sections h2 + h3 {
-            margin-top: 0;
-        }
-        .sections ul {
-            margin: 0;
-            padding: 0;
-        }
-        .sections li {
-            list-style: none;
-            margin: 0;
-            padding: 0;
-        }
     </style>
     <script src="/dist/toolkit.js"></script>
 </head>
@@ -74,10 +31,21 @@
             <h2>Stylesheets</h2>
 
             <ul>
-                <li><a href="styles/colors.html">Colors</a></li>
-                <li><a href="styles/fonts.html">Fonts</a></li>
+                <li><a href="colors.html">Colors</a></li>
                 <li><a href="icons/index.html">Icons</a></li>
                 <li><a href="styles/utility.html">Utility styles</a></li>
+            </ul>
+
+            <h2>Fonts</h2>
+
+            <ul>
+                <li><a href="fonts/source-sans.html">Source Sans</a></li>
+                <li><a href="fonts/source-sans-fixed.html">Source Sans (fixed)</a></li>
+                <li><a href="fonts/source-serif.html">Source Serif</a></li>
+                <li><a href="fonts/source-serif-fixed.html">Source Serif (fixed)</a></li>
+                <li><a href="fonts/montserrat.html">Montserrat</a></li>
+                <li><a href="fonts/montserrat-alt.html">Montserrat (alternate)</a></li>
+                <li><a href="fonts/fjalla-one.html">Fjalla One</a></li>
             </ul>
 
         </section>
@@ -106,7 +74,7 @@
 
             <h2>Pages</h2>
 
-            <h3>Header</h3>
+            <h3><a href="components/header.html">Header</a></h3>
 
             <ul>
                 <li><a href="components/header/default.html">Default</a></li>
@@ -118,7 +86,7 @@
                 <li><a href="components/header/links-and-search.html">With links and search form</a></li>
             </ul>
 
-            <h3>Footer</h3>
+            <h3><a href="components/footer.html">Footer</a></h3>
 
             <ul>
                 <li><a href="components/footer/max.html">Maximal</a></li>

@@ -1,0 +1,223 @@
+.il-formatted {
+  font: 400 18px/1.5em var(--il-source-sans);
+  color: var(--il-blue);
+  max-width: 100%;
+
+  a {
+    color: var(--il-industrial-blue);
+  }
+
+  h1 {
+    @include reset-heading;
+    @include font-weight(900);
+    margin-bottom: 1em;
+    font: 40px/.7em var(--il-source-sans);
+    color: var(--il-blue);
+  }
+  h2 {
+    @include reset-heading;
+    @include font-weight(700);
+    font: 36px/.78em var(--il-source-sans);
+    color: var(--il-blue);
+    margin: 1.5em 0 .75em;
+  }
+  h3 {
+    @include reset-heading;
+    @include font-weight(700);
+    font: 30px/1.3em var(--il-source-sans);
+    color: var(--il-blue);
+    margin: 1.5em 0 .75em;
+  }
+  h4 {
+    @include reset-heading;
+    @include font-weight(700);
+    font: bold 22px/1.3em var(--il-source-sans);
+    color: var(--il-blue);
+    margin: 1.5em 0 .75em;
+  }
+  h3 + h4 {
+    margin-top: .75em;
+  }
+  h5 {
+    @include reset-heading;
+    @include font-weight(600);
+    font: 20px/1.3em var(--il-source-sans);
+    color: var(--il-blue);
+    margin: 1.5em 0 .75em;
+    text-transform: uppercase;
+  }
+  h6 {
+    @include reset-heading;
+    @include font-weight(600);
+    font: 20px/1.3em var(--il-source-sans);
+    color: var(--il-blue);
+    margin: 1.5em 0 .75em;
+  }
+
+  p {
+    @include reset-spacing;
+    margin-bottom: 1.5em;
+  }
+
+  em {
+    @include font-weight(600);
+    font-style: normal;
+  }
+  strong {
+    @include font-weight(900);
+  }
+
+  mark {
+    background-color: var(--il-cloud-1);
+  }
+
+  hr {
+    @include reset-spacing;
+    margin-bottom: 1.5em;
+    border: 0;
+    height: 1px;
+    background-color: var(--il-industrial-blue);
+  }
+
+  blockquote {
+    @include reset-spacing;
+    margin: 0 48px 18px;
+  }
+  ul, ol {
+    margin: {
+      top: 0;
+      bottom: 0;
+    }
+  }
+
+  ol {
+    li {
+      &::marker {
+        color: var(--il-blue);
+      }
+    }
+    ol {
+      list-style-type: lower-alpha;
+      ol {
+        list-style-type: lower-roman;
+      }
+    }
+  }
+
+  ul {
+    @include reset-list;
+
+    li {
+      @include reset-list;
+      position: relative;
+      padding-left: 40px;
+
+      &::after {
+        box-sizing: border-box;
+        content: '';
+        position: absolute;
+        height: 8px;
+        width: 8px;
+        border: 2px solid var(--il-blue);
+        border-radius: 50%;
+        top: 10px;
+        left: 20px;
+        background-color: var(--il-blue);
+        opacity: .75;
+      }
+    }
+
+    li li::after {
+      background-color: transparent;
+    }
+  }
+
+  p + ul, p + ol {
+    margin-top: -10px;
+  }
+
+  li {
+    @include reset-spacing;
+  }
+
+  dt {
+    font-weight: bold;
+    margin-top: 12px;
+
+    &:first-of-type {
+      margin-top: 0;
+    }
+  }
+
+  dfn {
+    font-style: normal;
+    font-weight: bold;
+  }
+
+  figure {
+    @include reset-spacing;
+    display: inline-block;
+    margin: 1.5em 0;
+
+    @media (min-width: 800px) {
+      &.il-left {
+        clear: left;
+        float: left;
+        margin: 0 1.5em 1em 0;
+      }
+
+      &.il-right {
+        clear: right;
+        float: right;
+        margin: 0 0 1em 1.5em;
+      }
+    }
+  }
+  figcaption {
+    @include reset-spacing;
+    font-size: 14px;
+    padding: .1em 0 .35em;
+    border-bottom: 1px solid var(--il-industrial-blue);
+  }
+
+  table {
+    box-sizing: border-box;
+    border-collapse: collapse;
+    border: 1px solid var(--il-cloud);
+    width: 100%;
+    overflow: auto;
+  }
+  th {
+    text-align: left;
+    vertical-align: top;
+    font-weight: 700;
+    padding: .35em 1em;
+    border: 1px solid white;
+  }
+  thead th {
+    background-color: var(--il-industrial-blue);
+    color: white;
+    font-family: var(--il-source-sans);
+  }
+  tbody th {
+    color: var(--il-blue);
+    border: 1px solid #e1e0e0;
+  }
+  td {
+    text-align: left;
+    vertical-align: top;
+    padding: .35em 1em;
+    border: 1px solid #e1e0e0;
+    color: var(--il-blue);
+  }
+  tr:nth-child(even) {
+    background-color: var(--il-cloud-1);
+  }
+
+  pre {
+    position: relative;
+    max-width: 100%;
+    overflow: auto;
+  }
+}
+
