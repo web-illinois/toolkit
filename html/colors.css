@@ -116,24 +116,32 @@
 .compatibility-widget > .heading button:focus {
     outline: var(--il-focus-outline);
 }
-.compatibility-widget > .heading button:first-child {
+.compatibility-widget[data-mode=fg] > .heading button[data-mode=fg],
+.compatibility-widget[data-mode=bg] > .heading button[data-mode=bg] {
     background-color: #101010;
     color: white;
     cursor: default;
     text-decoration: none;
 }
 
-.compatibility-widget .options {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
+.compatibility-widget .options ul {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 4px;
     margin: 0;
     padding: 0;
 }
 .compatibility-widget .options li {
     list-style: none;
-    margin: 0 10px 10px 0;
-    padding: 0;
+    margin: 0;
+    padding: 6px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.compatibility-widget .options li.selected {
+    background-color: #101010;
 }
 .compatibility-widget .options button {
     position: relative;
@@ -145,19 +153,38 @@
     padding: 0;
     text-indent: 200%;
     white-space: nowrap;
-    border: 1px solid rgba(0, 0, 0, .4);
+    border: 3px solid rgba(0, 0, 0, .5);
     cursor: pointer;
+}
+.compatibility-widget .options li.selected button {
+    border-color: rgba(255, 255, 255, .75);
+}
+.compatibility-widget .options button:focus {
+    outline: var(--il-dotted-focus-outline);
+}
+.compatibility-widget .options li.selected button:focus {
+    outline-color: var(--il-arches-blue-2);
 }
 .compatibility-widget .widget {
     display: grid;
-    grid-template-columns: 100px 1fr 1fr;
+    grid-template-columns: 200px 1fr 1fr;
     grid-template-areas: "colors sample results";
-    grid-gap: 1em;
+    grid-gap: 50px;
 }
 .compatibility-widget .sample .preview {
-    padding: 1em;
-    font-size: 3em;
-    text-align: center;
+    position: relative;
+    width: 24em;
+    height: 12em;
     overflow: hidden;
-    border: 1px solid rgba(0, 0, 0, .4);
+    box-shadow: 5px 5px 12px rgba(0, 0, 0, .25);
+}
+.compatibility-widget .sample .preview samp {
+    white-space: nowrap;
+    font: 400 2em/1.1 var(--il-source-sans);
+}
+.compatibility-widget .sample .code {
+    margin-top: 20px;
+    padding: 20px;
+    background-color: var(--il-cloud-1);
+    font: 400 1em/1.5 var(--source-code-font);
 }

@@ -261,11 +261,11 @@
         </footer>
 
         <template id="compatibility-widget">
-            <div class="compatibility-widget">
+            <div class="compatibility-widget" data-color="" data-mode="fg">
                 <p class="heading">
                     Explore accessible combinations
-                    <button>as a foreground color</button>
-                    <button>as a background color</button>
+                    <button class="mode-option" type="button" data-mode="fg">as a foreground color</button>
+                    <button class="mode-option" type="button" data-mode="bg">as a background color</button>
                 </p>
                 <div class="widget">
                     <div class="options">
@@ -273,7 +273,12 @@
                     </div>
                     <div class="sample">
                         <div class="preview">
-                            This is the sample text
+                            <samp><b>The University of Illinois<br>
+                                at Urbana-Champaign</b><br>
+                                is one of the original 37 public<br>
+                                land-grant institutions<br>
+                                created after President Abraham Lincoln<br>
+                                signed the Morrill Act in 1862.</samp>
                         </div>
                         <div class="code">
                             color: var(<span class="fg-var"></span>);<br>

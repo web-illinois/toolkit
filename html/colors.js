@@ -1,4 +1,6 @@
-const illinoisColors = [
+(function() {
+
+    const colors = [
         {
             "name": "Illini Orange",
             "var": "il-orange",
@@ -14,93 +16,93 @@ const illinoisColors = [
                 },
             ],
         },
-    {
-        "name": "Illini Blue",
-        "var": "il-blue",
-        "pms": "2767",
-        "cmyk": "100/90/10/50",
-        "rgb": "19/41/75",
-        "hex": "#13294B",
-        "variants": [],
-    },
-    {
-        "name": "Alma Mater",
-        "var": "il-alma-mater",
-        "pms": "661C",
-        "cmyk": "100/85/15/7",
-"rgb": "30/56/119",
-"hex": "#1E3877",
-        "variants": [
-            {"hex": "#4D69A0", "var": "il-alma-mater-1"},
-            {"hex": "#849BC1", "var": "il-alma-mater-2"},
-            {"hex": "#AFC7DB", "var": "il-alma-mater-3"},
-        ],
-    },
-    {
-        "name": "Industrial Blue",
-        "var": "il-industrial-blue",
-        "pms": "285C",
-        "cmyk": "90/48/0/0",
-        "rgb": "29/88/167",
-        "hex": "#1D58A7",
-        "variants": [
-            {"hex": "#5783BC", "var": "il-industrial-blue-1"},
-            {"hex": "#90AED5", "var": "il-industrial-blue-2"},
-            {"hex": "#CAD9EF", "var": "il-industrial-blue-3"},
-        ],
-    },
-    {
-        "name": "Arches Blue",
-        "var": "il-arches-blue",
-        "pms": "298C",
-        "cmyk": "70/5/2/0",
-        "rgb": "0/159/212",
-        "hex": "#009FD4",
-        "variants": [
-            {"hex": "#7FC3E1", "var": "il-arches-blue-1"},
-            {"hex": "#A6D7EB", "var": "il-arches-blue-2"},
-            {"hex": "#D2EBF5", "var": "il-arches-blue-3"},
-        ],
-    },
-    {
-        "name": "Cloud",
-        "var": "il-cloud",
-        "style": "light",
-        "pms": "COOL GRAY 1C",
-        "cmyk": "3/2/2/1",
-        "rgb": "248/250/252",
-        "hex": "#F8FAFC",
-        "variants": [
-            {"hex": "#E8E9EB", "var": "il-cloud-1"},
-            {"hex": "#DDDEDE", "var": "il-cloud-2"},
-            {"hex": "#D2D2D2", "var": "il-cloud-3"},
-        ],
-    },
-    {
-        "name": "Heritage Orange",
-        "var": "il-heritage-orange",
-        "pms": "715C",
-        "cmyk": "0/57/94/00",
-        "rgb": "245/130/30",
-        "hex": "#F5821E",
-        "variants": [
-            {"hex": "#E56E15", "var": "il-heritage-orange-1"},
-            {"hex": "#CE5E11", "var": "il-heritage-orange-2"},
-            {"hex": "#B74D04", "var": "il-heritage-orange-3"},
-        ],
-    },
-];
+        {
+            "name": "Illini Blue",
+            "var": "il-blue",
+            "pms": "2767",
+            "cmyk": "100/90/10/50",
+            "rgb": "19/41/75",
+            "hex": "#13294B",
+            "variants": [],
+        },
+        {
+            "name": "Alma Mater",
+            "var": "il-alma-mater",
+            "pms": "661C",
+            "cmyk": "100/85/15/7",
+            "rgb": "30/56/119",
+            "hex": "#1E3877",
+            "variants": [
+                {"hex": "#4D69A0", "var": "il-alma-mater-1"},
+                {"hex": "#849BC1", "var": "il-alma-mater-2"},
+                {"hex": "#AFC7DB", "var": "il-alma-mater-3"},
+            ],
+        },
+        {
+            "name": "Industrial Blue",
+            "var": "il-industrial-blue",
+            "pms": "285C",
+            "cmyk": "90/48/0/0",
+            "rgb": "29/88/167",
+            "hex": "#1D58A7",
+            "variants": [
+                {"hex": "#5783BC", "var": "il-industrial-blue-1"},
+                {"hex": "#90AED5", "var": "il-industrial-blue-2"},
+                {"hex": "#CAD9EF", "var": "il-industrial-blue-3"},
+            ],
+        },
+        {
+            "name": "Arches Blue",
+            "var": "il-arches-blue",
+            "pms": "298C",
+            "cmyk": "70/5/2/0",
+            "rgb": "0/159/212",
+            "hex": "#009FD4",
+            "variants": [
+                {"hex": "#7FC3E1", "var": "il-arches-blue-1"},
+                {"hex": "#A6D7EB", "var": "il-arches-blue-2"},
+                {"hex": "#D2EBF5", "var": "il-arches-blue-3"},
+            ],
+        },
+        {
+            "name": "Cloud",
+            "var": "il-cloud",
+            "style": "light",
+            "pms": "COOL GRAY 1C",
+            "cmyk": "3/2/2/1",
+            "rgb": "248/250/252",
+            "hex": "#F8FAFC",
+            "variants": [
+                {"hex": "#E8E9EB", "var": "il-cloud-1"},
+                {"hex": "#DDDEDE", "var": "il-cloud-2"},
+                {"hex": "#D2D2D2", "var": "il-cloud-3"},
+            ],
+        },
+        {
+            "name": "Heritage Orange",
+            "var": "il-heritage-orange",
+            "pms": "715C",
+            "cmyk": "0/57/94/00",
+            "rgb": "245/130/30",
+            "hex": "#F5821E",
+            "variants": [
+                {"hex": "#E56E15", "var": "il-heritage-orange-1"},
+                {"hex": "#CE5E11", "var": "il-heritage-orange-2"},
+                {"hex": "#B74D04", "var": "il-heritage-orange-3"},
+            ],
+        },
+    ];
 
-const colorsByHex = {};
-illinoisColors.forEach(color => {
-    colorsByHex[color.hex] = color;
-    color.variants.forEach(variant => {
-        variant.parent = color;
-        colorsByHex[variant.hex] = variant;
-    })
-});
+    const colorsByHex = {};
+    colors.forEach(color => {
+        colorsByHex[color.hex] = color;
+        color.variants.forEach(variant => {
+            variant.parent = color;
+            colorsByHex[variant.hex] = variant;
+        })
+    });
 
-(function() {
+    const compatibleColors = {};
 
     function makeWidget(hex) {
         const widget = document.querySelector('#compatibility-widget').content.cloneNode(true);
@@ -117,14 +119,18 @@ illinoisColors.forEach(color => {
 
     function addWidget(palette) {
         const widget = document.querySelector('#compatibility-widget').content.cloneNode(true);
+        widget.querySelectorAll('.heading button').forEach(button => button.addEventListener('click', handleModeButtonClick));
         palette.appendChild(widget);
     }
 
     function getCompatibleColors(hex) {
-        return Object.keys(colorsByHex).filter(hex2 => {
-            const cc = new ColorContrast(hex, hex2);
-            return cc.isCompliant();
-        });
+        if (compatibleColors[hex] === undefined) {
+            compatibleColors[hex] = Object.keys(colorsByHex).filter(hex2 => {
+                const cc = new ColorContrast(hex, hex2);
+                return cc.isCompliant();
+            });
+        }
+        return compatibleColors[hex];
     }
 
     function getCompatiblePalette(widget, hex) {
@@ -137,10 +143,11 @@ illinoisColors.forEach(color => {
 
     function handleCompatibilityButtonClick(evt) {
         const button = evt.currentTarget;
-        const fg = button.getAttribute('data-fg');
-        const bg = button.getAttribute('data-bg');
-        const widget = button.parentNode.parentNode.parentNode.parentNode;
-        updateCompatibilityWidget(widget, fg, bg);
+        const color = button.getAttribute('data-color');
+        const palette = button.parentNode.parentNode;
+        const widget = palette.parentNode.parentNode.parentNode;
+        palette.setAttribute('data-selected', color);
+        updateCompatibilityWidget(widget);
     }
 
     function handleClipClick(evt) {
@@ -160,35 +167,58 @@ illinoisColors.forEach(color => {
             addWidget(palette);
         }
         const widget = palette.querySelector('.compatibility-widget');
-        updateCompatibilityWidget(widget, hex, hex);
+        widget.setAttribute('data-color', hex);
+        updateCompatibilityWidget(widget);
+    }
+
+    function handleModeButtonClick(evt) {
+        const button = evt.currentTarget;
+        const widget = button.parentNode.parentNode;
+        widget.setAttribute('data-mode', button.getAttribute('data-mode'));
+        updateCompatibilityWidget(widget);
     }
 
     function makeCompatiblePalette(hex) {
+        const colors = getCompatibleColors(hex);
         const list = document.createElement('ul');
         list.setAttribute('data-hex', hex);
-        addWidgetButtons(list, hex, getCompatibleColors(hex));
+        list.setAttribute('data-selected', colors[0]);
+        addWidgetButtons(list, hex, colors);
         return list;
     }
 
-    function updateCompatibilityWidget(widget, fg, bg) {
+    function updateCompatibilityWidget(widget) {
 
         const color = widget.getAttribute('data-color');
-        const altColor = widget.getAttribute('data-alt-color');
         const mode = widget.getAttribute('data-mode', 'fg');
 
-        widget.setAttribute('data-fg', fg);
-        widget.setAttribute('data-bg', bg);
-
-        if (!hasCompatiblePalette(widget, fg)) {
-            widget.querySelector('.options').appendChild(makeCompatiblePalette(fg));
+        if (!hasCompatiblePalette(widget, color)) {
+            widget.querySelector('.options').appendChild(makeCompatiblePalette(color));
         }
+        const color2 = getCompatiblePalette(widget, color).getAttribute('data-selected');
+
         widget.querySelectorAll('.options ul').forEach(ul => {
-            const ulHex = ul.getAttribute('data-hex');
-            ul.style.display = ulHex === fg ? 'block' : 'none';
+            const hex = ul.getAttribute('data-hex');
+            if (hex === color) {
+                ul.style.display = 'grid';
+                ul.querySelectorAll('button').forEach(button => {
+                    if (button.getAttribute('data-color') === color2) {
+                        button.parentNode.classList.add('selected');
+                    }
+                    else {
+                        button.parentNode.classList.remove('selected');
+                    }
+                });
+            }
+            else {
+                ul.style.display = 'none';
+            }
         });
 
+        const fg = mode === 'fg' ? color : color2;
+        const bg = mode === 'bg' ? color : color2;
+
         const preview = widget.querySelector('.preview');
-        console.debug(widget);
         preview.style.color = fg;
         preview.style.backgroundColor = bg;
 
@@ -197,6 +227,8 @@ illinoisColors.forEach(color => {
         const cc = new ColorContrast(fg, bg);
         const ratio = 1/cc.getRatio();
 
+        widget.querySelector('.fg-var').innerText = fgColor.var;
+        widget.querySelector('.bg-var').innerText = bgColor.var;
         widget.querySelector('.ration').innerText = ratio.toPrecision(4) + ':1';
         widget.querySelector('.aa-normal').innerText = cc.isCompliant('aa-normal') ? 'Pass' : 'Fail';
         widget.querySelector('.aa-large').innerText = cc.isCompliant('aa-large') ? 'Pass' : 'Fail';
@@ -209,8 +241,7 @@ illinoisColors.forEach(color => {
         const li = document.createElement('li');
         const button = document.createElement('button');
         button.appendChild(document.createTextNode(name));
-        button.setAttribute('data-fg', fg);
-        button.setAttribute('data-bg', bg);
+        button.setAttribute('data-color', bg);
         button.style.backgroundColor = hex;
         button.addEventListener('click', handleCompatibilityButtonClick);
         li.appendChild(button);
