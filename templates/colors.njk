@@ -63,26 +63,27 @@ script: /_assets/colors.js
             <div class="options">
 
             </div>
-            <div class="sample">
-                <div class="preview">
-                    <samp><b>The University of Illinois<br>
-                        at Urbana-Champaign</b><br>
-                        is one of the original 37 public<br>
-                        land-grant institutions<br>
-                        created after President Abraham Lincoln<br>
-                        signed the Morrill Act in 1862.</samp>
-                </div>
-                <div class="code">
-                    color: var(<span class="fg-var"></span>);<br>
-                    background-color: var(<span class="bg-var"></span>);
-                </div>
-            </div>
             <div class="results">
-
-                <p class="results__heading">Contrast ratio</p>
-                <p class="results__value ratio">Unknown</p>
-
+                <p>Contrast ratio: <span class="results__value ratio">Unknown</span></p>
+                <p><a class="il-link webaim">Check on WebAIM</a></p>
+            </div>
+            <div class="normal-text result">
+                <div class="preview" role="presentation">
+                    <p>The University of Illinois at Urbana-Champaign is one of the original 37 public
+                            land-grant institutions created after President Abraham Lincoln signed the Morrill Act in 1862.</p>
+                    <p>The University of Illinois at Urbana-Champaign is one of the original 37 public
+                            land-grant institutions created after President Abraham Lincoln signed the Morrill Act in 1862.</p>
+                    <p>The University of Illinois at Urbana-Champaign is one of the original 37 public
+                            land-grant institutions created after President Abraham Lincoln signed the Morrill Act in 1862.</p>
+                    <p>The University of Illinois at Urbana-Champaign is one of the original 37 public
+                            land-grant institutions created after President Abraham Lincoln signed the Morrill Act in 1862.</p>
+                    <p>The University of Illinois at Urbana-Champaign is one of the original 37 public
+                            land-grant institutions created after President Abraham Lincoln signed the Morrill Act in 1862.</p>
+                    <p>The University of Illinois at Urbana-Champaign is one of the original 37 public
+                            land-grant institutions created after President Abraham Lincoln signed the Morrill Act in 1862.</p>
+                </div>
                 <p class="results__heading">Normal text</p>
+                <p>Under 24px (Under 18.5px for bold text)</p>
                 <ul class="results__status">
                     <li>
                         WCAG AA: <span class="aa-normal">Unknown</span>
@@ -91,7 +92,16 @@ script: /_assets/colors.js
                         WCAG AAA: <span class="aaa-normal">Unknown</span>
                     </li>
                 </ul>
-
+            </div>
+            <div class="large-text result">
+                <div class="preview" role="presentation">
+                    <p>The University of Illinois at Urbana-Champaign is one of the original 37 public
+                        land-grant institutions created after President Abraham Lincoln signed the Morrill Act in 1862.</p>
+                    <p>The University of Illinois at Urbana-Champaign is one of the original 37 public
+                        land-grant institutions created after President Abraham Lincoln signed the Morrill Act in 1862.</p>
+                    <p>The University of Illinois at Urbana-Champaign is one of the original 37 public
+                        land-grant institutions created after President Abraham Lincoln signed the Morrill Act in 1862.</p>
+                </div>
                 <p class="results__heading">Large text</p>
                 <p>24px or larger (18.5px or larger for bold text)</p>
                 <ul class="results__status">
@@ -102,10 +112,11 @@ script: /_assets/colors.js
                         WCAG AAA: <span class="aaa-large">Unknown</span>
                     </li>
                 </ul>
-
-                <ul class="results__links il-links">
-                    <li><a class="webaim il-link">Check with WebAIM</a></li>
-                </ul>
+            </div>
+            <div class="code">
+                color: <span class="fg-var"></span>;<br>
+                background-color: <span class="bg-var"></span>;
+            </div>
 
             </div>
         </div>

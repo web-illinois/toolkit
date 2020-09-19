@@ -93,137 +93,193 @@
 }
 
 .compatibility-widget {
-    padding: 20px;
+    margin-top: 50px;
 }
 .compatibility-widget > .heading {
-    padding: 10px 0;
+    margin: 0 0 50px;
+    padding: 0;
+    text-align: center;
+    font-weight: 400;
+    font-size: 24px;
 }
 .compatibility-widget > .heading button {
     display: inline;
-    margin: 0 0 0 .5em;
-    padding: 10px;
-    border: 0;
-    font-weight: bold;
+    margin: 0;
+    padding: 6px 10px;
+    border-width: 4px;
+    border-style: solid;
+    border-color: transparent;
     font-family: inherit;
     font-size: inherit;
+    font-weight: inherit;
     background-color: transparent;
-    color: var(--il-arches-blue);
+    color: var(--il-industrial-blue);
     cursor: pointer;
+    text-decoration: underline;
+}
+.compatibility-widget > .heading button:first-of-type {
+    margin-left: .5em;
 }
 .compatibility-widget > .heading button:hover {
-    text-decoration: underline;
+    color: var(--il-orange);
 }
 .compatibility-widget > .heading button:focus {
     outline: var(--il-focus-outline);
 }
 .compatibility-widget[data-mode=fg] > .heading button[data-mode=fg],
 .compatibility-widget[data-mode=bg] > .heading button[data-mode=bg] {
-    background-color: #101010;
-    color: white;
+    border-color: var(--il-arches-blue-2);
     cursor: default;
     text-decoration: none;
 }
 
-.compatibility-widget .options ul {
+.compatibility-widget .widget {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-gap: 4px;
+    grid-template-columns: 240px 1fr 1fr;
+    grid-template-areas: "colors code code" "colors small large" "colors results results";
+    grid-gap: 50px;
+}
+.compatibility-widget .options {
+    grid-area: colors;
+}
+.compatibility-widget .options ul {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
     margin: 0;
     padding: 0;
 }
 .compatibility-widget .options li {
     list-style: none;
-    margin: 0;
-    padding: 6px;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-}
-.compatibility-widget .options li.selected {
-    background-color: #101010;
+    box-sizing: border-box;
+    position: relative;
+    width: 72px;
+    height: 72px;
+    margin: 0 6px 6px 0;
+    padding: 0;
 }
 .compatibility-widget .options button {
     position: relative;
     display: block;
-    width: 48px;
-    height: 48px;
+    width: 100%;
+    height: 100%;
     overflow: hidden;
     margin: 0;
     padding: 0;
     text-indent: 200%;
     white-space: nowrap;
-    border: 3px solid rgba(0, 0, 0, .5);
+    border: 2px solid rgba(0, 0, 0, .25);
     cursor: pointer;
+    transform: scale(.8);
+    transition: transform .3s, opacity .3s;
 }
-.compatibility-widget .options li.selected button {
-    border-color: rgba(255, 255, 255, .75);
+.compatibility-widget .options button:hover, .compatibility-widget .options button:focus {
+    opacity: 1;
+    border-color: black;
 }
 .compatibility-widget .options button:focus {
     outline: var(--il-dotted-focus-outline);
+    opacity: 1;
+}
+.compatibility-widget .options li.selected button {
+    transform: scale(1);
+    opacity: 1;
+    border-color: black;
+    border-width: 4px;
 }
 .compatibility-widget .options li.selected button:focus {
     outline-color: var(--il-arches-blue-2);
+    opacity: 1;
 }
-.compatibility-widget .widget {
-    display: grid;
-    grid-template-columns: 200px 1fr 1fr;
-    grid-template-areas: "colors sample results";
-    grid-gap: 50px;
+
+
+.compatibility-widget .result .results__heading {
+    margin: 0;
+    padding: 0;
+    font-weight: bold;
+    font-size: 24px;
 }
-.compatibility-widget .sample .preview {
+.compatibility-widget .result p {
+    margin: 0;
+    padding: 0;
+}
+.compatibility-widget .result .results__status {
+    margin: 20px 0 0;
+    padding: 0;
+}
+.compatibility-widget .preview {
     position: relative;
-    width: 24em;
-    height: 14em;
+    box-sizing: border-box;
+    width: 100%;
+    height: 300px;
     overflow: hidden;
+    margin-bottom: 20px;
+    padding: 20px;
+    line-height: 1.2;
     box-shadow: 5px 5px 12px rgba(0, 0, 0, .25);
+    transition: color .3s, background-color .3s;
 }
-.compatibility-widget .sample .preview samp {
-    white-space: nowrap;
-    font: 400 2em/1.1 var(--il-source-sans);
+.compatibility-widget .preview p {
+    margin: 0;
+    padding: 0;
+    width: 200%;
 }
-.compatibility-widget .sample .code {
-    margin-top: 20px;
+.compatibility-widget .preview p:first-child,
+.compatibility-widget .normal-text .preview p:nth-child(2) {
+    font-weight: 700;
+}
+.compatibility-widget .normal-text .preview p:first-child {
+    font-weight: 900;
+}
+.compatibility-widget .normal-text .preview p:nth-child(3) {
+    font-weight: 500;
+}
+.compatibility-widget .normal-text .preview {
+    font-size: 18px;
+    line-height: 1.5;
+}
+.compatibility-widget .large-text .preview {
+    font-size: 32px;
+}
+.compatibility-widget .code {
+    grid-area: code;
     padding: 20px;
     background-color: var(--il-cloud-1);
     font: 400 1em/1.5 var(--source-code-font);
 }
+
+
+.compatibility-widget .results {
+    grid-area: results;
+}
 .compatibility-widget .results p {
     margin: 0;
     padding: 0;
-}
-.compatibility-widget .results .results__heading {
-    margin-top: .5em;
-    font: 700 24px var(--il-source-sans);
-}
-.compatibility-widget .results .results__heading:first-child {
-    margin-top: 0;
-}
-.compatibility-widget .results__value {
-    font: 400 32px var(--il-source-sans);
+    text-align: center;
 }
 .compatibility-widget .results__status {
     list-style: none;
     margin: 5px 0 0;
     padding: 0;
-    display: flex;
-    flex-direction: row;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 20px;
     font-size: 18.5px;
 }
 .compatibility-widget .results__status li {
     list-style: none;
-    margin-right: 10px;
     padding: .5em 1em;
     border: 2px solid var(--il-cloud-1);
     font-weight: bold;
+    transition: all .3s;
+    text-align: center;
 }
 .compatibility-widget .results__status li.pass {
-    background-color: #101010;
-    border-color: #101010;
-    color: white;
 }
 .compatibility-widget .results__status li.fail {
-    color: var(--il-altgeld);
+    border-color: var(--il-altgeld);
+    background-color: var(--il-altgeld);
+    color: white;
 }
 .compatibility-widget .results__links {
     margin: 1em 0 0;

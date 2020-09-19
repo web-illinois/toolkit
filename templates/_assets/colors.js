@@ -101,6 +101,11 @@
             colorsByHex[variant.hex] = variant;
         })
     });
+    colorsByHex['#FFFFFF'] = {
+        'name': 'White',
+        'var': 'white',
+        'hex': '#FFFFFF'
+    };
 
     const compatibleColors = {};
 
@@ -200,7 +205,7 @@
         widget.querySelectorAll('.options ul').forEach(ul => {
             const hex = ul.getAttribute('data-hex');
             if (hex === color) {
-                ul.style.display = 'grid';
+                ul.style.display = 'flex';
                 ul.querySelectorAll('button').forEach(button => {
                     if (button.getAttribute('data-color') === color2) {
                         button.parentNode.classList.add('selected');
@@ -218,23 +223,31 @@
         const fg = mode === 'fg' ? color : color2;
         const bg = mode === 'bg' ? color : color2;
 
-        const preview = widget.querySelector('.preview');
-        preview.style.color = fg;
-        preview.style.backgroundColor = bg;
+        widget.querySelectorAll('.preview').forEach(preview => {
+            preview.style.color = fg;
+            preview.style.backgroundColor = bg;
+        });
 
         const fgColor = colorsByHex[fg];
         const bgColor = colorsByHex[bg];
         const cc = new ColorContrast(fg, bg);
         const ratio = 1/cc.getRatio();
 
-        widget.querySelector('.fg-var').innerText = fgColor.var;
-        widget.querySelector('.bg-var').innerText = bgColor.var;
+        widget.querySelector('.fg-var').innerText = makeColorValue(fgColor.var);
+        widget.querySelector('.bg-var').innerText = makeColorValue(bgColor.var);
         widget.querySelector('.ratio').innerText = ratio.toPrecision(4) + ':1';
+        widget.querySelector('.webaim').href = cc.getWebAimUrl();
         updateCompatibilityResult(widget.querySelector('.aa-normal'), cc.isCompliant('aa-normal'));
         updateCompatibilityResult(widget.querySelector('.aa-large'), cc.isCompliant('aa-large'));
         updateCompatibilityResult(widget.querySelector('.aaa-normal'), cc.isCompliant('aaa-normal'));
         updateCompatibilityResult(widget.querySelector('.aaa-large'), cc.isCompliant('aaa-large'));
-        widget.querySelector('.webaim').href = cc.getWebAimUrl();
+    }
+
+    function makeColorValue(val) {
+        if (val.match(/^il-/)) {
+            val = 'var(--' + val + ')';
+        }
+        return val;
     }
 
     function updateCompatibilityResult(result, compliant) {
