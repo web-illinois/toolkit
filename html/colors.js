@@ -229,12 +229,17 @@
 
         widget.querySelector('.fg-var').innerText = fgColor.var;
         widget.querySelector('.bg-var').innerText = bgColor.var;
-        widget.querySelector('.ration').innerText = ratio.toPrecision(4) + ':1';
-        widget.querySelector('.aa-normal').innerText = cc.isCompliant('aa-normal') ? 'Pass' : 'Fail';
-        widget.querySelector('.aa-large').innerText = cc.isCompliant('aa-large') ? 'Pass' : 'Fail';
-        widget.querySelector('.aaa-normal').innerText = cc.isCompliant('aaa-normal') ? 'Pass' : 'Fail';
-        widget.querySelector('.aaa-large').innerText = cc.isCompliant('aaa-large') ? 'Pass' : 'Fail';
+        widget.querySelector('.ratio').innerText = ratio.toPrecision(4) + ':1';
+        updateCompatibilityResult(widget.querySelector('.aa-normal'), cc.isCompliant('aa-normal'));
+        updateCompatibilityResult(widget.querySelector('.aa-large'), cc.isCompliant('aa-large'));
+        updateCompatibilityResult(widget.querySelector('.aaa-normal'), cc.isCompliant('aaa-normal'));
+        updateCompatibilityResult(widget.querySelector('.aaa-large'), cc.isCompliant('aaa-large'));
         widget.querySelector('.webaim').href = cc.getWebAimUrl();
+    }
+
+    function updateCompatibilityResult(result, compliant) {
+        result.innerText = compliant ? 'Pass' : 'Fail';
+        result.parentNode.className = compliant ? 'pass' : 'fail';
     }
 
     function makeCompabilityWidgetButton(name, hex, fg, bg) {

@@ -286,19 +286,35 @@
                         </div>
                     </div>
                     <div class="results">
-                        <dl>
-                            <dt>Ratio</dt>
-                            <dd class="ration">Unknown</dd>
-                            <dt>AA Normal</dt>
-                            <dd class="aa-normal">Unknown</dd>
-                            <dt>AA Large</dt>
-                            <dd class="aa-large">Unknown</dd>
-                            <dt>AAA Normal</dt>
-                            <dd class="aaa-normal">Unknown</dd>
-                            <dt>AAA Large</dt>
-                            <dd class="aaa-large">Unknown</dd>
-                        </dl>
-                        <a class="webaim">Check</a>
+
+                        <p class="results__heading">Contrast ratio</p>
+                        <p class="results__value ratio">Unknown</p>
+
+                        <p class="results__heading">Normal text</p>
+                        <ul class="results__status">
+                            <li>
+                                WCAG AA: <span class="aa-normal">Unknown</span>
+                            </li>
+                            <li>
+                                WCAG AAA: <span class="aaa-normal">Unknown</span>
+                            </li>
+                        </ul>
+
+                        <p class="results__heading">Large text</p>
+                        <p>24px or larger (18.5px or larger for bold text)</p>
+                        <ul class="results__status">
+                            <li>
+                                WCAG AA: <span class="aa-large">Unknown</span>
+                            </li>
+                            <li>
+                                WCAG AAA: <span class="aaa-large">Unknown</span>
+                            </li>
+                        </ul>
+
+                        <ul class="results__links il-links">
+                            <li><a class="webaim il-link">Check with WebAIM</a></li>
+                        </ul>
+
                     </div>
                 </div>
             </div>

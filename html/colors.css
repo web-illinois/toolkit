@@ -174,7 +174,7 @@
 .compatibility-widget .sample .preview {
     position: relative;
     width: 24em;
-    height: 12em;
+    height: 14em;
     overflow: hidden;
     box-shadow: 5px 5px 12px rgba(0, 0, 0, .25);
 }
@@ -187,4 +187,50 @@
     padding: 20px;
     background-color: var(--il-cloud-1);
     font: 400 1em/1.5 var(--source-code-font);
+}
+.compatibility-widget .results p {
+    margin: 0;
+    padding: 0;
+}
+.compatibility-widget .results .results__heading {
+    margin-top: .5em;
+    font: 700 24px var(--il-source-sans);
+}
+.compatibility-widget .results .results__heading:first-child {
+    margin-top: 0;
+}
+.compatibility-widget .results__value {
+    font: 400 32px var(--il-source-sans);
+}
+.compatibility-widget .results__status {
+    list-style: none;
+    margin: 5px 0 0;
+    padding: 0;
+    display: flex;
+    flex-direction: row;
+    font-size: 18.5px;
+}
+.compatibility-widget .results__status li {
+    list-style: none;
+    margin-right: 10px;
+    padding: .5em 1em;
+    border: 2px solid var(--il-cloud-1);
+    font-weight: bold;
+}
+.compatibility-widget .results__status li.pass {
+    background-color: #101010;
+    border-color: #101010;
+    color: white;
+}
+.compatibility-widget .results__status li.fail {
+    color: var(--il-altgeld);
+}
+.compatibility-widget .results__links {
+    margin: 1em 0 0;
+    padding: 0;
+}
+.compatibility-widget .results__links li {
+    list-style: none;
+    margin: 0;
+    padding: 0;
 }
