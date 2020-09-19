@@ -1,0 +1,41 @@
+---
+title: Documentation
+---
+
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>{{ title }}Brand toolkit for the web</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0">
+        <link rel="icon" href="https://cdn.brand.illinois.edu/favicon.ico">
+        <link rel="stylesheet" href="{{ "/dist/toolkit.css" | url }}">
+        <link rel="stylesheet" href="{{ "/_assets/docs.css" | url }}">
+        {% if stylesheet %}
+        <link rel="stylesheet" href="{{ stylesheet | url }}">
+        {% endif %}
+        <script src="{{ "/dist/toolkit.js" | url }}"></script>
+    </head>
+    <body class="il-page">
+        <header>
+            <il-header>
+                <il-unit-wordmark slot="wordmark">
+                    <h1><a href="https://marketing.illinois.edu/">Strategic Marketing and Branding</a></h1>
+                </il-unit-wordmark>
+            </il-header>
+        </header>
+        <main>
+
+                {{ content | safe }}
+
+        </main>
+
+        {% include "footer.njk" %}
+
+        {% if script %}
+            <script src="{{ script | url }}"></script>
+        {% endif %}
+    </body>
+</html>
+
+
