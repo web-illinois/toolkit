@@ -1,0 +1,34 @@
+[
+  {
+    "name": "Source Sans Pro",
+    "var": "il-source-sans",
+    "minWeight": 1,
+    "maxWeight": 999,
+    "weightStep": 1,
+    "italic": true
+  },
+  {
+    "name": "Source Serif Pro",
+    "var": "il-source-serif",
+    "minWeight": 1,
+    "maxWeight": 999,
+    "weightStep": 1,
+    "italic": true
+  },
+  {
+    "name": "Montserrat",
+    "var": "il-montserrat",
+    "minWeight": 100,
+    "maxWeight": 900,
+    "weightStep": 100,
+    "italic": true
+  },
+  {
+    "name": "Fjalla One",
+    "var": "il-fjalla-one",
+    "minWeight": 400,
+    "maxWeight": 400,
+    "weightStep": 1,
+    "italic": false
+  }
+]

@@ -1,0 +1,68 @@
+---
+layout: layouts/docs.njk
+title: Fonts
+stylesheet: /_assets/fonts.css
+script: /_assets/fonts.js
+---
+
+<div class="il-page-title il-page-title--poster">
+    <nav class="il-breadcrumbs">
+        <h2 class="il-invisible">You are here</h2>
+        <ol>
+            <li><a href="{{ "/" | url }}">Web toolkit</a></li>
+            <li>Fonts</li>
+        </ol>
+    </nav>
+    <h1>Fonts</h1>
+</div>
+
+<section class="doc-section">
+
+    <ul class="fonts">
+
+        {% for font in fonts %}
+            <li>
+
+                <article class="font" data-font="{{ font.var }}" data-font-size="36" data-font-weight="400" data-font-style="normal">
+                    <h2 class="font__name">{{ font.name }}</h2>
+                    <ul class="font__controls">
+                        <li>
+                            <label>
+                                Size
+                                <input class="font-size" type="range" min="18" max="72" value="36">
+                            </label>
+                        </li>
+                        <li>
+                            <label>
+                                Weight
+                                <input class="font-weight" type="range" min="{{ font.minWeight }}" max="{{ font.maxWeight }}" step="{{ font.weightStep }}" value="400"{{ ' disabled' if font.minWeight == font.maxWeight }}>
+                            </label>
+                        </li>
+                        <li>
+                            <label>
+                                <input type="checkbox" class="font-style" value="italic"{{ '' if font.italic else ' disabled' }}>
+                                Italic
+                            </label>
+                        </li>
+                    </ul>
+                    <div class="font__specimen" style="font-family: var(--{{ font.var }});font-weight: 400;">
+                        <samp>The University of Illinois at Urbana-Champaign is one of the original 37 public land-grant
+                            institutions
+                            created after President Abraham Lincoln signed the Morrill Act in 1862.</samp>
+                    </div>
+                    <div class="font__code">
+                        <code>
+                            font-family: var(--{{ font.var }});<br>
+                            font-size: <span class="font__size-value">36</span>px;<br>
+                            font-weight: <span class="font__weight-value">400</span>;<br>
+                            font-style: <span class="font__style-value">400</span>;
+                        </code>
+                    </div>
+                </article>
+
+            </li>
+        {% endfor %}
+
+    </ul>
+
+</section>

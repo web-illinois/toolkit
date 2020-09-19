@@ -274,33 +274,3 @@ ul.slots h3 strong {
     font: 400 1em var(--il-source-sans);
     color: var(--il-orange);
 }
-
-.fonts h2 {
-    margin-top: 3em;
-}
-code {
-    background-color: var(--il-cloud-1);
-    display: block;
-    padding: 1em;
-    font-size: 18px;
-    font-family: var(--source-code-font);
-}
-.font-specimen {
-    position: relative;
-    width: 100%;
-    height: 300px;
-    overflow: hidden;
-    font-size: 3.3em;
-    line-height: 1.2em;
-    background-color: var(--il-alma-mater);
-    color: white;
-}
-.font-specimen samp {
-    position: absolute;
-    top: -.5em;
-    left: .5em;
-    right: -3em;
-    bottom: -.5em;
-    display: block;
-    font-family: inherit;
-}
