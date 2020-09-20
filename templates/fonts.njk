@@ -23,13 +23,13 @@ script: /_assets/fonts.js
         {% for font in fonts %}
             <li>
 
-                <article class="font" data-font="{{ font.var }}" data-font-size="36" data-font-weight="400" data-font-style="normal">
+                <article class="font" data-font="{{ font.var }}" data-font-size="{{ font.defaultSize if font.defaultSize else '36' }}" data-font-weight="400" data-font-style="normal">
                     <h2 class="font__name">{{ font.name }}</h2>
                     <ul class="font__controls">
                         <li>
                             <label>
                                 Size
-                                <input class="font-size" type="range" min="18" max="72" value="36">
+                                <input class="font-size" type="range" min="18" max="72" value="{{ font.defaultSize if font.defaultSize else '36' }}">
                             </label>
                         </li>
                         <li>
@@ -52,10 +52,13 @@ script: /_assets/fonts.js
                     </div>
                     <div class="font__code">
                         <code>
+                            font: <span class="font__style-value">normal</span> <span class="font__weight-value">400</span> <span class="font__size-value">36</span>px var(--{{ font.var }});
+                            <!--
                             font-family: var(--{{ font.var }});<br>
                             font-size: <span class="font__size-value">36</span>px;<br>
                             font-weight: <span class="font__weight-value">400</span>;<br>
-                            font-style: <span class="font__style-value">400</span>;
+                            font-style: <span class="font__style-value">normal</span>;
+                            -->
                         </code>
                     </div>
                 </article>

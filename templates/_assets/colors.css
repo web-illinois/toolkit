@@ -6,7 +6,6 @@
     padding: 50px;
 }
 .palette + .palette {
-    margin-top: 50px;
     border-top: 1px solid var(--il-cloud-3);
     padding-top: 50px;
 }
@@ -29,7 +28,10 @@
     background-color: #101010;
     color: white;
 }
+
+
 .chip {
+    position: relative;
     border-width: 200px 0 0;
     border-style: solid none none;
     padding: 20px;
@@ -50,6 +52,22 @@
     margin: 0 0 .1em;
     padding: 0;
     font: 300 36px var(--source-code-font);
+}
+li.js-enabled .chip::after {
+    content: "more";
+    width: 48px;
+
+    text-align: center;
+    font: 48px/48px var(--il-icons-solid);
+    position: absolute;
+    top: -60px;
+    right: 12px;
+    color: white;
+    background-color: rgba(0, 0, 0, .5);
+    border-radius: 50%;
+}
+li.js-enabled.active .chip::after {
+    content: "less";
 }
 
 
@@ -94,6 +112,9 @@
 
 .compatibility-widget {
     margin-top: 50px;
+}
+.compatibility-widget[data-color=""] {
+    display: none;
 }
 .compatibility-widget > .heading {
     margin: 0 0 50px;

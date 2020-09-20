@@ -1,0 +1,79 @@
+.icons {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin: 0 auto;
+    padding: 50px;
+    max-width: 1300px;
+}
+.icons .icon {
+    list-style: none;
+    margin: 50px 20px 0 0;
+    padding: 0;
+}
+.icons .icon__thumbnail {
+    padding: 20px;
+    width: 200px;
+    text-align: center;
+}
+
+.icon-sample {
+    display: block;
+    font: normal 96px var(--il-icons-solid);
+}
+.icons[data-style=line] .icon-sample {
+    font-family: var(--il-icons-line);
+}
+.icons[data-style=solid] .icon__solid,
+.icons[data-style=line] .icon__line {
+    display: block;
+}
+.icons[data-style=solid] .icon__line,
+.icons[data-style=line] .icon__solid {
+    display: none;
+}
+.icons .entity {
+    margin: 6px 0 0;
+    padding: 0;
+    font: 300 18px var(--source-code-font);
+}
+.icons .ligatures {
+    margin: 6px 0 0;
+    padding: 0;
+    font-size: 24px;
+}
+.icons .icon__code {
+    display: none;
+    padding: 50px;
+}
+.icons .icon__code code {
+    display: block;
+    margin-bottom: 1em;
+    padding: 1em;
+    background-color: var(--il-cloud-1);
+    font-family: var(--source-code-font);
+}
+
+.icons .icon.expanded {
+    width: 100%;
+    margin-right: 0;
+    border-top: 1px solid var(--il-cloud-3);
+    border-bottom: 1px solid var(--il-cloud-3);
+    text-align: left;
+    display: grid;
+    grid-template-columns: 200px auto;
+    grid-gap: 50px;
+}
+.icons .icon.expanded + .icon.expanded {
+    margin-top: 0;
+    border-top: 0;
+}
+.icons .icon.expanded .icon__code {
+    display: block;
+}
+
+
+.icon .test::after {
+    content: attr(data-icon);
+    font-family: var(--il-icons-solid);
+}

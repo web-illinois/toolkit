@@ -26,6 +26,7 @@
   {
     "name": "Fjalla One",
     "var": "il-fjalla-one",
+    "defaultSize": 48,
     "minWeight": 400,
     "maxWeight": 400,
     "weightStep": 1,

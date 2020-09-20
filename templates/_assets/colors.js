@@ -154,10 +154,17 @@
         const item = evt.currentTarget;
         const palette = item.parentNode.parentNode;
         const hex = item.querySelector('.hex').innerText;
+        let newColor = hex;
         palette.querySelectorAll('.chip').forEach(chip => {
             const h = chip.querySelector('.hex').innerText;
             if (h === hex) {
-                chip.parentNode.classList.add('active');
+                if (chip.parentNode.classList.contains('active')) {
+                    newColor = '';
+                    chip.parentNode.classList.remove('active');
+                }
+                else {
+                    chip.parentNode.classList.add('active');
+                }
             }
             else {
                 chip.parentNode.classList.remove('active');
@@ -167,8 +174,8 @@
             addWidget(palette);
         }
         const widget = palette.querySelector('.compatibility-widget');
-        widget.setAttribute('data-color', hex);
-        updateCompatibilityWidget(widget);
+        widget.setAttribute('data-color', newColor);
+        if (newColor) updateCompatibilityWidget(widget);
     }
 
     function handleModeButtonClick(evt) {
