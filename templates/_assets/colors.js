@@ -109,16 +109,10 @@
 
     const compatibleColors = {};
 
-    function makeWidget(hex) {
-        const widget = document.querySelector('#compatibility-widget').content.cloneNode(true);
-        addWidgetButtons(widget, hex, compat);
-        card.appendChild(widget);
-    }
-
     function addWidgetButtons(list, hex, colors) {
         colors.forEach(h => {
             const c = colorsByHex[h];
-            list.appendChild(makeCompabilityWidgetButton(c.name, h, hex, h));
+            list.appendChild(makeCompabilityWidgetButton(c.var, h, hex));
         })
     }
 
@@ -134,6 +128,7 @@
                 const cc = new ColorContrast(hex, hex2);
                 return cc.isCompliant();
             });
+            //compatibleColors[hex].sort();
         }
         return compatibleColors[hex];
     }
@@ -255,12 +250,17 @@
         result.parentNode.className = compliant ? 'pass' : 'fail';
     }
 
-    function makeCompabilityWidgetButton(name, hex, fg, bg) {
+    function makeCompabilityWidgetButton(name, hex, color2) {
         const li = document.createElement('li');
         const button = document.createElement('button');
         button.appendChild(document.createTextNode(name));
-        button.setAttribute('data-color', bg);
+        button.setAttribute('data-color', hex);
         button.style.backgroundColor = hex;
+        const overlay = document.createElement('span');
+        overlay.style.color = color2;
+        overlay.style.borderColor = color2;
+        overlay.style.backgroundColor = color2;
+        button.appendChild(overlay);
         button.addEventListener('click', handleCompatibilityButtonClick);
         li.appendChild(button);
         return li;
