@@ -230,10 +230,30 @@ body {
     padding-left: 20px;
     padding-right: 20px;
 }
+.doc-code {
+    box-sizing: border-box;
+    margin-left: 20px;
+    margin-right: 20px;
+    padding: 20px;
+    background-color: var(--il-cloud-1);
+    font: 400 1.2em/1.5 var(--source-code-font);
+}
+.doc-code var {
+    background-color: var(--il-arches-blue);
+    color: white;
+    font-weight: bold;
+    font-style: normal;
+    padding: 0 .25em;
+    white-space: nowrap;
+}
 @media (min-width: 600px) {
     .doc-text {
         padding-left: 50px;
         padding-right: 50px;
+    }
+    .doc-code {
+        margin-left: 50px;
+        margin-right: 50px;
     }
 }
 @media (min-width: 900px) {
@@ -242,7 +262,13 @@ body {
         padding-right: calc(50% - 400px);
     }
 }
-
+@media (min-width: 1300px) {
+    .doc-code {
+        width: 1200px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
 
 ul.slots {
     list-style: none;

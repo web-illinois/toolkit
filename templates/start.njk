@@ -1,0 +1,55 @@
+---
+title: Getting started
+layout: layouts/docs.njk
+---
+
+<div class="il-page-title il-page-title--poster">
+    <nav class="il-breadcrumbs">
+        <h2 class="il-invisible">You are here</h2>
+        <ol>
+            <li><a href="{{ "/" | url }}">Web toolkit</a></li>
+            <li>Getting started</li>
+        </ol>
+    </nav>
+    <h1>Getting started</h1>
+</div>
+
+<section class="doc-section">
+
+    <div class="doc-text il-formatted">
+
+        <h2>Include it</h2>
+
+        <p>To include the toolkit on a page, add these lines to the <code>{{ "<head>" }}</code> element:</p>
+
+    </div>
+
+    <pre class="doc-code"><code>{{ "<link rel=\"stylesheet\" href=\"" + version.cdn + "/toolkit.css\">" }}
+{{ "<script src=\"" + version.cdn + "/toolkit.js\"></script>" }}</code></pre>
+
+    <div class="doc-text il-formatted">
+
+        <h2>Download it</h2>
+
+        <p>To use a local copy of the toolkit, download the toolkit files:</p>
+
+        <a class="il-icon-button" data-icon-name="download" href="{{ version.cdn }}/toolkit.zip" download>Download version 1.1</a>
+
+        <p>Add these lines to the <code>{{ '<head>' }}</code> element, using the path to your local files:</p>
+
+    </div>
+
+    <pre class="doc-code"><code>{{ "<link rel=\"stylesheet\" href=\"" }}<var>path to toolkit</var>{{ "/toolkit.css\">" }}
+{{ "<script src=\"" }}<var>path to toolkit</var>{{ "/toolkit.js\"></script>" }}</code></pre>
+
+    <div class="doc-text il-formatted">
+
+        <h2>Build it</h2>
+
+        <p>To build a custom version of the toolkit, check out the source code:</p>
+
+        <a href="{{ version.repository }}">View the toolkit repo on GitHub</a>
+
+    </div>
+
+</section>
