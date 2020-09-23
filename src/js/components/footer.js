@@ -10,23 +10,15 @@ class Footer extends LitElement {
     font-family: var(--il-source-sans);
 }
 
-.main, .parent-unit ::slotted(*), .links ::slotted(*) {
-    padding-left: 20px;
-    padding-right: 20px;
+.main, .parent-unit, .links {
+    padding-left: var(--il-content-margin);
+    padding-right: var(--il-content-margin);
 }
-@media (min-width: 600px) {
-    .main, .parent-unit ::slotted(*), .links ::slotted(*) {
-        padding-left: 50px;
-        padding-right: 50px;
-    }
+.main > div, .parent-unit ::slotted(*), .links ::slotted(*) {
+    max-width: var(--il-content-max-width);
+    margin-left: auto;
+    margin-right: auto;
 }
-@media (min-width: 1300px) {
-    .main, .parent-unit ::slotted(*), .links ::slotted(*) {
-        padding-left: calc(50% - 600px);
-        padding-right: calc(50% - 600px);
-    }
-}
-
 
 .main {
     background-color: var(--il-cloud-1);
@@ -38,7 +30,7 @@ class Footer extends LitElement {
 .main > div {
     box-sizing: border-box;
     display: grid;
-    grid-gap: 50px;
+    grid-gap: 60px var(--il-content-margin);
 }
 @media (max-width: 599px) {
     .main > div {
@@ -72,19 +64,29 @@ class Footer extends LitElement {
 .social {
     margin-bottom: 40px;
 }
-.parent-unit ::slotted(*) {
+.parent-unit, links {
+    padding-left: var(--il-content-margin);
+    padding-right: var(--il-content-margin);
+}
+.parent-unit ::slotted(*), links ::slotted(*) {
+    max-width: var(--il-content-max-width);
+    margin: 0 auto;
+}
+.parent-unit {
     background-color: var(--il-orange);
-    margin: 0;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    font: bold 18px var(--il-montserrat);
+}
+.links {
+    background-color: white;
+}
+.parent-unit ::slotted(*) {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    font: bold 22px var(--il-montserrat);
     letter-spacing: 1px;
     color: white;
     text-transform: uppercase;
 }
 .links ::slotted(*) {
-    background-color: white;
-    margin: 0;
     padding-top: 10px;
     padding-bottom: 10px;
 }

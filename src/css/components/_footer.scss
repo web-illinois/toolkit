@@ -46,13 +46,107 @@ il-footer {
     }
   }
 
-  *[slot=social] {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
+  .il-footer-social[slot=social] {
+    ul {
+      @include reset-list;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: flex-start;
+      align-items: center;
+      margin: -6px;
+    }
+    li {
+      @include reset-list-item;
+      padding: 6px;
+    }
+    a {
+      @include reset-link;
+      position: relative;
+      display: block;
+      background-color: var(--il-blue);
+      color: var(--il-cloud);
+      box-sizing: border-box;
+      font-size: 16px;
+      line-height: 30px;
+      padding: 0 10px;
+      border-radius: 15px;
+      white-space: nowrap;
+    }
+    a:focus {
+      outline: var(--il-dotted-focus-outline);
+    }
+    .icon {
+    }
+    a:hover, a:focus {
+      background-color: var(--il-industrial-blue);
+    }
+    a[href^="https://www.facebook.com/"],
+    a[href^="https://www.instagram.com/"],
+    a[href^="https://www.linkedin.com/"],
+    a[href^="https://www.pinterest.com/"],
+    a[href^="https://www.snapchat.com/"],
+    a[href^="https://twitter.com/"],
+    a[href^="https://weibo.com/"],
+    a[href^="https://www.whatsapp.com/"],
+    a[href^="https://www.youtube.com/"] {
+      position: relative;
+      margin: -4px -6px;
+      padding: 0;
+      height: 48px;
+      overflow: hidden;
+      width: 48px;
+      text-indent: 200%;
+      white-space: nowrap;
+      font: normal 30px var(--il-icons-solid);
+      background-color: transparent;
+      color: var(--il-blue);
+      border-radius: 0;
 
-    a, il-social-link {
-      margin-right: 10px;
+      &:hover, &:focus {
+        color: var(--il-industrial-blue);
+      }
+
+      &:before {
+        @extend %il-icon;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 100;
+        display: block;
+        height: 100%;
+        width: 100%;
+        text-align: center;
+        text-indent: 0;
+        white-space: normal;
+      }
+    }
+    a[href^="https://www.facebook.com/"]:before {
+      content: "facebook";
+    }
+    a[href^="https://www.instagram.com/"]:before {
+      content: "instagram";
+    }
+    a[href^="https://www.linkedin.com/"]:before {
+      content: "linkedin";
+    }
+    a[href^="https://www.pinterest.com/"]:before {
+      content: "pinterest";
+    }
+    a[href^="https://www.snapchat.com/"]:before {
+      content: "snapchat";
+    }
+    a[href^="https://twitter.com/"]:before {
+      content: "twitter";
+    }
+    a[href^="https://weibo.com/"]:before {
+      content: "weibo";
+    }
+    a[href^="https://www.whatsapp.com/"]:before {
+      content: "whatsapp";
+    }
+    a[href^="https://www.youtube.com/"]:before {
+      content: "youtube";
     }
   }
 
@@ -65,7 +159,7 @@ il-footer {
       border-radius: 4px;
       border: 0;
       background-color: var(--il-cloud-1);
-      font: bold 14px/34px var(--il-source-sans);
+      font: bold 16px/34px var(--il-source-sans);
       color: var(--il-blue);
       text-decoration: underline;
 
@@ -89,7 +183,7 @@ il-footer {
     a {
       display: inline-block;
       padding: 8px;
-      font: 14px var(--il-source-sans);
+      font: 16px var(--il-source-sans);
       color: var(--il-blue);
       white-space: nowrap;
 

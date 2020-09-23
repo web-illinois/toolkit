@@ -1,0 +1,107 @@
+---
+title: Header
+layout: layouts/docs.njk
+---
+
+<script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+
+<div class="il-page-title il-page-title--poster">
+    <nav class="il-breadcrumbs">
+        <h2 class="il-invisible">You are here</h2>
+        <ol>
+            <li><a href="{{ "/" | url }}">Web toolkit</a></li>
+            <li>Header</li>
+        </ol>
+    </nav>
+    <h1>Header</h1>
+</div>
+
+<section class="doc-section il-content">
+
+
+    <div class="doc-text il-formatted">
+        <h2>Structure</h2>
+        <p>The header has 2 areas for custom content:</p>
+    </div>
+
+</section>
+
+<div class="mockup" data-mockup-size="medium">
+    <div class="mockup-controls">
+        <button data-mockup-size="narrow" class="il-button il-button--light">Narrow</button>
+        <button data-mockup-size="medium" class="il-button il-button--dark">Medium</button>
+        <button data-mockup-size="wide" class="il-button il-button--light">Wide</button>
+    </div>
+    <div class="mockup-container">
+        <div class="header component-mockup">
+            <div class="header__campus">
+                University of Illinois Urbana-Champaign
+            </div>
+            <div class="header__main">
+                <div class="header__wordmark">
+                    <div class="component-mockup__slot">
+                        slot="<span class="component-mockup__slot-name">wordmark</span>"
+                    </div>
+                </div>
+                <div class="header__default">
+                    <div class="component-mockup__slot component-mockup__slot--default">default slot</div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<pre class="doc-code">
+    {%- filter e -%}
+<il-header>
+    <div slot="wordmark">
+        <!-- Organization wordmark goes here -->
+    </div>
+
+    <!-- Any additional content goes in the default slot -->
+
+</il-header>
+    {%- endfilter -%}
+</pre>
+
+<section class="il-content">
+    <div class="codepen">
+        <p class="codepen" data-height="399" data-theme-id="dark" data-default-tab="html,result" data-user="il-marketing" data-slug-hash="eYZbqrR" style="height: 399px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="Header with unit wordmark">
+  <span>See the Pen <a href="https://codepen.io/il-marketing/pen/eYZbqrR">
+  Header with unit wordmark</a> by UIUC Strategic Marketing and Branding (<a href="https://codepen.io/il-marketing">@il-marketing</a>)
+  on <a href="https://codepen.io">CodePen</a>.</span>
+        </p>
+
+    </div>
+</section>
+
+<section class="il-content">
+    <div class="doc-text">
+
+        <ul class="slots">
+            <li>
+                <h3>slot="<b>wordmark</b>"<strong> (required)</strong></h3>
+                <p>Unit wordmark</p>
+            </li>
+            <li class="default-slot">
+                <h3>Default slot</h3>
+                <p>Search, menu button, calls to action</p>
+            </li>
+        </ul>
+
+        <h2>Test pages</h2>
+
+        <ul>
+            <li><a href="../tests/components/header/default.html">Default</a></li>
+            <li><a href="../tests/components/header/name.html">Site name</a></li>
+            <li><a href="../tests/components/header/name-link.html">Site name with link</a></li>
+            <li><a href="../tests/components/header/wordmark.html">Wordmark</a></li>
+            <li><a href="../tests/components/header/buttons.html">With buttons</a></li>
+            <li><a href="../tests/components/header/search.html">With search form</a></li>
+            <li><a href="../tests/components/header/links-and-search.html">With links and search form</a></li>
+        </ul>
+
+    </div>
+</section>
+

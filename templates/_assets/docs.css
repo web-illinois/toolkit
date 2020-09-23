@@ -3,6 +3,7 @@ body {
     margin: 0;
     padding: 2em;
     --source-code-font: "Source Code Pro", Inconsolata, "Courier Prime", "Courier New", Courier, monospace;
+    //--il-content-max-width: auto;
 }
 
 .sections {
@@ -222,18 +223,12 @@ body {
 
 
 
-.doc-section {
-    padding-top: 50px;
-    padding-bottom: 50px;
-}
 .doc-text {
-    padding-left: 20px;
-    padding-right: 20px;
+    max-width: 800px;
 }
 .doc-code {
     box-sizing: border-box;
-    margin-left: 20px;
-    margin-right: 20px;
+    max-width: var(--il-content-max-width);
     padding: 20px;
     background-color: var(--il-cloud-1);
     font: 400 1.2em/1.5 var(--source-code-font);
@@ -245,29 +240,6 @@ body {
     font-style: normal;
     padding: 0 .25em;
     white-space: nowrap;
-}
-@media (min-width: 600px) {
-    .doc-text {
-        padding-left: 50px;
-        padding-right: 50px;
-    }
-    .doc-code {
-        margin-left: 50px;
-        margin-right: 50px;
-    }
-}
-@media (min-width: 900px) {
-    .doc-text {
-        padding-left: calc(50% - 400px);
-        padding-right: calc(50% - 400px);
-    }
-}
-@media (min-width: 1300px) {
-    .doc-code {
-        width: 1200px;
-        margin-left: auto;
-        margin-right: auto;
-    }
 }
 
 ul.slots {
@@ -299,4 +271,8 @@ ul.slots h3 b {
 ul.slots h3 strong {
     font: 400 1em var(--il-source-sans);
     color: var(--il-orange);
+}
+
+.docs-codepen {
+    --il-content-max-width: auto;
 }

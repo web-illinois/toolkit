@@ -30,20 +30,13 @@ class Header extends LitElement {
 }
 .campus, .site {
     background-color: white;
-    padding-left: 20px;
-    padding-right: 20px;
+    padding-left: var(--il-content-margin);
+    padding-right: var(--il-content-margin);
 }
-@media (min-width: 600px) {
-    .campus, .site {
-        padding-left: 50px;
-        padding-right: 50px;
-    }
-}
-@media (min-width: 1300px) {
-    .campus, .site {
-        padding-left: calc(50% - 600px);
-        padding-right: calc(50% - 600px);
-    }
+.campus > div, .site > div {
+    max-width: var(--il-content-max-width);
+    margin-left: auto;
+    margin-right: auto;
 }
 .campus a {
     display: inline-block;
@@ -112,10 +105,12 @@ class Header extends LitElement {
         return html`
 <div class="header ${this.wordmark}-wordmark">
     <div class="campus">
-        <a href="https://illinois.edu/">
-            <span>University of Illinois</span>
-            <span>Urbana&hyphen;Champaign</span>
-        </a>
+        <div>
+            <a href="https://illinois.edu/">
+                <span>University of Illinois</span>
+                <span>Urbana&hyphen;Champaign</span>
+            </a>
+        </div>
     </div>
     <div class="site">
         <div>
