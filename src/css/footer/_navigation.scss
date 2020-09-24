@@ -1,0 +1,70 @@
+.il-footer-navigation {
+  color: var(--il-blue);
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 50px;
+  font: 18px var(--il-source-sans);
+
+  h2, h3, h4 {
+    @include reset-heading;
+    margin-bottom: 6px;
+    font: bold 20px var(--il-source-sans);
+  }
+
+  ul {
+    @include reset-list;
+
+    li {
+      @include reset-list;
+
+      a {
+        display: block;
+        padding: 6px 0;
+        border-bottom: 1px solid white;
+      }
+    }
+  }
+
+  a {
+    @extend .il-link;
+  }
+
+  .il-actions {
+
+    ul {
+      @include reset-list();
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: flex-start;
+      align-items: flex-start;
+    }
+
+    li {
+      @include reset-list-item;
+      margin: 0 20px 20px 0;
+    }
+
+    a {
+      @extend .il-button;
+      border: 0;
+      background-color: var(--il-link-color);
+      color: var(--il-cloud);
+
+      &:hover, &:focus {
+        background-color: var(--il-link-hover-color);
+        color: white;
+      }
+    }
+  }
+
+  @media (min-width: 800px) {
+    grid-template-columns: repeat(2, 1fr);
+
+    .il-actions {
+      grid-column-start: 1;
+      grid-column-end: span 2;
+    }
+  }
+}
+

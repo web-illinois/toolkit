@@ -1,0 +1,65 @@
+---
+title: Icons, line
+layout: layouts/test.njk
+---
+<script src="{{ "/_assets/tests/icons.js" }}"></script>
+<style>
+    body {
+        margin: 0;
+        padding: 1em;
+    }
+    table {
+        border: 1px solid black;
+        border-collapse: collapse;
+    }
+    th, td {
+        border: 1px solid black;
+        text-align: center;
+        vertical-align: center;
+        padding: .5em;
+        font-size: 2em;
+    }
+    .test-css-icon:before {
+        font-family: var(--il-icons-line);
+    }
+    .il-icon, .test-css-icon {
+        font-size: 4em;
+    }
+    {% for icon in icons %}
+    {% for ligature in icon.ligatures %}
+    #css-ligature-{{ ligature }}:before {
+        content: "{{ ligature }}";
+    }
+    #css-character-{{ ligature }}:before {
+        content: "{{ icon.css }}";
+    }
+    {% endfor %}
+    {% endfor %}
+</style>
+
+<table>
+    <thead>
+        <tr>
+            <th>Ligature</th>
+            <th>Character</th>
+            <th>HTML ligature</th>
+            <th>HTML character</th>
+            <th>CSS ligature</th>
+            <th>CSS character</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for icon in icons %}
+            {% for ligature in icon.ligatures %}
+                <tr>
+                    <td>{{ ligature }}</td>
+                    <td>{{ icon.entity }}</td>
+                    <td><i class="il-icon-line">{{ ligature }}</i></td>
+                    <td><i class="il-icon-line">{{ icon.entity | safe }}</i></td>
+                    <td><span class="test-css-icon test-css-icon--ligature" id="css-ligature-{{ ligature }}"></span></td>
+                    <td><span class="test-css-icon test-css-icon--character" id="css-character-{{ ligature }}"></span></td>
+                </tr>
+            {% endfor %}
+        {% endfor %}
+    </tbody>
+</table>

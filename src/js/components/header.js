@@ -3,14 +3,6 @@ import './wordmark';
 import './unit-wordmark';
 
 class Header extends LitElement {
-    static get properties() {
-        return {
-            name: {type: String},
-            wordmark: {attribute: false}
-        };
-
-    }
-
     static get styles() {
         return css`
 .header {
@@ -19,9 +11,6 @@ class Header extends LitElement {
 .campus {
     background-color: var(--il-cloud);
     border-bottom: 1px solid var(--il-cloud-1);
-}
-.header.default-wordmark .campus {
-    display: none;
 }
 .site {
     background-color: white;
@@ -78,32 +67,9 @@ class Header extends LitElement {
         `;
     }
 
-    constructor() {
-        super();
-        this.wordmark = 'default';
-        document.addEventListener('DOMContentLoaded', () => {
-            this.wordmark = this.hasCustomWordmark() ? 'custom' : 'default';
-        });
-    }
-
-    getCampusWordmark() {
-        return html`
-<div class="campus">
-        <div>
-            <span>University of Illinois</span>
-            <span>Urbana&hyphen;Champaign</span>
-        </div>
-</div>
-        `;
-    }
-
-    hasCustomWordmark() {
-        return this.querySelector('[slot="wordmark"]') !== null;
-    }
-
     render() {
         return html`
-<div class="header ${this.wordmark}-wordmark">
+<div class="header">
     <div class="campus">
         <div>
             <a href="https://illinois.edu/">
@@ -115,9 +81,7 @@ class Header extends LitElement {
     <div class="site">
         <div>
             <div class="identity">
-                <slot name="wordmark">
-                    <il-wordmark></il-wordmark>
-                </slot>
+                <slot name="wordmark"></slot>
             </div>
             <div>
                 <div class="content">

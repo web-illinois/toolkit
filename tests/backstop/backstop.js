@@ -7,6 +7,12 @@ const desktop = {
     "height": 1024
 };
 
+const hdtv = {
+    "label": "hdtv",
+    "width": 1920,
+    "height": 1080
+};
+
 const iphone = {
     "label": "iphone",
     "width": 375,
@@ -14,44 +20,32 @@ const iphone = {
 };
 
 module.exports = {
-    "id": "web-components",
-    "viewports": [desktop],
+    "id": "brand-toolkit",
+    "viewports": [iphone, desktop, hdtv],
     "scenarios": [
         {
-            'label': 'test1-red-hover',
-            'url': host + '/components/test1/',
-            'actions': [
-                {'hover': '#test-one >>> #red-button'}
-            ]
+            'label': 'colors',
+            'url': host + '/tests/colors/',
+            'viewports': [desktop]
         },
         {
-            'label': 'test1-red',
-            'url': host + '/components/test1/',
-            'actions': [
-                { 'click': '#test-one >>> #red-button' }
-            ]
+            'label': 'fonts-source-sans',
+            'url': host + '/tests/fonts/source-sans/',
+            'viewports': [desktop]
         },
         {
-            'label': 'test1-blue-hover',
-            'url': host + '/components/test1/',
-            'actions': [
-                { 'hover': '#test-one >>> #blue-button' }
-            ]
+            'label': 'icons-solid',
+            'url': host + '/tests/icons/solid/',
+            'viewports': [desktop]
         },
         {
-            'label': 'test1-blue',
-            'url': host + '/components/test1/',
-            'actions': [
-                { 'click': '#test-one >>> #blue-button' }
-            ]
+            'label': 'icons-line',
+            'url': host + '/tests/icons/line/',
+            'viewports': [desktop]
         },
         {
-            'label': 'test2--click-and-hover',
-            'url': host + '/components/test2/',
-            'actions': [
-                { 'click': '#test-two >>> #red-button' },
-                { 'hover': '#test-two >>> #blue-button' }
-            ]
+            'label': 'footer-max',
+            'url': host + '/tests/footer/max/'
         }
     ],
     "paths": {

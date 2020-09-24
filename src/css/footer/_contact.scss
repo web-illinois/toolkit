@@ -1,0 +1,40 @@
+.il-footer-contact {
+  font-size: 18px;
+  color: var(--il-blue);
+
+  h1, h2, p {
+    margin: 0;
+    padding: 0;
+    font-size: 1em;
+
+    &:first-child {
+      font-weight: 700;
+      font-size: 1.1em;
+      margin-bottom: 2px;
+    }
+  }
+
+  dl {
+    @include reset-spacing;
+  }
+
+  dt {
+    @include reset-spacing;
+    clear: both;
+    float: left;
+    margin-right: .5em;
+
+    &::after {
+      content: ":";
+    }
+  }
+
+  dd {
+    @include reset-spacing;
+  }
+
+  a {
+    @extend .il-link;
+  }
+}
+
