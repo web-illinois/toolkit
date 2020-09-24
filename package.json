@@ -2,7 +2,7 @@
   "name": "toolkit",
   "version": "1.1.0",
   "description": "Brand toolkit for the web",
-  "repository": "https://github.com/il-marketing/brand-toolkit",
+  "repository": "https://github.com/il-marketing/web-toolkit",
   "author": "Office of Strategic Marketing and Branding <marketing@illinois.edu>",
   "license": "NCSA",
   "scripts": {

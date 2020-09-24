@@ -24,6 +24,10 @@ module.exports = {
     "viewports": [iphone, desktop, hdtv],
     "scenarios": [
         {
+            'label': 'footer-max',
+            'url': host + '/tests/footer/max/'
+        },
+        {
             'label': 'colors',
             'url': host + '/tests/colors/',
             'viewports': [desktop]
@@ -31,7 +35,37 @@ module.exports = {
         {
             'label': 'fonts-source-sans',
             'url': host + '/tests/fonts/source-sans/',
-            'viewports': [desktop]
+            'viewports': [hdtv]
+        },
+        {
+            'label': 'fonts-source-sans-fixed',
+            'url': host + '/tests/fonts/source-sans-fixed/',
+            'viewports': [hdtv]
+        },
+        {
+            'label': 'fonts-source-serif',
+            'url': host + '/tests/fonts/source-serif/',
+            'viewports': [hdtv]
+        },
+        {
+            'label': 'fonts-source-serif-fixed',
+            'url': host + '/tests/fonts/source-serif-fixed/',
+            'viewports': [hdtv]
+        },
+        {
+            'label': 'fonts-montserrat',
+            'url': host + '/tests/fonts/montserrat/',
+            'viewports': [hdtv]
+        },
+        {
+            'label': 'fonts-montserrat-alt',
+            'url': host + '/tests/fonts/montserrat-alt/',
+            'viewports': [hdtv]
+        },
+        {
+            'label': 'fonts-fjalla-one',
+            'url': host + '/tests/fonts/fjalla-one/',
+            'viewports': [hdtv]
         },
         {
             'label': 'icons-solid',
@@ -42,10 +76,6 @@ module.exports = {
             'label': 'icons-line',
             'url': host + '/tests/icons/line/',
             'viewports': [desktop]
-        },
-        {
-            'label': 'footer-max',
-            'url': host + '/tests/footer/max/'
         }
     ],
     "paths": {

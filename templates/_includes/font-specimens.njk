@@ -1,0 +1,29 @@
+<style>
+    body {
+        margin: 0;
+        padding: 1em;
+    }
+    p {
+        margin: 0;
+        padding: .5em;
+        font-size: 3em;
+    }
+    samp {
+        display: block;
+    }
+    code {
+        display: block;
+        font-size: .5em;
+    }
+</style>
+{% for weight in weights %}
+    {% for style in styles %}
+        <p>
+            <samp id="{{ family }}-{{ weight }}-{{ style }}" style="font: {{ style }} {{ weight }} 1em var(--{{ family }})">
+                The University of Illinois at Urbana-Champaign is one of the original 37 public land-grant
+                institutions created after President Abraham Lincoln signed the Morrill Act in 1862.
+            </samp>
+            <code>font: {{ style }} {{ weight }} 1em var(--{{ family }})</code>
+        </p>
+    {% endfor %}
+{% endfor %}
