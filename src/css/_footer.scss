@@ -1,0 +1,17 @@
+il-footer {
+
+  *[slot=parent-unit] {
+    a {
+      color: inherit;
+
+      &:focus {
+        outline: 3px dashed var(--il-blue);
+      }
+    }
+  }
+}
+
+@import "footer/contact";
+@import "footer/links";
+@import "footer/navigation";
+@import "footer/social";

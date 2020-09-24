@@ -6,6 +6,9 @@
 :root {
   --il-content-max-width: 1200px;
   --il-content-margin: 20px;
+  --il-link-color: var(--il-alma-mater);
+  --il-visited-link-color: var(--il-blue);
+  --il-link-hover-color: var(--il-orange);
   --il-focus-outline: 3px dashed var(--il-arches-blue);
   --il-dotted-focus-outline: 4px dotted var(--il-arches-blue);
 
@@ -49,15 +52,15 @@
 }
 
 .il-link {
-  color: var(--il-alma-mater);
+  color: var(--il-link-color);
   transition: color .3s;
 
   &:visited {
-    color: var(--il-blue);
+    color: var(--il-visited-link-color);
   }
 
   &:hover, &:focus {
-    color: var(--il-altgeld);
+    color: var(--il-link-hover-color);
   }
 
   &:focus {
