@@ -1,5 +1,4 @@
 .il-footer-navigation {
-  color: var(--il-blue);
   display: grid;
   grid-template-columns: 1fr;
   grid-gap: 50px;
@@ -48,11 +47,11 @@
     a {
       @extend .il-button;
       border: 0;
-      background-color: var(--il-link-color);
-      color: var(--il-cloud);
+      background-color: var(--il-orange);
+      color: white;
 
       &:hover, &:focus {
-        background-color: var(--il-link-hover-color);
+        background-color: var(--il-altgeld);
         color: white;
       }
     }
