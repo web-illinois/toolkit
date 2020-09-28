@@ -7,13 +7,10 @@ class Header extends LitElement {
         return css`
 .header {
     border-top: 7px solid var(--il-orange);
-}
-.campus {
-    background-color: var(--il-cloud);
-    border-bottom: 1px solid var(--il-cloud-1);
+    background-color: white;
+    color: var(--il-blue);
 }
 .site {
-    background-color: white;
     padding-top: 20px;
     padding-bottom: 20px;
 }
