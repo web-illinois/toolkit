@@ -1,5 +1,4 @@
 import {LitElement, html, css} from 'lit-element';
-import './block-i';
 
 class UnitWordmark extends LitElement {
 
@@ -24,7 +23,7 @@ class UnitWordmark extends LitElement {
     justify-content: flex-start;
     align-items: center;
 }
-.block-i {
+div.block-i {
     display: block;
     position: absolute;
     height: 43px;
@@ -33,12 +32,21 @@ class UnitWordmark extends LitElement {
     top: 50%;
     margin-top: -21px;
 }
-.block-i a {
+div.block-i a {
     display: block;
     text-decoration: none;
 }
-.block-i a:focus {
+div.block-i a:focus {
     outline: var(--il-dotted-focus-outline);
+}
+svg.block-i {
+    display: block;
+}
+.block-i__outline {
+    fill: var(--il-blue);
+}
+.block-i__fill {
+    fill: var(--il-orange);
 }
 
 .wordmark.narrow {
@@ -111,11 +119,21 @@ class UnitWordmark extends LitElement {
         }
     }
 
+    renderBlockI() {
+        return html`
+<svg class="block-i" mlns="http://www.w3.org/2000/svg" viewBox="0 0 54.2 78.2">
+    <title>Block I logo</title>
+    <path class="block-i__outline" d="M54.2 21.1V0H0v21.1h12v36.1H0v21.1h54.2V57.2h-12V21.1h12zM42.1 60.2h9v15H3v-15h9c1.7 0 3-1.3 3-3V21.1c0-1.7-1.3-3-3-3H3V3h48.1v15h-9c-1.7 0-3 1.3-3 3v36.1c0 1.7 1.4 3.1 3 3.1z"/>
+    <path class="block-i__fill" d="M42.1 18.1h9V3H3v15h9c1.7 0 3 1.3 3 3v36.1c0 1.7-1.3 3-3 3H3v15h48.1v-15h-9c-1.7 0-3-1.3-3-3v-36c0-1.7 1.4-3 3-3z"/>
+</svg>
+        `;
+    }
+
     render() {
         return html`
 <div class="wordmark ${this.width} ${this.height}">
     <div class="block-i">
-        <a href="https://illinois.edu"><il-block-i></il-block-i></a>
+        <a href="https://illinois.edu">${this.renderBlockI()}</a>
     </div>
     <div class="name">
         <slot></slot>

@@ -1,5 +1,4 @@
 import { LitElement, html, css } from 'lit-element';
-import './wordmark';
 
 class Footer extends LitElement {
     static get styles() {

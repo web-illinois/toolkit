@@ -1,5 +1,4 @@
 import {LitElement, html, css} from 'lit-element';
-import './wordmark';
 import './unit-wordmark';
 
 class Header extends LitElement {
