@@ -1,28 +1,25 @@
 ---
 title: Footer
-layout: layouts/docs.njk
 ---
 
-<div class="il-page-title il-page-title--poster">
-    <nav class="il-breadcrumbs">
-        <h2 class="il-invisible">You are here</h2>
-        <ol>
-            <li><a href="../index.html">Home</a></li>
-            <li><a href="../components.html">Components</a></li>
-            <li>Footer</li>
-        </ol>
-    </nav>
-    <h1>Footer</h1>
-</div>
+{% extends "layouts/docs.njk" %}
 
-<section class="il-content">
+{% block scripts %}
+    <script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+{% endblock %}
+
+{% block main %}
+
+<section class="il-content doc-section">
+    <div class="doc-text">
+        <h1>Footer</h1>
+    </div>
     <div class="docs-codepen">
         <p class="codepen" data-height="600" data-theme-id="dark" data-default-tab="html,result" data-user="il-marketing" data-slug-hash="RwavbJa" style="height: 30vw; max-height: 60vh; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="Footer">
           <span>See the Pen <a href="https://codepen.io/il-marketing/pen/RwavbJa">
           Footer</a> by UIUC Strategic Marketing and Branding (<a href="https://codepen.io/il-marketing">@il-marketing</a>)
           on <a href="https://codepen.io">CodePen</a>.</span>
         </p>
-        <script async src="https://static.codepen.io/assets/embed/ei.js"></script>
     </div>
 
 </section>
@@ -180,3 +177,17 @@ layout: layouts/docs.njk
     </div>
 
 </section>
+{% endblock %}
+
+{% block footer %}
+<section class="il-content doc-next">
+    <div>
+        <h2>What's next?</h2>
+        <ul>
+            <li><a href="{{ "/unit-wordmark/" | url }}">Creating unit wordmarks</a></li>
+            <li><a href="{{ "/" | url }}">Toolkit homepage</a></li>
+        </ul>
+    </div>
+</section>
+{{ super() }}
+{% endblock %}

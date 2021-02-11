@@ -9,13 +9,13 @@ The goal of this toolkit is to make it easier for website creators to implement 
 <script src="https://cdn.brand.illinois.edu/web-toolkit/1.1/toolkit.js"></script>
 ``` 
 
-Learm more about installing and using the toolkit in [the full documentation](https://cdn.brand.illinois.edu/web-toolkit/1.1/docs/).
+Learm more about installing and using the toolkit in [the full documentation](https://toolkit.marketing.web.illinois.edu/).
 
 ## Build
 
-To build a local copy of the library, first make sure you have all project dependencies installed by running `npm install`.
+To build a local copy of the toolkit, first make sure you have all project dependencies installed by running `npm install`.
 
-Create the build with this script: 
+Build the toolkit with this script: 
 
 ````
 npm run build

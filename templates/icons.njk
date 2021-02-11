@@ -1,25 +1,25 @@
 ---
 title: Icons
-layout: layouts/docs.njk
-stylesheet: /_assets/icons.css
-script: /_assets/icons.js
 ---
 
-<div class="il-page-title il-page-title--poster">
-    <nav class="il-breadcrumbs">
-        <h2 class="il-invisible">You are here</h2>
-        <ol>
-            <li><a href="{{ "/" | url }}">Web toolkit</a></li>
-            <li>Icons</li>
-        </ol>
-    </nav>
-    <h1>Icons</h1>
-</div>
+{% extends "layouts/docs.njk" %}
 
-<section class="doc-section">
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ "/_assets/icons.css" | url }}">
+{% endblock %}
 
-    <button class="font-style" data-font-style="solid">Solid</button>
-    <button class="font-style" data-font-style="line">Line</button>
+{% block scripts %}
+    <script src="{{ "/_assets/icons.js" | url }}"></script>
+{% endblock %}
+
+{% block main %}
+
+<section class="il-content doc-section">
+    <div class="doc-text">
+        <h1>Icons</h1>
+        <button class="font-style" data-font-style="solid">Solid</button>
+        <button class="font-style" data-font-style="line">Line</button>
+    </div>
 
     <ul class="icons" data-style="solid">
         {% for icon in icons %}
@@ -153,14 +153,18 @@ script: /_assets/icons.js
         {% endfor %}
     </ul>
 
-    <section class="doc-text il-formatted">
-
-        <h2>Test pages</h2>
-
-        <ul>
-            <li><a href="tests/icons/index.html">All icons</a></li>
-        </ul>
-
-    </section>
-
 </section>
+{% endblock %}
+
+{% block footer %}
+<section class="il-content doc-next">
+    <div>
+        <h2>What's next?</h2>
+        <ul>
+            <li><a href="{{ "/header/" | url }}">Using the standard web header</a></li>
+            <li><a href="{{ "/" | url }}">Toolkit homepage</a></li>
+        </ul>
+    </div>
+</section>
+{{ super() }}
+{% endblock %}

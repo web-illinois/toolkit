@@ -8,7 +8,7 @@ class Footer extends LitElement {
     line-height: 1.5em;
     font-family: var(--il-source-sans);
     background-color: var(--il-blue);
-    color: white;
+    color: var(--il-cloud-3);
 }
 
 .main, .parent-unit, .links {

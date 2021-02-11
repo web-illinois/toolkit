@@ -1,29 +1,50 @@
 ---
-layout: layouts/docs.njk
+title: Home
 ---
+
+{% extends "layouts/docs.njk" %}
+
+{% block main %}
 
 <div class="il-page-title il-page-title--poster">
     <h1>Brand toolkit for the web</h1>
 </div>
 
-<div class="sections il-links">
-    <section>
-        <h2><a href="{{ "/start/" | url }}">Getting started</a></h2>
+<div class="il-content">
+
+    <section class="doc-text">
+        <p>The goal of this toolkit is to make it easier for website creators to implement the campus brand standards, including those for color, typography, and iconography.</p>
+
+        <p>For more information about campus brand standards, visit <a href="https://marketing.illinois.edu">the Strategic Marketing and Branding website</a>.</p>
     </section>
-    <section>
-        <h2>Stylesheets</h2>
-        <ul>
-            <li><a href="{{ "/colors/" | url }}">Colors</a></li>
-            <li><a href="{{ "/fonts/" | url }}">Fonts</a></li>
-            <li><a href="{{ "/icons/" | url }}">Icons</a></li>
-        </ul>
+
+    <section class="doc-toc">
+        <ol>
+            <li>
+                <h2><a href="{{ "/start/" | url }}">Getting started</a></h2>
+                <p>Learn how to add the toolkit to webpages or incorporate toolkit files into your build process</p>
+            </li>
+            <li>
+                <h2>Stylesheets</h2>
+                <p>Shortcuts for simple CSS usage</p>
+                <ul>
+                    <li><a href="{{ "/colors/" | url }}">Using brand colors</a></li>
+                    <li><a href="{{ "/fonts/" | url }}">Using brand typefaces</a></li>
+                    <li><a href="{{ "/icons/" | url }}">Using brand icons</a></li>
+                </ul>
+            </li>
+            <li>
+                <h2>Components</h2>
+                <p>Easier markup with custom HTML elements</p>
+                <ul>
+                    <li><a href="{{ "/header/" | url }}">Page header</a></li>
+                    <li><a href="{{ "/footer/" | url }}">Page footer</a></li>
+                    <li><a href="{{ "/unit-wordmark/" | url }}">Unit wordmarks</a></li>
+                </ul>
+            </li>
+        </ol>
     </section>
-    <section>
-        <h2>Components</h2>
-        <ul>
-            <li><a href="{{ "/header/" | url }}">Header</a></li>
-            <li><a href="{{ "/footer/" | url }}">Footer</a></li>
-            <li><a href="{{ "/wordmark/" | url }}">Wordmarks</a></li>
-        </ul>
-    </section>
+
 </div>
+
+{% endblock %}

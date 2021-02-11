@@ -1,18 +1,33 @@
 ---
-layout: layouts/docs.njk
 title: Colors
-stylesheet: /_assets/colors.css
-script: /_assets/colors.js
 ---
-<div class="il-page-title il-page-title--poster">
-    <nav class="il-breadcrumbs">
-        <h2 class="il-invisible">You are here</h2>
-        <ol>
-            <li><a href="{{ "/" | url }}">Web toolkit</a></li>
-            <li>Color</li>
-        </ol>
-    </nav>
-    <h1>Color</h1>
+
+{% extends "layouts/docs.njk" %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ "/_assets/colors.css" | url }}">
+{% endblock %}
+
+{% block scripts %}
+    <script src="{{ "/_assets/colors.js" | url }}"></script>
+{% endblock %}
+
+{% block main %}
+<div class="il-content doc-section">
+    <div class="doc-text">
+
+        <h1>Colors</h1>
+
+        <p>All the official hex values are available as CSS variables.</p>
+
+        <pre><code>
+            color: var(--il-orange);
+            border: 2px solid var(--il-blue);
+        </code></pre>
+
+        <p>Click to explore accessibility</p>
+
+    </div>
 </div>
 
 <section class="doc-section">
@@ -43,14 +58,6 @@ script: /_assets/colors.js
     {% endfor %}
 
 </section>
-
-<section class="doc-text il-formatted">
-    <h2>Test pages</h2>
-    <ul>
-        <li><a href="tests/colors.html">All colors</a></li>
-    </ul>
-</section>
-
 
 <template id="compatibility-widget">
     <div class="compatibility-widget" data-color="" data-mode="fg">
@@ -122,3 +129,15 @@ script: /_assets/colors.js
         </div>
     </div>
 </template>
+
+<section class="il-content doc-next">
+    <div>
+        <h2>What's next?</h2>
+        <ul>
+            <li><a href="{{ "/fonts/" | url }}">Using the brand fonts</a></li>
+            <li><a href="{{ "/" | url }}">Toolkit homepage</a></li>
+        </ul>
+    </div>
+</section>
+
+{% endblock %}

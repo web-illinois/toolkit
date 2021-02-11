@@ -1,22 +1,25 @@
 ---
-layout: layouts/docs.njk
 title: Fonts
-stylesheet: /_assets/fonts.css
-script: /_assets/fonts.js
 ---
 
-<div class="il-page-title il-page-title--poster">
-    <nav class="il-breadcrumbs">
-        <h2 class="il-invisible">You are here</h2>
-        <ol>
-            <li><a href="{{ "/" | url }}">Web toolkit</a></li>
-            <li>Fonts</li>
-        </ol>
-    </nav>
-    <h1>Fonts</h1>
-</div>
+{% extends "layouts/docs.njk" %}
 
-<section class="doc-section">
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ "/_assets/fonts.css" | url }}">
+{% endblock %}
+
+{% block scripts %}
+    <script src="{{ "/_assets/fonts.js" | url }}"></script>
+{% endblock %}
+
+{% block main %}
+<section class="il-content doc-section">
+
+    <div class="doc-text">
+
+        <h1>Fonts</h1>
+
+    </div>
 
     <ul class="fonts">
 
@@ -69,3 +72,17 @@ script: /_assets/fonts.js
     </ul>
 
 </section>
+{% endblock %}
+
+{% block footer %}
+<section class="il-content doc-next">
+    <div>
+        <h2>What's next?</h2>
+        <ul>
+            <li><a href="{{ "/icons/" | url }}">Using the brand icons</a></li>
+            <li><a href="{{ "/" | url }}">Toolkit homepage</a></li>
+        </ul>
+    </div>
+</section>
+{{ super() }}
+{% endblock %}

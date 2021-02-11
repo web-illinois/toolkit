@@ -1,23 +1,18 @@
 ---
 title: Header
-layout: layouts/docs.njk
 ---
 
-<script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+{% extends "layouts/docs.njk" %}
 
-<div class="il-page-title il-page-title--poster">
-    <nav class="il-breadcrumbs">
-        <h2 class="il-invisible">You are here</h2>
-        <ol>
-            <li><a href="{{ "/" | url }}">Web toolkit</a></li>
-            <li>Header</li>
-        </ol>
-    </nav>
-    <h1>Header</h1>
-</div>
+{% block scripts %}
+    <script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+{% endblock %}
 
-
-<section class="il-content">
+{% block main %}
+<section class="il-content doc-section">
+    <div class="doc-text">
+        <h1>Header</h1>
+    </div>
     <div class="docs-codepen">
         <p class="codepen" data-height="500" data-theme-id="dark" data-default-tab="html,result" data-user="il-marketing" data-slug-hash="poyGzjr" style="height: 500px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="Header with unit wordmark">
   <span>See the Pen <a href="https://codepen.io/il-marketing/pen/poyGzjr">
@@ -54,4 +49,17 @@ layout: layouts/docs.njk
 
     </div>
 </section>
+{% endblock %}
 
+{% block footer %}
+<section class="il-content doc-next">
+    <div>
+        <h2>What's next?</h2>
+        <ul>
+            <li><a href="{{ "/footer/" | url }}">Using the standard web footer</a></li>
+            <li><a href="{{ "/" | url }}">Toolkit homepage</a></li>
+        </ul>
+    </div>
+</section>
+{{ super() }}
+{% endblock %}
