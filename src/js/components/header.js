@@ -1,93 +1,173 @@
 import {LitElement, html, css} from 'lit-element';
+import Navigation from './navigation';
 import './unit-wordmark';
 
 class Header extends LitElement {
+    static get properties() {
+        return {
+            view: {type: String, reflect: true},
+            menuVisible: {type: Boolean, attribute: false}
+        }
+    }
+
     static get styles() {
         return css`
 .header {
-    border-top: 7px solid var(--il-orange);
-    background-color: white;
-    color: var(--il-blue);
+    font-family: var(--il-source-sans);
 }
-.site {
-    padding-top: 20px;
-    padding-bottom: 20px;
-}
-.campus, .site {
-    background-color: white;
-    padding-left: var(--il-content-margin);
-    padding-right: var(--il-content-margin);
-}
-.campus > div, .site > div {
-    max-width: var(--il-content-max-width);
-    margin-left: auto;
-    margin-right: auto;
-}
-.campus a {
-    display: inline-block;
-    padding: 4px 0;
-    font: 700 10px/1.1em var(--il-montserrat);
-    color: inherit;
-    text-decoration: none;
-    letter-spacing: 1px;
-    text-align: left;
+.campus {
     text-transform: uppercase;
 }
-.campus a:focus {
-    outline: var(--il-focus-outline);
+
+.header--full .header__main-outer {
+    border-top: 7px solid var(--il-orange);
+    background-color: white;
+    padding: 0 var(--il-content-margin);
 }
-@media (min-width: 480px) {
-    .campus a {
-        font-size: 14px;
-        letter-spacing: 1px;
-    }
-}
-.campus span {
-    white-space: nowrap;
-}
-.site > div {
+.header--full .header__main-inner {
+    margin: 0 auto;
+    max-width: var(--il-content-max-width);
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-template-rows: auto auto;
+    grid-template-areas: "campus links" "wordmark search";
     align-items: center;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
 }
-.site > div > * {
-    flex: 1 1 auto;
+.header--full .campus {
+    grid-area: campus;
+    justify-self: left;
 }
-.identity {
-    padding-right: 20px;
+.header--full .links {
+    grid-area: links;
+    justify-self: right;
 }
-.content {
-    float: right;
+.header--full .wordmark {
+    grid-area: wordmark;
+    justify-self: left;
+}
+.header--full .search {
+    grid-area: search;
+    justify-self: right;
+}
+
+.header--compact .header__main {
+    border-top: 7px solid var(--il-orange);
+    background-color: white;
+    padding: 0 var(--il-content-margin);
+    display: grid;
+    grid-template-columns: auto auto;
+    align-items: center;
+}
+.header--compact .menu {
+    background-color: var(--il-cloud-1);
+    padding: 1em;
+    display: none;
+}
+.header--compact.header--menu-visible .menu {
+    display: block;
 }
         `;
     }
 
-    render() {
+    constructor() {
+        super();
+        this.view = 'full';
+        this.menuVisible = false;
+        window.addEventListener('resize', this.handleWindowResize.bind(this));
+        window.addEventListener('DOMContentLoaded', this.handleContentLoaded.bind(this));
+        this.handleWindowResize();
+    }
+
+    getView() {
+        return this.view;
+    }
+
+    isCompactView() {
+        return this.getView() === 'compact';
+    }
+
+    isFullView() {
+        return this.getView() === 'full';
+    }
+
+    setView(view) {
+        this.view = view;
+    }
+
+    // Event handlers
+
+    handleContentLoaded(evt) {
+        const nav = document.querySelector('*[slot="navigation"] ul');
+        if (nav) {
+            this.navigation = new Navigation(nav);
+        }
+    }
+
+    handleMenuButtonClick(evt) {
+        this.menuVisible = !this.menuVisible;
+    }
+
+    handleWindowResize(evt) {
+        const m = window.matchMedia('(max-width: 600px)');
+        this.setView(m.matches ? 'compact' : 'full');
+    }
+
+    // Rendering
+
+    renderCompactView() {
         return html`
-<div class="header">
-    <div class="campus">
-        <div>
-            <a href="https://illinois.edu/">
-                <span>University of Illinois</span>
-                <span>Urbana&hyphen;Champaign</span>
-            </a>
+<div class="header header--compact ${this.menuVisible ? 'header--menu-visible' : ''}">
+    <div class="header__main">
+        <div class="wordmark">
+            <slot name="wordmark"></slot>
+        </div>
+        <div class="menu-button">
+            <button aria-controls="menu" aria-expanded=${this.menuVisible ? 'true' : 'false'} @click=${this.handleMenuButtonClick}>Menu</button>
         </div>
     </div>
-    <div class="site">
-        <div>
-            <div class="identity">
-                <slot name="wordmark"></slot>
-            </div>
-            <div>
-                <div class="content">
-                    <slot></slot>
-                </div>
-            </div>
+    <div class="menu">
+        <div class="search">
+            <slot name="search"></slot>
+        </div>
+        <div class="navigation">
+            <slot name="navigation"></slot>
+        </div>
+        <div class="links">
+            <slot name="links"></slot>
         </div>
     </div>
 </div>
         `;
+    }
+
+    renderFullView() {
+        return html`
+<div class="header header--full">
+    <div class="header__main-outer">
+        <div class="header__main-inner">
+            <div class="campus">
+                University of Illinois Urbana-Champaign
+            </div>
+            <div class="wordmark">
+                <slot name="wordmark"></slot>
+            </div>
+            <div class="links">
+                <slot name="links"></slot>
+            </div>
+            <div class="search">
+                <slot name="search"></slot>
+            </div>
+        </div>
+    </div>
+    <div class="navigation">
+        <slot name="navigation"></slot>
+    </div>
+</div>
+        `;
+    }
+
+    render() {
+        return this.isFullView() ? this.renderFullView() : this.renderCompactView();
     }
 }
 

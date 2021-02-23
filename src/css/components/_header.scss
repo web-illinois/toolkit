@@ -1,82 +1,114 @@
 il-header {
-  font-family: var(--il-source-sans);
+  &[view="full"] {
 
-  &:last-child {
-    border-bottom: 2px solid var(--il-orange);
-  }
+    .il-links {
+      ul {
+        @include reset-list;
+        display: flex;
+        flex-direction: row;
+      }
+      li {
+        @include reset-list-item;
+        position: relative;
+        padding: 0 1em 0 0;
 
-  a {
-    @include reset-link;
-  }
-}
-
-.il-header-content {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-
-  & > * {
-    margin-bottom: 20px;
-
-    &:last-child {
-      margin-bottom: 0;
+        &::after {
+          position: absolute;
+          top: 0;
+          right: 0;
+          content: "/";
+          width: 1em;
+          text-align: center;
+        }
+        &:last-of-type::after {
+          content: "";
+          display: none;
+        }
+      }
+      a {
+        @include reset-link;
+        display: block;
+        text-transform: uppercase;
+      }
     }
-  }
-}
 
-.il-header-button {
+    .il-navigation {
+      background-color: var(--il-cloud-1);
+      padding: 0 var(--il-content-margin);
+      font: 400 18px var(--il-source-sans);
 
-  --il-icon-color: var(--il-blue);
-  --il-icon-background: transparent;
-  --il-icon-active-background: var(--il-cloud);
+      & > ul {
+        @include reset-list;
+        position: relative;
+        display: flex;
+        flex-direction: row;
+        margin: 0 auto;
+        max-width: var(--il-content-max-width);
 
-  @include reset-button;
-  display: inline-block;
-  width: 4.25em;
-  height: 3.625em;
-  overflow: hidden;
-  position: relative;
-  white-space: nowrap;
-  text-indent: 5em;
-  border-radius: .625em;
-  transition: background-color .3s;
-  cursor: pointer;
-  background-color: var(--il-icon-background);
-  color: var(--il-icon-color);
+        & > li {
+          @include reset-list-item;
+          position: relative;
 
-  &:focus, &:hover {
-    background-color: var(--il-icon-active-background);
-  }
+          & > a {
+            @include reset-link;
+            display: inline-block;
+            padding: .5em;
+          }
+        }
 
-  &:focus {
-    outline: var(--il-dotted-focus-outline);
-  }
+        ul {
+          display: none;
+          position: absolute;
+          left: 0;
+          top: 100%;
+          background-color: var(--il-cloud-1);
+        }
 
-  &:after {
-    content: attr(data-icon-name);
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    left: 0;
-    top: 0;
-    text-indent: 0;
-    text-align: center;
-    font: 3em/1.2 var(--il-icons-solid);
-  }
+        button[aria-expanded="true"] + ul {
+          display: block;
+        }
+      }
+    }
 
-  & + & {
-    margin-left: .5em;
-  }
+    .il-search {
+      display: grid;
+      grid-template-columns: auto auto;
+    }
 
-  &--orange {
-    --il-icon-color: white;
-    --il-icon-background: var(--il-orange);
-    --il-icon-active-background: var(--il-altgeld);
   }
 
-  &--blue {
-    --il-icon-color: white;
-    --il-icon-background: var(--il-blue);
-    --il-icon-active-background: var(--il-industrial-blue);
+  &[view="compact"] {
+
+    .il-links {
+      ul {
+        @include reset-list;
+      }
+      li {
+        @include reset-list-item;
+      }
+      a {
+        @include reset-link;
+      }
+    }
+
+    .il-navigation {
+      ul {
+        @include reset-list;
+      }
+
+      li {
+        @include reset-list-item;
+      }
+
+      a {
+        @include reset-link;
+      }
+    }
+
+    .il-search {
+      @include reset-spacing;
+      display: grid;
+      grid-template-columns: auto auto;
+    }
   }
 }

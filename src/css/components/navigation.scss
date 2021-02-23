@@ -1,0 +1,45 @@
+
+#before-nav {
+  margin: 1em;
+  border: 1px solid;
+  padding: 1em;
+  text-align: center;
+}
+
+.il-navigation {
+
+  & > ul {
+    @include reset-list;
+    display: flex;
+    flex-direction: row;
+    background-color: #eee;
+    padding: 0 2em;
+
+    & > li {
+      @include reset-list-item;
+      position: relative;
+      padding: 1em;
+      border: 1px solid #999;
+    }
+  }
+
+  & > ul > li > ul {
+    @include reset-list;
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 300px;
+    background-color: #eee;
+    border: 1px solid #999;
+
+    & > li {
+      @include reset-list-item;
+      padding: 1em;
+    }
+  }
+
+  & > ul > li > button[aria-expanded="true"] + ul {
+    display: block;
+  }
+}
