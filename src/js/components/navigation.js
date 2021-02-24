@@ -21,6 +21,14 @@ class TopLevelItem {
         }
     }
 
+    getNextItem() {
+        return this.el.nextElementSibling;
+    }
+
+    getPreviousItem() {
+        return this.el.previousElementSibling;
+    }
+
     getSubmenu() {
         return this.dropdown;
     }
@@ -30,6 +38,16 @@ class TopLevelItem {
     }
 
     handleLinkKeypress(evt) {
+        if (evt.code === 'ArrowRight') {
+            if (this.hasNextItem()) {
+                this.getNextItem().querySelector('a').focus();
+            }
+        }
+        if (evt.code === 'ArrowLeft') {
+            if (this.hasPreviousItem()) {
+                this.getPreviousItem().querySelector('a').focus();
+            }
+        }
         if (this.hasSubmenu()) {
             if (evt.code === 'ArrowDown') {
                 if (!this.submenuIsOpen()) {
@@ -54,6 +72,14 @@ class TopLevelItem {
         if (evt.code === 'Space') {
             //this.toggleButton(evt.target);
         }
+    }
+
+    hasPreviousItem() {
+        return !!this.el.previousElementSibling;
+    }
+
+    hasNextItem() {
+        return !!this.el.nextElementSibling;
     }
 
     hasSubmenu() {

@@ -1,18 +1,18 @@
 
-function dropdownIsVisible(page, id) {
-    return page.evaluate((id) => {
-        return document.getElementById(id).previousElementSibling.getAttribute('aria-expanded') === 'true';
-    }, [id]);
+function dropdownIsVisible(page, sel) {
+    return page.evaluate((sel) => {
+        return document.querySelector(sel).previousElementSibling.getAttribute('aria-expanded') === 'true';
+    }, [sel]);
 }
 
-function elementHasFocus(page, selector) {
-    return page.evaluate((selector) => {
-        return document.querySelector(selector) === document.activeElement;
-    }, [selector]);
+function elementHasFocus(page, sel) {
+    return page.evaluate((sel) => {
+        return document.querySelector(sel) === document.activeElement;
+    }, [sel]);
 }
 
-function moveFocus(page, id) {
-    return page.evaluate((id) => document.getElementById(id).focus(), [id]);
+function moveFocus(page, sel) {
+    return page.evaluate((sel) => document.querySelector(sel).focus(), [sel]);
 }
 
 beforeEach(async () => {
@@ -21,7 +21,7 @@ beforeEach(async () => {
 
 describe("when a top-level link with a submenu has focus and its submenu is closed", () => {
     beforeEach(async () => {
-        await moveFocus(page, 'link-1');
+        await moveFocus(page, '#link-1');
     });
 
     describe("pressing the down arrow", () => {
@@ -30,7 +30,7 @@ describe("when a top-level link with a submenu has focus and its submenu is clos
         });
 
         test('opens the submenu', async () => {
-            const isVisible = await dropdownIsVisible(page, 'list-1');
+            const isVisible = await dropdownIsVisible(page, '#list-1');
             await expect(isVisible).toBeTruthy();
         });
 
@@ -46,7 +46,7 @@ describe("when a top-level link with a submenu has focus and its submenu is clos
         });
 
         test('opens the submenu', async () => {
-            const isVisible = await dropdownIsVisible(page, 'list-1');
+            const isVisible = await dropdownIsVisible(page, '#list-1');
             await expect(isVisible).toBeTruthy();
         });
 
@@ -59,7 +59,7 @@ describe("when a top-level link with a submenu has focus and its submenu is clos
 
 describe("when a top-level submenu toggle has focus", () => {
     beforeEach(async () => {
-        await moveFocus(page, 'button-1');
+        await moveFocus(page, '#button-1');
     });
 
     describe("when its submenu is closed", () => {
@@ -81,7 +81,7 @@ describe("when a top-level submenu toggle has focus", () => {
             });
 
             test("opens the submenu", async () => {
-                const isVisible = await dropdownIsVisible(page, 'list-1');
+                const isVisible = await dropdownIsVisible(page, '#list-1');
                 await expect(isVisible).toBeTruthy();
             });
         });
@@ -92,7 +92,7 @@ describe("when a top-level submenu toggle has focus", () => {
             });
 
             test("opens the submenu", async () => {
-                const isVisible = await dropdownIsVisible(page, 'list-1');
+                const isVisible = await dropdownIsVisible(page, '#list-1');
                 await expect(isVisible).toBeTruthy();
             });
         });
@@ -104,7 +104,7 @@ describe("when a top-level submenu toggle has focus", () => {
         });
 
         test("submenu is open", async () => {
-            const isVisible = await dropdownIsVisible(page, 'list-1');
+            const isVisible = await dropdownIsVisible(page, '#list-1');
             await expect(isVisible).toBeTruthy();
         });
 
@@ -124,14 +124,14 @@ describe("when a top-level submenu toggle has focus", () => {
 
 
 test('opening one dropdown closes other dropdowns', async () => {
-    await moveFocus(page, 'button-1');
+    await moveFocus(page, '#button-1');
     await page.keyboard.press('Enter');
-    await moveFocus(page, 'button-2');
+    await moveFocus(page, '#button-2');
     await page.keyboard.press('Enter');
 
-    const firstDropdownIsVisible = await dropdownIsVisible(page, 'list-1');
+    const firstDropdownIsVisible = await dropdownIsVisible(page, '#list-1');
     await expect(firstDropdownIsVisible).toBeFalsy();
 
-    const secondDropdownIsVisible = await dropdownIsVisible(page, 'list-2');
+    const secondDropdownIsVisible = await dropdownIsVisible(page, '#list-2');
     await expect(secondDropdownIsVisible).toBeTruthy();
 });
