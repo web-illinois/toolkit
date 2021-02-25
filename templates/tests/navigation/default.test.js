@@ -4,6 +4,17 @@ beforeEach(async () => {
     await page.goto('http://localhost:8080/tests/navigation/default.html');
 });
 
+describe("when a submenu toggle is clicked", () => {
+    beforeEach(async () => {
+        await page.click('#button-2');
+    });
+
+    test('opens the submenu', async () => {
+        const isVisible = await dropdownIsVisible(page, '#list-2');
+        await expect(isVisible).toBeTruthy();
+    });
+});
+
 describe("when a top-level link has focus", () => {
     beforeEach(async () => {
         await moveFocus(page, '#link-2');
@@ -64,7 +75,7 @@ describe("when a top-level link has focus", () => {
     });
 });
 
-describe("when a top-level submenu toggle has focus", () => {
+describe("when a submenu toggle has focus", () => {
     beforeEach(async () => {
         await moveFocus(page, '#button-1');
     });
@@ -103,10 +114,9 @@ describe("when a top-level submenu toggle has focus", () => {
     });
 });
 
-/*
-describe("when the first top-level submenu toggle has focus", () => {
+describe("when the first top-level link has focus", () => {
     beforeEach(async () => {
-        await moveFocus(page, '#button-1');
+        await moveFocus(page, '#link-1');
     });
 
     describe("pressing the left arrow", () => {
@@ -120,4 +130,20 @@ describe("when the first top-level submenu toggle has focus", () => {
         });
     });
 });
-*/
+
+describe("when the last top-level link has focus", () => {
+    beforeEach(async () => {
+        await moveFocus(page, '#link-3');
+    });
+
+    describe("pressing the right arrow", () => {
+        beforeEach(async () => {
+            await page.keyboard.press('ArrowRight');
+        });
+
+        test("moves focus to the first top-level link", async () => {
+            const hasFocus = await elementHasFocus(page, '#link-1');
+            await expect(hasFocus).toBeTruthy();
+        });
+    });
+});

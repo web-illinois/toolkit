@@ -13,6 +13,11 @@ class TopLevelItem {
             this.button.addEventListener('click', this.handleToggleClick.bind(this));
             this.button.addEventListener('keydown', this.handleToggleKeypress.bind(this));
         }
+        if (this.dropdown) {
+            this.dropdown.querySelectorAll('a').forEach(link => {
+                link.addEventListener('keydown', this.handleSubmenuLinkKeypress.bind(this));
+            });
+        }
     }
 
     closeSubmenu() {
@@ -42,10 +47,16 @@ class TopLevelItem {
             if (this.hasNextItem()) {
                 this.getNextItem().querySelector('a').focus();
             }
+            else {
+                this.el.parentNode.firstElementChild.querySelector('a').focus();
+            }
         }
         if (evt.code === 'ArrowLeft') {
             if (this.hasPreviousItem()) {
                 this.getPreviousItem().querySelector('a').focus();
+            }
+            else {
+                this.el.parentNode.lastElementChild.querySelector('a').focus();
             }
         }
         if (this.hasSubmenu()) {
@@ -60,6 +71,30 @@ class TopLevelItem {
                     this.openSubmenu();
                 }
                 this.getSubmenu().querySelector('li:last-of-type a').focus();
+            }
+        }
+    }
+
+    handleSubmenuLinkKeypress(evt) {
+        const item = evt.target.parentNode;
+        if (evt.code === 'Escape') {
+            this.closeSubmenu();
+            this.link.focus();
+        }
+        if (evt.code === 'ArrowDown') {
+            if (item.nextElementSibling) {
+                item.nextElementSibling.querySelector('a').focus();
+            }
+            else {
+                item.parentNode.firstElementChild.querySelector('a').focus();
+            }
+        }
+        if (evt.code === 'ArrowUp') {
+            if (item.previousElementSibling) {
+                item.previousElementSibling.querySelector('a').focus();
+            }
+            else {
+                item.parentNode.lastElementChild.querySelector('a').focus();
             }
         }
     }
