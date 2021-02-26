@@ -43,3 +43,17 @@
     display: block;
   }
 }
+.il-navigation--compact {
+  & > ul {
+    padding: 0;
+    flex-direction: column;
+  }
+
+  & > ul > li > ul {
+    position: relative;
+    top: auto;
+    left: auto;
+    width: auto;
+    border: 1px solid #999;
+  }
+}

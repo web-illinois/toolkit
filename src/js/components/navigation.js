@@ -59,13 +59,30 @@ class TopLevelItem {
                 this.el.parentNode.lastElementChild.querySelector('a').focus();
             }
         }
-        if (this.hasSubmenu()) {
-            if (evt.code === 'ArrowDown') {
-                if (!this.submenuIsOpen()) {
-                    this.openSubmenu();
+        if (evt.code === 'ArrowDown') {
+            if (this.nav.isCompact()) {
+                if (this.hasSubmenu() && this.submenuIsOpen()) {
+                    this.getSubmenu().querySelector('a').focus();
                 }
-                this.getSubmenu().querySelector('a').focus();
+                else {
+                    if (this.hasNextItem()) {
+                        this.getNextItem().querySelector('a').focus();
+                    }
+                    else {
+                        this.el.parentNode.firstElementChild.querySelector('a').focus();
+                    }
+                }
             }
+            else {
+                if (this.hasSubmenu()) {
+                    if (!this.submenuIsOpen()) {
+                        this.openSubmenu();
+                    }
+                    this.getSubmenu().querySelector('a').focus();
+                }
+            }
+        }
+        if (this.hasSubmenu()) {
             if (evt.code === 'ArrowUp') {
                 if (!this.submenuIsOpen()) {
                     this.openSubmenu();
@@ -85,8 +102,14 @@ class TopLevelItem {
             if (item.nextElementSibling) {
                 item.nextElementSibling.querySelector('a').focus();
             }
-            else {
+            else if (!this.nav.isCompact()) {
                 item.parentNode.firstElementChild.querySelector('a').focus();
+            }
+            else if (this.hasNextItem()) {
+                this.getNextItem().querySelector('a').focus();
+            }
+            else {
+                this.el.parentNode.firstElementChild.querySelector('a').focus();
             }
         }
         if (evt.code === 'ArrowUp') {
@@ -151,6 +174,10 @@ class Navigation {
 
     closeAll() {
         this.items.map(item => item.closeSubmenu());
+    }
+
+    isCompact() {
+        return this.el.classList.contains('il-navigation--compact');
     }
 }
 

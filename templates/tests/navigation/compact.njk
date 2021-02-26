@@ -1,14 +1,14 @@
 ---
-title: Navigation with open submenu
+title: Compact navigation
 layout: layouts/test.njk
-permalink: tests/navigation/submenu-open.html
+permalink: tests/navigation/compact.html
 ---
 
 <p id="before-nav">
     This element is used as a target for mouse clicks outside the navigation
 </p>
 
-<nav class="il-navigation">
+<nav class="il-navigation il-navigation--compact">
     <ul>
         <li>
             <a id="link-1" href="#1">Link 1</a>
@@ -27,7 +27,7 @@ permalink: tests/navigation/submenu-open.html
         </li>
         <li>
             <a id="link-2" href="#2">Link 2</a>
-            <button id="button-2" aria-controls="list-2" aria-expanded="true">Button 2</button>
+            <button id="button-2" aria-controls="list-2" aria-expanded="false">Button 2</button>
             <ul id="list-2">
                 <li>
                     <a id="link-2A" href="#2A">Link 2A</a>

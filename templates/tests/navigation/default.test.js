@@ -4,7 +4,7 @@ beforeEach(async () => {
     await page.goto('http://localhost:8080/tests/navigation/default.html');
 });
 
-describe("when a submenu toggle is clicked", () => {
+describe("clicking a submenu toggle", () => {
     beforeEach(async () => {
         await page.click('#button-2');
     });
