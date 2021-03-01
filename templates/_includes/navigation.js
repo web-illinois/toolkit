@@ -11,8 +11,26 @@ function elementHasFocus(page, sel) {
     }, [sel]);
 }
 
+function getSectionToggle(page, sel) {
+    return page.evaluateHandle(sel => {
+        return document.querySelector(sel).shadowRoot.querySelector('button');
+    }, [sel])
+}
+
 function moveFocus(page, sel) {
     return page.evaluate((sel) => document.querySelector(sel).focus(), [sel]);
 }
 
-module.exports = { dropdownIsVisible, elementHasFocus, moveFocus }
+function sectionisExpanded(page, sel) {
+    return page.evaluate(sel => {
+        return document.querySelector(sel).expanded;
+    }, [sel])
+}
+
+module.exports = {
+    dropdownIsVisible,
+    elementHasFocus,
+    getSectionToggle,
+    moveFocus,
+    sectionisExpanded
+}

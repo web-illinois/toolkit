@@ -1,4 +1,4 @@
-const {dropdownIsVisible, elementHasFocus, moveFocus} = require('../../_includes/navigation');
+const nav = require('../../_includes/navigation');
 
 beforeEach(async () => {
     await page.goto('http://localhost:8080/tests/navigation/default.html');
@@ -6,18 +6,19 @@ beforeEach(async () => {
 
 describe("clicking a submenu toggle", () => {
     beforeEach(async () => {
-        await page.click('#button-2');
+        const button = await nav.getSectionToggle(page, '#section-1');
+        await button.click();
     });
 
     test('opens the submenu', async () => {
-        const isVisible = await dropdownIsVisible(page, '#list-2');
-        await expect(isVisible).toBeTruthy();
+        const isExpanded = await nav.sectionisExpanded(page, '#section-1');
+        await expect(isExpanded).toBeTruthy();
     });
 });
 
 describe("when a top-level link has focus", () => {
     beforeEach(async () => {
-        await moveFocus(page, '#link-2');
+        await nav.moveFocus(page, '#link-2');
     });
 
     describe("pressing the right arrow", () => {
@@ -26,7 +27,7 @@ describe("when a top-level link has focus", () => {
         });
 
         test("moves focus to the next top-level link", async () => {
-            const hasFocus = await elementHasFocus(page, '#link-3');
+            const hasFocus = await nav.elementHasFocus(page, '#link-3');
             await expect(hasFocus).toBeTruthy();
         });
     });
@@ -37,7 +38,7 @@ describe("when a top-level link has focus", () => {
         });
 
         test("moves focus to the previous top-level link", async () => {
-            const hasFocus = await elementHasFocus(page, '#link-1');
+            const hasFocus = await nav.elementHasFocus(page, '#link-1');
             await expect(hasFocus).toBeTruthy();
         });
     });
@@ -48,12 +49,12 @@ describe("when a top-level link has focus", () => {
         });
 
         test('opens the submenu', async () => {
-            const isVisible = await dropdownIsVisible(page, '#list-2');
+            const isVisible = await nav.sectionisExpanded(page, '#section-2');
             await expect(isVisible).toBeTruthy();
         });
 
         test('moves focus to the first link in the submenu', async () => {
-            const hasFocus = await elementHasFocus(page, '#link-2A');
+            const hasFocus = await nav.elementHasFocus(page, '#link-2A');
             await expect(hasFocus).toBeTruthy();
         });
     });
@@ -64,12 +65,12 @@ describe("when a top-level link has focus", () => {
         });
 
         test('opens the submenu', async () => {
-            const isVisible = await dropdownIsVisible(page, '#list-2');
+            const isVisible = await nav.sectionisExpanded(page, '#section-2');
             await expect(isVisible).toBeTruthy();
         });
 
         test('moves focus to the last link in the submenu', async () => {
-            const hasFocus = await elementHasFocus(page, '#link-2C');
+            const hasFocus = await nav.elementHasFocus(page, '#link-2C');
             await expect(hasFocus).toBeTruthy();
         });
     });
@@ -77,7 +78,8 @@ describe("when a top-level link has focus", () => {
 
 describe("when a submenu toggle has focus", () => {
     beforeEach(async () => {
-        await moveFocus(page, '#button-1');
+        const button = await nav.getSectionToggle(page, '#section-1');
+        await button.focus();
     });
 
     describe("pressing tab", () => {
@@ -86,7 +88,7 @@ describe("when a submenu toggle has focus", () => {
         });
 
         test("moves focus to the next top-level link", async () => {
-            const hasFocus = await elementHasFocus(page, '#link-2');
+            const hasFocus = await nav.elementHasFocus(page, '#link-2');
             await expect(hasFocus).toBeTruthy();
         });
     });
@@ -97,7 +99,7 @@ describe("when a submenu toggle has focus", () => {
         });
 
         test("opens the submenu", async () => {
-            const isVisible = await dropdownIsVisible(page, '#list-1');
+            const isVisible = await nav.sectionisExpanded(page, '#section-1');
             await expect(isVisible).toBeTruthy();
         });
     });
@@ -108,7 +110,7 @@ describe("when a submenu toggle has focus", () => {
         });
 
         test("opens the submenu", async () => {
-            const isVisible = await dropdownIsVisible(page, '#list-1');
+            const isVisible = await nav.sectionisExpanded(page, '#section-1');
             await expect(isVisible).toBeTruthy();
         });
     });
@@ -116,7 +118,7 @@ describe("when a submenu toggle has focus", () => {
 
 describe("when the first top-level link has focus", () => {
     beforeEach(async () => {
-        await moveFocus(page, '#link-1');
+        await nav.moveFocus(page, '#link-1');
     });
 
     describe("pressing the left arrow", () => {
@@ -125,7 +127,7 @@ describe("when the first top-level link has focus", () => {
         });
 
         test("moves focus to the last top-level link", async () => {
-            const hasFocus = await elementHasFocus(page, '#link-3');
+            const hasFocus = await nav.elementHasFocus(page, '#link-3');
             await expect(hasFocus).toBeTruthy();
         });
     });
@@ -133,7 +135,7 @@ describe("when the first top-level link has focus", () => {
 
 describe("when the last top-level link has focus", () => {
     beforeEach(async () => {
-        await moveFocus(page, '#link-3');
+        await nav.moveFocus(page, '#link-3');
     });
 
     describe("pressing the right arrow", () => {
@@ -142,7 +144,7 @@ describe("when the last top-level link has focus", () => {
         });
 
         test("moves focus to the first top-level link", async () => {
-            const hasFocus = await elementHasFocus(page, '#link-1');
+            const hasFocus = await nav.elementHasFocus(page, '#link-1');
             await expect(hasFocus).toBeTruthy();
         });
     });

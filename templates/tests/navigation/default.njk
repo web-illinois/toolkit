@@ -8,46 +8,41 @@ permalink: tests/navigation/default.html
     This element is used as a target for mouse clicks outside the navigation
 </p>
 
-<nav class="il-navigation">
-    <ul>
-        <li>
-            <a id="link-1" href="#1">Link 1</a>
-            <button id="button-1" aria-controls="list-1" aria-expanded="false">Button 1</button>
-            <ul id="list-1">
-                <li>
-                    <a id="link-1A" href="#1A">Link 1A</a>
-                </li>
-                <li>
-                    <a id="link-1B" href="#1B">Link 1B</a>
-                </li>
-                <li>
-                    <a id="link-1C" href="#1C">Link 1C</a>
-                </li>
-            </ul>
-        </li>
-        <li>
-            <a id="link-2" href="#2">Link 2</a>
-            <button id="button-2" aria-controls="list-2" aria-expanded="false">Button 2</button>
-            <ul id="list-2">
-                <li>
-                    <a id="link-2A" href="#2A">Link 2A</a>
-                </li>
-                <li>
-                    <a id="link-2B" href="#2B">Link 2B</a>
-                </li>
-                <li>
-                    <a id="link-2C" href="#2C">Link 2C</a>
-                </li>
-            </ul>
-        </li>
-        <li>
-            <a id="link-3" href="#3">Link 3</a>
-            <button id="button-3" aria-controls="list-3" aria-expanded="false">Button 3</button>
-            <ul id="list-3">
-                <li>
-                    <a id="link-3A" href="#3A">Link 3A</a>
-                </li>
-            </ul>
-        </li>
-    </ul>
-</nav>
+<il-nav>
+    <il-nav-section id="section-1">
+        <a id="link-1" href="#1" slot="label">Link 1</a>
+        <ul id="list-1">
+            <li>
+                <a id="link-1A" href="#1A">Link 1A</a>
+            </li>
+            <li>
+                <a id="link-1B" href="#1B">Link 1B</a>
+            </li>
+            <li>
+                <a id="link-1C" href="#1C">Link 1C</a>
+            </li>
+        </ul>
+    </il-nav-section>
+    <il-nav-section id="section-2">
+        <a id="link-2" href="#2" slot="label">Link 2</a>
+        <ul id="list-2">
+            <li>
+                <a id="link-2A" href="#2A">Link 2A</a>
+            </li>
+            <li>
+                <a id="link-2B" href="#2B">Link 2B</a>
+            </li>
+            <li>
+                <a id="link-2C" href="#2C">Link 2C</a>
+            </li>
+        </ul>
+    </il-nav-section>
+    <il-nav-section id="section-3">
+        <a id="link-3" href="#3" slot="label">Link 3</a>
+        <ul id="list-3">
+            <li>
+                <a id="link-3A" href="#3A">Link 3A</a>
+            </li>
+        </ul>
+    </il-nav-section>
+</il-nav>

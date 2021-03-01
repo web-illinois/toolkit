@@ -1,4 +1,12 @@
 
+il-nav-section {
+  a[slot="label"] {
+    color: var(--il-blue);
+    font: 700 1rem var(--il-source-sans);
+  }
+}
+
+
 #before-nav {
   margin: 1em;
   border: 1px solid;
@@ -6,43 +14,51 @@
   text-align: center;
 }
 
-.il-navigation {
+.il-navigation--full {
 
-  & > ul {
+  .il-navigation__menu {
     @include reset-list;
     display: flex;
     flex-direction: row;
-    background-color: #eee;
-    padding: 0 2em;
+  }
 
-    & > li {
-      @include reset-list-item;
-      position: relative;
-      padding: 1em;
-      border: 1px solid #999;
+  .il-navigation__menu-item {
+    @include reset-list-item;
+  }
+
+  .il-navigation__top-level {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .il-navigation__top-level-link {
+    color: var(--il-blue);
+    font: 700 16px/18px var(--il-source-sans);
+  }
+
+  .il-navigation__toggle {
+    @include reset-button;
+  }
+
+  .il-navigation__toggle-icon {
+    position: relative;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+
+    svg {
+      width: 100%;
+      height: 100%;
     }
   }
 
-  & > ul > li > ul {
-    @include reset-list;
+  .il-navigation__submenu {
     display: none;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    width: 300px;
-    background-color: #eee;
-    border: 1px solid #999;
-
-    & > li {
-      @include reset-list-item;
-      padding: 1em;
-    }
-  }
-
-  & > ul > li > button[aria-expanded="true"] + ul {
-    display: block;
   }
 }
+
+
 .il-navigation--compact {
   & > ul {
     padding: 0;
