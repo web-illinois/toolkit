@@ -3,7 +3,8 @@ import {LitElement, html, css} from 'lit-element';
 class NavigationSection extends LitElement {
   static get properties() {
     return {
-      expanded: {type: Boolean, default: false, attribute: true, reflect: true}
+      expanded: {type: Boolean, default: false, attribute: true, reflect: true},
+      compact: {type: Boolean, default: false, attribute: false}
     };
   }
 
@@ -20,23 +21,61 @@ li {
     flex-direction: row;
     align-items: center;
 } 
-button {
-    display: block;
-    width: 44px;
-    height: 44px;
-}
-button svg {
-    display: block;
-    width: 100%;
-    height: 100%;
-}
-.submenu {
+.full .submenu {
     position: absolute;
     left: 0;
     top: 100%;
 }
-.collapsed .submenu {
+.full.collapsed .submenu {
   display: none;
+}
+.compact .heading {
+  margin: 0;
+  padding: 6px 20px;
+  display: grid;
+  grid-template-columns: auto 60px;
+  grid-gap: 20px;
+  background-color: var(--il-cloud-1);
+  border-top: 2px solid var(--il-cloud-3);
+}
+.compact .heading ::slotted(a) {
+  text-decoration: none;
+  color: var(--il-blue);
+  font: 700 22px/30px var(--il-source-sans); 
+}
+.compact .heading button {
+  box-sizing: border-box;
+  position: relative;
+  display: block;
+  width: 60px;
+  height: 44px;
+  border: 2px solid var(--il-blue);
+  border-radius: 4px;
+  margin: 0;
+  padding: 0;
+  background-color: transparent;
+}
+.compact .heading button svg {
+  position: absolute;
+  top: 8px;
+  left: 16px;
+  display: block;
+  width: 24px;
+  height: 24px;
+  fill: var(--il-blue);
+  transition: all .3s;
+}
+.compact.expanded .heading button svg {
+  transform: rotate(180deg);
+}
+.compact .submenu {
+  display: none;
+}
+.compact.expanded .submenu {
+  display: block;
+}
+:host(:last-child) .compact {
+  border-bottom: 2px solid var(--il-cloud-3);
 }
         `
   }
@@ -71,6 +110,8 @@ button svg {
     this.getSubmenuLinks().forEach(submenuLink => {
       submenuLink.addEventListener('keydown', this.handleSubmenuLinkKeypress.bind(this));
     });
+    this.compact = this.getNavigation().compact;
+    this.getNavigation().addEventListener('compact', evt => this.compact = evt.detail);
   }
 
   handleLinkKeypress(evt) {
@@ -191,7 +232,7 @@ button svg {
   }
 
   isCompact() {
-    return this.getNavigation().compact;
+    return this.compact;
   }
 
   moveFocusToFirstSubmenuLink() {
@@ -203,15 +244,21 @@ button svg {
   }
 
   render() {
+    const state = this.expanded ? 'expanded' : 'collapsed';
+    const view = this.compact ? 'compact' : 'full';
     return html`
-        <li class="${this.expanded ? 'expanded' : 'collapsed'}">
+        <li class="${state} ${view}">
             <div class="heading">
-                <slot name="label"></slot>
-                <button aria-controls="submenu" aria-expanded="${this.expanded ? 'true' : 'false'}" @click=${this.handleToggleClick}>
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
-                        <path d="M207.029 381.476L12.686 187.132c-9.373-9.373-9.373-24.569 0-33.941l22.667-22.667c9.357-9.357 24.522-9.375 33.901-.04L224 284.505l154.745-154.021c9.379-9.335 24.544-9.317 33.901.04l22.667 22.667c9.373 9.373 9.373 24.569 0 33.941L240.971 381.476c-9.373 9.372-24.569 9.372-33.942 0z"/>
-                    </svg>
-                </button>
+                <div class="label">
+                    <slot name="label"></slot>
+                </div>
+                <div class="toggle">
+                    <button aria-controls="submenu" aria-expanded="${this.expanded ? 'true' : 'false'}" @click=${this.handleToggleClick}>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                            <path d="M207.029 381.476L12.686 187.132c-9.373-9.373-9.373-24.569 0-33.941l22.667-22.667c9.357-9.357 24.522-9.375 33.901-.04L224 284.505l154.745-154.021c9.379-9.335 24.544-9.317 33.901.04l22.667 22.667c9.373 9.373 9.373 24.569 0 33.941L240.971 381.476c-9.373 9.372-24.569 9.372-33.942 0z"/>
+                        </svg>
+                    </button>
+                </div>
             </div>
             <div class="submenu" id="submenu">
                 <slot></slot>

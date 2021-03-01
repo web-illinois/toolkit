@@ -10,13 +10,19 @@ class Navigation extends LitElement {
   static get styles() {
     return css`
 ul {
-    list-style: none;
-    margin: 0;
-    padding: .375rem 0 0;
-    display: flex;
-    flex-direction: row;
-    font-size: 1rem;
-    background-color: var(--il-cloud-1);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+.full ul {
+  padding-top: .375rem;
+  flex-direction: row;
+  font-size: 1rem;
+  background-color: var(--il-cloud-1);
+}
+.compact ul {
+  flex-direction: column;
 }
         `
   }
@@ -32,7 +38,6 @@ ul {
   }
 
   set compact(isCompact) {
-    console.debug(isCompact);
     const wasCompact = this._compact;
     if (wasCompact !== isCompact) {
       this._compact = isCompact;
@@ -60,16 +65,13 @@ ul {
     if (evt.detail === 'back') {
       if (section.previousElementSibling) {
         section.previousElementSibling.focus();
-      }
-      else {
+      } else {
         section.parentNode.lastElementChild.focus();
       }
-    }
-    else if (evt.detail === 'forward') {
+    } else if (evt.detail === 'forward') {
       if (section.nextElementSibling) {
         section.nextElementSibling.focus();
-      }
-      else {
+      } else {
         section.parentNode.firstElementChild.focus();
       }
     }
@@ -89,11 +91,12 @@ ul {
   }
 
   render() {
-    return html`<nav>
-        <ul>
-            <slot></slot>
-        </ul>
-    </nav>`
+    return html`
+        <nav class=${this.compact ? 'compact' : 'full'}>
+            <ul>
+                <slot></slot>
+            </ul>
+        </nav>`
   }
 }
 
