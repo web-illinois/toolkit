@@ -3,5 +3,6 @@ dist
 html
 node_modules
 package-lock.json
+templates/_data/tests.json
 var
 yarn.lock

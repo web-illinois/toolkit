@@ -1,7 +1,8 @@
 ---
-title: Compact navigation with open submenu
+tags: test
+title: Navigation - compact view, one submenu expanded
 layout: layouts/test.njk
-permalink: tests/navigation/compact-submenu-open.html
+permalink: tests/components/il-nav/compact-expanded.html
 ---
 
 <p id="before-nav">
@@ -11,7 +12,7 @@ permalink: tests/navigation/compact-submenu-open.html
 <il-nav compact>
     <il-nav-section id="section-1">
         <a id="link-1" href="#1" slot="label">Link 1</a>
-        <ul id="list-1">
+        <ul id="list-1" class="il-subnav">
             <li>
                 <a id="link-1A" href="#1A">Link 1A</a>
             </li>
@@ -25,7 +26,7 @@ permalink: tests/navigation/compact-submenu-open.html
     </il-nav-section>
     <il-nav-section id="section-2" expanded>
         <a id="link-2" href="#2" slot="label">Link 2</a>
-        <ul id="list-2">
+        <ul id="list-2" class="il-subnav">
             <li>
                 <a id="link-2A" href="#2A">Link 2A</a>
             </li>
@@ -39,7 +40,7 @@ permalink: tests/navigation/compact-submenu-open.html
     </il-nav-section>
     <il-nav-section id="section-3">
         <a id="link-3" href="#3" slot="label">Link 3</a>
-        <ul id="list-3">
+        <ul id="list-3" class="il-subnav">
             <li>
                 <a id="link-3A" href="#3A">Link 3A</a>
             </li>

@@ -1,5 +1,32 @@
 
-il-nav[compact] il-nav-section ul {
+il-nav:not([compact]) il-nav-section .il-subnav {
+  @include reset-list;
+  box-sizing: border-box;
+  padding: 10px 20px 25px;
+  width: 250px;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, .16);
+  background-color: white;
+
+  a {
+    @include reset-link;
+    display: block;
+    padding: 5px;
+    font: 700 16px/18px var(--il-source-sans);
+    color: var(--il-blue);
+
+    &:hover {
+      color: var(--il-altgeld);
+      text-decoration: underline;
+    }
+
+    &:focus {
+      color: var(--il-altgeld);
+      text-decoration: underline;
+      outline: 2px solid var(--il-altgeld);
+    }
+  }
+}
+il-nav[compact] il-nav-section .il-subnav {
   @include reset-list;
   padding: 10px 40px;
   background-color: white;

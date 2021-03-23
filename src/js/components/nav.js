@@ -49,12 +49,33 @@ ul {
     }
   }
 
+  getHeader() {
+    let parent = this.parentElement;
+    while (parent) {
+      if (parent.nodeName === 'IL-HEADER') {
+        return parent;
+      }
+      parent = parent.parentElement;
+    }
+    return undefined;
+  }
+
   handleContentLoaded(evt) {
     this.getSections().forEach(section => {
       section.addEventListener('collapse', this.handleSectionCollapse.bind(this));
       section.addEventListener('expand', this.handleSectionExpand.bind(this));
       section.addEventListener('exit', this.handleSectionExit.bind(this));
     });
+    const header = this.getHeader();
+    if (header) {
+      header.addEventListener('viewChange', this.handleHeaderViewChange.bind(this));
+      this.compact = header.view === 'compact';
+    }
+  }
+
+  handleHeaderViewChange(evt) {
+    console.debug(evt);
+    this.compact = evt.detail === 'compact';
   }
 
   handleSectionCollapse(evt) {

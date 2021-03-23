@@ -1,0 +1,14 @@
+---
+title: Test pages
+layout: layouts/test.njk
+---
+
+<h1>Test pages</h1>
+
+<ul>
+    {% for test in collections.test %}
+        <li>
+            <a href="{{ test.url }}">{{ test.data.title }}</a>
+        </li>
+    {% endfor %}
+</ul>

@@ -1,7 +1,7 @@
-const nav = require('../../_includes/navigation');
+const nav = require('../../../_includes/navigation');
 
 beforeEach(async () => {
-    await page.goto(localhost + '/tests/navigation/compact-submenu-open.html');
+    await page.goto(localhost + '/tests/components/il-nav/compact-expanded.html');
 });
 
 describe("in the compact view", () => {

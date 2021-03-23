@@ -1,7 +1,8 @@
 ---
-title: Navigation with open submenu
+tags: test
+title: Navigation - default view, all submenus collapsed
 layout: layouts/test.njk
-permalink: tests/navigation/submenu-open.html
+permalink: tests/components/il-nav/default-collapsed.html
 ---
 
 <p id="before-nav">
@@ -10,8 +11,8 @@ permalink: tests/navigation/submenu-open.html
 
 <il-nav>
     <il-nav-section id="section-1">
-        <a id="link-1" href="#1" slot="label">Link 1</a>
-        <ul id="list-1">
+        <a id="link-1" href="/tests/success.html" slot="label">Link 1</a>
+        <ul id="list-1" class="il-subnav">
             <li>
                 <a id="link-1A" href="#1A">Link 1A</a>
             </li>
@@ -23,9 +24,9 @@ permalink: tests/navigation/submenu-open.html
             </li>
         </ul>
     </il-nav-section>
-    <il-nav-section id="section-2" expanded>
-        <a id="link-2" href="#2" slot="label">Link 2</a>
-        <ul id="list-2">
+    <il-nav-section id="section-2">
+        <a id="link-2" href="/tests/success.html" slot="label">Link 2</a>
+        <ul id="list-2" class="il-subnav">
             <li>
                 <a id="link-2A" href="#2A">Link 2A</a>
             </li>
@@ -38,8 +39,8 @@ permalink: tests/navigation/submenu-open.html
         </ul>
     </il-nav-section>
     <il-nav-section id="section-3">
-        <a id="link-3" href="#3" slot="label">Link 3</a>
-        <ul id="list-3">
+        <a id="link-3" href="/tests/success.html" slot="label">Link 3</a>
+        <ul id="list-3" class="il-subnav">
             <li>
                 <a id="link-3A" href="#3A">Link 3A</a>
             </li>

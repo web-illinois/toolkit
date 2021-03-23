@@ -19,6 +19,8 @@ il-header {
           content: "/";
           width: 1em;
           text-align: center;
+          color: var(--il-altgeld);
+          font: 700 16px var(--il-source-sans);
         }
         &:last-of-type::after {
           content: "";
@@ -29,45 +31,20 @@ il-header {
         @include reset-link;
         display: block;
         text-transform: uppercase;
+        font: 700 16px var(--il-source-sans);
+        color: var(--il-blue);
+
+        &:focus, &:hover {
+          color: var(--il-altgeld);
+          text-decoration: underline;
+        }
+        &:focus {
+          outline: 2px dotted var(--il-altgeld);
+        }
       }
     }
 
     .il-navigation {
-      background-color: var(--il-cloud-1);
-      padding: 0 var(--il-content-margin);
-      font: 400 18px var(--il-source-sans);
-
-      & > ul {
-        @include reset-list;
-        position: relative;
-        display: flex;
-        flex-direction: row;
-        margin: 0 auto;
-        max-width: var(--il-content-max-width);
-
-        & > li {
-          @include reset-list-item;
-          position: relative;
-
-          & > a {
-            @include reset-link;
-            display: inline-block;
-            padding: .5em;
-          }
-        }
-
-        ul {
-          display: none;
-          position: absolute;
-          left: 0;
-          top: 100%;
-          background-color: var(--il-cloud-1);
-        }
-
-        button[aria-expanded="true"] + ul {
-          display: block;
-        }
-      }
     }
 
     .il-search {
@@ -80,14 +57,21 @@ il-header {
   &[view="compact"] {
 
     .il-links {
+      background-color: var(--il-cloud-1);
+
       ul {
         @include reset-list;
       }
       li {
         @include reset-list-item;
+        padding: 14px 20px;
+        border-bottom: 2px solid #707070;
       }
       a {
         @include reset-link;
+        text-decoration: none;
+        color: var(--il-blue);
+        font: 700 22px/30px var(--il-source-sans);
       }
     }
 

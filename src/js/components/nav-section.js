@@ -21,12 +21,69 @@ li {
     flex-direction: row;
     align-items: center;
 } 
-.full .submenu {
+.full .contents {
     position: absolute;
     left: 0;
     top: 100%;
 }
-.full.collapsed .submenu {
+.full .heading {
+  position: relative;
+  padding: 0;
+  color: var(--il-blue);
+}
+.full .heading:hover {
+  background-color: white;
+  color: var(--il-altgeld);
+}
+.full .label ::slotted(a) {
+  display: block;
+  padding: 10px 40px 10px 20px;
+  font: 700 16px/18px var(--il-source-sans);
+  color: inherit; 
+  text-decoration: none;
+}
+.full .label ::slotted(a:hover) {
+  text-decoration: underline;
+}
+.full .indicator {
+  position: absolute;
+  left: 5px;
+  top: 5px;
+  right: 5px;
+  bottom: 5px;
+  display: block;
+  pointer-events: none;
+  border: 2px solid transparent;
+}
+.full .indicator svg {
+  position: absolute;
+  right: 12px;
+  top: calc(50% - 7px);
+  display: block;
+  width: 14px;
+  height: 14px;
+  fill: currentcolor;
+}
+.full .heading:hover .indicator svg {
+  transform: rotate(180deg);
+}
+.full .toggle {
+  display: none;
+}
+.full .toggle button {
+  display: block;
+  border: 0;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  background-color: transparent;
+  width: 24px;
+  height: 24px;
+}
+.full.expanded {
+  background-color: white;
+}
+.full.collapsed .contents {
   display: none;
 }
 .compact .heading {
@@ -36,12 +93,15 @@ li {
   grid-template-columns: auto 60px;
   grid-gap: 20px;
   background-color: var(--il-cloud-1);
-  border-top: 2px solid var(--il-cloud-3);
+  border-top: 2px solid #707070;
 }
 .compact .heading ::slotted(a) {
   text-decoration: none;
   color: var(--il-blue);
   font: 700 22px/30px var(--il-source-sans); 
+}
+.compact .indicator {
+  display: none;
 }
 .compact .heading button {
   box-sizing: border-box;
@@ -68,14 +128,14 @@ li {
 .compact.expanded .heading button svg {
   transform: rotate(180deg);
 }
-.compact .submenu {
+.compact .contents {
   display: none;
 }
-.compact.expanded .submenu {
+.compact.expanded .contents {
   display: block;
 }
 :host(:last-child) .compact {
-  border-bottom: 2px solid var(--il-cloud-3);
+  border-bottom: 2px solid #707070;
 }
         `
   }
@@ -115,7 +175,10 @@ li {
   }
 
   handleLinkKeypress(evt) {
-    if (evt.code === 'ArrowDown') {
+    if (evt.code === 'Space') {
+      window.location.href = this.getLink().href;
+    }
+    else if (evt.code === 'ArrowDown') {
       if (!this.expanded) {
         this.expandAndMoveFocusToFirstSubmenuLink();
       }
@@ -138,6 +201,18 @@ li {
     else if (evt.code === 'ArrowRight') {
       const event = new CustomEvent('exit', { detail: 'forward' });
       this.dispatchEvent(event);
+    }
+  }
+
+  handleMouseOut(evt) {
+    if (!this.isCompact()) {
+      this.collapse();
+    }
+  }
+
+  handleMouseOver(evt) {
+    if (!this.isCompact()) {
+      this.expand();
     }
   }
 
@@ -225,6 +300,7 @@ li {
       }
       parent = parent.parentElement;
     }
+    return undefined;
   }
 
   getSubmenuLinks() {
@@ -247,20 +323,25 @@ li {
     const state = this.expanded ? 'expanded' : 'collapsed';
     const view = this.compact ? 'compact' : 'full';
     return html`
-        <li class="${state} ${view}">
+        <li class="${state} ${view}" @mouseover=${this.handleMouseOver} @mouseout=${this.handleMouseOut}>
             <div class="heading">
                 <div class="label">
                     <slot name="label"></slot>
                 </div>
+                <div class="indicator" role="presentation">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                        <path d="M207.029 381.476L12.686 187.132c-9.373-9.373-9.373-24.569 0-33.941l22.667-22.667c9.357-9.357 24.522-9.375 33.901-.04L224 284.505l154.745-154.021c9.379-9.335 24.544-9.317 33.901.04l22.667 22.667c9.373 9.373 9.373 24.569 0 33.941L240.971 381.476c-9.373 9.372-24.569 9.372-33.942 0z"/>
+                    </svg>
+                </div>
                 <div class="toggle">
-                    <button aria-controls="submenu" aria-expanded="${this.expanded ? 'true' : 'false'}" @click=${this.handleToggleClick}>
+                    <button aria-controls="contents" aria-expanded="${this.expanded ? 'true' : 'false'}" @click=${this.handleToggleClick}>
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
                             <path d="M207.029 381.476L12.686 187.132c-9.373-9.373-9.373-24.569 0-33.941l22.667-22.667c9.357-9.357 24.522-9.375 33.901-.04L224 284.505l154.745-154.021c9.379-9.335 24.544-9.317 33.901.04l22.667 22.667c9.373 9.373 9.373 24.569 0 33.941L240.971 381.476c-9.373 9.372-24.569 9.372-33.942 0z"/>
                         </svg>
                     </button>
                 </div>
             </div>
-            <div class="submenu" id="submenu">
+            <div class="contents" id="contents">
                 <slot></slot>
             </div>
         </li>`

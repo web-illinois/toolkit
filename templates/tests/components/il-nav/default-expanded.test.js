@@ -1,7 +1,7 @@
-const nav = require('../../_includes/navigation');
+const nav = require('../../../_includes/navigation');
 
 beforeEach(async () => {
-    await page.goto(localhost + '/tests/navigation/submenu-open.html');
+    await page.goto(localhost + '/tests/components/il-nav/default-expanded.html');
 });
 
 describe("when a submenu is open", () => {
@@ -9,18 +9,6 @@ describe("when a submenu is open", () => {
     test("the submenu is visible", async () => {
         const isVisible = await nav.sectionisExpanded(page, '#section-2');
         await expect(isVisible).toBeTruthy();
-    });
-
-    describe("clicking the toggle", () => {
-        beforeEach(async () => {
-            const toggle = await nav.getSectionToggle(page, '#section-2');
-            await toggle.click();
-        });
-
-        test('closes the submenu', async () => {
-            const isVisible = await nav.sectionisExpanded(page, '#section-2');
-            await expect(isVisible).toBeFalsy();
-        });
     });
 
     describe("clicking outside the navigation", () => {
@@ -31,10 +19,9 @@ describe("when a submenu is open", () => {
         test.todo('closes the submenu');
     });
 
-    describe("clicking another submenu toggle", () => {
+    describe("hovering over another top-level link", () => {
         beforeEach(async () => {
-            const toggle = await nav.getSectionToggle(page, '#section-3');
-            await toggle.click();
+            await page.hover('#link-3');
         });
 
         test('closes the open submenu', async () => {
@@ -48,10 +35,9 @@ describe("when a submenu is open", () => {
         });
     });
 
-    describe("when the toggle has focus", () => {
+    describe("when a top-level link has focus", () => {
         beforeEach(async () => {
-            const toggle = await nav.getSectionToggle(page, '#section-2');
-            await toggle.focus();
+            await nav.moveFocus(page, '#link-2');
         });
 
         describe("pressing tab", () => {
@@ -62,28 +48,6 @@ describe("when a submenu is open", () => {
             test("moves focus to the first submenu link", async () => {
                 const hasFocus = await nav.elementHasFocus(page, '#link-2A');
                 await expect(hasFocus).toBeTruthy();
-            });
-        });
-
-        describe("pressing enter", () => {
-            beforeEach(async () => {
-                await page.keyboard.press('Enter');
-            });
-
-            test("closes the submenu", async () => {
-                const isVisible = await nav.sectionisExpanded(page, '#section-2');
-                await expect(isVisible).toBeFalsy();
-            });
-        });
-
-        describe("pressing the space bar", () => {
-            beforeEach(async () => {
-                await page.keyboard.press('Space');
-            });
-
-            test("closes the submenu", async () => {
-                const isVisible = await nav.sectionisExpanded(page, '#section-2');
-                await expect(isVisible).toBeFalsy();
             });
         });
     });

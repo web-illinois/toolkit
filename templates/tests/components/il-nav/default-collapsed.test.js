@@ -1,13 +1,12 @@
-const nav = require('../../_includes/navigation');
+const nav = require('../../../_includes/navigation');
 
 beforeEach(async () => {
-    await page.goto('http://localhost:8080/tests/navigation/default.html');
+    await page.goto(localhost + '/tests/components/il-nav/default-collapsed.html');
 });
 
-describe("clicking a submenu toggle", () => {
+describe("hovering over a top-level link", () => {
     beforeEach(async () => {
-        const button = await nav.getSectionToggle(page, '#section-1');
-        await button.click();
+        await page.hover('#link-1');
     });
 
     test('opens the submenu', async () => {
@@ -19,6 +18,41 @@ describe("clicking a submenu toggle", () => {
 describe("when a top-level link has focus", () => {
     beforeEach(async () => {
         await nav.moveFocus(page, '#link-2');
+    });
+
+    describe("pressing tab", () => {
+        beforeEach(async () => {
+            await page.keyboard.press('Tab');
+        });
+
+        test("moves focus to the next top-level link", async () => {
+            const hasFocus = await nav.elementHasFocus(page, '#link-3');
+            await expect(hasFocus).toBeTruthy();
+        });
+    });
+
+    describe("pressing enter", () => {
+        beforeEach(async () => {
+            await page.keyboard.press('Enter');
+            await page.waitForSelector('#success');
+        });
+
+        test("navigates to the link target", async () => {
+            const html = await page.$eval('#success', el => el.innerHTML);
+            expect(html).toBe('Success');
+        });
+    });
+
+    describe("pressing the space bar", () => {
+        beforeEach(async () => {
+            await page.keyboard.press('Space');
+            await page.waitForSelector('#success');
+        });
+
+        test("navigates to the link target", async () => {
+            const html = await page.$eval('#success', el => el.innerHTML);
+            expect(html).toBe('Success');
+        });
     });
 
     describe("pressing the right arrow", () => {
@@ -72,46 +106,6 @@ describe("when a top-level link has focus", () => {
         test('moves focus to the last link in the submenu', async () => {
             const hasFocus = await nav.elementHasFocus(page, '#link-2C');
             await expect(hasFocus).toBeTruthy();
-        });
-    });
-});
-
-describe("when a submenu toggle has focus", () => {
-    beforeEach(async () => {
-        const button = await nav.getSectionToggle(page, '#section-1');
-        await button.focus();
-    });
-
-    describe("pressing tab", () => {
-        beforeEach(async () => {
-            await page.keyboard.press('Tab');
-        });
-
-        test("moves focus to the next top-level link", async () => {
-            const hasFocus = await nav.elementHasFocus(page, '#link-2');
-            await expect(hasFocus).toBeTruthy();
-        });
-    });
-
-    describe("pressing enter", () => {
-        beforeEach(async () => {
-            await page.keyboard.press('Enter');
-        });
-
-        test("opens the submenu", async () => {
-            const isVisible = await nav.sectionisExpanded(page, '#section-1');
-            await expect(isVisible).toBeTruthy();
-        });
-    });
-
-    describe("pressing the space bar", () => {
-        beforeEach(async () => {
-            await page.keyboard.press('Space');
-        });
-
-        test("opens the submenu", async () => {
-            const isVisible = await nav.sectionisExpanded(page, '#section-1');
-            await expect(isVisible).toBeTruthy();
         });
     });
 });

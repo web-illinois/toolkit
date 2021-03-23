@@ -24,10 +24,6 @@ module.exports = {
     "viewports": [iphone, desktop, hdtv],
     "scenarios": [
         {
-            'label': 'footer-max',
-            'url': host + '/tests/footer/max/'
-        },
-        {
             'label': 'colors',
             'url': host + '/tests/colors/',
             'viewports': [desktop]
