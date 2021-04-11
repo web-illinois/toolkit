@@ -13,19 +13,20 @@
     "start": "encore dev-server",
     "test": "npm run test-jest && npm run test-backstop",
     "test-backstop": "backstop test --config=tests/backstop/backstop.js",
-    "test-jest": "jest --config=tests/jest/jest.config.js --json --outputFile=templates/_data/tests.json",
+    "test-jest": "jest --config=tests/jest/jest.config.js --json --outputFile=var/tests.functional.results.json",
     "watch-html": "eleventy --watch"
   },
   "dependencies": {
     "@symfony/webpack-encore": "^0.30.2",
-    "lit-element": "^2.3.1",
+    "fast-glob": "^3.2.5",
+    "lit-element": "^2.4.0",
     "node-sass": "^4.14.1",
     "sass-loader": "^8.0.2"
   },
   "devDependencies": {
-    "@11ty/eleventy": "^0.11.0",
+    "@11ty/eleventy": "^0.11.1",
     "backstopjs": "^4.5.1",
-    "bootstrap": "^4.5.2",
+    "bootstrap": "^4.6.0",
     "jest": "^25.5.4",
     "jest-html-reporter": "^3.3.0",
     "jest-puppeteer": "^4.4.0"

@@ -2,10 +2,9 @@
 <html dir="ltr" lang="en">
     <head>
         <meta charset="utf-8">
-        <title>{{ title }} | Brand toolkit for the web</title>
+        <title>Web toolkit</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0">
         <link rel="icon" href="https://cdn.brand.illinois.edu/favicon.ico">
-        <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@300;500;700&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="{{ version.dist }}/toolkit.css">
         <link rel="stylesheet" href="{{ "/_assets/docs.css" | url }}">
         {% block stylesheets %}
@@ -15,31 +14,28 @@
         {% endblock %}
         <script src="{{ version.dist }}/toolkit.js"></script>
     </head>
-    <body class="il-page">
-        <header>
-            <il-header>
-                <il-unit-wordmark slot="wordmark">
-                    <h1><a href="https://marketing.illinois.edu/">Strategic Marketing and Branding</a></h1>
-                </il-unit-wordmark>
-            </il-header>
-        </header>
-        <main>
-
-            {% block main %}
-                {{ content | safe }}
-            {% endblock %}
-
-        </main>
-
-        <footer>
-            {% block footer %}
-            {% include "footer.njk" %}
-            {% endblock %}
-        </footer>
-
+    <body>
+        <div class="page">
+            <header>
+                <h1>Web toolkit</h1>
+                <p>Version {{ pkg.version }}</p>
+            </header>
+            <aside class="sidebar">
+                {% include "navigation.njk" %}
+            </aside>
+            <main class="main">
+                {% block main %}
+                    {{ content | safe }}
+                {% endblock %}
+            </main>
+            <footer>
+                <p>&copy; 2021, University of Illinois Urbana-Champaign</p>
+            </footer>
+        </div>
         {% block scripts %}
             {% if script %}
                 <script src="{{ script | url }}"></script>
+                <script async src="https://static.codepen.io/assets/embed/ei.js"></script>
             {% endif %}
         {% endblock %}
     </body>

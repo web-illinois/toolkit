@@ -1,30 +1,17 @@
 ---
 title: Header
+tags: component
+layout: layouts/docs.njk
 ---
+<h1>Header</h1>
 
-{% extends "layouts/docs.njk" %}
+{{ tests }}
 
-{% block scripts %}
-    <script async src="https://static.codepen.io/assets/embed/ei.js"></script>
-{% endblock %}
-
-{% block main %}
-<section class="il-content doc-section">
-    <div class="doc-text">
-        <h1>Header</h1>
-    </div>
-    <div class="docs-codepen">
-        <p class="codepen" data-height="500" data-theme-id="dark" data-default-tab="html,result" data-user="il-marketing" data-slug-hash="poyGzjr" style="height: 500px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="Header with unit wordmark">
+<p class="codepen" data-height="500" data-theme-id="dark" data-default-tab="html,result" data-user="il-marketing" data-slug-hash="poyGzjr" style="height: 500px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="Header with unit wordmark">
   <span>See the Pen <a href="https://codepen.io/il-marketing/pen/poyGzjr">
   Header with unit wordmark</a> by UIUC Strategic Marketing and Branding (<a href="https://codepen.io/il-marketing">@il-marketing</a>)
   on <a href="https://codepen.io">CodePen</a>.</span>
         </p>
-
-    </div>
-</section>
-
-<section class="il-content">
-    <div class="il-formatted">
 
         <ul class="slots">
             <li>
@@ -46,20 +33,3 @@ title: Header
             <li><a href="{{ "/tests/header/links-and-search/" | url }}">With links and search form</a></li>
             <li><a href="{{ "/tests/header/menu-button/" | url }}">With menu button</a></li>
         </ul>
-
-    </div>
-</section>
-{% endblock %}
-
-{% block footer %}
-<section class="il-content doc-next">
-    <div>
-        <h2>What's next?</h2>
-        <ul>
-            <li><a href="{{ "/footer/" | url }}">Using the standard web footer</a></li>
-            <li><a href="{{ "/" | url }}">Toolkit homepage</a></li>
-        </ul>
-    </div>
-</section>
-{{ super() }}
-{% endblock %}

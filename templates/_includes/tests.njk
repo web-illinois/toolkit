@@ -1,0 +1,22 @@
+<section class="tests">
+
+    <h2>Tests</h2>
+
+    <ul>
+        {% for test in tests %}
+            <li class="tests" data-test-status="{{ test.results.status if test.results else 'unknown' }}">
+                <a href="{{ test.page.url }}">{{ test.page.data.title }}</a>
+                {% if test.results %}
+                    <ul>
+                        {% for result in test.results.assertionResults %}
+                            <li>
+                                {{ result.fullName }}
+                            </li>
+                        {% endfor %}
+                    </ul>
+                {% endif %}
+            </li>
+        {% endfor %}
+    </ul>
+
+</section>

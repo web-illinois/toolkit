@@ -14,7 +14,7 @@ Encore
     .addStyleEntry('fonts', './src/css/fonts.scss')
     .addStyleEntry('icons', './src/css/icons.scss')
     .disableSingleRuntimeChunk()
-    .cleanupOutputBeforeBuild()
+    //.cleanupOutputBeforeBuild()
     //.enableBuildNotifications()
     .enableSourceMaps(!Encore.isProduction())
     //.enableVersioning(Encore.isProduction())

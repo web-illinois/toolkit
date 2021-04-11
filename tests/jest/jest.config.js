@@ -1,4 +1,8 @@
 module.exports = {
     "preset": "jest-puppeteer",
-    "testMatch": ["**/*.test.js"]
+    "rootDir": "../../templates",
+    "testMatch": ["**/*.test.js"],
+    "globals": {
+        "localhost": "http://localhost:8080"
+    }
 };
