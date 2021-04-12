@@ -1,7 +1,8 @@
-const nav = require('../../_includes/navigation');
+const util = require('../../tests.util');
+const nav = require('./nav.util');
 
 beforeEach(async () => {
-    await page.goto(localhost + '/tests/components/il-nav/default-collapsed.html');
+    await page.goto(util.url('/tests/components/il-nav/default-collapsed.html'));
 });
 
 describe("hovering over a top-level link", () => {
@@ -17,7 +18,7 @@ describe("hovering over a top-level link", () => {
 
 describe("when a top-level link has focus", () => {
     beforeEach(async () => {
-        await nav.moveFocus(page, '#link-2');
+        await util.moveFocus(page, '#link-2');
     });
 
     describe("pressing tab", () => {
@@ -26,7 +27,7 @@ describe("when a top-level link has focus", () => {
         });
 
         test("moves focus to the next top-level link", async () => {
-            const hasFocus = await nav.elementHasFocus(page, '#link-3');
+            const hasFocus = await util.elementHasFocus(page, '#link-3');
             await expect(hasFocus).toBeTruthy();
         });
     });
@@ -61,7 +62,7 @@ describe("when a top-level link has focus", () => {
         });
 
         test("moves focus to the next top-level link", async () => {
-            const hasFocus = await nav.elementHasFocus(page, '#link-3');
+            const hasFocus = await util.elementHasFocus(page, '#link-3');
             await expect(hasFocus).toBeTruthy();
         });
     });
@@ -72,7 +73,7 @@ describe("when a top-level link has focus", () => {
         });
 
         test("moves focus to the previous top-level link", async () => {
-            const hasFocus = await nav.elementHasFocus(page, '#link-1');
+            const hasFocus = await util.elementHasFocus(page, '#link-1');
             await expect(hasFocus).toBeTruthy();
         });
     });
@@ -88,7 +89,7 @@ describe("when a top-level link has focus", () => {
         });
 
         test('moves focus to the first link in the submenu', async () => {
-            const hasFocus = await nav.elementHasFocus(page, '#link-2A');
+            const hasFocus = await util.elementHasFocus(page, '#link-2A');
             await expect(hasFocus).toBeTruthy();
         });
     });
@@ -104,7 +105,7 @@ describe("when a top-level link has focus", () => {
         });
 
         test('moves focus to the last link in the submenu', async () => {
-            const hasFocus = await nav.elementHasFocus(page, '#link-2C');
+            const hasFocus = await util.elementHasFocus(page, '#link-2C');
             await expect(hasFocus).toBeTruthy();
         });
     });
@@ -112,7 +113,7 @@ describe("when a top-level link has focus", () => {
 
 describe("when the first top-level link has focus", () => {
     beforeEach(async () => {
-        await nav.moveFocus(page, '#link-1');
+        await util.moveFocus(page, '#link-1');
     });
 
     describe("pressing the left arrow", () => {
@@ -121,7 +122,7 @@ describe("when the first top-level link has focus", () => {
         });
 
         test("moves focus to the last top-level link", async () => {
-            const hasFocus = await nav.elementHasFocus(page, '#link-3');
+            const hasFocus = await util.elementHasFocus(page, '#link-3');
             await expect(hasFocus).toBeTruthy();
         });
     });
@@ -129,7 +130,7 @@ describe("when the first top-level link has focus", () => {
 
 describe("when the last top-level link has focus", () => {
     beforeEach(async () => {
-        await nav.moveFocus(page, '#link-3');
+        await util.moveFocus(page, '#link-3');
     });
 
     describe("pressing the right arrow", () => {
@@ -138,7 +139,7 @@ describe("when the last top-level link has focus", () => {
         });
 
         test("moves focus to the first top-level link", async () => {
-            const hasFocus = await nav.elementHasFocus(page, '#link-1');
+            const hasFocus = await util.elementHasFocus(page, '#link-1');
             await expect(hasFocus).toBeTruthy();
         });
     });

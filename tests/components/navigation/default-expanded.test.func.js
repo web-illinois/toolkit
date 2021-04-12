@@ -1,7 +1,8 @@
-const nav = require('../../_includes/navigation');
+const util = require('../../tests.util');
+const nav = require('./nav.util');
 
 beforeEach(async () => {
-    await page.goto(localhost + '/tests/components/il-nav/default-expanded.html');
+    await page.goto(util.url('/tests/components/il-nav/default-expanded.html'));
 });
 
 describe("when a submenu is open", () => {
@@ -37,7 +38,7 @@ describe("when a submenu is open", () => {
 
     describe("when a top-level link has focus", () => {
         beforeEach(async () => {
-            await nav.moveFocus(page, '#link-2');
+            await util.moveFocus(page, '#link-2');
         });
 
         describe("pressing tab", () => {
@@ -46,7 +47,7 @@ describe("when a submenu is open", () => {
             });
 
             test("moves focus to the first submenu link", async () => {
-                const hasFocus = await nav.elementHasFocus(page, '#link-2A');
+                const hasFocus = await util.elementHasFocus(page, '#link-2A');
                 await expect(hasFocus).toBeTruthy();
             });
         });
@@ -54,7 +55,7 @@ describe("when a submenu is open", () => {
 
     describe("when a submenu link has focus", () => {
         beforeEach(async () => {
-            await nav.moveFocus(page, '#link-2B');
+            await util.moveFocus(page, '#link-2B');
         });
 
         describe("pressing the escape key", () => {
@@ -68,7 +69,7 @@ describe("when a submenu is open", () => {
             });
 
             test("moves focus to the top-level link", async () => {
-                const hasFocus = await nav.elementHasFocus(page, '#link-2');
+                const hasFocus = await util.elementHasFocus(page, '#link-2');
                 await expect(hasFocus).toBeTruthy();
             });
         })
@@ -79,7 +80,7 @@ describe("when a submenu is open", () => {
             });
 
             test("moves focus to the next submenu link", async () => {
-                const hasFocus = await nav.elementHasFocus(page, '#link-2C');
+                const hasFocus = await util.elementHasFocus(page, '#link-2C');
                 await expect(hasFocus).toBeTruthy();
             });
         });
@@ -90,7 +91,7 @@ describe("when a submenu is open", () => {
             });
 
             test("moves focus to the next submenu link", async () => {
-                const hasFocus = await nav.elementHasFocus(page, '#link-2C');
+                const hasFocus = await util.elementHasFocus(page, '#link-2C');
                 await expect(hasFocus).toBeTruthy();
             });
         });
@@ -101,7 +102,7 @@ describe("when a submenu is open", () => {
             });
 
             test("moves focus to the previous submenu link", async () => {
-                const hasFocus = await nav.elementHasFocus(page, '#link-2A');
+                const hasFocus = await util.elementHasFocus(page, '#link-2A');
                 await expect(hasFocus).toBeTruthy();
             });
         });
@@ -109,7 +110,7 @@ describe("when a submenu is open", () => {
 
     describe("when the last submenu link has focus", () => {
         beforeEach(async () => {
-            await nav.moveFocus(page, '#link-2C');
+            await util.moveFocus(page, '#link-2C');
         });
 
         describe("pressing the down arrow", () => {
@@ -118,7 +119,7 @@ describe("when a submenu is open", () => {
             });
 
             test("moves focus to the first link in the submenu", async () => {
-                const hasFocus = await nav.elementHasFocus(page, '#link-2A');
+                const hasFocus = await util.elementHasFocus(page, '#link-2A');
                 await expect(hasFocus).toBeTruthy();
             });
         });
@@ -126,7 +127,7 @@ describe("when a submenu is open", () => {
 
     describe("when the first submenu link has focus", () => {
         beforeEach(async () => {
-            await nav.moveFocus(page, '#link-2A');
+            await util.moveFocus(page, '#link-2A');
         });
 
         describe("pressing the up arrow", () => {
@@ -135,7 +136,7 @@ describe("when a submenu is open", () => {
             });
 
             test("moves focus to the last link in the submenu", async () => {
-                const hasFocus = await nav.elementHasFocus(page, '#link-2C');
+                const hasFocus = await util.elementHasFocus(page, '#link-2C');
                 await expect(hasFocus).toBeTruthy();
             });
         });
