@@ -1,4 +1,4 @@
-*.test.js
+*.util.js
 *.test.func.js
 *.test.util.js
 *.test.visual.js

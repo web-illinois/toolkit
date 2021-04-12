@@ -3,6 +3,7 @@ const path = require('path');
 
 const desktop = {
     "label": "desktop",
+    "description": "Desktop",
     "width": 1280,
     "height": 1024
 };
@@ -45,6 +46,7 @@ module.exports = {
     "report": ["json"],
     "engine": "puppeteer",
     "onReadyScript": "onReady.js",
+    "asyncCaptureLimit": 5,
     "debugWindow": false,
     "debug": false
 };

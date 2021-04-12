@@ -1,14 +1,5 @@
 {% extends "layouts/test.njk" %}
 
-{% macro specimen(font, weight) %}
-    <li>
-        <span class="specimen" id="{{ font.var }}" style="font-family:var(--{{ font.var }});font-weight:{{ weight }};font-style:{{ font.style }}">
-            AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789
-        </span>
-        <span class="label">{{ font.name }} ({{ weight }} {{ font.style }})</span>
-    </li>
-{% endmacro %}
-
 {% block styles %}
     <style>
         body {
@@ -35,6 +26,11 @@
             line-height: 1em;
             overflow-wrap: anywhere;
         }
+        h1 {
+            margin: 0;
+            padding: 0 20px 10px;
+            font: 700 36px var(--il-source-sans);
+        }
         .label {
             display: block;
             margin-top: 10px;
@@ -44,9 +40,17 @@
 {% endblock %}
 
 {% block body %}
+    <h1>{{ title }}</h1>
     <ul>
-        {% for weight in font.weights %}
-            {{ specimen(font, weight) }}
+        {% for weight in weights %}
+            {% for style in styles %}
+                <li>
+                    <span class="specimen" id="{{ var }}" style="font-family:var(--{{ var }});font-weight:{{ weight }};font-style:{{ style }}">
+                        AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789
+                    </span>
+                    <span class="label">{{ weight }} {{ style }}</span>
+                </li>
+            {% endfor %}
         {% endfor %}
     </ul>
 {% endblock %}

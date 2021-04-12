@@ -1,0 +1,15 @@
+---
+tags: test
+title: Line icons by entity
+layout: layouts/test-icons.njk
+permalink: tests/stylesheets/icons/line-entities.html
+---
+
+<ul class="icon-sheet icon-sheet--line">
+    {% for icon in icons %}
+        <li>
+            <span class="icon-sheet__icon">{{ icon.entity | safe }}</span>
+            <span class="icon-sheet__label">{{ icon.entity }}</span>
+        </li>
+    {% endfor %}
+</ul>

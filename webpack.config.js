@@ -21,11 +21,9 @@ Encore
     .enableSassLoader()
     .configureDevServerOptions(options => {
         options.contentBase = [
-            path.join(__dirname, 'node_modules', 'bootstrap', 'dist'),
             path.join(__dirname, 'html')
         ];
         options.contentBasePublicPath = [
-            '/vendor/bootstrap',
             '/'
         ];
         options.liveReload = false;

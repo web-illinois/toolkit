@@ -25,18 +25,26 @@
             </aside>
             <main class="main">
                 {% block main %}
+
                     {{ content | safe }}
+
+                    {% if tests %}
+                        {% include "tests.njk" %}
+                    {% endif %}
+
                 {% endblock %}
             </main>
             <footer>
-                <p>&copy; 2021, University of Illinois Urbana-Champaign</p>
+                &copy; 2021, University of Illinois Board of Trustees
+                &bull;
+                <a href="https://www.vpaa.uillinois.edu/resources/web_privacy">Privacy</a>
+                &bull;
+                <a href="https://illinois.edu/resources/website/accessibility.html">Accessibility</a>
+                <input type="text" id="clipboard-buffer" name="clip" value="" readonly>
             </footer>
         </div>
         {% block scripts %}
-            {% if script %}
-                <script src="{{ script | url }}"></script>
-                <script async src="https://static.codepen.io/assets/embed/ei.js"></script>
-            {% endif %}
+            <script src="{{ "/_assets/docs.js" | url }}"></script>
         {% endblock %}
     </body>
 </html>

@@ -1,0 +1,27 @@
+---
+tags: test
+title: Line icons by CSS variable
+layout: layouts/test-icons.njk
+permalink: tests/stylesheets/icons/line-css.html
+---
+
+<style>
+    {% for icon in icons %}
+        {% for ligature in icon.ligatures %}
+            #{{ ligature }}:before {
+                content: var(--il-icon-{{ ligature }});
+            }
+        {% endfor %}
+    {% endfor %}
+</style>
+
+<ul class="icon-sheet icon-sheet--line">
+    {% for icon in icons %}
+        {% for ligature in icon.ligatures %}
+            <li>
+                <span id="{{ ligature }}" class="icon-sheet__icon"></span>
+                <span class="icon-sheet__label">--il-icon-{{ ligature }}</span>
+            </li>
+        {% endfor %}
+    {% endfor %}
+</ul>

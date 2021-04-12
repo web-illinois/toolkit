@@ -1,0 +1,17 @@
+---
+tags: test
+title: Solid icons by ligature
+layout: layouts/test-icons.njk
+permalink: tests/stylesheets/icons/solid-ligatures.html
+---
+
+<ul class="icon-sheet icon-sheet--solid">
+    {% for icon in icons %}
+        {% for ligature in icon.ligatures %}
+            <li>
+                <span class="icon-sheet__icon">{{ ligature }}</span>
+                <span class="icon-sheet__label">{{ ligature }}</span>
+            </li>
+        {% endfor %}
+    {% endfor %}
+</ul>

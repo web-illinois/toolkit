@@ -1,67 +1,41 @@
 ---
 title: Getting started
+layout: layouts/docs.njk
 ---
 
-{% extends "layouts/docs.njk" %}
+<h1>Getting started</h1>
 
-{% block main %}
-<section class="doc-section il-content">
+<p>There are 3 ways to add the toolkit to your website:</p>
 
+<ol>
+    <li>Include links to centrally-hosted versions of the toolkit files</li>
+    <li>Download the toolkit files to host on your own webserver</li>
+    <li>Build a custom copy of the toolkit from the source code</li>
+</ol>
 
-    <div class="doc-text il-formatted">
+<h2>Include it</h2>
 
-        <h1>Getting started</h1>
+<p>The easiest way to use the toolkit is by linking to files in our content delivery network.
+    Add these lines to the <code>{{ "<head>" }}</code> of each page in your site:</p>
 
-        <p>There are 3 ways to add the toolkit to your website:</p>
+<pre class="doc-code"><code>{{ "<link rel=\"stylesheet\" href=\"" + version.cdn + "/toolkit.css\">" }}
+        {{ "<script src=\"" + version.cdn + "/toolkit.js\"></script>" }}</code></pre>
 
-        <ol>
-            <li>Include links to centrally-hosted versions of the toolkit files</li>
-            <li>Download the toolkit files to host on your own webserver</li>
-            <li>Build a custom copy of the toolkit from the source code</li>
-        </ol>
+<h2>Download it</h2>
 
-        <h2>Include it</h2>
+<p>To host your own copy of the toolkit, download the toolkit files:</p>
 
-        <p>The easiest way to use the toolkit is by linking to files in our content delivery network.
-            Add these lines to the <code>{{ "<head>" }}</code> of each page in your site:</p>
+<a class="il-icon-button" data-icon-name="download" href="{{ version.cdn }}/toolkit.zip" download>Download version
+    1.1</a>
 
-    </div>
+<p>Add the same code as above, but with your URLs for <code>toolkit.css</code> and <code>toolkit.js</code>.</p>
 
-    <pre class="doc-code"><code>{{ "<link rel=\"stylesheet\" href=\"" + version.cdn + "/toolkit.css\">" }}
-{{ "<script src=\"" + version.cdn + "/toolkit.js\"></script>" }}</code></pre>
+<h2>Build it</h2>
 
-    <div class="doc-text il-formatted">
+<p>To build a custom version of the toolkit, check out the source code:</p>
 
-        <h2>Download it</h2>
+<a href="{{ version.repository }}">View the toolkit repo on GitHub</a>
 
-        <p>To host your own copy of the toolkit, download the toolkit files:</p>
+<p>The <code>README</code> file contains instructions for building distributions, running tests, and generating
+    documentation.</p>
 
-        <a class="il-icon-button" data-icon-name="download" href="{{ version.cdn }}/toolkit.zip" download>Download version 1.1</a>
-
-        <p>Add the same code as above, but with your URLs for <code>toolkit.css</code> and <code>toolkit.js</code>.</p>
-
-        <h2>Build it</h2>
-
-        <p>To build a custom version of the toolkit, check out the source code:</p>
-
-        <a href="{{ version.repository }}">View the toolkit repo on GitHub</a>
-
-        <p>The <code>README</code> file contains instructions for building distributions, running tests, and generating documentation.</p>
-
-    </div>
-
-</section>
-{% endblock %}
-
-{% block footer %}
-<section class="il-content doc-next">
-    <div>
-        <h2>What next?</h2>
-        <ul>
-            <li><a href="{{ "/colors" | url }}">Using the brand colors</a></li>
-            <li><a href="{{ "/" | url }}">Toolkit homepage</a></li>
-        </ul>
-    </div>
-</section>
-{{ super() }}
-{% endblock %}

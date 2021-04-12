@@ -17,3 +17,17 @@ function handleMockupControlsClick(evt) {
 getMockupControls().forEach(button => {
     button.addEventListener('click', handleMockupControlsClick);
 });
+
+function handleCopyToClipboardButtonClick(evt) {
+    const button = evt.currentTarget;
+    const content = button.getAttribute('data-clipboard-content');
+    console.debug(content);
+    const buffer = document.getElementById('clipboard-buffer');
+    buffer.value = content;
+    console.debug(buffer);
+    buffer.select();
+    document.execCommand("copy");
+}
+document.querySelectorAll('button[data-clipboard-content]').forEach(button => {
+    button.addEventListener('click', handleCopyToClipboardButtonClick);
+})

@@ -10,6 +10,7 @@
     "build": "encore prod",
     "build-html": "eleventy",
     "dev": "encore dev",
+    "open-backstop": "backstop openReport --config=tests/backstop/backstop.js",
     "start": "encore dev-server",
     "test": "npm run test-jest && npm run test-backstop",
     "test-backstop": "backstop test --config=tests/backstop/backstop.js",
@@ -26,9 +27,7 @@
   "devDependencies": {
     "@11ty/eleventy": "^0.11.1",
     "backstopjs": "^4.5.1",
-    "bootstrap": "^4.6.0",
     "jest": "^25.5.4",
-    "jest-html-reporter": "^3.3.0",
     "jest-puppeteer": "^4.4.0"
   }
 }

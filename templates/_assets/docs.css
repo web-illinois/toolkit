@@ -121,3 +121,33 @@ footer {
     color: rgba(0, 0, 0, .75);
     font-size: 16px;
 }
+
+
+.tests__pages {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.tests__page {
+    list-style: none;
+    margin: 2em 0 0;
+    padding: 2em 0 0;
+    border-top: 1px solid var(--border-color);
+}
+.tests__page:first-of-type {
+    margin-top: 0;
+    padding-top: 0;
+    border-top: 0;
+}
+.tests__page h3 {
+    margin: 0;
+    padding: 0;
+}
+
+
+#clipboard-buffer {
+    position: absolute;
+    left: -99px;
+    pointer-events: none;
+    opacity: 0;
+}

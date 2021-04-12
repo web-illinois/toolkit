@@ -1,22 +1,55 @@
 <section class="tests">
 
-    <h2>Tests</h2>
+    <h2>Test pages</h2>
 
-    <ul>
-        {% for test in tests %}
-            <li class="tests" data-test-status="{{ test.results.status if test.results else 'unknown' }}">
-                <a href="{{ test.page.url }}">{{ test.page.data.title }}</a>
-                {% if test.results %}
-                    <ul>
-                        {% for result in test.results.assertionResults %}
+    <ul class="tests__pages">
+
+        {% for testPage in tests %}
+        <li class="tests__page">
+
+            <div class="tests__page-information">
+                <h3 class="tests__page-name">
+                    <a href="{{ testPage.page.url }}">{{ testPage.page.data.title }}</a>
+                    {{ 'PASS' if testPage.passed else 'FAIL' }}
+                </h3>
+            </div>
+
+            {% if testPage.visual.length %}
+            <div class="tests__visual-tests">
+                <h4>Visual tests</h4>
+                <ul>
+                    {% for test in testPage.visual %}
+                        {% for result in test.results %}
                             <li>
-                                {{ result.fullName }}
+                                {{ result.status }}:
+                                {{ test.scenario.label }}
+                                {{ result.viewport.width }}
+                                &times;
+                                {{ result.viewport.height }}
                             </li>
                         {% endfor %}
-                    </ul>
-                {% endif %}
-            </li>
+                    {% endfor %}
+                </ul>
+            </div>
+            {% endif %}
+
+            {% if testPage.functional %}
+            <div class="tests__functional-tests">
+                <h4>Functional tests</h4>
+                <ul>
+                    {% for result in testPage.functional.assertionResults %}
+                        <li>
+                            {{ result.status }}:
+                            {{ result.fullName }}
+                        </li>
+                    {% endfor %}
+                </ul>
+            </div>
+            {% endif %}
+
+        </li>
         {% endfor %}
+
     </ul>
 
 </section>
