@@ -23,7 +23,7 @@ const iphone = {
 const viewports = { desktop, iphone, hdtv };
 
 const scenarios = [];
-glob.sync('tests/**/*.test.visual.js').forEach(file => {
+glob.sync('tests/**/*.visual.js').forEach(file => {
     const fileScenarios = require(path.join(__dirname, file))(viewports);
     fileScenarios.forEach(s => s.file = file);
     scenarios.push(...fileScenarios);
