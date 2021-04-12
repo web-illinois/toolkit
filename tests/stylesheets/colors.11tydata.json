@@ -1,0 +1,96 @@
+{
+  "colors": [
+    {
+      "var": "--il-orange",
+      "hex": "#FF552E"
+    },
+    {
+      "var": "--il-altgeld",
+      "hex": "#DD3403"
+    },
+    {
+      "var": "--il-blue",
+      "hex": "#13294B"
+    },
+    {
+      "var": "--il-alma-mater",
+      "hex": "#1E3877"
+    },
+    {
+      "var": "--il-alma-mater-1",
+      "hex": "#4D69A0"
+    },
+    {
+      "var": "--il-alma-mater-2",
+      "hex": "#849BC1"
+    },
+    {
+      "var": "--il-alma-mater-3",
+      "hex": "#AFC7DB"
+    },
+    {
+      "var": "--il-industrial-blue",
+      "hex": "#1D58A7"
+    },
+    {
+      "var": "--il-industrial-blue-1",
+      "hex": "#5783BC"
+    },
+    {
+      "var": "--il-industrial-blue-2",
+      "hex": "#90AED5"
+    },
+    {
+      "var": "--il-industrial-blue-3",
+      "hex": "#CAD9EF"
+    },
+    {
+      "var": "--il-arches-blue",
+      "hex": "#009FD4"
+    },
+    {
+      "var": "--il-arches-blue-1",
+      "hex": "#7FC3E1"
+    },
+    {
+      "var": "--il-arches-blue-2",
+      "hex": "#A6D7EB"
+    },
+    {
+      "var": "--il-arches-blue-3",
+      "hex": "#D2EBF5"
+    },
+    {
+      "var": "--il-cloud",
+      "hex": "#F8FAFC"
+    },
+    {
+      "var": "--il-cloud-1",
+      "hex": "#E8E9EB"
+    },
+    {
+      "var": "--il-cloud-2",
+      "hex": "#DDDEDE"
+    },
+    {
+      "var": "--il-cloud-3",
+      "hex": "#D2D2D2"
+    },
+    {
+      "var": "--il-heritage-orange",
+      "hex": "#F5821E"
+    },
+    {
+      "var": "--il-heritage-orange-1",
+      "hex": "#E56E15"
+    },
+    {
+      "var": "--il-heritage-orange-2",
+      "hex": "#CE5E11"
+    },
+    {
+      "var": "--il-heritage-orange-3",
+      "hex": "#B74D04"
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+---
+tags: test
+title: Solid icons by CSS variable
+layout: layouts/test-icons.njk
+permalink: tests/stylesheets/icons/solid-css.html
+---
+
+<style>
+    {% for icon in icons %}
+        {% for var in icon.vars %}
+            #icon{{ var }}:before {
+                content: var({{ var }});
+            }
+        {% endfor %}
+    {% endfor %}
+</style>
+
+<ul class="icon-sheet icon-sheet--solid">
+    {% for icon in icons %}
+        {% for var in icon.vars %}
+            <li>
+                <span id="icon{{ var }}" class="icon-sheet__icon"></span>
+                <span class="icon-sheet__label">{{ var }}</span>
+            </li>
+        {% endfor %}
+    {% endfor %}
+</ul>

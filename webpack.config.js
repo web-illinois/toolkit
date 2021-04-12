@@ -8,7 +8,7 @@ if (!Encore.isRuntimeEnvironmentConfigured()) {
 
 Encore
     .setOutputPath('dist')
-    .setPublicPath('/dist')
+    .setPublicPath('/')
     .addEntry('toolkit', './src/js/index.js')
     .addStyleEntry('colors', './src/css/colors.scss')
     .addStyleEntry('fonts', './src/css/fonts.scss')
@@ -21,7 +21,7 @@ Encore
     .enableSassLoader()
     .configureDevServerOptions(options => {
         options.contentBase = [
-            path.join(__dirname, 'html')
+            path.join(__dirname, 'var/test-site')
         ];
         options.contentBasePublicPath = [
             '/'

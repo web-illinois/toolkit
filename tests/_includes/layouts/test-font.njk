@@ -1,0 +1,53 @@
+{% extends "layouts/test.njk" %}
+
+{% block styles %}
+    <style>
+        body {
+            margin: 0;
+            padding: 20px;
+        }
+        ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+        }
+        li {
+            list-style: none;
+            margin: 0;
+            padding: 20px;
+        }
+        .specimen {
+            display: block;
+            width: 320px;
+            font-size: 36px;
+            line-height: 1em;
+            overflow-wrap: anywhere;
+        }
+        h1 {
+            margin: 0;
+            padding: 0 20px 10px;
+        }
+        .label {
+            display: block;
+            margin-top: 10px;
+        }
+    </style>
+{% endblock %}
+
+{% block body %}
+    <ul>
+        {% for weight in weights %}
+            {% for style in styles %}
+                <li>
+                    <span class="specimen" id="{{ var }}" style="font-family:var(--{{ var }});font-weight:{{ weight }};font-style:{{ style }}">
+                        AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789
+                    </span>
+                    <span class="label">{{ weight }} {{ style }}</span>
+                </li>
+            {% endfor %}
+        {% endfor %}
+    </ul>
+{% endblock %}

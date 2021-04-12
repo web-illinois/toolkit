@@ -1,4 +1,3 @@
-*.util.js
-*.test.func.js
-*.test.util.js
-*.test.visual.js
+_reference
+*.func.js
+*.visual.js

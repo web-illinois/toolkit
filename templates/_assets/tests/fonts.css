@@ -1,5 +1,0 @@
-body { margin: 0; padding: 3em; }
-ul { list-style: none; margin: 0; padding: 0; }
-li { list-style: none; margin: 0 0 3em; padding: 0; }
-li:last-of-type { margin-bottom: 0; }
-samp { width: 100%; overflow: hidden; white-space: nowrap; display: block; font-size: 2.5em; }

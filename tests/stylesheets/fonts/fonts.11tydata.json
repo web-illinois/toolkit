@@ -1,0 +1,32 @@
+[
+  {
+    "var": "--il-source-sans",
+    "weights": [100, 200, 300, 400, 500, 600, 700, 800, 900],
+    "styles": ["normal", "italic"]
+  },
+  {
+    "var": "--il-source-sans-fixed",
+    "weights": [100, 200, 300, 400, 500, 600, 700, 800, 900],
+    "styles": ["normal", "italic"]
+  },
+  {
+    "var": "--il-source-serif",
+    "weights": [100, 200, 300, 400, 500, 600, 700, 800, 900],
+    "styles": ["normal", "italic"]
+  },
+  {
+    "var": "--il-source-serif-fixed",
+    "weights": [100, 200, 300, 400, 500, 600, 700, 800, 900],
+    "styles": ["normal", "italic"]
+  },
+  {
+    "var": "--il-montserrat",
+    "weights": [100, 200, 300, 400, 500, 600, 700, 800, 900],
+    "styles": ["normal", "italic"]
+  },
+  {
+    "var": "--il-fjalla-one",
+    "weights": [400],
+    "styles": ["normal"]
+  }
+]

@@ -1,0 +1,652 @@
+{
+  "icons": [
+    {
+      "entity": "&#xe900;",
+      "ligatures": [
+        "admissions"
+      ],
+      "vars": [
+        "--il-icon-admissions"
+      ]
+    },
+    {
+      "entity": "&#xe901;",
+      "ligatures": [
+        "alumni"
+      ],
+      "vars": [
+        "--il-icon-alumni"
+      ]
+    },
+    {
+      "entity": "&#xe902;",
+      "ligatures": [
+        "apply-now"
+      ],
+      "vars": [
+        "--il-icon-apply-now"
+      ]
+    },
+    {
+      "entity": "&#xe903;",
+      "ligatures": [
+        "audio"
+      ],
+      "vars": [
+        "--il-icon-audio"
+      ]
+    },
+    {
+      "entity": "&#xe904;",
+      "ligatures": [
+        "back"
+      ],
+      "vars": [
+        "--il-icon-back"
+      ]
+    },
+    {
+      "entity": "&#xe905;",
+      "ligatures": [
+        "calendar"
+      ],
+      "vars": [
+        "--il-icon-calendar"
+      ]
+    },
+    {
+      "entity": "&#xe906;",
+      "ligatures": [
+        "cancel",
+        "exit"
+      ],
+      "vars": [
+        "--il-icon-cancel",
+        "--il-icon-exit"
+      ]
+    },
+    {
+      "entity": "&#xe907;",
+      "ligatures": [
+        "comment"
+      ],
+      "vars": [
+        "--il-icon-comment"
+      ]
+    },
+    {
+      "entity": "&#xe908;",
+      "ligatures": [
+        "directory"
+      ],
+      "vars": [
+        "--il-icon-directory"
+      ]
+    },
+    {
+      "entity": "&#xe909;",
+      "ligatures": [
+        "document"
+      ],
+      "vars": [
+        "--il-icon-document"
+      ]
+    },
+    {
+      "entity": "&#xe90a;",
+      "ligatures": [
+        "donor"
+      ],
+      "vars": [
+        "--il-icon-donor"
+      ]
+    },
+    {
+      "entity": "&#xe90b;",
+      "ligatures": [
+        "download"
+      ],
+      "vars": [
+        "--il-icon-download"
+      ]
+    },
+    {
+      "entity": "&#xe90c;",
+      "ligatures": [
+        "email"
+      ],
+      "vars": [
+        "--il-icon-email"
+      ]
+    },
+    {
+      "entity": "&#xe90d;",
+      "ligatures": [
+        "event"
+      ],
+      "vars": [
+        "--il-icon-event"
+      ]
+    },
+    {
+      "entity": "&#xe90e;",
+      "ligatures": [
+        "facebook"
+      ],
+      "vars": [
+        "--il-icon-facebook"
+      ]
+    },
+    {
+      "entity": "&#xe90f;",
+      "ligatures": [
+        "faculty",
+        "staff"
+      ],
+      "vars": [
+        "--il-icon-faculty",
+        "--il-icon-staff"
+      ]
+    },
+    {
+      "entity": "&#xe910;",
+      "ligatures": [
+        "faq"
+      ],
+      "vars": [
+        "--il-icon-faq"
+      ]
+    },
+    {
+      "entity": "&#xe911;",
+      "ligatures": [
+        "favorite"
+      ],
+      "vars": [
+        "--il-icon-favorite"
+      ]
+    },
+    {
+      "entity": "&#xe912;",
+      "ligatures": [
+        "give",
+        "gift"
+      ],
+      "vars": [
+        "--il-icon-give",
+        "--il-icon-gift"
+      ]
+    },
+    {
+      "entity": "&#xe913;",
+      "ligatures": [
+        "google-plus"
+      ],
+      "vars": [
+        "--il-icon-google-plus"
+      ]
+    },
+    {
+      "entity": "&#xe914;",
+      "ligatures": [
+        "handbook",
+        "manual"
+      ],
+      "vars": [
+        "--il-icon-handbook",
+        "--il-icon-manual"
+      ]
+    },
+    {
+      "entity": "&#xe915;",
+      "ligatures": [
+        "home"
+      ],
+      "vars": [
+        "--il-icon-home"
+      ]
+    },
+    {
+      "entity": "&#xe916;",
+      "ligatures": [
+        "hours"
+      ],
+      "vars": [
+        "--il-icon-hours"
+      ]
+    },
+    {
+      "entity": "&#xe917;",
+      "ligatures": [
+        "hr"
+      ],
+      "vars": [
+        "--il-icon-hr"
+      ]
+    },
+    {
+      "entity": "&#xe918;",
+      "ligatures": [
+        "image"
+      ],
+      "vars": [
+        "--il-icon-image"
+      ]
+    },
+    {
+      "entity": "&#xe919;",
+      "ligatures": [
+        "inclusive"
+      ],
+      "vars": [
+        "--il-icon-inclusive"
+      ]
+    },
+    {
+      "entity": "&#xe91a;",
+      "ligatures": [
+        "info"
+      ],
+      "vars": [
+        "--il-icon-info"
+      ]
+    },
+    {
+      "entity": "&#xe91b;",
+      "ligatures": [
+        "instagram"
+      ],
+      "vars": [
+        "--il-icon-instagram"
+      ]
+    },
+    {
+      "entity": "&#xe91c;",
+      "ligatures": [
+        "intranet"
+      ],
+      "vars": [
+        "--il-icon-intranet"
+      ]
+    },
+    {
+      "entity": "&#xe91d;",
+      "ligatures": [
+        "job",
+        "employment"
+      ],
+      "vars": [
+        "--il-icon-job",
+        "--il-icon-employment"
+      ]
+    },
+    {
+      "entity": "&#xe91e;",
+      "ligatures": [
+        "less"
+      ],
+      "vars": [
+        "--il-icon-less"
+      ]
+    },
+    {
+      "entity": "&#xe91f;",
+      "ligatures": [
+        "link"
+      ],
+      "vars": [
+        "--il-icon-link"
+      ]
+    },
+    {
+      "entity": "&#xe920;",
+      "ligatures": [
+        "linkedin"
+      ],
+      "vars": [
+        "--il-icon-linkedin"
+      ]
+    },
+    {
+      "entity": "&#xe921;",
+      "ligatures": [
+        "location"
+      ],
+      "vars": [
+        "--il-icon-location"
+      ]
+    },
+    {
+      "entity": "&#xe922;",
+      "ligatures": [
+        "menu"
+      ],
+      "vars": [
+        "--il-icon-menu"
+      ]
+    },
+    {
+      "entity": "&#xe923;",
+      "ligatures": [
+        "more"
+      ],
+      "vars": [
+        "--il-icon-more"
+      ]
+    },
+    {
+      "entity": "&#xe924;",
+      "ligatures": [
+        "news"
+      ],
+      "vars": [
+        "--il-icon-news"
+      ]
+    },
+    {
+      "entity": "&#xe925;",
+      "ligatures": [
+        "next"
+      ],
+      "vars": [
+        "--il-icon-next"
+      ]
+    },
+    {
+      "entity": "&#xe926;",
+      "ligatures": [
+        "notification"
+      ],
+      "vars": [
+        "--il-icon-notification"
+      ]
+    },
+    {
+      "entity": "&#xe927;",
+      "ligatures": [
+        "parent",
+        "family"
+      ],
+      "vars": [
+        "--il-icon-parent",
+        "--il-icon-family"
+      ]
+    },
+    {
+      "entity": "&#xe928;",
+      "ligatures": [
+        "partners"
+      ],
+      "vars": [
+        "--il-icon-partners"
+      ]
+    },
+    {
+      "entity": "&#xe929;",
+      "ligatures": [
+        "pay",
+        "bill"
+      ],
+      "vars": [
+        "--il-icon-pay",
+        "--il-icon-bill"
+      ]
+    },
+    {
+      "entity": "&#xe92a;",
+      "ligatures": [
+        "phone",
+        "call"
+      ],
+      "vars": [
+        "--il-icon-phone",
+        "--il-icon-call"
+      ]
+    },
+    {
+      "entity": "&#xe92b;",
+      "ligatures": [
+        "pinterest"
+      ],
+      "vars": [
+        "--il-icon-pinterest"
+      ]
+    },
+    {
+      "entity": "&#xe92c;",
+      "ligatures": [
+        "plan"
+      ],
+      "vars": [
+        "--il-icon-plan"
+      ]
+    },
+    {
+      "entity": "&#xe92d;",
+      "ligatures": [
+        "program-of-study"
+      ],
+      "vars": [
+        "--il-icon-program-of-study"
+      ]
+    },
+    {
+      "entity": "&#xe92e;",
+      "ligatures": [
+        "research"
+      ],
+      "vars": [
+        "--il-icon-research"
+      ]
+    },
+    {
+      "entity": "&#xe92f;",
+      "ligatures": [
+        "resources"
+      ],
+      "vars": [
+        "--il-icon-resources"
+      ]
+    },
+    {
+      "entity": "&#xe930;",
+      "ligatures": [
+        "safety"
+      ],
+      "vars": [
+        "--il-icon-safety"
+      ]
+    },
+    {
+      "entity": "&#xe931;",
+      "ligatures": [
+        "search"
+      ],
+      "vars": [
+        "--il-icon-search"
+      ]
+    },
+    {
+      "entity": "&#xe932;",
+      "ligatures": [
+        "send"
+      ],
+      "vars": [
+        "--il-icon-send"
+      ]
+    },
+    {
+      "entity": "&#xe933;",
+      "ligatures": [
+        "settings"
+      ],
+      "vars": [
+        "--il-icon-settings"
+      ]
+    },
+    {
+      "entity": "&#xe934;",
+      "ligatures": [
+        "shop"
+      ],
+      "vars": [
+        "--il-icon-shop"
+      ]
+    },
+    {
+      "entity": "&#xe935;",
+      "ligatures": [
+        "sitemap"
+      ],
+      "vars": [
+        "--il-icon-sitemap"
+      ]
+    },
+    {
+      "entity": "&#xe936;",
+      "ligatures": [
+        "snapchat"
+      ],
+      "vars": [
+        "--il-icon-snapchat"
+      ]
+    },
+    {
+      "entity": "&#xe937;",
+      "ligatures": [
+        "students"
+      ],
+      "vars": [
+        "--il-icon-students"
+      ]
+    },
+    {
+      "entity": "&#xe938;",
+      "ligatures": [
+        "submit"
+      ],
+      "vars": [
+        "--il-icon-submit"
+      ]
+    },
+    {
+      "entity": "&#xe939;",
+      "ligatures": [
+        "team"
+      ],
+      "vars": [
+        "--il-icon-team"
+      ]
+    },
+    {
+      "entity": "&#xe93a;",
+      "ligatures": [
+        "tickets"
+      ],
+      "vars": [
+        "--il-icon-tickets"
+      ]
+    },
+    {
+      "entity": "&#xe93b;",
+      "ligatures": [
+        "trash"
+      ],
+      "vars": [
+        "--il-icon-trash"
+      ]
+    },
+    {
+      "entity": "&#xe93c;",
+      "ligatures": [
+        "twitter"
+      ],
+      "vars": [
+        "--il-icon-twitter"
+      ]
+    },
+    {
+      "entity": "&#xe93d;",
+      "ligatures": [
+        "unit"
+      ],
+      "vars": [
+        "--il-icon-unit"
+      ]
+    },
+    {
+      "entity": "&#xe93e;",
+      "ligatures": [
+        "user"
+      ],
+      "vars": [
+        "--il-icon-user"
+      ]
+    },
+    {
+      "entity": "&#xe93f;",
+      "ligatures": [
+        "video"
+      ],
+      "vars": [
+        "--il-icon-video"
+      ]
+    },
+    {
+      "entity": "&#xe940;",
+      "ligatures": [
+        "volume"
+      ],
+      "vars": [
+        "--il-icon-volume"
+      ]
+    },
+    {
+      "entity": "&#xe941;",
+      "ligatures": [
+        "website"
+      ],
+      "vars": [
+        "--il-icon-website"
+      ]
+    },
+    {
+      "entity": "&#xe942;",
+      "ligatures": [
+        "weibo"
+      ],
+      "vars": [
+        "--il-icon-weibo"
+      ]
+    },
+    {
+      "entity": "&#xe943;",
+      "ligatures": [
+        "whatsapp"
+      ],
+      "vars": [
+        "--il-icon-whatsapp"
+      ]
+    },
+    {
+      "entity": "&#xe944;",
+      "ligatures": [
+        "workshop",
+        "training"
+      ],
+      "vars": [
+        "--il-icon-workshop",
+        "--il-icon-training"
+      ]
+    },
+    {
+      "entity": "&#xe945;",
+      "ligatures": [
+        "youtube"
+      ],
+      "vars": [
+        "--il-icon-youtube"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,7 @@
+<ul>
+    {% for page in collections.all %}
+        <li>
+            <a href="{{ page.url }}">{{ page.url }}</a>
+        </li>
+    {% endfor %}
+</ul>

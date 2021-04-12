@@ -1,20 +1,19 @@
 {
   "name": "web-toolkit",
-  "version": "1.1.0",
-  "description": "Brand toolkit for the web",
+  "version": "2.0.0-dev",
+  "description": "Web toolkit",
   "repository": "https://github.com/il-marketing/web-toolkit",
   "author": "Office of Strategic Marketing and Branding <marketing@illinois.edu>",
   "license": "NCSA",
   "scripts": {
-    "approve-backstop": "backstop approve --config=tests/backstop/backstop.js",
+    "approve-backstop": "backstop approve --config=backstop.config.js",
     "build": "encore prod",
     "build-html": "eleventy",
     "dev": "encore dev",
-    "open-backstop": "backstop openReport --config=tests/backstop/backstop.js",
     "start": "encore dev-server",
     "test": "npm run test-jest && npm run test-backstop",
-    "test-backstop": "backstop test --config=tests/backstop/backstop.js",
-    "test-jest": "jest --config=tests/jest/jest.config.js --json --outputFile=var/tests.functional.results.json",
+    "test-backstop": "backstop test --config=backstop.config.js",
+    "test-jest": "jest --config=jest.config.js",
     "watch-html": "eleventy --watch"
   },
   "dependencies": {

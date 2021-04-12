@@ -1,0 +1,43 @@
+---
+tags: test
+title: Colors
+layout: layouts/test.njk
+permalink: tests/stylesheets/colors.html
+---
+<style>
+    body {
+        margin: 0;
+        padding: 20px;
+    }
+    ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+    li {
+        list-style: none;
+        margin: 0;
+        padding: 20px;
+    }
+    .swatch {
+        display: block;
+        width: 160px;
+        height: 160px;
+    }
+    .label {
+        display: block;
+        margin-top: 10px;
+    }
+</style>
+
+<ul>
+    {% for color in colors %}
+        <li>
+            <span class="swatch" style="background-color: var({{ color.var }})"></span>
+            <span class="label">{{ color.var }}</span>
+        </li>
+    {% endfor %}
+</ul>
