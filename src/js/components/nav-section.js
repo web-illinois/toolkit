@@ -181,15 +181,32 @@ li {
   }
 
   handleContentLoaded(evt) {
+    document.addEventListener('click', this.handleDocumentClick.bind(this));
     const link = this.getLink();
     if (link) {
       link.addEventListener('keydown', this.handleLinkKeypress.bind(this));
+      link.addEventListener('blur', this.handleLinkBlur.bind(this));
     }
     this.getSubmenuLinks().forEach(submenuLink => {
       submenuLink.addEventListener('keydown', this.handleSubmenuLinkKeypress.bind(this));
+      submenuLink.addEventListener('blur', this.handleLinkBlur.bind(this));
     });
     this.compact = this.getNavigation().compact;
     this.getNavigation().addEventListener('compact', evt => this.compact = evt.detail);
+  }
+
+  handleDocumentClick(evt) {
+    if (this.expanded && !this.contains(evt.currentTarget)) {
+      this.collapse();
+    }
+  }
+
+  handleLinkBlur(evt) {
+    if (this.expanded) {
+      window.setTimeout(() => {
+        if (!this.containsFocus()) this.collapse();
+      }, 100);
+    }
   }
 
   handleLinkKeypress(evt) {
@@ -272,6 +289,10 @@ li {
 
   collapse() {
     this.expanded = false;
+  }
+
+  containsFocus() {
+    return this.contains(document.activeElement);
   }
 
   expand() {

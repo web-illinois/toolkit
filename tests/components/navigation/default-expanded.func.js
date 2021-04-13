@@ -17,7 +17,10 @@ describe("when a submenu is open", () => {
             await page.click('#before-nav');
         });
 
-        test.todo('closes the submenu');
+        test('closes the submenu', async () => {
+            const isVisible = await nav.sectionisExpanded(page, '#section-2');
+            await expect(isVisible).toBeFalsy();
+        });
     });
 
     describe("hovering over another top-level link", () => {
@@ -122,6 +125,16 @@ describe("when a submenu is open", () => {
                 const hasFocus = await util.elementHasFocus(page, '#link-2A');
                 await expect(hasFocus).toBeTruthy();
             });
+        });
+
+        describe("pressing tab", () => {
+            beforeEach(async () => {
+                await page.keyboard.press('Tab');
+            });
+
+            test.todo("closes the current submenu");
+            test.todo("moves focus to the next top-level link");
+            test.todo("opens the next submenu");
         });
     });
 
