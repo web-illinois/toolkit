@@ -42,8 +42,12 @@ li {
   color: inherit; 
   text-decoration: none;
 }
-.full .label ::slotted(a:hover) {
+.full .label ::slotted(a:hover),
+.full .label ::slotted(a:focus) {
+  color: var(--il-orange);
   text-decoration: underline;
+  background-color: white;
+  outline: 0;
 }
 .full .indicator {
   position: absolute;
@@ -98,7 +102,13 @@ li {
 .compact .heading ::slotted(a) {
   text-decoration: none;
   color: var(--il-blue);
-  font: 700 22px/30px var(--il-source-sans); 
+  font: 700 22px/30px var(--il-source-sans);
+}
+.compact .heading ::slotted(a:hover),
+.compact .heading ::slotted(a:focus) {
+  text-decoration: underline;
+  color: var(--il-orange);
+  outline: 0;
 }
 .compact .indicator {
   display: none;
@@ -114,6 +124,7 @@ li {
   margin: 0;
   padding: 0;
   background-color: transparent;
+  color: var(--il-blue);
 }
 .compact .heading button svg {
   position: absolute;
@@ -122,8 +133,15 @@ li {
   display: block;
   width: 24px;
   height: 24px;
-  fill: var(--il-blue);
-  transition: all .3s;
+  fill: currentColor;
+  transition: transform .3s;
+}
+.compact .heading button:hover,
+.compact .heading button:focus {
+  background-color: var(--il-orange);
+  border-color: var(--il-orange);
+  color: white;
+  outline: 0;
 }
 .compact.expanded .heading button svg {
   transform: rotate(180deg);
