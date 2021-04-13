@@ -1,6 +1,6 @@
 .il-formatted {
   font: 400 18px/1.5em var(--il-source-sans);
-  color: var(--il-blue);
+  color: #252525;
 
   a {
     @extend .il-link;
@@ -8,62 +8,71 @@
 
   h1 {
     @include reset-heading;
-    @include font-weight(900);
-    margin-bottom: 1em;
-    font: 40px/.7em var(--il-source-sans);
+    margin: {
+      top: 20px;
+      bottom: 10px;
+    };
+    font: 700 40px/52px var(--il-source-sans);
     color: var(--il-blue);
+
+    &:first-child {
+      margin-top: 0;
+    }
   }
   h2 {
     @include reset-heading;
-    @include font-weight(700);
-    font: 36px/.78em var(--il-source-sans);
+    margin: {
+      top: 20px;
+      bottom: 10px;
+    };
+    font: 600 32px/40px var(--il-source-sans);
     color: var(--il-blue);
-    margin: 1.5em 0 .75em;
   }
   h3 {
     @include reset-heading;
-    @include font-weight(700);
-    font: 30px/1.3em var(--il-source-sans);
+    margin: {
+      top: 20px;
+      bottom: 10px;
+    };
+    font: 600 28px/32px var(--il-source-sans);
     color: var(--il-blue);
-    margin: 1.5em 0 .75em;
   }
   h4 {
     @include reset-heading;
-    @include font-weight(700);
-    font: bold 22px/1.3em var(--il-source-sans);
+    margin: {
+      top: 20px;
+      bottom: 10px;
+    };
+    font: 600 24px/28px var(--il-source-sans);
     color: var(--il-blue);
-    margin: 1.5em 0 .75em;
-  }
-  h3 + h4 {
-    margin-top: .75em;
   }
   h5 {
     @include reset-heading;
-    @include font-weight(600);
-    font: 20px/1.3em var(--il-source-sans);
+    margin: {
+      top: 20px;
+      bottom: 10px;
+    };
+    font: 600 20px/22px var(--il-source-sans);
     color: var(--il-blue);
-    margin: 1.5em 0 .75em;
-    text-transform: uppercase;
   }
   h6 {
     @include reset-heading;
-    @include font-weight(600);
-    font: 20px/1.3em var(--il-source-sans);
+    margin: {
+      top: 20px;
+      bottom: 10px;
+    };
+    font: 600 18px/22px var(--il-source-sans);
     color: var(--il-blue);
-    margin: 1.5em 0 .75em;
   }
 
   p {
     @include reset-spacing;
-    margin-bottom: 1.5em;
+    font: 18px/30px var(--il-source-sans);
+    margin-bottom: 25px;
   }
 
-  em {
-    @include font-weight(600);
-    font-style: normal;
-  }
-  strong {
-    @include font-weight(900);
+  b, strong {
+    font-weight: 600;
   }
 
   mark {
@@ -87,6 +96,9 @@
       top: 0;
       bottom: 0;
     }
+  }
+  li {
+    @include reset-spacing;
   }
 
   ol {
@@ -133,10 +145,6 @@
 
   p + ul, p + ol {
     margin-top: -10px;
-  }
-
-  li {
-    @include reset-spacing;
   }
 
   dt {

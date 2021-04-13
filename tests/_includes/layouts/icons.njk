@@ -1,0 +1,9 @@
+{% set stylesheets = ['tests.css', 'icons.css'] %}
+
+{% extends "layouts/page.njk" %}
+
+{% block body %}
+
+    {{ content | safe }}
+
+{% endblock %}

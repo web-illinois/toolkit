@@ -5,7 +5,7 @@ module.exports = (viewports) => {
     {
       'label': 'icons-solid-css',
       'caption': 'Icon set',
-      'url': util.url('/tests/stylesheets/icons/solid-css.html'),
+      'url': util.urlForTest(__filename),
       'viewports': [viewports.desktop]
     }
   ];

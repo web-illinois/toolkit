@@ -2,7 +2,7 @@ const util = require('../../tests.util');
 const nav = require('./nav.util');
 
 beforeEach(async () => {
-    await page.goto(util.url('/tests/components/il-nav/default-expanded.html'));
+    await page.goto(util.urlForTest(__filename));
 });
 
 describe("when a submenu is open", () => {

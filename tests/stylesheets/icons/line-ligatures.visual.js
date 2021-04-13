@@ -5,7 +5,7 @@ module.exports = (viewports) => {
     {
       'label': 'icons-line-ligatures',
       'caption': 'Icon set',
-      'url': util.url('/tests/stylesheets/icons/line-ligatures.html'),
+      'url': util.urlForTest(__filename),
       'viewports': [viewports.desktop]
     }
   ];

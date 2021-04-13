@@ -4,7 +4,7 @@ module.exports = (viewports) => {
   return [
     {
       'label': 'fonts-source-sans-fixed',
-      'url': util.url('/tests/stylesheets/fonts/source-sans-fixed.html'),
+      'url': util.urlForTest(__filename),
       'viewports': [viewports.desktop]
     }
   ];

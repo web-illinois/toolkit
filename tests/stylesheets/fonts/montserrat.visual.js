@@ -4,7 +4,7 @@ module.exports = (viewports) => {
   return [
     {
       'label': 'fonts-montserrat',
-      'url': util.url('/tests/stylesheets/fonts/montserrat.html'),
+      'url': util.urlForTest(__filename),
       'viewports': [viewports.desktop]
     }
   ];

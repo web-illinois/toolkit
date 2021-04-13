@@ -5,7 +5,7 @@ module.exports = (viewports) => {
     {
       'label': 'icons-line-entities',
       'caption': 'Icon set',
-      'url': util.url('/tests/stylesheets/icons/line-entities.html'),
+      'url': util.urlForTest(__filename),
       'viewports': [viewports.desktop]
     }
   ];

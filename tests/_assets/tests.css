@@ -1,0 +1,9 @@
+html {
+    background-color: white;
+    color: black;
+    font-family: var(--il-source-sans), sans-serif;
+}
+body {
+    margin: 0;
+    padding: 0;
+}

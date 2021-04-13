@@ -3,9 +3,9 @@ const util = require('../tests.util');
 module.exports = (viewports) => {
   return [
     {
-      'label': 'tests/stylesheets/colors',
+      'label': 'colors',
       'caption': 'Color palette',
-      'url': util.url('/tests/stylesheets/colors.html'),
+      'url': util.urlForTest(__filename),
       'viewports': [viewports.desktop]
     }
   ];

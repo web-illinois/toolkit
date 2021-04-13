@@ -1,6 +1,6 @@
 const util = require('../../tests.util');
 
-const url = util.url('/tests/components/il-nav/default-expanded.html');
+const url = util.urlForTest(__filename);
 
 module.exports = (viewports) => {
   return [

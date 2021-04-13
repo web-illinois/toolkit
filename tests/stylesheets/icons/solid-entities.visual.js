@@ -5,7 +5,7 @@ module.exports = (viewports) => {
     {
       'label': 'icons-solid-entities',
       'caption': 'Icon set',
-      'url': util.url('/tests/stylesheets/icons/solid-entities.html'),
+      'url': util.urlForTest(__filename),
       'viewports': [viewports.desktop]
     }
   ];

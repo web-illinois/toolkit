@@ -4,7 +4,7 @@ module.exports = (viewports) => {
   return [
     {
       'label': 'fonts-source-serif',
-      'url': util.url('/tests/stylesheets/fonts/source-serif.html'),
+      'url': util.urlForTest(__filename),
       'viewports': [viewports.desktop]
     }
   ];

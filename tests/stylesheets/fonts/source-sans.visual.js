@@ -4,7 +4,7 @@ module.exports = (viewports) => {
   return [
     {
       'label': 'fonts-source-sans',
-      'url': util.url('/tests/stylesheets/fonts/source-sans.html'),
+      'url': util.urlForTest(__filename),
       'viewports': [viewports.desktop]
     }
   ];

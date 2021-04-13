@@ -1,7 +1,7 @@
 const util = require('../../tests.util');
 
 beforeEach(async () => {
-  await page.goto(util.url('/tests/components/il-nav/compact-expanded.html'));
+  await page.goto(util.urlForTest(__filename));
 });
 
 describe("when the last submenu link has focus", () => {

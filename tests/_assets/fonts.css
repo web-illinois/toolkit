@@ -1,0 +1,32 @@
+body {
+    margin: 0;
+    padding: 20px;
+}
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+li {
+    list-style: none;
+    margin: 0;
+    padding: 20px;
+}
+.specimen {
+    display: block;
+    width: 320px;
+    font-size: 36px;
+    line-height: 1em;
+    overflow-wrap: anywhere;
+}
+h1 {
+    margin: 0;
+    padding: 0 20px 10px;
+}
+.label {
+    display: block;
+    margin-top: 10px;
+}

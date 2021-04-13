@@ -1,3 +1,4 @@
+const path = require('path');
 
 function elementHasFocus(page, sel) {
   return page.evaluate((sel) => {
@@ -13,8 +14,14 @@ function url(path) {
   return 'http://localhost:8080' + path;
 }
 
+function urlForTest(testPath) {
+  const relative = path.relative(__dirname, testPath);
+  return url('/' + relative.replace(/\.(func|vis|visual)\.js$/, '') + '/');
+}
+
 module.exports = {
   elementHasFocus,
   moveFocus,
-  url
+  url,
+  urlForTest
 }

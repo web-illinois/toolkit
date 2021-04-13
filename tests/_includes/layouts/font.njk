@@ -1,0 +1,18 @@
+{% set stylesheets = ['tests.css', 'fonts.css'] %}
+
+{% extends "layouts/page.njk" %}
+
+{% block body %}
+    <ul>
+        {% for weight in weights %}
+            {% for style in styles %}
+                <li>
+                    <span class="specimen" id="{{ var }}" style="font-family:var(--{{ var }});font-weight:{{ weight }};font-style:{{ style }}">
+                        AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789
+                    </span>
+                    <span class="label">{{ weight }} {{ style }}</span>
+                </li>
+            {% endfor %}
+        {% endfor %}
+    </ul>
+{% endblock %}

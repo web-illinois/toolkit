@@ -1,7 +1,48 @@
-<ul>
-    {% for page in collections.all %}
-        <li>
-            <a href="{{ page.url }}">{{ page.url }}</a>
-        </li>
+---
+title: Web toolkit
+layout: layouts/page.njk
+---
+<style>
+    body {
+        padding: 2em;
+    }
+    table {
+        width: 100%;
+        border: 1px solid;
+        border-collapse: collapse;
+    }
+    th {
+        text-transform: uppercase;
+        letter-spacing: .25em;
+    }
+    th, td {
+        padding: 1em;
+        border: 1px solid;
+        text-align: left;
+        vertical-align: top;
+    }
+</style>
+<table>
+    <thead>
+        <tr>
+            <th>Page</th>
+            <th>Description</th>
+            <th>Modified</th>
+        </tr>
+    </thead>
+    <tbody>
+    {% for file in files %}
+        <tr>
+            <td>
+                <a href="{{ file.url }}">{{ file.path }}</a>
+            </td>
+            <td>
+                {{ file.title }}
+            </td>
+            <td>
+                {{ file.date }}
+            </td>
+        </tr>
     {% endfor %}
-</ul>
+    </tbody>
+</table>
