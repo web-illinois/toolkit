@@ -1,0 +1,29 @@
+body {
+    padding: 2em;
+}
+h1 {
+    margin: 0 0 20px;
+    padding: 0 20px;
+    font: 600 36px var(--il-source-sans);
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+th {
+    font-weight: 600;
+}
+thead tr {
+    border-bottom: 2px solid rgba(0, 0, 0 ,.25);
+}
+tbody tr {
+    border-bottom: 1px solid rgba(0, 0, 0 ,.15);
+}
+th, td {
+    padding: 10px 20px;
+    text-align: left;
+    vertical-align: top;
+}
+tr:nth-child(even) {
+    background-color: rgba(0, 0, 0, .05);
+}

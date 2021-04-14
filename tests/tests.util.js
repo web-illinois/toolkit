@@ -14,7 +14,7 @@ function url(path) {
   return 'http://localhost:8080' + path;
 }
 
-function urlForTest(testPath) {
+function testUrl(testPath) {
   const relative = path.relative(__dirname, testPath);
   return url('/' + relative.replace(/\.(func|vis|visual)\.js$/, '') + '/');
 }
@@ -23,5 +23,5 @@ module.exports = {
   elementHasFocus,
   moveFocus,
   url,
-  urlForTest
+  testUrl
 }

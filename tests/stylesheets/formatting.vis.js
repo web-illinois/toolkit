@@ -3,9 +3,9 @@ const util = require('../tests.util');
 module.exports = (viewports) => {
   return [
     {
-      'label': 'colors',
+      'label': 'formatting',
       'url': util.testUrl(__filename),
-      'viewports': [viewports.desktop]
+      'viewports': [viewports.desktop, viewports.iphone]
     }
   ];
 }

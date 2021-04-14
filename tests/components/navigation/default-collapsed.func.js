@@ -2,7 +2,7 @@ const util = require('../../tests.util');
 const nav = require('./nav.util');
 
 beforeEach(async () => {
-    await page.goto(util.urlForTest(__filename));
+    await page.goto(util.testUrl(__filename));
 });
 
 describe("hovering over a top-level link", () => {

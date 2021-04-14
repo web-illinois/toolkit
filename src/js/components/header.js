@@ -124,6 +124,7 @@ class Header extends LitElement {
         this.menuVisible = false;
         window.addEventListener('resize', this.handleWindowResize.bind(this));
         window.addEventListener('DOMContentLoaded', this.handleContentLoaded.bind(this));
+        document.addEventListener('click', this.handleDocumentClick.bind(this));
         this.handleWindowResize();
     }
 
@@ -171,7 +172,26 @@ class Header extends LitElement {
         this.view = this.determineView();
     }
 
+    handleDocumentClick(evt) {
+        if (this.isCompactView() && this.menuVisible) {
+            if (this.shadowRoot.querySelector('#menu').contains(evt.target)) {
+                return;
+            }
+            if (this.querySelector('[slot="search"]').contains(evt.target)) {
+                return;
+            }
+            if (this.querySelector('[slot="navigation"]').contains(evt.target)) {
+                return;
+            }
+            if (this.querySelector('[slot="links"]').contains(evt.target)) {
+                return;
+            }
+            this.menuVisible = false;
+        }
+    }
+
     handleMenuButtonClick(evt) {
+        evt.stopPropagation();
         this.menuVisible = !this.menuVisible;
     }
 
@@ -202,7 +222,7 @@ class Header extends LitElement {
             </button>
         </div>
     </div>
-    <div class="menu">
+    <div id="menu" class="menu">
         <div class="search">
             <slot name="search"></slot>
         </div>

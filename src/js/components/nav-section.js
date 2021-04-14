@@ -162,6 +162,7 @@ li {
     super();
     this._expanded = false;
     document.addEventListener('DOMContentLoaded', this.handleContentLoaded.bind(this));
+    document.addEventListener('click', this.handleDocumentClick.bind(this));
   }
 
   get expanded() {
@@ -181,7 +182,6 @@ li {
   }
 
   handleContentLoaded(evt) {
-    document.addEventListener('click', this.handleDocumentClick.bind(this));
     const link = this.getLink();
     if (link) {
       link.addEventListener('keydown', this.handleLinkKeypress.bind(this));
@@ -196,7 +196,7 @@ li {
   }
 
   handleDocumentClick(evt) {
-    if (this.expanded && !this.contains(evt.currentTarget)) {
+    if (this.expanded && !this.contains(evt.target)) {
       this.collapse();
     }
   }

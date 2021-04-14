@@ -1,7 +1,8 @@
 const util = require('../../tests.util');
+const nav = require('./nav.util');
 
 beforeEach(async () => {
-  await page.goto(util.urlForTest(__filename));
+  await page.goto(util.testUrl(__filename));
 });
 
 describe("when the last submenu link has focus", () => {

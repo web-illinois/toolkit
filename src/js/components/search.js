@@ -89,7 +89,7 @@ button svg {
   }
 
   handleHeaderViewChange(evt) {
-    console.debug(evt.detail);
+    //console.debug(evt.detail);
   }
 
   handleInputBlur(evt) {

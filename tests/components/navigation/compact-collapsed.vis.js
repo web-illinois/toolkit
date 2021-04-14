@@ -1,7 +1,7 @@
 const util = require('../../tests.util');
 const nav = require('./nav.util');
 
-const url = util.urlForTest(__filename);
+const url = util.testUrl(__filename);
 
 module.exports = (viewports) => {
   return [

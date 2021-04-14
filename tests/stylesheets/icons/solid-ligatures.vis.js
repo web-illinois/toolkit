@@ -5,7 +5,7 @@ module.exports = (viewports) => {
     {
       'label': 'icons-solid-ligatures',
       'caption': 'Icon set',
-      'url': util.urlForTest(__filename),
+      'url': util.testUrl(__filename),
       'viewports': [viewports.desktop]
     }
   ];

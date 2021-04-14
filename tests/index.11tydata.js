@@ -18,7 +18,7 @@ module.exports = {
           return {
             url: f.data.page.url,
             path: f.filePathStem.substr(1),
-            title: f.data.page.title,
+            title: f.data.title,
             date: formatDate(f.data.page.date)
           };
         });
