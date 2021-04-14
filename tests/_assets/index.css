@@ -6,6 +6,19 @@ h1 {
     padding: 0 20px;
     font: 600 36px var(--il-source-sans);
 }
+a {
+    color: #0072bc;
+    text-decoration: none;
+}
+a:visited {
+    color: #662d91;
+}
+a:hover {
+    text-decoration: underline;
+}
+a:focus {
+    outline: 1px dashed;
+}
 table {
     width: 100%;
     border-collapse: collapse;

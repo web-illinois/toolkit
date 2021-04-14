@@ -1,0 +1,7 @@
+body {
+    padding: 2em;
+}
+#formatting-example {
+    max-width: 950px;
+    margin: 0 auto;
+}
