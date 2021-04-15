@@ -71,99 +71,6 @@
   @extend .il-link;
 }
 
-.il-button {
-  @include reset-link;
-  background-color: var(--il-orange);
-  color: white;
-  display: inline-block;
-  white-space: nowrap;
-  padding: 0 1.25em;
-  text-decoration: none;
-  border-radius: .5em;
-  border: 1px solid var(--il-orange);
-  font: bold 1.25em/2.2 var(--il-source-sans);
-  transition: background-color .3s;
-  cursor: pointer;
-
-  &:hover, &:focus {
-    background-color: var(--il-altgeld);
-  }
-
-  &:focus {
-    outline: var(--il-dotted-focus-outline);
-  }
-
-  &--dark, &--blue {
-    background-color: var(--il-industrial-blue) !important;
-    border-color: var(--il-industrial-blue) !important;
-
-    &:hover, &:focus {
-      background-color: var(--il-blue) !important;
-    }
-  }
-
-  &--light, &--cloud {
-    background-color: var(--il-cloud) !important;
-    border-color: var(--il-cloud-1) !important;
-    color: var(--il-blue) !important;
-
-    &:hover, &:focus {
-      background-color: var(--il-cloud-1) !important;
-    }
-  }
-}
-
-.il-icon-button {
-  @extend .il-button;
-  position: relative;
-  padding-left: 2.5em;
-
-  &::before {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 1.5em;
-    height: 100%;
-    text-align: center;
-    content: attr(data-icon-name);
-    font: 400 1.75em/1.3 var(--il-icons-solid);
-    text-indent: 0;
-  }
-
-  &--icon-only {
-    box-sizing: border-box;
-    width: 2.75em;
-    overflow: hidden;
-    text-indent: 3.5em;
-    padding-left: 0;
-  }
-}
-
-.il-actions {
-  display: block;
-
-  ul {
-    @include reset-list();
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: flex-start;
-    align-items: flex-start;
-    margin-right: -10px;
-    margin-bottom: -10px;
-  }
-
-  li {
-    @include reset-list-item;
-    margin: 0 10px 10px 0;
-  }
-
-  a {
-    @extend .il-button;
-  }
-}
-
-
 .il-invisible {
   position: absolute;
   left: -999vw;
@@ -261,4 +168,5 @@
   }
 }
 
+@import "buttons";
 @import "formatting";

@@ -14,7 +14,7 @@ describe("when a submenu is open", () => {
 
     describe("clicking outside the navigation", () => {
         beforeEach(async () => {
-            await page.click('#before-nav');
+            await page.click('#outside');
         });
 
         test('closes the submenu', async () => {

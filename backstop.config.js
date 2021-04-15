@@ -1,26 +1,24 @@
 const glob = require('fast-glob');
 const path = require('path');
 
-const desktop = {
-    "label": "desktop",
-    "description": "Desktop",
-    "width": 1280,
-    "height": 1024
+const viewports = {
+    desktop: {
+        "label": "desktop",
+        "description": "Desktop",
+        "width": 1280,
+        "height": 1024
+    },
+    iphone: {
+        "label": "iphone",
+        "width": 375,
+        "height": 812
+    },
+    hdtv:{
+        "label": "hdtv",
+        "width": 1920,
+        "height": 1080
+    }
 };
-
-const hdtv = {
-    "label": "hdtv",
-    "width": 1920,
-    "height": 1080
-};
-
-const iphone = {
-    "label": "iphone",
-    "width": 375,
-    "height": 812
-};
-
-const viewports = { desktop, iphone, hdtv };
 
 const scenarios = [];
 glob.sync('tests/**/*.vis.js').forEach(file => {
@@ -31,7 +29,7 @@ glob.sync('tests/**/*.vis.js').forEach(file => {
 
 module.exports = {
     "id": "web-toolkit",
-    "viewports": [iphone, desktop, hdtv],
+    "viewports": Object.values(viewports),
     "scenarios": scenarios,
     "paths": {
         "bitmaps_reference": "tests/_reference",
