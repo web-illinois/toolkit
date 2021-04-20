@@ -11,7 +11,7 @@
   text-decoration: none;
   border-radius: .5em;
   border: 2px solid var(--color-secondary);
-  font: 600 16px/20px var(--il-source-sans);
+  font: 600 rem(16px)/rem(20px) var(--il-source-sans);
   transition: background-color .3s;
   cursor: pointer;
 
@@ -20,5 +20,50 @@
     background-color: var(--color-secondary);
     color: var(--color-primary);
     border-color: var(--color-primary);
+  }
+
+  &.il-white-blue {
+    color: var(--il-blue);
+    border-color: var(--il-blue);
+    background-color: white;
+  }
+
+  &.il-white-blue:hover, &.il-white-blue:focus {
+    color: white;
+    border-color: var(--il-blue);
+    background-color: var(--il-blue);
+  }
+
+  &.il-white-orange {
+    color: var(--il-orange);
+    border-color: var(--il-orange);
+  }
+
+  &.il-white-orange:hover, &.il-white-orange:focus  {
+    color: white;
+    border-color: var(--il-orange);
+    background-color: var(--il-orange);
+  }
+
+  &.il-blue {
+    color: white;
+    border-color: white;
+    background-color: var(--il-blue);
+  }
+
+  &.il-blue:hover, &.il-blue:focus {
+    border-color: var(--il-orange);
+    background-color: var(--il-orange);
+  }
+
+  &.il-orange {
+    color: white;
+    border-color: white;
+    background-color: var(--il-orange);
+  }
+
+  &.il-orange:hover, &.il-orange:focus  {
+    border-color: var(--il-blue);
+    background-color: var(--il-blue);
   }
 }

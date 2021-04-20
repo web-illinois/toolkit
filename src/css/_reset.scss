@@ -47,4 +47,10 @@
   text-decoration: none;
 }
 
+@function stripUnit($value) {
+  @return $value / ($value * 0 + 1);
+}
 
+@function rem($pixels, $context: 16) {
+  @return #{stripUnit($pixels) / $context}rem;
+}

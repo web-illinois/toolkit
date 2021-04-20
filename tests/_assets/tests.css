@@ -8,6 +8,10 @@ body {
     padding: 0;
 }
 
+body h1, body h2.testheading {
+    text-align: center;
+}
+
 .outside-click-target {
     margin: 1em;
     border: 2px solid rgba(0, 0, 0, .25);
