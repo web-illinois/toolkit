@@ -1,15 +1,5 @@
 .il-footer-links {
   .il-cookie-settings, a.optanon-show-settings.il-cookie-settings {
-    position: relative;
-    display: inline-block;
-    margin: 0 10px 0 0;
-    padding: 0 10px 0 36px;
-    border-radius: 4px;
-    border: 0;
-    background-color: var(--il-cloud-1);
-    font: bold 16px/34px var(--il-source-sans);
-    color: var(--il-blue);
-    text-decoration: underline;
 
     &::before {
       position: absolute;
@@ -35,17 +25,38 @@
     flex-wrap: wrap;
     margin-left: -8px;
     margin-right: -8px;
+    gap: 35px;
+    min-height: 60px;
+    align-items: center;
   }
 
   li {
     @include reset-list-item;
+    font: 1rem var(--il-source-sans);
+  }
+
+  button {
+    padding: 4px 10px;
+    background: var(--il-alma-mater);
+    border:  solid 2px white;
+    color: white;
+    position: relative;
+    display: inline-block;
+    border-radius: 5px;
+    font: 1rem var(--il-source-sans);
+    cursor: pointer;
+
+    &:hover, &:focus {
+      background: white;
+      color: var(--il-alma-mater);
+    }
   }
 
   a {
     @extend .il-link;
     display: block;
-    padding: 8px;
-    font: 16px var(--il-source-sans);
+    padding: 0;
+    font: 1rem var(--il-source-sans);
     white-space: nowrap;
   }
 

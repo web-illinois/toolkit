@@ -7,8 +7,8 @@ il-footer {
     a {
       color: inherit;
 
-      &:focus {
-        outline: 3px dashed var(--il-blue);
+      &.hover, &:focus {
+        outline: 3px dashed var(--il-orange);
       }
     }
   }
@@ -18,3 +18,4 @@ il-footer {
 @import "footer/links";
 @import "footer/navigation";
 @import "footer/social";
+@import "footer/parent";
