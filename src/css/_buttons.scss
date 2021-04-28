@@ -23,47 +23,22 @@
   }
 
   &.il-white-blue {
-    color: var(--il-blue);
-    border-color: var(--il-blue);
-    background-color: white;
-  }
-
-  &.il-white-blue:hover, &.il-white-blue:focus {
-    color: white;
-    border-color: var(--il-blue);
-    background-color: var(--il-blue);
+    --color-primary: white;
+    --color-secondary: var(--il-blue);
   }
 
   &.il-white-orange {
-    color: var(--il-orange);
-    border-color: var(--il-orange);
-  }
-
-  &.il-white-orange:hover, &.il-white-orange:focus  {
-    color: white;
-    border-color: var(--il-orange);
-    background-color: var(--il-orange);
+    --color-primary: white;
+    --color-secondary: var(--il-orange);
   }
 
   &.il-blue {
-    color: white;
-    border-color: white;
-    background-color: var(--il-blue);
-  }
-
-  &.il-blue:hover, &.il-blue:focus {
-    border-color: var(--il-orange);
-    background-color: var(--il-orange);
+    --color-primary: var(--il-blue);
+    --color-secondary: white;
   }
 
   &.il-orange {
-    color: white;
-    border-color: white;
-    background-color: var(--il-orange);
-  }
-
-  &.il-orange:hover, &.il-orange:focus  {
-    border-color: var(--il-blue);
-    background-color: var(--il-blue);
+    --color-primary: var(--il-orange);
+    --color-secondary: white;
   }
 }
