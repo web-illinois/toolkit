@@ -13,7 +13,10 @@
     "start": "encore dev-server",
     "test": "npm run test-jest && npm run test-backstop",
     "test-backstop": "backstop test --config=backstop.config.js",
-    "test-jest": "jest --config=jest.config.js",
+    "test-jest": "jest --config=jest.func.config.js",
+    "func-tests": "jest --config=jest.func.config.js",
+    "unit-tests": "jest --config=jest.unit.config.js",
+    "vis-tests": "backstop test --config=backstop.config.js",
     "watch-html": "eleventy --watch"
   },
   "dependencies": {
