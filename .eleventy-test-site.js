@@ -10,7 +10,8 @@ module.exports = function (eleventyConfig) {
     glob.sync('tests/_reference/*.png').forEach(file => {
       var filename = path.basename(file);
       var filepath = 'static-images/' + filename;
-       info = info + `<li><a href="${filepath}">${filename}</a></li>`;
+      var prettyFilename = filename.replace('web-toolkit_', '').replace('_0_document', ' (').replace('.png', ')').replace('_0_', '').replace('_1_', '').replace('_2_', '').replace('_3_', '').replace('_4_', '').replace('_5_', '');
+       info = info + `<li><a href="${filepath}">${prettyFilename}</a></li>`;
     });
     info = info + '</ul>';
     return info;
