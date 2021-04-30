@@ -20,7 +20,7 @@ jobs:
     - name: Display version install
       run: echo "Installing version ${VERSION}"
     - run: npm install
-    - run: npm rebuild
+    - run: npm build
     - run: npm run-script create-test-html
     - name: Configure AWS Credentials
       uses: aws-actions/configure-aws-credentials@v1
