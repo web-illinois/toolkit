@@ -9,7 +9,7 @@
     <script src="{{ "/toolkit.js" | url }}"></script>
     {% if stylesheets %}
         {% for stylesheet in stylesheets %}
-            <link rel="stylesheet" href="{{ "/_assets/" + stylesheet | url }}">
+            <link rel="stylesheet" href="{{ ("/_assets/" + stylesheet) | url }}">
         {% endfor %}
     {% else %}
         <link rel="stylesheet" href="{{ "/_assets/tests.css" | url }}">
