@@ -2,7 +2,11 @@ name: CI
 on:
   push:
     branches:
+    - 'releases/**'
     - develop
+    - 'jonker/add-mixins'
+env:
+  VERSION: 2.0
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -10,8 +14,7 @@ jobs:
     - uses: actions/checkout@v1
     - run: npm install
     - run: npm rebuild
-    - run: npm run-script build
-    - run: npm run-script build-html
+    - run: npm run-script create-test-html
     - name: Configure AWS Credentials
       uses: aws-actions/configure-aws-credentials@v1
       with:
@@ -19,4 +22,10 @@ jobs:
         aws-secret-access-key: ${{ secrets.AWS_TOOLKIT_SECRET_ACCESS_KEY }}
         aws-region: us-east-2
     - name: Deploy static site to S3 bucket
-      run: aws s3 sync ./var/test-site/ s3://uiuc-toolkit-test --delete --acl bucket-owner-full-control
+      run: aws s3 sync ./var/full-site-deploy/ s3://uiuc-toolkit-test/site/$VERSION --delete --acl bucket-owner-full-control
+    - name: Deploy static images to S3 bucket
+      run: aws s3 sync ./tests/_reference/ s3://uiuc-toolkit-test/site/$VERSION/static-images --acl bucket-owner-full-control
+    - run: npm run-script build
+    - name: Deploy toolbox to S3 bucket
+      run: aws s3 sync ./dist/ s3://uiuc-toolkit-test/toolkit/$VERSION --delete --acl bucket-owner-full-control
+
