@@ -1,6 +1,7 @@
-var Encore = require('@symfony/webpack-encore');
-var path = require('path');
-var pkg = require('./package.json');
+const Encore = require('@symfony/webpack-encore');
+const RemovePlugin = require('remove-files-webpack-plugin');
+const path = require('path');
+const pkg = require('./package.json');
 
 if (!Encore.isRuntimeEnvironmentConfigured()) {
     Encore.configureRuntimeEnvironment(process.env.NODE_ENV || 'dev');
@@ -14,10 +15,7 @@ Encore
     .addStyleEntry('fonts', './src/css/fonts.scss')
     .addStyleEntry('icons', './src/css/icons.scss')
     .disableSingleRuntimeChunk()
-    //.cleanupOutputBeforeBuild()
-    //.enableBuildNotifications()
     .enableSourceMaps(!Encore.isProduction())
-    //.enableVersioning(Encore.isProduction())
     .enableSassLoader()
     .configureDevServerOptions(options => {
         options.contentBase = [
@@ -36,4 +34,16 @@ if (Encore.isProduction()) {
     Encore.setManifestKeyPrefix('il-web/');
 }
 
-module.exports = Encore.getWebpackConfig();
+const config = Encore.getWebpackConfig();
+
+config.plugins.push(new RemovePlugin({
+  after: {
+    include: [
+      './dist/manifest.json',
+      './dist/entrypoints.json'
+    ],
+    log: false
+  }
+}));
+
+module.exports = config;
