@@ -4,8 +4,8 @@ class Footer extends LitElement {
     static get styles() {
         return css`
 .footer {
-    font-size: 18px;
-    line-height: 1.5em;
+    font-size: 1.5rem;
+    line-height: 1.5rem;
     font-family: var(--il-source-sans);
     background-color: var(--il-blue);
     color: var(--il-cloud-3);
@@ -15,6 +15,10 @@ class Footer extends LitElement {
     padding-left: var(--il-content-margin);
     padding-right: var(--il-content-margin);
 }
+.links {
+    border-top: 5px solid var(--il-alma-mater);
+}
+
 .main > div, .parent-unit ::slotted(*), .links ::slotted(*) {
     max-width: var(--il-content-max-width);
     margin-left: auto;
@@ -22,15 +26,16 @@ class Footer extends LitElement {
 }
 
 .main {
-    padding-top: 60px;
-    padding-bottom: 60px;
+    padding-top: 30px;
+    padding-bottom: 19px;
 }
 
 .main > div {
     box-sizing: border-box;
     display: grid;
-    grid-gap: 60px var(--il-content-margin);
+    grid-gap: 0 120px;
 }
+
 @media (max-width: 599px) {
     .main > div {
         grid-template-columns: 1fr;
@@ -56,10 +61,11 @@ class Footer extends LitElement {
 .campus-wordmark a {
     display: block;
     text-decoration: none;
+    padding: 1px;
 }
-.campus-wordmark a:focus {
-    outline: var(--il-focus-outline);
-}
+.campus-wordmark a:focus, .campus-wordmark a:hover {
+    outline: 3px dashed var(--il-orange);
+  }  
 .block-i__outline {
     fill: white;
 }
@@ -71,7 +77,7 @@ class Footer extends LitElement {
 }
 .social {
     clear: left;
-    margin-top: 40px;
+    margin-top: 25px;
 }
 .parent-unit, links {
     padding-left: var(--il-content-margin);
@@ -133,14 +139,14 @@ class Footer extends LitElement {
                 <div class="social">
                     <slot name="social"></slot>
                 </div>
+                <div class="parent">
+                    <slot name="parent"></slot>
+                </div>
             </div>
-            <div class="content">
+            <div class="content il-footer-navigation">
                 <slot></slot>
             </div>
         </div>
-    </div>
-    <div class="parent-unit">
-        <slot name="parent-unit"></slot>
     </div>
     <div class="links">
         <slot name="links"></slot>
