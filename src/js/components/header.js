@@ -22,6 +22,10 @@ class Header extends LitElement {
     text-transform: uppercase;
 }
 
+.campus svg {
+    fill: var(--il-blue);
+}
+
 .header--full .header__main-outer {
     border-top: 7px solid var(--il-orange);
     background-color: white;
