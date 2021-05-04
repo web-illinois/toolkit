@@ -1,12 +1,15 @@
 import {LitElement, html, css} from 'lit-element';
+import fingerprint from '../elements/fingerprint';
 import Alignment from '../lib/alignment';
 
 class Hero extends LitElement {
 
   static get properties() {
     return {
-      background: {type: String, attribute: true},
-      align: {type: String, attribute: true}
+        align: {type: String, attribute: true},
+        background: {type: String, attribute: true},
+        fingerprint: {type: Boolean, attribute: true},
+        gradient: {type: Boolean, attribute: true}
     };
   }
 
@@ -23,14 +26,40 @@ class Hero extends LitElement {
     height: 223px;
     overflow: hidden;
 }
-.background img {
+.background-image {
     position: absolute;
     width: 100%;
     height: 100%;
     top: 0;
     left: 0;
+}
+.background-image img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 101;
     object-fit: cover;
     object-position: center;
+}
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+.gradient.overlay {
+    background-image:
+        linear-gradient(132deg, rgba(255, 85, 46, 0) 51%, rgba(255, 85, 46, 0.05) 56%, rgba(255, 85, 46, 0.04) 56%, rgba(255, 85, 46, 0.8) 82%),
+        linear-gradient(-143deg, rgba(248, 246, 245, 0) 43%, rgba(30, 56, 119, 0.7) 77%, var(--il-blue) 90%);
+    z-index: 102;
+}
+.fingerprint.overlay {
+    z-index: 103;
+    stroke: #FEFEFE;
+    opacity: .149;
 }
 .content {
     position: relative;
@@ -85,13 +114,23 @@ class Hero extends LitElement {
 
   constructor() {
     super();
-    this.background = undefined;
     this.align = '';
+    this.background = undefined;
+    this.fingerprint = false;
+    this.gradient = false;
   }
 
-  renderBackground() {
+  renderFingerprint() {
+      return html`<div class="fingerprint overlay">${fingerprint}</div>`;
+  }
+
+  renderGradient() {
+      return html`<div class="gradient overlay"></div>`;
+  }
+
+  renderBackgroundImage() {
     return html`
-        <div class="background" role="presentation">
+        <div class="background-image">
             <img src="${this.background}" alt="">
         </div>
     `;
@@ -101,7 +140,11 @@ class Hero extends LitElement {
     const alignment = new Alignment(this.align);
     return html`
         <div class="hero" data-align-x=${alignment.x} data-align-y=${alignment.y}>
-            ${this.background && this.renderBackground()}
+            <div class="background" role="presentation">
+                ${this.fingerprint ? this.renderFingerprint(): ''}
+                ${this.gradient ? this.renderGradient(): ''}
+                ${this.background ? this.renderBackgroundImage() : ''}
+            </div>
             <div class="content">
                 <slot></slot>
             </div>

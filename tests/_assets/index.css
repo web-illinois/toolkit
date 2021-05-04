@@ -1,5 +1,6 @@
 body {
     padding: 2em;
+    font-family: var(--il-source-sans), sans-serif;
 }
 h1 {
     margin: 0 0 20px;

@@ -1,7 +1,7 @@
 html {
     background-color: white;
     color: black;
-    font-family: var(--il-source-sans), sans-serif;
+    font-family: monospace;
 }
 body {
     margin: 0;
