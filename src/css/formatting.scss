@@ -1,5 +1,5 @@
 .il-formatted {
-  font: 400 18px/1.5em var(--il-source-sans);
+  font: 400 rem(18px) / rem(24px) var(--il-source-sans);
   color: #252525;
 
   a {
@@ -9,10 +9,10 @@
   h1 {
     @include reset-heading;
     margin: {
-      top: 20px;
-      bottom: 10px;
-    };
-    font: 700 40px/52px var(--il-source-sans);
+      top: rem(20px);
+      bottom: rem(10px);
+    }
+    font: 700 rem(40px) / rem(52px) var(--il-source-sans);
     color: var(--il-blue);
 
     &:first-child {
@@ -22,56 +22,57 @@
   h2 {
     @include reset-heading;
     margin: {
-      top: 20px;
-      bottom: 10px;
-    };
-    font: 600 32px/40px var(--il-source-sans);
+      top: rem(20px);
+      bottom: rem(10px);
+    }
+    font: 600 rem(32px) / rem(40px) var(--il-source-sans);
     color: var(--il-blue);
   }
   h3 {
     @include reset-heading;
     margin: {
-      top: 20px;
-      bottom: 10px;
-    };
-    font: 600 28px/32px var(--il-source-sans);
+      top: rem(20px);
+      bottom: rem(10px);
+    }
+    font: 600 rem(28px) / rem(32px) var(--il-source-sans);
     color: var(--il-blue);
   }
   h4 {
     @include reset-heading;
     margin: {
-      top: 20px;
-      bottom: 10px;
-    };
-    font: 600 24px/28px var(--il-source-sans);
+      top: rem(20px);
+      bottom: rem(10px);
+    }
+    font: 600 rem(24px) / rem(28px) var(--il-source-sans);
     color: var(--il-blue);
   }
   h5 {
     @include reset-heading;
     margin: {
-      top: 20px;
-      bottom: 10px;
-    };
-    font: 600 20px/22px var(--il-source-sans);
+      top: rem(20px);
+      bottom: rem(10px);
+    }
+    font: 600 rem(20px) / rem(22px) var(--il-source-sans);
     color: var(--il-blue);
   }
   h6 {
     @include reset-heading;
     margin: {
-      top: 20px;
-      bottom: 10px;
-    };
-    font: 600 18px/22px var(--il-source-sans);
+      top: rem(20px);
+      bottom: rem(10px);
+    }
+    font: 600 rem(18px) / rem(22px) var(--il-source-sans);
     color: var(--il-blue);
   }
 
   p {
     @include reset-spacing;
-    font: 18px/30px var(--il-source-sans);
-    margin-bottom: 25px;
+    font: rem(18px) / rem(30px) var(--il-source-sans);
+    margin-bottom: rem(25px);
   }
 
-  b, strong {
+  b,
+  strong {
     font-weight: 600;
   }
 
@@ -89,9 +90,10 @@
 
   blockquote {
     @include reset-spacing;
-    margin: 0 48px 18px;
+    margin: 0 rem(48px) rem(18px);
   }
-  ul, ol {
+  ul,
+  ol {
     margin: {
       top: 0;
       bottom: 0;
@@ -125,16 +127,16 @@
 
       &::after {
         box-sizing: border-box;
-        content: '';
+        content: "";
         position: absolute;
-        height: 8px;
-        width: 8px;
+        height: 6px;
+        width: 6px;
         border: 2px solid var(--il-blue);
         border-radius: 50%;
         top: 10px;
         left: 20px;
         background-color: var(--il-blue);
-        opacity: .75;
+        opacity: 0.75;
       }
     }
 
@@ -143,7 +145,8 @@
     }
   }
 
-  p + ul, p + ol {
+  p + ul,
+  p + ol {
     margin-top: -10px;
   }
 
@@ -183,7 +186,7 @@
   figcaption {
     @include reset-spacing;
     font-size: 14px;
-    padding: .1em 0 .35em;
+    padding: 0.1em 0 0.35em;
     border-bottom: 1px solid var(--il-industrial-blue);
   }
 
@@ -198,7 +201,7 @@
     text-align: left;
     vertical-align: top;
     font-weight: 700;
-    padding: .35em 1em;
+    padding: 0.35em 1em;
     border: 1px solid white;
   }
   thead th {
@@ -213,7 +216,7 @@
   td {
     text-align: left;
     vertical-align: top;
-    padding: .35em 1em;
+    padding: 0.35em 1em;
     border: 1px solid #e1e0e0;
     color: var(--il-blue);
   }
@@ -227,4 +230,3 @@
     overflow: auto;
   }
 }
-

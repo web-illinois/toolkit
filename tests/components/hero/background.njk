@@ -1,0 +1,63 @@
+---
+title: Hero background
+layout: layouts/page.njk
+---
+
+{% macro hero(image=null, gradient=false, fingerprint=false) %}
+<il-hero 
+    {% if image -%}
+    background="{{ image|url if image }}"
+    {%- endif %}
+    {% if fingerprint -%}
+    fingerprint
+    {%- endif %}
+    {% if gradient -%}
+    gradient
+    {%- endif %}
+    >
+    <h1>Innovating solutions every year</h1>
+    <ul>
+        <li>
+            <a href="#">Link 1</a>
+        </li>
+        <li>
+            <a href="#">Link 2</a>
+        </li>
+        <li>
+            <a href="#">Link 3</a>
+        </li>
+    </ul>
+</il-hero>
+{% endmacro %}
+
+<h2>Default</h2>
+
+{{ hero() }}
+
+<h2>With image</h2>
+
+{{ hero(image='/_assets/images/hero-bg.jpg') }}
+
+<h2>With gradient</h2>
+
+{{ hero(gradient=true) }}
+
+<h2>With fingerprint</h2>
+
+{{ hero(fingerprint=true) }}
+
+<h2>With image and gradient</h2>
+
+{{ hero(image='/_assets/images/hero-bg.jpg', gradient=true) }}
+
+<h2>With image and fingerprint</h2>
+
+{{ hero(image='/_assets/images/hero-bg.jpg', fingerprint=true) }}
+
+<h2>With gradient and fingerprint</h2>
+
+{{ hero(gradient=true, fingerprint=true) }}
+
+<h2>With image, gradient and fingerprint</h2>
+
+{{ hero(image='/_assets/images/hero-bg.jpg', gradient=true, fingerprint=true) }}

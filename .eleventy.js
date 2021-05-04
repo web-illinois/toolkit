@@ -1,11 +1,15 @@
-module.exports = function(eleventyConfig) {
-  eleventyConfig.setTemplateFormats(['html','md','njk','11ty.js','css']);
-  eleventyConfig.addPassthroughCopy({ "dist": "." });
-  return {
+module.exports = function (eleventyConfig) {
+  eleventyConfig.setTemplateFormats(['html', 'md', 'njk', '11ty.js', 'css', 'jpg']);
+  eleventyConfig.addPassthroughCopy({"dist": "."});
 
- dir: {
-    input: "tests",
-    output: "var/test-site"
-  }
-};
+  eleventyConfig.addShortcode("addStaticImages", function () {
+    return '';
+  });
+  
+  return {
+    dir: {
+      input: "tests",
+      output: "var/test-site"
+    }
+  };
 };

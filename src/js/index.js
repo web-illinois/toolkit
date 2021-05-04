@@ -2,6 +2,7 @@ import '../css/components.scss';
 
 import './components/footer';
 import './components/header';
+import './components/hero';
 import './components/navigation';
 import './components/nav';
 //import './components/nav-link';

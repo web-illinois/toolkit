@@ -1,0 +1,31 @@
+il-hero {
+  h1 {
+    @include reset-heading;
+    font: 700 48px/52px var(--il-source-sans);
+    text-transform: uppercase;
+  }
+  ul {
+    list-style: none;
+    margin: 18px -32px -18px 0;
+    padding: 0;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    li {
+      list-style: none;
+      margin: 0 32px 18px 0;
+      padding: 0;
+
+      a {
+        padding: 8px 18px;
+        display: block;
+        background-color: var(--il-orange);
+        color: white;
+        text-decoration: none;
+        font: 600 18px/24px var(--il-source-sans);
+        border-radius: 4px;
+      }
+    }
+  }
+}
