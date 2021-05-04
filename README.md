@@ -45,6 +45,8 @@ The test site should now be available at http://127.0.0.1:8080/.
 npm run test-backstop
 ````
 
+*Note that the test site needs to be running on your local machine for this to work (see Testing)*
+
 ### Jest
 
 [Jest](https://jestjs.io/) is used for DOM and behavior testing. The tests use [Puppeteer](https://github.com/puppeteer/puppeteer/) to interact with test pages in a simulated browser environment. To run the Jest tests, use this script:
@@ -62,3 +64,11 @@ npm test
 ## Development
 
 While the development server is running, all changes to files in the `src` directory will be reflected in the files served to the development site. If you're making changes to the test pages, you can also run `npm run watch-html` to rebuild them when changes are detected.
+
+
+## Build process
+
+The build process will place a copy of the assets in the /toolkit/x.x/ folder, and code samples and screen shots in /samples/x.x/. To advance the version number, it needs to be changed in two places:
+
+* The .github/workflows/deploy.yml file -- the environment variable at the top of the file 
+* The .eleventy-test-site.js file -- the pathPrefix variable at the bottom of the file

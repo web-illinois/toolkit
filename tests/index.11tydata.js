@@ -16,7 +16,7 @@ module.exports = {
         .filter(f => f.url !== data.page.url)
         .map(f => {
           return {
-            url: f.data.page.url.endsWith('.html') ? f.data.page.url : f.data.page.url + 'index.html',
+            url: f.data.page.url.endsWith('.html') ? f.data.page.url.substr(1) : f.data.page.url.substr(1) + 'index.html',
             path: f.filePathStem.substr(1),
             title: f.data.title,
             date: formatDate(f.data.page.date)
