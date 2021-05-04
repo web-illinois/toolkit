@@ -38,6 +38,7 @@ div.block-i a {
 }
 div.block-i a:focus {
     outline: var(--il-dotted-focus-outline);
+    outline-color: var(--il-orange);
 }
 svg.block-i {
     display: block;
