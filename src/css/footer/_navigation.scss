@@ -3,6 +3,7 @@
   grid-template-columns: 1fr;
   grid-gap: 50px;
   font: 18px var(--il-source-sans);
+  padding-top: 61px;
 
   h2, h3, h4 {
     @include reset-heading;
@@ -27,6 +28,11 @@
 
   a {
     @extend .il-link;
+  }
+  
+  a:hover, a:focus {
+    outline: none;
+    text-decoration: underline;
   }
 
   .il-actions {
@@ -59,7 +65,7 @@
   }
 }
 
-@media (min-width: 800px) {
+@media (min-width: 992px) {
   .il-footer-navigation-single, .il-footer-navigation {
     padding-top: 115px;
   }
