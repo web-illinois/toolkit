@@ -27,12 +27,13 @@
     margin-right: -8px;
     min-height: 60px;
     align-items: center;
+    row-gap: 24px;
   }
 
   li {
     @include reset-list-item;
     font: 1rem var(--il-source-sans);
-    padding: 0 20px 24px 0;
+    padding: 0 20px 0 0;
   }
 
   button {
