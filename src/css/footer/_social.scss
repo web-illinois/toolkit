@@ -8,11 +8,10 @@
     align-items: center;
     margin: -6px;
     font: 700 18px/30px var(--il-source-sans);
-    gap: 35px;
   }
   li {
     @include reset-list-item;
-    padding: 0;
+    padding: 0 19px 0 0;
   }
   a {
     @include reset-link;
@@ -34,6 +33,7 @@
   }
   a:focus {
     outline: var(--il-dotted-focus-outline);
+    outline-color: var(--il-orange);
   }
   a[href^="https://www.facebook.com/"],
   a[href^="https://www.instagram.com/"],

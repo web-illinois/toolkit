@@ -36,14 +36,14 @@ class Footer extends LitElement {
     grid-gap: 0 120px;
 }
 
-@media (max-width: 599px) {
+@media (max-width: 991px) {
     .main > div {
         grid-template-columns: 1fr;
         grid-template-rows: auto;
         grid-template-areas: "info" "links";
     }
 }
-@media (min-width: 600px) {
+@media (min-width: 992px) {
     .main > div {
         grid-template-columns: 1fr 2fr;
         grid-template-areas: "info links";
