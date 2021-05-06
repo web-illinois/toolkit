@@ -1,11 +1,14 @@
-.il-footer-navigation, .il-footer-navigation-single {
+.il-footer-navigation,
+.il-footer-navigation-single {
   display: grid;
   grid-template-columns: 1fr;
   grid-gap: 50px;
   font: 18px var(--il-source-sans);
   padding-top: 61px;
 
-  h2, h3, h4 {
+  h2,
+  h3,
+  h4 {
     @include reset-heading;
     margin-bottom: 6px;
     font: bold 20px var(--il-source-sans);
@@ -29,14 +32,14 @@
   a {
     @extend .il-link;
   }
-  
-  a:hover, a:focus {
+
+  a:hover,
+  a:focus {
     outline: none;
     text-decoration: underline;
   }
 
   .il-actions {
-
     ul {
       @include reset-list();
       display: flex;
@@ -57,7 +60,8 @@
       background-color: var(--il-orange);
       color: white;
 
-      &:hover, &:focus {
+      &:hover,
+      &:focus {
         background-color: var(--il-altgeld);
         color: white;
       }
@@ -65,17 +69,28 @@
   }
 }
 
+.il-footer-navigation-single {
+  p:first-child {
+    margin-top: 0;
+    padding-top: 0;
+  }
+
+  p {
+    color: white;
+  }
+}
+
 @media (min-width: 992px) {
-  .il-footer-navigation-single, .il-footer-navigation {
+  .il-footer-navigation-single,
+  .il-footer-navigation {
     padding-top: 115px;
   }
   .il-footer-navigation {
-  grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, 1fr);
 
-  .il-actions {
-    grid-column-start: 1;
-    grid-column-end: span 2;
+    .il-actions {
+      grid-column-start: 1;
+      grid-column-end: span 2;
+    }
   }
 }
-}
-
