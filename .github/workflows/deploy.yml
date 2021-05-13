@@ -31,8 +31,12 @@ jobs:
         aws-region: us-east-2
     - name: Deploy samples to S3 bucket
       run: aws s3 sync ./var/full-site-deploy/ s3://cdn.brand.illinois.edu/samples/$VERSION --delete --acl bucket-owner-full-control
+    - name: Deploy examples to S3 bucket
+      run: aws s3 sync ./var/full-site-deploy/ s3://cdn.brand.illinois.edu/toolkit/$VERSION/examples --delete --acl bucket-owner-full-control
     - name: Deploy static images in samples to S3 bucket
       run: aws s3 sync ./tests/_reference/ s3://cdn.brand.illinois.edu/samples/$VERSION/static-images --acl bucket-owner-full-control
+    - name: Deploy static images in samples to S3 bucket
+      run: aws s3 sync ./tests/_reference/ s3://cdn.brand.illinois.edu/toolkit/$VERSION/examples/static-images --acl bucket-owner-full-control
     - run: npm run-script build
     - name: Deploy toolbox to S3 bucket
       run: aws s3 sync ./dist/ s3://cdn.brand.illinois.edu/toolkit/$VERSION --delete --acl bucket-owner-full-control
