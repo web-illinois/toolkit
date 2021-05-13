@@ -72,8 +72,6 @@
 }
 
 .il-footer-navigation-single {
-  grid-column: 2 / span 2;
-
   p:first-child {
     margin-top: 0;
     padding-top: 0;
@@ -96,5 +94,8 @@
       grid-column-start: 1;
       grid-column-end: span 2;
     }
+  }
+  .il-footer-navigation-single {
+    grid-column: 2 / span 2;
   }
 }
