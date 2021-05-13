@@ -36,7 +36,7 @@ div.block-i a {
     display: block;
     text-decoration: none;
 }
-div.block-i a:focus {
+div.block-i a:focus, div.block-i a:hover  {
     outline: var(--il-dotted-focus-outline);
     outline-color: var(--il-orange);
 }

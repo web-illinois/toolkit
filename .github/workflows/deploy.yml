@@ -26,14 +26,14 @@ jobs:
     - name: Configure AWS Credentials
       uses: aws-actions/configure-aws-credentials@v1
       with:
-        aws-access-key-id: ${{ secrets.AWS_TOOLKIT_ACCESS_KEY_ID }}
-        aws-secret-access-key: ${{ secrets.AWS_TOOLKIT_SECRET_ACCESS_KEY }}
+        aws-access-key-id: ${{ secrets.CDN_ACCESS_KEY_ID }}
+        aws-secret-access-key: ${{ secrets.CDN_ACCESS_KEY }}
         aws-region: us-east-2
     - name: Deploy samples to S3 bucket
-      run: aws s3 sync ./var/full-site-deploy/ s3://uiuc-toolkit-test/samples/$VERSION --delete --acl bucket-owner-full-control
+      run: aws s3 sync ./var/full-site-deploy/ s3://cdn.brand.illinois.edu/samples/$VERSION --delete --acl bucket-owner-full-control
     - name: Deploy static images in samples to S3 bucket
-      run: aws s3 sync ./tests/_reference/ s3://uiuc-toolkit-test/samples/$VERSION/static-images --acl bucket-owner-full-control
+      run: aws s3 sync ./tests/_reference/ s3://cdn.brand.illinois.edu/samples/$VERSION/static-images --acl bucket-owner-full-control
     - run: npm run-script build
     - name: Deploy toolbox to S3 bucket
-      run: aws s3 sync ./dist/ s3://uiuc-toolkit-test/toolkit/$VERSION --delete --acl bucket-owner-full-control
+      run: aws s3 sync ./dist/ s3://cdn.brand.illinois.edu/toolkit/$VERSION --delete --acl bucket-owner-full-control
 
