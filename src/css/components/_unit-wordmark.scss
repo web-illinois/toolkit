@@ -1,4 +1,4 @@
-il-unit-wordmark {
+body il-unit-wordmark {
   > * {
     @include reset-spacing;
     display: block;
@@ -20,5 +20,9 @@ il-unit-wordmark {
     @extend .il-link;
     color: var(--il-blue) !important;
     text-decoration: none !important;
+  }
+
+  h1 {
+    @include reset-spacing;
   }
 }
