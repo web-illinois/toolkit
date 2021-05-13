@@ -10,9 +10,10 @@ il-nav:not([compact]) il-nav-section .il-subnav {
   a {
     @include reset-link;
     display: block;
-    padding: 5px;
+    padding: 5px 5px 10px 5px;
     font: 700 16px/18px var(--il-source-sans);
     color: var(--il-blue);
+    font-weight: normal;
 
     &:hover {
       color: var(--il-altgeld);

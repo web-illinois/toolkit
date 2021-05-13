@@ -21,9 +21,10 @@ form {
   grid-gap: 2px;
   border: 2px solid var(--il-cloud-3);
   background-color: var(--il-cloud-3);
+  margin-left: 10px;
 }
 form.input-has-focus {
-  border-color: var(--il-altgeld);
+  border-color: var(--il-blue);
 }
 label {
   display: none;
@@ -48,8 +49,8 @@ button {
   color: #606060;
 }
 button:focus {
-  outline: 2px solid var(--il-altgeld);
-  color: var(--il-altgeld);
+  outline: 2px solid var(--il-blue);
+  color: var(--il-blue);
 }
 button svg {
   display: block;

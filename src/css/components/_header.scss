@@ -30,12 +30,11 @@ il-header {
       a {
         @include reset-link;
         display: block;
-        text-transform: uppercase;
         font: 700 16px var(--il-source-sans);
-        color: var(--il-blue);
+        color: var(--il-orange);
 
         &:focus, &:hover {
-          color: var(--il-altgeld);
+          color: var(--il-blue);
           text-decoration: underline;
         }
         &:focus {
