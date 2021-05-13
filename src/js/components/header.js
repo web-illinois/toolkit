@@ -70,10 +70,11 @@ class Header extends LitElement {
 .header--compact .header__main {
     border-top: 7px solid var(--il-orange);
     background-color: white;
-    padding: 0 var(--il-content-margin);
+    padding: 23px var(--il-content-margin) 10px;
     display: grid;
     grid-template-columns: auto auto;
     align-items: center;
+    border-bottom: 2px solid var(--il-cloud-1);
 }
 .header--compact .header__main .menu-button {
     padding: 20px 0;

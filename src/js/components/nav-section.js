@@ -128,11 +128,11 @@ li {
 }
 .compact .heading button svg {
   position: absolute;
-  top: 8px;
+  top: 12px;
   left: 16px;
   display: block;
-  width: 24px;
-  height: 24px;
+  width: 23px;
+  height: 15px;
   fill: currentColor;
   transition: transform .3s;
 }
