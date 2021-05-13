@@ -4,7 +4,6 @@ on:
     branches:
     - 'releases/**'
     - develop
-    - 'jonker/add-mixins'
 env:
   VERSION: '2.0'
 jobs:
@@ -13,7 +12,7 @@ jobs:
     steps:
     - uses: actions/checkout@v1
     - name: Set version if in release branch
-      if: ${{ github.ref != 'refs/heads/develop' && github.ref != 'refs/heads/jonker/add-mixins' }}
+      if: ${{ github.ref != 'refs/heads/develop' }}
       run: echo "VERSION=${GITHUB_BRANCH##*/}" >> $GITHUB_ENV
       env: 
         GITHUB_BRANCH: ${{ github.ref }}
@@ -35,4 +34,6 @@ jobs:
       run: aws s3 sync ./var/full-site-deploy/ s3://cdn.brand.illinois.edu/toolkit/$VERSION/examples --delete --acl bucket-owner-full-control
     - name: Deploy static images in examples to S3 bucket
       run: aws s3 sync ./tests/_reference/ s3://cdn.brand.illinois.edu/toolkit/$VERSION/examples/static-images --acl bucket-owner-full-control
+    - name: Invalidate Cloudfront cache
+      run: aws cloudfront create-invalidation --distribution-id E2VPGHCUOM84HO --paths "/toolkit/$VERSION/*"
 

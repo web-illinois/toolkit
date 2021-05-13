@@ -13,8 +13,16 @@
   --il-focus-outline: 3px dashed var(--il-arches-blue);
   --il-dotted-focus-outline: 4px dotted var(--il-arches-blue);
 
-  @media (min-width: 600px) {
+  @media (min-width: 768px) {
+    --il-content-margin: 30px;
+  }
+
+  @media (min-width: 1200px) {
     --il-content-margin: 50px;
+  }
+
+  @media (min-width: 1400px) {
+    --il-content-margin: 75px;
   }
 }
 .il-page {
