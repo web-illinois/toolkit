@@ -113,7 +113,7 @@ ul {
 
   render() {
     return html`
-        <nav class=${this.compact ? 'compact' : 'full'}>
+        <nav class=${this.compact ? 'compact' : 'full'} aria-label='main menu'>
             <ul>
                 <slot></slot>
             </ul>

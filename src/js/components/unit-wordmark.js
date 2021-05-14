@@ -55,7 +55,8 @@ svg.block-i {
 }
 .wordmark.wide {
     min-height: 43px;
-    padding-left: 75px;
+    padding-left: 50px;
+    margin-bottom: 10px;
 }
 .wordmark.tall .block-i {
     top: 10px;
@@ -73,7 +74,11 @@ svg.block-i {
 .wordmark.narrow ::slotted(*:last-child) {
     font-size: 22px;
 }
+
 @media (min-width: 768px) {
+.wordmark.wide {
+    padding-left: 75px;
+}
 .wordmark.wide::after {
     background-color: var(--il-blue);
     content: "";
@@ -84,7 +89,6 @@ svg.block-i {
     width: 1px;
 }
 }
-
         `;
     }
 
