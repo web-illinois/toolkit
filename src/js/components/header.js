@@ -74,11 +74,14 @@ class Header extends LitElement {
 .header--compact .header__main {
     border-top: 7px solid var(--il-orange);
     background-color: white;
-    padding: 23px var(--il-content-margin) 10px;
+    padding: 5px var(--il-content-margin) 10px;
     display: grid;
     grid-template-columns: auto auto;
     align-items: center;
     border-bottom: 2px solid var(--il-cloud-1);
+}
+.header--compact .header__main .campus {
+    grid-column: 1 / span 2;
 }
 .header--compact .header__main .menu-button {
     padding: 20px 0;
@@ -127,6 +130,16 @@ class Header extends LitElement {
 .header--compact.header--menu-visible .menu {
     display: block;
 }
+
+@media only screen and (max-width: 767px) {
+    .header--compact .header__main .campus {
+        display: none;
+    }
+
+    .header--compact .header__main {
+        padding-top: 23px;
+    }
+}
         `;
     }
 
@@ -165,7 +178,7 @@ class Header extends LitElement {
             isCompact = !window.matchMedia(this.full).matches;
         }
         else {
-            isCompact = window.matchMedia('(max-width: 600px)').matches;
+            isCompact = window.matchMedia('(max-width: 992px)').matches;
         }
         return isCompact ? 'compact' : 'full';
     }
@@ -224,6 +237,9 @@ class Header extends LitElement {
         return html`
 <div class="header header--compact ${this.menuVisible ? 'header--menu-visible' : ''}">
     <div class="header__main">
+        <div class="campus">
+            ${this.renderCampusWordmark()}
+        </div>
         <div class="wordmark">
             <slot name="wordmark"></slot>
         </div>

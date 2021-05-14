@@ -4,7 +4,8 @@ class NavigationSection extends LitElement {
   static get properties() {
     return {
       expanded: {type: Boolean, default: false, attribute: true, reflect: true},
-      compact: {type: Boolean, default: false, attribute: false}
+      compact: {type: Boolean, default: false, attribute: false},
+      right: {type: Boolean, default: false, attribute: true}
     };
   }
 
@@ -25,6 +26,10 @@ li {
     position: absolute;
     left: 0;
     top: 100%;
+}
+.full .contents.right {
+  left: initial;
+  right: 0;
 }
 .full .heading {
   position: relative;
@@ -174,6 +179,7 @@ li {
     if (wasExpanded !== isExpanded) {
       this._expanded = isExpanded;
       this.requestUpdate('expanded', wasExpanded);
+      
       this.updateComplete.then(() => {
         const evt = new Event(isExpanded ? 'expand' : 'collapse');
         this.dispatchEvent(evt);
@@ -297,6 +303,7 @@ li {
 
   expand() {
     this.expanded = true;
+
   }
 
   expandAndMoveFocusToFirstSubmenuLink() {
@@ -361,6 +368,7 @@ li {
   render() {
     const state = this.expanded ? 'expanded' : 'collapsed';
     const view = this.compact ? 'compact' : 'full';
+    const rightjust = true;
     return html`
         <li class="${state} ${view}" @mouseover=${this.handleMouseOver} @mouseout=${this.handleMouseOut}>
             <div class="heading">
@@ -380,7 +388,7 @@ li {
                     </button>
                 </div>
             </div>
-            <div class="contents" id="contents">
+            <div class="${this.right ? 'contents right' : 'contents'}" id="contents">
                 <slot></slot>
             </div>
         </li>`
