@@ -36,4 +36,3 @@ jobs:
       run: aws s3 sync ./tests/_reference/ s3://cdn.brand.illinois.edu/toolkit/$VERSION/examples/static-images --acl bucket-owner-full-control
     - name: Invalidate Cloudfront cache
       run: aws cloudfront create-invalidation --distribution-id E2VPGHCUOM84HO --paths "/toolkit/$VERSION*"
-

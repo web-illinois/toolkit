@@ -44,7 +44,7 @@ li {
 }
 .full .label ::slotted(a:hover),
 .full .label ::slotted(a:focus) {
-  color: var(--il-orange);
+  color: var(--il-altgeld);
   text-decoration: underline;
   background-color: white;
   outline: 0;
@@ -107,7 +107,7 @@ li {
 .compact .heading ::slotted(a:hover),
 .compact .heading ::slotted(a:focus) {
   text-decoration: underline;
-  color: var(--il-orange);
+  color: var(--il-altgeld);
   outline: 0;
 }
 .compact .indicator {

@@ -15,15 +15,10 @@ il-nav:not([compact]) il-nav-section .il-subnav {
     color: var(--il-blue);
     font-weight: normal;
 
-    &:hover {
+    &:hover, &:focus {
       color: var(--il-altgeld);
       text-decoration: underline;
-    }
-
-    &:focus {
-      color: var(--il-altgeld);
-      text-decoration: underline;
-      outline: 2px solid var(--il-altgeld);
+      outline: none;
     }
   }
 }
