@@ -85,6 +85,7 @@ class Header extends LitElement {
 }
 .header--compact .header__main .menu-button {
     padding: 20px 0;
+    margin-left: 30px;
     justify-self: flex-end;
 }
 .header--compact .menu-button button {
