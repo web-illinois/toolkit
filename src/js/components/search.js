@@ -24,7 +24,7 @@ form {
   margin-left: 10px;
 }
 form.input-has-focus {
-  border-color: var(--il-blue);
+  border-color: var(--il-industrial-blue);
 }
 label {
   display: none;
@@ -49,8 +49,8 @@ button {
   color: #606060;
 }
 button:focus {
-  outline: 2px solid var(--il-blue);
-  color: var(--il-blue);
+  outline: 2px solid var(--il-industrial-blue);
+  color: var(--il-industrial-blue);
 }
 button svg {
   display: block;

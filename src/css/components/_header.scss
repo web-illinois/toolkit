@@ -19,7 +19,7 @@ il-header {
           content: "/";
           width: 1em;
           text-align: center;
-          color: var(--il-blue);
+          color: var(--il-orange);
           font: 700 16px var(--il-source-sans);
         }
         &:last-of-type::after {
@@ -34,7 +34,7 @@ il-header {
         color: var(--il-blue);
 
         &:focus, &:hover {
-          color: var(--il-altgeld);
+          color: var(--il-orange);
           text-decoration: none;
         }
         &:focus {
@@ -71,6 +71,12 @@ il-header {
         text-decoration: none;
         color: var(--il-blue);
         font: 700 22px/30px var(--il-source-sans);
+
+        &:hover, &:focus {
+          text-decoration: underline;
+          color: var(--il-altgeld);
+          outline: 0px;
+        }
       }
     }
 
