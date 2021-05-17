@@ -49,7 +49,6 @@ svg.block-i {
 .block-i__fill {
     fill: var(--il-orange);
 }
-
 .wordmark.narrow {
     font-size: 14px;
 }
@@ -75,15 +74,17 @@ svg.block-i {
     font-size: 22px;
 }
 
+
 @media (min-width: 768px) {
-.wordmark.wide {
-    padding-left: 75px;
+.wordmark.wide, .wordmark.narrow {
+    padding-left: 70px;
+    min-height: 43px;
 }
-.wordmark.wide::after {
+.wordmark.wide::after, .wordmark.narrow::after {
     background-color: var(--il-blue);
     content: "";
     height: 100%;
-    left: 52px;
+    left: 50px;
     position: absolute;
     top: 0;
     width: 1px;
