@@ -1,17 +1,43 @@
 .il-content-with-section-nav {
-    display: grid;
+  display: grid;
+  grid-gap: 20px;
+  grid-template-rows: auto auto;
+  grid-template-areas: "nav" "content";
+  margin: {
+    left: 20px;
+    right: 20px;
+  }
+
+  @media (min-width: 575px) {
+    margin: {
+      left: 40px;
+      right: 40px;
+    }
+  }
+
+  @media (min-width: 767px) {
     grid-gap: 44px;
+    grid-template-columns: 1fr 2fr;
+    grid-template-areas: "nav content";
+  }
+
+  @media (min-width: 1191px) {
+    margin: {
+      left: 0;
+      right: 0;
+    }
     grid-template-columns: auto 350px 709px auto;
     grid-template-areas: ". nav content .";
+  }
 
-    .il-content {
-        grid-area: content;
-        margin: 0;
-    }
+  .il-content {
+    grid-area: content;
+    margin: 0;
+  }
 
-    .il-section-nav {
-        grid-area: nav;
-    }
+  .il-section-nav {
+    grid-area: nav;
+  }
 }
 
 il-section-nav {

@@ -25,6 +25,7 @@ class SectionNavigation extends LitElement {
   font: 700 22px/56px var(--il-source-sans);
   color: var(--il-blue);
   white-space: nowrap;
+  overflow: hidden;
   text-overflow: ellipsis;
 }
 .header h2::after {
@@ -36,7 +37,7 @@ class SectionNavigation extends LitElement {
   width: 60px;
   height: 44px;
   overflow: hidden;
-  margin: 0;
+  margin: 0 0 0 10px;
   padding: 0;
   background: transparent;
   border: 2px solid var(--il-blue);
@@ -86,10 +87,20 @@ nav.compact.expanded .menu {
     this.compact = false;
     this.expanded = false;
     this.handleToggleClick = this.handleToggleClick.bind(this);
+    document.addEventListener('DOMContentLoaded', this.handleDocumentLoaded.bind(this));
+    window.addEventListener('resize', this.handleWindowResize.bind(this));
+  }
+
+  handleDocumentLoaded(evt) {
+    this.handleWindowResize();
   }
 
   handleToggleClick() {
     this.expanded = !this.expanded;
+  }
+
+  handleWindowResize() {
+    this.compact = !window.matchMedia("(min-width: 767px)").matches;
   }
 
   render() {
