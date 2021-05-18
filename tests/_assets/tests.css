@@ -12,11 +12,13 @@ body h1, body h2.testheading {
     text-align: center;
 }
 
-.outside-click-target {
-    margin: 1em;
+.outside-click-target, .placeholder {
     border: 2px solid rgba(0, 0, 0, .25);
     padding: 1em;
     background-color: rgba(0, 0, 0, .1);
     text-align: center;
     font-weight: bold;
+}
+.outside-click-target {
+    margin: 1em;
 }

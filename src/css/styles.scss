@@ -39,18 +39,6 @@
   }
 }
 
-.il-content {
-  padding: 50px var(--il-content-margin);
-}
-.il-content > * {
-  display: block;
-  margin: 50px auto 0;
-  max-width: var(--il-content-max-width);
-}
-.il-content > *:first-child {
-  margin-top: 0;
-}
-
 .il-link {
   color: var(--il-link-color);
   transition: color .3s;
