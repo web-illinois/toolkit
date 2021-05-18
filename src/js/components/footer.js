@@ -45,7 +45,7 @@ class Footer extends LitElement {
 }
 @media (min-width: 992px) {
     .main > div {
-        grid-template-columns: 1fr 2fr;
+        grid-template-columns: 1fr 1fr 1fr;
         grid-template-areas: "info links";
     }
 }
@@ -143,9 +143,7 @@ class Footer extends LitElement {
                     <slot name="parent"></slot>
                 </div>
             </div>
-            <div class="content il-footer-navigation">
-                <slot></slot>
-            </div>
+            <slot></slot>
         </div>
     </div>
     <div class="links">

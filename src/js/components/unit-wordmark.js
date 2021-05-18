@@ -36,7 +36,7 @@ div.block-i a {
     display: block;
     text-decoration: none;
 }
-div.block-i a:focus {
+div.block-i a:focus, div.block-i a:hover  {
     outline: var(--il-dotted-focus-outline);
     outline-color: var(--il-orange);
 }
@@ -49,22 +49,13 @@ svg.block-i {
 .block-i__fill {
     fill: var(--il-orange);
 }
-
 .wordmark.narrow {
     font-size: 14px;
 }
 .wordmark.wide {
     min-height: 43px;
-    padding-left: 75px;
-}
-.wordmark.wide::after {
-    background-color: var(--il-blue);
-    content: "";
-    height: 100%;
-    left: 52px;
-    position: absolute;
-    top: 0;
-    width: 1px;
+    padding-left: 50px;
+    margin-bottom: 10px;
 }
 .wordmark.tall .block-i {
     top: 10px;
@@ -83,6 +74,22 @@ svg.block-i {
     font-size: 22px;
 }
 
+
+@media (min-width: 768px) {
+.wordmark.wide, .wordmark.narrow {
+    padding-left: 70px;
+    min-height: 43px;
+}
+.wordmark.wide::after, .wordmark.narrow::after {
+    background-color: var(--il-blue);
+    content: "";
+    height: 100%;
+    left: 50px;
+    position: absolute;
+    top: 0;
+    width: 1px;
+}
+}
         `;
     }
 

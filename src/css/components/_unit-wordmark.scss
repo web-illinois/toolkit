@@ -1,4 +1,4 @@
-il-unit-wordmark {
+body il-unit-wordmark {
   > * {
     @include reset-spacing;
     display: block;
@@ -21,4 +21,22 @@ il-unit-wordmark {
     color: var(--il-blue) !important;
     text-decoration: none !important;
   }
+
+  a:focus, a:hover {
+    color: var(--il-orange) !important;
+    outline: none;
+  }
+
+  h1 {
+    @include reset-spacing;
+    font-size: rem(24px);
+  }
+  .il-primary-unit {
+    display: none;
+  }
+  @media (min-width: 768px) {
+  .il-primary-unit {
+    display: block;
+  }
+}
 }
