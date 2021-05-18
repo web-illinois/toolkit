@@ -35,7 +35,7 @@ il-header {
 
         &:focus, &:hover {
           color: var(--il-orange);
-          text-decoration: none;
+          text-decoration: underline;
         }
         &:focus {
           outline: none;

@@ -16,12 +16,13 @@ class Search extends LitElement {
     return css`
 form {
   display: grid;
-  height: 44px;
+  height: 40px;
   grid-template-columns: auto 60px;
   grid-gap: 2px;
   border: 2px solid var(--il-cloud-3);
   background-color: var(--il-cloud-3);
   margin-left: 10px;
+  border-radius: 5px;
 }
 form.input-has-focus {
   border-color: var(--il-industrial-blue);
@@ -35,6 +36,8 @@ input {
   border: 0;
   font: 16px/18px var(--il-source-sans);
   background-color: white;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
 }
 input:focus {
   outline: 0;
@@ -47,6 +50,8 @@ button {
   border: 0;
   background-color: white;
   color: #606060;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
 }
 button:focus {
   outline: 2px solid var(--il-industrial-blue);
