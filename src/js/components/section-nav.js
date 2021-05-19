@@ -13,7 +13,7 @@ class SectionNavigation extends LitElement {
 .header {
   margin: 0;
   padding: 0 20px;
-  background-color: #e8e9eb;
+  background-color: #F0F0F0;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
