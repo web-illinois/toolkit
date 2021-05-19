@@ -47,8 +47,8 @@ class SectionNavigation extends LitElement {
   white-space: nowrap;
 }
 .header button:focus, .header button:hover {
-  background-color: var(--il-altgeld);
-  border-color: var(--il-altgeld);
+  background-color: var(--il-orange);
+  border-color: var(--il-orange);
   color: white;
 }
 .header button svg {
