@@ -104,11 +104,13 @@ il-section-nav {
     }
 
     a {
-      padding: 30px 25px;
+      padding: 10px 25px;
+      font-size: 20px;
     }
 
     li li a {
       font-weight: 600;
+      font-size: 18px;
       padding: {
         top: 16px;
         bottom: 16px;
@@ -121,6 +123,10 @@ il-section-nav {
         top: 10px;
         bottom: 10px;
       };
+    }
+
+    li li li li a {
+      padding-left: 29px;
     }
   }
 
@@ -145,11 +151,20 @@ il-section-nav {
       }
   
       li {
-        padding-left: 30px;
+        padding-left: 26px;
+
+        ul {
+          padding-bottom: 4px;
+        }
       }
   
       li li {
+        padding-left: 30px;
         border-bottom: 0;
+
+        ul {
+          padding-bottom: 0;
+        }
       }
     }
   
@@ -163,7 +178,7 @@ il-section-nav {
     }
   
     li li li {
-      padding-left: 15px;
+      padding-left: 19px;
     }
   
     li li li a {
@@ -171,11 +186,5 @@ il-section-nav {
       font-weight: 600;
     }
 
-  }
-
-  &:not([mode="collapsed"]) {
-  }
-
-  &[mode="collapsed"] {
   }
 }
