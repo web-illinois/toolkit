@@ -33,11 +33,10 @@ class Header extends LitElement {
 .header--full .header__main-outer {
     border-top: 7px solid var(--il-orange);
     background-color: white;
-    padding: 0 var(--il-content-margin);
+    padding: 0 var(--il-page-margin);
 }
 .header--full .header__main-inner {
     margin: 0 auto;
-    max-width: var(--il-content-max-width);
     display: grid;
     grid-template-columns: auto auto;
     grid-template-rows: auto auto;
@@ -64,17 +63,16 @@ class Header extends LitElement {
 }
 .header--full .navigation {
     background-color: var(--il-cloud-1);
-    padding: 0 var(--il-content-margin);
+    padding: 0 var(--il-page-margin);
 }
 .header--full .navigation__inner {
     margin: 0 auto;
-    max-width: var(--il-content-max-width);
 }
 
 .header--compact .header__main {
     border-top: 7px solid var(--il-orange);
     background-color: white;
-    padding: 5px var(--il-content-margin) 10px;
+    padding: 5px var(--il-page-margin) 10px;
     display: grid;
     grid-template-columns: auto auto;
     align-items: center;

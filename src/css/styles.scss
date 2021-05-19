@@ -5,8 +5,7 @@
 
 :root {
   font-size: 16px;
-  --il-content-max-width: 1200px;
-  --il-content-margin: 20px;
+  --il-page-margin: 20px;
   --il-link-color: var(--il-alma-mater);
   --il-visited-link-color: var(--il-blue);
   --il-link-hover-color: var(--il-orange);
@@ -14,15 +13,15 @@
   --il-dotted-focus-outline: 4px dotted var(--il-arches-blue);
 
   @media (min-width: 768px) {
-    --il-content-margin: 30px;
+    --il-page-margin: 30px;
   }
 
   @media (min-width: 1200px) {
-    --il-content-margin: 50px;
+    --il-page-margin: 50px;
   }
 
   @media (min-width: 1400px) {
-    --il-content-margin: 75px;
+    --il-page-margin: 75px;
   }
 }
 .il-page {
@@ -127,18 +126,16 @@
   background-repeat: no-repeat;
   background-size: cover;
   color: white;
-  padding: 14px var(--il-content-margin) 27px;
+  padding: 14px var(--il-page-margin) 27px;
 
   .il-breadcrumbs {
     margin: 0 auto;
-    max-width: var(--il-content-max-width);
   }
 
   h1 {
     @include reset-heading;
     text-align: center;
     margin: 1em auto 0;
-    max-width: var(--il-content-max-width);
     font: 900 27px var(--il-source-sans);
   }
 
