@@ -8,7 +8,8 @@ class Search extends LitElement {
       inputHasFocus: {type: Boolean, attribute: false},
       label: {type: String, attribute: true},
       method: {type: String, attribute: true},
-      placeholder: {type: String, attribute: true}
+      placeholder: {type: String, attribute: true},
+      searchname: {type: String, attribute: true},
     }
   }
 
@@ -76,6 +77,7 @@ button svg {
     this.label = 'Search';
     this.method = 'GET';
     this.placeholder = 'Search this site';
+    this.searchname = 's';
     document.addEventListener('DOMContentLoaded', this.handleContentLoaded.bind(this));
   }
 
@@ -134,7 +136,7 @@ button svg {
     return html`
 <form role="search" method=${this.method} action=${this.action} class="${classNames.join(' ')}">
     <label for="query">Search</label>
-    <input type="search" id="query" placeholder=${this.placeholder} @focus=${this.handleInputFocus} @blur=${this.handleInputBlur}>
+    <input type="search" id="query" name=${this.searchname} placeholder=${this.placeholder} @focus=${this.handleInputFocus} @blur=${this.handleInputBlur}>
     <button type="submit" @focus=${this.handleButtonFocus} @blur=${this.handleButtonBlur}>
         ${this.renderSearchIcon()}
     </button>

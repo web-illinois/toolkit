@@ -20,7 +20,7 @@ il-header {
           width: 1em;
           text-align: center;
           color: var(--il-orange);
-          font: 700 16px var(--il-source-sans);
+          font: 600 16px var(--il-source-sans);
         }
         &:last-of-type::after {
           content: "";
@@ -30,7 +30,7 @@ il-header {
       a {
         @include reset-link;
         display: block;
-        font: 700 16px var(--il-source-sans);
+        font: 600 16px var(--il-source-sans);
         color: var(--il-blue);
 
         &:focus, &:hover {

@@ -18,6 +18,7 @@ class Header extends LitElement {
     position: relative;
     font-family: var(--il-source-sans);
 }
+
 .campus {
     text-transform: uppercase;
 }
@@ -32,6 +33,7 @@ class Header extends LitElement {
 
 .header--full .header__main-outer {
     border-top: 7px solid var(--il-orange);
+    border-bottom: 2px solid var(--il-cloud-1);
     background-color: white;
     padding: 0 var(--il-page-margin);
 }
