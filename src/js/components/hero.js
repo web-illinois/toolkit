@@ -61,6 +61,14 @@ class Hero extends LitElement {
     stroke: #FEFEFE;
     opacity: .149;
 }
+.fingerprint.overlay svg {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%:
+    object-fit: cover;
+}
 .content {
     position: relative;
     box-sizing: border-box;

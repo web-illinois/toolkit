@@ -1,0 +1,181 @@
+.il-content-with-section-nav {
+  display: grid;
+  grid-gap: 20px;
+  grid-template-rows: auto auto;
+  grid-template-areas: "nav" "content";
+  margin: {
+    left: 20px;
+    right: 20px;
+  }
+
+  @media (min-width: 575px) {
+    margin: {
+      left: 40px;
+      right: 40px;
+    }
+  }
+
+  @media (min-width: 767px) {
+    grid-gap: 44px;
+    grid-template-columns: 1fr 2fr;
+    grid-template-areas: "nav content";
+  }
+
+  @media (min-width: 1191px) {
+    margin: {
+      left: 0;
+      right: 0;
+    }
+    grid-template-columns: auto 350px 709px auto;
+    grid-template-areas: ". nav content .";
+  }
+
+  .il-content {
+    grid-area: content;
+    margin: 0;
+  }
+
+  .il-section-nav {
+    grid-area: nav;
+  }
+}
+
+il-section-nav {
+
+  ul {
+    @include reset-list;
+  }
+
+  li {
+    @include reset-list-item;
+  }
+
+  a {
+    @include reset-link;
+    display: block;
+    font-family: var(--il-source-sans);
+    line-height: 1.35;
+    color: var(--il-blue);
+    text-align: left;
+    font-weight: 700;
+    font-size: 22px;
+
+    &:hover, &:focus {
+      color: var(--il-orange);
+      outline: none;
+    }
+  }
+  
+  li li a {
+    font-size: 20px;
+    line-height: 1.5;
+  }
+
+  li li li {
+    padding-left: 15px;
+  }
+
+  li li li a {
+    font-size: 18px;
+    font-weight: 600;
+  }
+
+  &:not([compact]) {
+
+    li {
+      background-color: #F0F0F0;
+
+      li {
+        background-color: white;
+        border-bottom: 1px solid #d8d8d8;
+
+        ul {
+          padding-bottom: 20px;
+        }
+  
+        li {
+          border-bottom: 0;
+
+          ul {
+            padding-bottom: 0;
+          }
+        }
+      }
+    }
+
+    a {
+      padding: 30px 25px;
+    }
+
+    li li a {
+      font-weight: 600;
+      padding: {
+        top: 16px;
+        bottom: 16px;
+      };
+    }
+
+    li li li a {
+      font-size: 16px;
+      padding: {
+        top: 10px;
+        bottom: 10px;
+      };
+    }
+  }
+
+  &[compact] {
+    background-color: white;
+
+    ul {
+      & ul {
+        border-top: solid 1px #d8d8d8;
+  
+        & ul {
+          border-top: 0;
+        }
+      }
+    }
+  
+    li {
+      border-bottom: solid 1px #d8d8d8;
+  
+      &:last-of-type {
+        border-bottom: 0;
+      }
+  
+      li {
+        padding-left: 30px;
+      }
+  
+      li li {
+        border-bottom: 0;
+      }
+    }
+  
+    a {
+      padding: 10px 20px;
+    }
+  
+    li li a {
+      font-size: 20px;
+      line-height: 1.5;
+    }
+  
+    li li li {
+      padding-left: 15px;
+    }
+  
+    li li li a {
+      font-size: 18px;
+      font-weight: 600;
+    }
+
+  }
+
+  &:not([mode="collapsed"]) {
+  }
+
+  &[mode="collapsed"] {
+  }
+}
