@@ -55,7 +55,8 @@ button {
   border-bottom-right-radius: 5px;
 }
 button:focus {
-  outline: 2px solid var(--il-industrial-blue);
+  outline: 0px solid var(--il-industrial-blue);
+  box-shadow: 0 0 0 2px var(--il-industrial-blue);
   color: var(--il-industrial-blue);
 }
 button svg {
