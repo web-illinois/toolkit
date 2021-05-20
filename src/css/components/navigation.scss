@@ -9,6 +9,7 @@ il-nav:not([compact]) il-nav-section .il-subnav {
   width: 250px;
   box-shadow: 0 3px 6px rgba(0, 0, 0, .16);
   background-color: white;
+  clip-path: inset(0px -5px -5px -5px);
 
   a {
     @include reset-link;
