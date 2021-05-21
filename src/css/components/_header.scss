@@ -19,7 +19,7 @@ il-header {
           content: "/";
           width: 1em;
           text-align: center;
-          color: var(--il-orange);
+          color: var(--il-altgeld);
           font: 600 16px var(--il-source-sans);
         }
         &:last-of-type::after {
@@ -34,7 +34,7 @@ il-header {
         color: var(--il-blue);
 
         &:focus, &:hover {
-          color: var(--il-orange);
+          color: var(--il-altgeld);
           text-decoration: underline;
         }
         &:focus {
