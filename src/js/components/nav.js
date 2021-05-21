@@ -71,6 +71,13 @@ ul {
       header.addEventListener('viewChange', this.handleHeaderViewChange.bind(this));
       this.compact = header.view === 'compact';
     }
+    const navcount = this.querySelectorAll('il-nav-section').length;
+    if (navcount === 5) {
+      this.querySelectorAll('il-nav-section')[4].setAttribute('right', 'true');
+    } else if (navcount > 5) {
+      this.querySelectorAll('il-nav-section')[navcount - 1].setAttribute('right', 'true');
+      this.querySelectorAll('il-nav-section')[navcount - 2].setAttribute('right', 'true');
+    }
   }
 
   handleHeaderViewChange(evt) {

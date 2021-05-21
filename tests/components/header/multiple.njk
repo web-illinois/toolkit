@@ -11,7 +11,7 @@ layout: layouts/page.njk
         </il-unit-wordmark>
     </div>
 
-    <il-search slot="search"></il-search>
+    <il-search slot="search" action="/search/node" method="get" searchname="query"></il-search>
 
     <nav slot="links" class="il-links">
         <ul>
@@ -143,69 +143,6 @@ layout: layouts/page.njk
                     </li>
                     <li>
                         <a href="#">Staff</a>
-                    </li>
-                </ul>
-        </il-nav-section>
-        <il-nav-section>
-                <a href="#" slot="label">News</a>
-                <ul class="il-subnav">
-                    <li>
-                        <a href="#">Events</a>
-                    </li>
-                    <li>
-                        <a href="#">#askACES Podcast</a>
-                    </li>
-                    <li>
-                        <a href="#">Voices of ACES Blog</a>
-                    </li>
-                    <li>
-                        <a href="#">Subscribe</a>
-                    </li>
-                    <li>
-                        <a href="#">ACES Seminars</a>
-                    </li>
-                    <li>
-                        <a href="#">COVID-19</a>
-                    </li>
-                </ul>
-        </il-nav-section>
-        <il-nav-section right="true">
-                <a href="#" slot="label">People</a>
-                <ul class="il-subnav">
-                    <li>
-                        <a href="#">College Leadership</a>
-                    </li>
-                    <li>
-                        <a href="#">Academic Department Heads</a>
-                    </li>
-                    <li>
-                        <a href="#">Academic Units</a>
-                    </li>
-                    <li>
-                        <a href="#">Administrative Units</a>
-                    </li>
-                </ul>
-        </il-nav-section>
-        <il-nav-section right="true">
-                <a href="#" slot="label">Giving</a>
-                <ul class="il-subnav">
-                    <li>
-                        <a href="#">With ACES Priorities</a>
-                    </li>
-                    <li>
-                        <a href="#">Ways to Give</a>
-                    </li>
-                    <li>
-                        <a href="#">Give Now</a>
-                    </li>
-                    <li>
-                        <a href="#">Alumni Association</a>
-                    </li>
-                    <li>
-                        <a href="#">Student Committee</a>
-                    </li>
-                    <li>
-                        <a href="#">4-H Foundation</a>
                     </li>
                 </ul>
         </il-nav-section>
