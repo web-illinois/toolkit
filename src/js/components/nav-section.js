@@ -160,7 +160,7 @@ li {
   display: block;
 }
 :host(:last-child) .compact {
-  border-bottom: 2px solid #707070;
+  border-bottom: 1px solid #c0c0c0;
 }
         `
   }
