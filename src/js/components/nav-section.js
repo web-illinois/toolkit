@@ -97,22 +97,26 @@ li {
 }
 .compact .heading {
   margin: 0;
-  padding: 6px 20px;
+  padding: 0;
   display: grid;
   grid-template-columns: auto 60px;
   grid-gap: 20px;
   background-color: var(--il-cloud-1);
-  border-top: 2px solid #707070;
+  border-top: 1px solid #c0c0c0;
 }
 .compact .heading ::slotted(a) {
   text-decoration: none;
   color: var(--il-blue);
-  font: 700 22px/30px var(--il-source-sans);
+  padding: 6px 20px;
+  display: inline-block;
+  width: calc(100% - 20px);
+  font: 600 20px/28px var(--il-source-sans);
 }
 .compact .heading ::slotted(a:hover),
 .compact .heading ::slotted(a:focus) {
   text-decoration: underline;
   color: var(--il-altgeld);
+  background: white;
   outline: 0;
 }
 .compact .indicator {
@@ -124,8 +128,7 @@ li {
   display: block;
   width: 60px;
   height: 44px;
-  border: 2px solid var(--il-blue);
-  border-radius: 4px;
+  border: none;
   margin: 0;
   padding: 0;
   background-color: transparent;
@@ -137,15 +140,14 @@ li {
   left: 16px;
   display: block;
   width: 23px;
-  height: 15px;
+  height: 20px;
   fill: currentColor;
   transition: transform .3s;
 }
 .compact .heading button:hover,
 .compact .heading button:focus {
-  background-color: var(--il-orange);
-  border-color: var(--il-orange);
-  color: white;
+  color: var(--il-altgeld);
+  background: white;
   outline: 0;
 }
 .compact.expanded .heading button svg {
