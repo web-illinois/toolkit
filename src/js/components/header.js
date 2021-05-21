@@ -23,12 +23,19 @@ class Header extends LitElement {
     text-transform: uppercase;
 }
 
+.campus a:focus {
+    outline: none;
+    border: none;
+}
+
 .campus svg {
     fill: var(--il-blue);
 }
 
 .campus a:focus svg, .campus a:hover svg {
-    fill: var(--il-orange);
+    fill: var(--il-altgeld);
+    outline: none;
+    border: none;
 }
 
 .header--full .header__main-outer {
@@ -102,6 +109,8 @@ class Header extends LitElement {
 }
 .header--compact .menu-button button:focus, .header--compact .menu-button button:hover {
     background-color: var(--il-orange);
+    outline: none;
+    border: none;
 }
 .header--compact .menu-button svg {
     position: absolute;
