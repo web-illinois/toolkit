@@ -109,6 +109,7 @@ li {
   color: var(--il-blue);
   padding: 6px 20px;
   display: inline-block;
+  border: solid 2px var(--il-cloud-1);
   width: calc(100% - 20px);
   font: 600 20px/28px var(--il-source-sans);
 }
@@ -117,6 +118,7 @@ li {
   text-decoration: underline;
   color: var(--il-altgeld);
   background: white;
+  border: solid 2px white;
   outline: 0;
 }
 .compact .indicator {
@@ -160,7 +162,7 @@ li {
   display: block;
 }
 :host(:last-child) .compact {
-  border-bottom: 2px solid #707070;
+  border-bottom: 1px solid #c0c0c0;
 }
         `
   }

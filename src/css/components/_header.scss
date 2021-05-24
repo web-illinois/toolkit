@@ -63,18 +63,22 @@ il-header {
       }
       li {
         @include reset-list-item;
-        padding: 14px 20px;
-        border-bottom: 2px solid #707070;
+        padding: 0;
+        border-bottom: 1px solid #c0c0c0;;
       }
       a {
         @include reset-link;
         text-decoration: none;
         color: var(--il-blue);
-        font: 700 22px/30px var(--il-source-sans);
+        padding: 8px 20px;
+        display: inline-block;
+        width: 100%;
+        font: 600 20px/28px var(--il-source-sans);
 
         &:hover, &:focus {
           text-decoration: underline;
           color: var(--il-altgeld);
+          background: white;
           outline: 0px;
         }
       }
