@@ -112,6 +112,13 @@ class Header extends LitElement {
     outline: none;
     border: none;
 }
+.header--compact.header--menu-visible .menu-button button {
+    background-color: var(--il-alma-mater-1);
+}
+.header--compact.header--menu-visible .menu-button button:focus,
+.header--compact.header--menu-visible .menu-button button:hover {
+    background-color: var(--il-orange);
+}
 .header--compact .menu-button svg {
     position: absolute;
     left: 14px;
@@ -120,6 +127,22 @@ class Header extends LitElement {
     width: 16px;
     height: 16px;
     fill: currentcolor;
+}
+.header--compact .menu-button svg.menu-icon {
+    display: block;
+}
+.header--compact .menu-button svg.menu-close {
+    display: none;
+    left: 10px;
+    top: 10px;
+    width: 24px;
+    height: 24px;
+}
+.header--compact.header--menu-visible .menu-button svg.menu-icon {
+    display: none;
+}
+.header--compact.header--menu-visible .menu-button svg.menu-close {
+    display: block;
 }
 .header--compact .menu {
     display: none;
@@ -255,7 +278,8 @@ class Header extends LitElement {
         </div>
         <div class="menu-button">
             <button aria-controls="menu" aria-expanded=${this.menuVisible ? 'true' : 'false'} @click=${this.handleMenuButtonClick}>
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 51.26 51.26"><path d="M4.81 13h41.64a4.81 4.81 0 000-9.62H4.81a4.81 4.81 0 000 9.62zM46.45 21.27H4.81a4.81 4.81 0 000 9.62h41.64a4.81 4.81 0 000-9.62zM46.45 39.13H4.81a4.81 4.81 0 000 9.62h41.64a4.81 4.81 0 000-9.62z"/></svg>
+                <svg class="menu-icon" role="presentation" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 51.26 51.26"><path d="M4.81 13h41.64a4.81 4.81 0 000-9.62H4.81a4.81 4.81 0 000 9.62zM46.45 21.27H4.81a4.81 4.81 0 000 9.62h41.64a4.81 4.81 0 000-9.62zM46.45 39.13H4.81a4.81 4.81 0 000 9.62h41.64a4.81 4.81 0 000-9.62z"/></svg>
+                <svg class="menu-close" role="presentation" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 352 512"><path d="M242.72 256l100.07-100.07c12.28-12.28 12.28-32.19 0-44.48l-22.24-22.24c-12.28-12.28-32.19-12.28-44.48 0L176 189.28 75.93 89.21c-12.28-12.28-32.19-12.28-44.48 0L9.21 111.45c-12.28 12.28-12.28 32.19 0 44.48L109.28 256 9.21 356.07c-12.28 12.28-12.28 32.19 0 44.48l22.24 22.24c12.28 12.28 32.2 12.28 44.48 0L176 322.72l100.07 100.07c12.28 12.28 32.2 12.28 44.48 0l22.24-22.24c12.28-12.28 12.28-32.19 0-44.48L242.72 256z"/></svg>
                 <span>Menu</span>
             </button>
         </div>
