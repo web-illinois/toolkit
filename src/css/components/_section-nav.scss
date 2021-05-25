@@ -61,8 +61,9 @@ il-section-nav {
     font-size: 22px;
 
     &:hover, &:focus {
-      color: var(--il-altgeld);
+      color: var(--il-orange);
       outline: none;
+      text-decoration: underline;
     }
   }
   
