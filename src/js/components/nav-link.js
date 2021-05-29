@@ -31,6 +31,24 @@ li {
   background-color: white;
   outline: 0;
 }
+.compact ::slotted(a) {
+  margin: 0;
+  padding: 10px 20px;
+  display: block;
+  background-color: var(--il-cloud-1);
+  border-top: 1px solid #c0c0c0;
+}
+.compact ::slotted(a) {
+  text-decoration: none;
+  color: var(--il-blue);
+  font: 600 20px/28px var(--il-source-sans);
+}
+.compact ::slotted(a:hover),
+.compact ::slotted(a:focus) {
+  text-decoration: underline;
+  color: var(--il-altgeld);
+  outline: 0;
+}
         `;
     }
 

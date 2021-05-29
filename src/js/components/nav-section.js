@@ -100,17 +100,17 @@ li {
   padding: 0;
   display: grid;
   grid-template-columns: auto 60px;
-  grid-gap: 20px;
   background-color: var(--il-cloud-1);
   border-top: 1px solid #c0c0c0;
 }
 .compact .heading ::slotted(a) {
+  box-sizing: border-box;
   text-decoration: none;
   color: var(--il-blue);
   padding: 6px 20px;
-  display: inline-block;
+  display: block;
   border: solid 2px var(--il-cloud-1);
-  width: calc(100% - 20px);
+  width: 100%;
   font: 600 20px/28px var(--il-source-sans);
 }
 .compact .heading ::slotted(a:hover),
