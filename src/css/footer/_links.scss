@@ -1,6 +1,12 @@
 .il-footer-links {
-  .il-cookie-settings, a.optanon-show-settings.il-cookie-settings {
+  margin-right: 80px;
 
+  &.il-footer-links-full {
+    margin-right: 0;
+  }
+
+  .il-cookie-settings,
+  a.optanon-show-settings.il-cookie-settings {
     &::before {
       position: absolute;
       top: 9px;
@@ -33,14 +39,14 @@
   li {
     @include reset-list-item;
     font: 1rem var(--il-source-sans);
-    padding: 0 15px 0 0;
+    padding: 0 35px 0 0;
     color: white;
   }
 
   button {
     padding: 4px 10px;
     background: var(--il-alma-mater);
-    border:  solid 2px white;
+    border: solid 2px white;
     color: white;
     position: relative;
     display: inline-block;
@@ -48,7 +54,8 @@
     font: 1rem var(--il-source-sans);
     cursor: pointer;
 
-    &:hover, &:focus {
+    &:hover,
+    &:focus {
       background: white;
       color: var(--il-alma-mater);
     }
@@ -61,16 +68,18 @@
     font: 1rem var(--il-source-sans);
     white-space: nowrap;
   }
-  
+
   a:hover {
     outline: var(--il-focus-outline);
   }
 
-  a:hover, a:focus {
+  a:hover,
+  a:focus {
     outline-color: white;
+    outline-width: 1px;
     color: white;
   }
-    
+
   a.optanon-show-settings.il-cookie-settings {
     padding: 0 10px 0 36px !important;
     background-color: var(--il-cloud-1) !important;
@@ -80,3 +89,8 @@
   }
 }
 
+@media (min-width: 767px) {
+  .il-footer-links {
+      margin-right: 100px;
+  }
+}
