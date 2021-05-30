@@ -1,0 +1,296 @@
+{
+  "navigation": [
+    {
+      "type": "section",
+      "label": "About",
+      "contents": [
+        {
+          "type": "link",
+          "label": "Overview of ACES"
+        },
+        {
+          "type": "link",
+          "label": "Programs of Study"
+        },
+        {
+          "type": "link",
+          "label": "Diversity"
+        },
+        {
+          "type": "link",
+          "label": "Contact Us"
+        },
+        {
+          "type": "link",
+          "label": "Visit"
+        }
+      ]
+    },
+    {
+      "type": "section",
+      "label": "Academics",
+      "contents": [
+        {
+          "type": "link",
+          "label": "Programs of Study"
+        },
+        {
+          "type": "link",
+          "label": "Admitted Students"
+        },
+        {
+          "type": "link",
+          "label": "Future Students"
+        },
+        {
+          "type": "link",
+          "label": "Admissions"
+        },
+        {
+          "type": "link",
+          "label": "Student Life"
+        },
+        {
+          "type": "link",
+          "label": "Current Students"
+        },
+        {
+          "type": "link",
+          "label": "Study Abroad"
+        },
+        {
+          "type": "link",
+          "label": "Career Services"
+        },
+        {
+          "type": "link",
+          "label": "Pre-College Programs"
+        },
+        {
+          "type": "link",
+          "label": "Student Diversity and Inclusion"
+        },
+        {
+          "type": "link",
+          "label": "Contact Us"
+        },
+        {
+          "type": "link",
+          "label": "Staff"
+        }
+      ]
+    },
+    {
+      "type": "section",
+      "label": "Research",
+      "contents": [
+        {
+          "type": "link",
+          "label": "Research Areas"
+        },
+        {
+          "type": "link",
+          "label": "Research History"
+        },
+        {
+          "type": "link",
+          "label": "Facilities"
+        },
+        {
+          "type": "link",
+          "label": "Resources"
+        },
+        {
+          "type": "link",
+          "label": "Safety"
+        },
+        {
+          "type": "link",
+          "label": "Civil Rights"
+        },
+        {
+          "type": "link",
+          "label": "Staff"
+        }
+      ]
+    },
+    {
+      "type": "section",
+      "label": "Extension",
+      "contents": [
+        {
+          "type": "link",
+          "label": "About"
+        },
+        {
+          "type": "link",
+          "label": "Staff"
+        },
+        {
+          "type": "link",
+          "label": "Programs"
+        }
+      ]
+    },
+    {
+      "type": "section",
+      "label": "International",
+      "contents": [
+        {
+          "type": "link",
+          "label": "About"
+        },
+        {
+          "type": "link",
+          "label": "International Engagements"
+        },
+        {
+          "type": "link",
+          "label": "Resources"
+        },
+        {
+          "type": "link",
+          "label": "Newsletter & Publications"
+        },
+        {
+          "type": "link",
+          "label": "Study Abroad"
+        },
+        {
+          "type": "link",
+          "label": "Contact Us"
+        },
+        {
+          "type": "link",
+          "label": "Events"
+        },
+        {
+          "type": "link",
+          "label": "Staff"
+        }
+      ]
+    },
+    {
+      "type": "section",
+      "label": "News",
+      "contents": [
+        {
+          "type": "link",
+          "label": "Events"
+        },
+        {
+          "type": "link",
+          "label": "#askACES Podcast"
+        },
+        {
+          "type": "link",
+          "label": "Voices of ACES Blog"
+        },
+        {
+          "type": "link",
+          "label": "Subscribe"
+        },
+        {
+          "type": "link",
+          "label": "ACES Seminars"
+        },
+        {
+          "type": "link",
+          "label": "COVID-19"
+        }
+      ]
+    },
+    {
+      "type": "section",
+      "label": "People",
+      "contents": [
+        {
+          "type": "link",
+          "label": "College Leadership"
+        },
+        {
+          "type": "link",
+          "label": "Academic Department Heads"
+        },
+        {
+          "type": "link",
+          "label": "Academic Units"
+        },
+        {
+          "type": "link",
+          "label": "Administrative Units"
+        }
+      ]
+    },
+    {
+      "type": "section",
+      "label": "Giving",
+      "contents": [
+        {
+          "type": "link",
+          "label": "With ACES Priorities"
+        },
+        {
+          "type": "link",
+          "label": "Ways to Give"
+        },
+        {
+          "type": "link",
+          "label": "Give Now"
+        },
+        {
+          "type": "link",
+          "label": "Alumni Association"
+        },
+        {
+          "type": "link",
+          "label": "Student Committee"
+        },
+        {
+          "type": "link",
+          "label": "4-H Foundation"
+        },
+        {
+          "type": "link",
+          "label": "Staff"
+        }
+      ]
+    }
+  ],
+  "sectionNavigation": [
+    {
+      "type": "section",
+      "label": "Research",
+      "contents": [
+        {
+          "type": "link",
+          "label": "Research Areas"
+        },
+        {
+          "type": "link",
+          "label": "Research History"
+        },
+        {
+          "type": "link",
+          "label": "Facilities"
+        },
+        {
+          "type": "link",
+          "label": "Resources"
+        },
+        {
+          "type": "link",
+          "label": "Safety"
+        },
+        {
+          "type": "link",
+          "label": "Civil Rights"
+        },
+        {
+          "type": "link",
+          "label": "Staff"
+        }
+      ]
+    }
+  ]
+}

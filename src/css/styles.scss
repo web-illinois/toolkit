@@ -32,16 +32,16 @@
   grid-template-areas: "header" "main" "footer";
   grid-template-rows: auto 1fr auto;
 
-  & > header {
+  & > .il-header {
     grid-area: header;
   }
 
-  & > main {
+  & > .il-main {
     grid-area: main;
     overflow: auto;
   }
 
-  & > footer {
+  & > .il-footer {
     grid-area: footer;
   }
 }
