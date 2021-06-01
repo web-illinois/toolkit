@@ -49,9 +49,6 @@ svg.block-i {
 .block-i__fill {
     fill: var(--il-orange);
 }
-.wordmark.narrow {
-    font-size: 14px;
-}
 .wordmark.wide {
     min-height: 43px;
     padding-left: 50px;
@@ -67,13 +64,6 @@ svg.block-i {
 .wordmark ::slotted(*:last-child) {
     font-size: 32px;
 }
-.wordmark.narrow ::slotted(*) {
-    font-size: 14px;
-}
-.wordmark.narrow ::slotted(*:last-child) {
-    font-size: 22px;
-}
-
 
 @media (min-width: 768px) {
 .wordmark.wide, .wordmark.narrow {
