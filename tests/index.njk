@@ -4,6 +4,10 @@ layout: layouts/page.njk
 stylesheets: ['tests.css', 'index.css']
 ---
 
+{% for group in groups %}
+
+<h2>{{ group.name }}</h2>
+
 <table>
     <thead>
         <tr>
@@ -13,7 +17,7 @@ stylesheets: ['tests.css', 'index.css']
         </tr>
     </thead>
     <tbody>
-    {% for file in files %}
+    {% for file in group.files %}
         <tr>
             <td>
                 <a href="{{ file.url }}">{{ file.path }}</a>
@@ -28,5 +32,7 @@ stylesheets: ['tests.css', 'index.css']
     {% endfor %}
     </tbody>
 </table>
+
+{% endfor %}
 
 {% addStaticImages %}
