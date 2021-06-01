@@ -6,6 +6,7 @@
   gap: 50px;
   font: 18px var(--il-source-sans);
   padding-top: 61px;
+  color: white;
 
   h2,
   h3,
@@ -14,7 +15,7 @@
     padding: 0 0 10px 0;
     margin-bottom: 6px;
     font: bold 20px var(--il-source-sans);
-    border-bottom: thin solid var(--il-cloud-3);
+    border-bottom: 1px solid white;
   }
 
   ul {
