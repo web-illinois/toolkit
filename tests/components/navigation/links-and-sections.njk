@@ -1,25 +1,14 @@
 ---
-title: Navigation sections
+title: Navigation, links and sections
 layout: layouts/page.njk
 ---
 
 {% include "outside-click-target.html" %}
 
 <il-nav>
-    <il-nav-section id="section-1">
-        <a id="link-1" href="/tests/success.html" slot="label">Link 1</a>
-        <ul id="list-1" class="il-subnav">
-            <li>
-                <a id="link-1A" href="/tests/success.html">Link 1A</a>
-            </li>
-            <li>
-                <a id="link-1B" href="/tests/success.html">Link 1B</a>
-            </li>
-            <li>
-                <a id="link-1C" href="/tests/success.html">Link 1C</a>
-            </li>
-        </ul>
-    </il-nav-section>
+    <il-nav-link>
+        <a id="link-1" href="/tests/success.html">Link 1</a>
+    </il-nav-link>
     <il-nav-section id="section-2">
         <a id="link-2" href="/tests/success.html" slot="label">Link 2</a>
         <ul id="list-2" class="il-subnav">
@@ -34,12 +23,7 @@ layout: layouts/page.njk
             </li>
         </ul>
     </il-nav-section>
-    <il-nav-section id="section-3">
-        <a id="link-3" href="/tests/success.html" slot="label">Link 3</a>
-        <ul id="list-3" class="il-subnav">
-            <li>
-                <a id="link-3A" href="/tests/success.html">Link 3A</a>
-            </li>
-        </ul>
-    </il-nav-section>
+    <il-nav-link>
+        <a id="link-3" href="/tests/success.html">Link 3</a>
+    </il-nav-link>
 </il-nav>
