@@ -24,7 +24,9 @@ stylesheets: ['tests.css', 'index.css']
           <h5>{{ test.caption }}</h5>
           <ul class="test-images">
             {% for image in test.images %}
-            <li><a href="{{ " reference-images/" + image.image | url }}">{{ image.viewport.label }}</a></li>
+            <li><a href="{{ " reference-images/" + image.image | url }}">
+              {{ image.viewport.description if image.viewport.description else image.viewport.label }}
+            </a></li>
             {% endfor %}
           </ul>
         </li>

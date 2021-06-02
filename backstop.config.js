@@ -10,11 +10,13 @@ const viewports = {
     },
     iphone: {
         "label": "iphone",
+        "description": "iPhone",
         "width": 375,
         "height": 812
     },
     hdtv:{
         "label": "hdtv",
+        "description": "HDTV",
         "width": 1920,
         "height": 1080
     }
