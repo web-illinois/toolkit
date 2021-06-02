@@ -7,6 +7,15 @@ h1 {
     padding: 0 20px;
     font: 600 36px var(--il-source-sans);
 }
+h2 {
+    margin: 2em 0 .25em;
+    padding: 0;
+    font-size: 2rem;
+    font-weight: 400;
+}
+h2:first-child {
+    margin-top: 0;
+}
 a {
     color: #0072bc;
     text-decoration: none;
@@ -20,44 +29,87 @@ a:hover {
 a:focus {
     outline: 1px dashed;
 }
-ul.test-pages {
+.test-pages {
     list-style: none;
     margin: 0;
     padding: 0;
     display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
+    flex-direction: column;
 }
-ul.test-pages > li {
+.test-page {
     box-sizing: border-box;
-    width: 240px;
     list-style: none;
-    background-color: #f0f0f0;
-    margin: 0 1em 1em 0;
-    padding: 1em;
+    margin: 0;
+    border-top: 1px solid #ccc;
+    padding: 1em 0 2em;
+    display: grid;
+    grid-gap: 1em;
+    grid-template-rows: auto auto;
 }
-ul.test-pages h3 {
+@media (min-width: 800px) {
+    .test-page {
+        grid-template-rows: auto;
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+.test-page:last-of-type {
+    margin-bottom: 0;
+}
+.test-page h3 {
     margin: 0;
     padding: 0;
     font-weight: 600;
-    font-size: 18px;
+    font-size: 1.5em;
 }
-ul.test-pages h4 {
-    margin: 1em 0 0;
+.test-page .path {
+    margin: 0;
+    padding: 0;
+    font-size: 1.25em;
+    font-weight: 300;
+}
+.test-page h4 {
+    margin: 0 0 .5em;
+    padding: 0;
+    font-size: 1.25em;
+    font-weight: 600;
+}
+.visual-tests {
+    margin: 0;
+    padding: 0 0 0 1.5em;
+    list-style: disc;
+}
+.visual-tests > li {
+    margin: 0;
+    padding: 0;
+}
+.visual-tests h5 {
+    display: inline-block;
+    margin: 0;
     padding: 0;
     font-size: 1em;
-    font-weight: 600;
+    font-weight: 500;
 }
-ul.reference-images {
+.visual-tests h5::after {
+    content: ':';
+}
+.test-images {
+    display: inline-block;
+    list-style: none;
+    margin: 0 0 0 .5em;
+    padding: 0;
+}
+.test-images > li {
+    display: inline-block;
     list-style: none;
     margin: 0;
     padding: 0;
 }
-ul.reference-images li {
-    display: inline-block;
-    list-style: none;
-    margin: 0 1em 0 0;
-    padding: 0;
+.test-images > li::after {
+    content: '|';
+    margin: 0 .5em;
+}
+.test-images > li:last-of-type::after {
+    content: none;
 }
 table {
     width: 100%;

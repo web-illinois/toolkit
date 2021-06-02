@@ -9,26 +9,31 @@ function pad(val) {
 
 function findVisualTestsForPage(page, config, images) {
   try {
-    const pageConfig = config.scenarios.find(c => {
+    const pageTests = [];
+    config.scenarios.forEach(c => {
       const url = new URL(c.url);
-      return url.pathname === page.data.page.url;
+      if (url.pathname !== page.data.page.url) return;
+      const test = {
+        caption: c.caption ? c.caption : c.label,
+        label: c.label,
+        images: []
+      };
+      const pattern = makeReferenceImagePattern(config.id, c.label);
+      images.forEach(img => {
+        const basename = path.basename(img);
+        const m = basename.match(pattern);
+        if (!m) return;
+        const viewport = config.viewports[m[2]];
+        test.images.push({
+          matches: m,
+          viewport: config.viewports.find(v => v.label === m[3]),
+          image: basename
+        })
+      });
+      pageTests.push(test);
     });
-    if (!pageConfig) {
-      throw new Error("No tests found for page: " + page.data.page.url);
-    }
-    const pattern = new RegExp('^' + config.id + '_' + pageConfig.label + '_([0-9]+)_document_([0-9]+)_(.+)\\.png$');
-    const pageImages = [];
-    images.forEach(img => {
-      const basename = path.basename(img);
-      const m = basename.match(pattern);
-      if (!m) return;
-      const viewport = config.viewports[m[2]];
-      pageImages.push({
-        viewport: config.viewports[m[2]],
-        image: basename
-      })
-    })
-    return pageImages;
+    console.debug(pageTests);
+    return pageTests;
   }
   catch (err) {
     console.error(err.message);
@@ -55,16 +60,16 @@ function getVisualTestPages(collection) {
   const images = getVisualTestReferenceImageFiles();
   const pages = collection.map(f => {
     return {
-      url: f.data.page.url.endsWith('.html') ? f.data.page.url.substr(1) : f.data.page.url.substr(1) + 'index.html',
+      url: makePageUrl(f),
       path: f.filePathStem.substr(1),
-      title: f.data.title,
+      title: makePageTitle(f),
       date: formatDate(f.data.page.date),
       group: f.data.group ? f.data.group : 'Other',
       tests: findVisualTestsForPage(f, config, images)
     };
   });
   pages.sort((a, b) => {
-    return a.path > b.path ? 1 : -1;
+    return a.title > b.title ? 1 : -1;
   })
   return pages;
 }
@@ -89,6 +94,22 @@ function groupFiles(files) {
     return a.name > b.name ? 1 : -1;
   });
   return groups;
+}
+
+function makePageTitle(page) {
+  return page.data.title ? page.data.title : path.basename(page.data.page.url);
+}
+
+function makePageUrl(page) {
+  let url = page.data.page.url.substr(1)
+  if (!url.endsWith('.html')) {
+    url += 'index.html';
+  }
+  return url;
+}
+
+function makeReferenceImagePattern(id, label) {
+  return new RegExp('^' + id + '_' + label + '_([0-9]+)_document_([0-9]+)_(.+)\\.png$');
 }
 
 module.exports = {
