@@ -3,7 +3,10 @@ const path = require('path');
 
 module.exports = function (eleventyConfig) {
   eleventyConfig.setTemplateFormats(['html', 'md', 'njk', '11ty.js', 'css', 'jpg']);
-  eleventyConfig.addPassthroughCopy({ "dist": "." });
+  eleventyConfig.addPassthroughCopy({
+    "dist": ".",
+    "tests/_reference": "reference-images"
+  });
 
   eleventyConfig.addShortcode("addStaticImages", function () {
     let info = '<h2>Web Toolkit reference images</h2><ul>';

@@ -8,30 +8,23 @@ stylesheets: ['tests.css', 'index.css']
 
 <h2>{{ group.name }}</h2>
 
-<table>
-    <thead>
-        <tr>
-            <th>Page</th>
-            <th>Description</th>
-            <th>Modified</th>
-        </tr>
-    </thead>
-    <tbody>
-    {% for file in group.files %}
-        <tr>
-            <td>
-                <a href="{{ file.url }}">{{ file.path }}</a>
-            </td>
-            <td>
-                {{ file.title }}
-            </td>
-            <td>
-                {{ file.date }}
-            </td>
-        </tr>
-    {% endfor %}
-    </tbody>
-</table>
+<ul class="test-pages">
+  {% for file in group.files %}
+  <li>
+    <h3><a href="{{ file.url }}">{{ file.title if file.title else file.path }}</a></h3>
+    {% if file.tests|length > 0 %}
+    <h4>Reference images</h4>
+    <ul class="reference-images">
+      {% for test in file.tests %}
+      <li>
+        <a href="{{ "reference-images/" + test.image | url }}">{{ test.viewport.label }}</a>
+      </li>
+      {% endfor %}
+    </ul>
+    {% endif %}
+  </li>
+  {% endfor %}
+</ul>
 
 {% endfor %}
 

@@ -1,6 +1,9 @@
 module.exports = function (eleventyConfig) {
   eleventyConfig.setTemplateFormats(['html', 'md', 'njk', '11ty.js', 'css', 'jpg']);
-  eleventyConfig.addPassthroughCopy({"dist": "."});
+  eleventyConfig.addPassthroughCopy({
+    "dist": ".",
+    "tests/_reference": "reference-images"
+  });
 
   eleventyConfig.addShortcode("addStaticImages", function () {
     return '';

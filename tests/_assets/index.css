@@ -20,6 +20,45 @@ a:hover {
 a:focus {
     outline: 1px dashed;
 }
+ul.test-pages {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+ul.test-pages > li {
+    box-sizing: border-box;
+    width: 240px;
+    list-style: none;
+    background-color: #f0f0f0;
+    margin: 0 1em 1em 0;
+    padding: 1em;
+}
+ul.test-pages h3 {
+    margin: 0;
+    padding: 0;
+    font-weight: 600;
+    font-size: 18px;
+}
+ul.test-pages h4 {
+    margin: 1em 0 0;
+    padding: 0;
+    font-size: 1em;
+    font-weight: 600;
+}
+ul.reference-images {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+ul.reference-images li {
+    display: inline-block;
+    list-style: none;
+    margin: 0 1em 0 0;
+    padding: 0;
+}
 table {
     width: 100%;
     border-collapse: collapse;
