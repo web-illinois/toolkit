@@ -16,14 +16,6 @@
   @media (min-width: 768px) {
     --il-content-margin: 30px;
   }
-
-  @media (min-width: 1200px) {
-    --il-content-margin: 50px;
-  }
-
-  @media (min-width: 1400px) {
-    --il-content-margin: 75px;
-  }
 }
 .il-page {
   @include reset-spacing;
