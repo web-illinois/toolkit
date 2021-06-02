@@ -12,14 +12,15 @@ class Footer extends LitElement {
 }
 
 .main, .parent-unit, .links {
-    padding-left: var(--il-page-margin);
-    padding-right: var(--il-page-margin);
+    padding-left: var(--il-content-margin);
+    padding-right: var(--il-content-margin);
 }
 .links {
     border-top: 5px solid var(--il-alma-mater);
 }
 
 .main > div, .parent-unit ::slotted(*), .links ::slotted(*) {
+    max-width: var(--il-content-max-width);
     margin-left: auto;
     margin-right: auto;
 }
@@ -79,16 +80,19 @@ class Footer extends LitElement {
     margin-top: 25px;
 }
 .parent-unit, links {
-    padding-left: var(--il-page-margin);
-    padding-right: var(--il-page-margin);
+    padding-left: var(--il-content-margin);
+    padding-right: var(--il-content-margin);
 }
 .parent-unit ::slotted(*), links ::slotted(*) {
+    max-width: var(--il-content-max-width);
     margin: 0 auto;
 }
 .parent-unit {
     background-color: var(--il-alma-mater);
 }
-.links {
+.links__inner {
+    margin: 0 auto;
+    max-width: var(--il-content-max-width);
 }
 .parent-unit ::slotted(*) {
     padding-top: 12px;
@@ -145,7 +149,9 @@ class Footer extends LitElement {
         </div>
     </div>
     <div class="links">
-        <slot name="links"></slot>
+        <div class="links__inner">
+            <slot name="links"></slot>
+        </div>
     </div>
 </div>
 </div>
