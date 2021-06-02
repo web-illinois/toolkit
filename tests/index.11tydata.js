@@ -31,7 +31,6 @@ function findVisualTestsForPage(page, config, images) {
       });
       pageTests.push(test);
     });
-    console.debug(pageTests);
     return pageTests;
   }
   catch (err) {
