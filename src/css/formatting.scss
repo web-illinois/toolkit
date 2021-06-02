@@ -1,3 +1,10 @@
+@mixin heading-spacing($top: 30px, $bottom: 20px) {
+  margin: {
+    top: rem($top);
+    bottom: rem($bottom);
+  }
+}
+
 .il-formatted {
   font: 400 rem(18px) / rem(24px) var(--il-source-sans);
   color: #252525;
@@ -8,10 +15,7 @@
 
   h1 {
     @include reset-heading;
-    margin: {
-      top: rem(20px);
-      bottom: rem(10px);
-    }
+    @include heading-spacing;
     font: 700 rem(40px) / rem(52px) var(--il-source-sans);
     color: var(--il-blue);
 
@@ -21,46 +25,31 @@
   }
   h2 {
     @include reset-heading;
-    margin: {
-      top: rem(20px);
-      bottom: rem(10px);
-    }
+    @include heading-spacing;
     font: 600 rem(32px) / rem(40px) var(--il-source-sans);
     color: var(--il-blue);
   }
   h3 {
     @include reset-heading;
-    margin: {
-      top: rem(20px);
-      bottom: rem(10px);
-    }
+    @include heading-spacing;
     font: 600 rem(28px) / rem(32px) var(--il-source-sans);
     color: var(--il-blue);
   }
   h4 {
     @include reset-heading;
-    margin: {
-      top: rem(20px);
-      bottom: rem(10px);
-    }
+    @include heading-spacing;
     font: 600 rem(24px) / rem(28px) var(--il-source-sans);
     color: var(--il-blue);
   }
   h5 {
     @include reset-heading;
-    margin: {
-      top: rem(20px);
-      bottom: rem(10px);
-    }
+    @include heading-spacing;
     font: 600 rem(20px) / rem(22px) var(--il-source-sans);
     color: var(--il-blue);
   }
   h6 {
     @include reset-heading;
-    margin: {
-      top: rem(20px);
-      bottom: rem(10px);
-    }
+    @include heading-spacing;
     font: 600 rem(18px) / rem(22px) var(--il-source-sans);
     color: var(--il-blue);
   }
