@@ -23,7 +23,6 @@ function findVisualTestsForPage(page, config, images) {
         const basename = path.basename(img);
         const m = basename.match(pattern);
         if (!m) return;
-        const viewport = config.viewports[m[2]];
         test.images.push({
           matches: m,
           viewport: config.viewports.find(v => v.label === m[3]),

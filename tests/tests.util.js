@@ -16,7 +16,11 @@ function url(path) {
 
 function testUrl(testPath) {
   const relative = path.relative(__dirname, testPath);
-  return url('/' + relative.replace(/\.(func|vis|visual)\.js$/, '') + '/');
+  let urlPath = '/' + relative.replace(/\.(func|vis|visual)\.js$/, '') + '/';
+  if (urlPath.endsWith('/index/')) {
+    urlPath = urlPath.substring(0, urlPath.length - 6);
+  }
+  return url(urlPath);
 }
 
 module.exports = {
