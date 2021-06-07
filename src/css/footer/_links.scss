@@ -69,10 +69,6 @@
     white-space: nowrap;
   }
 
-  a:hover {
-    outline: var(--il-focus-outline);
-  }
-
   a:hover,
   a:focus {
     outline-color: white;
