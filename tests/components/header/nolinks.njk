@@ -1,0 +1,52 @@
+---
+title: Header (default view, no links or search)
+group: "Components: Header"
+layout: layouts/page.njk
+---
+<il-header>
+
+    <div slot="wordmark">
+        <il-unit-wordmark>
+            <h1>College of Education</h1>
+        </il-unit-wordmark>
+    </div>
+
+    <il-nav slot="navigation"> 
+
+        <il-nav-section>
+            <a href="#" target="_self" slot="label">Current Candidates</a>
+                <ul class="il-subnav">
+        <li><a href="#" target="_self">Early Childhood</a></li>
+        <li><a href="#" target="_self">Elementary</a></li>
+        <li><a href="#" target="_self">Middle Grades</a></li>
+                </ul>
+        </il-nav-section>
+        <il-nav-section>
+            <a href="#" target="_self" slot="label">Cooperating Teachers</a>
+                <ul class="il-subnav">
+        <li><a href="#" target="_self">Early Childhood</a></li>
+                </ul>
+        </il-nav-section>
+        <il-nav-section>
+            <a href="#" target="_self" slot="label">Supervisors</a>
+                <ul class="il-subnav">
+        <li><a href="#" target="_self">Early Childhood</a></li>
+        <li><a href="#" target="_self">Elementary</a></li>
+                </ul>
+        </il-nav-section>
+        <il-nav-section>
+            <a href="#" target="_self" slot="label">Community Experiences</a>
+                <ul class="il-subnav">
+        <li><a href="#" target="_self">Prospective Community Partners</a></li>
+                </ul>
+        </il-nav-section>
+        <il-nav-section>
+            <a href="#" target="_self" slot="label">Quick Links</a>
+        </il-nav-section>
+        <il-nav-section>
+            <a href="#" target="_self" slot="label">FAQ</a>
+        </il-nav-section>
+
+    </il-nav>
+
+</il-header>

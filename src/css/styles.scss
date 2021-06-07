@@ -27,6 +27,7 @@
 
   & > .il-header {
     grid-area: header;
+    z-index: 600;
   }
 
   & > .il-main {
@@ -49,10 +50,6 @@
 
   &:hover, &:focus {
     color: var(--il-link-hover-color);
-  }
-
-  &:focus {
-    outline: var(--il-focus-outline);
   }
 }
 

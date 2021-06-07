@@ -56,6 +56,7 @@ class Header extends LitElement {
 .header--full .campus {
     grid-area: campus;
     justify-self: left;
+    padding: 10px 0px;
 }
 .header--full .links {
     grid-area: links;
@@ -65,6 +66,7 @@ class Header extends LitElement {
 .header--full .wordmark {
     grid-area: wordmark;
     justify-self: left;
+    padding: 20px 0;
 }
 .header--full .search {
     grid-area: search;
