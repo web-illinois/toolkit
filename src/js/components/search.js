@@ -121,7 +121,7 @@ button svg {
   }
 
   renderSearchIcon() {
-    return html`<svg role="image" aria-label="" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 51.26 51.26">
+    return html`<svg role="image" aria-label="Submit search" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 51.26 51.26">
         <path d="M31.46 5.21a18.2 18.2 0 10-2.13 27.54L44 49.56a4.32 4.32 0 006.11-6.12L33.39 28.65a18.19 18.19 0 00-1.93-23.44zM28 27.48a13.29 13.29 0 110-18.79 13.3 13.3 0 010 18.79z"/>
     </svg>`
   }
