@@ -41,8 +41,12 @@ module.exports = {
     },
     "report": ["browser"],
     "engine": "puppeteer",
+    "engineOptions": {
+        "args": ["--no-sandbox"]
+    },
     "onReadyScript": "onReady.js",
     "asyncCaptureLimit": 5,
+    "dockerCommandTemplate": "docker run -e BACKSTOP_ENV=docker --rm -it --mount type=bind,source=\"{cwd}\",target=/src backstopjs/backstopjs:{version} {backstopCommand} {args}",
     "debugWindow": false,
     "debug": false
 };
