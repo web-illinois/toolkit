@@ -76,6 +76,10 @@ li {
 .full .heading:hover .indicator svg {
   transform: rotate(180deg);
 }
+.full .heading .indicator.selected svg {
+  transform: rotate(180deg);
+  fill: var(--il-altgeld);
+}
 .full .toggle {
   display: none;
 }
@@ -200,7 +204,8 @@ li {
     const link = this.getLink();
     if (link) {
       link.addEventListener('keydown', this.handleLinkKeypress.bind(this));
-      link.addEventListener('blur', this.handleLinkBlur.bind(this));
+      link.addEventListener('blur', this.handleLinkBlurMain.bind(this));
+      link.addEventListener('focus', this.handleLinkFocus.bind(this));
     }
     this.getSubmenuLinks().forEach(submenuLink => {
       submenuLink.addEventListener('keydown', this.handleSubmenuLinkKeypress.bind(this));
@@ -216,6 +221,15 @@ li {
     }
   }
 
+  handleLinkFocus(evt) {
+    if (!this.expanded) {
+      this.expand();
+      const event = new CustomEvent('focus-label');
+      this.dispatchEvent(event);
+    }
+  }
+
+  
   handleLinkBlur(evt) {
     if (this.expanded) {
       window.setTimeout(() => {
@@ -224,9 +238,20 @@ li {
     }
   }
 
+  handleLinkBlurMain(evt) {
+    const event = new CustomEvent('blur-label');
+    this.dispatchEvent(event);
+    handleLinkBlur(evt)
+  }
+
   handleLinkKeypress(evt) {
     if (evt.code === 'Space') {
       window.location.href = this.getLink().href;
+    }
+    else if (evt.code === 'Escape') {
+      if (this.expanded) {
+        this.collapse();
+      }
     }
     else if (evt.code === 'ArrowDown') {
       if (!this.expanded) {
@@ -239,9 +264,6 @@ li {
     else if (evt.code === 'ArrowUp') {
       if (!this.expanded) {
         this.expandAndMoveFocusToLastSubmenuLink();
-      }
-      else {
-        //this.moveFocusToFirstSubmenuLink();
       }
     }
     else if (evt.code === 'ArrowLeft') {
@@ -270,8 +292,7 @@ li {
     const link = evt.currentTarget;
     const item = link.parentNode;
     if (evt.code === 'Escape') {
-      this.collapse();
-      this.getLink().focus();
+      this.collapseAndMoveFocusToParent();
     }
     else if (evt.code === 'ArrowDown') {
       if (item.nextElementSibling) {
@@ -296,6 +317,17 @@ li {
         item.parentNode.lastElementChild.querySelector('a').focus();
       }
     }
+    else if (evt.code === 'ArrowLeft') {
+      this.collapseAndMoveFocusToParent();
+      const event = new CustomEvent('exit', { detail: 'back' });
+      this.dispatchEvent(event);
+    }
+    else if (evt.code === 'ArrowRight') {
+      this.collapseAndMoveFocusToParent();
+      const event = new CustomEvent('exit', { detail: 'forward' });
+      this.dispatchEvent(event);
+    }
+
   }
 
   handleToggleClick(evt) {
@@ -304,6 +336,11 @@ li {
 
   collapse() {
     this.expanded = false;
+  }
+
+  collapseAndMoveFocusToParent() {
+    this.getLink().focus();
+    this.collapse(); 
   }
 
   containsFocus() {
