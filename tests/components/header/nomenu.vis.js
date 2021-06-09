@@ -5,7 +5,7 @@ const url = util.testUrl(__filename);
 module.exports = (viewports) => {
   return [
     {
-      url, label: "header-default-nomenu",
+      url, label: "nomenu-default-nomenu",
       viewports: [viewports.desktop, viewports.iphone, viewports.hdtv]
     }
   ]
