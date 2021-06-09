@@ -71,8 +71,7 @@
 
   a:hover,
   a:focus {
-    outline-color: white;
-    outline-width: 1px;
+    outline: 2px dotted white;
     color: white;
   }
 

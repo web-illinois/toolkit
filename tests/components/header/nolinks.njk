@@ -7,7 +7,8 @@ layout: layouts/page.njk
 
     <div slot="wordmark">
         <il-unit-wordmark>
-            <h1>College of Education</h1>
+            <p class="il-primary-unit"><a href="/">The College of Education</a></p>
+            <h1><a href="/">School and Community Experiences</a></h1>
         </il-unit-wordmark>
     </div>
 
@@ -40,13 +41,12 @@ layout: layouts/page.njk
         <li><a href="#" target="_self">Prospective Community Partners</a></li>
                 </ul>
         </il-nav-section>
-        <il-nav-section>
-            <a href="#" target="_self" slot="label">Quick Links</a>
-        </il-nav-section>
-        <il-nav-section>
-            <a href="#" target="_self" slot="label">FAQ</a>
-        </il-nav-section>
-
+        <il-nav-link>
+            <a href="#" target="_self">Quick Links</a>
+        </il-nav-link>
+        <il-nav-link>
+            <a href="#" target="_self">FAQ</a>
+        </il-nav-link>
     </il-nav>
 
 </il-header>
