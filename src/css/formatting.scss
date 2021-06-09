@@ -13,6 +13,10 @@
     @extend .il-link;
   }
 
+  a:hover, a:focus {
+    outline-style: none;
+  }
+
   h1 {
     @include reset-heading;
     @include heading-spacing;

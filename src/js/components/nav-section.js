@@ -129,16 +129,21 @@ li {
   position: relative;
   display: block;
   width: 60px;
-  height: 44px;
+  height: 100%;
+  min-height: 44px;
   border: none;
   margin: 0;
   padding: 0;
   background-color: transparent;
   color: var(--il-blue);
 }
+.compact .heading .toggle {
+  height: 100%;
+}
+
 .compact .heading button svg {
   position: absolute;
-  top: 12px;
+  top: 27%;
   left: 16px;
   display: block;
   width: 23px;
@@ -380,13 +385,13 @@ li {
                     <slot name="label"></slot>
                 </div>
                 <div class="indicator" role="presentation">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                    <svg aria-label="Toggle menu" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
                         <path d="M207.029 381.476L12.686 187.132c-9.373-9.373-9.373-24.569 0-33.941l22.667-22.667c9.357-9.357 24.522-9.375 33.901-.04L224 284.505l154.745-154.021c9.379-9.335 24.544-9.317 33.901.04l22.667 22.667c9.373 9.373 9.373 24.569 0 33.941L240.971 381.476c-9.373 9.372-24.569 9.372-33.942 0z"/>
                     </svg>
                 </div>
                 <div class="toggle">
                     <button aria-controls="contents" aria-expanded="${this.expanded ? 'true' : 'false'}" @click=${this.handleToggleClick}>
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                        <svg aria-label="Toggle menu" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
                             <path d="M207.029 381.476L12.686 187.132c-9.373-9.373-9.373-24.569 0-33.941l22.667-22.667c9.357-9.357 24.522-9.375 33.901-.04L224 284.505l154.745-154.021c9.379-9.335 24.544-9.317 33.901.04l22.667 22.667c9.373 9.373 9.373 24.569 0 33.941L240.971 381.476c-9.373 9.372-24.569 9.372-33.942 0z"/>
                         </svg>
                     </button>

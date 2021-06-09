@@ -17,6 +17,9 @@ li {
     padding: 0;
     position: relative;
 }
+.full {
+  color: var(--il-blue);
+}
 ::slotted(a) {
   display: block;
   padding: 10px 20px;
