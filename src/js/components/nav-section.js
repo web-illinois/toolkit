@@ -241,7 +241,7 @@ li {
   handleLinkBlurMain(evt) {
     const event = new CustomEvent('blur-label');
     this.dispatchEvent(event);
-    handleLinkBlur(evt)
+    this.handleLinkBlur(evt);
   }
 
   handleLinkKeypress(evt) {
