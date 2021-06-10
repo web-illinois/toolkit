@@ -6,12 +6,16 @@ function elementHasFocus(page, sel) {
   }, [sel]);
 }
 
+function host() {
+  return process.env.BACKSTOP_ENV === 'docker' ? 'host.docker.internal' : 'localhost';
+}
+
 function moveFocus(page, sel) {
   return page.evaluate((sel) => document.querySelector(sel).focus(), [sel]);
 }
 
 function url(path) {
-  return 'http://localhost:8080' + path;
+  return 'http://' + host() + ':8080' + path;
 }
 
 function testUrl(testPath) {

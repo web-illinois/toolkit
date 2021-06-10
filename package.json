@@ -17,7 +17,7 @@
     "test-jest": "jest --config=jest.func.config.js",
     "func-tests": "jest --config=jest.func.config.js",
     "unit-tests": "jest --config=jest.unit.config.js",
-    "vis-tests": "backstop test --config=backstop.config.js",
+    "vis-tests": "backstop test --config=backstop.config.js --docker",
     "watch-html": "eleventy --watch"
   },
   "dependencies": {
