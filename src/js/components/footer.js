@@ -11,46 +11,50 @@ class Footer extends LitElement {
     color: white;
 }
 
-.main, .parent-unit, .links {
+.section {
     padding-left: var(--il-content-margin);
     padding-right: var(--il-content-margin);
 }
-.links {
-    border-top: 5px solid var(--il-alma-mater);
-}
-
-.main > div, .parent-unit ::slotted(*), .links ::slotted(*) {
+.section-inner {
     max-width: var(--il-content-max-width);
     margin-left: auto;
     margin-right: auto;
 }
+
+.links {
+    border-top: 5px solid var(--il-alma-mater);
+}
+
 
 .main {
     padding-top: 30px;
     padding-bottom: 19px;
 }
 
-.main > div {
+.main .section-inner {
     box-sizing: border-box;
     display: grid;
     grid-gap: 0 120px;
 }
 
 @media (max-width: 991px) {
-    .main > div {
+    .main .section-inner {
         grid-template-columns: 1fr;
         grid-template-rows: auto;
-        grid-template-areas: "info" "links";
+        grid-template-areas: "info" "content";
     }
 }
 @media (min-width: 992px) {
-    .main > div {
-        grid-template-columns: 1fr 1fr 1fr;
-        grid-template-areas: "info links";
+    .main .section-inner {
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-areas: "info content content";
     }
 }
 .info {
     grid-area: info;
+}
+.content {
+    grid-area: content;
 }
 .campus-wordmark {
     width: 100%;
@@ -79,30 +83,7 @@ class Footer extends LitElement {
     clear: left;
     margin-top: 25px;
 }
-.parent-unit, links {
-    padding-left: var(--il-content-margin);
-    padding-right: var(--il-content-margin);
-}
-.parent-unit ::slotted(*), links ::slotted(*) {
-    max-width: var(--il-content-max-width);
-    margin: 0 auto;
-}
-.parent-unit {
-    background-color: var(--il-alma-mater);
-}
-.links__inner {
-    margin: 0 auto;
-    max-width: var(--il-content-max-width);
-}
-.parent-unit ::slotted(*) {
-    padding-top: 12px;
-    padding-bottom: 12px;
-    font: bold 22px var(--il-montserrat);
-    letter-spacing: 1px;
-    color: white;
-    text-transform: uppercase;
-}
-.links ::slotted(*) {
+.links .section-inner {
     padding-top: 10px;
     padding-bottom: 10px;
 }
@@ -129,8 +110,8 @@ class Footer extends LitElement {
     render() {
         return html`
 <div class="footer">
-    <div class="main">
-        <div>
+    <div class="main section">
+        <div class="section-inner">
             <div class="info">
                 <div class="campus-wordmark">
                     <a href="https://illinois.edu/">${this.renderWordmark()}</a>
@@ -145,11 +126,13 @@ class Footer extends LitElement {
                     <slot name="parent"></slot>
                 </div>
             </div>
-            <slot></slot>
+            <div class="content">
+                <slot></slot>
+            </div>
         </div>
     </div>
-    <div class="links">
-        <div class="links__inner">
+    <div class="links section">
+        <div class="section-inner">
             <slot name="links"></slot>
         </div>
     </div>
