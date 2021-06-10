@@ -116,20 +116,12 @@
     li {
       @include reset-list;
       position: relative;
-      padding-left: 40px;
+      margin-left: 40px;
+      list-style: disc;
 
-      &::after {
-        box-sizing: border-box;
-        content: "";
-        position: absolute;
-        height: 6px;
-        width: 6px;
-        border: 2px solid var(--il-blue);
-        border-radius: 50%;
-        top: 10px;
-        left: 20px;
-        background-color: var(--il-blue);
-        opacity: 0.75;
+      &::marker {
+        color: rgba(19, 41, 75, .75);
+        font-size: .9em;
       }
     }
 
