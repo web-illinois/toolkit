@@ -13,6 +13,7 @@ module.exports = (viewports) => {
       viewports: [viewports.desktop],
       onReady: async (page) => {
         await page.hover('#link-1');
+        await page.waitFor(500);
       }
     },
     {
@@ -20,6 +21,7 @@ module.exports = (viewports) => {
       viewports: [viewports.desktop],
       onReady: async (page) => {
         await util.moveFocus(page, '#link-1');
+        await page.waitFor(500);
       }
     },
   ]

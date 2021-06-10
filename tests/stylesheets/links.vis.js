@@ -13,6 +13,7 @@ module.exports = (viewports) => {
       'viewports': [viewports.desktop],
       'onReady': async (page, scenario) => {
         await page.hover('#link');
+        await page.waitFor(500);
       }
     },
     {
@@ -20,6 +21,7 @@ module.exports = (viewports) => {
       'viewports': [viewports.desktop],
       'onReady': async (page, scenario) => {
         await util.moveFocus(page, '#link');
+        await page.waitFor(500);
       }
     },
     {
@@ -27,6 +29,7 @@ module.exports = (viewports) => {
       'viewports': [viewports.desktop],
       'onReady': async (page, scenario) => {
         await page.hover('#inline-link');
+        await page.waitFor(500);
       }
     },
     {
@@ -34,6 +37,7 @@ module.exports = (viewports) => {
       'viewports': [viewports.desktop],
       'onReady': async (page, scenario) => {
         await util.moveFocus(page, '#inline-link');
+        await page.waitFor(500);
       }
     },
     {
@@ -41,6 +45,7 @@ module.exports = (viewports) => {
       'viewports': [viewports.desktop],
       'onReady': async (page, scenario) => {
         await page.hover('#link-with-linebreak');
+        await page.waitFor(500);
       }
     },
     {
@@ -48,6 +53,7 @@ module.exports = (viewports) => {
       'viewports': [viewports.desktop],
       'onReady': async (page, scenario) => {
         await util.moveFocus(page, '#link-with-linebreak');
+        await page.waitFor(500);
       }
     },
     {
@@ -55,6 +61,7 @@ module.exports = (viewports) => {
       'viewports': [viewports.desktop],
       'onReady': async (page, scenario) => {
         await page.hover('#multiline-link');
+        await page.waitFor(500);
       }
     },
     {
@@ -62,6 +69,7 @@ module.exports = (viewports) => {
       'viewports': [viewports.desktop],
       'onReady': async (page, scenario) => {
         await util.moveFocus(page, '#multiline-link');
+        await page.waitFor(500);
       }
     }
   ];

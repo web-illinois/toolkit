@@ -26,6 +26,7 @@ Encore
         ];
         options.liveReload = false;
         options.serveIndex = true;
+        options.disableHostCheck = true;
     })
 ;
 
