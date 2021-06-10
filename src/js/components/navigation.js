@@ -44,6 +44,7 @@ class TopLevelItem {
 
     handleLinkKeypress(evt) {
         if (evt.code === 'ArrowRight') {
+            evt.preventDefault();
             if (this.hasNextItem()) {
                 this.getNextItem().querySelector('a').focus();
             }
@@ -52,6 +53,7 @@ class TopLevelItem {
             }
         }
         if (evt.code === 'ArrowLeft') {
+            evt.preventDefault();
             if (this.hasPreviousItem()) {
                 this.getPreviousItem().querySelector('a').focus();
             }
@@ -60,6 +62,7 @@ class TopLevelItem {
             }
         }
         if (evt.code === 'ArrowDown') {
+            evt.preventDefault();
             if (this.nav.isCompact()) {
                 if (this.hasSubmenu() && this.submenuIsOpen()) {
                     this.getSubmenu().querySelector('a').focus();
@@ -84,6 +87,7 @@ class TopLevelItem {
         }
         if (this.hasSubmenu()) {
             if (evt.code === 'ArrowUp') {
+                evt.preventDefault();
                 if (!this.submenuIsOpen()) {
                     this.openSubmenu();
                 }
@@ -99,6 +103,7 @@ class TopLevelItem {
             this.link.focus();
         }
         if (evt.code === 'ArrowDown') {
+            evt.preventDefault();
             if (item.nextElementSibling) {
                 item.nextElementSibling.querySelector('a').focus();
             }
@@ -113,6 +118,7 @@ class TopLevelItem {
             }
         }
         if (evt.code === 'ArrowUp') {
+            evt.preventDefault();
             if (item.previousElementSibling) {
                 item.previousElementSibling.querySelector('a').focus();
             }
