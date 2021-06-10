@@ -1,26 +1,6 @@
 const glob = require('fast-glob');
 const path = require('path');
-
-const viewports = {
-    desktop: {
-        "label": "desktop",
-        "description": "Desktop",
-        "width": 1280,
-        "height": 1024
-    },
-    iphone: {
-        "label": "iphone",
-        "description": "iPhone",
-        "width": 375,
-        "height": 812
-    },
-    hdtv:{
-        "label": "hdtv",
-        "description": "HDTV",
-        "width": 1920,
-        "height": 1080
-    }
-};
+const viewports = require('./viewports.json');
 
 const scenarios = [];
 glob.sync('tests/**/*.vis.js').forEach(file => {
