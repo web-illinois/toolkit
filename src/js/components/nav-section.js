@@ -246,14 +246,17 @@ li {
 
   handleLinkKeypress(evt) {
     if (evt.code === 'Space') {
+      evt.preventDefault();
       window.location.href = this.getLink().href;
     }
     else if (evt.code === 'Escape') {
+      evt.preventDefault();
       if (this.expanded) {
         this.collapse();
       }
     }
     else if (evt.code === 'ArrowDown') {
+      evt.preventDefault();
       if (!this.expanded) {
         this.expandAndMoveFocusToFirstSubmenuLink();
       }
@@ -262,15 +265,18 @@ li {
       }
     }
     else if (evt.code === 'ArrowUp') {
+      evt.preventDefault();
       if (!this.expanded) {
         this.expandAndMoveFocusToLastSubmenuLink();
       }
     }
     else if (evt.code === 'ArrowLeft') {
+      evt.preventDefault();
       const event = new CustomEvent('exit', { detail: 'back' });
       this.dispatchEvent(event);
     }
     else if (evt.code === 'ArrowRight') {
+      evt.preventDefault();
       const event = new CustomEvent('exit', { detail: 'forward' });
       this.dispatchEvent(event);
     }
@@ -292,9 +298,11 @@ li {
     const link = evt.currentTarget;
     const item = link.parentNode;
     if (evt.code === 'Escape') {
+      evt.preventDefault();
       this.collapseAndMoveFocusToParent();
     }
     else if (evt.code === 'ArrowDown') {
+      evt.preventDefault();
       if (item.nextElementSibling) {
         item.nextElementSibling.querySelector('a').focus();
       }
@@ -307,6 +315,7 @@ li {
       }
     }
     else if (evt.code === 'ArrowUp') {
+      evt.preventDefault();
       if (item.previousElementSibling) {
         item.previousElementSibling.querySelector('a').focus();
       }
@@ -318,16 +327,17 @@ li {
       }
     }
     else if (evt.code === 'ArrowLeft') {
+      evt.preventDefault();
       this.collapseAndMoveFocusToParent();
       const event = new CustomEvent('exit', { detail: 'back' });
       this.dispatchEvent(event);
     }
     else if (evt.code === 'ArrowRight') {
+      evt.preventDefault();
       this.collapseAndMoveFocusToParent();
       const event = new CustomEvent('exit', { detail: 'forward' });
       this.dispatchEvent(event);
     }
-
   }
 
   handleToggleClick(evt) {

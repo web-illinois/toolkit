@@ -102,15 +102,31 @@ ul {
     const section = evt.currentTarget;
     if (evt.detail === 'back') {
       if (section.previousElementSibling) {
-        section.previousElementSibling.focus();
+        if (section.previousElementSibling.children.length > 0) {
+          section.previousElementSibling.children[0].focus();
+        } else {
+          section.previousElementSibling.focus();
+        }
       } else {
-        section.parentNode.lastElementChild.focus();
+        if (section.parentNode.lastElementChild.children.length > 0) {
+          section.parentNode.lastElementChild.children[0].focus();
+        } else {
+          section.parentNode.lastElementChild.focus();
+        }
       }
     } else if (evt.detail === 'forward') {
       if (section.nextElementSibling) {
-        section.nextElementSibling.focus();
+        if (section.nextElementSibling.children.length > 0) {
+          section.nextElementSibling.children[0].focus();
+        } else {
+          section.nextElementSibling.focus();
+        }
       } else {
-        section.parentNode.firstElementChild.focus();
+        if (section.parentNode.firstElementChild.children.length > 0) {
+          section.parentNode.firstElementChild.children[0].focus();
+        } else {
+          section.parentNode.firstElementChild.focus();
+        }
       }
     }
   }
@@ -139,7 +155,7 @@ ul {
   }
 
   getSections() {
-    return this.querySelectorAll('il-nav-section');
+    return this.querySelectorAll('il-nav-section, il-nav-link');
   }
 
   render() {
