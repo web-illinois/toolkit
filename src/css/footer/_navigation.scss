@@ -86,9 +86,25 @@
   grid-template-columns: 1fr;
   grid-gap: 61px;
 
+  nav {
+    margin-top: 61px;
+
+    &:first-child {
+      margin-top: 0;
+    }
+  }
+
   @media (min-width: 992px) {
     grid-gap: 120px;
     grid-template-columns: repeat(2, 1fr);
+
+    nav {
+      margin-top: 50px;
+
+      &:first-child {
+        margin-top: 0;
+      }
+    }
 
     .il-actions {
       grid-column-start: 1;
