@@ -60,7 +60,15 @@ class SectionNavigation extends LitElement {
   fill: currentColor;
 }
 nav.full .header {
-  display: none;
+  position: absolute !important;
+  left: -9999px !important;
+  top: auto !important;
+  display: block !important;
+  text-align: left !important;
+  text-indent: -9999em !important;
+  width: 1px !important;
+  height: 1px !important;
+  overflow: hidden !important;
 }
 nav.compact {
   border-radius: 3px;
