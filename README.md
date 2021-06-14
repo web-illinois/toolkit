@@ -68,7 +68,4 @@ While the development server is running, all changes to files in the `src` direc
 
 ## Build process
 
-The build process will place a copy of the assets in the /toolkit/x.x/ folder, and code samples and screen shots in /samples/x.x/. To advance the version number, it needs to be changed in two places:
-
-* The .github/workflows/deploy.yml file -- the environment variable at the top of the file 
-* The .eleventy-test-site.js file -- the pathPrefix variable at the bottom of the file
+The build process will place a copy of the assets in the /toolkit/x.x/ folder, and code samples and screen shots in /toolkit/2.0/examples/index.html. This happens when the code is released to develop (/toolkit/dev) and any release branch (so branch release/2.0 goes to /toolkit/2.0).
