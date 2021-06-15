@@ -8,8 +8,9 @@ class Search extends LitElement {
       inputHasFocus: {type: Boolean, attribute: false},
       label: {type: String, attribute: true},
       method: {type: String, attribute: true},
+      name: {type: String, attribute: true},
       placeholder: {type: String, attribute: true},
-      searchname: {type: String, attribute: true},
+      searchname: {type: String, attribute: true}
     }
   }
 
