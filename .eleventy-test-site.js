@@ -21,7 +21,6 @@ module.exports = function (eleventyConfig) {
   });
 
   return {
-    pathPrefix: '/toolkit/2.0/examples/',
     dir: {
       input: "tests",
       output: "var/full-site-deploy"

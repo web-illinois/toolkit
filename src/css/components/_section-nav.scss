@@ -67,24 +67,27 @@ il-section-nav {
     }
   }
   
-  li li a {
+  li a {
     font-size: 20px;
     line-height: 1.5;
   }
 
-  li li li {
+  li li {
     padding-left: 15px;
   }
 
-  li li li a {
+  li li a {
     font-size: 18px;
     font-weight: 600;
   }
+  
+  h3 {
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+  }
 
   &:not([compact]) {
-
-    li {
-      background-color: #F0F0F0;
 
       li {
         background-color: white;
@@ -102,14 +105,14 @@ il-section-nav {
           }
         }
       }
-    }
+    
 
     a {
       padding: 10px 25px;
       font-size: 20px;
     }
 
-    li li a {
+    li a {
       font-weight: 600;
       font-size: 18px;
       padding: {
@@ -118,7 +121,7 @@ il-section-nav {
       };
     }
 
-    li li li a {
+    li li a {
       font-size: 16px;
       padding: {
         top: 10px;
@@ -126,7 +129,7 @@ il-section-nav {
       };
     }
 
-    li li li li a {
+    li li li a {
       padding-left: 29px;
     }
   }
@@ -134,13 +137,19 @@ il-section-nav {
   &[compact] {
     background-color: white;
 
+    h3 {
+      background-color: #fff;
+    }
+
+    > ul li {
+      padding-left: 26px;
+    }
+
     ul {
+      border-top: solid 1px #d8d8d8;
+
       & ul {
-        border-top: solid 1px #d8d8d8;
-  
-        & ul {
-          border-top: 0;
-        }
+        border-top: 0;
       }
     }
   
@@ -150,17 +159,22 @@ il-section-nav {
       &:last-of-type {
         border-bottom: 0;
       }
+
+      ul {
+        padding-bottom: 4px;
+      }
   
       li {
-        padding-left: 26px;
+        padding-left: 19px;
+        border-bottom: 0;
 
         ul {
-          padding-bottom: 4px;
+          padding-bottom: 0;
         }
       }
   
       li li {
-        padding-left: 30px;
+        padding-left: 19px;
         border-bottom: 0;
 
         ul {
@@ -174,7 +188,6 @@ il-section-nav {
     }
   
     li li a {
-      font-size: 20px;
       line-height: 1.5;
     }
   

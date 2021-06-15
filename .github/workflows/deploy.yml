@@ -2,10 +2,10 @@ name: CI
 on:
   push:
     branches:
-    - 'releases/**'
+    - 'release/**'
     - develop
 env:
-  VERSION: '2.0'
+  VERSION: 'dev'
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -29,7 +29,7 @@ jobs:
         aws-region: us-east-2
     - name: Deploy toolbox to S3 bucket
       run: aws s3 sync ./dist/ s3://cdn.brand.illinois.edu/toolkit/$VERSION --delete --acl bucket-owner-full-control
-    - run: npm run-script create-test-html
+    - run: npm run-script create-test-html -- --pathprefix='/toolkit/$VERSION/examples/'
     - name: Deploy examples to S3 bucket
       run: aws s3 sync ./var/full-site-deploy/ s3://cdn.brand.illinois.edu/toolkit/$VERSION/examples --delete --acl bucket-owner-full-control
     - name: Deploy static images in examples to S3 bucket
