@@ -1,5 +1,4 @@
 import {LitElement, html, css} from 'lit-element';
-import Navigation from './navigation';
 import './unit-wordmark';
 
 class Header extends LitElement {
