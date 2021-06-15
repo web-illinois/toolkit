@@ -3,7 +3,6 @@ import {LitElement, html, css} from 'lit-element';
 class NavigationSection extends LitElement {
   static get properties() {
     return {
-      align: {type: String, default: 'left', attribute: true},
       expanded: {type: Boolean, default: false, attribute: true, reflect: true},
       compact: {type: Boolean, default: false, attribute: false},
       right: {type: Boolean, default: false, attribute: true}
