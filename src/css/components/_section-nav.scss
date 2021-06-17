@@ -3,10 +3,8 @@
   grid-gap: 20px;
   grid-template-rows: auto auto;
   grid-template-areas: "nav" "content";
-  margin: {
-    left: 20px;
-    right: 20px;
-  }
+  margin: 0;
+  padding: 40px 0;
 
   @media (min-width: 575px) {
     margin: {
@@ -64,6 +62,10 @@ il-section-nav {
       color: var(--il-altgeld);
       outline: none;
       text-decoration: underline;
+    }
+
+    &[aria-current="page"] {
+      color: var(--il-altgeld);
     }
   }
   

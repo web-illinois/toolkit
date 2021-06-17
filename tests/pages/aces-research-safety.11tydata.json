@@ -83,6 +83,7 @@
     {
       "type": "section",
       "label": "Research",
+      "current": true,
       "contents": [
         {
           "type": "link",
@@ -102,7 +103,8 @@
         },
         {
           "type": "link",
-          "label": "Safety"
+          "label": "Safety",
+          "current": true
         },
         {
           "type": "link",
@@ -257,40 +259,38 @@
       ]
     }
   ],
-  "sectionNavigation": [
-    {
-      "type": "section",
-      "label": "Research",
-      "contents": [
-        {
-          "type": "link",
-          "label": "Research Areas"
-        },
-        {
-          "type": "link",
-          "label": "Research History"
-        },
-        {
-          "type": "link",
-          "label": "Facilities"
-        },
-        {
-          "type": "link",
-          "label": "Resources"
-        },
-        {
-          "type": "link",
-          "label": "Safety"
-        },
-        {
-          "type": "link",
-          "label": "Civil Rights"
-        },
-        {
-          "type": "link",
-          "label": "Staff"
-        }
-      ]
-    }
-  ]
+  "sectionNavigation": {
+    "label": "Research",
+    "contents": [
+      {
+        "type": "link",
+        "label": "Research Areas"
+      },
+      {
+        "type": "link",
+        "label": "Research History"
+      },
+      {
+        "type": "link",
+        "label": "Facilities"
+      },
+      {
+        "type": "link",
+        "label": "Resources"
+      },
+      {
+        "type": "link",
+        "label": "Safety",
+        "current": true
+      },
+      {
+        "type": "link",
+        "label": "Civil Rights"
+      },
+      {
+        "type": "link",
+        "label": "Staff"
+      }
+    ]
+  }
 }
