@@ -59,6 +59,9 @@ li {
   pointer-events: none;
   border: 2px solid transparent;
 }
+.full.current .indicator {
+  color: var(--il-altgeld);
+}
 .full .indicator svg {
   position: absolute;
   right: 12px;

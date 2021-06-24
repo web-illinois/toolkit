@@ -255,6 +255,11 @@ class NavigationSection extends LitElement {
     return this.compact;
   }
 
+  isCurrent() {
+    const link = this.getLink();
+    return link && link.getAttribute('aria-current') === 'page';
+  }
+
   moveFocusToFirstSubmenuLink() {
     this.getFirstSubmenuLink().focus();
   }
@@ -266,9 +271,10 @@ class NavigationSection extends LitElement {
   render() {
     const state = this.expanded ? 'expanded' : 'collapsed';
     const view = this.compact ? 'compact' : 'full';
+    const current = this.isCurrent() ? 'current' : '';
     const rightjust = true;
     return html`
-        <li class="${state} ${view}" @mouseover=${this.handleMouseOver} @mouseout=${this.handleMouseOut}>
+        <li class="${state} ${view} ${current}" @mouseover=${this.handleMouseOver} @mouseout=${this.handleMouseOut}>
             <div class="heading">
                 <div class="label">
                     <slot name="label"></slot>
