@@ -1,0 +1,30 @@
+{
+  "title": "Unit wordmarks",
+  "group": "Components: Unit wordmark",
+  "layout": "layouts/page.njk",
+  "stylesheets": ["tests.css", "wordmarks.css"],
+  "wordmarks": [
+    {
+      "title": "Simple wordmark",
+      "unit": "Animal Sciences"
+    },
+    {
+      "title": "Wordmark with parent",
+      "unit": "Animal Sciences",
+      "parent": "College of Agricultural, Consumer, and Environmental Sciences"
+    },
+    {
+      "title": "Wordmark with parent and long unit name",
+      "unit": "Animal Sciences and the Long Title for University of Illinois and the Long University of Illinois",
+      "parent": "College of Agricultural, Consumer, and Environmental Sciences"
+    },
+    {
+      "title": "Wordmark with short unit name",
+      "unit": "French & Italian"
+    },
+    {
+      "title": "Wordmark with long unit name",
+      "unit": "Program in Arms Control & Domestic and International Security"
+    }
+  ]
+}
