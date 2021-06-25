@@ -7,8 +7,11 @@ body il-unit-wordmark {
     line-height: 1.2em;
     font-family: var(--il-source-sans);
   }
+  > *:first-child {
+    margin-top: -2px;
+  }
   > *:last-child {
-    margin-bottom: 0;
+    margin-bottom: -2px;
     font-weight: 600;
     line-height: 1em;
     color: var(--il-blue);

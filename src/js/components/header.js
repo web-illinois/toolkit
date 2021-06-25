@@ -64,7 +64,7 @@ class Header extends LitElement {
 }
 .header--full .wordmark {
     grid-area: wordmark;
-    justify-self: left;
+    justify-self: stretch;
     padding: 20px 0;
 }
 .header--full .search {
