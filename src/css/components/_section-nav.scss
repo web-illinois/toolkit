@@ -4,7 +4,7 @@
   grid-template-rows: auto auto;
   grid-template-areas: "nav" "content";
   margin: 0;
-  padding: 40px 0;
+  padding: 20px;
 
   @media (min-width: 575px) {
     margin: {
