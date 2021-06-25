@@ -70,6 +70,9 @@ nav.full .header {
   height: 1px !important;
   overflow: hidden !important;
 }
+nav.full .il-section-nav__toggle {
+  display: none;
+}
 nav.compact {
   border-radius: 3px;
   border: solid 2px #d8d8d8;

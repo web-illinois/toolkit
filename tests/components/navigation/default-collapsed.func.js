@@ -16,9 +16,10 @@ describe("hovering over a top-level link", () => {
     });
 });
 
-describe("when a top-level link has focus", () => {
+describe("when a top-level link has focus and its menu is collapsed", () => {
     beforeEach(async () => {
         await util.moveFocus(page, '#link-2');
+        await page.keyboard.press('Escape');
     });
 
     describe("pressing tab", () => {
@@ -26,7 +27,7 @@ describe("when a top-level link has focus", () => {
             await page.keyboard.press('Tab');
         });
 
-        test("moves focus to the next top-level link", async () => {
+        test("moves focus to the first submenu link", async () => {
             const hasFocus = await util.elementHasFocus(page, '#link-3');
             await expect(hasFocus).toBeTruthy();
         });
