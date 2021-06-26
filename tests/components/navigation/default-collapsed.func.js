@@ -16,6 +16,61 @@ describe("hovering over a top-level link", () => {
     });
 });
 
+describe("when a top-level link gets focus", () => {
+    beforeEach(async () => {
+        await util.moveFocus(page, '#link-2');
+    });
+
+    test("its submenu opens", async () => {
+        const isVisible = await nav.sectionisExpanded(page, '#section-2');
+        await expect(isVisible).toBeTruthy();
+    });
+
+    describe("pressing the right arrow", () => {
+        beforeEach(async () => {
+            await page.keyboard.press('ArrowRight');
+        });
+
+        test("moves focus to the next top-level link", async () => {
+            const hasFocus = await util.elementHasFocus(page, '#link-3');
+            await expect(hasFocus).toBeTruthy();
+        });
+    });
+
+    describe("pressing the left arrow", () => {
+        beforeEach(async () => {
+            await page.keyboard.press('ArrowLeft');
+        });
+
+        test("moves focus to the previous top-level link", async () => {
+            const hasFocus = await util.elementHasFocus(page, '#link-1');
+            await expect(hasFocus).toBeTruthy();
+        });
+    });
+
+    describe("pressing the down arrow", () => {
+        beforeEach(async () => {
+            await page.keyboard.press('ArrowDown');
+        });
+
+        test('moves focus to the first link in the submenu', async () => {
+            const hasFocus = await util.elementHasFocus(page, '#link-2A');
+            await expect(hasFocus).toBeTruthy();
+        });
+    });
+
+    describe("pressing tab", () => {
+        beforeEach(async () => {
+            await page.keyboard.press('Tab');
+        });
+
+        test("moves focus to the first submenu link", async () => {
+            const hasFocus = await util.elementHasFocus(page, '#link-2A');
+            await expect(hasFocus).toBeTruthy();
+        });
+    });
+});
+
 describe("when a top-level link has focus and its menu is collapsed", () => {
     beforeEach(async () => {
         await util.moveFocus(page, '#link-2');
@@ -27,7 +82,7 @@ describe("when a top-level link has focus and its menu is collapsed", () => {
             await page.keyboard.press('Tab');
         });
 
-        test("moves focus to the first submenu link", async () => {
+        test("moves focus to the next top-level link", async () => {
             const hasFocus = await util.elementHasFocus(page, '#link-3');
             await expect(hasFocus).toBeTruthy();
         });
