@@ -1,0 +1,35 @@
+.il-formatted il-featuresplit, il-featuresplit {
+  display: block;
+  margin-bottom: 20px;
+}
+
+.il-formatted il-featuresplit:not([gradient="false"]), il-featuresplit:not([gradient="false"]) {
+    h2,
+    h3,
+    h4,
+    h5,
+    p,
+    a {
+      color: white;
+      text-decoration: initial;
+    }
+
+    a.il-button,
+    button {
+      color: white;
+      background: transparent;
+      border-color: white;
+      margin-right: 20px;
+      display: block;
+      width: fit-content;
+      width: -moz-fit-content;
+      margin-bottom: 20px;
+
+      &:focus,
+      &:hover {
+        background: white;
+        color: var(--il-blue);
+      }
+    }
+}
+

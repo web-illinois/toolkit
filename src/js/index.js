@@ -9,3 +9,4 @@ import './components/nav-section';
 import './components/search';
 import './components/section-nav';
 import './components/unit-wordmark';
+import './components/featuresplit';
