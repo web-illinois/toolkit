@@ -16,17 +16,14 @@ class FeatureSplit extends LitElement {
         display: block;
     }
     .featuresplit .background {
-        padding: 3rem 6rem;
+        padding: 1rem 2rem;
         min-height: 30vw;
         background-position: center; 
         background-repeat: no-repeat; 
         background-size: cover;
     }
-    .featuresplit.noheight .background {
-        min-height: 10vw;
-    }
     .featuresplit .content {
-        padding: 3rem 6rem;
+        padding: 1rem 2rem;
     }
     .featuresplit .content.gradient {
         color: white;
@@ -42,7 +39,12 @@ class FeatureSplit extends LitElement {
         }
         .featuresplit .background {
             min-height: initial;
+            padding: 3rem 6rem;
         }
+        .featuresplit .content {
+            padding: 3rem 6rem;
+        }
+   
     }
         `;
   }
