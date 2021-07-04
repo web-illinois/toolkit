@@ -4,9 +4,9 @@ class FeatureSplit extends LitElement {
 
   static get properties() {
     return {
-        align: {type: String, attribute: true},
+        picture: {type: String, attribute: true},
         background: {type: String, attribute: true},
-        gradient: {type: String, attribute: true}
+        nogradient: {type: Boolean, attribute: true}
     };
   }
 
@@ -51,17 +51,17 @@ class FeatureSplit extends LitElement {
 
   constructor() {
     super();
-    this.align = '';
+    this.picture = '';
     this.background = undefined;
-    this.gradient = '';
+    this.nogradient = false;
   }
 
 
   render() {
-    var contentClass = this.gradient != "false" ? 'content gradient' : 'content';
-    var leftFlex = this.align == 'right' ? 2 : 1;
-    var rightFlex = this.align == 'left' ? 2 : this.align == 'smallpicture' ? 4 : 1;
-    var heightOption = this.align == 'smallpicture' ? 'featuresplit noheight' : 'featuresplit';
+    var contentClass = this.nogradient ? 'content' : 'content gradient';
+    var leftFlex = this.picture == 'large' ? 2 : 1;
+    var rightFlex = this.picture == 'small' ? 2 : this.picture == 'portrait' ? 4 : 1;
+    var heightOption = this.picture == 'portrait' ? 'featuresplit noheight' : 'featuresplit';
     return html`
         <div class="${heightOption}">
             <div class="background" role="presentation" style="background-image: url('${this.background}'); flex: ${leftFlex};">
