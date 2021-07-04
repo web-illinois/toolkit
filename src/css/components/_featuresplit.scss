@@ -1,6 +1,15 @@
 .il-formatted il-featuresplit, il-featuresplit {
   display: block;
   margin-bottom: 20px;
+
+  a.il-button,
+  button {
+    margin-right: 20px;
+    margin-bottom: 20px;
+    display: block;
+    width: fit-content;
+    width: -moz-fit-content;
+  }
 }
 
 .il-formatted il-featuresplit:not([gradient="false"]), il-featuresplit:not([gradient="false"]) {
@@ -19,11 +28,6 @@
       color: white;
       background: transparent;
       border-color: white;
-      margin-right: 20px;
-      display: block;
-      width: fit-content;
-      width: -moz-fit-content;
-      margin-bottom: 20px;
 
       &:focus,
       &:hover {
