@@ -91,17 +91,15 @@
       top: 0;
       bottom: 0;
     }
+    & + p {
+      margin-top: rem(25px);
+    }
   }
   li {
     @include reset-spacing;
   }
 
   ol {
-    li {
-      &::marker {
-        color: var(--il-blue);
-      }
-    }
     ol {
       list-style-type: lower-alpha;
       ol {
@@ -120,7 +118,6 @@
       list-style: disc;
 
       &::marker {
-        color: rgba(19, 41, 75, .75);
         font-size: .9em;
       }
     }
