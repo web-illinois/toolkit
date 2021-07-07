@@ -6,13 +6,12 @@
   button {
     margin-right: 20px;
     margin-bottom: 20px;
-    display: block;
     width: fit-content;
     width: -moz-fit-content;
   }
 }
 
-.il-formatted il-featuresplit:not([nogradient]), il-featuresplit:not([nogradient]) {
+.il-formatted il-featuresplit:not([contentbackground="white"]), il-featuresplit:not([contentbackground="white"]) {
     h2,
     h3,
     h4,
