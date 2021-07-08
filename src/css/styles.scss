@@ -58,11 +58,15 @@
 }
 
 .il-invisible {
-  position: absolute;
-  left: -999vw;
-  width: 1px;
-  height: 1px;
-  overflow: hidden;
+  position: absolute !important;
+  left: -9999px !important;
+  top: auto !important;
+  display: block !important;
+  text-align: left !important;
+  text-indent: -9999em !important;
+  width: 1px !important;
+  height: 1px !important;
+  overflow: hidden !important;
 }
 
 .il-breadcrumbs {
