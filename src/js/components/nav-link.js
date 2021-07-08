@@ -19,6 +19,7 @@ li {
 }
 .full {
   color: var(--il-blue);
+  height: 100%;
 }
 ::slotted(a) {
   display: block;
@@ -33,6 +34,12 @@ li {
   text-decoration: underline;
   background-color: white;
   outline: 0;
+}
+.full ::slotted(a) {
+  height: 100%;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
 }
 .compact ::slotted(a) {
   margin: 0;

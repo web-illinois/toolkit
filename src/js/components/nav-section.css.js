@@ -8,11 +8,14 @@ li {
     padding: 0;
     position: relative;
 }
+.full {
+  height: 100%;
+}
 .heading {
     display: flex;
     flex-direction: row;
     align-items: center;
-} 
+}
 .full .contents {
     position: absolute;
     left: 0;
@@ -26,6 +29,7 @@ li {
   position: relative;
   padding: 0;
   color: var(--il-blue);
+  height: 100%;
 }
 .full .heading:hover {
   background-color: white;
@@ -33,10 +37,12 @@ li {
 }
 .full .label ::slotted(a) {
   display: block;
+  position: relative;
   padding: 10px 40px 10px 20px;
   font: 700 16px/18px var(--il-source-sans);
   color: inherit; 
   text-decoration: none;
+  height: 100%;
 }
 .full .label ::slotted(a:hover),
 .full .label ::slotted(a:focus) {
