@@ -18,17 +18,21 @@ class FeatureSplit extends LitElement {
     }
     .featuresplit .background {
         padding: 1.875rem 1.25rem;
-        min-height: 30vw;
         background-position: center; 
         background-repeat: no-repeat; 
         background-size: cover;
     }
     .featuresplit .content {
         padding: 1.875rem 1.25rem;
+        text-align: left;
     }
     .featuresplit .content.gradient {
         color: white;
         background: linear-gradient(180deg, var(--il-blue) 0%, var(--il-industrial-blue) 100%);
+    }
+    .featuresplit .content.orange {
+        color: white;
+        background: linear-gradient(180deg, var(--il-orange) 0%, var(--il-altgeld) 100%);
     }
     .featuresplit .content.solid {
         color: white;
@@ -36,7 +40,6 @@ class FeatureSplit extends LitElement {
     }
     @media (min-width: 767px) {
         .featuresplit {
-            min-height: 30vw;
             display: flex;
         }
         .featuresplit.noheight {
@@ -47,9 +50,12 @@ class FeatureSplit extends LitElement {
             padding: 3rem 6rem;
         }
         .featuresplit .content {
+            padding: 1.875rem;
+        }
+    @media (min-width: 993px) {
+        .featuresplit .content {
             padding: 3rem 6rem;
         }
-   
     }
         `;
   }
@@ -64,7 +70,7 @@ class FeatureSplit extends LitElement {
 
 
   render() {
-    var contentClass = this.contentbackground == 'solid' ? 'content solid' : this.contentbackground == 'white' ? 'content' : 'content gradient';
+    var contentClass = (this.contentbackground == 'solid' || this.contentbackground == 'blue') ? 'content solid' : this.contentbackground == 'white' ? 'content' : this.contentbackground == 'orange' ? 'content orange' : 'content gradient';
     var heightOption = this.picture == 'portrait' ? 'featuresplit noheight' : 'featuresplit';
     var leftFlex = this.picture == 'large' ? 2 : 1;
     var rightFlex = this.picture == 'small' ? 2 : this.picture == 'portrait' ? 4 : 1;
