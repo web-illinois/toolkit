@@ -2,7 +2,7 @@ il-hero {
   h1 {
     @include reset-heading;
     font: 700 48px/52px var(--il-source-sans);
-    text-transform: uppercase;
+    text-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
   }
   ul {
     list-style: none;
@@ -24,8 +24,15 @@ il-hero {
         color: white;
         text-decoration: none;
         font: 600 18px/24px var(--il-source-sans);
+        border: 1px solid white;
         border-radius: 4px;
       }
+    }
+  }
+
+  &[duotone] {
+    ul li a {
+      background-color: var(--il-blue);
     }
   }
 }
