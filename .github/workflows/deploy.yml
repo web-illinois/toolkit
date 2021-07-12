@@ -4,6 +4,8 @@ on:
     branches:
     - 'release/**'
     - develop
+    tags:
+    - '*'
 env:
   VERSION: 'dev'
 jobs:
