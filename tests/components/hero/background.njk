@@ -4,8 +4,11 @@ group: "Components: Hero"
 layout: layouts/page.njk
 ---
 
-{% macro hero(image=null, duotone=false) %}
+{% macro hero(image=null, color=null, duotone=false) %}
 <il-hero 
+    {% if color -%}
+    color="{{ color }}"
+    {%- endif %}
     {% if image -%}
     background="{{ image|url if image }}"
     {%- endif %}
@@ -31,6 +34,10 @@ layout: layouts/page.njk
 <h2>Default</h2>
 
 {{ hero() }}
+
+<h2>Orange</h2>
+
+{{ hero(color='orange') }}
 
 <h2>With image</h2>
 

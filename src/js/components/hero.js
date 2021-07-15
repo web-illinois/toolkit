@@ -9,6 +9,7 @@ class Hero extends LitElement {
     return {
         align: {type: String, attribute: true},
         background: {type: String, attribute: true},
+        color: {type: String, attribute: true, default: "blue"},
         duotone: {type: Boolean, attribute: true}
     };
   }
@@ -21,6 +22,7 @@ class Hero extends LitElement {
     super();
     this.align = '';
     this.background = undefined;
+    this.color = "blue";
     this.duotone = false;
   }
 
@@ -41,7 +43,7 @@ class Hero extends LitElement {
 
   render() {
     const alignment = new Alignment(this.align);
-    const heroClass = [];
+    const heroClass = [this.color];
     if (this.duotone) heroClass.push('duotone');
     return html`
         <div class="hero ${heroClass.join(' ')}" data-align-x=${alignment.x} data-align-y=${alignment.y}>

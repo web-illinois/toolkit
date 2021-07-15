@@ -7,6 +7,9 @@ export default css`
   background-color: var(--il-blue);
   color: white;
 }
+.hero.orange {
+  background-color: var(--il-orange);
+}
 .background {
   position: relative;
   width: 100%;
