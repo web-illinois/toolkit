@@ -1,8 +1,22 @@
 il-hero {
   h1 {
     @include reset-heading;
-    font: 700 48px/52px var(--il-source-sans);
+    font: 700 36px var(--il-source-sans);
+    line-height: 1;
     text-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
+    text-align: left !important;
+
+    @media (min-width: 576px) {
+      font-size: 48px;
+    }
+
+    @media (min-width: 768px) {
+      font-size: 64px;
+    }
+
+    @media (min-width: 992px) {
+      font-size: 72px;
+    }
   }
   ul {
     list-style: none;
@@ -18,14 +32,20 @@ il-hero {
       padding: 0;
 
       a {
-        padding: 8px 18px;
-        display: block;
+        @extend .il-button;
         background-color: var(--il-orange);
         color: white;
-        text-decoration: none;
-        font: 600 18px/24px var(--il-source-sans);
-        border: 1px solid white;
-        border-radius: 4px;
+        border-color: white;
+      }
+    }
+  }
+
+  &[color="orange"] {
+    ul li a {
+      background-color: var(--il-blue);
+
+      &:hover, &:focus {
+        background-color: var(--il-orange);
       }
     }
   }
