@@ -1,5 +1,6 @@
 import '../css/components.scss';
 
+import './components/back-to-top';
 import './components/footer';
 import './components/header';
 import './components/hero';
