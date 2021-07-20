@@ -1,0 +1,30 @@
+body {
+  padding: 2em 5em;
+}
+section.example {
+  margin-top: 3em;
+}
+section.example:first-of-type {
+  margin-top: 0;
+}
+section.example > h2 {
+  margin: 0 0 1em;
+  padding: 0;
+  font-size: 1em;
+}
+section.example > article {
+  margin-top: 1em;
+  position: relative;
+  width: 100%;
+}
+section.example > article:first-of-type {
+  margin-top: 0;
+}
+section.example > article.narrow {
+  max-width: 300px;
+}
+section.example > article.medium {
+  max-width: 600px;
+}
+section.example > article.wide {
+}

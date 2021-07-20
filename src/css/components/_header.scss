@@ -1,6 +1,10 @@
 il-header {
   &[view="full"] {
 
+    il-unit-wordmark {
+      width: 100%;
+    }
+
     .il-links {
       ul {
         @include reset-list;

@@ -91,17 +91,15 @@
       top: 0;
       bottom: 0;
     }
+    & + p {
+      margin-top: rem(25px);
+    }
   }
   li {
     @include reset-spacing;
   }
 
   ol {
-    li {
-      &::marker {
-        color: var(--il-blue);
-      }
-    }
     ol {
       list-style-type: lower-alpha;
       ol {
@@ -120,7 +118,6 @@
       list-style: disc;
 
       &::marker {
-        color: rgba(19, 41, 75, .75);
         font-size: .9em;
       }
     }
@@ -184,10 +181,25 @@
   }
   th {
     text-align: left;
-    vertical-align: top;
     font-weight: 700;
-    padding: 0.35em 1em;
-    border: 1px solid white;
+    font-size: 1.2rem;
+    border-top: 1px solid #707070;
+    border-bottom: 1px solid #707070;
+    border-left: none;
+    border-right: none;
+    padding: rem(25px) rem(16px) rem(30px) rem(16px);
+    vertical-align: middle;
+  }
+  thead th {
+    background-color: var(--il-industrial-blue);
+    color: white;
+    font-family: var(--il-source-sans);
+  }
+  th:first-of-type {
+    border-left: 1px solid #707070;
+  }
+  th:last-of-type {
+    border-right: 1px solid #707070;
   }
   thead th {
     background-color: var(--il-industrial-blue);
@@ -196,22 +208,30 @@
   }
   tbody th {
     color: var(--il-blue);
-    border: 1px solid #e1e0e0;
   }
   td {
     text-align: left;
     vertical-align: top;
-    padding: 0.35em 1em;
-    border: 1px solid #e1e0e0;
+    padding: rem(25px) rem(16px);
+    border-top: 1px solid #707070;
+    border-bottom: 1px solid #707070;
+    border-left: none;
+    border-right: none;
     color: var(--il-blue);
   }
-  tr:nth-child(even) {
-    background-color: var(--il-cloud-1);
+  tr:nth-child(odd) {
+    background-color: var(--il-cloud);
   }
 
   pre {
     position: relative;
     max-width: 100%;
     overflow: auto;
+  }
+}
+
+@media (max-width: 767px) {
+  .il-formatted table .il-hide {
+      visibility: collapse;
   }
 }

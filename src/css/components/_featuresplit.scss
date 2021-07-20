@@ -1,0 +1,49 @@
+.il-formatted il-featuresplit, il-featuresplit {
+  display: block;
+  margin-bottom: 20px;
+
+  h2,
+  h3,
+  h4,
+  h5,
+  p
+  {
+    max-width: 900px;
+  }
+
+
+  a.il-button,
+  button {
+    margin-right: 20px;
+    margin-bottom: 20px;
+    width: fit-content;
+    width: -moz-fit-content;
+    text-align: left;
+  }
+}
+
+.il-formatted il-featuresplit:not([contentbackground="white"]), il-featuresplit:not([contentbackground="white"]) {
+    h2,
+    h3,
+    h4,
+    h5,
+    p,
+    a {
+      color: white;
+      text-decoration: initial;
+    }
+
+    a.il-button,
+    button {
+      color: white;
+      background: transparent;
+      border-color: white;
+
+      &:focus,
+      &:hover {
+        background: white;
+        color: var(--il-blue);
+      }
+    }
+}
+

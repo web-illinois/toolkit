@@ -10,7 +10,7 @@ group: Pages
 </il-nav-link>
 {% elif item.type == "section" %}
 <il-nav-section>
-  <a href="#" slot="label" aria-haspopup="true">{{ item.label }}</a>
+  <a href="#" slot="label" aria-haspopup="true"{% if item.current %} aria-current="page"{% endif %}>{{ item.label }}</a>
   <ul class="il-subnav">
     {% for subitem in item.contents %}
     <li>
@@ -24,7 +24,7 @@ group: Pages
 
 {% macro section_nav_item(item) %}
 <li>
-  <a href="#">{{ item.label }}</a>
+  <a href="#"{% if item.current %} aria-current="page"{% endif %}>{{ item.label }}</a>
   {% if item.type == "section" %}
   <ul>
     {% for subitem in item.contents %}
@@ -85,8 +85,11 @@ group: Pages
   <div class="il-main il-content-with-section-nav section-nav-example">
     <div class="il-section-nav">
       <il-section-nav>
+        <h3>
+          <a href="#">{{ sectionNavigation.label }}</a>
+        </h3>
         <ul>
-          {% for item in sectionNavigation %}
+          {% for item in sectionNavigation.contents %}
           {{ section_nav_item(item) }}
           {% endfor %}
           </ul>

@@ -1,0 +1,19 @@
+
+{% for wordmark in wordmarks %}
+<section class="example">
+
+  <h2>{{ wordmark.title }}</h2>
+
+  {% for size in ["narrow", "medium", "wide"] %}
+    <article class="{{ size }}">
+      <il-unit-wordmark>
+        {% if wordmark.parent %}
+        <p class="parent">{{ wordmark.parent }}</p>
+        {% endif %}
+        <h1>{{ wordmark.unit }}</h1>
+      </il-unit-wordmark>
+    </article>
+  {% endfor %}
+  
+</section>
+{% endfor %}
