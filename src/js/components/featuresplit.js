@@ -82,6 +82,10 @@ class FeatureSplit extends LitElement {
 
 
   render() {
+
+    if (this.previousElementSibling != null && this.previousElementSibling.localName == "il-featuresplit" && this.previousElementSibling.getAttribute('align') == null && this.align == '') {
+        this.setAttribute('align', 'right');
+    }
     var contentClass = (this.contentbackground == 'solid' || this.contentbackground == 'blue') ? 'content solid' : this.contentbackground == 'white' ? 'content' : this.contentbackground == 'orange' ? 'content orange' : 'content gradient';
     var heightOption = this.picture == 'portrait' ? 'featuresplit noheight' : 'featuresplit';
     var leftFlex = this.picture == 'large' ? 2 : 1;
