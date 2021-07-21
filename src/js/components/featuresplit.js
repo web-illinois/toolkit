@@ -47,13 +47,25 @@ class FeatureSplit extends LitElement {
         }
         .featuresplit .background {
             min-height: initial;
-            padding: 3rem 6rem;
+            padding: 3rem 4rem;
         }
         .featuresplit .content {
             padding: 1.875rem;
         }
+    }
     @media (min-width: 993px) {
         .featuresplit .content {
+            padding: 3rem 2.2vw;
+        }
+        .featuresplit .background {
+            padding: 3rem 2.2vw;
+        }
+    }
+    @media (min-width: 1450px) {
+        .featuresplit .content {
+            padding: 3rem 6rem;
+        }
+        .featuresplit .background {
             padding: 3rem 6rem;
         }
     }
