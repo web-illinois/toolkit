@@ -1,0 +1,87 @@
+.il-formatted {
+  details {
+    margin-bottom: 20px;
+
+    summary {
+      list-style-type: none;
+      cursor: pointer;
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      font-size: 1.2rem;
+      padding: 10px 0;
+      background: var(--il-gray-1);
+      font-weight: 700;
+      color: var(--il-blue);
+
+      &:focus,
+      &:hover {
+        background: var(--il-cloud-1);
+      }
+
+      &::marker,
+      &::-webkit-details-marker {
+        display: none;
+      }
+
+      p,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        margin: 0;
+        padding: 0;
+        display: inline-block;
+      }
+
+      &::before {
+        content: "\e923";
+        font-family: var(--il-icons-solid);
+        color: var(--il-blue);
+        padding: 0 3px 0 3px;
+        margin: 0 12px 0 10px;
+        font-size: 1.5rem;
+        position: relative;
+        border-radius: 3px;
+      }
+    }
+  }
+
+  .il-details-bordered {
+    details {
+      border: thin solid var(--il-blue);
+
+      > * {
+        margin-left: 52px;
+      }
+
+      summary {
+        margin-left: 0;
+        padding: 20px 10px 10px 10px;
+        background: white;
+        color: var(--il-blue);
+      }
+    }
+  }
+
+  details[open] summary::before {
+    content: "\e91e";
+  }
+
+  details[open] summary ~ * {
+    animation: accordionsweep 0.5s ease-in-out;
+  }
+}
+
+@keyframes accordionsweep {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
