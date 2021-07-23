@@ -30,7 +30,7 @@
   h2 {
     @include reset-heading;
     @include heading-spacing;
-    font: 600 rem(32px) / rem(40px) var(--il-source-sans);
+    font: 600 rem(35px) / rem(45px) var(--il-source-sans);
     color: var(--il-blue);
   }
   h3 {
