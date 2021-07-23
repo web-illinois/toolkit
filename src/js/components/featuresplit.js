@@ -21,6 +21,7 @@ class FeatureSplit extends LitElement {
         background-position: center; 
         background-repeat: no-repeat; 
         background-size: cover;
+        min-height: 250px;
     }
     .featuresplit .content {
         padding: 1.875rem 1.25rem;
