@@ -1,72 +1,74 @@
 import {LitElement, html, css} from 'lit-element';
 
-class FeatureSplit extends LitElement {
+class ImageFeature extends LitElement {
 
   static get properties() {
     return {
-        picture: {type: String, attribute: true},
+        size: {type: String, attribute: true},
         background: {type: String, attribute: true},
-        contentbackground: {type: String, attribute: true},
+        src: {type: String, attribute: true},
+        alt: {type: String, attribute: true},
         align: {type: String, attribute: true}
     };
   }
 
   static get styles() {
     return css`
-    .featuresplit {
+    .imagefeature {
         display: block;
     }
-    .featuresplit .background {
+    .imagefeature .background {
         padding: 1.875rem 1.25rem;
         background-position: center; 
         background-repeat: no-repeat; 
         background-size: cover;
         min-height: 250px;
+        color: transparent;
     }
-    .featuresplit .content {
+    .imagefeature .content {
         padding: 1.875rem 1.25rem;
         text-align: left;
     }
-    .featuresplit .content.gradient {
+    .imagefeature .content.gradient {
         color: white;
         background: linear-gradient(180deg, var(--il-blue) 0%, var(--il-industrial-blue) 100%);
     }
-    .featuresplit .content.orange {
+    .imagefeature .content.orange {
         color: white;
         background: linear-gradient(180deg, var(--il-orange) 0%, var(--il-altgeld) 100%);
     }
-    .featuresplit .content.solid {
+    .imagefeature .content.solid {
         color: white;
         background: var(--il-blue);
     }
     @media (min-width: 767px) {
-        .featuresplit {
+        .imagefeature {
             display: flex;
         }
-        .featuresplit.noheight {
+        .imagefeature.noheight {
             min-height: 10vw;
         }
-        .featuresplit .background {
+        .imagefeature .background {
             min-height: initial;
             padding: 3rem 4rem;
         }
-        .featuresplit .content {
+        .imagefeature .content {
             padding: 1.875rem;
         }
     }
     @media (min-width: 993px) {
-        .featuresplit .content {
+        .imagefeature .content {
             padding: 3rem 2.2vw;
         }
-        .featuresplit .background {
+        .imagefeature .background {
             padding: 3rem 2.2vw;
         }
     }
     @media (min-width: 1450px) {
-        .featuresplit .content {
+        .imagefeature .content {
             padding: 3rem 6rem;
         }
-        .featuresplit .background {
+        .imagefeature .background {
             padding: 3rem 6rem;
         }
     }
@@ -75,22 +77,23 @@ class FeatureSplit extends LitElement {
 
   constructor() {
     super();
-    this.picture = '';
-    this.background = undefined;
-    this.contentbackground = '';
+    this.size = '';
+    this.src = undefined;
+    this.alt = '';
+    this.background = '';
     this.align = '';
   }
 
 
   render() {
 
-    if (this.previousElementSibling != null && this.previousElementSibling.localName == "il-feature-split" && this.previousElementSibling.getAttribute('align') == null && this.align == '') {
+    if (this.previousElementSibling != null && this.previousElementSibling.localName == "il-image-feature" && this.previousElementSibling.getAttribute('align') == null && this.align == '') {
         this.setAttribute('align', 'right');
     }
-    var contentClass = (this.contentbackground == 'solid' || this.contentbackground == 'blue') ? 'content solid' : this.contentbackground == 'white' ? 'content' : this.contentbackground == 'orange' ? 'content orange' : 'content gradient';
-    var heightOption = this.picture == 'portrait' ? 'featuresplit noheight' : 'featuresplit';
-    var leftFlex = this.picture == 'large' ? 2 : 1;
-    var rightFlex = this.picture == 'small' ? 2 : this.picture == 'portrait' ? 4 : 1;
+    var contentClass = (this.background == 'solid' || this.background == 'blue') ? 'content solid' : this.background == 'white' ? 'content' : this.background == 'orange' ? 'content orange' : 'content gradient';
+    var heightOption = this.size == 'portrait' ? 'imagefeature noheight' : 'imagefeature';
+    var leftFlex = this.size == 'large' ? 2 : 1;
+    var rightFlex = this.size == 'small' ? 2 : this.size == 'portrait' ? 4 : 1;
     if (this.align == 'right')
     {
         return html`
@@ -98,15 +101,13 @@ class FeatureSplit extends LitElement {
             <div class="${contentClass}" style="flex: ${rightFlex};">
                 <slot></slot>
             </div>
-            <div class="background" role="presentation" style="background-image: url('${this.background}'); flex: ${leftFlex};">
-            </div>
+            <div class="background" role="presentation" style="background-image: url('${this.src}'); flex: ${leftFlex};">${this.alt}</div>
         </div>
         `;
     }
     return html`
         <div class="${heightOption}">
-            <div class="background" role="presentation" style="background-image: url('${this.background}'); flex: ${leftFlex};">
-            </div>
+            <div class="background" role="presentation" style="background-image: url('${this.src}'); flex: ${leftFlex};">${this.alt}</div>
             <div class="${contentClass}" style="flex: ${rightFlex};">
                 <slot></slot>
             </div>
@@ -115,4 +116,4 @@ class FeatureSplit extends LitElement {
   }
 }
 
-customElements.define('il-feature-split', FeatureSplit);
+customElements.define('il-image-feature', ImageFeature);
