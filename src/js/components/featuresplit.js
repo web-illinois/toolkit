@@ -84,7 +84,7 @@ class FeatureSplit extends LitElement {
 
   render() {
 
-    if (this.previousElementSibling != null && this.previousElementSibling.localName == "il-featuresplit" && this.previousElementSibling.getAttribute('align') == null && this.align == '') {
+    if (this.previousElementSibling != null && this.previousElementSibling.localName == "il-feature-split" && this.previousElementSibling.getAttribute('align') == null && this.align == '') {
         this.setAttribute('align', 'right');
     }
     var contentClass = (this.contentbackground == 'solid' || this.contentbackground == 'blue') ? 'content solid' : this.contentbackground == 'white' ? 'content' : this.contentbackground == 'orange' ? 'content orange' : 'content gradient';
@@ -115,4 +115,4 @@ class FeatureSplit extends LitElement {
   }
 }
 
-customElements.define('il-featuresplit', FeatureSplit);
+customElements.define('il-feature-split', FeatureSplit);
