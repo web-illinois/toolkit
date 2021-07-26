@@ -16,7 +16,7 @@ export default css`
   height: 223px;
   overflow: hidden;
 }
-.hero.duotone .background {
+.hero.with-duotone .background {
   background-color: var(--il-orange);
 }
 .background-image {
@@ -36,7 +36,7 @@ export default css`
   object-fit: cover;
   object-position: center;
 }
-.hero.duotone .background-image img {
+.hero.with-duotone .background-image img {
   filter: brightness(125%) contrast(125%) grayscale(100%);
   mix-blend-mode: multiply;
 }
