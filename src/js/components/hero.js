@@ -26,10 +26,12 @@ class Hero extends LitElement {
     this.duotone = false;
   }
 
-  renderDuotone() {
-      return html`
-        <div class="duotone overlay duotone--light"></div>
-        <div class="gradient overlay duotone--dark"></div>
+  renderBackground() {
+    return html`
+      <div class="background" role="presentation">
+          ${this.duotone ? this.renderDuotone(): ''}
+          ${this.background ? this.renderBackgroundImage() : ''}
+      </div>
     `;
   }
 
@@ -41,16 +43,21 @@ class Hero extends LitElement {
     `;
   }
 
+  renderDuotone() {
+    return html`
+      <div class="duotone overlay duotone--light"></div>
+      <div class="gradient overlay duotone--dark"></div>
+  `;
+}
+
   render() {
     const alignment = new Alignment(this.align);
     const heroClass = [this.color];
-    if (this.duotone) heroClass.push('duotone');
+    if (this.background) heroClass.push('with-background');
+    if (this.duotone) heroClass.push('with-duotone');
     return html`
         <div class="hero ${heroClass.join(' ')}" data-align-x=${alignment.x} data-align-y=${alignment.y}>
-            <div class="background" role="presentation">
-                ${this.duotone ? this.renderDuotone(): ''}
-                ${this.background ? this.renderBackgroundImage() : ''}
-            </div>
+            ${this.background ? this.renderBackground() : ''}
             <div class="content">
                 <slot></slot>
             </div>
