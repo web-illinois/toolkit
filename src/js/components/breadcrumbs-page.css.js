@@ -4,12 +4,12 @@ export default css`
   :host {
     counter-increment: breadcrumb;
   }
-  :host(*:last-of-type) {
-    font-weight: 700;
-  }
   li {
     display: inline;
     color: #252525;
+  }
+  li.current {
+    font-weight: 700;
   }
   a {
     color: var(--il-link-color);
