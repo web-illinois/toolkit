@@ -1,5 +1,7 @@
 import '../css/components.scss';
 
+import './components/breadcrumbs';
+import './components/breadcrumbs-page';
 import './components/footer';
 import './components/header';
 import './components/hero';
