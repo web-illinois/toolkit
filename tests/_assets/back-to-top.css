@@ -1,0 +1,15 @@
+.header-placeholder, .footer-placeholder {
+  position: relative;
+  height: 40vh;
+  background-color: #333;
+}
+.body-placeholder div {
+  position: relative;
+  height: 20vh;
+}
+.body-placeholder div:nth-child(odd) {
+  background-color: #999;
+}
+.body-placeholder div:nth-child(even) {
+  background-color: #ccc;
+}
