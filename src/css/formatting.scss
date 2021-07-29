@@ -179,6 +179,9 @@
     width: 100%;
     overflow: auto;
   }
+  table caption {
+    text-align: left;
+  }
   th {
     text-align: left;
     font-weight: 700;
