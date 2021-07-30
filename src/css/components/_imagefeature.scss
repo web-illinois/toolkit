@@ -23,6 +23,10 @@
     width: max-content;
     width: -moz-max-content;
     text-align: left;
+
+    &:last-of-type {
+      margin-right: 0;
+    }
   }
 }
 
