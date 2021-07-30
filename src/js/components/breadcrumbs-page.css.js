@@ -12,9 +12,6 @@ export default css`
     color: #252525;
     vertical-align: baseline;
   }
-  li.current {
-    font-weight: 700;
-  }
   .separator {
     position: relative;
     display: inline-block;
