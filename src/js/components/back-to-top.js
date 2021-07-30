@@ -34,11 +34,11 @@ class BackToTop extends LitElement {
   }
 
   getFoldPosition() {
-    return window.innerHeight;
+    return window.innerHeight * .8;
   }
 
   getNextScrollPosition() {
-    return Math.max(0, this.getScrollPosition() - 20);
+    return Math.max(0, this.getScrollPosition() - 50);
   }
 
   getScrollPosition() {

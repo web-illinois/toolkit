@@ -6,10 +6,14 @@
 .body-placeholder div {
   position: relative;
   height: 20vh;
-}
-.body-placeholder div:nth-child(odd) {
   background-color: #999;
 }
+.body-placeholder div:nth-child(-n+3) {
+  background-color: var(--il-industrial-blue);
+}
+.body-placeholder div:nth-child(odd) {
+  opacity: .5;
+}
 .body-placeholder div:nth-child(even) {
-  background-color: #ccc;
+  opacity: .25;
 }
