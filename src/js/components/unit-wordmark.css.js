@@ -33,9 +33,6 @@ export default css`
   outline-color: none;
 }
 
-.campus a:focus .block-i__outline, .campus a:hover .block-i__outline {
-  fill: var(--il-orange);
-}
 .campus a:focus .block-i__fill, .campus a:hover .block-i__fill {
   fill: var(--il-blue);
 }

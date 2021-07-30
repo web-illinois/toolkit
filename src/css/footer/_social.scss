@@ -32,8 +32,8 @@
     color: white;
   }
   a:focus {
-    outline: var(--il-dotted-focus-outline);
-    outline-color: var(--il-orange);
+    outline: none;
+    outline-color: none;
   }
   a[href^="https://www.facebook.com/"],
   a[href^="https://www.instagram.com/"],
