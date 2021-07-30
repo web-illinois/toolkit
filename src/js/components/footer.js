@@ -69,7 +69,10 @@ class Footer extends LitElement {
 }
 .campus-wordmark a:focus, .campus-wordmark a:hover {
     outline: rgb(255, 255, 255) dotted 2px;
-  }  
+}
+.campus-wordmark svg {
+    display: block;
+}  
 .block-i__outline {
     fill: white;
 }
