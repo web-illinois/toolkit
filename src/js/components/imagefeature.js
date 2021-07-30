@@ -31,7 +31,7 @@ class ImageFeature extends LitElement {
     }
     .imagefeature .content.gradient {
         color: white;
-        background: linear-gradient(180deg, var(--il-blue) 0%, var(--il-industrial-blue) 100%);
+        background: linear-gradient(180deg, var(--il-industrial-blue) 0%, var(--il-blue) 100%);
     }
     .imagefeature .content.orange {
         color: white;
