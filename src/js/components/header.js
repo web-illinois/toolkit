@@ -155,6 +155,7 @@ class Header extends LitElement {
     top: 100%;
     right: 0;
     box-shadow: -10px 10px 10px rgba(0, 0, 0, .25);
+    z-index: 5000;
 }
 .header--compact .menu .search {
     background-color: white;

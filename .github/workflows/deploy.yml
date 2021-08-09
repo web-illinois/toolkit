@@ -4,7 +4,7 @@ on:
     branches:
     - 'release/**'
     - develop
-    tags:        
+    tags:
     - '*'
 env:
   VERSION: 'dev'

@@ -4,16 +4,16 @@ group: "Components: Hero"
 layout: layouts/page.njk
 ---
 
-{% macro hero(image=null, gradient=false, fingerprint=false) %}
+{% macro hero(image=null, color=null, duotone=false) %}
 <il-hero 
+    {% if color -%}
+    color="{{ color }}"
+    {%- endif %}
     {% if image -%}
     background="{{ image|url if image }}"
     {%- endif %}
-    {% if fingerprint -%}
-    fingerprint
-    {%- endif %}
-    {% if gradient -%}
-    gradient
+    {% if duotone -%}
+    duotone
     {%- endif %}
     >
     <h1>Innovating solutions every year</h1>
@@ -35,30 +35,10 @@ layout: layouts/page.njk
 
 {{ hero() }}
 
+<h2>Orange</h2>
+
+{{ hero(color='orange') }}
+
 <h2>With image</h2>
 
 {{ hero(image='/_assets/images/hero-bg.jpg') }}
-
-<h2>With gradient</h2>
-
-{{ hero(gradient=true) }}
-
-<h2>With fingerprint</h2>
-
-{{ hero(fingerprint=true) }}
-
-<h2>With image and gradient</h2>
-
-{{ hero(image='/_assets/images/hero-bg.jpg', gradient=true) }}
-
-<h2>With image and fingerprint</h2>
-
-{{ hero(image='/_assets/images/hero-bg.jpg', fingerprint=true) }}
-
-<h2>With gradient and fingerprint</h2>
-
-{{ hero(gradient=true, fingerprint=true) }}
-
-<h2>With image, gradient and fingerprint</h2>
-
-{{ hero(image='/_assets/images/hero-bg.jpg', gradient=true, fingerprint=true) }}

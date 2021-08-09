@@ -1,12 +1,26 @@
 il-hero {
   h1 {
     @include reset-heading;
-    font: 700 48px/52px var(--il-source-sans);
-    text-transform: uppercase;
+    font: 700 36px var(--il-source-sans);
+    line-height: 1;
+    text-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
+    text-align: inherit !important;
+
+    @media (min-width: 576px) {
+      font-size: 48px;
+    }
+
+    @media (min-width: 768px) {
+      font-size: 64px;
+    }
+
+    @media (min-width: 992px) {
+      font-size: 72px;
+    }
   }
   ul {
     list-style: none;
-    margin: 18px -32px -18px 0;
+    margin: 30px -32px -18px 0;
     padding: 0;
     display: flex;
     flex-direction: row;
@@ -18,14 +32,22 @@ il-hero {
       padding: 0;
 
       a {
-        padding: 8px 18px;
-        display: block;
-        background-color: var(--il-orange);
-        color: white;
-        text-decoration: none;
-        font: 600 18px/24px var(--il-source-sans);
-        border-radius: 4px;
+        @extend .il-button;
+        --color-primary: var(--il-orange);
+        --color-secondary: white;
       }
+    }
+  }
+
+  &[color="orange"] {
+    ul li a {
+      --color-primary: var(--il-blue);
+    }
+  }
+
+  &[duotone] {
+    ul li a {
+      --color-primary: var(--il-blue);
     }
   }
 }
