@@ -16,7 +16,7 @@ export default css`
   height: 223px;
   overflow: hidden;
 }
-.hero.duotone .background {
+.hero.with-duotone .background {
   background-color: var(--il-orange);
 }
 .background-image {
@@ -36,7 +36,7 @@ export default css`
   object-fit: cover;
   object-position: center;
 }
-.hero.duotone .background-image img {
+.hero.with-duotone .background-image img {
   filter: brightness(125%) contrast(125%) grayscale(100%);
   mix-blend-mode: multiply;
 }
@@ -75,14 +75,14 @@ export default css`
   position: relative;
   box-sizing: border-box;
   color: white;
-  padding: 18px;
+  padding: 18px 18px 36px;
 }
 @media (min-width: 576px) {
   .background {
       height: 315px;
   }
   .content {
-      padding: 36px;
+      padding: 36px 36px 72px;
   }
 }
 @media (min-width: 767px) {
@@ -97,7 +97,7 @@ export default css`
   .content {
       min-height: 417px;
       z-index: 100;
-      padding: 80px;
+      padding: 60px 80px 80px;
       display: flex;
       flex-direction: column;
       justify-content: center;
