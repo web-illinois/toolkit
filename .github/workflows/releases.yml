@@ -1,0 +1,86 @@
+name: releases
+on:
+  push:
+    branches: [ 'releases/**' ]
+    tags: [ '**' ]
+  pull_request:
+    branches: [ 'releases/**' ]
+    tags: [ '**' ]
+env:
+  MAJORVERSION: ''
+  MINORVERSION: ''
+  FULLVERSION: ''
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v1
+    - name: Get Version
+      id: get_version
+      uses: battila7/get-version-action@v2
+
+    - name: Check for correct naming convention
+      if: ${{ !steps.get_version.outputs.is-semver }}
+      run: exit 1
+    - name: Get major version from release branch
+      run: echo "MAJORVERSION=${GITHUB_BRANCH}" >> $GITHUB_ENV
+      env: 
+        GITHUB_BRANCH: ${{ steps.get_version.outputs.major }}
+    - name: Get minor version from release branch
+      run: echo "MINORVERSION=${GITHUB_BRANCH}.${GITHUB_BRANCH_MINOR}" >> $GITHUB_ENV
+      env: 
+        GITHUB_BRANCH: ${{ steps.get_version.outputs.major }}
+        GITHUB_BRANCH_MINOR: ${{ steps.get_version.outputs.minor }}
+    - name: Get full version from release branch
+      run: echo "FULLVERSION=${GITHUB_BRANCH}" >> $GITHUB_ENV
+      env: 
+        GITHUB_BRANCH: ${{ steps.get_version.outputs.version-without-v }}
+    - name: Display version major install
+      run: echo "Installing major version ${MAJORVERSION}"
+    - name: Display version minor install
+      run: echo "Installing minor version ${MINORVERSION}"
+    - name: Display version full install
+      run: echo "Installing full version ${FULLVERSION}"
+
+    - run: npm install
+    - run: npm rebuild
+    - run: npm run-script build
+    - name: Configure AWS Credentials
+      uses: aws-actions/configure-aws-credentials@v1
+      with:
+        aws-access-key-id: ${{ secrets.CDN_ACCESS_KEY_ID }}
+        aws-secret-access-key: ${{ secrets.CDN_SECRET_ACCESS_KEY }}
+        aws-region: us-east-2
+
+    - name: Deploy toolbox to S3 bucket for major version
+      run: aws s3 sync ./dist/ s3://cdn.brand.illinois.edu/toolkit/$MAJORVERSION --delete --acl bucket-owner-full-control
+    - name: Build examples for major version
+      run: npm run-script create-test-html -- --pathprefix='/toolkit/$MAJORVERSION/examples/'
+    - name: Deploy examples to S3 bucket for major version
+      run: aws s3 sync ./var/full-site-deploy/ s3://cdn.brand.illinois.edu/toolkit/$MAJORVERSION/examples --delete --acl bucket-owner-full-control
+    - name: Deploy static images in examples to S3 bucket for major version
+      run: aws s3 sync ./tests/_reference/ s3://cdn.brand.illinois.edu/toolkit/$MAJORVERSION/examples/static-images --acl bucket-owner-full-control
+    - name: Invalidate Cloudfront cache for major version
+      run: aws cloudfront create-invalidation --distribution-id E2VPGHCUOM84HO --paths "/toolkit/$MAJORVERSION*"
+
+    - name: Deploy toolbox to S3 bucket for minor version
+      run: aws s3 sync ./dist/ s3://cdn.brand.illinois.edu/toolkit/$MINORVERSION --delete --acl bucket-owner-full-control
+    - name: Build examples for minor version
+      run: npm run-script create-test-html -- --pathprefix='/toolkit/$MINORVERSION/examples/'
+    - name: Deploy examples to S3 bucket for minor version
+      run: aws s3 sync ./var/full-site-deploy/ s3://cdn.brand.illinois.edu/toolkit/$MINORVERSION/examples --delete --acl bucket-owner-full-control
+    - name: Deploy static images in examples to S3 bucket for minor version
+      run: aws s3 sync ./tests/_reference/ s3://cdn.brand.illinois.edu/toolkit/$MINORVERSION/examples/static-images --acl bucket-owner-full-control
+    - name: Invalidate Cloudfront cache for minor version
+      run: aws cloudfront create-invalidation --distribution-id E2VPGHCUOM84HO --paths "/toolkit/$MINORVERSION*"
+
+    - name: Deploy toolbox to S3 bucket for full version
+      run: aws s3 sync ./dist/ s3://cdn.brand.illinois.edu/toolkit/$FULLVERSION --delete --acl bucket-owner-full-control
+    - name: Build examples for full version
+      run: npm run-script create-test-html -- --pathprefix='/toolkit/$FULLVERSION/examples/'
+    - name: Deploy examples to S3 bucket for full version
+      run: aws s3 sync ./var/full-site-deploy/ s3://cdn.brand.illinois.edu/toolkit/$FULLVERSION/examples --delete --acl bucket-owner-full-control
+    - name: Deploy static images in examples to S3 bucket for full version
+      run: aws s3 sync ./tests/_reference/ s3://cdn.brand.illinois.edu/toolkit/$FULLVERSION/examples/static-images --acl bucket-owner-full-control
+    - name: Invalidate Cloudfront cache for full version
+      run: aws cloudfront create-invalidation --distribution-id E2VPGHCUOM84HO --paths "/toolkit/$FULLVERSION*"

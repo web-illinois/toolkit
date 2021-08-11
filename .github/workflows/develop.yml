@@ -1,11 +1,11 @@
-name: CI
+name: develop
 on:
   push:
-    branches:
-    - 'release/**'
-    - develop
-    tags:
-    - '*'
+    branches: [ develop ]
+  pull_request:
+    branches: [ develop ]
+
+  workflow_dispatch:
 env:
   VERSION: 'dev'
 jobs:
@@ -13,11 +13,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v1
-    - name: Set version if in release branch
-      if: ${{ github.ref != 'refs/heads/develop' }}
-      run: echo "VERSION=${GITHUB_BRANCH##*/}" >> $GITHUB_ENV
-      env: 
-        GITHUB_BRANCH: ${{ github.ref }}
     - name: Display version install
       run: echo "Installing version ${VERSION}"
     - run: npm install
