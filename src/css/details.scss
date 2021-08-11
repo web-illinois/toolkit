@@ -1,22 +1,42 @@
+:root {
+    --il-details-content: "\00a0";
+    --il-details-contentopen: "\00a0";
+    --il-details-image: url("data:image/svg+xml, %3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 448 512'%3E%3Cpath d='M207.029 381.476L12.686 187.132c-9.373-9.373-9.373-24.569 0-33.941l22.667-22.667c9.357-9.357 24.522-9.375 33.901-.04L224 284.505l154.745-154.021c9.379-9.335 24.544-9.317 33.901.04l22.667 22.667c9.373 9.373 9.373 24.569 0 33.941L240.971 381.476c-9.373 9.372-24.569 9.372-33.942 0z'/%3E%3C/svg%3E");
+    --il-details-transformopen: rotate(0deg);
+    --il-details-transform: rotate(270deg);
+    --il-details-marginleft: 50px;
+    --il-details-background: var(--il-gray-1);
+    --il-details-background-hover: var(--il-cloud-1);
+    --il-details-color: var(--il-blue);
+    --il-details-bordered-marginleft: 48px;
+    --il-details-animation: none;
+    --il-details-bordered-maxwidth: 900px;
+}
+
 .il-formatted {
   details {
     margin-bottom: 20px;
 
+    > * {
+      margin-left: var(--il-details-marginleft);
+      margin-right: 30px;
+    }
+
     summary {
       list-style-type: none;
       cursor: pointer;
-      margin-bottom: 8px;
+      margin: 0 0 8px 0;
       display: flex;
       align-items: center;
-      font-size: 1.2rem;
-      padding: 10px 0;
-      background: var(--il-gray-1);
-      font-weight: 700;
-      color: var(--il-blue);
+      font-size: 1.4rem;
+      padding: 30px 0 30px 10px;
+      background: var(--il-details-background);
+      font-weight: 500;
+      color: var(--il-details-color);
 
       &:focus,
       &:hover {
-        background: var(--il-cloud-1);
+        background-image: var(--il-details-background-hover);
       }
 
       &::marker,
@@ -36,12 +56,16 @@
       }
 
       &::before {
-        content: "\e923";
+        content: var(--il-details-content);
+        background-image: var(--il-details-image);
+        transform: var(--il-details-transform);
+        background-position: center;
+        background-repeat: no-repeat;
         font-family: var(--il-icons-solid);
-        color: var(--il-blue);
+        color: var(--il-details-color);
         padding: 0 3px 0 3px;
-        margin: 0 12px 0 10px;
-        font-size: 1.5rem;
+        margin: 0 15px 0 10px;
+        font-size: 1.2rem;
         position: relative;
         border-radius: 3px;
       }
@@ -53,7 +77,7 @@
       border: thin solid var(--il-blue);
 
       > * {
-        margin-left: 52px;
+        margin-left: var(--il-details-marginleft);
       }
 
       summary {
@@ -66,11 +90,13 @@
   }
 
   details[open] summary::before {
-    content: "\e91e";
+    content: var(--il-details-contentopen);
+    transform: var(--il-details-transformopen);
   }
 
   details[open] summary ~ * {
-    animation: accordionsweep 0.5s ease-in-out;
+    // animation: accordionsweep 0.5s ease-in-out;
+    animation: none;
   }
 }
 
