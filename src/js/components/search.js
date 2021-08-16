@@ -1,4 +1,4 @@
-import {LitElement, html, css} from 'lit-element';
+import {LitElement, html, css} from 'lit';
 
 class Search extends LitElement {
   static get properties() {

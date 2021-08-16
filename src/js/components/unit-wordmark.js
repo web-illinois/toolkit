@@ -1,4 +1,4 @@
-import { LitElement, html } from 'lit-element';
+import { LitElement, html } from 'lit';
 import styles from './unit-wordmark.css';
 
 const breakpoint = 400;

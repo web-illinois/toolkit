@@ -1,4 +1,4 @@
-import { html } from 'lit-element';
+import { html } from 'lit';
 
 export default html`<svg width="1440" height="836" viewBox="0 0 1440 836">
     <g class="fingerprint" fill="none" fill-rule="evenodd">

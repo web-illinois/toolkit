@@ -1,4 +1,4 @@
-import { LitElement, html } from 'lit-element';
+import { LitElement, html } from 'lit';
 import styles from './breadcrumbs.css';
 
 class Breadcrumbs extends LitElement {

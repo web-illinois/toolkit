@@ -1,4 +1,4 @@
-import {LitElement, html} from 'lit-element';
+import {LitElement, html} from 'lit';
 import fingerprint from '../elements/fingerprint';
 import Alignment from '../lib/alignment';
 import styles from './hero.css';

@@ -1,4 +1,4 @@
-import {LitElement, html} from 'lit-element';
+import {LitElement, html} from 'lit';
 import styles from './nav-section.css'
 
 class NavigationSection extends LitElement {
