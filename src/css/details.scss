@@ -6,7 +6,7 @@
     --il-details-transform: rotate(270deg);
     --il-details-marginleft: 50px;
     --il-details-background: var(--il-gray-1);
-    --il-details-background-hover: var(--il-cloud-1);
+    --il-details-background-hover: var(--il-cloud-2);
     --il-details-color: var(--il-blue);
     --il-details-bordered-marginleft: 48px;
     --il-details-animation: none;
@@ -36,7 +36,7 @@
 
       &:focus,
       &:hover {
-        background-image: var(--il-details-background-hover);
+        background: var(--il-details-background-hover);
       }
 
       &::marker,
@@ -80,11 +80,21 @@
         margin-left: var(--il-details-marginleft);
       }
 
+      > *:nth-child(2) {
+        margin-top: 8px;
+      }
+
       summary {
         margin-left: 0;
-        padding: 20px 10px 10px 10px;
+        padding: 20px 10px 18px 10px;
+        margin-bottom: 0;
         background: white;
         color: var(--il-blue);
+
+        &:focus,
+        &:hover {
+          background: var(--il-details-background-hover);
+        }
       }
     }
   }
