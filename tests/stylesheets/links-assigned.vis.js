@@ -3,74 +3,36 @@ const util = require('../tests.util');
 const url = util.testUrl(__filename);
 
 module.exports = (viewports) => {
-  return [
+  const linkGroup = 'links-assigned';
+  const linkIds = [
+    'link-blank',
+    'link-override',
+    'link-control',
+    'link-class'
+  ];
+  const tests = [
     {
-      url, 'label': 'links',
+      url, 'label': linkGroup,
       'viewports': [viewports.desktop]
     },
-    {
-      url, 'label': 'links-hover',
-      'viewports': [viewports.desktop],
-      'onReady': async (page, scenario) => {
-        await page.hover('#link');
-        await page.waitFor(500);
-      }
-    },
-    {
-      url, 'label': 'links-focus',
-      'viewports': [viewports.desktop],
-      'onReady': async (page, scenario) => {
-        await util.moveFocus(page, '#link');
-        await page.waitFor(500);
-      }
-    },
-    {
-      url, 'label': 'links-inline-hover',
-      'viewports': [viewports.desktop],
-      'onReady': async (page, scenario) => {
-        await page.hover('#inline-link');
-        await page.waitFor(500);
-      }
-    },
-    {
-      url, 'label': 'links-inline-focus',
-      'viewports': [viewports.desktop],
-      'onReady': async (page, scenario) => {
-        await util.moveFocus(page, '#inline-link');
-        await page.waitFor(500);
-      }
-    },
-    {
-      url, 'label': 'links-linebreak-hover',
-      'viewports': [viewports.desktop],
-      'onReady': async (page, scenario) => {
-        await page.hover('#link-with-linebreak');
-        await page.waitFor(500);
-      }
-    },
-    {
-      url, 'label': 'links-linebreak-focus',
-      'viewports': [viewports.desktop],
-      'onReady': async (page, scenario) => {
-        await util.moveFocus(page, '#link-with-linebreak');
-        await page.waitFor(500);
-      }
-    },
-    {
-      url, 'label': 'links-multiline-hover',
-      'viewports': [viewports.desktop],
-      'onReady': async (page, scenario) => {
-        await page.hover('#multiline-link');
-        await page.waitFor(500);
-      }
-    },
-    {
-      url, 'label': 'links-multiline-focus',
-      'viewports': [viewports.desktop],
-      'onReady': async (page, scenario) => {
-        await util.moveFocus(page, '#multiline-link');
-        await page.waitFor(500);
-      }
-    }
   ];
+  linkIds.forEach(id => {
+    tests.push({
+      url, 'label': `${linkGroup}-${id}-hover`,
+      'viewports': [viewports.desktop],
+      'onReady': async (page, scenario) => {
+        await page.hover(`#${id}`);
+        await page.waitFor(500);
+      }
+    });
+    tests.push({
+      url, 'label': `${linkGroup}-${id}-focus`,
+      'viewports': [viewports.desktop],
+      'onReady': async (page, scenario) => {
+        await util.moveFocus(page, `#${id}`);
+        await page.waitFor(500);
+      }
+    });
+  })
+  return tests;
 }
