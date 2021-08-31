@@ -87,10 +87,10 @@
   grid-gap: 61px;
 
   nav {
-    margin-top: 61px;
+    margin-bottom: 61px;
 
-    &:first-child {
-      margin-top: 0;
+    &:last-child {
+      margin-bottom: 0;
     }
   }
 
@@ -99,10 +99,10 @@
     grid-template-columns: repeat(2, 1fr);
 
     nav {
-      margin-top: 50px;
+      margin-bottom: 50px;
 
-      &:first-child {
-        margin-top: 0;
+      &:last-child {
+        margin-bottom: 0;
       }
     }
 
