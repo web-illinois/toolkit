@@ -8,6 +8,7 @@ class Hero extends LitElement {
   static get properties() {
     return {
         align: {type: String, attribute: true},
+        alt: {type: String, attribute: true},
         background: {type: String, attribute: true},
         color: {type: String, attribute: true, default: "blue"},
         duotone: {type: Boolean, attribute: true}
@@ -21,6 +22,7 @@ class Hero extends LitElement {
   constructor() {
     super();
     this.align = '';
+    this.alt = '';
     this.background = undefined;
     this.color = "blue";
     this.duotone = false;
@@ -38,7 +40,7 @@ class Hero extends LitElement {
   renderBackgroundImage() {
     return html`
         <div class="background-image">
-            <img src="${this.background}" alt="">
+            <img src="${this.background}" alt="${this.alt}">
         </div>
     `;
   }
