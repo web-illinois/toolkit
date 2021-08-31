@@ -1,4 +1,4 @@
-import {css} from 'lit';
+import { css } from 'lit';
 
 export default css`
 
@@ -71,18 +71,25 @@ export default css`
   height: 100%:
   object-fit: cover;
 }
+.content-outer {
+  padding-left: var(--il-content-margin);
+  padding-right: var(--il-content-margin);
+}
 .content {
   position: relative;
   box-sizing: border-box;
+  width: 100%;
+  max-width: var(--il-content-max-width);
   color: white;
-  padding: 18px 18px 36px;
+  margin: 0 auto;
+  padding: 18px 0 36px;
 }
 @media (min-width: 576px) {
   .background {
       height: 315px;
   }
   .content {
-      padding: 36px 36px 72px;
+      padding: 36px 0 72px;
   }
 }
 @media (min-width: 767px) {
@@ -97,7 +104,7 @@ export default css`
   .content {
       min-height: 417px;
       z-index: 100;
-      padding: 60px 80px 80px;
+      padding: 60px 0 80px;
       display: flex;
       flex-direction: column;
       justify-content: center;
