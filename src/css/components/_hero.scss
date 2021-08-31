@@ -3,7 +3,7 @@ il-hero {
     @include reset-heading;
     font: 700 36px var(--il-source-sans);
     line-height: 1;
-    text-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
+    text-shadow: -2px -2px 2px rgba(0, 0, 0, 0.15);
     text-align: inherit !important;
 
     @media (min-width: 576px) {
