@@ -71,59 +71,66 @@ export default css`
   height: 100%:
   object-fit: cover;
 }
-.content-outer {
+.content-container--level-1 {
   padding-left: var(--il-content-margin);
   padding-right: var(--il-content-margin);
+  position: relative;
+  z-index: 100;
 }
-.content {
+.content-container--level-2 {
   position: relative;
   box-sizing: border-box;
   width: 100%;
   max-width: var(--il-content-max-width);
-  color: white;
   margin: 0 auto;
+}
+.content-container--level-3 {
   padding: 18px 0 36px;
 }
 @media (min-width: 576px) {
   .background {
-      height: 315px;
+    height: 315px;
   }
   .content {
-      padding: 36px 0 72px;
+    padding: 36px 0 72px;
   }
 }
 @media (min-width: 767px) {
   .background {
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      top: 0;
-      left: 0;
-      z-index: 1;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1;
   }
-  .content {
-      min-height: 417px;
-      z-index: 100;
-      padding: 60px 0 80px;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
+  .content-container--level-3 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 66%;
+    min-height: 417px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 60px 0 80px;
   }
-  .hero[data-align-x="left"] .content {
-      align-items: flex-start;
-      text-align: left;
+  .hero[data-align-x="left"] .content-container--level-3 {
+    margin-left: 0;
+    align-items: flex-start;
+    text-align: left;
   }
-  .hero[data-align-x="right"] .content {
-      align-items: flex-end;
-      text-align: right;
+  .hero[data-align-x="right"] .content-container--level-3 {
+    margin-right: 0;
+    align-items: flex-end;
+    text-align: right;
   }
-  .hero[data-align-y="top"] .content {
-      justify-content: flex-start;
+  .hero[data-align-y="top"] .content-container--level-3 {
+    justify-content: flex-start;
   }
-  .hero[data-align-y="bottom"] .content {
-      justify-content: flex-end;
+  .hero[data-align-y="bottom"] .content-container--level-3 {
+    justify-content: flex-end;
   }
 }
 

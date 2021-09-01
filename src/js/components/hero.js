@@ -60,9 +60,11 @@ class Hero extends LitElement {
     return html`
         <div class="hero ${heroClass.join(' ')}" data-align-x=${alignment.x} data-align-y=${alignment.y}>
           ${this.background ? this.renderBackground() : ''}
-          <div class="content-outer">
-            <div class="content">
-              <slot></slot>
+          <div class="content-container--level-1 content-outer content-container--for-il-content-margin">
+            <div class="content-container--level-2 content-container--for-il-content-max-width">
+              <div class="content-container--level-3 content content-container--for-hero-content-max-width">
+                <slot></slot>
+              </div>
             </div>
           </div>
         </div>
