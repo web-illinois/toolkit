@@ -1,9 +1,9 @@
 {
-  "name": "web-toolkit",
-  "version": "2.0.0-dev",
+  "name": "il-toolkit",
+  "version": "2.2.0",
   "description": "Web toolkit",
-  "repository": "https://github.com/il-marketing/web-toolkit",
-  "author": "Office of Strategic Marketing and Branding <marketing@illinois.edu>",
+  "repository": "https://github.com/web-illinois/toolkit",
+  "author": "Web Implementation Guidelines Group",
   "license": "NCSA",
   "scripts": {
     "approve-backstop": "backstop approve --config=backstop.config.js",
