@@ -35,15 +35,15 @@
     outline: none;
     outline-color: none;
   }
-  a[href^="https://www.facebook.com/"],
-  a[href^="https://www.instagram.com/"],
-  a[href^="https://www.linkedin.com/"],
-  a[href^="https://www.pinterest.com/"],
-  a[href^="https://www.snapchat.com/"],
-  a[href^="https://twitter.com/"],
-  a[href^="https://weibo.com/"],
-  a[href^="https://www.whatsapp.com/"],
-  a[href^="https://www.youtube.com/"] {
+  a[href*="facebook.com/"],
+  a[href*="instagram.com/"],
+  a[href*="linkedin.com/"],
+  a[href*="pinterest.com/"],
+  a[href*="snapchat.com/"],
+  a[href*="twitter.com/"],
+  a[href*="weibo.com/"],
+  a[href*="whatsapp.com/"],
+  a[href*="youtube.com/"] {
     position: relative;
     margin: -4px -6px;
     padding: 0;
@@ -79,31 +79,31 @@
       white-space: normal;
     }
   }
-  a[href^="https://www.facebook.com/"]:before {
+  a[href*="facebook.com/"]:before {
     content: "facebook";
   }
-  a[href^="https://www.instagram.com/"]:before {
+  a[href*="instagram.com/"]:before {
     content: "instagram";
   }
-  a[href^="https://www.linkedin.com/"]:before {
+  a[href*="linkedin.com/"]:before {
     content: "linkedin";
   }
-  a[href^="https://www.pinterest.com/"]:before {
+  a[href*="pinterest.com/"]:before {
     content: "pinterest";
   }
-  a[href^="https://www.snapchat.com/"]:before {
+  a[href*="snapchat.com/"]:before {
     content: "snapchat";
   }
-  a[href^="https://twitter.com/"]:before {
+  a[href*="twitter.com/"]:before {
     content: "twitter";
   }
-  a[href^="https://weibo.com/"]:before {
+  a[href*="weibo.com/"]:before {
     content: "weibo";
   }
-  a[href^="https://www.whatsapp.com/"]:before {
+  a[href*="whatsapp.com/"]:before {
     content: "whatsapp";
   }
-  a[href^="https://www.youtube.com/"]:before {
+  a[href*="youtube.com/"]:before {
     content: "youtube";
   }
 }
