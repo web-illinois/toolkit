@@ -39,6 +39,7 @@ input {
   background-color: white;
   border-top-left-radius: 5px;
   border-bottom-left-radius: 5px;
+  -webkit-appearance: none;
 }
 input:focus {
   outline: 0;
