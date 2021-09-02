@@ -31,6 +31,7 @@ li {
 ::slotted(a:hover),
 ::slotted(a:focus) {
   color: var(--il-altgeld);
+  transition: color .3s, background-color .3s;
   text-decoration: underline;
   background-color: white;
   outline: 0;
@@ -39,7 +40,7 @@ li {
   height: 100%;
   box-sizing: border-box;
   display: flex;
-  align-items: center;
+  align-items: baseline;
 }
 .compact ::slotted(a) {
   margin: 0;
