@@ -1,4 +1,4 @@
-.il-formatted il-image-feature, il-image-feature {
+.il-formatted il-image-feature, il-image-feature, .il-formatted il-video-feature, il-video-feature {
   display: block;
   margin-bottom: 20px;
 
@@ -30,7 +30,8 @@
   }
 }
 
-.il-formatted il-image-feature:not([background="white"]), il-image-feature:not([background="white"]) {
+.il-formatted il-image-feature:not([background="white"]), il-image-feature:not([background="white"]),
+.il-formatted il-video-feature:not([background="white"]), il-video-feature:not([background="white"]) {
     h2,
     h3,
     h4,

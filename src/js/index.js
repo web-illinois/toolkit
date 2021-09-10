@@ -15,4 +15,5 @@ import './components/search';
 import './components/section-nav';
 import './components/unit-wordmark';
 import './components/imagefeature';
+import './components/videofeature';
 
