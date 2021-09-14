@@ -1,0 +1,16 @@
+---
+title: Pagination
+group: "Components: Pagination"
+layout: layouts/page.njk
+---
+
+<il-pagination pages="3"></il-pagination>
+
+<il-pagination page="3" pages="5"></il-pagination>
+
+<il-pagination id="pagination-with-url-function" pages="5"></il-pagination>
+<script>
+  document
+    .getElementById('pagination-with-url-function')
+    .url = page => `/page/${page}`;
+</script>
