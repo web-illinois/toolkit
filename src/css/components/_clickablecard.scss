@@ -1,0 +1,92 @@
+:root {
+  --il-clickable-card-margin: 0.9375rem;
+  --il-clickable-card-image-filter: none;
+  --il-clickable-card-post: url("data:image/svg+xml, %3Csvg version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0px' y='0px' 	 viewBox='0 0 1000 1000' style='enable-background:new 0 0 1000 1000;' xml:space='preserve'%3E%3Cg%3E%3Cpath d='M483.6,923.2L903.3,500L483.6,76.8l-2.5,2v162L738.3,500L481.1,759.2v161.5L483.6,923.2z'/%3E%3Cpath d='M99.2,923.2L519.4,500L99.2,76.8l-2,2v162L353.9,500L97.2,759.2v161.5L99.2,923.2z'/%3E%3C/g%3E%3C/svg%3E");
+  --il-clickable-card-post-display: inline-block;
+}
+
+il-clickable-card,
+.il-formatted il-clickable-card {
+  display: block;
+
+  h2,
+  h3,
+  h4,
+  h5,
+  p.heading {
+    color: var(--il-orange);
+    font-size: 1.3125rem;
+    font-weight: 700;
+    line-height: 2.0625rem;
+    padding: 0;
+    margin: 0 0 1.25rem 0;
+
+    &::after {
+      content: "";
+      -webkit-mask-image: var(--il-clickable-card-post);
+      mask-image: var(--il-clickable-card-post);
+      background-size: 12px 12px;
+      height: 12px;
+      width: 12px;
+      display: var(--il-clickable-card-post-display);
+      margin-left: 4px;
+      margin-bottom: 1px;
+      background-color: var(--il-orange);
+    }
+  }
+
+  p {
+    font-size: 1.25rem;
+    line-height: 1.6875rem;
+  }
+}
+
+il-clickable-card[background="blue"],
+.il-formatted il-clickable-card[background="blue"] {
+  h2,
+  h3,
+  h4,
+  h5,
+  p.heading,
+  p {
+    color: white;
+
+    &::after {
+      background-color: white;
+    }
+  }
+}
+
+il-clickable-card[highlight],
+.il-formatted il-clickable-card[highlight] {
+  h2,
+  h3,
+  h4,
+  h5,
+  p.heading,
+  p {
+    color: white;
+
+    &::after {
+      background-color: white;
+    }
+  }
+}
+
+il-clickable-card[highlight][background="blue"],
+.il-formatted il-clickable-card[highlight][background="blue"] {
+  h2,
+  h3,
+  h4,
+  h5,
+  p.heading {
+    color: var(--il-orange);
+
+    &::after {
+      background-color: var(--il-orange);
+    }
+  }
+  p {
+    color: var(--il-blue);
+  }
+}
