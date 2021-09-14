@@ -16,31 +16,16 @@ class PaginationComponent extends LitElement {
     this.page = 1;
     this.pages = 1;
     this.param = 'page';
-    this.url = '';
-  }
-
-  getPageUrl(page) {
-    return typeof this.url === 'function' ? this.url(page) : this.makeUrl(page);
+    this.url = location.href;
   }
 
   getPages() {
+    const nav = new Pagination.Navigation(this.url, { [this.param]: this.page });
     const pages = [];
     for (let page = 1; page <= this.pages; page++) {
-      pages.push({ label: page, url: this.getPageUrl(page) });
+      pages.push({ label: page, url: nav.getPageUrl(page) });
     }
     return pages;
-  }
-
-  getUrlBase() {
-    return this.url ? this.url : location.href;
-  }
-
-  getUrlParams(page) {
-    return { [this.param]: page };
-  }
-
-  makeUrl(page) {
-    return new PageUrl(this.getUrlBase(), this.getUrlParams(page)).toString();
   }
 
   renderPage(page) {

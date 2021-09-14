@@ -27,11 +27,23 @@ class NextPageLink extends PageLink { }
 class PreviousPageLink extends PageLink { }
 
 class Navigation {
-  constructor(pageCount) {
-    this._pageCount = parseInt(pageCount);
-    this._currentPage = 1;
-    this.pageParamName = 'page';
-    this.baseUrl = undefined;
+  constructor(baseUrl, pageCount) {
+    if (typeof pageCount === 'object') {
+      this.pageParamName = Object.keys(pageCount)[0];
+      this.pageCount = pageCount[this.pageParamName];
+    }
+    else {
+      this.pageParamName = 'page';
+      this.pageCount = pageCount;
+    }
+    this.baseUrl = baseUrl;
+    this.currentPage = 1;
+    if (!(typeof this.baseUrl === 'function')) {
+      const url = new URL(baseUrl);
+      if (url.searchParams.has(this.pageParamName)) {
+        this.currentPage = url.searchParams.get(this.pageParamName);
+      }
+    }
   }
 
   get currentPage() {
@@ -39,7 +51,7 @@ class Navigation {
   }
 
   set currentPage(number) {
-    this._currentPage = number;
+    this._currentPage = parseInt(number)
   }
 
   get items() {
@@ -70,6 +82,10 @@ class Navigation {
     return this._pageCount;
   }
 
+  set pageCount(pageCount) {
+    this._pageCount = parseInt(pageCount);
+  }
+
   get previousPageLink() {
     return new PreviousPageLink(this.currentPage - 1);
   }
@@ -79,9 +95,14 @@ class Navigation {
   }
 
   getPageUrl(pageNumber) {
-    const url = new URL(this.baseUrl);
-    url.searchParams.set(this.pageParamName, pageNumber);
-    return url.href;
+    if (typeof this.baseUrl === 'function') {
+      return this.baseUrl(pageNumber);
+    }
+    else {
+      const url = new URL(this.baseUrl);
+      url.searchParams.set(this.pageParamName, pageNumber);
+      return url.href;
+    }
   }
 
   hasFirstPageLink() {
@@ -98,11 +119,6 @@ class Navigation {
 
   hasPreviousPageLink() {
     return this.currentPage !== 1;
-  }
-
-  setBaseUrl(url) {
-    this.baseUrl = url;
-    return this;
   }
 
   setPageParamName(paramName) {
