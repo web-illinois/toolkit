@@ -11,7 +11,7 @@ import './components/hero';
 import './components/nav';
 import './components/nav-link';
 import './components/nav-section';
-import './components/pagination/pagination';
+import './components/pagination/pagination.component';
 import './components/search';
 import './components/section-nav';
 import './components/unit-wordmark';

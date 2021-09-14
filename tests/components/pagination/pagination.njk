@@ -8,9 +8,9 @@ layout: layouts/page.njk
 
 <il-pagination page="3" pages="5"></il-pagination>
 
-<il-pagination id="pagination-with-url-function" pages="5"></il-pagination>
+<il-pagination id="page-function-example" pages="5"></il-pagination>
 <script>
   document
-    .getElementById('pagination-with-url-function')
+    .getElementById('page-function-example')
     .url = page => `/page/${page}`;
 </script>

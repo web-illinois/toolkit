@@ -1,63 +1,114 @@
-import { LitElement, html, css } from 'lit';
-import PageUrl from './url';
+class Item {
 
-class Pagination extends LitElement {
+}
 
-  static get properties() {
-    return {
-      page: { type: Number, attribute: true, default: 1 },
-      pages: { type: Number, attribute: true, default: 1 },
-      url: { attribute: false }
-    };
-  }
-
-  constructor() {
+class Page extends Item {
+  constructor(pageNumber) {
     super();
-    this.page = 1;
-    this.pages = 1;
-    this.param = 'page';
-    this.url = undefined;
+    this._pageNumber = pageNumber;
   }
 
-  getPageUrl(page) {
-    return typeof this.url === 'function' ? this.url(page) : this.makeUrl(page);
-  }
-
-  getPages() {
-    const pages = [];
-    for (let page = 1; page <= this.pages; page++) {
-      pages.push({ label: page, url: this.getPageUrl(page) });
-    }
-    return pages;
-  }
-
-  getUrlBase() {
-    return this.url ? this.url : location.href;
-  }
-
-  getUrlParams(page) {
-    return { [this.param]: page };
-  }
-
-  makeUrl(page) {
-    return new PageUrl(this.getUrlBase(), this.getUrlParams(page)).toString();
-  }
-
-  renderPage(page) {
-    return html`<li><a href="${page.url}">${page.label}</a></li>`;
-  }
-
-  render() {
-    return html`
-<nav>
-  <slot>
-    <ul>
-      ${this.getPages().map(page => this.renderPage(page))}
-    </ul>
-  </slot>
-</nav>
-    `;
+  get pageNumber() {
+    return this._pageNumber;
   }
 }
 
-customElements.define('il-pagination', Pagination);
+class CurrentPage extends Page { }
+
+class PageLink extends Page {
+}
+
+class FirstPageLink extends PageLink { }
+
+class LastPageLink extends PageLink { }
+
+class NextPageLink extends PageLink { }
+
+class PreviousPageLink extends PageLink { }
+
+class Navigation {
+  constructor(pageCount) {
+    this._pageCount = parseInt(pageCount);
+    this._currentPage = 1;
+    this.pageParamName = 'page';
+    this.baseUrl = undefined;
+  }
+
+  get currentPage() {
+    return this._currentPage;
+  }
+
+  set currentPage(number) {
+    this._currentPage = number;
+  }
+
+  get items() {
+    const items = [];
+    for (let page = 1; page <= this.pageCount; page++) {
+      items.push(page);
+    }
+    return items;
+  }
+
+  get currentPageItem() {
+    return new CurrentPage(this.currentPage);
+  }
+
+  get firstPageLink() {
+    return new FirstPageLink(1);
+  }
+
+  get lastPageLink() {
+    return new LastPageLink(this.pageCount);
+  }
+
+  get nextPageLink() {
+    return new NextPageLink(this.currentPage + 1);
+  }
+
+  get pageCount() {
+    return this._pageCount;
+  }
+
+  get previousPageLink() {
+    return new PreviousPageLink(this.currentPage - 1);
+  }
+
+  getPageLink(pageNumber) {
+    return new PageLink(pageNumber);
+  }
+
+  getPageUrl(pageNumber) {
+    const url = new URL(this.baseUrl);
+    url.searchParams.set(this.pageParamName, pageNumber);
+    return url.href;
+  }
+
+  hasFirstPageLink() {
+    return this.currentPage !== 1;
+  }
+
+  hasLastPageLink() {
+    return this.currentPage !== this.pageCount;
+  }
+
+  hasNextPageLink() {
+    return this.currentPage !== this.pageCount;
+  }
+
+  hasPreviousPageLink() {
+    return this.currentPage !== 1;
+  }
+
+  setBaseUrl(url) {
+    this.baseUrl = url;
+    return this;
+  }
+
+  setPageParamName(paramName) {
+    this.pageParamName = paramName;
+    return this;
+  }
+}
+
+module.exports = { CurrentPage, FirstPageLink, LastPageLink, Navigation, NextPageLink, PageLink, PreviousPageLink };
