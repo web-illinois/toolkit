@@ -7,6 +7,7 @@ class PaginationComponent extends LitElement {
     return {
       page: { type: Number, attribute: true, default: 1 },
       pages: { type: Number, attribute: true, default: 1 },
+      param: { type: String, attribute: true, default: 'page' },
       url: { attribute: false }
     };
   }
