@@ -1,9 +1,14 @@
 ---
-title: Clickable Card (default view)
+title: Clickable Card (image filter)
 group: "Components: Clickable Card"
 layout: layouts/page.njk
 ---
 
+<style>
+il-clickable-card {
+    --il-clickable-card-image-filter: brightness(150%);
+}
+</style>
 <div class="il-formatted">
 
 <il-clickable-card width="500px" src="{{ '/_assets/images/hero-bg.jpg' | url }}" href="https://www.example.com">
