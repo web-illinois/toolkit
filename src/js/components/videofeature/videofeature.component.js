@@ -53,8 +53,8 @@ class VideoFeatureComponent extends LitElement {
     if (this.previousElementSibling != null && this.previousElementSibling.localName == "il-video-feature" && this.previousElementSibling.getAttribute('align') == null && this.align == '') {
         this.setAttribute('align', 'right');
     }
-    var contentClass = (this.background == 'solid' || this.background == 'blue') ? 'content solid' : this.background == 'white' ? 'content' : this.background == 'orange' ? 'content orange' : 'content gradient';
-    var backgroundClass = (this.background == 'solid' || this.background == 'blue') ? 'background solid' : this.background == 'white' ? 'background' : this.background == 'orange' ? 'background orange' : 'background gradient';
+    var contentClass = (this.background == 'solid' || this.background == 'blue') ? 'content solid' : this.background == 'white' ? 'content' : this.background == 'orange' ? 'content orange' : this.background == 'gray' ? 'content white gray' :'content gradient';
+    var backgroundClass = (this.background == 'solid' || this.background == 'blue') ? 'background solid' : this.background == 'white' ? 'background' : this.background == 'orange' ? 'background orange' : this.background == 'gray' ? 'background gray' : 'background gradient';
     var leftFlex = this.size == 'large' ? 2 : 1;
     var rightFlex = this.size == 'small' ? 2 : 1;
     if (this.align == 'right')
