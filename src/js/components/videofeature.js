@@ -26,11 +26,11 @@ class VideoFeature extends LitElement {
         padding: 1.875rem 1.25rem;
         text-align: left;
     }
-    .videofeature .content.gradient, .videofeature .background.gradient {
+    .videofeature .content.gradient {
         color: white;
         background: linear-gradient(180deg, var(--il-industrial-blue) 0%, var(--il-blue) 100%);
     }
-    .videofeature .content.orange, .videofeature .background.orange  {
+    .videofeature .content.orange {
         color: white;
         background: linear-gradient(180deg, var(--il-orange) 0%, var(--il-altgeld) 100%);
     }
@@ -38,12 +38,20 @@ class VideoFeature extends LitElement {
         color: white;
         background: var(--il-blue);
     }
+    .videowrapper {
+        position: relative; 
+        padding-bottom: 56.25%; 
+        height: 0;
+    }
     @media (min-width: 767px) {
         .videofeature {
             display: flex;
         }
         .videofeature .content {
             padding: 1.875rem;
+        }
+        .videowrapper {
+            padding-bottom: 100%; 
         }
     }
     @media (min-width: 993px) {
@@ -54,6 +62,9 @@ class VideoFeature extends LitElement {
     @media (min-width: 1450px) {
         .videofeature .content {
             padding: 3rem 6rem;
+        }
+        .videowrapper {
+            padding-bottom: 56.25%; 
         }
     }
         `;
@@ -69,28 +80,46 @@ class VideoFeature extends LitElement {
     this.view = '';
   }
 
+  getIframe(url, title, view) {
+      let embedCode = url.split("/").pop();
+      let urlLowerCase = url.toLowerCase();
+      if (urlLowerCase.includes("youtube") || urlLowerCase.includes("youtu.be")) {
+        const youTubeV = url.split("v=");
+        if (youTubeV.length > 1) {
+            embedCode = youTubeV[1];
+        }
+        else {
+            embedCode = url.split("/").pop();
+        }
+        return html`<iframe title='${title}' style='position: absolute; top: 0; left: 0; width: 100%; height: 100%;' src='https://www.youtube.com/embed/${embedCode}' frameborder='0' allowfullscreen></iframe>`;
+
+      } else if (urlLowerCase.includes("mediaspace")) {
+        let playerCode = '26883701';
+        if (view == "vertical") {
+            playerCode = '44666331';
+        }
+        return html`<iframe title='${title}' id='kaltura_player_${embedCode}' class='kmsembed' style='position: absolute; top: 0; left: 0; width: 100%; height: 100%;' src='https://mediaspace.illinois.edu/embed/secure/iframe/entryId/${embedCode}/uiConfId/${playerCode}' style='float: left; margin: 10px 10px 10px 0;' allowfullscreen webkitallowfullscreen mozAllowFullScreen allow='autoplay *; fullscreen *; encrypted-media *' frameborder='0'></iframe>`;
+
+      } else if (urlLowerCase.includes("facebook")) {
+        return html`<div class='fb-video' data-href='https://www.facebook.com/facebook/videos/${embedCode}/' data-allowfullscreen='true'></div>`;
+
+      } else if (urlLowerCase.includes("vimeo")) {
+        return html`<iframe title='${title}' style='position: absolute; top: 0; left: 0; width: 100%; height: 100%;' src='https://player.vimeo.com/video/${embedCode}' frameborder='0' allowfullscreen></iframe>`;
+      }
+      return "";
+    }
+
   renderVideo() {
-      let aspectRatio = 'padding-bottom: 100%; height: 0;';
-      if (this.view == 'aspect') {
-          aspectRatio = 'padding-bottom: 56.25%; height: 0;';
-      } else if (this.view == 'stretch') {
+      let aspectRatio = 'position: relative; padding-bottom: 56.25%; height: 0;';
+      if (this.view == 'stretch') {
           aspectRatio = 'height: 100%; width: 100%;'
       }
 
-      // let embedCode = '1_ve3snqtt';
-      let embedCode = 'uSEpvhL7nwA';
-      let playerCode = '26883701';
+      let iframe = this.getIframe(this.src, this.title, this.view);
 
-//    return html
-//      `<div style='position: relative; ${aspectRatio} align-self: center;'><iframe title='${this.title}' id='kaltura_player_{embedCode}' class='kmsembed' style='position: absolute; top: 0; left: 0; width: 100%; height: 100%;' src='https://mediaspace.illinois.edu/embed/secure/iframe/entryId/${embedCode}/uiConfId/${playerCode}' style='float: left; margin: 10px 10px 10px 0;' allowfullscreen webkitallowfullscreen mozAllowFullScreen allow='autoplay *; fullscreen *; encrypted-media *' frameborder='0'></iframe></div></div>`
-
-      if (this.view == 'aspect') {
-        return html
-        `<div style="width: 100%; align-self: center;"><div style='position: relative; ${aspectRatio}'><iframe title='${this.title}' style='position: absolute; top: 0; left: 0; width: 100%; height: 100%;' src='https://www.youtube.com/embed/${embedCode}' frameborder='0' allowfullscreen></iframe></div></div>`
-      }
       return html
-      `<div style='position: relative; ${aspectRatio}'><iframe title='${this.title}' style='position: absolute; top: 0; left: 0; width: 100%; height: 100%;' src='https://www.youtube.com/embed/${embedCode}' frameborder='0' allowfullscreen></iframe></div>`
-  }
+      `<div style="width: 100%; align-self: center;"><div class='videowrapper'>${iframe}</div></div>`
+    }
 
   render() {
 
@@ -98,7 +127,7 @@ class VideoFeature extends LitElement {
         this.setAttribute('align', 'right');
     }
     var contentClass = (this.background == 'solid' || this.background == 'blue') ? 'content solid' : this.background == 'white' ? 'content' : this.background == 'orange' ? 'content orange' : 'content gradient';
-    var backgroundClass = (this.background == 'solid' || this.background == 'blue') ? 'background solid' : this.background == 'white' ? 'background' : this.background == 'orange' ? 'background' : 'background gradient';
+    var backgroundClass = (this.background == 'solid' || this.background == 'blue') ? 'background solid' : this.background == 'white' ? 'background' : this.background == 'orange' ? 'background orange' : 'background gradient';
     var leftFlex = this.size == 'large' ? 2 : 1;
     var rightFlex = this.size == 'small' ? 2 : 1;
     if (this.align == 'right')

@@ -57,6 +57,7 @@ class ClickableCard extends LitElement {
     this.href = undefined;
     this.background = undefined;
     this.alt = '';
+    this.width = "100%";
     this.highlight = false;
   }
   
