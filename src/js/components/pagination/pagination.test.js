@@ -16,7 +16,7 @@ test('constructor converts page count to integer', () => {
 })
 
 describe('constructor with custom page param name', () => {
-  const nav = new Pagination.Navigation('http://example.com/', { p: 5 });
+  const nav = new Pagination.Navigation('http://example.com/', 5, 'p');
 
   test('sets the page param name', () => {
     expect(nav.pageParamName).toBe('p');
@@ -206,3 +206,45 @@ test('navigation does not have last page link if current page is last page', () 
   expect(nav.hasLastPageLink()).toBe(false);
 })
 
+// Items
+
+describe('navigation with first, previous, next, and last links', () => {
+  const nav = new Pagination.Navigation('http://example.com/', 3);
+  nav.currentPage = 2;
+  const items = nav.items;
+
+  test('returns 9 nav items', () => {
+    expect(items.length).toBe(7);
+  })
+
+  test('first item is a link to the first page', () => {
+    expect(items[0]).toBeInstanceOf(Pagination.FirstPageLink);
+  })
+
+  test('second item is a link to the previous page', () => {
+    expect(items[1]).toBeInstanceOf(Pagination.PreviousPageLink);
+  })
+
+  test('third item is link to page 1', () => {
+    expect(items[2]).toBeInstanceOf(Pagination.PageLink);
+    expect(items[2].pageNumber).toBe(1);
+  })
+
+  test('fourth item is current page', () => {
+    expect(items[3]).toBeInstanceOf(Pagination.CurrentPage);
+    expect(items[3].pageNumber).toBe(2);
+  })
+
+  test('fifth item is link to page 3', () => {
+    expect(items[4]).toBeInstanceOf(Pagination.PageLink);
+    expect(items[4].pageNumber).toBe(3);
+  })
+
+  test('next-to-last item is a link to the next page', () => {
+    expect(items[5]).toBeInstanceOf(Pagination.NextPageLink);
+  })
+
+  test('last item is a link to the last page', () => {
+    expect(items[6]).toBeInstanceOf(Pagination.LastPageLink);
+  })
+})

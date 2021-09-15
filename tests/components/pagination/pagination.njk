@@ -2,17 +2,28 @@
 title: Pagination
 group: "Components: Pagination"
 layout: layouts/page.njk
+stylesheets: ["tests.css", "pagination.css"]
 ---
 
-<il-pagination pages="3"></il-pagination>
-
-<il-pagination page="3" pages="5"></il-pagination>
-
-<il-pagination page="3" pages="5" param="p"></il-pagination>
-
-<il-pagination id="page-function-example" pages="5"></il-pagination>
-<script>
-  document
-    .getElementById('page-function-example')
-    .url = page => `/page/${page}`;
-</script>
+<div id="il-components">
+  <div>
+    <il-pagination pages="3"></il-pagination>
+  </div>
+  <div>
+    <il-pagination page="3" pages="5"></il-pagination>
+  </div>
+  <div>
+    <il-pagination page="3" pages="5" param="p"></il-pagination>
+  </div>
+  <div>
+    <il-pagination id="page-function-example" pages="5"></il-pagination>
+    <script>
+      document
+        .getElementById('page-function-example')
+        .url = page => `/page/${page}`;
+    </script>
+  </div>
+  <div>
+    <il-pagination page="3" pages="100"></il-pagination>
+  </div>
+</div>

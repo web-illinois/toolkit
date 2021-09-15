@@ -1,5 +1,6 @@
 import { LitElement, html, css } from 'lit';
 import Pagination from './pagination';
+import styles from './pagination.css';
 
 class PaginationComponent extends LitElement {
 
@@ -12,6 +13,10 @@ class PaginationComponent extends LitElement {
     };
   }
 
+  static get styles() {
+    return styles;
+  }
+
   constructor() {
     super();
     this.page = 1;
@@ -20,25 +25,35 @@ class PaginationComponent extends LitElement {
     this.url = location.href;
   }
 
-  getPages() {
-    const nav = new Pagination.Navigation(this.url, { [this.param]: this.page });
-    const pages = [];
-    for (let page = 1; page <= this.pages; page++) {
-      pages.push({ label: page, url: nav.getPageUrl(page) });
-    }
-    return pages;
+  getNavItems() {
+    const nav = new Pagination.Navigation(this.url, this.pages, this.param);
+    nav.currentPage = this.page;
+    return nav.items;
   }
 
-  renderPage(page) {
-    return html`<li><a href="${page.url}">${page.label}</a></li>`;
+  renderNavItem(item) {
+    switch (item.constructor) {
+      case (Pagination.FirstPageLink):
+        return html`<li class="first"><a href="${item.url}" aria-label="First page">First</a></li>`;
+      case (Pagination.PreviousPageLink):
+        return html`<li class="previous"><a href="${item.url}" aria-label="Previous page">Previous</a></li>`;
+      case (Pagination.NextPageLink):
+        return html`<li class="next"><a href="${item.url}" aria-label="Next page">Next</a></li>`;
+      case (Pagination.LastPageLink):
+        return html`<li class="last"><a href="${item.url}" aria-label="Last page">Last</a></li>`;
+      case (Pagination.CurrentPage):
+        return html`<li class="current" aria-current="page">${item.pageNumber}</li>`;
+      case (Pagination.PageLink):
+        return html`<li><a href="${item.url}" aria-label="Page ${item.pageNumber}">${item.pageNumber}</a></li>`;
+    }
   }
 
   render() {
     return html`
-<nav>
+<nav aria-label="Pagination">
   <slot>
     <ul>
-      ${this.getPages().map(page => this.renderPage(page))}
+      ${this.getNavItems().map(item => this.renderNavItem(item))}
     </ul>
   </slot>
 </nav>

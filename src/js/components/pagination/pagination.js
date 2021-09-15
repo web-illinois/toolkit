@@ -16,6 +16,14 @@ class Page extends Item {
 class CurrentPage extends Page { }
 
 class PageLink extends Page {
+  constructor(nav, pageNumber) {
+    super(pageNumber);
+    this.nav = nav;
+  }
+
+  get url() {
+    return this.nav.getPageUrl(this.pageNumber);
+  }
 }
 
 class FirstPageLink extends PageLink { }
@@ -27,15 +35,9 @@ class NextPageLink extends PageLink { }
 class PreviousPageLink extends PageLink { }
 
 class Navigation {
-  constructor(baseUrl, pageCount) {
-    if (typeof pageCount === 'object') {
-      this.pageParamName = Object.keys(pageCount)[0];
-      this.pageCount = pageCount[this.pageParamName];
-    }
-    else {
-      this.pageParamName = 'page';
-      this.pageCount = pageCount;
-    }
+  constructor(baseUrl, pageCount, pageParamName = 'page') {
+    this.pageParamName = pageParamName;
+    this.pageCount = pageCount;
     this.baseUrl = baseUrl;
     this.currentPage = 1;
     if (!(typeof this.baseUrl === 'function')) {
@@ -56,8 +58,25 @@ class Navigation {
 
   get items() {
     const items = [];
+    if (this.hasFirstPageLink()) {
+      items.push(this.firstPageLink);
+    }
+    if (this.hasPreviousPageLink()) {
+      items.push(this.previousPageLink);
+    }
     for (let page = 1; page <= this.pageCount; page++) {
-      items.push(page);
+      if (page === this.currentPage) {
+        items.push(this.currentPageItem);
+      }
+      else {
+        items.push(this.getPageLink(page));
+      }
+    }
+    if (this.hasNextPageLink()) {
+      items.push(this.nextPageLink);
+    }
+    if (this.hasLastPageLink()) {
+      items.push(this.lastPageLink);
     }
     return items;
   }
@@ -67,15 +86,15 @@ class Navigation {
   }
 
   get firstPageLink() {
-    return new FirstPageLink(1);
+    return new FirstPageLink(this, 1);
   }
 
   get lastPageLink() {
-    return new LastPageLink(this.pageCount);
+    return new LastPageLink(this, this.pageCount);
   }
 
   get nextPageLink() {
-    return new NextPageLink(this.currentPage + 1);
+    return new NextPageLink(this, this.currentPage + 1);
   }
 
   get pageCount() {
@@ -87,11 +106,11 @@ class Navigation {
   }
 
   get previousPageLink() {
-    return new PreviousPageLink(this.currentPage - 1);
+    return new PreviousPageLink(this, this.currentPage - 1);
   }
 
   getPageLink(pageNumber) {
-    return new PageLink(pageNumber);
+    return new PageLink(this, pageNumber);
   }
 
   getPageUrl(pageNumber) {
