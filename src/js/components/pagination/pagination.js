@@ -2,6 +2,8 @@ class Item {
 
 }
 
+class Ellipsis extends Item { }
+
 class Page extends Item {
   constructor(pageNumber) {
     super();
@@ -58,13 +60,8 @@ class Navigation {
 
   get items() {
     const items = [];
-    if (this.hasFirstPageLink()) {
-      items.push(this.firstPageLink);
-    }
-    if (this.hasPreviousPageLink()) {
-      items.push(this.previousPageLink);
-    }
-    for (let page = 1; page <= this.pageCount; page++) {
+    const { start, end } = this.getVisiblePageRange();
+    for (let page = start; page <= end; page++) {
       if (page === this.currentPage) {
         items.push(this.currentPageItem);
       }
@@ -72,8 +69,22 @@ class Navigation {
         items.push(this.getPageLink(page));
       }
     }
+    if (start > 1) {
+      items.unshift(new Ellipsis);
+      items.unshift(this.getPageLink(1));
+    }
+    if (end < this.pageCount) {
+      items.push(new Ellipsis);
+      items.push(this.getPageLink(this.pageCount));
+    }
+    if (this.hasPreviousPageLink()) {
+      items.unshift(this.previousPageLink);
+    }
     if (this.hasNextPageLink()) {
       items.push(this.nextPageLink);
+    }
+    if (this.hasFirstPageLink()) {
+      items.unshift(this.firstPageLink);
     }
     if (this.hasLastPageLink()) {
       items.push(this.lastPageLink);
@@ -124,6 +135,19 @@ class Navigation {
     }
   }
 
+  getVisiblePageRange() {
+    const radius = 3;
+    let start = this.currentPage - radius;
+    if (start < 3) start = 1;
+    let end = start + radius * 2;
+    if (end > this.pageCount - 2) {
+      end = this.pageCount;
+      start = Math.max(1, end - radius * 2);
+      if (start < 3) start = 1;
+    }
+    return { start, end };
+  }
+
   hasFirstPageLink() {
     return this.currentPage !== 1;
   }
@@ -146,4 +170,4 @@ class Navigation {
   }
 }
 
-module.exports = { CurrentPage, FirstPageLink, LastPageLink, Navigation, NextPageLink, PageLink, PreviousPageLink };
+module.exports = { CurrentPage, Ellipsis, FirstPageLink, LastPageLink, Navigation, NextPageLink, PageLink, PreviousPageLink };

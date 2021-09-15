@@ -45,6 +45,8 @@ class PaginationComponent extends LitElement {
         return html`<li class="current" aria-current="page">${item.pageNumber}</li>`;
       case (Pagination.PageLink):
         return html`<li><a href="${item.url}" aria-label="Page ${item.pageNumber}">${item.pageNumber}</a></li>`;
+      case (Pagination.Ellipsis):
+        return html`<li class="ellipsis">&hellip;</li>`;
     }
   }
 

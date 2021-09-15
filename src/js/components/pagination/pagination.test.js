@@ -206,6 +206,64 @@ test('navigation does not have last page link if current page is last page', () 
   expect(nav.hasLastPageLink()).toBe(false);
 })
 
+// Visible page range
+
+test('range in the middle of the navigation', () => {
+  const nav = new Pagination.Navigation('http://example.com/', 100);
+  nav.currentPage = 50;
+  const range = nav.getVisiblePageRange();
+  expect(range.start).toBe(47);
+  expect(range.end).toBe(53);
+});
+
+test('range at the start of the navigation', () => {
+  const nav = new Pagination.Navigation('http://example.com/', 100);
+  nav.currentPage = 3;
+  const range = nav.getVisiblePageRange();
+  expect(range.start).toBe(1);
+  expect(range.end).toBe(7);
+});
+
+test('range at the end of the navigation', () => {
+  const nav = new Pagination.Navigation('http://example.com/', 100);
+  nav.currentPage = 98;
+  const range = nav.getVisiblePageRange();
+  expect(range.start).toBe(94);
+  expect(range.end).toBe(100);
+});
+
+test('range should not start at 2', () => {
+  const nav = new Pagination.Navigation('http://example.com/', 100);
+  nav.currentPage = 5;
+  const range = nav.getVisiblePageRange();
+  expect(range.start).toBe(1);
+  expect(range.end).toBe(7);
+});
+
+test('range can start at 3', () => {
+  const nav = new Pagination.Navigation('http://example.com/', 100);
+  nav.currentPage = 6;
+  const range = nav.getVisiblePageRange();
+  expect(range.start).toBe(3);
+  expect(range.end).toBe(9);
+});
+
+test('range should not end on the second-to-last page', () => {
+  const nav = new Pagination.Navigation('http://example.com/', 100);
+  nav.currentPage = 96;
+  const range = nav.getVisiblePageRange();
+  expect(range.start).toBe(94);
+  expect(range.end).toBe(100);
+});
+
+test('range can end on the third-to-last page', () => {
+  const nav = new Pagination.Navigation('http://example.com/', 100);
+  nav.currentPage = 95;
+  const range = nav.getVisiblePageRange();
+  expect(range.start).toBe(92);
+  expect(range.end).toBe(98);
+});
+
 // Items
 
 describe('navigation with first, previous, next, and last links', () => {

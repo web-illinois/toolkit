@@ -21,7 +21,7 @@ li {
   padding: 0;
   list-style: none;
 }
-li.current, a {
+li.current, li.ellipsis, a {
   display: block;
   padding: .5rem .75rem;
   border-width: 1px;
@@ -31,6 +31,10 @@ li.current {
   background-color: var(--il-orange);
   color: white;
   border-color: var(--il-orange);
+}
+li.ellipsis {
+  color: var(--il-cloud-3);
+  border-color: transparent;
 }
 a {
   text-decoration: none;
