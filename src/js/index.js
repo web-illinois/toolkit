@@ -17,6 +17,6 @@ import './components/pagination/pagination.component';
 import './components/search';
 import './components/section-nav';
 import './components/unit-wordmark';
-import './components/videofeature';
+import './components/videofeature/videofeature.component';
 
 
