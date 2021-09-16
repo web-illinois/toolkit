@@ -24,6 +24,9 @@ export default css`
         color: white;
         background: var(--il-blue);
     }
+    .videofeature .content.gray, .videofeature .background.gray  {
+        background: var(--il-gray-1);
+    }
     .videowrapper {
         position: relative; 
         padding-bottom: 56.25%; 
