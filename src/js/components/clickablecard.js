@@ -45,7 +45,7 @@ class ClickableCard extends LitElement {
         }
 
         div.text {
-          padding: 1.875rem;
+          padding: 1.75rem 1.875rem 1.875rem 1.875rem;
           min-height: 100px;
         }
         `;
@@ -64,8 +64,6 @@ class ClickableCard extends LitElement {
   render() {
     let contentClass = this.background == 'blue' ? 'blue' : '';
     let widthStyle = this.width == '' ? '' : `width: ${this.width};`;
-    console.log(this.width);
-    console.log(widthStyle);
 
     return html`
         <a href="${this.href}" class="${contentClass}" style="${widthStyle}" @focus="${this._higlight}" @blur="${this._tonedown}" @mouseover="${this._higlight}" @mouseout="${this._tonedown}">
