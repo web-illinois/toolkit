@@ -21,7 +21,7 @@ class ClickableCard extends LitElement {
             border-bottom: 3px solid var(--il-orange);
             margin: var(--il-clickable-card-margin);
             text-decoration: none;
-            color: black;
+            color: #252525;
             background: white;
         }
         a.blue {
@@ -45,7 +45,7 @@ class ClickableCard extends LitElement {
         }
 
         div.text {
-          padding: 1.75rem 1.875rem 1.875rem 1.875rem;
+          padding: 1.75rem 1.875rem 2.8rem 1.875rem;
           min-height: 100px;
         }
         `;
