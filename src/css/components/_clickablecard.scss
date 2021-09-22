@@ -18,7 +18,7 @@ il-clickable-card,
     font-size: 1.3125rem;
     font-weight: 700;
     line-height: 2.0625rem;
-    padding: 0;
+    padding: 0 16px 0 0;
     margin: 0 0 1.25rem 0;
 
     &::after {
@@ -30,7 +30,9 @@ il-clickable-card,
       width: 12px;
       display: var(--il-clickable-card-post-display);
       margin-left: 4px;
-      margin-bottom: 1px;
+      display: inline;
+      position: absolute;
+      margin-top: 12px;
       background-color: var(--il-orange);
     }
   }

@@ -57,15 +57,18 @@ class ClickableCard extends LitElement {
     this.href = undefined;
     this.background = undefined;
     this.alt = '';
-    this.width = "100%";
+    this.width = '';
     this.highlight = false;
   }
   
   render() {
     let contentClass = this.background == 'blue' ? 'blue' : '';
+    let widthStyle = this.width == '' ? '' : `width: ${this.width};`;
+    console.log(this.width);
+    console.log(widthStyle);
 
     return html`
-        <a href="${this.href}" class="${contentClass}" style="width: ${this.width};" @focus="${this._higlight}" @blur="${this._tonedown}" @mouseover="${this._higlight}" @mouseout="${this._tonedown}">
+        <a href="${this.href}" class="${contentClass}" style="${widthStyle}" @focus="${this._higlight}" @blur="${this._tonedown}" @mouseover="${this._higlight}" @mouseout="${this._tonedown}">
             <img src="${this.src}" alt="${this.alt}">
             <div class="text"><slot></slot></div>
         </a>
