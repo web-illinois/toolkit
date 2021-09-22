@@ -16,21 +16,24 @@ il-clickable-card,
   p.heading {
     color: var(--il-orange);
     font-size: 1.3125rem;
-    font-weight: 700;
+    font-weight: 600;
     line-height: 2.0625rem;
-    padding: 0;
-    margin: 0 0 1.25rem 0;
+    padding: 0 16px 0 0;
+    margin: 0 0 .625rem 0;
 
     &::after {
       content: "";
       -webkit-mask-image: var(--il-clickable-card-post);
       mask-image: var(--il-clickable-card-post);
       background-size: 12px 12px;
+      font-weight: 500;
       height: 12px;
       width: 12px;
       display: var(--il-clickable-card-post-display);
       margin-left: 4px;
-      margin-bottom: 1px;
+      display: inline;
+      position: absolute;
+      margin-top: 12px;
       background-color: var(--il-orange);
     }
   }
@@ -38,6 +41,10 @@ il-clickable-card,
   p {
     font-size: 1.25rem;
     line-height: 1.6875rem;
+  }
+
+  p:last-of-type {
+    margin-bottom: 0;
   }
 }
 
