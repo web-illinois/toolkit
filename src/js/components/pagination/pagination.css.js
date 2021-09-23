@@ -28,21 +28,23 @@ li.current, li.ellipsis, a {
   border-style: solid;
 }
 li.current {
-  background-color: var(--il-orange);
+  background-color: var(--il-blue);
   color: white;
-  border-color: var(--il-orange);
+  border-color: var(--il-blue);
 }
 li.ellipsis {
   color: var(--il-cloud-3);
   border-color: transparent;
 }
 a {
+  font-weight: 500;
   text-decoration: none;
   color: var(--il-blue);
   border-color: var(--il-cloud-3)
 }
 a:hover, a:focus {
-  background-color: var(--il-cloud-3);
+  background-color: #ececed;
+  text-decoration: underline;
 }
 
 `;
