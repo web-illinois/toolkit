@@ -14,12 +14,13 @@ il-clickable-card,
   h4,
   h5,
   p.heading {
-    color: var(--il-altgeld);
+    color: var(--il-orange);
     font-size: 1.3125rem;
-    font-weight: 600;
+    font-weight: 700;
     line-height: 1.75rem;
     padding: 0 16px 0 0;
     margin: 0 0 .625rem 0;
+    letter-spacing: .015em;
 
     &::after {
       content: "";
@@ -34,7 +35,7 @@ il-clickable-card,
       display: inline;
       position: absolute;
       margin-top: 6px;
-      background-color: var(--il-altgeld);
+      background-color: var(--il-orange);
     }
   }
 
