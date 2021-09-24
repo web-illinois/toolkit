@@ -15,7 +15,7 @@ class ClickableCard extends LitElement {
 
   static get styles() {
     return css`
-        a {
+    article {
             display: block;
             border: 1px solid var(--il-gray-2);
             border-bottom: 3px solid var(--il-orange);
@@ -24,29 +24,48 @@ class ClickableCard extends LitElement {
             color: #252525;
             background: white;
         }
-        a.blue {
+        article.blue {
           background: var(--il-blue);
           color: white;
         }
-        a:hover, a:focus {
+        article.highlight {
           background: var(--il-blue);
           color: white;
           border-bottom: 3px solid var(--il-industrial-blue-1);
         }
-        a.blue:hover, a.blue:focus {
+        article.blue.highlight {
           background: white;
           color: var(--il-blue);
         }
         img {
             width: 100%;
         }
-        a:hover img, a:focus img {
+        article.highlight img {
           filter: var(--il-clickable-card-image-filter);
         }
 
         div.text {
           padding: 1.75rem 1.875rem 2.8rem 1.875rem;
           min-height: 100px;
+        }
+        article a {
+          text-decoration: none;
+        }
+        article a:focus {
+          outline-style: none;
+          box-shadow: none;
+          border-color: transparent;
+        }
+        .il-invisible {
+          position: absolute !important;
+          left: -9999px !important;
+          top: auto !important;
+          display: block !important;
+          text-align: left !important;
+          text-indent: -9999em !important;
+          width: 1px !important;
+          height: 1px !important;
+          overflow: hidden !important;
         }
         `;
   }
@@ -60,25 +79,33 @@ class ClickableCard extends LitElement {
     this.width = '';
     this.highlight = false;
   }
+
   
   render() {
     let contentClass = this.background == 'blue' ? 'blue' : '';
     let widthStyle = this.width == '' ? '' : `width: ${this.width};`;
-
+    let idInfo = 'card-' + (((1+Math.random())*0x10000000)|0);
+    let defaultInformation = this.alt == '' ? 'Clickable Card' : this.alt;
     return html`
-        <a href="${this.href}" class="${contentClass}" style="${widthStyle}" @focus="${this._higlight}" @blur="${this._tonedown}" @mouseover="${this._higlight}" @mouseout="${this._tonedown}">
+        <article aria-labelledby="${idInfo}" class="${contentClass}" style="${widthStyle}" @mouseover="${this._higlight}" @mouseout="${this._tonedown}">
             <img src="${this.src}" alt="${this.alt}">
-            <div class="text"><slot></slot></div>
-        </a>
+            <div class="text"><a id="${idInfo}" @focus="${this._higlight}" @blur="${this._tonedown}" href="${this.href}"><slot name="header"><p class="il-invisible">${defaultInformation}</p></slot></a><slot></slot></div>
+        </article>
         `;
+  }
+
+  connectedCallback() {
+    super.connectedCallback();
   }
 
   _higlight(e) {
     this.highlight = true;
+    this.shadowRoot.querySelector('article').classList.add('highlight');
   }
 
   _tonedown(e) {
     this.highlight = false;
+    this.shadowRoot.querySelector('article').classList.remove('highlight');
   }
 }
 
