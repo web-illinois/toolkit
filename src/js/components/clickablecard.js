@@ -32,6 +32,7 @@ class ClickableCard extends LitElement {
           background: var(--il-blue);
           color: white;
           border-bottom: 3px solid var(--il-industrial-blue-1);
+          cursor: pointer;
         }
         article.blue.highlight {
           background: white;
@@ -87,15 +88,15 @@ class ClickableCard extends LitElement {
     let idInfo = 'card-' + (((1+Math.random())*0x10000000)|0);
     let defaultInformation = this.alt == '' ? 'Clickable Card' : this.alt;
     return html`
-        <article aria-labelledby="${idInfo}" class="${contentClass}" style="${widthStyle}" @mouseover="${this._higlight}" @mouseout="${this._tonedown}">
+        <article aria-labelledby="${idInfo}" class="${contentClass}" style="${widthStyle}" @click="${this._click}" @mouseover="${this._higlight}" @mouseout="${this._tonedown}">
             <img src="${this.src}" alt="${this.alt}">
             <div class="text"><a id="${idInfo}" @focus="${this._higlight}" @blur="${this._tonedown}" href="${this.href}"><slot name="header"><p class="il-invisible">${defaultInformation}</p></slot></a><slot></slot></div>
         </article>
         `;
   }
 
-  connectedCallback() {
-    super.connectedCallback();
+  _click(e) {
+    window.location = this.href;
   }
 
   _higlight(e) {
