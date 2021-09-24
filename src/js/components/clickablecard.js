@@ -15,7 +15,7 @@ class ClickableCard extends LitElement {
 
   static get styles() {
     return css`
-    article {
+        article {
             display: block;
             border: 1px solid var(--il-gray-2);
             border-bottom: 3px solid var(--il-orange);
@@ -44,10 +44,8 @@ class ClickableCard extends LitElement {
         article.highlight img {
           filter: var(--il-clickable-card-image-filter);
         }
-
         div.text {
           padding: 1.75rem 1.875rem 2.8rem 1.875rem;
-          min-height: 100px;
         }
         article a {
           text-decoration: none;
@@ -81,16 +79,27 @@ class ClickableCard extends LitElement {
     this.highlight = false;
   }
 
-  
+  renderHiddenParagraph() {
+    return html`<p class="header il-invisible">${(this.alt == '' ? 'Clickable Card' : this.alt)}</p>`;
+  }
+
+  firstUpdated() {
+    this.shadowRoot.querySelector('slot[name="header"]').addEventListener('slotchange', (e) => this.removeHiddenInformation(e));
+  }
+
+  removeHiddenInformation(e) {
+    e.target.querySelector('p').remove();
+  }
+ 
   render() {
     let contentClass = this.background == 'blue' ? 'blue' : '';
     let widthStyle = this.width == '' ? '' : `width: ${this.width};`;
     let idInfo = 'card-' + (((1+Math.random())*0x10000000)|0);
-    let defaultInformation = this.alt == '' ? 'Clickable Card' : this.alt;
+   
     return html`
         <article aria-labelledby="${idInfo}" class="${contentClass}" style="${widthStyle}" @click="${this._click}" @mouseover="${this._higlight}" @mouseout="${this._tonedown}">
             <img src="${this.src}" alt="${this.alt}">
-            <div class="text"><a id="${idInfo}" @focus="${this._higlight}" @blur="${this._tonedown}" href="${this.href}"><slot name="header"><p class="il-invisible">${defaultInformation}</p></slot></a><slot></slot></div>
+            <div class="text"><a id="${idInfo}" @focus="${this._higlight}" @blur="${this._tonedown}" href="${this.href}"><slot name="header">${this.renderHiddenParagraph()}</slot></a><slot></slot></div>
         </article>
         `;
   }
