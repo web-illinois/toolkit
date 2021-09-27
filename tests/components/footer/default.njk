@@ -32,8 +32,8 @@ layout: layouts/page.njk
 
   <div class="il-footer-navigation">
     <div class="il-footer-navigation-column">
-      <nav aria-label="Campus Footer Links">
-        <h2>Department Resources:</h2>
+      <nav aria-labelledby="dept-resources">
+        <h2 id="dept-resources">Department Resources:</h2>
         <ul>
           <li><a href="#">Faculty & Staff</a></li>
           <li><a href="#">Undergraduate Studies</a></li>
@@ -51,8 +51,8 @@ layout: layouts/page.njk
       </nav>
     </div>
     <div class="il-footer-navigation-column">
-      <nav aria-label="Campus Footer Links 3">
-        <h2>More Resources:</h2>
+      <nav aria-labelledby="more-resources">
+        <h2 id="more-resources">More Resources:</h2>
         <ul>
           <li><a href="#">One</a></li>
           <li><a href="#">Two is a Really Really Long Item That Wraps Around</a></li>
@@ -70,7 +70,7 @@ layout: layouts/page.njk
     </div>
   </div>
 
-  <nav slot="links" class="il-footer-links" aria-label="Additional links">
+  <nav slot="links" class="il-footer-links" aria-label="Legal notices">
     <ul>
       <li><button data-il="cookies"></button></li>
       <li><a data-il="privacy"></a></li>
