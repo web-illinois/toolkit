@@ -10,11 +10,12 @@ li {
 }
 .full {
   height: 100%;
+  transition: background-color .3s; 
 }
 .heading {
     display: flex;
     flex-direction: row;
-    align-items: center;
+    align-items: baseline;
 }
 .full .contents {
     position: absolute;
@@ -50,6 +51,7 @@ li {
   text-decoration: underline;
   background-color: white;
   outline: 0;
+  transition: background-color .3s, color .3s;
 }
 .full .label ::slotted(a[aria-current="page"]) {
   color: var(--il-altgeld);
@@ -71,7 +73,7 @@ li {
 .full .indicator svg {
   position: absolute;
   right: 12px;
-  top: calc(50% - 7px);
+  top: 5px;
   display: block;
   width: 14px;
   height: 14px;
@@ -99,6 +101,7 @@ li {
 }
 .full.expanded {
   background-color: white;
+  transition: background-color .3s;
 }
 .full.collapsed .contents {
   display: none;

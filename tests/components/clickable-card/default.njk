@@ -1,0 +1,34 @@
+---
+title: Clickable Card (default view)
+group: "Components: Clickable Card"
+layout: layouts/page.njk
+---
+
+<div class="il-formatted">
+
+<il-clickable-card width="500px" src="{{ '/_assets/images/hero-bg.jpg' | url }}" href="https://www.example.com">
+<h3 slot="header">Student Life</h3>
+<p>Animal sciences students extend their learning and career networks beyond
+the classroom through internships, judging teams, student organizations, undergraduate research
+projects with our faculty, as well as short- and long-term study abroad opportunities all over the world. </p>
+</il-clickable-card>
+
+<il-clickable-card width="500px" src="{{ '/_assets/images/hero-bg.jpg' | url }}" href="https://www.example.com" background="blue">
+<h3 slot="header">Student Life</h3>
+<p>Animal sciences students extend their learning and career networks beyond
+the classroom through internships, judging teams, student organizations, undergraduate research
+projects with our faculty, as well as short- and long-term study abroad opportunities all over the world. </p>
+</il-clickable-card>
+
+<il-clickable-card src="{{ '/_assets/images/hero-bg.jpg' | url }}" href="https://www.example.com" alt="Student Life with a Title">
+<h3>Student Life with a Ridiculously Exaggerated Title</h3>
+<p>Animal sciences students extend their learning and career networks beyond
+the classroom through internships, judging teams, student organizations, undergraduate research
+projects with our faculty, as well as short- and long-term study abroad opportunities all over the world. </p>
+</il-clickable-card>
+
+<il-clickable-card width="500px" src="{{ '/_assets/images/hero-bg.jpg' | url }}" href="https://www.example.com" alt="Student Life with a Title">
+<h3 slot="header">Student Life with a Ridiculously Exaggerated Title</h3>
+</il-clickable-card>
+
+</div>

@@ -1,0 +1,100 @@
+:root {
+  --il-clickable-card-margin: 0.9375rem;
+  --il-clickable-card-image-filter: none;
+  --il-clickable-card-post: url("data:image/svg+xml, %3Csvg version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0px' y='0px' 	 viewBox='0 0 1000 1000' style='enable-background:new 0 0 1000 1000;' xml:space='preserve'%3E%3Cg%3E%3Cpath d='M589,503.6c0-17.3-6.1-28.9-18.3-40.4L203.9,117c-6.1-11.5-24.5-17.3-42.8-17.3l0,0c-12.2,0-30.6,5.8-42.8,17.3l0,0   c-24.5,23.1-24.5,57.7,0,80.8l324,305.8l-324,305.8c-24.5,23.1-24.5,57.7,0,80.8c12.2,11.5,30.6,17.3,42.8,17.3s30.6-5.8,42.8-17.3   L570.7,544C582.9,532.5,589,520.9,589,503.6z'/%3E%3Cpath d='M876.3,463.2L509.6,117c-12.2-11.5-24.5-17.3-42.8-17.3l0,0c-18.3,0-30.6,5.8-42.8,17.3l0,0c-24.5,23.1-24.5,57.7,0,80.8   l324,305.8L424,809.5c-24.5,23.1-24.5,57.7,0,80.8c12.2,11.5,24.5,17.3,42.8,17.3c18.3,0,30.6-5.8,42.8-17.3L876.3,544   c12.2-11.5,18.3-23.1,18.3-40.4S888.6,474.8,876.3,463.2z'/%3E%3C/g%3E%3C/svg%3E");
+  --il-clickable-card-post-display: inline-block;
+}
+
+il-clickable-card,
+.il-formatted il-clickable-card {
+  display: block;
+
+  h2,
+  h3,
+  h4,
+  h5,
+  p.heading {
+    color: var(--il-orange);
+    font-size: 1.3125rem;
+    font-weight: 700;
+    line-height: 1.75rem;
+    padding: 0 16px 0 0;
+    margin: 0 0 .625rem 0;
+    letter-spacing: .015em;
+
+    &::after {
+      content: "";
+      -webkit-mask-image: var(--il-clickable-card-post);
+      mask-image: var(--il-clickable-card-post);
+      background-size: 16px 16px;
+      font-weight: 500;
+      height: 16px;
+      width: 16px;
+      display: var(--il-clickable-card-post-display);
+      margin-left: 4px;
+      display: inline;
+      position: absolute;
+      margin-top: 6px;
+      background-color: var(--il-orange);
+    }
+  }
+
+  p {
+    font-size: 1.25rem;
+    line-height: 1.6875rem;
+  }
+
+  p:last-of-type {
+    margin-bottom: 0;
+  }
+}
+
+il-clickable-card[background="blue"],
+.il-formatted il-clickable-card[background="blue"] {
+  h2,
+  h3,
+  h4,
+  h5,
+  p.heading,
+  p {
+    color: white;
+
+    &::after {
+      background-color: white;
+    }
+  }
+}
+
+il-clickable-card[highlight],
+.il-formatted il-clickable-card[highlight] {
+  h2,
+  h3,
+  h4,
+  h5,
+  p.heading,
+  p {
+    color: white;
+
+    &::after {
+      background-color: white;
+    }
+  }
+}
+
+il-clickable-card[highlight][background="blue"],
+.il-formatted il-clickable-card[highlight][background="blue"] {
+  h2,
+  h3,
+  h4,
+  h5,
+  p.heading {
+    color: var(--il-orange);
+
+    &::after {
+      background-color: var(--il-orange);
+    }
+  }
+  p {
+    color: var(--il-blue);
+  }
+}
