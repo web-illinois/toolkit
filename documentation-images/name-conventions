@@ -1,1 +1,12 @@
-This folder is intended to hold images which will be used in the project documentation. The name scheme will follow the names of the pages, so a web page named il-accordion will have a file named il-accordion.(something).
+This folder is intended to hold images which will be used in the project documentation. 
+
+The folder scheme will follow the major segments of the documentation so that similar images can be found together. 
+As of Oct. 2, the starting folder structure I'm looking at comes from the right nav and includes:
+
+* about-the-toolkit
+* usage
+* components-reference
+* cdn-and-resources
+* developers
+
+The name scheme will follow the names of the pages, so a web page named il-accordion will have a file named il-accordion.(something).
