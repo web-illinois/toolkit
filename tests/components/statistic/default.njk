@@ -138,7 +138,7 @@ layout: layouts/page.njk
 
 <h2>Transparent</h2>
 
-<div style="background-image: url(/_assets/images/hero-bg.jpg);">
+<div style="background-image: url({{ '/_assets/images/hero-bg.jpg' | url }});">
 <il-statistic width="230px" size="small" background="transparent" color="white">
 <em slot="stat">#6</em> Overall ranking among undergraduate programs in the U.S.
 </il-statistic>
@@ -161,7 +161,7 @@ layout: layouts/page.njk
 
 <h2>Shaded</h2>
 
-<div style="background-image: url(/_assets/images/hero-bg.jpg);">
+<div style="background-image: url({{ '/_assets/images/hero-bg.jpg' | url }});">
 <il-statistic width="230px" size="small" background="shaded">
 <em slot="stat">#6</em> Overall ranking among undergraduate programs in the U.S.
 </il-statistic>
