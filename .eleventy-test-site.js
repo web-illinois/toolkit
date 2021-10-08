@@ -2,7 +2,7 @@ const glob = require('fast-glob');
 const path = require('path');
 
 module.exports = function (eleventyConfig) {
-  eleventyConfig.setTemplateFormats(['html', 'md', 'njk', '11ty.js', 'css', 'jpg']);
+  eleventyConfig.setTemplateFormats(['html', 'md', 'njk', '11ty.js', 'css', 'jpg', 'json']);
   eleventyConfig.addPassthroughCopy({
     "dist": ".",
     "tests/_reference": "reference-images"
