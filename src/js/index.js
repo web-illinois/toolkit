@@ -5,6 +5,7 @@ import './components/link';
 import './components/breadcrumbs';
 import './components/breadcrumbs-page';
 import './components/back-to-top';
+import './components/calltoaction';
 import './components/clickablecard';
 import './components/footer';
 import './components/header';

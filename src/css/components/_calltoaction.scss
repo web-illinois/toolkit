@@ -1,0 +1,32 @@
+il-call-to-action,
+.il-formatted il-call-to-action {
+  .il-icon,
+  .il-icon-solid,
+  .il-icon-line {
+    font-size: 6rem;
+  }
+
+  a.il-button {
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+  a.il-button:first-of-type {
+    margin-left: 0;
+  }
+  a.il-button:last-of-type {
+    margin-right: 0;
+  }
+}
+
+@media only screen and (max-width: 792px) {
+  il-call-to-action,
+  .il-formatted il-call-to-action {
+ 
+    a.il-button {
+      display: inline-block;
+      margin: 0 0 10px 0;
+    }
+  }
+}
+
+
