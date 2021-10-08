@@ -10,7 +10,9 @@ class Statistic extends LitElement {
       color: { type: String, attribute: true },
       height: { type: String, attribute: true },
       background: { type: String, attribute: true },
-      animated: { type: Boolean, attribute: true }
+      startAnimation: { type: String, attribute: true },
+      animate: { type: Boolean, attribute: true },
+      originalStat: { type: String, attribute: true }
     };
   }
 
@@ -98,30 +100,112 @@ class Statistic extends LitElement {
 
   constructor() {
     super();
-    this.src = undefined;
+    this.src = '';
     this.size = '';
-    this.color = undefined;
+    this.color = '';
     this.background = '';
     this.height = '';
     this.width = '';
     this.animated = false;
+    this.idInfo = '';
+    this.start = '';
+    this.originalStat = '';
+  }
+
+  attributeChangedCallback(name, oldval, newval) {
+    if (name == 'animate') {
+      if (this.idInfo != '') {
+        const element = this.shadowRoot.getElementById(this.idInfo);
+        let counter = this.startAnimation;
+        const endInteger = parseInt(this.originalStat.replace('#', ''));
+        const startingText = this.originalStat.includes('#') ? '#' : '';
+        const endingText = this.originalStat.includes('%') ? '%' : '';
+        const plus = counter < endInteger;
+        const endText = this.originalStat;
+        let duration = 5000 / Math.abs((counter - endInteger));
+        if (duration > 100) {
+          duration = 100;
+        }
+
+        let intervalPointer = setInterval(function () {
+          if (plus) {
+            if (counter < endInteger) {
+              element.querySelector('.stat').innerHTML = startingText + counter + endingText;
+              counter++;
+            } else {
+              element.querySelector('.stat').innerHTML = endText;
+              clearInterval(intervalPointer);
+            }
+          } else {
+            if (counter > endInteger) {
+              element.querySelector('.stat').innerHTML = startingText + counter + endingText;
+              counter--;
+            } else {
+              element.querySelector('.stat').innerHTML = endText;
+              clearInterval(intervalPointer);
+            }
+          }
+        }, duration);
+      }
+    }
+    super.attributeChangedCallback(name, oldval, newval);
+  }
+
+  addOriginalStat(e) {
+    if (this.originalStat == '') {
+      this.originalStat = e.target.assignedNodes({ flatten: true })[0].innerHTML;
+    }
+  }
+
+  firstUpdated() {
+    if (this.src !== '') {
+      fetch(this.src, { method: 'GET', headers: { "Content-type": "application/x-www-form-urlencoded; charset=UTF-8" } })
+        .then(res => res.json())
+        .then(data => {
+          var element = this.shadowRoot.getElementById(this.idInfo);
+          element.querySelector('.stat').innerHTML = data.stat;
+          if (data.heading !== undefined && data.heading != '') {
+            element.querySelector('.stat').innerHTML = data.heading;
+          }
+          if (data.body !== undefined && data.body != '') {
+            element.querySelector('.after').innerHTML = data.body;
+          }
+          if (data.top !== undefined && data.top != '') {
+            element.querySelector('.before').innerHTML = data.top;
+          }
+          if (data.source !== undefined && data.source != '') {
+            element.querySelector('.source').innerHTML = data.source;
+          }
+          this.originalStat = element.querySelector('.stat').innerHTML;
+        });
+    } else {
+      this.shadowRoot.querySelector('slot[name="stat"]').addEventListener('slotchange', (e) => this.addOriginalStat(e));
+    }
   }
 
   render() {
-    let idInfo = 'statistic-' + (((1 + Math.random()) * 0x10000000) | 0);
+    this.idInfo = 'statistic-' + (((1 + Math.random()) * 0x10000000) | 0);
     let widthStyle = this.width == '' ? '' : `width: ${this.width};`;
     let sizeClass = this.size == 'medium' ? '' : this.size;
     let colorClass = this.colorClass == 'blue' ? '' : this.color;
-    let backgroundClass = this.background == 'gray' ? '' : 'back-' + this.background;
+    let backgroundClass = this.background == 'gray' || this.background == '' ? '' : 'back-' + this.background;
 
-    return html`
-        <p class="il-statistic ${sizeClass} ${backgroundClass} ${colorClass}" id='${idInfo}' style='${widthStyle}'>
-            <span class="text"><slot name="top"></slot></span>
-            <span class="stat"><slot name="stat"></span></slot>
-            <span class="text"><slot></slot></span>
-            <span class="text source"><slot name="source"></slot></span>
-        </p>
-        `;
+    if (this.src === '') {
+      return html`
+      <p class="il-statistic ${sizeClass} ${backgroundClass} ${colorClass}" id='${this.idInfo}' style='${widthStyle}'>
+          <span class="text"><slot name="top"></slot></span>
+          <span class="stat"><slot name="stat"></span></slot>
+          <span class="text"><slot></slot></span>
+          <span class="text source"><slot name="source"></slot></span>
+      </p>
+      `;
+    }
+    return html`<p class="il-statistic ${sizeClass} ${backgroundClass} ${colorClass}" id='${this.idInfo}' style='${widthStyle}'>
+    <span class="text before"></span>
+    <span class="stat"></span>
+    <span class="text after"></span>
+    <span class="text source"></span>
+    </p>`
   }
 }
 
