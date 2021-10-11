@@ -35,8 +35,12 @@ class CallToAction extends LitElement {
         color: white;
         background: var(--il-blue);
     }
-    .il-calltoaction .il-calltoaction-body, .il-calltoaction .il-calltoaction-icon  {
-      padding-left: 5vw;
+    .il-calltoaction .il-calltoaction-body {
+      padding-left: 50px;
+    }
+    .il-calltoaction .il-calltoaction-icon {
+      padding-left: 100px;
+      min-width: 96px;
     }
     .il-calltoaction .il-calltoaction-body.center {
       text-align: center;
