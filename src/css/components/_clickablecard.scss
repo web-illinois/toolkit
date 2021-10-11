@@ -5,6 +5,10 @@
   --il-clickable-card-post-display: inline-block;
 }
 
+il-clickable-card {
+  @extend .il-formatted;
+}
+
 il-clickable-card,
 .il-formatted il-clickable-card {
   display: block;
