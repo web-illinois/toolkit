@@ -1,0 +1,128 @@
+il-call-to-action {
+  @extend .il-formatted;
+}
+
+il-call-to-action,
+.il-formatted il-call-to-action {
+  .il-icon,
+  .il-icon-solid,
+  .il-icon-line {
+    font-size: 6rem;
+  }
+
+  a.il-button, button {
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+
+  a.il-button:first-of-type {
+    margin-left: 0;
+  }
+  a.il-button:last-of-type {
+    margin-right: 0;
+  }
+}
+
+.il-formatted il-call-to-action[alignment="center"], il-call-to-action[alignment="center"] {
+  h2,
+  h3,
+  h4,
+  h5,
+  p {
+    text-align: center;
+  }
+  
+  *[slot="icon"] {
+    display: block;
+    text-align: center;
+  }
+}
+
+.il-formatted il-call-to-action[alignment="right"], il-call-to-action[alignment="right"] {
+  h2,
+  h3,
+  h4,
+  h5,
+  p,
+  ul,
+  ol,
+  ul li,
+  ol li,
+  a {
+    text-align: right;
+  }
+
+  *[slot="icon"] {
+    display: block;
+    text-align: right;
+  }
+}
+
+.il-formatted il-call-to-action:not([background="white"]), il-call-to-action:not([background="white"]) {
+    h2,
+    h3,
+    h4,
+    h5,
+    p,
+    ul,
+    ol,
+    ul li,
+    ol li,
+    a {
+      color: white;
+    }
+
+    a.il-button, button {
+      background: transparent;
+      border-color: white;
+      &:focus,
+      &:hover {
+        background: white;
+        color: var(--il-blue);
+      }
+    }
+}
+
+@media only screen and (max-width: 792px) {
+  il-call-to-action,
+  .il-formatted il-call-to-action {
+ 
+    a.il-button {
+      display: block;
+      margin: 0 0 10px 0;
+      max-width: max-content;
+      margin-left: 0;
+      margin-right: auto;
+      margin-bottom: 20px;
+    }
+    a.il-button:last-of-type {
+      margin-right: auto;
+    }
+
+    &[alignment="center"] {
+      a.il-button {
+        margin-left: auto;
+      }
+      a.il-button:first-of-type {
+        margin-left: auto;
+      }
+    }
+
+    &[alignment="right"] {
+      a.il-button {
+        margin-left: auto;
+        margin-right: 0;
+      }
+      a.il-button:first-of-type {
+        margin-left: auto;
+        margin-right: 0;
+      }
+      a.il-button:last-of-type {
+        margin-left: auto;
+        margin-right: 0;
+      }
+    }
+  }
+}
+
+
