@@ -158,29 +158,7 @@ class Statistic extends LitElement {
   }
 
   firstUpdated() {
-    if (this.src !== '') {
-      fetch(this.src, { method: 'GET', headers: { "Content-type": "application/x-www-form-urlencoded; charset=UTF-8" } })
-        .then(res => res.json())
-        .then(data => {
-          var element = this.shadowRoot.getElementById(this.idInfo);
-          element.querySelector('.stat').innerHTML = data.stat;
-          if (data.heading !== undefined && data.heading != '') {
-            element.querySelector('.stat').innerHTML = data.heading;
-          }
-          if (data.body !== undefined && data.body != '') {
-            element.querySelector('.after').innerHTML = data.body;
-          }
-          if (data.top !== undefined && data.top != '') {
-            element.querySelector('.before').innerHTML = data.top;
-          }
-          if (data.source !== undefined && data.source != '') {
-            element.querySelector('.source').innerHTML = data.source;
-          }
-          this.originalStat = element.querySelector('.stat').innerHTML;
-        });
-    } else {
-      this.shadowRoot.querySelector('slot[name="stat"]').addEventListener('slotchange', (e) => this.addOriginalStat(e));
-    }
+    this.shadowRoot.querySelector('slot[name="stat"]').addEventListener('slotchange', (e) => this.addOriginalStat(e));
   }
 
   render() {
@@ -190,22 +168,13 @@ class Statistic extends LitElement {
     let colorClass = this.colorClass == 'blue' ? '' : this.color;
     let backgroundClass = this.background == 'gray' || this.background == '' ? '' : 'back-' + this.background;
 
-    if (this.src === '') {
-      return html`
-      <p class="il-statistic ${sizeClass} ${backgroundClass} ${colorClass}" id='${this.idInfo}' style='${widthStyle}'>
-          <span class="text"><slot name="top"></slot></span>
-          <span class="stat"><slot name="stat"></span></slot>
-          <span class="text"><slot></slot></span>
-          <span class="text source"><slot name="source"></slot></span>
-      </p>
-      `;
-    }
-    return html`<p class="il-statistic ${sizeClass} ${backgroundClass} ${colorClass}" id='${this.idInfo}' style='${widthStyle}'>
-    <span class="text before"></span>
-    <span class="stat"></span>
-    <span class="text after"></span>
-    <span class="text source"></span>
-    </p>`
+    return html`
+    <p class="il-statistic ${sizeClass} ${backgroundClass} ${colorClass}" id='${this.idInfo}' style='${widthStyle}'>
+        <span class="text"><slot name="top"></slot></span>
+        <span class="stat"><slot name="stat"></span></slot>
+        <span class="text"><slot></slot></span>
+        <span class="text source"><slot name="source"></slot></span>
+    </p>`;
   }
 }
 

@@ -1,6 +1,6 @@
 import {LitElement, html, css} from 'lit';
-import styles from './videofeature.css';
-import VideoFeature from './videofeature';
+import styles from './video-feature.css';
+import VideoFeature from './video-feature';
 
 class VideoFeatureComponent extends LitElement {
 
