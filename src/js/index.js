@@ -1,25 +1,23 @@
 import '../css/components.scss';
 
 import './components/accordion';
-import './components/link';
-import './components/breadcrumbs';
-import './components/breadcrumbs-page';
 import './components/back-to-top';
-import './components/calltoaction';
-import './components/clickablecard';
+import './components/breadcrumbs-page';
+import './components/breadcrumbs';
+import './components/call-to-action';
+import './components/clickable-card';
 import './components/footer';
 import './components/header';
 import './components/hero';
-import './components/imagefeature';
-import './components/nav';
+import './components/image-feature';
+import './components/link';
 import './components/nav-link';
 import './components/nav-section';
+import './components/nav';
 import './components/pagination/pagination.component';
 import './components/search';
 import './components/section-nav';
-import './components/statistic';
-import './components/statistic.animate.js';
+import './components/statistic/statistic.animate';
+import './components/statistic/statistic';
 import './components/unit-wordmark';
-import './components/videofeature/videofeature.component';
-
-
+import './components/video-feature/video-feature.component';

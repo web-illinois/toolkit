@@ -17,7 +17,7 @@ class CallToAction extends LitElement {
       align-items: center;
       padding: 2.813rem 0;
       max-width: var(--il-content-max-width);
-      margin: auto;
+      margin: var(--il-call-to-action-margin);
     }
     .il-calltoaction.gradient {
       color: white;
