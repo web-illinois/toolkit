@@ -1,6 +1,4 @@
-class Item {
-
-}
+class Item { }
 
 class UrlItem extends Item { 
    constructor(url, view) {
