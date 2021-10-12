@@ -6,6 +6,7 @@ class NavigationSection extends LitElement {
     return {
       expanded: { type: Boolean, default: false, attribute: true, reflect: true },
       compact: { type: Boolean, default: false, attribute: false },
+      current: { type: Boolean, default: false, attribute: true },
       right: { type: Boolean, default: false, attribute: true }
     };
   }
@@ -17,6 +18,7 @@ class NavigationSection extends LitElement {
   constructor() {
     super();
     this._expanded = false;
+    this.current = false;
     document.addEventListener('DOMContentLoaded', this.handleContentLoaded.bind(this));
     document.addEventListener('click', this.handleDocumentClick.bind(this));
   }
@@ -256,6 +258,7 @@ class NavigationSection extends LitElement {
   }
 
   isCurrent() {
+    if (this.current) return true;
     const link = this.getLink();
     return link && link.getAttribute('aria-current') === 'page';
   }

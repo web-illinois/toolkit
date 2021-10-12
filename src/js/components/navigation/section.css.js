@@ -1,4 +1,4 @@
-import {css} from 'lit';
+import { css } from 'lit';
 
 export default css`
 
@@ -53,6 +53,7 @@ li {
   outline: 0;
   transition: background-color .3s, color .3s;
 }
+.full.current .label ::slotted(a),
 .full .label ::slotted(a[aria-current="page"]) {
   color: var(--il-altgeld);
   background-color: white;
