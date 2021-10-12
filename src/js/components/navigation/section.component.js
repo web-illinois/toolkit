@@ -1,12 +1,12 @@
-import {LitElement, html} from 'lit';
-import styles from './nav-section.css'
+import { LitElement, html } from 'lit';
+import styles from './section.css'
 
 class NavigationSection extends LitElement {
   static get properties() {
     return {
-      expanded: {type: Boolean, default: false, attribute: true, reflect: true},
-      compact: {type: Boolean, default: false, attribute: false},
-      right: {type: Boolean, default: false, attribute: true}
+      expanded: { type: Boolean, default: false, attribute: true, reflect: true },
+      compact: { type: Boolean, default: false, attribute: false },
+      right: { type: Boolean, default: false, attribute: true }
     };
   }
 
@@ -30,7 +30,7 @@ class NavigationSection extends LitElement {
     if (wasExpanded !== isExpanded) {
       this._expanded = isExpanded;
       this.requestUpdate('expanded', wasExpanded);
-      
+
       this.updateComplete.then(() => {
         const evt = new Event(isExpanded ? 'expand' : 'collapse');
         this.dispatchEvent(evt);
@@ -67,7 +67,7 @@ class NavigationSection extends LitElement {
     }
   }
 
-  
+
   handleLinkBlur(evt) {
     if (this.expanded) {
       window.setTimeout(() => {
@@ -188,7 +188,7 @@ class NavigationSection extends LitElement {
 
   collapseAndMoveFocusToParent() {
     this.getLink().focus();
-    this.collapse(); 
+    this.collapse();
   }
 
   containsFocus() {
@@ -275,26 +275,29 @@ class NavigationSection extends LitElement {
     const rightjust = true;
     return html`
         <li class="${state} ${view} ${current}" @mouseover=${this.handleMouseOver} @mouseout=${this.handleMouseOut}>
-            <div class="heading">
-                <div class="label">
-                    <slot name="label"></slot>
-                </div>
-                <div class="indicator" role="presentation">
-                    <svg aria-label="Toggle menu" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
-                        <path d="M207.029 381.476L12.686 187.132c-9.373-9.373-9.373-24.569 0-33.941l22.667-22.667c9.357-9.357 24.522-9.375 33.901-.04L224 284.505l154.745-154.021c9.379-9.335 24.544-9.317 33.901.04l22.667 22.667c9.373 9.373 9.373 24.569 0 33.941L240.971 381.476c-9.373 9.372-24.569 9.372-33.942 0z"/>
-                    </svg>
-                </div>
-                <div class="toggle">
-                    <button aria-controls="contents" aria-expanded="${this.expanded ? 'true' : 'false'}" @click=${this.handleToggleClick}>
-                        <svg aria-label="Toggle ${this.getLinkText()} menu" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
-                            <path d="M207.029 381.476L12.686 187.132c-9.373-9.373-9.373-24.569 0-33.941l22.667-22.667c9.357-9.357 24.522-9.375 33.901-.04L224 284.505l154.745-154.021c9.379-9.335 24.544-9.317 33.901.04l22.667 22.667c9.373 9.373 9.373 24.569 0 33.941L240.971 381.476c-9.373 9.372-24.569 9.372-33.942 0z"/>
-                        </svg>
-                    </button>
-                </div>
+          <div class="heading">
+            <div class="label">
+              <slot name="label"></slot>
             </div>
-            <div class="${this.right ? 'contents right' : 'contents'}" id="contents">
-                <slot></slot>
+            <div class="indicator" role="presentation">
+              <svg aria-label="Toggle menu" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                <path
+                  d="M207.029 381.476L12.686 187.132c-9.373-9.373-9.373-24.569 0-33.941l22.667-22.667c9.357-9.357 24.522-9.375 33.901-.04L224 284.505l154.745-154.021c9.379-9.335 24.544-9.317 33.901.04l22.667 22.667c9.373 9.373 9.373 24.569 0 33.941L240.971 381.476c-9.373 9.372-24.569 9.372-33.942 0z" />
+              </svg>
             </div>
+            <div class="toggle">
+              <button aria-controls="contents" aria-expanded="${this.expanded ? 'true' : 'false'}"
+                @click=${this.handleToggleClick}>
+                <svg aria-label="Toggle ${this.getLinkText()} menu" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                  <path
+                    d="M207.029 381.476L12.686 187.132c-9.373-9.373-9.373-24.569 0-33.941l22.667-22.667c9.357-9.357 24.522-9.375 33.901-.04L224 284.505l154.745-154.021c9.379-9.335 24.544-9.317 33.901.04l22.667 22.667c9.373 9.373 9.373 24.569 0 33.941L240.971 381.476c-9.373 9.372-24.569 9.372-33.942 0z" />
+                </svg>
+              </button>
+            </div>
+          </div>
+          <div class="${this.right ? 'contents right' : 'contents'}" id="contents">
+            <slot></slot>
+          </div>
         </li>`
   }
 }

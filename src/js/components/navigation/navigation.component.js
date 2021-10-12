@@ -1,30 +1,16 @@
-import {LitElement, html, css} from 'lit';
+import { LitElement, html } from 'lit';
+import styles from './navigation.css';
+
 
 class Navigation extends LitElement {
   static get properties() {
     return {
-      compact: {type: Boolean, default: false, attribute: true, reflect: true}
+      compact: { type: Boolean, default: false, attribute: true, reflect: true }
     };
   }
 
   static get styles() {
-    return css`
-ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: flex;
-}
-.full ul {
-  padding-top: .375rem;
-  flex-direction: row;
-  font-size: 1rem;
-  background-color: var(--il-cloud-1);
-}
-.compact ul {
-  flex-direction: column;
-}
-        `
+    return styles;
   }
 
   constructor() {
@@ -43,7 +29,7 @@ ul {
       this._compact = isCompact;
       this.requestUpdate('compact', wasCompact);
       this.updateComplete.then(() => {
-        const evt = new CustomEvent('compact', {detail: isCompact});
+        const evt = new CustomEvent('compact', { detail: isCompact });
         this.dispatchEvent(evt);
       });
     }
@@ -161,9 +147,9 @@ ul {
   render() {
     return html`
         <nav class=${this.compact ? 'compact' : 'full'} aria-label='main menu'>
-            <ul>
-                <slot></slot>
-            </ul>
+          <ul>
+            <slot></slot>
+          </ul>
         </nav>`
   }
 }
