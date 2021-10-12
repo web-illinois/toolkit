@@ -1,5 +1,9 @@
+:root {
+  --il-image-feature-display: block;
+}
+
 .il-formatted il-image-feature, il-image-feature, .il-formatted il-video-feature, il-video-feature {
-  display: block;
+  display: var(--il-image-feature-display);
   margin-bottom: 20px;
 
   h2,

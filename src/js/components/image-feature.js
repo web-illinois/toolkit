@@ -31,11 +31,11 @@ class ImageFeature extends LitElement {
     }
     .imagefeature .content.gradient {
         color: white;
-        background: linear-gradient(180deg, var(--il-industrial-blue) 0%, var(--il-blue) 100%);
+        background: var(--il-gradient-orange);
     }
     .imagefeature .content.orange {
         color: white;
-        background: linear-gradient(180deg, var(--il-orange) 0%, var(--il-altgeld) 100%);
+        background: var(--il-gradient-orange);
     }
     .imagefeature .content.solid {
         color: white;

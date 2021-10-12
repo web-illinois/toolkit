@@ -14,11 +14,11 @@ export default css`
     }
     .videofeature .content.gradient {
         color: white;
-        background: linear-gradient(180deg, var(--il-industrial-blue) 0%, var(--il-blue) 100%);
+        background: var(--il-gradient-blue);
     }
     .videofeature .content.orange {
         color: white;
-        background: linear-gradient(180deg, var(--il-orange) 0%, var(--il-altgeld) 100%);
+        background: var(--il-gradient-orange);
     }
     .videofeature .content.solid, .videofeature .background.solid  {
         color: white;
