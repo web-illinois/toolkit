@@ -1,5 +1,6 @@
 :root {
   --il-call-to-action-margin: auto;
+  --il-call-to-action-display: block;
 }
 
 il-call-to-action {
@@ -8,6 +9,7 @@ il-call-to-action {
 
 il-call-to-action,
 .il-formatted il-call-to-action {
+  display: var(--il-call-to-action-display);
   .il-icon,
   .il-icon-solid,
   .il-icon-line {
