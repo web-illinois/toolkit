@@ -115,10 +115,12 @@ class Statistic extends LitElement {
   attributeChangedCallback(name, oldval, newval) {
     if (name == 'animate') {
       if (this.idInfo != '') {
+        debugger;
+        let prefersReducedMotion = window.matchMedia('(prefers-reduced-motion)');
         const element = this.shadowRoot.getElementById(this.idInfo);
         let counter = this.startAnimation;
         const endInteger = parseInt(this.originalStat.replace('#', ''));
-        if (!isNaN(endInteger)) {
+        if (!isNaN(endInteger) && !prefersReducedMotion.matches) {
           const startingText = this.originalStat.includes('#') ? '#' : '';
           const endingText = this.originalStat.includes('%') ? '%' : '';
           const plus = counter < endInteger;
