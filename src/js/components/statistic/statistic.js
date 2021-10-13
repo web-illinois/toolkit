@@ -112,48 +112,6 @@ class Statistic extends LitElement {
     this.originalStat = '';
   }
 
-  attributeChangedCallback(name, oldval, newval) {
-    if (name == 'animate') {
-      if (this.idInfo != '') {
-        let prefersReducedMotion = window.matchMedia('(prefers-reduced-motion)');
-        const element = this.shadowRoot.getElementById(this.idInfo);
-        let counter = this.startAnimation;
-        const endInteger = parseInt(this.originalStat.replace('#', ''));
-        if (!isNaN(endInteger) && !prefersReducedMotion.matches) {
-          const startingText = this.originalStat.includes('#') ? '#' : '';
-          const endingText = this.originalStat.includes('%') ? '%' : '';
-          const plus = counter < endInteger;
-          const endText = this.originalStat;
-          let duration = 5000 / Math.abs((counter - endInteger));
-          if (duration > 50) {
-            duration = 50;
-          }
-  
-          let intervalPointer = setInterval(function () {
-            if (plus) {
-              if (counter < endInteger) {
-                element.querySelector('.stat').innerHTML = startingText + counter + endingText;
-                counter++;
-              } else {
-                element.querySelector('.stat').innerHTML = endText;
-                clearInterval(intervalPointer);
-              }
-            } else {
-              if (counter > endInteger) {
-                element.querySelector('.stat').innerHTML = startingText + counter + endingText;
-                counter--;
-              } else {
-                element.querySelector('.stat').innerHTML = endText;
-                clearInterval(intervalPointer);
-              }
-            }
-          }, duration);          
-        }
-      }
-    }
-    super.attributeChangedCallback(name, oldval, newval);
-  }
-
   addOriginalStat(e) {
     if (this.originalStat == '') {
       this.originalStat = e.target.assignedNodes({ flatten: true })[0].innerHTML;
