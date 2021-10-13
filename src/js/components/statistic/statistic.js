@@ -115,7 +115,6 @@ class Statistic extends LitElement {
   attributeChangedCallback(name, oldval, newval) {
     if (name == 'animate') {
       if (this.idInfo != '') {
-        debugger;
         let prefersReducedMotion = window.matchMedia('(prefers-reduced-motion)');
         const element = this.shadowRoot.getElementById(this.idInfo);
         let counter = this.startAnimation;
