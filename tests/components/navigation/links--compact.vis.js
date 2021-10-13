@@ -15,6 +15,7 @@ module.exports = (viewports) => {
       'viewports': [viewports.iphone],
       'onReady': async (page, scenario) => {
         await page.hover('#link-2');
+        await page.waitFor(500);
       }
     },
     {
@@ -23,6 +24,7 @@ module.exports = (viewports) => {
       'viewports': [viewports.iphone],
       'onReady': async (page, scenario) => {
         await util.moveFocus(page, '#link-2');
+        await page.waitFor(500);
       }
     }
   ];
