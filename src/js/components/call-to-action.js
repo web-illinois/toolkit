@@ -21,7 +21,7 @@ class CallToAction extends LitElement {
     }
     .il-calltoaction.gradient {
       color: white;
-      background: linear-gradient(180deg, var(--il-industrial-blue) 0%, var(--il-blue) 100%);
+      background: var(--il-gradient-blue);
     }
     .il-calltoaction.orange {
       color: white;
@@ -29,7 +29,7 @@ class CallToAction extends LitElement {
     }
     .il-calltoaction.orangegradient {
         color: white;
-        background: linear-gradient(180deg, var(--il-orange) 0%, var(--il-altgeld) 100%);
+        background: var(--il-gradient-orange);
     }
     .il-calltoaction.solid {
         color: white;

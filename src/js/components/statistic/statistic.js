@@ -41,11 +41,11 @@ class Statistic extends LitElement {
     }
     p.il-statistic.back-gradient {
       color: white;
-      background: linear-gradient(180deg, var(--il-industrial-blue) 0%, var(--il-blue) 100%);
+      background: var(--il-gradient-blue);
     }
     p.il-statistic.back-orangegradient {
       color: white;
-      background: linear-gradient(180deg, var(--il-orange) 0%, var(--il-altgeld) 100%);
+      background: var(--il-gradient-orange);
     }
     p.il-statistic.back-blue {
       color: white;
@@ -110,45 +110,6 @@ class Statistic extends LitElement {
     this.idInfo = '';
     this.start = '';
     this.originalStat = '';
-  }
-
-  attributeChangedCallback(name, oldval, newval) {
-    if (name == 'animate') {
-      if (this.idInfo != '') {
-        const element = this.shadowRoot.getElementById(this.idInfo);
-        let counter = this.startAnimation;
-        const endInteger = parseInt(this.originalStat.replace('#', ''));
-        const startingText = this.originalStat.includes('#') ? '#' : '';
-        const endingText = this.originalStat.includes('%') ? '%' : '';
-        const plus = counter < endInteger;
-        const endText = this.originalStat;
-        let duration = 5000 / Math.abs((counter - endInteger));
-        if (duration > 100) {
-          duration = 100;
-        }
-
-        let intervalPointer = setInterval(function () {
-          if (plus) {
-            if (counter < endInteger) {
-              element.querySelector('.stat').innerHTML = startingText + counter + endingText;
-              counter++;
-            } else {
-              element.querySelector('.stat').innerHTML = endText;
-              clearInterval(intervalPointer);
-            }
-          } else {
-            if (counter > endInteger) {
-              element.querySelector('.stat').innerHTML = startingText + counter + endingText;
-              counter--;
-            } else {
-              element.querySelector('.stat').innerHTML = endText;
-              clearInterval(intervalPointer);
-            }
-          }
-        }, duration);
-      }
-    }
-    super.attributeChangedCallback(name, oldval, newval);
   }
 
   addOriginalStat(e) {
