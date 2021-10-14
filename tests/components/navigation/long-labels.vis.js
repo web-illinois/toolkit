@@ -15,6 +15,7 @@ module.exports = (viewports) => {
       'viewports': [viewports.desktop],
       'onReady': async (page, scenario) => {
         await page.hover('#short-section-link');
+        await page.waitFor(500);
       }
     },
     {
@@ -23,6 +24,7 @@ module.exports = (viewports) => {
       'viewports': [viewports.desktop],
       'onReady': async (page, scenario) => {
         await page.hover('#long-section-link');
+        await page.waitFor(500);
       }
     }
   ];
