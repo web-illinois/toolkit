@@ -14,6 +14,9 @@ body h1 {
   grid-gap: 2em;
 }
 
+.color-theme__text-examples span {
+  margin-left: 1em;
+}
 p.color-theme__text--bold, p.color-theme__text--large-bold {
   font-weight: 700;
 }
@@ -43,3 +46,14 @@ p.color-theme__text--small, p.color-theme__text--small-bold {
   color: var(--il-theme-visited-link-color)
 }
 
+.color-theme__heading-examples h1,
+.color-theme__heading-examples h2,
+.color-theme__heading-examples h3,
+.color-theme__heading-examples h4,
+.color-theme__heading-examples h5,
+.color-theme__heading-examples h6 {
+  color: var(--il-theme-heading-color);
+}
+.color-theme__heading-alt {
+  color: var(--il-theme-alt-heading-color);
+}
