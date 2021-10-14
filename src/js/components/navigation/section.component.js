@@ -1,9 +1,11 @@
 import { LitElement, html } from 'lit';
+import NavigationItem from './item.component';
 import styles from './section.css'
 
-class NavigationSection extends LitElement {
+class NavigationSection extends NavigationItem {
   static get properties() {
     return {
+      active: { type: Boolean, default: false, attribute: false },
       expanded: { type: Boolean, default: false, attribute: true, reflect: true },
       compact: { type: Boolean, default: false, attribute: false },
       current: { type: Boolean, default: false, attribute: true },
@@ -19,6 +21,7 @@ class NavigationSection extends LitElement {
     super();
     this._expanded = false;
     this.current = false;
+    this.active = false;
     document.addEventListener('DOMContentLoaded', this.handleContentLoaded.bind(this));
     document.addEventListener('click', this.handleDocumentClick.bind(this));
   }
@@ -275,9 +278,10 @@ class NavigationSection extends LitElement {
     const state = this.expanded ? 'expanded' : 'collapsed';
     const view = this.compact ? 'compact' : 'full';
     const current = this.isCurrent() ? 'current' : '';
+    const active = this.active ? 'active' : 'inactive';
     const rightjust = true;
     return html`
-        <li class="${state} ${view} ${current}" @mouseover=${this.handleMouseOver} @mouseout=${this.handleMouseOut}>
+        <li class="${state} ${view} ${current} ${active}" @mouseover=${this.handleMouseOver} @mouseout=${this.handleMouseOut}>
           <div class="heading">
             <div class="label">
               <slot name="label"></slot>

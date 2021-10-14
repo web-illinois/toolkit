@@ -68,14 +68,6 @@ class Navigation extends LitElement {
     }
   }
 
-  handleSectionBlur(evt) {
-    this.getSections().forEach(section => {
-      if (section.shadowRoot.children.length > 0 && section.shadowRoot.children[0].getElementsByClassName('indicator').length > 0) {
-        section.shadowRoot.children[0].getElementsByClassName('indicator')[0].classList.remove('selected');
-      }
-    });
-  }
-
   handleHeaderViewChange(evt) {
     console.debug(evt);
     this.compact = evt.detail === 'compact';
@@ -126,18 +118,37 @@ class Navigation extends LitElement {
     });
   }
 
+  handleSectionBlur(evt) {
+    this.getSections().forEach(section => {
+      if (this.sectionHasChildren(section) && section.shadowRoot.children[0].getElementsByClassName('indicator').length > 0) {
+        section.active = false;
+        section.shadowRoot.children[0].getElementsByClassName('indicator')[0].classList.remove('selected');
+      }
+    });
+  }
+
   handleSectionFocus(evt) {
     const activeSection = evt.currentTarget;
-    if (activeSection.shadowRoot.children.length > 0 && activeSection.shadowRoot.children[0].getElementsByClassName('indicator').length > 0) {
-      activeSection.shadowRoot.children[0].getElementsByClassName('indicator')[0].classList.add('selected');
+    if (this.sectionHasChildren(activeSection) && this.sectionHasIndicator(activeSection)) {
+      activeSection.active = true;
+      //activeSection.shadowRoot.children[0].classList.add('active');
     }
     this.getSections().forEach(section => {
       if (section !== activeSection) {
-        if (section.shadowRoot.children.length > 0 && section.shadowRoot.children[0].getElementsByClassName('indicator').length > 0) {
-          section.shadowRoot.children[0].getElementsByClassName('indicator')[0].classList.remove('selected');
+        if (this.sectionHasChildren(section) && this.sectionHasIndicator(section)) {
+          section.active = false;
+          //section.shadowRoot.children[0].classList.remove('active');
         }
       }
     });
+  }
+
+  sectionHasChildren(section) {
+    return section.shadowRoot.children.length > 0;
+  }
+
+  sectionHasIndicator(section) {
+    return section.shadowRoot.children[0].getElementsByClassName('indicator').length > 0
   }
 
   getSections() {

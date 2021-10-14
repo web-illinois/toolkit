@@ -1,7 +1,8 @@
 import { LitElement, html } from 'lit';
+import NavigationItem from './item.component';
 import styles from './link.css';
 
-class NavigationLink extends LitElement {
+class NavigationLink extends NavigationItem {
   static get properties() {
     return {
       compact: { type: Boolean, default: false, attribute: false },

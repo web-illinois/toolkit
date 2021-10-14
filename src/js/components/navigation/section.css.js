@@ -80,10 +80,8 @@ li {
   height: 14px;
   fill: currentcolor;
 }
-.full .heading:hover .indicator svg {
-  transform: rotate(180deg);
-}
-.full .heading .indicator.selected svg {
+.full .heading:hover .indicator svg,
+.full.active .heading .indicator svg {
   transform: rotate(180deg);
   fill: var(--il-altgeld);
 }
