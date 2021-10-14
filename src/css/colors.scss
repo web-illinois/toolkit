@@ -35,3 +35,41 @@
   --il-gradient-blue: linear-gradient(180deg, var(--il-industrial-blue) 0%, var(--il-blue) 100%);
   --il-gradient-orange: linear-gradient(180deg, var(--il-orange) 0%, var(--il-altgeld) 100%);
 }
+
+// Default colors
+
+:root {
+  --il-text-color: #252525;
+  --il-heading-color: var(--il-blue);
+  --il-link-color: var(--il-alma-mater);
+  --il-visited-link-color: var(--il-blue);
+  --il-link-hover-color: var(--il-altgeld);
+  --il-focus-outline-color: var(--il-arches-blue);
+}
+
+// Themes
+
+:root {
+  --il-theme-background: white;
+  --il-theme-text-color: var(--il-text-color);
+  --il-theme-link-color: var(--il-link-color);
+  --il-theme-focused-link-color: var(--il-link-hover-color);
+  --il-theme-visited-link-color: var(--il-visited-link-color);
+}
+.il-theme-blue, .il-theme-blue-gradient {
+  --il-theme-background: var(--il-blue);
+  --il-theme-text-color: white;
+}
+.il-theme-blue-gradient {
+  --il-theme-background: var(--il-blue-gradient);
+}
+.il-theme-orange, .il-theme-orange-gradient {
+  --il-theme-background: var(--il-orange);
+  --il-theme-text-color: #252525;
+  --il-theme-link-color: white;
+  --il-theme-focused-link-color: var(--il-blue);
+  --il-theme-visited-link-color: white;
+}
+.il-theme-orange-gradient {
+  --il-theme-background: var(--il-gradient-orange);
+}

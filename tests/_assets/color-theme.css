@@ -1,0 +1,45 @@
+body {
+  background: var(--il-theme-background);
+  color: var(--il-theme-text-color);
+  font-family: var(--il-source-sans);
+  padding: 2em 5em;
+  font-size: 18px;
+}
+body h1 {
+  text-align: left;
+}
+.color-theme__examples {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 2em;
+}
+
+p.color-theme__text--bold, p.color-theme__text--large-bold {
+  font-weight: 700;
+}
+p.color-theme__text--large, p.color-theme__text--large-bold {
+  font-size: 24px;
+}
+p.color-theme__text--small, p.color-theme__text--small-bold {
+  font-size: 16px;
+}
+
+.color-theme__link,
+.color-theme__link--hover,
+.color-theme__link--focus,
+.color-theme__link--visited {
+  text-decoration: underline;
+}
+.color-theme__link {
+  color: var(--il-theme-link-color);
+}
+.color-theme__link--hover {
+  color: var(--il-theme-focused-link-color);
+}
+.color-theme__link--focus {
+  color: var(--il-theme-focused-link-color);
+}
+.color-theme__link--visited {
+  color: var(--il-theme-visited-link-color)
+}
+

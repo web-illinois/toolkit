@@ -1,0 +1,62 @@
+{% set stylesheets = ['tests.css', 'color-theme.css'] %}
+
+{% extends "layouts/page.njk" %}
+
+{% block bodyClass %}{{ theme }}{% endblock %}
+
+{% block body %}
+
+<div class="color-theme">
+
+  <h1 class="color-theme__title">{{ theme }}</h1>
+
+  <div class="color-theme__examples">
+    <div class="color-theme__text-examples">
+      <p class="color-theme__text">
+        Base text
+        <span class="color-theme__link">link</span>
+        <span class="color-theme__link--hover">hover</span>
+        <span class="color-theme__link--focus">focus</span>
+        <span class="color-theme__link--visited">visited</span>
+      </p>
+      <p class="color-theme__text--bold">
+        Base text bold
+        <span class="color-theme__link">link</span>
+        <span class="color-theme__link--hover">hover</span>
+        <span class="color-theme__link--focus">focus</span>
+        <span class="color-theme__link--visited">visited</span>
+      </p>
+      <p class="color-theme__text--large">
+        Large text
+        <span class="color-theme__link">link</span>
+        <span class="color-theme__link--hover">hover</span>
+        <span class="color-theme__link--focus">focus</span>
+        <span class="color-theme__link--visited">visited</span>
+      </p>
+      <p class="color-theme__text--large-bold">
+        Large text bold
+        <span class="color-theme__link">link</span>
+        <span class="color-theme__link--hover">hover</span>
+        <span class="color-theme__link--focus">focus</span>
+        <span class="color-theme__link--visited">visited</span>
+      </p>
+      <p class="color-theme__text--small">
+        Small text
+        <span class="color-theme__link">link</span>
+        <span class="color-theme__link--hover">hover</span>
+        <span class="color-theme__link--focus">focus</span>
+        <span class="color-theme__link--visited">visited</span>
+      </p>
+    </div>
+    <div class="color-theme__heading-examples il-formatted">
+      <h1>Heading 1 - Page Title</h1>
+      <h2>Heading 2 or <span>Heading 2</span></h2>
+      <h3>Heading 3 or <span>Heading 3</span></h3>
+      <h4>Heading 4</h4>
+      <h5>Heading 5</h5>
+    </div>
+  </div>
+
+</div>
+
+{% endblock %}
