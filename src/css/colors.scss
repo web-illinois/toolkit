@@ -72,7 +72,11 @@
 }
 .il-theme-blue-gradient {
   --il-theme-background: var(--il-gradient-blue);
+  --il-theme-heading-color: white;
   --il-theme-alt-heading-color: white;
+  --il-theme-link-color: white;
+  --il-theme-focused-link-color: var(--il-industrial-blue-2);
+  --il-theme-visited-link-color: white;
 }
 .il-theme-orange, .il-theme-orange-gradient {
   --il-theme-background: var(--il-orange);
