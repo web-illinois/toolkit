@@ -22,8 +22,12 @@ class UrlItem extends Item {
             this._videoCode = '44666331';
           }
           this._videoType = "mediaspace";
+          if (urlLowerCase.includes("embed/secure")) {
+            this._videoCode = this._videoId;
+            let urlArray = url.split("/");
+            this._videoId = urlArray[urlArray.length - 3];
+          } 
           this._videoUrl = `https://mediaspace.illinois.edu/embed/secure/iframe/entryId/${this._videoId}/uiConfId/${this._videoCode}`;
-  
         } else if (urlLowerCase.includes("vimeo")) {
             this._videoType = "vimeo";
             this._videoUrl = `https://player.vimeo.com/video/${this._videoId}`;
