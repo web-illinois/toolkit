@@ -35,3 +35,85 @@
   --il-gradient-blue: linear-gradient(180deg, var(--il-industrial-blue) 0%, var(--il-blue) 100%);
   --il-gradient-orange: linear-gradient(180deg, var(--il-orange) 0%, var(--il-altgeld) 100%);
 }
+
+// Default colors
+
+:root {
+  --il-text-color: #252525;
+  --il-heading-color: var(--il-blue);
+  --il-link-color: var(--il-alma-mater);
+  --il-visited-link-color: var(--il-blue);
+  --il-link-hover-color: var(--il-altgeld);
+  --il-focus-outline-color: var(--il-arches-blue);
+}
+
+// Themes
+
+:root {
+  --il-theme-text-color: var(--il-text-color);
+  --il-theme-heading-color: var(--il-heading-color);
+  --il-theme-alt-heading-color: var(--il-theme-heading-color);
+  --il-theme-link-color: var(--il-link-color);
+  --il-theme-focused-link-color: var(--il-link-hover-color);
+  --il-theme-visited-link-color: var(--il-visited-link-color);
+}
+.il-theme-white {
+  --il-theme-background: white;
+  --il-theme-alt-heading-color: var(--il-orange);
+}
+.il-theme-blue, .il-theme-blue-gradient {
+  --il-theme-background: var(--il-blue);
+  --il-theme-text-color: white;
+  --il-theme-heading-color: white;
+  --il-theme-alt-heading-color: var(--il-orange);
+  --il-theme-link-color: white;
+  --il-theme-focused-link-color: var(--il-orange);
+  --il-theme-visited-link-color: var(--il-industrial-blue-2);
+}
+.il-theme-blue-gradient {
+  --il-theme-background: var(--il-gradient-blue);
+  --il-theme-heading-color: white;
+  --il-theme-alt-heading-color: white;
+  --il-theme-link-color: white;
+  --il-theme-focused-link-color: var(--il-industrial-blue-2);
+  --il-theme-visited-link-color: white;
+}
+.il-theme-orange, .il-theme-orange-gradient {
+  --il-theme-background: var(--il-orange);
+  --il-theme-text-color: #252525;
+  --il-theme-link-color: white;
+  --il-theme-focused-link-color: var(--il-blue);
+  --il-theme-visited-link-color: white;
+}
+.il-theme-orange-gradient {
+  --il-theme-background: var(--il-gradient-orange);
+  --il-theme-text-color: black;
+  --il-theme-heading-color: black;
+  --il-theme-alt-heading-color: black;
+}
+.il-theme-gray {
+  --il-theme-background: var(--il-gray-1);
+  --il-theme-text-color: #252525;
+  --il-theme-alt-heading-color: var(--il-altgeld);
+  --il-theme-link-color: var(--il-alma-mater);
+  --il-theme-focused-link-color: var(--il-industrial-blue);
+  --il-theme-visited-link-color: var(--il-alma-mater-1);
+}
+.il-theme-industrial-blue {
+  --il-theme-background: var(--il-industrial-blue);
+  --il-theme-text-color: white;
+  --il-theme-heading-color: white;
+  --il-theme-alt-heading-color: white;
+  --il-theme-link-color: white;
+  --il-theme-focused-link-color: var(--il-industrial-blue-2);
+  --il-theme-visited-link-color: white;
+}
+.il-theme-altgeld {
+  --il-theme-background: var(--il-altgeld);
+  --il-theme-text-color: white;
+  --il-theme-heading-color: white;
+  --il-theme-alt-heading-color: white;
+  --il-theme-link-color: white;
+  --il-theme-focused-link-color: black;
+  --il-theme-visited-link-color: white;
+}

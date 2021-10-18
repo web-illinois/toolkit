@@ -7,11 +7,8 @@
   font-size: 16px;
   --il-content-margin: 20px;
   --il-content-max-width: 1140px;
-  --il-link-color: var(--il-alma-mater);
-  --il-visited-link-color: var(--il-blue);
-  --il-link-hover-color: var(--il-altgeld);
-  --il-focus-outline: 3px dashed var(--il-arches-blue);
-  --il-dotted-focus-outline: 4px dotted var(--il-arches-blue);
+  --il-focus-outline: 3px dashed var(--il-focus-outline-color);
+  --il-dotted-focus-outline: 4px dotted var(--il-focus-outline-color);
 
   @media (min-width: 768px) {
     --il-content-margin: 30px;
