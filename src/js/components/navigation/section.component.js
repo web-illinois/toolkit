@@ -4,13 +4,11 @@ import styles from './section.css'
 
 class NavigationSection extends NavigationItem {
   static get properties() {
-    return {
-      active: { type: Boolean, default: false, attribute: false },
-      expanded: { type: Boolean, default: false, attribute: true, reflect: true },
-      compact: { type: Boolean, default: false, attribute: false },
-      current: { type: Boolean, default: false, attribute: true },
-      right: { type: Boolean, default: false, attribute: true }
-    };
+    const props = NavigationItem.properties;
+    props.align = { type: String, default: "left", attribute: true };
+    props.expanded = { type: Boolean, default: false, attribute: true, reflect: true };
+    props.right = { type: Boolean, default: false, attribute: true }; // Deprecated
+    return props;
   }
 
   static get styles() {
@@ -19,10 +17,8 @@ class NavigationSection extends NavigationItem {
 
   constructor() {
     super();
+    this.align = 'left';
     this._expanded = false;
-    this.current = false;
-    this.active = false;
-    document.addEventListener('DOMContentLoaded', this.handleContentLoaded.bind(this));
     document.addEventListener('click', this.handleDocumentClick.bind(this));
   }
 
@@ -44,18 +40,20 @@ class NavigationSection extends NavigationItem {
   }
 
   handleContentLoaded(evt) {
+    super.handleContentLoaded(evt);
+    if (this.right !== undefined) {
+      console.warn('Attribute "right" is deprecated for component "il-nav-section"; use align="right" instead');
+      this.align = 'right';
+    }
     const link = this.getLink();
     if (link) {
-      link.addEventListener('keydown', this.handleLinkKeypress.bind(this));
-      link.addEventListener('blur', this.handleLinkBlurMain.bind(this));
+      link.addEventListener('blur', this.handleLinkBlur.bind(this));
       link.addEventListener('focus', this.handleLinkFocus.bind(this));
     }
     this.getSubmenuLinks().forEach(submenuLink => {
       submenuLink.addEventListener('keydown', this.handleSubmenuLinkKeypress.bind(this));
-      submenuLink.addEventListener('blur', this.handleLinkBlur.bind(this));
+      submenuLink.addEventListener('blur', this.handleSubmenuLinkBlur.bind(this));
     });
-    this.compact = this.getNavigation().compact;
-    this.getNavigation().addEventListener('compact', evt => this.compact = evt.detail);
   }
 
   handleDocumentClick(evt) {
@@ -64,35 +62,21 @@ class NavigationSection extends NavigationItem {
     }
   }
 
+  handleLinkBlur(evt) {
+    this.active = false;
+    this.collapseIfUnfocused();
+  }
+
   handleLinkFocus(evt) {
     if (!this.expanded) {
       this.expand();
-      const event = new CustomEvent('focus-label');
-      this.dispatchEvent(event);
+      this.active = true;
     }
-  }
-
-
-  handleLinkBlur(evt) {
-    if (this.expanded) {
-      window.setTimeout(() => {
-        if (!this.containsFocus()) this.collapse();
-      }, 100);
-    }
-  }
-
-  handleLinkBlurMain(evt) {
-    const event = new CustomEvent('blur-label');
-    this.dispatchEvent(event);
-    this.handleLinkBlur(evt);
   }
 
   handleLinkKeypress(evt) {
-    if (evt.code === 'Space') {
-      evt.preventDefault();
-      window.location.href = this.getLink().href;
-    }
-    else if (evt.code === 'Escape') {
+    super.handleLinkKeypress(evt);
+    if (evt.code === 'Escape') {
       evt.preventDefault();
       if (this.expanded) {
         this.collapse();
@@ -113,16 +97,6 @@ class NavigationSection extends NavigationItem {
         this.expandAndMoveFocusToLastSubmenuLink();
       }
     }
-    else if (evt.code === 'ArrowLeft') {
-      evt.preventDefault();
-      const event = new CustomEvent('exit', { detail: 'back' });
-      this.dispatchEvent(event);
-    }
-    else if (evt.code === 'ArrowRight') {
-      evt.preventDefault();
-      const event = new CustomEvent('exit', { detail: 'forward' });
-      this.dispatchEvent(event);
-    }
   }
 
   handleMouseOut(evt) {
@@ -135,6 +109,10 @@ class NavigationSection extends NavigationItem {
     if (!this.isCompact()) {
       this.expand();
     }
+  }
+
+  handleSubmenuLinkBlur(evt) {
+    this.collapseIfUnfocused();
   }
 
   handleSubmenuLinkKeypress(evt) {
@@ -196,6 +174,14 @@ class NavigationSection extends NavigationItem {
     this.collapse();
   }
 
+  collapseIfUnfocused() {
+    if (this.expanded) {
+      window.setTimeout(() => {
+        if (!this.containsFocus()) this.collapse();
+      }, 100);
+    }
+  }
+
   containsFocus() {
     return this.contains(document.activeElement);
   }
@@ -241,17 +227,6 @@ class NavigationSection extends NavigationItem {
     return link ? link.textContent : '';
   }
 
-  getNavigation() {
-    let parent = this.parentElement;
-    while (parent) {
-      if (parent.nodeName === 'IL-NAV') {
-        return parent;
-      }
-      parent = parent.parentElement;
-    }
-    return undefined;
-  }
-
   getSubmenuLinks() {
     return this.querySelectorAll('ul a');
   }
@@ -279,7 +254,7 @@ class NavigationSection extends NavigationItem {
     const view = this.compact ? 'compact' : 'full';
     const current = this.isCurrent() ? 'current' : '';
     const active = this.active ? 'active' : 'inactive';
-    const rightjust = true;
+    const align = 'align-' + this.align;
     return html`
         <li class="${state} ${view} ${current} ${active}" @mouseover=${this.handleMouseOver} @mouseout=${this.handleMouseOut}>
           <div class="heading">
@@ -302,7 +277,7 @@ class NavigationSection extends NavigationItem {
               </button>
             </div>
           </div>
-          <div class="${this.right ? 'contents right' : 'contents'}" id="contents">
+          <div class="contents ${align}" id="contents">
             <slot></slot>
           </div>
         </li>`

@@ -22,7 +22,7 @@ li {
     left: 0;
     top: 100%;
 }
-.full .contents.right {
+.full .contents.align-right {
   left: initial;
   right: 0;
 }
