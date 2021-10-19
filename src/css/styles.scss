@@ -40,6 +40,7 @@
 .il-link {
   color: var(--il-link-color);
   transition: color .3s;
+  text-decoration: underline;
 
   &:visited {
     color: var(--il-visited-link-color);
