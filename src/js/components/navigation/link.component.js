@@ -1,5 +1,6 @@
 import { LitElement, html } from 'lit';
 import NavigationItem from './item.component';
+import itemStyles from './item.css';
 import styles from './link.css';
 
 class NavigationLink extends NavigationItem {
@@ -11,7 +12,7 @@ class NavigationLink extends NavigationItem {
   }
 
   static get styles() {
-    return styles;
+    return itemStyles + styles;
   }
 
   constructor() {

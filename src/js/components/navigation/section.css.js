@@ -2,25 +2,19 @@ import { css } from 'lit';
 
 export default css`
 
-li {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    position: relative;
-}
 .full {
   height: 100%;
   transition: background-color .3s; 
 }
 .heading {
-    display: flex;
-    flex-direction: row;
-    align-items: baseline;
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
 }
 .full .contents {
-    position: absolute;
-    left: 0;
-    top: 100%;
+  position: absolute;
+  left: 0;
+  top: 100%;
 }
 .full .contents.align-right {
   left: initial;
