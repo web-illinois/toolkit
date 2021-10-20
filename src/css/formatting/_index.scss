@@ -1,0 +1,87 @@
+.il-formatted {
+  font-weight: 400;
+  font-size: 1.125em; // 18px
+  line-height: 1.667; //30px
+  font-family: var(--il-source-sans);
+  color: var(--il-text-color);
+
+  & > *:first-child {
+    margin-top: 0;
+  }
+
+  @import "links";
+  @import "headings";
+
+  p {
+    margin: 1.389em 0 0;
+    padding: 0;
+    font: 1em / 1.667 var(--il-source-sans);
+  }
+
+  b,
+  strong {
+    font-weight: 600;
+  }
+
+  mark {
+    background-color: var(--il-cloud-1);
+  }
+
+  hr {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    height: 1px;
+    background-color: var(--il-industrial-blue);
+
+    hr + * {
+      margin-top: 1.5em;
+    }
+  }
+
+  blockquote {
+    margin: 0 2.667em;
+    padding: 0;
+  }
+
+  @import "lists";
+
+  dfn {
+    font-style: normal;
+    font-weight: bold;
+  }
+
+  figure {
+    @include reset-spacing;
+    display: inline-block;
+    margin: 1.5em 0;
+
+    @media (min-width: 800px) {
+      &.il-left {
+        clear: left;
+        float: left;
+        margin: 0 1.5em 1em 0;
+      }
+
+      &.il-right {
+        clear: right;
+        float: right;
+        margin: 0 0 1em 1.5em;
+      }
+    }
+  }
+  figcaption {
+    @include reset-spacing;
+    font-size: .778em;
+    padding: 0.1em 0 0.35em;
+    border-bottom: 1px solid var(--il-industrial-blue);
+  }
+
+  @import "tables";
+
+  pre {
+    position: relative;
+    max-width: 100%;
+    overflow: auto;
+  }
+}

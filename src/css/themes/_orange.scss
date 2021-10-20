@@ -1,0 +1,13 @@
+.il-theme-orange, .il-theme-orange-gradient {
+  --il-theme-background: var(--il-orange);
+  --il-theme-text-color: #252525;
+  --il-theme-link-color: white;
+  --il-theme-focused-link-color: var(--il-blue);
+  --il-theme-visited-link-color: white;
+}
+.il-theme-orange-gradient {
+  --il-theme-background: var(--il-gradient-orange);
+  --il-theme-text-color: black;
+  --il-theme-heading-color: black;
+  --il-theme-alt-heading-color: black;
+}

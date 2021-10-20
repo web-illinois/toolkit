@@ -1,0 +1,55 @@
+ul,
+ol {
+  margin: {
+    top: 0;
+    bottom: 0;
+  }
+  & + p {
+    margin-top: rem(25px);
+  }
+}
+li {
+  @include reset-spacing;
+}
+
+ol {
+  ol {
+    list-style-type: lower-alpha;
+    ol {
+      list-style-type: lower-roman;
+    }
+  }
+}
+
+ul {
+  @include reset-list;
+
+  li {
+    @include reset-list;
+    position: relative;
+    margin-left: 40px;
+    list-style: disc;
+
+    &::marker {
+      font-size: .9em;
+    }
+  }
+
+  li li::after {
+    background-color: transparent;
+  }
+}
+
+p + ul,
+p + ol {
+  margin-top: -10px;
+}
+
+dt {
+  font-weight: bold;
+  margin-top: 12px;
+
+  &:first-of-type {
+    margin-top: 0;
+  }
+}
