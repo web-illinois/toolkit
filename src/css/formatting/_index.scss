@@ -1,7 +1,7 @@
 .il-formatted {
   font-weight: 400;
-  font-size: 1.125em; // 18px
-  line-height: 1.667; //30px
+  font-size: $base-text-size;
+  line-height: em(30px);
   font-family: var(--il-source-sans);
   color: var(--il-text-color);
 

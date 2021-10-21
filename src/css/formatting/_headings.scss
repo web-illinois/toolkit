@@ -9,21 +9,28 @@
 }
 
 h1, h2, h3, h4, h5, h6 {
-  margin: 1.667em 0 0;
+  color: var(--il-heading-color);
+  font-family: var(--il-source-sans);
+  margin-bottom: 0;
   padding: 0;
+  text-align: left;
+
+  & + p {
+    margin-top: em(20px);
+  }
 }
 
 h1 {
-  @include reset-heading;
-  @include heading-spacing;
-  font: 700 rem(40px) / rem(52px) var(--il-source-sans);
-  color: var(--il-heading-color);
+  font-weight: 700;
+  font-size: em(40px);
+  line-height: em(52px, 40px);
+  margin-top: em(30px, 40px);
 }
 h2 {
-  @include reset-heading;
-  @include heading-spacing;
-  font: 600 rem(35px) / rem(45px) var(--il-source-sans);
-  color: var(--il-heading-color);
+  font-weight: 600;
+  font-size: em(35px);
+  line-height: em(45px, 35px);
+  margin-top: em(30px, 35px);
 }
 h3 {
   @include reset-heading;
