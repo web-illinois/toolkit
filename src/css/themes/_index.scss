@@ -1,0 +1,18 @@
+:root {
+  --il-theme-text-color: var(--il-text-color);
+  --il-theme-heading-color: var(--il-heading-color);
+  --il-theme-alt-heading-color: var(--il-theme-heading-color);
+  --il-theme-link-color: var(--il-link-color);
+  --il-theme-focused-link-color: var(--il-link-hover-color);
+  --il-theme-visited-link-color: var(--il-visited-link-color);
+}
+
+@import "white";
+@import "blue";
+@import "orange";
+@import "gray";
+@import "industrial-blue";
+@import "altgeld";
+
+@import "blue-gradient";
+@import "orange-gradient";
