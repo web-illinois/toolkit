@@ -1,4 +1,11 @@
 il-hero {
+  --il-button-background-color: var(--il-orange);
+  --il-button-foreground-color: white;
+  --il-button-border-color: white;
+  --il-focused-button-background-color: white;
+  --il-focused-button-foreground-color: var(--il-orange);
+  --il-focused-button-border-color: var(--il-orange);
+
   h1 {
     @include reset-heading;
     font: 700 36px var(--il-source-sans);
@@ -33,21 +40,16 @@ il-hero {
 
       a {
         @extend .il-button;
-        --color-primary: var(--il-orange);
-        --color-secondary: white;
       }
     }
   }
 
-  &[color="orange"] {
-    ul li a {
-      --color-primary: var(--il-blue);
-    }
-  }
-
-  &[duotone] {
-    ul li a {
-      --color-primary: var(--il-blue);
-    }
+  &[color="orange"], &[duotone] {
+    --il-button-background-color: var(--il-blue);
+    --il-button-foreground-color: white;
+    --il-button-border-color: white;
+    --il-focused-button-background-color: white;
+    --il-focused-button-foreground-color: var(--il-blue);
+    --il-focused-button-border-color: var(--il-blue);
   }
 }
