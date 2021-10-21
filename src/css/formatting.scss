@@ -10,14 +10,21 @@
 
 .il-formatted {
   font: 400 rem(18px) / rem(30px) var(--il-source-sans);
-  color: var(--il-text-color);
+  color: var(--il-theme-text-color);
 
   a {
     @extend .il-link;
+    color: var(---il-theme-link-color);
+    text-decoration: underline;
   }
 
   a:hover, a:focus {
     outline-style: none;
+    color: var(--il-theme-focused-link-color);
+  }
+
+  a:visited {
+    color: var(--il-theme-visited-link-color);
   }
 
   h1 {
