@@ -1,0 +1,16 @@
+.layout-content {
+  position: relative;
+  width: 100%;
+  min-height: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-size: 3rem;
+  background-color: #FCB24C5D;
+}
+*[slot="header"] .layout-content,
+*[slot="footer"] .layout-content {
+  background-color: var(--il-arches-blue-3);
+}

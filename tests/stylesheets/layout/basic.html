@@ -1,0 +1,23 @@
+---
+title: "Basic layout"
+group: Layout
+layout: layouts/page.njk
+stylesheets: ["tests.css", "layout.css"]
+---
+<il-page>
+  <div slot="header">
+    <div class="layout-content">Header</div>
+  </div>
+
+  <div class="il-section il-fixed-width">
+    <div class="layout-content">Fixed width</div>
+  </div>
+  <div class="il-section il-full-width">
+    <div class="layout-content">Full width</div>
+  </div>
+
+  <div slot="footer">
+    <div class="layout-content">Footer</div>
+  </div>
+</il-page>
+

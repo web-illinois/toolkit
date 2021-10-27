@@ -1,0 +1,31 @@
+---
+title: "Layout with sidebar"
+group: Layout
+layout: layouts/page.njk
+stylesheets: ["tests.css", "layout.css"]
+---
+<div class="il-page">
+  <div class="il-header">
+    <div class="layout-content">Header</div>
+  </div>
+  <div class="il-main">
+    <div class="il-section-with-sidebar">
+      <div class="il-sidebar">
+        <div class="layout-content">Sidebar</div>
+      </div>
+      <div class="il-content">
+        <div class="layout-content">Content</div>
+      </div>
+    </div>
+    <div class="il-section il-fixed-width">
+      <div class="layout-content">Fixed width</div>
+    </div>
+    <div class="il-section il-full-width">
+      <div class="layout-content">Full width</div>
+    </div>
+  </div>
+  <div class="il-footer">
+    <div class="layout-content">Footer</div>
+  </div>
+</div>
+
