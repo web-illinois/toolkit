@@ -29,7 +29,7 @@ npm run build-html
 Then start the development server:
 
 ````
-npm run start
+npm start
 ````
 
 The test site should now be available at http://127.0.0.1:8080/.
@@ -55,7 +55,7 @@ npm run test-jest
 To run both sets of tests in sequence, use this script:
 
 ````
-npm run test
+npm test
 ````
 
 ## Development
