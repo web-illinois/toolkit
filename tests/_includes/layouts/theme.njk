@@ -46,48 +46,30 @@
   </table>
 
   <div class="color-theme__examples">
-    <div class="color-theme__heading-examples il-formatted">
+    <div id="specimen" class="color-theme__heading-examples il-formatted">
 
-      <h1>Heading 1</h1>
+      <h2>Sample Heading with a <a href="#">link</a></h2>
 
-      <h2>Heading 2</h2>
+      <p>Lorem ipsum dolor sit amet, <a href="#">link consectetur</a> adipiscing elit.
+        Donec a aliquet lacus.
+        Aliquam sed ipsum at est pharetra dictum sed a tortor.
+        Curabitur nunc felis, <a href="#">hovering imperdiet</a> sed rutrum vitae, pellentesque ut odio.
+        Aenean ac erat nisl.
+        <a href="#">Same focus praesent</a> scelerisque mattis felis ultrices tempor.
+        Nam eu sem nunc.
+        Donec eget <a href="#" class="visited">visited imperdiet</a> elit, id placerat nisl.</p>
 
-      <h3>Heading 3</h3>
-
-      <h4>Heading 4</h4>
-
-      <h5>Heading 5</h5>
-      
-      <h6>Heading 6</h6>
-
-      <p>Paragraph</p>
-
-      <p><em>Emphasized text</em></p>
-
-      <p><strong>Strongly emphasized text</strong></p>
-
-      <p><a href="http://example.com/">Link</a></p>
-
-      <p><a href="http://example.com/" class="il-button">Button</a></p>
-
-      <ul>
-        <li>Unordered list</li>
-        <li>Unordered list</li>
-        <li>Unordered list</li>
-        <li>Unordered list</li>
-        <li>Unordered list</li>
-      </ul>
-
-      <ol>
-        <li>Ordered list</li>
-        <li>Ordered list</li>
-        <li>Ordered list</li>
-        <li>Ordered list</li>
-        <li>Ordered list</li>
-      </ol>
-
+        <p><a class="il-button" href="#">Apply Now</a></p>
     </div>
   </div>
+
+  <script>
+    document.querySelectorAll('#specimen a').forEach(link => {
+      if (link.classList.contains('visited')) return;
+      const hash = Math.floor(Math.random() * 10000);
+      link.setAttribute('href', `http://example.com/?${hash}`);
+    });
+  </script>
 
 </div>
 

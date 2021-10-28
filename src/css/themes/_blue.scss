@@ -1,9 +1,14 @@
 .il-theme-blue {
-  --il-theme-background: var(--il-blue);
-  --il-theme-text-color: white;
-  --il-theme-heading-color: white;
-  --il-theme-alt-heading-color: var(--il-orange);
-  --il-theme-link-color: white;
-  --il-theme-focused-link-color: var(--il-orange);
-  --il-theme-visited-link-color: var(--il-industrial-blue-2);
+  --il-background-color: var(--il-blue);
+  --il-text-color: white;
+  --il-heading-color: white;
+  --il-link-color: white;
+  --il-focused-link-color: var(--il-orange);
+  --il-visited-link-color: var(--il-arches-2);
+  --il-button-background-color: var(--il-blue);
+  --il-button-foreground-color: white;
+  --il-button-border-color: white;
+  --il-focused-button-background-color: white;
+  --il-focused-button-foreground-color: var(--il-blue);
+  --il-focused-button-border-color: var(--il-blue);
 }
