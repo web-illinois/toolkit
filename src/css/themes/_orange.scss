@@ -1,7 +1,14 @@
 .il-theme-orange {
-  --il-theme-background: var(--il-orange);
-  --il-theme-text-color: #252525;
-  --il-theme-link-color: white;
-  --il-theme-focused-link-color: var(--il-blue);
-  --il-theme-visited-link-color: white;
+  --il-background-color: var(--il-orange);
+  --il-text-color: black;
+  --il-heading-color: white;
+  --il-link-color: black;
+  --il-focused-link-color: var(--il-blue);
+  --il-visited-link-color: black;
+  --il-button-background-color: var(--il-orange);
+  --il-button-foreground-color: white;
+  --il-button-border-color: white;
+  --il-focused-button-background-color: white;
+  --il-focused-button-foreground-color: var(--il-orange);
+  --il-focused-button-border-color: var(--il-orange);
 }

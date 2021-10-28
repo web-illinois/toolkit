@@ -1,7 +1,5 @@
 .il-theme-orange-gradient {
   @extend .il-theme-orange;
-  --il-theme-background: var(--il-gradient-orange);
-  --il-theme-text-color: black;
-  --il-theme-heading-color: black;
-  --il-theme-alt-heading-color: black;
+  --il-background-color: var(--il-gradient-orange);
+  --il-button-background-color: transparent;
 }
