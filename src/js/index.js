@@ -12,6 +12,7 @@ import './components/hero';
 import './components/image-feature';
 import './components/layout/page.component';
 import './components/layout/section.component';
+import './components/layout/section-with-sidebar.component';
 import './components/link';
 import './components/navigation/navigation.component';
 import './components/navigation/link.component';
