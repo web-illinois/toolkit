@@ -15,10 +15,25 @@ class SectionWithSidebarComponent extends LitElement {
 
   constructor() {
     super();
-    super();
-    this.compact = false;
+    this._compact = false;
     document.addEventListener('DOMContentLoaded', this.handleDocumentLoaded.bind(this));
     window.addEventListener('resize', this.handleWindowResize.bind(this));
+  }
+
+  get compact() {
+    return this._compact;
+  }
+
+  set compact(isCompact) {
+    const wasCompact = this._compact;
+    if (wasCompact !== isCompact) {
+      this._compact = isCompact;
+      this.requestUpdate('compact', wasCompact);
+      this.updateComplete.then(() => {
+        const evt = new CustomEvent('compact', { detail: isCompact });
+        this.dispatchEvent(evt);
+      });
+    }
   }
 
   handleDocumentLoaded(evt) {
