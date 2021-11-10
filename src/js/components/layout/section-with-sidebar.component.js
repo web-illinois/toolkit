@@ -1,12 +1,18 @@
-import { LitElement, html, css } from 'lit';
+import { LitElement, html } from 'lit';
+import ResponsiveLayout from './responsive-layout';
 import styles from './section-with-sidebar.css';
 
-class SectionWithSidebarComponent extends LitElement {
+class SectionWithSidebarComponent extends ResponsiveLayout {
+
+  static get modes() {
+    return [
+      { name: 'compact' },
+      { name: 'full', match: '(min-width: 992px)' }
+    ]
+  }
 
   static get properties() {
-    return {
-      compact: { type: Boolean, attribute: true, default: false, reflect: true }
-    };
+    return super.properties;
   }
 
   static get styles() {
@@ -15,37 +21,10 @@ class SectionWithSidebarComponent extends LitElement {
 
   constructor() {
     super();
-    this._compact = false;
-    document.addEventListener('DOMContentLoaded', this.handleDocumentLoaded.bind(this));
-    window.addEventListener('resize', this.handleWindowResize.bind(this));
-  }
-
-  get compact() {
-    return this._compact;
-  }
-
-  set compact(isCompact) {
-    const wasCompact = this._compact;
-    if (wasCompact !== isCompact) {
-      this._compact = isCompact;
-      this.requestUpdate('compact', wasCompact);
-      this.updateComplete.then(() => {
-        const evt = new CustomEvent('compact', { detail: isCompact });
-        this.dispatchEvent(evt);
-      });
-    }
-  }
-
-  handleDocumentLoaded(evt) {
-    this.handleWindowResize();
-  }
-
-  handleWindowResize() {
-    this.compact = !window.matchMedia("(min-width: 992px)").matches;
   }
 
   render() {
-    const mode = this.compact ? 'compact': 'full';
+    const mode = this.mode;
     return html`
 <section class=${mode}>
   <div class="sidebar">

@@ -1,7 +1,19 @@
-import { LitElement, html, css } from 'lit';
+import { LitElement, html } from 'lit';
+import ResponsiveLayout from './responsive-layout';
 import styles from './page.css';
 
-class PageComponent extends LitElement {
+class PageComponent extends ResponsiveLayout {
+
+  static get modes() {
+    return [
+      { name: 'compact' },
+      { name: 'full', match: '(min-width: 992px)' }
+    ]
+  }
+
+  static get properties() {
+    return super.properties;
+  }
 
   static get styles() {
     return styles;
@@ -12,8 +24,9 @@ class PageComponent extends LitElement {
   }
 
   render() {
+    const mode = this.mode;
     return html`
-<article class="page">
+<article class="page page-${mode}">
   <header>
     <slot name="header"></slot>
   </header>
@@ -23,7 +36,7 @@ class PageComponent extends LitElement {
   <footer>
     <slot name="footer"></slot>
   </footer>
-  </article>
+</article>
     `;
   }
 }
