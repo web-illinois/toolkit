@@ -47,13 +47,16 @@ export default class ResponsiveLayout extends LitElement {
     this.dispatchEvent(new CustomEvent('modeChange', { detail: this._mode }));
   }
 
+  getModes() {
+    return this.constructor.modes;
+  }
+
+  matchMode(mode) {
+    return mode.match === undefined || mode.match === true || window.matchMedia(mode.match).matches;
+  }
+
   updateMode() {
-    let mode;
-    this.constructor.modes.forEach(m => {
-      if (m.match === undefined || m.match === true || window.matchMedia(m.match).matches) {
-        mode = m.name;
-      }
-    })
-    this.mode = mode;
+    const mode = this.getModes().find(this.matchMode);
+    this.mode = mode.name;
   }
 }

@@ -6,8 +6,8 @@ class SectionWithSidebarComponent extends ResponsiveLayout {
 
   static get modes() {
     return [
-      { name: 'compact' },
-      { name: 'full', match: '(min-width: 992px)' }
+      { name: 'full', match: '(min-width: 992px)' },
+      { name: 'compact' }
     ]
   }
 
