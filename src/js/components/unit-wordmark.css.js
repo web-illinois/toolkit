@@ -1,4 +1,4 @@
-import {css} from 'lit-element';
+import {css} from 'lit';
 
 export default css`
 
@@ -29,8 +29,12 @@ export default css`
   text-decoration: none;
 }
 .campus a:focus, .campus a:hover  {
-  outline: var(--il-dotted-focus-outline);
-  outline-color: var(--il-orange);
+  outline: none;
+  outline-color: none;
+}
+
+.campus a:focus .block-i__fill, .campus a:hover .block-i__fill {
+  fill: var(--il-blue);
 }
 
 .unit {

@@ -16,6 +16,10 @@ il-header {
         position: relative;
         padding: 0 1em 0 0;
 
+        &:last-of-type {
+          padding-right: 0;
+        }
+
         &::after {
           position: absolute;
           top: 0;

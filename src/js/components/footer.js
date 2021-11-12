@@ -1,4 +1,4 @@
-import { LitElement, html, css } from 'lit-element';
+import { LitElement, html, css } from 'lit';
 
 class Footer extends LitElement {
     static get styles() {
@@ -65,11 +65,14 @@ class Footer extends LitElement {
 .campus-wordmark a {
     display: block;
     text-decoration: none;
-    padding: 1px;
+    padding: 5px;
 }
 .campus-wordmark a:focus, .campus-wordmark a:hover {
-    outline: 3px dashed var(--il-orange);
-  }  
+    outline: rgb(255, 255, 255) dotted 2px;
+}
+.campus-wordmark svg {
+    display: block;
+}  
 .block-i__outline {
     fill: white;
 }

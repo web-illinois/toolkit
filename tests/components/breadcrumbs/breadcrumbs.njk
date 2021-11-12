@@ -1,0 +1,33 @@
+---
+title: Breadcrumbs
+group: "Components: Breadcrumbs"
+layout: layouts/page.njk
+---
+
+<h2>All links</h2>
+
+<il-breadcrumbs>
+  <il-breadcrumbs-page href="/">Home</il-breadcrumbs-page>
+  <il-breadcrumbs-page href="#">Major section</il-breadcrumbs-page>
+  <il-breadcrumbs-page href="#">Minor section</il-breadcrumbs-page>
+  <il-breadcrumbs-page current href="#">Current page</il-breadcrumbs-page>
+</il-breadcrumbs>
+
+<h2>Some links</h2>
+
+<il-breadcrumbs>
+  <il-breadcrumbs-page href="/">Home</il-breadcrumbs-page>
+  <il-breadcrumbs-page>Major section</il-breadcrumbs-page>
+  <il-breadcrumbs-page href="#">Minor section</il-breadcrumbs-page>
+  <il-breadcrumbs-page current>Current page</il-breadcrumbs-page>
+</il-breadcrumbs>
+
+<h2>No current page</h2>
+
+<il-breadcrumbs>
+  <il-breadcrumbs-page href="/">Home</il-breadcrumbs-page>
+  <il-breadcrumbs-page href="#">Major section</il-breadcrumbs-page>
+  <il-breadcrumbs-page href="#">Minor section</il-breadcrumbs-page>
+  <il-breadcrumbs-page href="#">Page</il-breadcrumbs-page>
+</il-breadcrumbs>
+

@@ -3,59 +3,65 @@
     top: rem($top);
     bottom: rem($bottom);
   }
+  &:first-child {
+    margin-top: 0;
+  }
 }
 
 .il-formatted {
   font: 400 rem(18px) / rem(30px) var(--il-source-sans);
-  color: #252525;
+  color: var(--il-text-color);
 
   a {
-    @extend .il-link;
+    transition: color .3s;
+    color: var(--il-link-color);
+    text-decoration: underline;
   }
 
   a:hover, a:focus {
     outline-style: none;
+    color: var(--il-focused-link-color);
+  }
+
+  a:visited {
+    color: var(--il-visited-link-color);
   }
 
   h1 {
     @include reset-heading;
     @include heading-spacing;
     font: 700 rem(40px) / rem(52px) var(--il-source-sans);
-    color: var(--il-blue);
-
-    &:first-child {
-      margin-top: 0;
-    }
+    color: var(--il-heading-color);
   }
   h2 {
     @include reset-heading;
     @include heading-spacing;
-    font: 600 rem(32px) / rem(40px) var(--il-source-sans);
-    color: var(--il-blue);
+    font: 600 rem(35px) / rem(45px) var(--il-source-sans);
+    color: var(--il-heading-color);
   }
   h3 {
     @include reset-heading;
     @include heading-spacing;
     font: 600 rem(28px) / rem(32px) var(--il-source-sans);
-    color: var(--il-blue);
+    color: var(--il-heading-color);
   }
   h4 {
     @include reset-heading;
     @include heading-spacing;
     font: 600 rem(24px) / rem(28px) var(--il-source-sans);
-    color: var(--il-blue);
+    color: var(--il-heading-color);
   }
   h5 {
     @include reset-heading;
     @include heading-spacing;
     font: 600 rem(20px) / rem(22px) var(--il-source-sans);
-    color: var(--il-blue);
+    color: var(--il-heading-color);
   }
   h6 {
     @include reset-heading;
     @include heading-spacing;
     font: 600 rem(18px) / rem(22px) var(--il-source-sans);
-    color: var(--il-blue);
+    color: var(--il-heading-color);
   }
 
   p {
@@ -179,12 +185,15 @@
     width: 100%;
     overflow: auto;
   }
+  table caption {
+    text-align: left;
+  }
   th {
     text-align: left;
     font-weight: 700;
     font-size: 1.2rem;
-    border-top: 1px solid #707070;
-    border-bottom: 1px solid #707070;
+    border-top: 1px solid var(--il-gray-2);
+    border-bottom: 1px solid var(--il-gray-2);
     border-left: none;
     border-right: none;
     padding: rem(25px) rem(16px) rem(30px) rem(16px);
@@ -196,10 +205,10 @@
     font-family: var(--il-source-sans);
   }
   th:first-of-type {
-    border-left: 1px solid #707070;
+    border-left: 1px solid var(--il-gray-2);
   }
   th:last-of-type {
-    border-right: 1px solid #707070;
+    border-right: 1px solid var(--il-gray-2);
   }
   thead th {
     background-color: var(--il-industrial-blue);
@@ -213,14 +222,14 @@
     text-align: left;
     vertical-align: top;
     padding: rem(25px) rem(16px);
-    border-top: 1px solid #707070;
-    border-bottom: 1px solid #707070;
+    border-top: 1px solid var(--il-cloud-3);
+    border-bottom: 1px solid var(--il-cloud-3);
     border-left: none;
     border-right: none;
     color: var(--il-blue);
   }
   tr:nth-child(odd) {
-    background-color: var(--il-cloud);
+    background-color: var(--il-gray-1);
   }
 
   pre {

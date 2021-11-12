@@ -4,6 +4,8 @@ group: "Components: Hero"
 layout: layouts/page.njk
 ---
 
+<div id="il-content-guide"></div>
+
 {% macro hero(alignment) %}
 <il-hero background="{{ '/_assets/images/hero-bg.jpg' | url }}" align="{{ alignment }}">
     <h1>Innovating solutions every year</h1>
@@ -60,5 +62,3 @@ layout: layouts/page.njk
 <h2>Bottom right</h2>
 
 {{ hero('bottom right') }}
-
-

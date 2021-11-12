@@ -1,9 +1,9 @@
 {
-  "name": "web-toolkit",
-  "version": "2.0.0-dev",
+  "name": "il-toolkit",
+  "version": "2.4.0",
   "description": "Web toolkit",
-  "repository": "https://github.com/il-marketing/web-toolkit",
-  "author": "Office of Strategic Marketing and Branding <marketing@illinois.edu>",
+  "repository": "https://github.com/web-illinois/toolkit",
+  "author": "Web Implementation Guidelines Group",
   "license": "NCSA",
   "scripts": {
     "approve-backstop": "backstop approve --config=backstop.config.js",
@@ -22,15 +22,15 @@
   },
   "dependencies": {
     "@symfony/webpack-encore": "^0.30.2",
-    "lit-element": "^2.4.0",
+    "lit": "^2.0.0-rc.3",
     "node-sass": "^4.14.1",
     "remove-files-webpack-plugin": "^1.4.4",
     "sass-loader": "^8.0.2"
   },
   "devDependencies": {
-    "@11ty/eleventy": "^0.11.1",
+    "@11ty/eleventy": "^0.12.1",
     "backstopjs": "^4.5.1",
-    "fast-glob": "^3.2.5",
+    "fast-glob": "^3.2.7",
     "jest": "^25.5.4",
     "jest-html-reporter": "^3.3.0",
     "jest-puppeteer": "^4.4.0"

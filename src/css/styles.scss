@@ -7,42 +7,18 @@
   font-size: 16px;
   --il-content-margin: 20px;
   --il-content-max-width: 1140px;
-  --il-link-color: var(--il-alma-mater);
-  --il-visited-link-color: var(--il-blue);
-  --il-link-hover-color: var(--il-altgeld);
-  --il-focus-outline: 3px dashed var(--il-arches-blue);
-  --il-dotted-focus-outline: 4px dotted var(--il-arches-blue);
+  --il-focus-outline: 3px dashed var(--il-focus-outline-color);
+  --il-dotted-focus-outline: 4px dotted var(--il-focus-outline-color);
 
   @media (min-width: 768px) {
     --il-content-margin: 30px;
-  }
-}
-.il-page {
-  @include reset-spacing;
-  min-height: 100vh;
-  max-width: 100vw;
-  display: grid;
-  grid-template-areas: "header" "main" "footer";
-  grid-template-rows: auto 1fr auto;
-
-  & > .il-header {
-    grid-area: header;
-    z-index: 600;
-  }
-
-  & > .il-main {
-    grid-area: main;
-    overflow: auto;
-  }
-
-  & > .il-footer {
-    grid-area: footer;
   }
 }
 
 .il-link {
   color: var(--il-link-color);
   transition: color .3s;
+  text-decoration: underline;
 
   &:visited {
     color: var(--il-visited-link-color);
@@ -67,51 +43,6 @@
   width: 1px !important;
   height: 1px !important;
   overflow: hidden !important;
-}
-
-.il-breadcrumbs {
-  font-family: var(--il-source-sans);
-  font-size: 17px;
-  letter-spacing: .25px;
-  text-transform: uppercase;
-
-  h2 {
-    @include reset-heading;
-    display: inline;
-    font-weight: bold;
-    color: var(--il-orange);
-
-    &:after {
-      content: ":";
-    }
-  }
-
-  ol, ul {
-    @include reset-list;
-    display: inline;
-  }
-
-  li {
-    @include reset-list-item;
-    display: inline;
-
-    &:before {
-      content: "/ ";
-    }
-
-    &:first-of-type:before {
-      content: '';
-    }
-
-    &:last-of-type {
-      font-weight: bold;
-    }
-  }
-
-  a {
-    @include reset-link;
-    text-decoration: underline;
-  }
 }
 
 .il-page-title {
@@ -158,5 +89,12 @@
   }
 }
 
-@import "buttons";
+@import "layout";
 @import "formatting";
+
+@import "buttons";
+@import "tables";
+
+@import "details";
+
+@import "themes";

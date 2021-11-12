@@ -8,14 +8,38 @@ body {
     padding: 0;
 }
 
-body h1, body h2.testheading {
+body h1,
+body h2.testheading {
     text-align: center;
 }
 
-.outside-click-target, .placeholder {
-    border: 2px solid rgba(0, 0, 0, .25);
+#il-content-guide {
+    position: fixed;
+    box-sizing: border-box;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    padding: 0 var(--il-content-margin);
+}
+#il-content-guide::after {
+    opacity: 0.1;
+    position: relative;
+    display: block;
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+    max-width: var(--il-content-max-width);
+    content: "";
+    margin: 0 auto;
+    background-color: var(--il-blue);
+}
+
+.outside-click-target,
+.placeholder {
+    border: 2px solid rgba(0, 0, 0, 0.25);
     padding: 1em;
-    background-color: rgba(0, 0, 0, .1);
+    background-color: rgba(0, 0, 0, 0.1);
     text-align: center;
     font-weight: bold;
 }

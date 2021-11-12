@@ -2,4 +2,25 @@
   @each $name, $hex in $colors {
     --#{$name}: #{$hex};
   }
+
+  --il-gradient-blue: linear-gradient(180deg, var(--il-industrial-blue) 0%, var(--il-blue) 100%);
+  --il-gradient-orange: linear-gradient(180deg, var(--il-orange) 0%, var(--il-altgeld) 100%);
+
+  // Color defaults
+
+  --il-text-color: #252525;
+  --il-heading-color: var(--il-blue);
+
+  // Links
+  --il-link-color: var(--il-alma-mater);
+  --il-visited-link-color: var(--il-blue);
+  --il-focused-link-color: var(--il-altgeld);
+
+  // Buttons
+  --il-button-foreground-color: var(--il-blue);
+  --il-button-background-color: white;
+  --il-button-border-color: var(--il-blue);
+  --il-focused-button-foreground-color: white;
+  --il-focused-button-background-color: var(--il-blue);
+  --il-focused-button-border-color: white;
 }

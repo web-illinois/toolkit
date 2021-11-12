@@ -1,0 +1,76 @@
+{% set stylesheets = ['tests.css', 'color-theme.css'] %}
+
+{% extends "layouts/page.njk" %}
+
+{% block bodyClass %}{{ theme }}{% endblock %}
+
+{% block body %}
+
+<div class="color-theme">
+
+  <h1 class="color-theme__title">{{ theme }}</h1>
+
+  <table class="color-theme-contrast">
+    <thead>
+      <tr>
+        <th>Size</th>
+        <th>Text</th>
+        <th>Link</th>
+        <th>Focus/hover</th>
+        <th>Visited</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="color-theme-contrast__size color-theme-contrast__size--normal">
+        <th class="color-theme-contrast__label">Under 24px</th>
+        <td class="color-theme-contrast__text">Text</td>
+        <td class="color-theme-contrast__link">Link</td>
+        <td class="color-theme-contrast__focused-link">Link</td>
+        <td class="color-theme-contrast__visited-link">Link</td>
+      </tr>
+      <tr class="color-theme-contrast__size color-theme-contrast__size--normal-bold">
+        <th class="color-theme-contrast__label">Under 24px, bold</th>
+        <td class="color-theme-contrast__text">Text</td>
+        <td class="color-theme-contrast__link">Link</td>
+        <td class="color-theme-contrast__focused-link">Link</td>
+        <td class="color-theme-contrast__visited-link">Link</td>
+      </tr>
+      <tr class="color-theme-contrast__size color-theme-contrast__size--large">
+        <th class="color-theme-contrast__label">24px and larger</th>
+        <td class="color-theme-contrast__text">Text</td>
+        <td class="color-theme-contrast__link">Link</td>
+        <td class="color-theme-contrast__focused-link">Link</td>
+        <td class="color-theme-contrast__visited-link">Link</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="color-theme__examples">
+    <div id="specimen" class="color-theme__heading-examples il-formatted">
+
+      <h2>Sample Heading with a <a href="#">link</a></h2>
+
+      <p>Lorem ipsum dolor sit amet, <a href="#">link consectetur</a> adipiscing elit.
+        Donec a aliquet lacus.
+        Aliquam sed ipsum at est pharetra dictum sed a tortor.
+        Curabitur nunc felis, <a href="#">hovering imperdiet</a> sed rutrum vitae, pellentesque ut odio.
+        Aenean ac erat nisl.
+        <a href="#">Same focus praesent</a> scelerisque mattis felis ultrices tempor.
+        Nam eu sem nunc.
+        Donec eget <a href="#" class="visited">visited imperdiet</a> elit, id placerat nisl.</p>
+
+        <p><a class="il-button" href="#">Apply Now</a></p>
+    </div>
+  </div>
+
+  <script>
+    document.querySelectorAll('#specimen a').forEach(link => {
+      if (link.classList.contains('visited')) return;
+      const hash = Math.floor(Math.random() * 10000);
+      link.setAttribute('href', `http://example.com/?${hash}`);
+    });
+  </script>
+
+</div>
+
+{% endblock %}
