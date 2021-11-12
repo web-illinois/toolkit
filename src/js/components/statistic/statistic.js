@@ -66,7 +66,7 @@ class Statistic extends LitElement {
       line-height: 1.4375rem;
     }
     p.il-statistic span.stat {
-      font-weight: 600;
+      font-weight: 700;
       font-size: 4rem;
       margin-bottom: 1rem;
       line-height: 1.2;

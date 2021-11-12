@@ -1,8 +1,14 @@
 .il-theme-gray {
-  --il-theme-background: var(--il-gray-1);
-  --il-theme-text-color: #252525;
-  --il-theme-alt-heading-color: var(--il-altgeld);
-  --il-theme-link-color: var(--il-alma-mater);
-  --il-theme-focused-link-color: var(--il-industrial-blue);
-  --il-theme-visited-link-color: var(--il-alma-mater-1);
+  --il-background-color: var(--il-gray-1);
+  --il-text-color: #252525;
+  --il-heading-color: var(--il-blue);
+  --il-link-color: var(--il-industrial-blue);
+  --il-focused-link-color: var(--il-altgeld);
+  --il-visited-link-color: var(--il-industrial-blue-1);
+  --il-button-background-color: white;
+  --il-button-foreground-color: var(--il-blue);
+  --il-button-border-color: var(--il-blue);
+  --il-focused-button-background-color: var(--il-blue);
+  --il-focused-button-foreground-color: white;
+  --il-focused-button-border-color: white;
 }

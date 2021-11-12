@@ -18,28 +18,6 @@ $base-text-size: 18px;
     --il-content-margin: 30px;
   }
 }
-.il-page {
-  @include reset-spacing;
-  min-height: 100vh;
-  max-width: 100vw;
-  display: grid;
-  grid-template-areas: "header" "main" "footer";
-  grid-template-rows: auto 1fr auto;
-
-  & > .il-header {
-    grid-area: header;
-    z-index: 600;
-  }
-
-  & > .il-main {
-    grid-area: main;
-    overflow: auto;
-  }
-
-  & > .il-footer {
-    grid-area: footer;
-  }
-}
 
 .il-link {
   color: var(--il-link-color);
@@ -69,51 +47,6 @@ $base-text-size: 18px;
   width: 1px !important;
   height: 1px !important;
   overflow: hidden !important;
-}
-
-.il-breadcrumbs {
-  font-family: var(--il-source-sans);
-  font-size: 17px;
-  letter-spacing: .25px;
-  text-transform: uppercase;
-
-  h2 {
-    @include reset-heading;
-    display: inline;
-    font-weight: bold;
-    color: var(--il-orange);
-
-    &:after {
-      content: ":";
-    }
-  }
-
-  ol, ul {
-    @include reset-list;
-    display: inline;
-  }
-
-  li {
-    @include reset-list-item;
-    display: inline;
-
-    &:before {
-      content: "/ ";
-    }
-
-    &:first-of-type:before {
-      content: '';
-    }
-
-    &:last-of-type {
-      font-weight: bold;
-    }
-  }
-
-  a {
-    @include reset-link;
-    text-decoration: underline;
-  }
 }
 
 .il-page-title {
@@ -160,7 +93,12 @@ $base-text-size: 18px;
   }
 }
 
-@import "buttons";
+@import "layout";
 @import "formatting";
+
+@import "buttons";
 @import "tables";
+
 @import "details";
+
+@import "themes";

@@ -99,11 +99,31 @@ nav.compact.expanded .menu {
     this.expanded = false;
     this.handleToggleClick = this.handleToggleClick.bind(this);
     document.addEventListener('DOMContentLoaded', this.handleDocumentLoaded.bind(this));
-    window.addEventListener('resize', this.handleWindowResize.bind(this));
   }
 
+  getLayoutSection() {
+    return this.closest('il-section-with-sidebar');
+  }
+
+  hasLayoutSection() {
+    return this.getLayoutSection() !== null;
+  }
+
+  // Event handlers
+
   handleDocumentLoaded(evt) {
-    this.handleWindowResize();
+    if (this.hasLayoutSection()) {
+      const layout = this.getLayoutSection();
+      this.compact = layout.compact;
+      layout.addEventListener('compact', evt => {
+        this.compact = evt.detail;
+      });
+    }
+    else {
+      // Deprecated
+      window.addEventListener('resize', this.handleWindowResize.bind(this));
+      this.handleWindowResize();
+    }
   }
 
   handleToggleClick() {
@@ -113,6 +133,8 @@ nav.compact.expanded .menu {
   handleWindowResize() {
     this.compact = !window.matchMedia("(min-width: 992px)").matches;
   }
+
+  // Render
 
   render() {
     const mode = this.compact ? 'compact' : 'full';

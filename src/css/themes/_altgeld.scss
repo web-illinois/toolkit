@@ -1,9 +1,14 @@
 .il-theme-altgeld {
-  --il-theme-background: var(--il-altgeld);
-  --il-theme-text-color: white;
-  --il-theme-heading-color: white;
-  --il-theme-alt-heading-color: white;
-  --il-theme-link-color: white;
-  --il-theme-focused-link-color: black;
-  --il-theme-visited-link-color: white;
+  --il-background-color: var(--il-altgeld);
+  --il-text-color: black;
+  --il-heading-color: white;
+  --il-link-color: black;
+  --il-focused-link-color: var(--il-blue);
+  --il-visited-link-color: black;
+  --il-button-background-color: var(--il-altgeld);
+  --il-button-foreground-color: white;
+  --il-button-border-color: white;
+  --il-focused-button-background-color: white;
+  --il-focused-button-foreground-color: var(--il-altgeld);
+  --il-focused-button-border-color: var(--il-altgeld);
 }
