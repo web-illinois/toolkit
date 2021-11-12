@@ -114,9 +114,9 @@ nav.compact.expanded .menu {
   handleDocumentLoaded(evt) {
     if (this.hasLayoutSection()) {
       const layout = this.getLayoutSection();
-      this.compact = layout.compact;
-      layout.addEventListener('compact', evt => {
-        this.compact = evt.detail;
+      this.compact = layout.mode === 'compact';
+      layout.addEventListener('modeChange', evt => {
+        this.compact = evt.detail === 'compact';
       });
     }
     else {
