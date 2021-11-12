@@ -2,6 +2,7 @@ const fs = require('fs');
 const glob = require('fast-glob');
 const path = require('path');
 const { URL } = require('url');
+const pkg = require('../package.json');
 
 function pad(val) {
   return val < 10 ? '0' + val : val;
@@ -81,7 +82,11 @@ function groupFiles(files) {
   files.forEach(file => {
     let group = groups.find(g => g.name === file.group);
     if (!group) {
-      group = { name: file.group, files: []};
+      group = {
+        name: file.group,
+        slug: file.group.toLowerCase().replace(/\W+/g, '-'),
+        files: []
+      };
       groups.push(group);
     }
     group.files.push(file);
@@ -112,6 +117,7 @@ function makeReferenceImagePattern(id, label) {
 
 module.exports = {
   eleventyComputed: {
+    pkg,
     groups: data => {
       const pages = getVisualTestPages(data.collections.all.filter(f => f.url !== data.page.url));
       return groupFiles(pages);
