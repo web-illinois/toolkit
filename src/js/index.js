@@ -1,4 +1,4 @@
-import '../css/components.scss';
+import '../css/toolkit.scss';
 
 import './components/accordion';
 import './components/back-to-top';
@@ -10,10 +10,13 @@ import './components/footer';
 import './components/header';
 import './components/hero';
 import './components/image-feature';
+import './components/layout/page.component';
+import './components/layout/section.component';
+import './components/layout/section-with-sidebar.component';
 import './components/link';
-import './components/nav-link';
-import './components/nav-section';
-import './components/nav';
+import './components/navigation/navigation.component';
+import './components/navigation/link.component';
+import './components/navigation/section.component';
 import './components/pagination/pagination.component';
 import './components/search';
 import './components/section-nav';
