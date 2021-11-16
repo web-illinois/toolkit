@@ -7,9 +7,7 @@ class Statistic extends LitElement {
       width: { type: String, attribute: true },
       src: { type: String, attribute: true },
       size: { type: String, attribute: true },
-      color: { type: String, attribute: true },
       height: { type: String, attribute: true },
-      background: { type: String, attribute: true },
       startAnimation: { type: String, attribute: true },
       animate: { type: Boolean, attribute: true },
       originalStat: { type: String, attribute: true }
@@ -24,45 +22,6 @@ class Statistic extends LitElement {
       background: var(--il-background-color);
       margin: var(--il-statistic-margin);
       color: var(--il-heading-color);
-    }
-    p.il-statistic.back-gray {
-      background: var(--il-gray-1);
-      color: var(--il-blue);
-    }
-    p.il-statistic.back-white {
-      background: white;
-    }
-    p.il-statistic.back-transparent {
-      background: rgba(0,0,0,0);
-    }
-    p.il-statistic.back-shaded {
-      color: white;
-      background: rgba(0,0,0,.25);
-    }
-    p.il-statistic.back-orange {
-      color: white;
-      background: var(--il-orange);
-    }
-    p.il-statistic.back-gradient {
-      color: white;
-      background: var(--il-gradient-blue);
-    }
-    p.il-statistic.back-orangegradient {
-      color: white;
-      background: var(--il-gradient-orange);
-    }
-    p.il-statistic.back-blue {
-      color: white;
-      background: var(--il-blue);
-    }
-    p.il-statistic.white {
-      color: white;
-    }
-    p.il-statistic.black {
-      color: black;
-    }
-    p.il-statistic.orange {
-      color: var(--il-orange);
     }
     p.il-statistic span.stat, p.il-statistic span.text {
       display: block;
@@ -130,11 +89,9 @@ class Statistic extends LitElement {
     this.idInfo = 'statistic-' + (((1 + Math.random()) * 0x10000000) | 0);
     let widthStyle = this.width == '' ? '' : `width: ${this.width};`;
     let sizeClass = this.size == 'medium' ? '' : this.size;
-    let colorClass = this.colorClass == 'blue' ? '' : this.color;
-    let backgroundClass = this.background == '' ? '' : 'back-' + this.background;
 
     return html`
-    <p class="il-statistic ${sizeClass} ${backgroundClass} ${colorClass}" id='${this.idInfo}' style='${widthStyle}'>
+    <p class="il-statistic ${sizeClass}" id='${this.idInfo}' style='${widthStyle}'>
         <span class="text"><slot name="top"></slot></span>
         <span class="stat"><slot name="stat"></span></slot>
         <span class="text"><slot></slot></span>
