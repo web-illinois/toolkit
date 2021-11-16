@@ -21,8 +21,12 @@ class Statistic extends LitElement {
     p.il-statistic {
       text-align: center;
       padding: 30px 20px;
-      background: var(--il-cloud-1);
+      background: var(--il-background-color);
       margin: var(--il-statistic-margin);
+      color: var(--il-heading-color);
+    }
+    p.il-statistic.back-gray {
+      background: var(--il-gray-1);
       color: var(--il-blue);
     }
     p.il-statistic.back-white {
@@ -127,7 +131,7 @@ class Statistic extends LitElement {
     let widthStyle = this.width == '' ? '' : `width: ${this.width};`;
     let sizeClass = this.size == 'medium' ? '' : this.size;
     let colorClass = this.colorClass == 'blue' ? '' : this.color;
-    let backgroundClass = this.background == 'gray' || this.background == '' ? '' : 'back-' + this.background;
+    let backgroundClass = this.background == '' ? '' : 'back-' + this.background;
 
     return html`
     <p class="il-statistic ${sizeClass} ${backgroundClass} ${colorClass}" id='${this.idInfo}' style='${widthStyle}'>

@@ -2,6 +2,10 @@
   --il-statistic-margin: 0.9375rem;
 }
 
+il-statistic {
+  @extend .il-formatted;
+}
+
 il-statistic,
 .il-formatted il-statistic {
   em {
