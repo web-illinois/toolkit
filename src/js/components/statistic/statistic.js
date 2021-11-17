@@ -21,44 +21,58 @@ class Statistic extends LitElement {
       padding: 30px 20px;
       background: var(--il-background-color);
       margin: var(--il-statistic-margin);
-      color: var(--il-heading-color);
+      color: var(--il-statistic-text-color);
     }
-    p.il-statistic span.stat, p.il-statistic span.text {
-      display: block;
-      font-size: 1.125rem;
-      line-height: 1.4375rem;
+    p.il-statistic span.text {
+      font-size: var(--il-statistic-font-size);
+      line-height: var(--il-statistic-line-height);
+    }
+    p.il-statistic span.text.intro {
+      padding-bottom: 5px;
+      display: inline-block;
     }
     p.il-statistic span.stat {
+      display: block;
       font-weight: 700;
-      font-size: 4rem;
       margin-bottom: 1rem;
-      line-height: 1.2;
+      color: var(--il-statistic-heading-color);
+      padding: var(--il-statistic-stat-padding);
+      font-size: var(--il-statistic-stat-font-size);
+      line-height: var(--il-statistic-stat-line-height);
     }
     p.il-statistic.extralarge span.stat {
-      font-size: 8.25rem;
+      --il-statistic-stat-font-size: 8.25rem;
+      --il-statistic-stat-padding: 45px 0 50px 0;
     }
     p.il-statistic.large span.stat {
-      font-size: 6rem;
+      --il-statistic-stat-font-size: 5.875rem;
+      --il-statistic-stat-padding: 35px 0 35px 0;
     }
     p.il-statistic.small span.stat {
-      font-size: 2.1875rem;
+      --il-statistic-stat-font-size: 3rem;
+      --il-statistic-stat-padding: 15px 0 20px 0;
     }
     p.il-statistic span.stat em {
       font-style: normal;
     }
-    p.il-statistic span.text {
-      
-    }
     p.il-statistic span.source {
+      display: block;
       margin-top: 10px;
-      font-size: 1rem;
-      line-height: 1.25rem;
+      font-size: var(--il-statistic-source-font-size);
+      line-height: var(--il-statistic-source-line-height);
       font-style: italic;
     }
-    p.il-statistic span.source::before {
-      content: "";
-      padding-right: 4px;
-    }`;
+    p.il-statistic.extralarge span.source {
+      --il-statistic-source-font-size: 1.1875rem;
+    }
+    p.il-statistic.large span.source {
+      --il-statistic-source-font-size: 1.125rem;
+    }
+    p.il-statistic.small span.source {
+      --il-statistic-source-font-size: 1rem;
+      --il-statistic-source-line-height: 1.25rem;
+    }
+    `;
   }
 
   constructor() {
@@ -89,10 +103,38 @@ class Statistic extends LitElement {
     this.idInfo = 'statistic-' + (((1 + Math.random()) * 0x10000000) | 0);
     let widthStyle = this.width == '' ? '' : `width: ${this.width};`;
     let sizeClass = this.size == 'medium' ? '' : this.size;
-
+    const whiteValidColors = [ '#ff552e', '#13294b', '#1d58a7', '#009fd4', '#31717b', '#005677'];
+    const grayValidColors = [ '#13294b', '#1d58a7', '#31717b', '#005677'];
+    const blueValidColors = [ 'white', '#7fc3e1', '#f09378', '#fed094', '#ffefda'];
+    const blueGradientValidColors = [ 'white', '#7fc3e1', '#fed094', '#ffefda'];
+    const orangeValidColors = [ 'white', '#000033'];
+    let background = getComputedStyle(this).getPropertyValue('--il-background-color').trim();
+    let heading = getComputedStyle(this).getPropertyValue('--il-statistic-heading-color').trim();
+    console.log(background);
+    if (background === 'white' && !whiteValidColors.includes(heading)) {
+      this.style.setProperty('--il-statistic-heading-color', 'var(--il-blue)');
+      this.style.setProperty('--il-statistic-text-color', 'var(--il-blue)');
+    }
+    if (background === '#f4f4f4' && !grayValidColors.includes(heading)) {
+      this.style.setProperty('--il-statistic-heading-color', 'var(--il-blue)');
+      this.style.setProperty('--il-statistic-text-color', 'var(--il-blue)');
+    }
+    if (background === '#13294b' && !blueValidColors.includes(heading)) {
+      this.style.setProperty('--il-statistic-heading-color', 'white');
+      this.style.setProperty('--il-statistic-text-color', 'white');
+    }
+    if (background === '#ff552e' && !orangeValidColors.includes(heading)) {
+      this.style.setProperty('--il-statistic-heading-color', 'white');
+      this.style.setProperty('--il-statistic-text-color', 'white');
+    }
+    if (background === 'linear-gradient(180deg,  #1d58a7 0%,  #13294b 100%)' && !blueGradientValidColors.includes(heading)) 
+    {
+      this.style.setProperty('--il-statistic-heading-color', 'white');
+      this.style.setProperty('--il-statistic-text-color', 'white');
+    }
     return html`
     <p class="il-statistic ${sizeClass}" id='${this.idInfo}' style='${widthStyle}'>
-        <span class="text"><slot name="top"></slot></span>
+        <span class="text intro"><slot name="top"></slot></span>
         <span class="stat"><slot name="stat"></span></slot>
         <span class="text"><slot></slot></span>
         <span class="text source"><slot name="source"></slot></span>
