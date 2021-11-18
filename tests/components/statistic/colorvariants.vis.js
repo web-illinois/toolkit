@@ -5,7 +5,7 @@ const url = util.testUrl(__filename);
 module.exports = (viewports) => {
   return [
     {
-      url, label: "statistic-formatted",
+      url, label: "statistic-colorvariants",
       viewports: [viewports.desktop, viewports.iphone, viewports.hdtv]
     }
   ]
