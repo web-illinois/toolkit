@@ -1,4 +1,4 @@
-name: releases
+name: deploy_cdn
 on:
   push:
     tags: [ '**' ]
@@ -19,6 +19,9 @@ jobs:
 
     - name: Check for correct naming convention
       if: ${{ !steps.get_version.outputs.is-semver }}
+      run: exit 1
+    - name: Check if this is from the main branch
+      if: ${{ github.event.base_ref == 'refs/heads/main' }}
       run: exit 1
     - name: Get major version from release branch
       run: echo "MAJORVERSION=${GITHUB_BRANCH}" >> $GITHUB_ENV
@@ -43,52 +46,102 @@ jobs:
     - run: npm install
     - run: npm rebuild
     - run: npm run-script build
-    - name: Configure AWS Credentials
+    - name: Configure AWS Credentials (DEPRECIATED)
       uses: aws-actions/configure-aws-credentials@v1
       with:
         aws-access-key-id: ${{ secrets.CDN_ACCESS_KEY_ID }}
         aws-secret-access-key: ${{ secrets.CDN_SECRET_ACCESS_KEY }}
         aws-region: us-east-2
 
-    - name: Deploy toolbox to S3 bucket for major version if not prelease
+    - name: Deploy toolbox to CDN BRAND S3 bucket for major version if not prelease (DEPRECIATED)
       if: ${{ steps.get_version.outputs.prerelease == '' }}
       run: aws s3 sync ./dist/ s3://cdn.brand.illinois.edu/toolkit/$MAJORVERSION --delete --acl bucket-owner-full-control
-    - name: Build examples for major version if not prelease
+    - name: Build examples for major version if not prelease (DEPRECIATED)
       if: ${{ steps.get_version.outputs.prerelease == '' }}
       run: npm run-script create-test-html -- --pathprefix='/toolkit/$MAJORVERSION/examples/'
-    - name: Deploy examples to S3 bucket for major version if not prelease
+    - name: Deploy examples to CDN BRAND S3 bucket for major version if not prelease (DEPRECIATED)
       if: ${{ steps.get_version.outputs.prerelease == '' }}
       run: aws s3 sync ./var/full-site-deploy/ s3://cdn.brand.illinois.edu/toolkit/$MAJORVERSION/examples --delete --acl bucket-owner-full-control
-    - name: Deploy static images in examples to S3 bucket for major version if not prelease
+    - name: Deploy static images in examples to CDN BRAND S3 bucket for major version if not prelease (DEPRECIATED)
       if: ${{ steps.get_version.outputs.prerelease == '' }}
       run: aws s3 sync ./tests/_reference/ s3://cdn.brand.illinois.edu/toolkit/$MAJORVERSION/examples/static-images --acl bucket-owner-full-control
-    - name: Invalidate Cloudfront cache for major version if not prelease
+    - name: Invalidate Cloudfront cache for major version if not prelease (DEPRECIATED)
       if: ${{ steps.get_version.outputs.prerelease == '' }}
       run: aws cloudfront create-invalidation --distribution-id E2VPGHCUOM84HO --paths "/toolkit/$MAJORVERSION*"
 
-    - name: Deploy toolbox to S3 bucket for minor version if not prelease
+    - name: Deploy toolbox to CDN BRAND S3 bucket for minor version if not prelease (DEPRECIATED)
       if: ${{ steps.get_version.outputs.prerelease == '' }}
       run: aws s3 sync ./dist/ s3://cdn.brand.illinois.edu/toolkit/$MINORVERSION --delete --acl bucket-owner-full-control
-    - name: Build examples for minor version if not prelease
+    - name: Build examples for minor version if not prelease (DEPRECIATED)
       if: ${{ steps.get_version.outputs.prerelease == '' }}
       run: npm run-script create-test-html -- --pathprefix='/toolkit/$MINORVERSION/examples/'
-    - name: Deploy examples to S3 bucket for minor version if not prelease
+    - name: Deploy examples to CDN BRAND S3 bucket for minor version if not prelease (DEPRECIATED)
       if: ${{ steps.get_version.outputs.prerelease == '' }}
       run: aws s3 sync ./var/full-site-deploy/ s3://cdn.brand.illinois.edu/toolkit/$MINORVERSION/examples --delete --acl bucket-owner-full-control
-    - name: Deploy static images in examples to S3 bucket for minor version if not prelease
+    - name: Deploy static images in examples to CDN BRAND S3 bucket for minor version if not prelease (DEPRECIATED)
       if: ${{ steps.get_version.outputs.prerelease == '' }}
       run: aws s3 sync ./tests/_reference/ s3://cdn.brand.illinois.edu/toolkit/$MINORVERSION/examples/static-images --acl bucket-owner-full-control
-    - name: Invalidate Cloudfront cache for minor version if not prelease
+    - name: Invalidate Cloudfront cache for minor version if not prelease (DEPRECIATED)
       if: ${{ steps.get_version.outputs.prerelease == '' }}
       run: aws cloudfront create-invalidation --distribution-id E2VPGHCUOM84HO --paths "/toolkit/$MINORVERSION*"
 
-    - name: Deploy toolbox to S3 bucket for full version
+    - name: Deploy toolbox to CDN BRAND S3 bucket for full version (DEPRECIATED)
       run: aws s3 sync ./dist/ s3://cdn.brand.illinois.edu/toolkit/$FULLVERSION --delete --acl bucket-owner-full-control
-    - name: Build examples for full version
+    - name: Build examples for full version (DEPRECIATED)
       run: npm run-script create-test-html -- --pathprefix='/toolkit/$FULLVERSION/examples/'
-    - name: Deploy examples to S3 bucket for full version
+    - name: Deploy examples to CDN BRAND S3 bucket for full version (DEPRECIATED)
       run: aws s3 sync ./var/full-site-deploy/ s3://cdn.brand.illinois.edu/toolkit/$FULLVERSION/examples --delete --acl bucket-owner-full-control
-    - name: Deploy static images in examples to S3 bucket for full version
+    - name: Deploy static images in examples to S3 bucket for full version (DEPRECIATED)
       run: aws s3 sync ./tests/_reference/ s3://cdn.brand.illinois.edu/toolkit/$FULLVERSION/examples/static-images --acl bucket-owner-full-control
-    - name: Invalidate Cloudfront cache for full version
+    - name: Invalidate Cloudfront cache for full version (DEPRECIATED)
       run: aws cloudfront create-invalidation --distribution-id E2VPGHCUOM84HO --paths "/toolkit/$FULLVERSION*"
+	
+	- name: Configure AWS Credentials
+      uses: aws-actions/configure-aws-credentials@v1
+      with:
+        aws-access-key-id: 'AKIAWXY7DGWYB5GTWUX5'
+        aws-secret-access-key: ${{ secrets.AWS_TOOLKIT_SECRET_ACCESS_KEY }}
+        aws-region: us-east-2
+
+    - name: Deploy toolbox to S3 bucket for major version if not prelease
+      if: ${{ steps.get_version.outputs.prerelease == '' }}
+      run: aws s3 sync ./dist/ s3://s3robust-cdn.toolkit.illinois.edu/content/$MAJORVERSION --delete --acl bucket-owner-full-control
+    - name: Build examples for major version if not prelease
+      if: ${{ steps.get_version.outputs.prerelease == '' }}
+      run: npm run-script create-test-html -- --pathprefix='/$MAJORVERSION/examples/'
+    - name: Deploy examples to S3 bucket for major version if not prelease
+      if: ${{ steps.get_version.outputs.prerelease == '' }}
+      run: aws s3 sync ./var/full-site-deploy/ s3://s3robust-cdn.toolkit.illinois.edu/content/$MAJORVERSION/examples --delete --acl bucket-owner-full-control
+    - name: Deploy static images in examples to S3 bucket for major version if not prelease
+      if: ${{ steps.get_version.outputs.prerelease == '' }}
+      run: aws s3 sync ./tests/_reference/ s3://s3robust-cdn.toolkit.illinois.edu/content/$MAJORVERSION/examples/static-images --acl bucket-owner-full-control
+    - name: Invalidate Cloudfront cache for major version if not prelease
+      if: ${{ steps.get_version.outputs.prerelease == '' }}
+      run: aws cloudfront create-invalidation --distribution-id E27YR2HDBZBKRX --paths "/$MAJORVERSION*"
+
+    - name: Deploy toolbox to S3 bucket for minor version if not prelease
+      if: ${{ steps.get_version.outputs.prerelease == '' }}
+      run: aws s3 sync ./dist/ s3://s3robust-cdn.toolkit.illinois.edu/content/$MINORVERSION --delete --acl bucket-owner-full-control
+    - name: Build examples for minor version if not prelease
+      if: ${{ steps.get_version.outputs.prerelease == '' }}
+      run: npm run-script create-test-html -- --pathprefix='/$MINORVERSION/examples/'
+    - name: Deploy examples to S3 bucket for minor version if not prelease
+      if: ${{ steps.get_version.outputs.prerelease == '' }}
+      run: aws s3 sync ./var/full-site-deploy/ s3://s3robust-cdn.toolkit.illinois.edu/content/$MINORVERSION/examples --delete --acl bucket-owner-full-control
+    - name: Deploy static images in examples to S3 bucket for minor version if not prelease
+      if: ${{ steps.get_version.outputs.prerelease == '' }}
+      run: aws s3 sync ./tests/_reference/ s3://s3robust-cdn.toolkit.illinois.edu/content/$MINORVERSION/examples/static-images --acl bucket-owner-full-control
+    - name: Invalidate Cloudfront cache for minor version if not prelease
+      if: ${{ steps.get_version.outputs.prerelease == '' }}
+      run: aws cloudfront create-invalidation --distribution-id E27YR2HDBZBKRX --paths "/$MINORVERSION*"
+
+    - name: Deploy toolbox to S3 bucket for full version
+      run: aws s3 sync ./dist/ s3://s3robust-cdn.toolkit.illinois.edu/content/$FULLVERSION --delete --acl bucket-owner-full-control
+    - name: Build examples for full version
+      run: npm run-script create-test-html -- --pathprefix='/$FULLVERSION/examples/'
+    - name: Deploy examples to S3 bucket for full version
+      run: aws s3 sync ./var/full-site-deploy/ s3://s3robust-cdn.toolkit.illinois.edu/content/$FULLVERSION/examples --delete --acl bucket-owner-full-control
+    - name: Deploy static images in examples to S3 bucket for full version
+      run: aws s3 sync ./tests/_reference/ s3://s3robust-cdn.toolkit.illinois.edu/content/$FULLVERSION/examples/static-images --acl bucket-owner-full-control
+    - name: Invalidate Cloudfront cache for full version
+      run: aws cloudfront create-invalidation --distribution-id E27YR2HDBZBKRX --paths "/$FULLVERSION*"
