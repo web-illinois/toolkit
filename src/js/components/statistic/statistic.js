@@ -23,6 +23,9 @@ class Statistic extends LitElement {
       margin: var(--il-statistic-margin);
       color: var(--il-statistic-text-color);
     }
+    p.il-statistic.extralarge {
+      padding: 40px 20px 35px 20px;
+    }
     p.il-statistic span.text {
       font-size: var(--il-statistic-font-size);
       line-height: var(--il-statistic-line-height);
@@ -42,15 +45,15 @@ class Statistic extends LitElement {
     }
     p.il-statistic.extralarge span.stat {
       --il-statistic-stat-font-size: 8.25rem;
-      --il-statistic-stat-padding: 45px 0 50px 0;
+      --il-statistic-stat-padding: 40px 0 50px 0;
     }
     p.il-statistic.large span.stat {
       --il-statistic-stat-font-size: 5.875rem;
-      --il-statistic-stat-padding: 35px 0 35px 0;
+      --il-statistic-stat-padding: 30px 0 35px 0;
     }
     p.il-statistic.small span.stat {
       --il-statistic-stat-font-size: 3rem;
-      --il-statistic-stat-padding: 15px 0 20px 0;
+      --il-statistic-stat-padding: 13px 0 20px 0;
     }
     p.il-statistic span.stat em {
       font-style: normal;
@@ -110,7 +113,6 @@ class Statistic extends LitElement {
     const orangeValidColors = [ 'white', '#000033'];
     let background = getComputedStyle(this).getPropertyValue('--il-background-color').trim();
     let heading = getComputedStyle(this).getPropertyValue('--il-statistic-heading-color').trim();
-    console.log(background);
     if (background === 'white' && !whiteValidColors.includes(heading)) {
       this.style.setProperty('--il-statistic-heading-color', 'var(--il-blue)');
       this.style.setProperty('--il-statistic-text-color', 'var(--il-blue)');

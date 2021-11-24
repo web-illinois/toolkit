@@ -95,8 +95,7 @@ jobs:
       run: aws s3 sync ./tests/_reference/ s3://cdn.brand.illinois.edu/toolkit/$FULLVERSION/examples/static-images --acl bucket-owner-full-control
     - name: Invalidate Cloudfront cache for full version (DEPRECIATED)
       run: aws cloudfront create-invalidation --distribution-id E2VPGHCUOM84HO --paths "/toolkit/$FULLVERSION*"
-	
-	- name: Configure AWS Credentials
+		- name: Configure AWS Credentials
       uses: aws-actions/configure-aws-credentials@v1
       with:
         aws-access-key-id: 'AKIAWXY7DGWYB5GTWUX5'
