@@ -4,9 +4,11 @@ export default css`
 
 .hero {
   position: relative;
-  background-color: var(--il-blue);
+  background-color: var(--il-hero-background-color);
   color: white;
 }
+
+/* DEPRECATED: alignment attribute */
 .hero[data-align-x="left"] {
   --il-hero-margin-left: 0;
   --il-hero-margin-right: auto;
@@ -25,9 +27,13 @@ export default css`
 .hero[data-align-y="bottom"] {
   --il-hero-justify-content: flex-end;
 }
+
+/* DEPRECATED: color attribute */
+
 .hero.orange {
-  background-color: var(--il-orange);
+  --il-hero-background-color: var(--il-orange);
 }
+
 .background {
   position: relative;
   width: 100%;

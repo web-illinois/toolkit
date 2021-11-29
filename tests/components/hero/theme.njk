@@ -1,10 +1,11 @@
 ---
-title: Hero with background image
+title: Hero themes
 group: "Components: Hero"
 layout: layouts/page.njk
 ---
 
-<il-hero background="{{ "/_assets/images/hero-bg.jpg"|url  }}">
+{% macro hero(class=null) %}
+<il-hero class="{{ class }}">
     <h1>Innovating solutions every year</h1>
     <ul>
         <li>
@@ -18,3 +19,17 @@ layout: layouts/page.njk
         </li>
     </ul>
 </il-hero>
+{% endmacro %}
+
+<h2>Default</h2>
+
+{{ hero() }}
+
+<h2>Orange</h2>
+
+{{ hero('il-theme-orange') }}
+
+<h2>Blue</h2>
+
+{{ hero('il-theme-blue') }}
+

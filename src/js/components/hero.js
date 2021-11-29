@@ -32,7 +32,10 @@ class Hero extends LitElement {
   connectedCallback() {
     super.connectedCallback();
     if (this.hasAttribute('align')) {
-      Debugger.warn("il-hero: the \"align\" attribute is deprecated. Use size classes instead.");
+      Debugger.warn("il-hero: the \"align\" attribute is deprecated. Use alignment classes instead.");
+    }
+    if (this.hasAttribute('color')) {
+      Debugger.warn("il-hero: the \"color\" attribute is deprecated. Use theme classes instead.");
     }
   }
 
