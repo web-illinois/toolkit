@@ -99,7 +99,7 @@
     }
   }
 
-  details[open] summary::before {
+  details[open] > summary::before {
     content: var(--il-details-contentopen);
     transform: var(--il-details-transformopen);
   }

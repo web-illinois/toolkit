@@ -1,0 +1,21 @@
+il-footer {
+
+  --il-link-color: white;
+  --il-visited-link-color: white;
+
+  *[slot=parent-unit] {
+    a {
+      color: inherit;
+
+      &.hover, &:focus {
+        outline: 3px dashed var(--il-orange);
+      }
+    }
+  }
+}
+
+@import "contact";
+@import "links";
+@import "navigation";
+@import "social";
+@import "parent";

@@ -48,10 +48,10 @@ group: Pages
   <script src="{{ "/toolkit.js" | url }}"></script>
 </head>
 
-<body class="il-page">
+<body style="margin: 0; padding: 0;">
 
-  <header class="il-header">
-    <il-header>
+  <il-page>
+    <il-header slot="header">
 
       <div slot="wordmark">
         <il-unit-wordmark>
@@ -79,12 +79,9 @@ group: Pages
         {% endfor %}
       </il-nav>
     </il-header>
-
-  </header>
-
-  <div class="il-main il-content-with-section-nav section-nav-example">
-    <div class="il-section-nav">
-      <il-section-nav>
+  
+    <il-section-with-sidebar>
+      <il-section-nav slot="sidebar">
         <h3>
           <a href="#">{{ sectionNavigation.label }}</a>
         </h3>
@@ -94,8 +91,8 @@ group: Pages
           {% endfor %}
           </ul>
       </il-section-nav>
-    </div>
-    <main class="il-content il-formatted">
+
+    <div class="il-content il-formatted">
 
       <h1>Safety</h1>
 
@@ -171,12 +168,10 @@ group: Pages
       <p>Programs for campus student, employee, and public safety are administered by the <a
           href="http://police.illinois.edu/">University of Illinois Police Department</a>.</p>
 
-    </main>
-  </div>
+      </div>
+    </il-section-with-sidebar>
 
-
-  <footer class="il-footer">
-    <il-footer>
+    <il-footer slot="footer">
 
       <div slot="contact" class="il-footer-contact uofi_address">
         <p><a href="#">College of Agricultural, Consumer & Environmental Sciences</a></p>
@@ -238,7 +233,7 @@ group: Pages
 
     </il-footer>
 
-  </footer>
+</il-page>
 </body>
 
 </html>
