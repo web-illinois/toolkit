@@ -1,3 +1,11 @@
+:root {
+  --il-hero-align-items: center;
+  --il-hero-justify-content: center;
+  --il-hero-margin-left: auto;
+  --il-hero-margin-right: auto;
+  --il-hero-text-align: center;
+}
+
 il-hero {
   --il-button-background-color: var(--il-orange);
   --il-button-foreground-color: white;
@@ -5,6 +13,39 @@ il-hero {
   --il-focused-button-background-color: white;
   --il-focused-button-foreground-color: var(--il-orange);
   --il-focused-button-border-color: var(--il-orange);
+
+  &.il-align-left {
+    --il-hero-align-items: flex-start;
+    --il-hero-margin-left: 0;
+    --il-hero-margin-right: auto;
+    --il-hero-text-align: left;
+  }
+
+  &.il-align-center {
+    --il-hero-align-items: center;
+    --il-hero-margin-left: auto;
+    --il-hero-margin-right: auto;
+    --il-hero-text-align: center;
+  }
+
+  &.il-align-right {
+    --il-hero-align-items: flex-end;
+    --il-hero-margin-left: auto;
+    --il-hero-margin-right: 0;
+    --il-hero-text-align: right;
+  }
+
+  &.il-align-top {
+    --il-hero-justify-content: flex-start;
+  }
+
+  &.il-align-middle {
+    --il-hero-justify-content: center;
+  }
+
+  &.il-align-bottom {
+    --il-hero-justify-content: flex-end;
+  }
 
   h1 {
     @include reset-heading;
