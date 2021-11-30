@@ -111,14 +111,7 @@ button svg {
   }
 
   getHeader() {
-    let parent = this.parentElement;
-    while (parent) {
-      if (parent.nodeName === 'IL-HEADER') {
-        return parent;
-      }
-      parent = parent.parentElement;
-    }
-    return undefined;
+    return this.closest('il-header');
   }
 
   renderSearchIcon() {
