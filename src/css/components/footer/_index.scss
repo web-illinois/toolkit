@@ -3,6 +3,9 @@ il-footer {
   --il-link-color: white;
   --il-visited-link-color: white;
 
+  background-color: var(--il-blue);
+  color: white;
+
   *[slot=parent-unit] {
     a {
       color: inherit;
