@@ -12,7 +12,7 @@ class NavigationLink extends NavigationItem {
   }
 
   static get styles() {
-    return itemStyles + styles;
+    return [itemStyles, styles];
   }
 
   constructor() {
