@@ -2,12 +2,13 @@
 title: Hero alignment
 group: "Components: Hero"
 layout: layouts/page.njk
+htmlAttrs: "data-il-debug=\"true\""
 ---
 
 <div id="il-content-guide"></div>
 
 {% macro hero(alignment) %}
-<il-hero background="{{ '/_assets/images/hero-bg.jpg' | url }}" align="{{ alignment }}">
+<il-hero background="{{ '/_assets/images/hero-bg.jpg' | url }}" class="{{ alignment }}">
     <h1>Innovating solutions every year</h1>
     <ul>
         <li>
@@ -29,36 +30,36 @@ layout: layouts/page.njk
 
 <h2>Top left</h2>
 
-{{ hero('top left') }}
+{{ hero('il-align-top il-align-left') }}
 
 <h2>Center left</h2>
 
-{{ hero('center left') }}
+{{ hero('il-align-middle il-align-left') }}
 
 <h2>Bottom left</h2>
 
-{{ hero('bottom left') }}
+{{ hero('il-align-bottom il-align-left') }}
 
 <h2>Top center</h2>
 
-{{ hero('top center') }}
+{{ hero('il-align-top il-align-center') }}
 
 <h2>Center center</h2>
 
-{{ hero('center center') }}
+{{ hero('il-align-middle il-align-center') }}
 
 <h2>Bottom center</h2>
 
-{{ hero('bottom center') }}
+{{ hero('il-align-bottom il-align-center') }}
 
 <h2>Top right</h2>
 
-{{ hero('top right') }}
+{{ hero('il-align-top il-align-right') }}
 
 <h2>Center right</h2>
 
-{{ hero('center right') }}
+{{ hero('il-align-middle il-align-right') }}
 
 <h2>Bottom right</h2>
 
-{{ hero('bottom right') }}
+{{ hero('il-align-bottom il-align-right') }}
