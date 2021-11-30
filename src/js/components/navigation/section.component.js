@@ -1,4 +1,5 @@
 import { LitElement, html, css } from 'lit';
+import Debugger from '../../debug';
 import NavigationItem from './item.component';
 import itemStyles from './item.css';
 import styles from './section.css'
@@ -43,7 +44,7 @@ class NavigationSection extends NavigationItem {
   handleContentLoaded(evt) {
     super.handleContentLoaded(evt);
     if (this.right !== undefined) {
-      console.warn('Attribute "right" is deprecated for component "il-nav-section"; use align="right" instead');
+      Debugger.warn('il-nav-section: attribute "right" is deprecated; use align="right" instead');
       this.align = 'right';
     }
     const link = this.getLink();
