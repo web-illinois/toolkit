@@ -17,14 +17,7 @@ export default class NavigationItem extends LitElement {
   }
 
   getNavigation() {
-    let parent = this.parentElement;
-    while (parent) {
-      if (parent.nodeName === 'IL-NAV') {
-        return parent;
-      }
-      parent = parent.parentElement;
-    }
-    return undefined;
+    return this.closest('il-nav');
   }
 
   handleContentLoaded(evt) {
