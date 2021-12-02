@@ -1,0 +1,131 @@
+%il-footer-content {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  gap: 50px;
+  font: 18px var(--il-source-sans);
+  padding-top: 61px;
+  color: white;
+
+  h2,
+  h3,
+  h4 {
+    @include reset-heading;
+    padding: 0 0 10px 0;
+    margin-bottom: 6px;
+    font: bold 20px var(--il-source-sans);
+    border-bottom: 1px solid white;
+  }
+
+  ul {
+    @include reset-list;
+
+    li {
+      @include reset-list;
+
+      a {
+        display: block;
+        padding: 9px 0;
+        text-decoration: none;
+      }
+    }
+  }
+
+  a {
+    @extend .il-link;
+  }
+
+  a:hover,
+  a:focus {
+    outline: none;
+    text-decoration: underline;
+    color: var(--il-orange);
+  }
+
+  .il-actions {
+    ul {
+      @include reset-list();
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: flex-start;
+      align-items: flex-start;
+    }
+
+    li {
+      @include reset-list-item;
+      margin: 0 20px 20px 0;
+    }
+
+    a {
+      @extend .il-button;
+      border: 0;
+      background-color: var(--il-orange);
+      color: white;
+
+      &:hover,
+      &:focus {
+        background-color: var(--il-altgeld);
+        color: white;
+      }
+    }
+  }
+
+  @media (min-width: 992px) {
+    padding-top: 115px;
+
+    ul li a {
+      padding: 6px 0;
+    }
+  }
+}
+
+.il-footer-navigation {
+  @extend %il-footer-content;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 61px;
+
+  nav {
+    margin-bottom: 61px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  @media (min-width: 992px) {
+    grid-gap: 120px;
+    grid-template-columns: repeat(2, 1fr);
+
+    nav {
+      margin-bottom: 50px;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+
+    .il-actions {
+      grid-column-start: 1;
+      grid-column-end: span 2;
+    }
+  }
+}
+
+.il-footer-navigation-single {
+  @extend %il-footer-content;
+
+  p:first-child {
+    margin-top: 0;
+    padding-top: 0;
+  }
+
+  p {
+    color: white;
+  }
+
+  @media (min-width: 992px) {
+    grid-column: 2 / span 2;
+  }
+}

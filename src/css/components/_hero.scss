@@ -1,4 +1,63 @@
+:root {
+  --il-hero-align-items: center;
+  --il-hero-background-color: var(--il-blue);
+  --il-hero-button-background-color: var(--il-orange);
+  --il-hero-button-foreground-color: white;
+  --il-hero-button-border-color: white;
+  --il-hero-focused-button-background-color: white;
+  --il-hero-focused-button-foreground-color: var(--il-orange);
+  --il-hero-focused-button-border-color: var(--il-orange);
+  --il-hero-justify-content: center;
+  --il-hero-margin-left: auto;
+  --il-hero-margin-right: auto;
+  --il-hero-text-align: center;
+}
+
 il-hero {
+
+  &.il-align-left {
+    --il-hero-align-items: flex-start;
+    --il-hero-margin-left: 0;
+    --il-hero-margin-right: auto;
+    --il-hero-text-align: left;
+  }
+
+  &.il-align-center {
+    --il-hero-align-items: center;
+    --il-hero-margin-left: auto;
+    --il-hero-margin-right: auto;
+    --il-hero-text-align: center;
+  }
+
+  &.il-align-right {
+    --il-hero-align-items: flex-end;
+    --il-hero-margin-left: auto;
+    --il-hero-margin-right: 0;
+    --il-hero-text-align: right;
+  }
+
+  &.il-align-top {
+    --il-hero-justify-content: flex-start;
+  }
+
+  &.il-align-middle {
+    --il-hero-justify-content: center;
+  }
+
+  &.il-align-bottom {
+    --il-hero-justify-content: flex-end;
+  }
+
+  &.il-theme-orange, &[color="orange"], &[duotone] {
+    --il-hero-background-color: var(--il-orange);
+    --il-hero-button-background-color: var(--il-blue);
+    --il-hero-button-foreground-color: white;
+    --il-hero-button-border-color: white;
+    --il-hero-focused-button-background-color: white;
+    --il-hero-focused-button-foreground-color: var(--il-blue);
+    --il-hero-focused-button-border-color: var(--il-blue);
+  }
+
   h1 {
     @include reset-heading;
     font: 700 36px var(--il-source-sans);
@@ -33,21 +92,14 @@ il-hero {
 
       a {
         @extend .il-button;
-        --color-primary: var(--il-orange);
-        --color-secondary: white;
+        --il-button-background-color: var(--il-hero-button-background-color);
+        --il-button-background-color: var(--il-hero-button-background-color);
+        --il-button-foreground-color: var(--il-hero-button-foreground-color);
+        --il-button-border-color: var(--il-hero-button-border-color);
+        --il-focused-button-background-color: var(--il-hero-focused-button-background-color);
+        --il-focused-button-foreground-color: var(--il-hero-focused-button-foreground-color);
+        --il-focused-button-border-color: var(--il-hero-focused-button-border-color);
       }
-    }
-  }
-
-  &[color="orange"] {
-    ul li a {
-      --color-primary: var(--il-blue);
-    }
-  }
-
-  &[duotone] {
-    ul li a {
-      --color-primary: var(--il-blue);
     }
   }
 }

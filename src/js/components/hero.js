@@ -1,6 +1,7 @@
 import { LitElement, html } from 'lit';
 import fingerprint from '../elements/fingerprint';
 import Alignment from '../lib/alignment';
+import Debugger from '../debug';
 import styles from './hero.css';
 
 class Hero extends LitElement {
@@ -26,6 +27,16 @@ class Hero extends LitElement {
     this.background = undefined;
     this.color = "blue";
     this.duotone = false;
+  }
+
+  connectedCallback() {
+    super.connectedCallback();
+    if (this.hasAttribute('align')) {
+      Debugger.warn("il-hero: the \"align\" attribute is deprecated. Use alignment classes instead.");
+    }
+    if (this.hasAttribute('color')) {
+      Debugger.warn("il-hero: the \"color\" attribute is deprecated. Use theme classes instead.");
+    }
   }
 
   renderBackground() {

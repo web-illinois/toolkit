@@ -105,7 +105,9 @@ class ClickableCard extends LitElement {
   }
 
   _click(e) {
-    window.location = this.href;
+    if (this.href !== undefined) {
+      window.location = this.href;
+    } 
   }
 
   _higlight(e) {
