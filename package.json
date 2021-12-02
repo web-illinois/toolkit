@@ -23,7 +23,6 @@
   "dependencies": {
     "@symfony/webpack-encore": "^0.30.2",
     "lit": "^2.0.0-rc.3",
-    "node-sass": "^4.14.1",
     "remove-files-webpack-plugin": "^1.4.4",
     "sass-loader": "^8.0.2"
   },
