@@ -5,8 +5,6 @@ class Statistic extends LitElement {
   static get properties() {
     return {
       width: { type: String, attribute: true },
-      src: { type: String, attribute: true },
-      size: { type: String, attribute: true },
       height: { type: String, attribute: true },
       startAnimation: { type: String, attribute: true },
       animate: { type: Boolean, attribute: true },
@@ -18,13 +16,10 @@ class Statistic extends LitElement {
     return css`
     p.il-statistic {
       text-align: center;
-      padding: 30px 20px;
+      padding: var(--il-statistic-padding);
       background: var(--il-background-color);
       margin: var(--il-statistic-margin);
       color: var(--il-statistic-text-color);
-    }
-    p.il-statistic.extralarge {
-      padding: 40px 20px 35px 20px;
     }
     p.il-statistic span.text {
       font-size: var(--il-statistic-font-size);
@@ -43,18 +38,6 @@ class Statistic extends LitElement {
       font-size: var(--il-statistic-stat-font-size);
       line-height: var(--il-statistic-stat-line-height);
     }
-    p.il-statistic.extralarge span.stat {
-      --il-statistic-stat-font-size: 8.25rem;
-      --il-statistic-stat-padding: 40px 0 50px 0;
-    }
-    p.il-statistic.large span.stat {
-      --il-statistic-stat-font-size: 5.875rem;
-      --il-statistic-stat-padding: 30px 0 35px 0;
-    }
-    p.il-statistic.small span.stat {
-      --il-statistic-stat-font-size: 3rem;
-      --il-statistic-stat-padding: 13px 0 20px 0;
-    }
     p.il-statistic span.stat em {
       font-style: normal;
     }
@@ -64,24 +47,11 @@ class Statistic extends LitElement {
       font-size: var(--il-statistic-source-font-size);
       line-height: var(--il-statistic-source-line-height);
       font-style: italic;
-    }
-    p.il-statistic.extralarge span.source {
-      --il-statistic-source-font-size: 1.1875rem;
-    }
-    p.il-statistic.large span.source {
-      --il-statistic-source-font-size: 1.125rem;
-    }
-    p.il-statistic.small span.source {
-      --il-statistic-source-font-size: 1rem;
-      --il-statistic-source-line-height: 1.25rem;
-    }
-    `;
+    }`;
   }
 
   constructor() {
     super();
-    this.src = '';
-    this.size = '';
     this.color = '';
     this.background = '';
     this.height = '';
@@ -105,7 +75,6 @@ class Statistic extends LitElement {
   render() {
     this.idInfo = 'statistic-' + (((1 + Math.random()) * 0x10000000) | 0);
     let widthStyle = this.width == '' ? '' : `width: ${this.width};`;
-    let sizeClass = this.size == 'medium' ? '' : this.size;
     const whiteValidColors = [ '#ff552e', '#13294b', '#1d58a7', '#009fd4', '#31717b', '#005677'];
     const grayValidColors = [ '#13294b', '#1d58a7', '#31717b', '#005677'];
     const blueValidColors = [ 'white', '#7fc3e1', '#f09378', '#fed094', '#ffefda'];
@@ -135,7 +104,7 @@ class Statistic extends LitElement {
       this.style.setProperty('--il-statistic-text-color', 'white');
     }
     return html`
-    <p class="il-statistic ${sizeClass}" id='${this.idInfo}' style='${widthStyle}'>
+    <p class="il-statistic" id='${this.idInfo}' style='${widthStyle}'>
         <span class="text intro"><slot name="top"></slot></span>
         <span class="stat"><slot name="stat"></span></slot>
         <span class="text"><slot></slot></span>

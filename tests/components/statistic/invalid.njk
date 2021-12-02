@@ -4,24 +4,37 @@ group: "Components: Statistic"
 layout: layouts/page.njk
 ---
 
+<style> 
+il-statistic.orange { 
+    --il-statistic-heading-color: var(--il-orange-lighter-2); 
+} 
+il-statistic.harvest { 
+    --il-statistic-heading-color: var(--il-harvest-lighter-2); 
+}
+il-statistic.blue { 
+    --il-statistic-heading-color: var(--il-arches-blue-darker-2); 
+    --il-statistic-text-color: var(--il-arches-blue-darker-2); 
+}
+</style>
+
 <h2>Invalid colors</h2>
 
-<il-statistic width="500px" size="extralarge" class="il-theme-white il-orange-light">
+<il-statistic width="500px" class="il-theme-white orange il-size-extralarge">
 <em slot="stat">#6</em> Overall ranking among undergraduate programs in the U.S.
 <span slot="source">U.S. News and World 2021</span>
 </il-statistic>
 
-<il-statistic width="500px" size="extralarge" class="il-theme-gray il-orange-light">
+<il-statistic width="500px" class="il-theme-gray orange il-size-extralarge">
 <em slot="stat">#6</em> Overall ranking among undergraduate programs in the U.S.
 <span slot="source">U.S. News and World 2021</span>
 </il-statistic>
 
-<il-statistic width="500px" size="extralarge" class="il-theme-orange il-harvest">
+<il-statistic width="500px" class="il-theme-orange harvest il-size-extralarge">
 <em slot="stat">#6</em> Overall ranking among undergraduate programs in the U.S.
 <span slot="source">U.S. News and World 2021</span>
 </il-statistic>
 
-<il-statistic width="500px" size="extralarge" class="il-theme-blue il-arches-blue-dark">
+<il-statistic width="500px" class="il-theme-blue blue il-size-extralarge">
 <em slot="stat">#6</em> Overall ranking among undergraduate programs in the U.S.
 <span slot="source">U.S. News and World 2021</span>
 </il-statistic>
