@@ -1,6 +1,7 @@
 :root {
   --il-call-to-action-margin: auto;
   --il-call-to-action-display: block;
+  --il-call-to-action-icon-size: 7rem;
 }
 
 il-call-to-action {
@@ -14,7 +15,7 @@ il-call-to-action,
   .il-icon,
   .il-icon-solid,
   .il-icon-line {
-    font-size: 6rem;
+    font-size: var(--il-call-to-action-icon-size);
   }
 
   a.il-button, button {
