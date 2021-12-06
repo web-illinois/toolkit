@@ -26,6 +26,10 @@ il-statistic,
   }
 }
 
+il-statistic.il-theme-white, .il-theme-white il-statistic {
+  --il-statistic-heading-color: var(--il-orange);
+}
+
 .il-size-small il-statistic, il-statistic.il-size-small {
   --il-statistic-font-size: 1.125rem;
   --il-statistic-line-height: 1.188rem;
