@@ -54,7 +54,7 @@
   h5 {
     @include reset-heading;
     @include heading-spacing;
-    font: 600 rem(20px) / rem(22px) var(--il-source-sans);
+    font: 700 rem(20px) / rem(22px) var(--il-source-sans);
     color: var(--il-heading-color);
   }
   h6 {

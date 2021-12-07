@@ -1,4 +1,6 @@
 import {LitElement, html, css} from 'lit';
+import Debugger from '../../debug';
+import styles from './search.css';
 
 class Search extends LitElement {
   static get properties() {
@@ -7,69 +9,16 @@ class Search extends LitElement {
       buttonHasFocus: {type: Boolean, attribute: false},
       inputHasFocus: {type: Boolean, attribute: false},
       label: {type: String, attribute: true},
+      name: {type: String, attribute: true},
       method: {type: String, attribute: true},
       placeholder: {type: String, attribute: true},
-      searchname: {type: String, attribute: true},
+      query: {type: String, attribute: true},
+      searchname: {type: String, attribute: true}
     }
   }
 
   static get styles() {
-    return css`
-form {
-  display: grid;
-  height: 40px;
-  grid-template-columns: auto 60px;
-  grid-gap: 2px;
-  border: 2px solid var(--il-cloud-3);
-  background-color: var(--il-cloud-3);
-  margin-left: 10px;
-  border-radius: 5px;
-}
-form.input-has-focus {
-  border-color: var(--il-industrial-blue);
-}
-label {
-  display: none;
-}
-input {
-  margin: 0;
-  padding: 5px;
-  border: 0;
-  font: 16px/18px var(--il-source-sans);
-  background-color: white;
-  border-top-left-radius: 5px;
-  border-bottom-left-radius: 5px;
-  -webkit-appearance: none;
-}
-input:focus {
-  outline: 0;
-}
-button {
-  position: relative;
-  width: 100%;
-  margin: 0;
-  padding: 0;
-  border: 0;
-  background-color: white;
-  color: #606060;
-  border-top-right-radius: 5px;
-  border-bottom-right-radius: 5px;
-}
-button:focus {
-  outline: 0px solid var(--il-industrial-blue);
-  box-shadow: 0 0 0 2px var(--il-industrial-blue);
-  color: var(--il-industrial-blue);
-}
-button svg {
-  display: block;
-  position: absolute;
-  left: calc(50% - 10px);
-  top: calc(50% - 10px);
-  width: 20px;
-  height: 20px;
-  fill: currentcolor;
-}
-    `
+    return styles;
   }
 
   constructor() {
@@ -78,9 +27,15 @@ button svg {
     this.inputHasFocus = false;
     this.label = 'Search';
     this.method = 'GET';
+    this.name = 's';
     this.placeholder = 'Search this site';
-    this.searchname = 's';
+    this.query = '';
+    this.searchname = undefined;
     document.addEventListener('DOMContentLoaded', this.handleContentLoaded.bind(this));
+  }
+
+  getName() {
+    return this.searchname || this.name;
   }
 
   handleButtonBlur(evt) {
@@ -93,6 +48,9 @@ button svg {
 
   handleContentLoaded(evt) {
     const header = this.getHeader();
+    if (this.searchname) {
+      Debugger.warn('Search component: The "searchname" is deprecated; use "name" instead.');
+    }
     if (header) {
       header.addEventListener('viewChange', this.handleHeaderViewChange.bind(this));
     }
@@ -131,7 +89,7 @@ button svg {
     return html`
 <form role="search" method=${this.method} action=${this.action} class="${classNames.join(' ')}">
     <label for="query">Search</label>
-    <input type="search" id="query" name=${this.searchname} placeholder=${this.placeholder} @focus=${this.handleInputFocus} @blur=${this.handleInputBlur}>
+    <input type="search" id="query" name=${this.getName()} value=${this.query} placeholder=${this.placeholder} @focus=${this.handleInputFocus} @blur=${this.handleInputBlur}>
     <button type="submit" @focus=${this.handleButtonFocus} @blur=${this.handleButtonBlur}>
         ${this.renderSearchIcon()}
     </button>
