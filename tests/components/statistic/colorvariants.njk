@@ -5,6 +5,9 @@ layout: layouts/page.njk
 ---
 
 <style> 
+:root {
+    --il-statistic-width: 500px;
+}
 il-statistic.blue { 
     --il-statistic-heading-color: var(--il-blue); 
 } 
@@ -22,28 +25,28 @@ il-statistic.light-blue {
 
 <h3>Default</h3>
 
-<il-statistic width="500px" class="il-theme-white il-size-xlarge">
+<il-statistic class="il-theme-white il-size-xlarge">
 <em slot="stat">#6</em> Overall ranking among undergraduate programs in the U.S.
 <span slot="source">U.S. News and World 2021</span>
 </il-statistic>
 
 <h3>il-blue</h3>
 
-<il-statistic width="500px" class="il-theme-white il-size-xlarge blue">
+<il-statistic class="il-theme-white il-size-xlarge blue">
 <em slot="stat">#6</em> Overall ranking among undergraduate programs in the U.S.
 <span slot="source">U.S. News and World 2021</span>
 </il-statistic>
 
 <h3>il-industrial-blue</h3>
 
-<il-statistic width="500px" class="il-theme-white il-size-xlarge industrial-blue">
+<il-statistic class="il-theme-white il-size-xlarge industrial-blue">
 <em slot="stat">#6</em> Overall ranking among undergraduate programs in the U.S.
 <span slot="source">U.S. News and World 2021</span>
 </il-statistic>
 
 <h3>il-arches-blue-lighter-2</h3>
 
-<il-statistic width="500px" class="il-theme-blue-gradient il-size-xlarge light-blue">
+<il-statistic class="il-theme-blue-gradient il-size-xlarge light-blue">
 <em slot="stat">#6</em> Overall ranking among undergraduate programs in the U.S.
 <span slot="source">U.S. News and World 2021</span>
 </il-statistic>

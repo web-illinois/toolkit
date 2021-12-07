@@ -4,7 +4,6 @@ class Statistic extends LitElement {
 
   static get properties() {
     return {
-      width: { type: String, attribute: true },
       height: { type: String, attribute: true },
       startAnimation: { type: String, attribute: true },
       animate: { type: Boolean, attribute: true },
@@ -20,6 +19,7 @@ class Statistic extends LitElement {
       background: var(--il-background-color);
       margin: var(--il-statistic-margin);
       color: var(--il-statistic-text-color);
+      width: var(--il-statistic-width);
     }
     p.il-statistic span.text {
       font-size: var(--il-statistic-font-size);
@@ -74,7 +74,6 @@ class Statistic extends LitElement {
 
   render() {
     this.idInfo = 'statistic-' + (((1 + Math.random()) * 0x10000000) | 0);
-    let widthStyle = this.width == '' ? '' : `width: ${this.width};`;
     const whiteValidColors = [ '#ff552e', '#13294b', '#1d58a7', '#009fd4', '#31717b', '#005677'];
     const grayValidColors = [ '#13294b', '#1d58a7', '#31717b', '#005677'];
     const blueValidColors = [ 'white', '#7fc3e1', '#f09378', '#fed094', '#ffefda'];
@@ -104,7 +103,7 @@ class Statistic extends LitElement {
       this.style.setProperty('--il-statistic-text-color', 'white');
     }
     return html`
-    <p class="il-statistic" id='${this.idInfo}' style='${widthStyle}'>
+    <p class="il-statistic" id='${this.idInfo}'>
         <span class="text intro"><slot name="top"></slot></span>
         <span class="stat"><slot name="stat"></span></slot>
         <span class="text"><slot></slot></span>
