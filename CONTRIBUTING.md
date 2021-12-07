@@ -26,3 +26,27 @@ File suffixes:
 z-index: menu structure of 700. Wordpress maximum is 500. 
 Use CSS variables when possible. 
 
+## Git Branching and Deployment
+
+Once develop has acquired enough features for a release (or a predetermined release date is approaching), you fork a release branch off of develop. Creating this branch starts the next release cycle, so no new features can be added after this point—only bug fixes, documentation generation, and other release-oriented tasks should go in this branch. Once it's ready to ship, the release branch gets merged into main and tagged with a version number. In addition, it should be merged back into develop, which may have progressed since the release was initiated.
+
+Using a dedicated branch to prepare releases makes it possible for one team to polish the current release while another team continues working on features for the next release. It also creates well-defined phases of development (e.g., it's easy to say, “This week we're preparing for version 4.0,” and to actually see it in the structure of the repository).
+
+Once the release is ready to ship, it will get merged it into main and develop, then the release branch will be deleted. It’s important to merge back into develop because critical updates may have been added to the release branch and they need to be accessible to new features. If your organization stresses code review, this would be an ideal place for a pull request.
+
+### Branches
+
+* **main**: this is the latest code. If there is a patch, it will most likely be a branch that comes from main. 
+* **develop**: this is the code that is going to be the next release. 
+* **release/xxxxxxxx**: this is the code that is going to be released, most likely coming from develop or main. It will be merged to main. 
+* **components/xxxxxxx**: this is work on a specific component. This may or may not be in the next release. 
+
+### Development
+
+When you are done working on code that is planned to go to the next release, merge that code to the develop branch. This will update the /dev/ code on the AWS server. You will need a code review or administrator access to bypass code review. 
+
+**Do not deploy code to the develop branch that is not going to the next release.** 
+
+### Building the Release Branch for Beta Testing
+
+When you are ready for beta testing, first make sure all the code has been pushed to the develop branch. Deploy to the release branch. Mark the code in the release branch with a "vx.y.z-beta0" release with the same tag name. Use the format from [the Semantic Versioning specification](https://semver.org/). This will deploy the code matching the release on the AWS server. Do not reuse release names or tag names. Make a note in the wiki saying the new pre-release is done. 
