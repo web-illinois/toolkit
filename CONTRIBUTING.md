@@ -49,4 +49,22 @@ When you are done working on code that is planned to go to the next release, mer
 
 ### Building the Release Branch for Beta Testing
 
-When you are ready for beta testing, first make sure all the code has been pushed to the develop branch. Deploy to the release branch. Mark the code in the release branch with a "vx.y.z-beta0" release with the same tag name. Use the format from [the Semantic Versioning specification](https://semver.org/). This will deploy the code matching the release on the AWS server. Do not reuse release names or tag names. Make a note in the wiki saying the new pre-release is done. 
+When you are ready for beta testing, first make sure all the code has been pushed to the develop branch. Deploy to the release branch. Mark the code in the release branch with a "vx.y.z-beta0" release with the same tag name. Use the format from [the Semantic Versioning specification](https://semver.org/). This will deploy the code matching the release on the AWS server. Do not reuse release names or tag names. Make a note in the wiki saying the new pre-release is done.
+
+### Deployment Checklist
+
+#### Before deployment
+
+* Make sure the package.json has been updated
+* Make sure visual tests have been updated
+* Make sure all unit tests have been run and have passed
+* Make sure all accessibility tests have been run and have passed
+
+
+#### After deployment
+
+* Merge the main branch back to develop.
+* Delete the release branch (if one exists).
+* Make a note in the wiki saying the new release is done.
+* Create codepens from the develop to the new release if you are updating a major or minor release.
+* Push announcements to Teams, listserv, etc. 
