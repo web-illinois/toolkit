@@ -2,6 +2,7 @@
   --il-call-to-action-margin: auto;
   --il-call-to-action-display: block;
   --il-call-to-action-icon-size: 7rem;
+  --il-call-to-action-width: auto;
 }
 
 il-call-to-action {
@@ -12,6 +13,8 @@ il-call-to-action,
 .il-formatted il-call-to-action {
   @extend .il-theme-blue-gradient;
   display: var(--il-call-to-action-display);
+  text-align: left;
+
   .il-icon,
   .il-icon-solid,
   .il-icon-line {
@@ -32,7 +35,8 @@ il-call-to-action,
   }
 }
 
-.il-formatted il-call-to-action[alignment="center"], il-call-to-action[alignment="center"] {
+.il-align-center il-call-to-action, il-call-to-action.il-align-center {
+  text-align: center;
   h2,
   h3,
   h4,
@@ -47,19 +51,19 @@ il-call-to-action,
   }
 }
 
-.il-theme-blue-gradient il-call-to-action, il-call-to-action.il-theme-blue-gradient { 
+.il-theme-blue-gradient il-call-to-action, .il-formatted .il-theme-blue-gradient il-call-to-action, il-call-to-action.il-theme-blue-gradient, .il-formatted il-call-to-action.il-theme-blue-gradient { 
   @extend .il-theme-blue-gradient;
 }
 
-.il-theme-blue il-call-to-action, il-call-to-action.il-theme-blue { 
+.il-theme-blue il-call-to-action, .il-formatted .il-theme-blue il-call-to-action,il-call-to-action.il-theme-blue, .il-formatted il-call-to-action.il-theme-blue { 
   @extend .il-theme-blue;
 }
 
-.il-theme-gray il-call-to-action, il-call-to-action.il-theme-gray { 
+.il-theme-gray il-call-to-action, .il-formatted .il-theme-gray il-call-to-action,il-call-to-action.il-theme-gray, .il-formatted il-call-to-action.il-theme-gray { 
   @extend .il-theme-gray;
 }
 
-.il-theme-white il-call-to-action, il-call-to-action.il-theme-white { 
+.il-theme-white il-call-to-action, .il-formatted .il-theme-white il-call-to-action,il-call-to-action.il-theme-white, .il-formatted il-call-to-action.il-theme-white { 
   @extend .il-theme-white;
 }
 
@@ -78,15 +82,16 @@ il-call-to-action,
     a.il-button:last-of-type {
       margin-right: auto;
     }
+  }
 
-    &[alignment="center"] {
+  .il-align-center il-call-to-action, 
+  il-call-to-action.il-align-center {
       a.il-button {
         margin-left: auto;
       }
       a.il-button:first-of-type {
         margin-left: auto;
       }
-    }
   }
 }
 

@@ -2,13 +2,6 @@ import { LitElement, html, css } from 'lit';
 
 class CallToAction extends LitElement {
 
-  static get properties() {
-    return {
-      alignment: { type: String, attribute: true },
-      width: { type: String, attribute: true },
-    };
-  }
-
   static get styles() {
     return css`
     .il-calltoaction {
@@ -19,6 +12,7 @@ class CallToAction extends LitElement {
       margin: var(--il-call-to-action-margin);
       color: var(--il-text-color);
       background: var(--il-background-color);
+      width: var(--il-call-to-action-width);
     }
     .il-calltoaction.center {
       align-items: start;
@@ -49,16 +43,13 @@ class CallToAction extends LitElement {
 
   constructor() {
     super();
-    this.alignment = '';
-    this.width = '';
   }
 
   render() {
-    var alignmentClass = this.alignment == 'left' ? '' : this.alignment;
-    let widthStyle = this.width == '' ? '' : `width: ${this.width};`;
+    let alignmentClass = getComputedStyle(this).getPropertyValue('text-align').trim();
     
     return html`
-        <div class="il-calltoaction ${alignmentClass}" style="${widthStyle}">
+        <div class="il-calltoaction ${alignmentClass}">
             <div class="il-calltoaction-icon ${alignmentClass}"><slot name="icon"></slot></div>
             <div class="il-calltoaction-body ${alignmentClass}"><slot></slot></div>
         </div>
