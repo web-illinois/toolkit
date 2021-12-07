@@ -2,6 +2,7 @@
   --il-call-to-action-margin: auto;
   --il-call-to-action-display: block;
   --il-call-to-action-icon-size: 7rem;
+  --il-call-to-action-width: auto;
 }
 
 il-call-to-action {
@@ -12,6 +13,8 @@ il-call-to-action,
 .il-formatted il-call-to-action {
   @extend .il-theme-blue-gradient;
   display: var(--il-call-to-action-display);
+  text-align: left;
+
   .il-icon,
   .il-icon-solid,
   .il-icon-line {
@@ -32,7 +35,8 @@ il-call-to-action,
   }
 }
 
-.il-formatted il-call-to-action[alignment="center"], il-call-to-action[alignment="center"] {
+.il-align-center il-call-to-action, il-call-to-action.il-align-center {
+  text-align: center;
   h2,
   h3,
   h4,
@@ -78,15 +82,16 @@ il-call-to-action,
     a.il-button:last-of-type {
       margin-right: auto;
     }
+  }
 
-    &[alignment="center"] {
+  .il-align-center il-call-to-action, 
+  il-call-to-action.il-align-center {
       a.il-button {
         margin-left: auto;
       }
       a.il-button:first-of-type {
         margin-left: auto;
       }
-    }
   }
 }
 
