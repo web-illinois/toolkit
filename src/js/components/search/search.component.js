@@ -12,7 +12,8 @@ class Search extends LitElement {
       name: {type: String, attribute: true},
       method: {type: String, attribute: true},
       placeholder: {type: String, attribute: true},
-      searchname: {type: String, attribute: true},
+      query: {type: String, attribute: true},
+      searchname: {type: String, attribute: true}
     }
   }
 
@@ -28,6 +29,7 @@ class Search extends LitElement {
     this.method = 'GET';
     this.name = 's';
     this.placeholder = 'Search this site';
+    this.query = '';
     this.searchname = undefined;
     document.addEventListener('DOMContentLoaded', this.handleContentLoaded.bind(this));
   }
@@ -87,7 +89,7 @@ class Search extends LitElement {
     return html`
 <form role="search" method=${this.method} action=${this.action} class="${classNames.join(' ')}">
     <label for="query">Search</label>
-    <input type="search" id="query" name=${this.getName()} placeholder=${this.placeholder} @focus=${this.handleInputFocus} @blur=${this.handleInputBlur}>
+    <input type="search" id="query" name=${this.getName()} value=${this.query} placeholder=${this.placeholder} @focus=${this.handleInputFocus} @blur=${this.handleInputBlur}>
     <button type="submit" @focus=${this.handleButtonFocus} @blur=${this.handleButtonBlur}>
         ${this.renderSearchIcon()}
     </button>
