@@ -23,8 +23,35 @@ Building the site:
 File suffixes:
 * .vis.js handles the visual test cases
 
-z-index: menu structure of 700. Wordpress maximum is 500. 
-Use CSS variables when possible. 
+
+### HTML
+
+Use [kebab case](https://en.wikipedia.org/wiki/Letter_case#Kebab_case) for HTML tag names and attributes.
+
+Do not combine words.
+
+#### Correct
+
+`<il-custom-element custom-attribute="value">`
+
+#### Incorrect
+
+`<il-customelement customattribute="value">` _Do not combine words_
+
+`<il-customElement customAttibute="value">` _Use kebab case (not camel case)_
+
+### CSS
+
+Prefer use of CSS variables instead of custom classes. 
+
+
+### JavaScript
+
+Follow the [Airbnb JavaScript Style Guide](https://github.com/airbnb/javascript);
+
+### General writing
+
+Use sentence case for page titles and headings (not title case).
 
 ## Git Branching and Deployment
 
