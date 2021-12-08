@@ -4,12 +4,7 @@ class Statistic extends LitElement {
 
   static get properties() {
     return {
-      width: { type: String, attribute: true },
-      src: { type: String, attribute: true },
-      size: { type: String, attribute: true },
-      color: { type: String, attribute: true },
       height: { type: String, attribute: true },
-      background: { type: String, attribute: true },
       startAnimation: { type: String, attribute: true },
       animate: { type: Boolean, attribute: true },
       originalStat: { type: String, attribute: true }
@@ -20,88 +15,43 @@ class Statistic extends LitElement {
     return css`
     p.il-statistic {
       text-align: center;
-      padding: 30px 20px;
-      background: var(--il-cloud-1);
+      padding: var(--il-statistic-padding);
+      background: var(--il-background-color);
       margin: var(--il-statistic-margin);
-      color: var(--il-blue);
+      color: var(--il-statistic-text-color);
+      width: var(--il-statistic-width);
     }
-    p.il-statistic.back-white {
-      background: white;
+    p.il-statistic span.text {
+      font-size: var(--il-statistic-font-size);
+      line-height: var(--il-statistic-line-height);
     }
-    p.il-statistic.back-transparent {
-      background: rgba(0,0,0,0);
-    }
-    p.il-statistic.back-shaded {
-      color: white;
-      background: rgba(0,0,0,.25);
-    }
-    p.il-statistic.back-orange {
-      color: white;
-      background: var(--il-orange);
-    }
-    p.il-statistic.back-gradient {
-      color: white;
-      background: var(--il-gradient-blue);
-    }
-    p.il-statistic.back-orangegradient {
-      color: white;
-      background: var(--il-gradient-orange);
-    }
-    p.il-statistic.back-blue {
-      color: white;
-      background: var(--il-blue);
-    }
-    p.il-statistic.white {
-      color: white;
-    }
-    p.il-statistic.black {
-      color: black;
-    }
-    p.il-statistic.orange {
-      color: var(--il-orange);
-    }
-    p.il-statistic span.stat, p.il-statistic span.text {
-      display: block;
-      font-size: 1.125rem;
-      line-height: 1.4375rem;
+    p.il-statistic span.text.intro {
+      padding-bottom: 5px;
+      display: inline-block;
     }
     p.il-statistic span.stat {
+      display: block;
       font-weight: 700;
-      font-size: 4rem;
       margin-bottom: 1rem;
-      line-height: 1.2;
-    }
-    p.il-statistic.extralarge span.stat {
-      font-size: 8.25rem;
-    }
-    p.il-statistic.large span.stat {
-      font-size: 6rem;
-    }
-    p.il-statistic.small span.stat {
-      font-size: 2.1875rem;
+      color: var(--il-statistic-heading-color);
+      padding: var(--il-statistic-stat-padding);
+      font-size: var(--il-statistic-stat-font-size);
+      line-height: var(--il-statistic-stat-line-height);
     }
     p.il-statistic span.stat em {
       font-style: normal;
     }
-    p.il-statistic span.text {
-      
-    }
     p.il-statistic span.source {
+      display: block;
       margin-top: 10px;
-      font-size: 1rem;
-      line-height: 1.25rem;
+      font-size: var(--il-statistic-source-font-size);
+      line-height: var(--il-statistic-source-line-height);
       font-style: italic;
-    }
-    p.il-statistic span.source::before {
-      content: "";
-      padding-right: 4px;
     }`;
   }
 
   constructor() {
     super();
-    this.src = '';
-    this.size = '';
     this.color = '';
     this.background = '';
     this.height = '';
@@ -124,14 +74,37 @@ class Statistic extends LitElement {
 
   render() {
     this.idInfo = 'statistic-' + (((1 + Math.random()) * 0x10000000) | 0);
-    let widthStyle = this.width == '' ? '' : `width: ${this.width};`;
-    let sizeClass = this.size == 'medium' ? '' : this.size;
-    let colorClass = this.colorClass == 'blue' ? '' : this.color;
-    let backgroundClass = this.background == 'gray' || this.background == '' ? '' : 'back-' + this.background;
-
+    const whiteValidColors = [ '#ff552e', '#13294b', '#1d58a7', '#009fd4', '#31717b', '#005677'];
+    const grayValidColors = [ '#13294b', '#1d58a7', '#31717b', '#005677'];
+    const blueValidColors = [ 'white', '#7fc3e1', '#f09378', '#fed094', '#ffefda'];
+    const blueGradientValidColors = [ 'white', '#7fc3e1', '#fed094', '#ffefda'];
+    const orangeValidColors = [ 'white', '#000033'];
+    let background = getComputedStyle(this).getPropertyValue('--il-background-color').trim();
+    let heading = getComputedStyle(this).getPropertyValue('--il-statistic-heading-color').trim();
+    if (background === 'white' && !whiteValidColors.includes(heading)) {
+      this.style.setProperty('--il-statistic-heading-color', 'var(--il-blue)');
+      this.style.setProperty('--il-statistic-text-color', 'var(--il-blue)');
+    }
+    if (background === '#f4f4f4' && !grayValidColors.includes(heading)) {
+      this.style.setProperty('--il-statistic-heading-color', 'var(--il-blue)');
+      this.style.setProperty('--il-statistic-text-color', 'var(--il-blue)');
+    }
+    if (background === '#13294b' && !blueValidColors.includes(heading)) {
+      this.style.setProperty('--il-statistic-heading-color', 'white');
+      this.style.setProperty('--il-statistic-text-color', 'white');
+    }
+    if (background === '#ff552e' && !orangeValidColors.includes(heading)) {
+      this.style.setProperty('--il-statistic-heading-color', 'white');
+      this.style.setProperty('--il-statistic-text-color', 'white');
+    }
+    if (background === 'linear-gradient(180deg,  #1d58a7 0%,  #13294b 100%)' && !blueGradientValidColors.includes(heading)) 
+    {
+      this.style.setProperty('--il-statistic-heading-color', 'white');
+      this.style.setProperty('--il-statistic-text-color', 'white');
+    }
     return html`
-    <p class="il-statistic ${sizeClass} ${backgroundClass} ${colorClass}" id='${this.idInfo}' style='${widthStyle}'>
-        <span class="text"><slot name="top"></slot></span>
+    <p class="il-statistic" id='${this.idInfo}'>
+        <span class="text intro"><slot name="top"></slot></span>
         <span class="stat"><slot name="stat"></span></slot>
         <span class="text"><slot></slot></span>
         <span class="text source"><slot name="source"></slot></span>

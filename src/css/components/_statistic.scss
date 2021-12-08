@@ -1,10 +1,60 @@
 :root {
   --il-statistic-margin: 0.9375rem;
+  --il-statistic-font-size: 1.25rem;
+  --il-statistic-line-height: 1.5rem;
+  --il-statistic-stat-font-size: 4rem;
+  --il-statistic-stat-line-height: 1.875rem;
+  --il-statistic-stat-padding: 15px 0 25px 0;
+  --il-statistic-source-font-size: 1.0625rem;
+  --il-statistic-source-line-height: 1.4375rem;
+  --il-statistic-padding: 30px 20px;
+  --il-statistic-width: auto;
+}
+
+il-statistic {
+  @extend .il-formatted;
 }
 
 il-statistic,
 .il-formatted il-statistic {
+  font-size: var(--il-statistic-font-size);
+  line-height: var(--il-statistic-line-height);
+  --il-statistic-text-color: var(--il-heading-color);
+  --il-statistic-heading-color: var(--il-heading-color);
+
   em {
     font-style: normal;
   }
 }
+
+il-statistic.il-theme-white, .il-theme-white il-statistic {
+  --il-statistic-heading-color: var(--il-orange);
+}
+
+.il-size-small il-statistic, il-statistic.il-size-small {
+  --il-statistic-font-size: 1.125rem;
+  --il-statistic-line-height: 1.188rem;
+  --il-statistic-stat-font-size: 3rem;
+  --il-statistic-stat-padding: 13px 0 20px 0;
+  --il-statistic-source-font-size: 1rem;
+  --il-statistic-source-line-height: 1.25rem;
+}
+
+
+.il-size-large il-statistic, il-statistic.il-size-large {
+  --il-statistic-font-size: 1.375rem;
+  --il-statistic-line-height: 1.625rem;
+  --il-statistic-stat-font-size: 5.875rem;
+  --il-statistic-stat-padding: 30px 0 35px 0;
+  --il-statistic-source-font-size: 1.125rem;
+}
+
+.il-size-xlarge il-statistic, il-statistic.il-size-xlarge {
+  --il-statistic-font-size: 1.5rem;
+  --il-statistic-line-height: 1.75rem;
+  --il-statistic-stat-font-size: 8.25rem;
+  --il-statistic-stat-padding: 40px 0 50px 0;
+  --il-statistic-source-font-size: 1.1875rem;
+  --il-statistic-padding: 40px 20px 35px 20px;
+}
+

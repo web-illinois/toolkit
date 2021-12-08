@@ -2,38 +2,20 @@ import { LitElement, html, css } from 'lit';
 
 class CallToAction extends LitElement {
 
-  static get properties() {
-    return {
-      alignment: { type: String, attribute: true },
-      background: { type: String, attribute: true },
-      width: { type: String, attribute: true },
-    };
-  }
-
   static get styles() {
     return css`
     .il-calltoaction {
       display: flex;
       align-items: center;
-      padding: 2.813rem 0;
+      padding: 3.75rem 0 4.688rem 0;
       max-width: var(--il-content-max-width);
       margin: var(--il-call-to-action-margin);
+      color: var(--il-text-color);
+      background: var(--il-background-color);
+      width: var(--il-call-to-action-width);
     }
-    .il-calltoaction.gradient {
-      color: white;
-      background: var(--il-gradient-blue);
-    }
-    .il-calltoaction.orange {
-      color: white;
-      background: var(--il-orange);
-    }
-    .il-calltoaction.orangegradient {
-        color: white;
-        background: var(--il-gradient-orange);
-    }
-    .il-calltoaction.solid {
-        color: white;
-        background: var(--il-blue);
+    .il-calltoaction.center {
+      align-items: start;
     }
     .il-calltoaction .il-calltoaction-body {
       padding-left: 50px;
@@ -42,11 +24,11 @@ class CallToAction extends LitElement {
       padding-left: 100px;
       min-width: 96px;
     }
+    .il-calltoaction .il-calltoaction-icon.center {
+      margin-top: 1.875rem;
+    }
     .il-calltoaction .il-calltoaction-body.center {
       text-align: center;
-    }
-    .il-calltoaction .il-calltoaction-body.right {
-      text-align: right;
     }
     @media only screen and (max-width: 792px) {
       .il-calltoaction {
@@ -61,19 +43,13 @@ class CallToAction extends LitElement {
 
   constructor() {
     super();
-    this.alignment = '';
-    this.background = '';
-    this.width = '';
   }
 
-
   render() {
-    var contentClass = (this.background == 'solid' || this.background == 'blue') ? 'solid' : this.background == 'white' ? '' : this.background == 'orange' ? 'orange' : this.background == 'orangegradient' ? 'orangegradient' : 'gradient';
-    var alignmentClass = this.alignment == 'left' ? '' : this.alignment;
-    let widthStyle = this.width == '' ? '' : `width: ${this.width};`;
+    let alignmentClass = getComputedStyle(this).getPropertyValue('text-align').trim();
     
     return html`
-        <div class="il-calltoaction ${contentClass}" style="${widthStyle}">
+        <div class="il-calltoaction ${alignmentClass}">
             <div class="il-calltoaction-icon ${alignmentClass}"><slot name="icon"></slot></div>
             <div class="il-calltoaction-body ${alignmentClass}"><slot></slot></div>
         </div>

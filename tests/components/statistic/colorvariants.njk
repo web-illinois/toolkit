@@ -1,0 +1,52 @@
+---
+title: Statistic (variant colors)
+group: "Components: Statistic"
+layout: layouts/page.njk
+---
+
+<style> 
+:root {
+    --il-statistic-width: 500px;
+}
+il-statistic.blue { 
+    --il-statistic-heading-color: var(--il-blue); 
+} 
+il-statistic.industrial-blue { 
+    --il-statistic-heading-color: var(--il-industrial-blue); 
+}
+il-statistic.light-blue { 
+    --il-statistic-heading-color: var(--il-arches-blue-lighter-2); 
+    --il-statistic-text-color: var(--il-arches-blue-lighter-2); 
+}
+</style>
+
+
+<h2>White</h2>
+
+<h3>Default</h3>
+
+<il-statistic class="il-theme-white il-size-xlarge">
+<em slot="stat">#6</em> Overall ranking among undergraduate programs in the U.S.
+<span slot="source">U.S. News and World 2021</span>
+</il-statistic>
+
+<h3>il-blue</h3>
+
+<il-statistic class="il-theme-white il-size-xlarge blue">
+<em slot="stat">#6</em> Overall ranking among undergraduate programs in the U.S.
+<span slot="source">U.S. News and World 2021</span>
+</il-statistic>
+
+<h3>il-industrial-blue</h3>
+
+<il-statistic class="il-theme-white il-size-xlarge industrial-blue">
+<em slot="stat">#6</em> Overall ranking among undergraduate programs in the U.S.
+<span slot="source">U.S. News and World 2021</span>
+</il-statistic>
+
+<h3>il-arches-blue-lighter-2</h3>
+
+<il-statistic class="il-theme-blue-gradient il-size-xlarge light-blue">
+<em slot="stat">#6</em> Overall ranking among undergraduate programs in the U.S.
+<span slot="source">U.S. News and World 2021</span>
+</il-statistic>
