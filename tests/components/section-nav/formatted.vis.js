@@ -5,7 +5,7 @@ const url = util.testUrl(__filename);
 module.exports = (viewports) => {
   return [
     {
-      url, 'label': 'section-nav',
+      url, 'label': 'section-nav-il-formatted',
       'caption': 'Default state, formatted',
       'viewports': [viewports.desktop, viewports.iphone, viewports.hdtv]
     }

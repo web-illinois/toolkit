@@ -1,0 +1,75 @@
+:root {
+  --il-image-feature-display: block;
+}
+
+.il-formatted il-image-feature, il-image-feature, .il-formatted il-video-feature, il-video-feature {
+  display: var(--il-image-feature-display);
+  margin-bottom: 20px;
+
+  h2,
+  h3,
+  h4,
+  h5,
+  p
+  {
+    max-width: 900px;
+  }
+
+  > p:first {
+    margin-top: 30px;
+  }
+
+
+  a.il-button,
+  button {
+    margin-right: 30px;
+    margin-bottom: 20px;
+    width: max-content;
+    width: -moz-max-content;
+    text-align: left;
+
+    &:last-of-type {
+      margin-right: 0;
+    }
+  }
+}
+
+.il-formatted il-image-feature:not([background="white"]), il-image-feature:not([background="white"]),
+.il-formatted il-video-feature:not([background="white"]), il-video-feature:not([background="white"]) {
+    h2,
+    h3,
+    h4,
+    h5,
+    p,
+    ul,
+    ol,
+    ul li,
+    ol li,
+    a {
+      color: white;
+    }
+
+    a.il-button,
+    button {
+      color: white;
+      background: transparent;
+      border-color: white;
+
+      &:focus,
+      &:hover {
+        background: white;
+        color: var(--il-blue);
+      }
+    }
+}
+
+.il-formatted il-video-feature[background="white"], il-video-feature[background="white"] {
+  h2,
+  h3,
+  h4,
+  h5
+  {
+    color: var(--il-orange);
+  }
+}
+  

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html dir="ltr" lang="en">
+<html dir="ltr" lang="en" class="{{ htmlClass }}" {% block htmlAttrs %}{{ htmlAttrs|safe }}{% endblock %}>
 <head>
     <meta charset="utf-8">
     <title>{{ title }}</title>
@@ -15,7 +15,7 @@
         <link rel="stylesheet" href="{{ "/_assets/tests.css" | url }}">
     {% endif %}
 </head>
-<body>
+<body class="{% block bodyClass %}{{ bodyClass }}{% endblock %}">
 {% block body %}
     {{ content | safe }}
 {% endblock %}

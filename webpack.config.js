@@ -1,7 +1,18 @@
 const Encore = require('@symfony/webpack-encore');
 const RemovePlugin = require('remove-files-webpack-plugin');
 const path = require('path');
+
 const pkg = require('./package.json');
+const colors = require('./api/colors.json')
+
+function makeSassList(name, values) {
+  return "$" + name + ":\n  " + values.join(",\n  ") + ";\n\n";
+}
+
+function makeSassVariables() {
+  const colorVars = Object.keys(colors).map(c => `"${c}" ${colors[c]}`);
+  return makeSassList('colors', colorVars);
+}
 
 if (!Encore.isRuntimeEnvironmentConfigured()) {
   Encore.configureRuntimeEnvironment(process.env.NODE_ENV || 'dev');
@@ -16,19 +27,23 @@ Encore
   .addStyleEntry('icons', './src/css/icons.scss')
   .disableSingleRuntimeChunk()
   .enableSourceMaps(!Encore.isProduction())
-  .enableSassLoader()
-  .configureDevServerOptions(options => {
-    options.contentBase = [
-      path.join(__dirname, 'var/test-site')
-    ];
-    options.contentBasePublicPath = [
-      '/'
-    ];
-    options.liveReload = false;
-    options.serveIndex = true;
-    options.disableHostCheck = true;
+  .enableSassLoader(options => {
+    return {
+      prependData: makeSassVariables
+    }
   })
-  ;
+  .configureDevServerOptions(options => {
+      options.contentBase = [
+          path.join(__dirname, 'var/test-site')
+      ];
+      options.contentBasePublicPath = [
+          '/'
+      ];
+      options.liveReload = false;
+      options.serveIndex = true;
+      options.disableHostCheck = true;
+  })
+;
 
 if (Encore.isProduction()) {
   Encore.setPublicPath('https://cdn.brand.illinois.edu/' + pkg.name + '/' + pkg.version);

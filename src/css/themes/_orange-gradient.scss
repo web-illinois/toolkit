@@ -1,0 +1,5 @@
+.il-theme-orange-gradient {
+  @extend .il-theme-orange;
+  --il-background-color: var(--il-gradient-orange);
+  --il-button-background-color: transparent;
+}
