@@ -5,7 +5,7 @@ export default css`
 section {
   display: grid;
   margin: 0;
-  padding: 20px var(--il-content-margin);
+  padding: 40px var(--il-content-margin);
 }
 section.compact {
   grid-gap: 20px;
@@ -23,7 +23,7 @@ section.full {
     margin-left: 0;
     margin-right: 0;
     grid-gap: 0;
-    grid-template-columns: auto 366px 44px 730px auto;
+    grid-template-columns: auto 274px 44px 822px auto;
     grid-template-areas: ". sidebar . main .";
   }
 }
