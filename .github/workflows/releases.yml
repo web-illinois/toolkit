@@ -20,9 +20,6 @@ jobs:
     - name: Check for correct naming convention
       if: ${{ !steps.get_version.outputs.is-semver }}
       run: exit 1
-    - name: Check if this is from the main branch
-      if: ${{ github.event.base_ref == 'refs/heads/main' }}
-      run: exit 1
     - name: Get major version from release branch
       run: echo "MAJORVERSION=${GITHUB_BRANCH}" >> $GITHUB_ENV
       env: 
