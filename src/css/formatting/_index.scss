@@ -5,18 +5,25 @@
   font-family: var(--il-source-sans);
   color: var(--il-text-color);
 
-  & > *:first-child {
+  > *:first-child {
     margin-top: 0;
   }
-
-  @import "links";
-  @import "headings";
 
   p {
     margin: 1.389em 0 0;
     padding: 0;
     font: 1em / 1.667 var(--il-source-sans);
+
+    font: rem(18px) / rem(30px) var(--il-source-sans);
+    //margin-bottom: rem(25px);
+
+    &:first-child {
+      margin-top: 0;
+    }
   }
+
+  @import "links";
+  @import "headings";
 
   b,
   strong {
@@ -40,8 +47,8 @@
   }
 
   blockquote {
-    margin: 0 2.667em;
-    padding: 0;
+    @include reset-spacing;
+    margin: 0 rem(48px) rem(18px);
   }
 
   @import "lists";
@@ -72,7 +79,7 @@
   }
   figcaption {
     @include reset-spacing;
-    font-size: .778em;
+    font-size: 14px;
     padding: 0.1em 0 0.35em;
     border-bottom: 1px solid var(--il-industrial-blue);
   }

@@ -1,11 +1,8 @@
-@mixin heading-spacing($top: 30px, $bottom: 20px) {
-  margin: {
-    top: rem($top);
-    bottom: rem($bottom);
-  }
-  &:first-child {
-    margin-top: 0;
-  }
+@mixin heading-style($size, $line-height, $weight: 600, $margin-top: 30px) {
+  font-size: em($size);
+  font-weight: $weight;
+  line-height: em($line-height, $size);
+  margin-top: em($margin-top, $size);
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -15,44 +12,30 @@ h1, h2, h3, h4, h5, h6 {
   padding: 0;
   text-align: left;
 
-  & + p {
+  &:first-child {
+    margin-top: 0;
+  }
+
+  + * {
     margin-top: em(20px);
   }
 }
 
 h1 {
-  font-weight: 700;
-  font-size: em(40px);
-  line-height: em(52px, 40px);
-  margin-top: em(30px, 40px);
+  @include heading-style($size: 40px, $line-height: 52px, $weight: 700);
 }
 h2 {
-  font-weight: 600;
-  font-size: em(35px);
-  line-height: em(45px, 35px);
-  margin-top: em(30px, 35px);
+  @include heading-style($size: 35px, $line-height: 45px);
 }
 h3 {
-  @include reset-heading;
-  @include heading-spacing;
-  font: 600 rem(28px) / rem(32px) var(--il-source-sans);
-  color: var(--il-heading-color);
+  @include heading-style($size: 28px, $line-height: 32px);
 }
 h4 {
-  @include reset-heading;
-  @include heading-spacing;
-  font: 600 rem(24px) / rem(28px) var(--il-source-sans);
-  color: var(--il-heading-color);
+  @include heading-style($size: 24px, $line-height: 28px);
 }
 h5 {
-  @include reset-heading;
-  @include heading-spacing;
-  font: 600 rem(20px) / rem(22px) var(--il-source-sans);
-  color: var(--il-heading-color);
+  @include heading-style($size: 20px, $line-height: 23px, $weight: 700);
 }
 h6 {
-  @include reset-heading;
-  @include heading-spacing;
-  font: 600 rem(18px) / rem(22px) var(--il-source-sans);
-  color: var(--il-heading-color);
+  @include heading-style($size: 18px, $line-height: 22px);
 }

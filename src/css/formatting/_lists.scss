@@ -1,20 +1,23 @@
+
 ul,
 ol {
+  box-sizing: border-box;
+  padding-top: 0;
+  padding-bottom: 0;
   margin: {
-    top: em(25px);
+    top: rem(15px);
     bottom: 0;
   }
-  padding: 0;
-  list-style: none;
-
   & + p {
-    margin-top: em(25px);
+    margin-top: rem(25px);
+  }
+
+  ul, ol {
+    margin-top: 0;
   }
 }
-
-p + ul,
-p + ol {
-  margin-top: em(15px);
+li {
+  @include reset-spacing;
 }
 
 ol {
@@ -26,24 +29,28 @@ ol {
   }
 }
 
-li {
-  @include reset-list;
-  position: relative;
-  margin-left: em(40px);
-  list-style: disc;
+ul {
+  padding: 0;
 
-  &::marker {
-    font-size: .9em;
+  li {
+    @include reset-list;
+    position: relative;
+    margin-left: 40px;
+    list-style: disc;
+
+    &::marker {
+      font-size: .9em;
+    }
   }
-}
 
-li li::after {
-  background-color: transparent;
+  li li::after {
+    background-color: transparent;
+  }
 }
 
 dt {
   font-weight: bold;
-  margin-top: em(12px);
+  margin-top: 12px;
 
   &:first-of-type {
     margin-top: 0;
