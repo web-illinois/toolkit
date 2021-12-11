@@ -1,3 +1,15 @@
+@mixin block-formatting($size, $line-height, $weight: 400, $margin-top: 30px) {
+  font-size: em($size);
+  font-weight: $weight;
+  line-height: em($line-height, $size);
+  margin: em($margin-top, $size) 0 0;
+  padding: 0;
+
+  &:first-child {
+    margin-top: 0;
+  }
+}
+
 .il-formatted {
   font-weight: 400;
   font-size: $base-text-size;
@@ -5,90 +17,13 @@
   font-family: var(--il-source-sans);
   color: var(--il-text-color);
 
-  > *:first-child {
-    margin-top: 0;
-  }
-
-  p {
-    margin: 1.389em 0 0;
-    padding: 0;
-    font: 1em / 1.667 var(--il-source-sans);
-
-    font: rem(18px) / rem(30px) var(--il-source-sans);
-    //margin-bottom: rem(25px);
-
-    &:first-child {
-      margin-top: 0;
-    }
-  }
-
-  @import "links";
   @import "headings";
-
-  b,
-  strong {
-    font-weight: 600;
-  }
-
-  mark {
-    background-color: var(--il-cloud-1);
-  }
-
-  hr {
-    margin: 0;
-    padding: 0;
-    border: 0;
-    height: 1px;
-    background-color: var(--il-industrial-blue);
-
-    hr + * {
-      margin-top: 1.5em;
-    }
-  }
-
-  blockquote {
-    @include reset-spacing;
-    margin: 0 rem(48px) rem(18px);
-  }
-
+  @import "text";
   @import "lists";
 
-  dfn {
-    font-style: normal;
-    font-weight: bold;
-  }
+  @import "inline-text";
+  @import "links";
 
-  figure {
-    @include reset-spacing;
-    display: inline-block;
-    margin: 1.5em 0;
-
-    @media (min-width: 800px) {
-      &.il-left {
-        clear: left;
-        float: left;
-        margin: 0 1.5em 1em 0;
-      }
-
-      &.il-right {
-        clear: right;
-        float: right;
-        margin: 0 0 1em 1.5em;
-      }
-    }
-  }
-  figcaption {
-    @include reset-spacing;
-    font-size: 14px;
-    padding: 0.1em 0 0.35em;
-    border-bottom: 1px solid var(--il-industrial-blue);
-  }
 
   @import "tables";
-
-  pre {
-    position: relative;
-    max-width: 100%;
-    overflow: auto;
-  }
 }

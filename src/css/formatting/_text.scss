@@ -1,0 +1,63 @@
+/*
+
+Text content
+
+https://developer.mozilla.org/en-US/docs/Web/HTML/Element#text_content
+
+*/
+
+
+blockquote {
+  @include block-formatting($size: 18px, $line-height: 30px, $margin-top: 25px);
+  margin-left: em(48px, 18px);
+  margin-right: em(48px, 18px);
+}
+
+figcaption {
+  @include block-formatting($size: 14px);
+  padding: 0.1em 0 0.35em;
+  border-bottom: 1px solid var(--il-industrial-blue);
+}
+
+figure {
+  display: inline-block;
+  margin: em(1.5em) 0 0;
+  padding: 0;
+
+  @media (min-width: 800px) {
+    &.il-left, &.il-align-left {
+      clear: left;
+      float: left;
+      margin: 0 1.5em 1em 0;
+    }
+
+    &.il-right, &.il-align-right {
+      clear: right;
+      float: right;
+      margin: 0 0 1em 1.5em;
+    }
+  }
+}
+
+hr {
+  margin: em(27px) 0 0;
+  padding: 0;
+  border: 0;
+  height: 1px;
+  background-color: var(--il-industrial-blue);
+}
+
+p {
+  @include block-formatting($size: 18px, $line-height: 30px, $margin-top: 25px);
+}
+h1, h2, h3, h4, h5 {
+  + p {
+    margin-top: em(20px, 18px);
+  }
+}
+
+pre {
+  position: relative;
+  max-width: 100%;
+  overflow: auto;
+}

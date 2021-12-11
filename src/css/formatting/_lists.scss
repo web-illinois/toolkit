@@ -20,6 +20,8 @@ li {
   @include reset-spacing;
 }
 
+// Ordered list
+
 ol {
   ol {
     list-style-type: lower-alpha;
@@ -28,6 +30,8 @@ ol {
     }
   }
 }
+
+// Unordered list
 
 ul {
   padding: 0;
@@ -48,6 +52,10 @@ ul {
   }
 }
 
+// Definition list
+
+dl {}
+
 dt {
   font-weight: bold;
   margin-top: 12px;
@@ -56,3 +64,5 @@ dt {
     margin-top: 0;
   }
 }
+
+dd {}

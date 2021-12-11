@@ -1,19 +1,21 @@
 # Basic formatting
 
-The toolkit contains a set of basic styles for generic HTML markup.
+The stylesheets in this folder are designed for generic HTML markup, i.e. HTML elements in the page that do not belong to a specific component and are not referenced by a specific class name.
 
-Scoped to .il-formatted
+These styles are applied to markup that meets one of the following conditions:
 
-Intended for content that does not contain CSS classes or specific styling. When used in combination with other styling, you should expect to see side effects.
+* It is wrapped with an <il-page> element
+* It is wrapped with an element of class "il-formatted"
 
-## Development guidelines
+## Spacing between block elements
 
-* Don't use !important
-* All spacing above block elements. This allows us to override the spacing between two particular elements (e.g. h2 + p, p + ol)
+Spacing between block elements is controlled exclusively by the margin-top property of the elements. All block level elements should have a margin-bottom equal to 0, and should not use padding-top or padding-bottom to add space between adjacent elements. 
 
-## Where do styles go?
+The [adjacent sibling combinator](https://developer.mozilla.org/en-US/docs/Web/CSS/Adjacent_sibling_combinator) should be used to control the spacing between specific elements. In the following example, element <x> has 1em of spacing between itself and the element that immediately precedes it. However, when <x> immediately follows element <y>, there is 2em of spacing between the two elements. The CSS would be as follows:
 
-### For sequential selectors (e.g. h2 + p)
+````css
+x { margin-top: 1em; }
+y + x { margin-top: 2em; }
+````
 
-* If one of the elements is in a specific stylesheet (i.e. not in _index.scss) the rule should go in the more specific stylesheet
-* If both elements are in a specific stylesheet, the rule should go in the stylesheet that corresponds with the second element. A rule for h2 + ol would be placed in the lists stylesheet, but ol + h2 would be placed in the heading stylesheet. Remember: spacing always belongs to the element below the spacing.
+Using these two techniques - default space above an element and custom spacing between two specific elements - you should be able to control the spacing between all formatted elements.

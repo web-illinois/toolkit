@@ -1,41 +1,24 @@
-@mixin heading-style($size, $line-height, $weight: 600, $margin-top: 30px) {
-  font-size: em($size);
-  font-weight: $weight;
-  line-height: em($line-height, $size);
-  margin-top: em($margin-top, $size);
-}
-
 h1, h2, h3, h4, h5, h6 {
   color: var(--il-heading-color);
   font-family: var(--il-source-sans);
-  margin-bottom: 0;
-  padding: 0;
   text-align: left;
-
-  &:first-child {
-    margin-top: 0;
-  }
-
-  + * {
-    margin-top: em(20px);
-  }
 }
 
 h1 {
-  @include heading-style($size: 40px, $line-height: 52px, $weight: 700);
+  @include block-formatting($size: 40px, $line-height: 52px, $weight: 700);
 }
 h2 {
-  @include heading-style($size: 35px, $line-height: 45px);
+  @include block-formatting($size: 35px, $line-height: 45px, $weight: 600);
 }
 h3 {
-  @include heading-style($size: 28px, $line-height: 32px);
+  @include block-formatting($size: 28px, $line-height: 32px, $weight: 600);
 }
 h4 {
-  @include heading-style($size: 24px, $line-height: 28px);
+  @include block-formatting($size: 24px, $line-height: 28px, $weight: 600);
 }
 h5 {
-  @include heading-style($size: 20px, $line-height: 23px, $weight: 700);
+  @include block-formatting($size: 20px, $line-height: 23px, $weight: 700);
 }
 h6 {
-  @include heading-style($size: 18px, $line-height: 22px);
+  @include block-formatting($size: 18px, $line-height: 22px, $weight: 600);
 }
