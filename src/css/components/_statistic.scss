@@ -9,6 +9,7 @@
   --il-statistic-source-line-height: 1.4375rem;
   --il-statistic-padding: 30px 20px;
   --il-statistic-width: auto;
+  --il-statistic-heading-margin: 0;
 }
 
 il-statistic {
@@ -56,5 +57,5 @@ il-statistic.il-theme-white, .il-theme-white il-statistic {
   --il-statistic-stat-padding: 40px 0 50px 0;
   --il-statistic-source-font-size: 1.1875rem;
   --il-statistic-padding: 40px 20px 35px 20px;
+  --il-statistic-heading-margin: 0 0 0.3125rem 0;
 }
-

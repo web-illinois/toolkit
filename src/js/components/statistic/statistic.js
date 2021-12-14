@@ -32,7 +32,7 @@ class Statistic extends LitElement {
     p.il-statistic span.stat {
       display: block;
       font-weight: 700;
-      margin-bottom: 1rem;
+      margin: var(--il-statistic-heading-margin);
       color: var(--il-statistic-heading-color);
       padding: var(--il-statistic-stat-padding);
       font-size: var(--il-statistic-stat-font-size);

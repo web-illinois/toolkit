@@ -8,7 +8,6 @@ class CallToAction extends LitElement {
       display: flex;
       align-items: center;
       padding: 3.75rem 0 4.688rem 0;
-      max-width: var(--il-content-max-width);
       margin: var(--il-call-to-action-margin);
       color: var(--il-text-color);
       background: var(--il-background-color);
