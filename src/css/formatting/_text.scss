@@ -14,7 +14,7 @@ blockquote {
 }
 
 figcaption {
-  @include block-formatting($size: 14px);
+  @include block-formatting($size: 14px, $line-height: 23px);
   padding: 0.1em 0 0.35em;
   border-bottom: 1px solid var(--il-industrial-blue);
 }
