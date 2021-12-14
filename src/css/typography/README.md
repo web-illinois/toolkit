@@ -1,4 +1,4 @@
-# Basic formatting
+# Typography
 
 The stylesheets in this folder are designed for generic HTML markup, i.e. HTML elements in the page that do not belong to a specific component and are not referenced by a specific class name.
 
