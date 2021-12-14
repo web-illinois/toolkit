@@ -14,14 +14,14 @@ blockquote {
 }
 
 figcaption {
-  @include block-formatting($size: 14px);
+  @include block-formatting($size: 14px, $line-height: 23px);
   padding: 0.1em 0 0.35em;
   border-bottom: 1px solid var(--il-industrial-blue);
 }
 
 figure {
   display: inline-block;
-  margin: em(1.5em) 0 0;
+  margin: em(1.5) 0 0;
   padding: 0;
 
   @media (min-width: 800px) {
