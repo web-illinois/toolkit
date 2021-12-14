@@ -5,19 +5,19 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 {
-  @include block-formatting($size: 40px, $line-height: 52px, $weight: 700);
+  @include block-formatting($size: 40px, $line-height: 46px, $weight: 700, $margin-top: 50px);
 }
 h2 {
-  @include block-formatting($size: 35px, $line-height: 45px, $weight: 600);
+  @include block-formatting($size: 35px, $line-height: 43px, $weight: 600, $margin-top: 45px);
 }
 h3 {
-  @include block-formatting($size: 28px, $line-height: 32px, $weight: 600);
+  @include block-formatting($size: 29px, $line-height: 35px, $weight: 600, $margin-top: 41px);
 }
 h4 {
-  @include block-formatting($size: 24px, $line-height: 28px, $weight: 600);
+  @include block-formatting($size: 24px, $line-height: 29px, $weight: 600, $margin-top: 39px);
 }
 h5 {
-  @include block-formatting($size: 20px, $line-height: 23px, $weight: 700);
+  @include block-formatting($size: 21px, $line-height: 28px, $weight: 700, $margin-top: 35px);
 }
 h6 {
   @include block-formatting($size: 18px, $line-height: 22px, $weight: 600);
