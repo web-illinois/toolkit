@@ -43,7 +43,7 @@ class Statistic extends LitElement {
     }
     p.il-statistic span.source {
       display: block;
-      margin-top: 10px;
+      margin: var(--il-statistic-source-margin);
       font-size: var(--il-statistic-source-font-size);
       line-height: var(--il-statistic-source-line-height);
       font-style: italic;
