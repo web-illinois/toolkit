@@ -26,7 +26,7 @@ class Statistic extends LitElement {
       line-height: var(--il-statistic-line-height);
     }
     p.il-statistic span.text.intro {
-      padding-bottom: 5px;
+      padding-bottom: var(--il-statistic-intro-padding-bottom);
       display: inline-block;
     }
     p.il-statistic span.stat {
