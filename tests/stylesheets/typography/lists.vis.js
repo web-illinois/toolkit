@@ -1,4 +1,4 @@
-const util = require('../tests.util');
+const util = require('../../tests.util');
 
 module.exports = (viewports) => {
   return [
