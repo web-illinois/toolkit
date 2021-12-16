@@ -1,23 +1,6 @@
 
-ul,
-ol {
-  box-sizing: border-box;
-  padding-top: 0;
-  padding-bottom: 0;
-  margin: {
-    top: rem(15px);
-    bottom: 0;
-  }
-  & + p {
-    margin-top: rem(25px);
-  }
-
-  ul, ol {
-    margin-top: 0;
-  }
-}
-li {
-  @include reset-spacing;
+ul, ol {
+  @include block-formatting($size: 18px, $line-height: 27px);
 }
 
 // Ordered list
@@ -31,24 +14,26 @@ ol {
   }
 }
 
-// Unordered list
+// List item
 
-ul {
-  padding: 0;
+li {
+  @include block-formatting($size: 18px, $line-height: 27px, $margin-top: 10px);
+  margin-left: em(40px, 18px);
 
-  li {
-    @include reset-list;
-    position: relative;
-    margin-left: 40px;
-    list-style: disc;
-
-    &::marker {
-      font-size: .9em;
-    }
+  &:first-child {
+    margin-top: 0;
   }
 
-  li li::after {
-    background-color: transparent;
+  ol, ul, ol:first-child, ul:first-child {
+    margin-top: em(10px, 18px);
+  }
+}
+
+ul li {
+  list-style: disc;
+
+  &::marker {
+    font-size: .9em;
   }
 }
 

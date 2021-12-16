@@ -1,4 +1,5 @@
 @mixin block-formatting($size, $line-height: 1.5, $weight: 400, $margin-top: 30px) {
+  box-sizing: border-box;
   font-size: em($size);
   font-weight: $weight;
   line-height: em($line-height, $size);
