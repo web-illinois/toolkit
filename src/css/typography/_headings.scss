@@ -20,5 +20,5 @@ h5 {
   @include block-formatting($size: 21px, $line-height: 28px, $weight: 700, $margin-top: 35px);
 }
 h6 {
-  @include block-formatting($size: 18px, $line-height: 22px, $weight: 600);
+  @include block-formatting($size: 18px, $line-height: 22px, $weight: 700);
 }
