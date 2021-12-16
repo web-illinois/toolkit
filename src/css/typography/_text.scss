@@ -12,6 +12,20 @@ blockquote {
   margin-left: em(48px, 18px);
   margin-right: em(48px, 18px);
 }
+h1 + blockquote {
+  margin-top: em(20px, 18px);
+}
+h2 + blockquote {
+  margin-top: em(17px, 18px);
+}
+h3 + blockquote {
+  margin-top: em(15px, 18px);
+}
+h4, h5, h6 {
+  + blockquote {
+    margin-top: em(12px, 18px);
+  }
+}
 
 figcaption {
   @include block-formatting($size: 14px, $line-height: 23px);
