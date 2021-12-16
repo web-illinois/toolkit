@@ -62,7 +62,7 @@ hr {
 }
 
 p {
-  @include block-formatting($size: 18px, $line-height: 30px, $margin-top: 25px);
+  @include block-formatting($size: 18px, $line-height: 30px, $margin-top: 16px);
 }
 h1 + p {
   margin-top: em(20px, 18px);
@@ -76,11 +76,6 @@ h3 + p {
 h4, h5, h6 {
   + p {
     margin-top: em(12px, 18px);
-  }
-}
-ol, ul {
-  + p {
-    margin-top: em(16px, 18px);
   }
 }
 
