@@ -1,6 +1,7 @@
 
 ul, ol {
   @include block-formatting($size: 18px, $line-height: 27px, $margin-top: 16px);
+  text-align: left;
 }
 
 // Ordered list
@@ -10,6 +11,9 @@ ol {
     list-style-type: lower-alpha;
     ol {
       list-style-type: lower-roman;
+      ol {
+        list-style-type: decimal;
+      }
     }
   }
 }
