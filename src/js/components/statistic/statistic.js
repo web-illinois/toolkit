@@ -26,13 +26,13 @@ class Statistic extends LitElement {
       line-height: var(--il-statistic-line-height);
     }
     p.il-statistic span.text.intro {
-      padding-bottom: 5px;
+      padding-bottom: var(--il-statistic-intro-padding-bottom);
       display: inline-block;
     }
     p.il-statistic span.stat {
       display: block;
       font-weight: 700;
-      margin-bottom: 1rem;
+      margin: var(--il-statistic-heading-margin);
       color: var(--il-statistic-heading-color);
       padding: var(--il-statistic-stat-padding);
       font-size: var(--il-statistic-stat-font-size);
@@ -43,7 +43,7 @@ class Statistic extends LitElement {
     }
     p.il-statistic span.source {
       display: block;
-      margin-top: 10px;
+      margin: var(--il-statistic-source-margin);
       font-size: var(--il-statistic-source-font-size);
       line-height: var(--il-statistic-source-line-height);
       font-style: italic;
