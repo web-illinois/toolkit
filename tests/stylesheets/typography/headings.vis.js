@@ -1,9 +1,9 @@
-const util = require('../tests.util');
+const util = require('../../tests.util');
 
 module.exports = (viewports) => {
   return [
     {
-      'label': 'headings',
+      'label': 'headings-spacing',
       'url': util.testUrl(__filename),
       'viewports': [viewports.desktop, viewports.iphone]
     }

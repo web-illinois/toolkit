@@ -1,0 +1,20 @@
+
+@function stripUnit($value) {
+  @return $value / ($value * 0 + 1);
+}
+
+@function em($pixels, $context: $base-text-size) {
+  @if (unitless($pixels)) {
+    $pixels: $pixels * 1px;
+  }
+
+  @if (unitless($context)) {
+    $context: $context * 1px;
+  }
+
+  @return $pixels / $context * 1em;
+}
+
+@function rem($pixels, $context: 16) {
+  @return #{stripUnit($pixels) / $context}rem;
+}

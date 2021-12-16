@@ -8,7 +8,6 @@ class CallToAction extends LitElement {
       display: flex;
       align-items: center;
       padding: 3.75rem 0 4.688rem 0;
-      max-width: var(--il-content-max-width);
       margin: var(--il-call-to-action-margin);
       color: var(--il-text-color);
       background: var(--il-background-color);
@@ -21,8 +20,10 @@ class CallToAction extends LitElement {
       padding-left: 50px;
     }
     .il-calltoaction .il-calltoaction-icon {
-      padding-left: 100px;
       min-width: 96px;
+    }
+    .il-calltoaction .il-calltoaction-padding {
+      flex: 1 1 auto;
     }
     .il-calltoaction .il-calltoaction-icon.center {
       margin-top: 1.875rem;
@@ -50,8 +51,10 @@ class CallToAction extends LitElement {
     
     return html`
         <div class="il-calltoaction ${alignmentClass}">
+            <div class="il-calltoaction-padding"></div>
             <div class="il-calltoaction-icon ${alignmentClass}"><slot name="icon"></slot></div>
             <div class="il-calltoaction-body ${alignmentClass}"><slot></slot></div>
+            <div class="il-calltoaction-padding"></div>
         </div>
         `;
   }
