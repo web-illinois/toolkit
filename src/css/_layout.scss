@@ -20,3 +20,15 @@
     grid-area: footer;
   }
 }
+
+:root {
+  --il-layout-max-width: 100%;
+}
+
+.il-full-width {
+  --il-layout-max-width: 100%;
+}
+
+.il-fixed-width {
+  --il-layout-max-width: 1200px;
+}

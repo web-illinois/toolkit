@@ -6,12 +6,14 @@
   background-color: var(--il-button-background-color);
   color: var(--il-button-foreground-color);
   display: inline-block;
+  margin: 6px 0;
   padding: 12px 20px;
   text-align: center;
   text-decoration: none;
   border-radius: 0.25em;
   border: 2px solid var(--il-button-border-color);
-  font: 600 rem(19px) / rem(20px) var(--il-source-sans);
+  font: 700 rem(19px) / rem(20px) var(--il-source-sans);
+  letter-spacing: .01em;
   transition: background-color 0.3s;
   cursor: pointer;
 

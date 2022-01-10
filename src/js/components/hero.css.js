@@ -4,12 +4,36 @@ export default css`
 
 .hero {
   position: relative;
-  background-color: var(--il-blue);
+  background-color: var(--il-hero-background-color);
   color: white;
 }
-.hero.orange {
-  background-color: var(--il-orange);
+
+/* DEPRECATED: alignment attribute */
+.hero[data-align-x="left"] {
+  --il-hero-margin-left: 0;
+  --il-hero-margin-right: auto;
+  --il-hero-align-items: flex-start;
+  --il-hero-text-align: left;
 }
+.hero[data-align-x="right"] {
+  --il-hero-margin-left: auto;
+  --il-hero-margin-right: 0;
+  --il-hero-align-items: flex-end;
+  --il-hero-text-align: right;
+}
+.hero[data-align-y="top"] {
+  --il-hero-justify-content: flex-start;
+}
+.hero[data-align-y="bottom"] {
+  --il-hero-justify-content: flex-end;
+}
+
+/* DEPRECATED: color attribute */
+
+.hero.orange {
+  --il-hero-background-color: var(--il-orange);
+}
+
 .background {
   position: relative;
   width: 100%;
@@ -107,30 +131,14 @@ export default css`
   .content-container--level-3 {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
+    justify-content: var(--il-hero-justify-content);
+    align-items: var(--il-hero-align-items);
+    text-align: var(--il-hero-text-align);
     width: 66%;
     min-height: 417px;
-    margin-left: auto;
-    margin-right: auto;
+    margin-left: var(--il-hero-margin-left);
+    margin-right: var(--il-hero-margin-right);
     padding: 60px 0 80px;
-  }
-  .hero[data-align-x="left"] .content-container--level-3 {
-    margin-left: 0;
-    align-items: flex-start;
-    text-align: left;
-  }
-  .hero[data-align-x="right"] .content-container--level-3 {
-    margin-right: 0;
-    align-items: flex-end;
-    text-align: right;
-  }
-  .hero[data-align-y="top"] .content-container--level-3 {
-    justify-content: flex-start;
-  }
-  .hero[data-align-y="bottom"] .content-container--level-3 {
-    justify-content: flex-end;
   }
 }
 
