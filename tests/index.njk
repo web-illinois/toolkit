@@ -4,32 +4,12 @@ layout: layouts/page.njk
 stylesheets: ['tests.css', 'index.css']
 ---
 
-{% macro viewportIcon(viewport) %}
-  {% if viewport.label == "desktop" %}
-    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px">
-      <use href="#laptop-icon"/>
-    </svg>
-  {% elseif viewport.label == "phone" or viewport.label == "iphone" %}
-    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px">
-      <use href="#phone-icon"/>
-    </svg>
-  {% elseif viewport.label == "desktop" %}
-    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px">
-      <use href="#laptop-icon"/>
-    </svg>
-  {% elseif viewport.label == "tv" or viewport.label == "hdtv" %}
-    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px">
-      <use href="#tv-icon"/>
-    </svg>
-  {% endif %}
-{% endmacro %}
-
 <div class="index">
-  <div class="index__header">
-    Toolkit {{ pkg.version }}
-  </div>
-  <div class="index__nav">
-    <h2>Navigation</h2>
+  <header class="index__header">
+    <h1>Test pages for Toolkit {{ pkg.version }}</h1>
+  </header>
+  <nav class="index__nav" aria-labelledby="nav-label">
+    <h2 id="nav-label">Navigation</h2>
     <ul>
       {% for group in groups %}
       <li>
@@ -37,8 +17,8 @@ stylesheets: ['tests.css', 'index.css']
       </li>
       {% endfor %}
     </ul>
-  </div>
-  <div class="index__contents">
+  </nav>
+  <main class="index__contents">
 
     {% for group in groups %}
 
@@ -61,7 +41,6 @@ stylesheets: ['tests.css', 'index.css']
               <ul class="test-images">
                 {% for image in test.images %}
                 <li><a href="{{ "reference-images/" + image.image | url }}">
-                  {{ viewportIcon(image.viewport) }}
                   <span>{{ image.viewport.description if image.viewport.description else image.viewport.label }}</span>
                 </a></li>
                 {% endfor %}
@@ -76,23 +55,4 @@ stylesheets: ['tests.css', 'index.css']
     </ul>
     
     {% endfor %}  </div>
-</div>
-
-  <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px">
-    <g id="phone-icon">
-      <path d="M0 0h24v24H0V0z" fill="none"/>
-      <path d="M15.5 1h-8C6.12 1 5 2.12 5 3.5v17C5 21.88 6.12 23 7.5 23h8c1.38 0 2.5-1.12 2.5-2.5v-17C18 2.12 16.88 1 15.5 1zm-4 21c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zm4.5-4H7V4h9v14z"/>
-    </g>
-    <g id="tablet-icon">
-      <path d="M0 0h24v24H0V0z" fill="none"/>
-      <path d="M18.5 0h-14C3.12 0 2 1.12 2 2.5v19C2 22.88 3.12 24 4.5 24h14c1.38 0 2.5-1.12 2.5-2.5v-19C21 1.12 19.88 0 18.5 0zm-7 23c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zm7.5-4H4V3h15v16z"/>
-    </g>
-    <g id="laptop-icon">
-      <path d="M0 0h24v24H0V0z" fill="none"/>
-      <path d="M20 18c1.1 0 1.99-.9 1.99-2L22 6c0-1.1-.9-2-2-2H4c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2H0v2h24v-2h-4zM4 6h16v10H4V6z"/>
-    </g>
-    <g id="tv-icon">
-      <path d="M0 0h24v24H0V0z" fill="none"/>
-      <path d="M21 3H3c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h5v2h8v-2h5c1.1 0 1.99-.9 1.99-2L23 5c0-1.1-.9-2-2-2zm0 14H3V5h18v12z"/>
-    </g>
-  </svg>
+  </main>

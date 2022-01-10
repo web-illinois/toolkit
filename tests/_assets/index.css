@@ -3,9 +3,10 @@ body {
   font-family: var(--il-source-sans), sans-serif;
 }
 h1 {
-  margin: 0 0 20px;
-  padding: 0 20px;
+  margin: 0;
+  padding: 0;
   font: 600 36px var(--il-source-sans);
+  text-align: left;
 }
 h2 {
   margin: 2em 0 0.25em;
@@ -35,10 +36,23 @@ a:focus {
   grid-template-columns: 200px auto;
   grid-template-rows: auto auto;
   grid-template-areas: "header header" "sidebar content";
-  grid-gap: 2em;
+  grid-gap: 4em;
 }
 .index__header {
   grid-area: header;
+}
+.index__nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.index__nav li {
+  list-style: none;
+  margin: .5em 0 0;
+  padding: 0;
+}
+.index__nav li:first-of-type {
+  margin-top: 0;
 }
 
 .test-pages {
@@ -107,37 +121,15 @@ a:focus {
 .test-images {
   display: inline-block;
   list-style: none;
-  margin: 0 0 0 0.5em;
+  margin: 0;
   padding: 0;
 }
 .test-images > li {
   display: inline-block;
   list-style: none;
-  margin: 0;
+  margin: 0 0 0 1em;
   padding: 0;
 }
-.test-images a {
-  display: flex;
-  flex-direction: row;
-  background-color: var(--il-blue);
-  color: white;
-  justify-content: center;
-  align-items: center;
-  padding: .25em .5em;
-  border-radius: .5em;
-}
-.test-images a svg {
-  fill: white;
-  display: block;
-  width: 1em;
-  height: 1em;
-  margin-right: .25em;
-}
-.test-images a:hover, .test-images a:focus {
-  background-color: var(--il-orange);
-  text-decoration: none;
-}
-
 
 table {
   width: 100%;
