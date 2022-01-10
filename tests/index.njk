@@ -4,38 +4,55 @@ layout: layouts/page.njk
 stylesheets: ['tests.css', 'index.css']
 ---
 
-{% for group in groups %}
+<div class="index">
+  <header class="index__header">
+    <h1>Test pages for Toolkit {{ pkg.version }}</h1>
+  </header>
+  <nav class="index__nav" aria-labelledby="nav-label">
+    <h2 id="nav-label">Navigation</h2>
+    <ul>
+      {% for group in groups %}
+      <li>
+        <a href="#{{group.slug}}">{{ group.name }}</a>
+      </li>
+      {% endfor %}
+    </ul>
+  </nav>
+  <main class="index__contents">
 
-<h2>{{ group.name }}</h2>
+    {% for group in groups %}
 
-<ul class="test-pages">
-  {% for file in group.files %}
-  <li class="test-page">
-    <div class="page-info">
-      <h3><a href="{{ file.url }}">{{ file.title if file.title else file.path }}</a></h3>
-      <p class="path">{{ file.path }}</p>
-    </div>
-    {% if file.tests|length > 0 %}
-    <div class="reference-images">
-      <h4>Reference images</h4>
-      <ul class="visual-tests">
-        {% for test in file.tests %}
-        <li>
-          <h5>{{ test.caption }}</h5>
-          <ul class="test-images">
-            {% for image in test.images %}
-            <li><a href="{{ " reference-images/" + image.image | url }}">
-              {{ image.viewport.description if image.viewport.description else image.viewport.label }}
-            </a></li>
+    <h2 id="{{ group.slug }}">{{ group.name }}</h2>
+    
+    <ul class="test-pages">
+      {% for file in group.files %}
+      <li class="test-page">
+        <div class="page-info">
+          <h3><a href="{{ file.url }}">{{ file.title if file.title else file.path }}</a></h3>
+          <p class="path">{{ file.path }}</p>
+        </div>
+        {% if file.tests|length > 0 %}
+        <div class="reference-images">
+          <h4>Reference images</h4>
+          <ul class="visual-tests">
+            {% for test in file.tests %}
+            <li>
+              <h5>{{ test.caption }}</h5>
+              <ul class="test-images">
+                {% for image in test.images %}
+                <li><a href="{{ "reference-images/" + image.image | url }}">
+                  <span>{{ image.viewport.description if image.viewport.description else image.viewport.label }}</span>
+                </a></li>
+                {% endfor %}
+              </ul>
+            </li>
             {% endfor %}
           </ul>
-        </li>
-        {% endfor %}
-      </ul>
-    </div>
-    {% endif %}
-  </li>
-  {% endfor %}
-</ul>
-
-{% endfor %}
+        </div>
+        {% endif %}
+      </li>
+      {% endfor %}
+    </ul>
+    
+    {% endfor %}  </div>
+  </main>
