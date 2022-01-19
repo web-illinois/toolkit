@@ -1,4 +1,5 @@
-import {LitElement, html, css} from 'lit';
+import { LitElement, html } from 'lit';
+import styles from './clickable-card.css';
 
 class ClickableCard extends LitElement {
 
@@ -14,64 +15,12 @@ class ClickableCard extends LitElement {
   }
 
   static get styles() {
-    return css`
-        article {
-            display: block;
-            border: 1px solid var(--il-gray-2);
-            border-bottom: 3px solid var(--il-orange);
-            margin: var(--il-clickable-card-margin);
-            text-decoration: none;
-            color: #252525;
-            background: white;
-        }
-        article.blue {
-          background: var(--il-blue);
-          color: white;
-        }
-        article.highlight {
-          background: var(--il-blue);
-          color: white;
-          border-bottom: 3px solid var(--il-industrial-blue-1);
-          cursor: pointer;
-        }
-        article.blue.highlight {
-          background: white;
-          color: var(--il-blue);
-        }
-        img {
-            width: 100%;
-        }
-        article.highlight img {
-          filter: var(--il-clickable-card-image-filter);
-        }
-        div.text {
-          padding: 1.75rem 1.875rem 2.8rem 1.875rem;
-        }
-        article a {
-          text-decoration: none;
-        }
-        article a:focus {
-          outline-style: none;
-          box-shadow: none;
-          border-color: transparent;
-        }
-        .il-invisible {
-          position: absolute !important;
-          left: -9999px !important;
-          top: auto !important;
-          display: block !important;
-          text-align: left !important;
-          text-indent: -9999em !important;
-          width: 1px !important;
-          height: 1px !important;
-          overflow: hidden !important;
-        }
-        `;
+    return styles;
   }
 
   constructor() {
     super();
-    this.src = undefined;
+    this.src = '';
     this.href = undefined;
     this.background = undefined;
     this.alt = '';
@@ -95,6 +44,13 @@ class ClickableCard extends LitElement {
     let contentClass = this.background == 'blue' ? 'blue' : '';
     let widthStyle = this.width == '' ? '' : `width: ${this.width};`;
     let idInfo = 'card-' + (((1+Math.random())*0x10000000)|0);
+    if (this.src == '') {
+      return html`
+      <article aria-labelledby="${idInfo}" class="${contentClass}" style="${widthStyle}" @click="${this._click}" @mouseover="${this._higlight}" @mouseout="${this._tonedown}">
+          <div class="text nopicture"><a id="${idInfo}" @focus="${this._higlight}" @blur="${this._tonedown}" href="${this.href}"><slot name="header">${this.renderHiddenParagraph()}</slot></a><slot></slot></div>
+      </article>
+      `;
+    }
    
     return html`
         <article aria-labelledby="${idInfo}" class="${contentClass}" style="${widthStyle}" @click="${this._click}" @mouseover="${this._higlight}" @mouseout="${this._tonedown}">

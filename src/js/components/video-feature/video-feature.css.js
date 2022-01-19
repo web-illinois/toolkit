@@ -11,10 +11,8 @@ export default css`
     .videofeature .content {
         padding: 1.875rem 1.25rem;
         text-align: left;
-    }
-    .videofeature .content.gradient {
-        color: white;
-        background: var(--il-gradient-blue);
+        color: var(--il-imagefeature-color);
+        background: var(--il-imagefeature-background);
     }
     .videofeature .content.orange {
         color: white;
@@ -27,6 +25,14 @@ export default css`
     .videofeature .content.gray, .videofeature .background.gray  {
         background: var(--il-gray-1);
     }
+    .videofeature .background {
+        display: flex;
+        flex: var(--il-imagefeature-fleximage);
+    }
+    .videofeature .content {
+        flex: var(--il-imagefeature-flexcontent);
+    }
+
     .videowrapper {
         position: relative; 
         padding-bottom: 56.25%; 
@@ -35,6 +41,7 @@ export default css`
     @media (min-width: 900px) {
         .videofeature {
             display: flex;
+            flex-direction: var(--il-imagefeature-flexdirection);
         }
         .videofeature .content {
             padding: 1.875rem;
