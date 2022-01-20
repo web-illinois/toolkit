@@ -27,6 +27,7 @@ export default css`
     }
     article.highlight img {
       filter: var(--il-clickable-card-image-filter);
+      transform: var(--il-clickable-card-image-transform);
     }
     div.text {
       padding: 1.75rem 1.875rem 2.8rem 1.875rem;

@@ -120,3 +120,27 @@ il-video-feature.il-theme-white, .il-theme-white, il-video-feature {
   }
 }
   
+.il-formatted il-image-feature[background="white"], il-image-feature[background="white"] {
+  h2,
+  h3,
+  h4,
+  h5
+  {
+    color: var(--il-orange) !important;
+  }
+
+  p, a {
+    color: #252525 !important;
+  }
+
+  a.il-button {
+    color: var(--il-blue) !important;
+    border-color: var(--il-blue) !important;
+    background: white !important;
+  }
+
+  a.il-button:hover, a.il-button:focus {
+    color: white !important;
+    background: var(--il-blue) !important;
+  }
+}

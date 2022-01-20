@@ -41,9 +41,6 @@ export default css`
         --color-primary: white;
         --color-secondary: var(--il-blue);
     }
-    .imagefeature .content.white ::slotted(*) {
-        color: #252525 !important;
-    }
     .imagefeature .content.solid {
         color: white;
         background: var(--il-blue);
