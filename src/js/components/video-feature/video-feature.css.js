@@ -4,6 +4,15 @@ export default css`
     .videofeature {
         display: block;
     }
+    .videofeature.right {
+        --il-image-feature-flex-direction: row-reverse;
+    }
+    .videofeature.large {
+        --il-image-feature-flex-grow-image: 2;
+    }
+    .videofeature.small {
+        --il-image-feature-flex-grow-content: 2;
+    }
     .videofeature .background {
         padding: 0;
         background: black;
@@ -27,10 +36,14 @@ export default css`
     }
     .videofeature .background {
         display: flex;
-        flex: var(--il-imagefeature-fleximage);
+        flex-grow: var(--il-image-feature-flex-grow-image);
+        flex-shrink: 1;
+        flex-basis: 0;
     }
     .videofeature .content {
-        flex: var(--il-imagefeature-flexcontent);
+        flex-grow: var(--il-image-feature-flex-grow-content);
+        flex-shrink: 1;
+        flex-basis: 0;
     }
 
     .videowrapper {
@@ -41,7 +54,7 @@ export default css`
     @media (min-width: 900px) {
         .videofeature {
             display: flex;
-            flex-direction: var(--il-imagefeature-flexdirection);
+            flex-direction: var(--il-image-feature-flex-direction);
         }
         .videofeature .content {
             padding: 1.875rem;

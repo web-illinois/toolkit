@@ -56,25 +56,13 @@ class VideoFeatureComponent extends LitElement {
     var contentClass = (this.background == 'solid' || this.background == 'blue') ? 'content solid' : this.background == 'white' ? 'content' : this.background == 'orange' ? 'content orange' : this.background == 'gray' ? 'content white gray' :'content gradient';
     var backgroundClass = (this.background == 'solid' || this.background == 'blue') ? 'background solid' : this.background == 'white' ? 'background' : this.background == 'orange' ? 'background orange' : this.background == 'gray' ? 'background gray' : 'background gradient';
 
-    if (this.align == 'right')
-    {
-        return html`
-        <div class="videofeature">
-            <div class="${contentClass}">
-                <slot></slot>
-            </div>
-            <div class=${backgroundClass}">${this.renderVideo()}</div>
-        </div>
-        `;
-    }
     return html`
-        <div class="videofeature">
+        <div class="videofeature ${this.align} ${this.size}">
             <div class="${backgroundClass}">${this.renderVideo()}</div>
             <div class="${contentClass}">
                 <slot></slot>
             </div>
-        </div>
-        `;
+        </div>`;
   }
 }
 

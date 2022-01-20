@@ -32,27 +32,15 @@ class ImageFeatureComponent extends LitElement {
     if (this.previousElementSibling != null && this.previousElementSibling.localName == "il-image-feature" && this.previousElementSibling.getAttribute('align') == null && this.align == '') {
         this.setAttribute('align', 'right');
     }
-    var contentClass = (this.background == 'solid' || this.background == 'blue') ? 'content solid' : this.background == 'white' ? 'content' : this.background == 'orange' ? 'content orange' : 'content gradient';
+    var contentClass = (this.background == 'solid' || this.background == 'blue') ? 'content solid' : this.background == 'white' ? 'content white' : this.background == 'orange' ? 'content orange' : 'content gradient';
     var heightOption = this.size == 'portrait' ? 'imagefeature noheight' : 'imagefeature';
-    if (this.align == 'right')
-    {
-        return html`
-        <div class="${heightOption}">
-            <div class="${contentClass}">
-                <slot></slot>
-            </div>
-            <div class="background" role="presentation" style="background-image: url('${this.src}');">${this.alt}</div>
-        </div>
-        `;
-    }
     return html`
-        <div class="${heightOption}">
+        <div class="${heightOption} ${this.align} ${this.size}">
             <div class="background" role="presentation" style="background-image: url('${this.src}');">${this.alt}</div>
             <div class="${contentClass}">
                 <slot></slot>
             </div>
-        </div>
-        `;
+        </div>`;
   }
 }
 
