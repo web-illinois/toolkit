@@ -1,0 +1,48 @@
+:root {
+  --il-image-feature-with-overlay-left: 10%;
+  --il-image-feature-with-overlay-top: 15%;
+  --il-image-feature-with-overlay-width: 30%;
+  --il-image-feature-with-overlay-background: rgba(19, 41, 75, .75);
+  --il-image-feature-with-overlay-background-solid: var(--il-blue);
+  --il-image-feature-with-overlay-padding: 4.6875rem;
+}
+
+il-image-feature-with-overlay, .il-formatted il-image-feature-with-overlay
+ {
+  --il-button-background-color: transparent;
+  --il-button-border-color: white;
+  --il-button-foreground-color: white;
+  --il-focused-button-background-color: white;
+  --il-focused-button-foreground-color: var(--il-blue);
+
+  h2,
+  h3,
+  h4,
+  h5,
+  p
+  {
+    color: white;
+  }
+
+  h2:first-of-type,
+  h3:first-of-type,
+  h4:first-of-type,
+  h5:first-of-type
+  {
+    margin-top: 0;
+  }
+}
+
+il-image-feature-with-overlay img {
+  width: 100%;
+}
+
+.il-theme-orange il-image-feature-with-overlay, il-image-feature-with-overlay.il-theme-orange {
+  --il-focused-button-foreground-color: var(--il-orange);
+  --il-image-feature-with-overlay-background-solid: var(--il-orange);
+  --il-image-feature-with-overlay-background: rgba(255, 85, 46, .75);
+}
+
+.il-align-right il-image-feature-with-overlay, il-image-feature-with-overlay.il-align-right {
+  --il-image-feature-with-overlay-left: 60%;
+}
