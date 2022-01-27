@@ -33,6 +33,7 @@ export default css`
     }
     .il-image-feature-with-overlay-inner {
         margin: 0;
+        padding: 0 30px;
     }
     .il-image-feature-with-overlay-content {
         position: initial;
