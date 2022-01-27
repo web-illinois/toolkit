@@ -1,10 +1,9 @@
 :root {
-  --il-image-feature-with-overlay-left: 10%;
-  --il-image-feature-with-overlay-top: 15%;
-  --il-image-feature-with-overlay-width: 30%;
-  --il-image-feature-with-overlay-background: rgba(19, 41, 75, .75);
+  --il-image-feature-with-overlay-width: 40%;
+  --il-image-feature-with-overlay-background: rgba(19, 41, 75, .85);
   --il-image-feature-with-overlay-background-solid: var(--il-blue);
-  --il-image-feature-with-overlay-padding: 4.6875rem;
+  --il-image-feature-with-overlay-padding: 3.125rem 1.875rem;
+  --il-image-feature-with-overlay-align: left;
 }
 
 il-image-feature-with-overlay, .il-formatted il-image-feature-with-overlay
@@ -34,16 +33,48 @@ il-image-feature-with-overlay, .il-formatted il-image-feature-with-overlay
 }
 
 il-image-feature-with-overlay img {
+  position: absolute;
   width: 100%;
+  height: 100%;
+  top: 0px;
+  left: 0px;
+  z-index: -1;
+  object-fit: cover;
+  object-position: center center;
 }
 
 .il-theme-orange il-image-feature-with-overlay, il-image-feature-with-overlay.il-theme-orange {
   --il-focused-button-foreground-color: var(--il-orange);
   --il-image-feature-with-overlay-background-solid: var(--il-orange);
-  --il-image-feature-with-overlay-background: rgba(255, 85, 46, .75);
+  --il-image-feature-with-overlay-background: rgba(255, 85, 46, .85);
+}
+
+.il-theme-white il-image-feature-with-overlay, il-image-feature-with-overlay.il-theme-white {
+  --il-button-foreground-color: var(--il-blue);
+  --il-button-border-color: var(--il-blue);
+  --il-focused-button-foreground-color: white;
+  --il-focused-button-background-color: var(--il-blue);
+  --il-image-feature-with-overlay-background-solid: white;
+  --il-image-feature-with-overlay-background: rgba(255, 255, 255, .85);
+
+  
+  h2,
+  h3,
+  h4,
+  h5,
+  p
+  {
+    color: revert;
+  }
 }
 
 .il-align-right il-image-feature-with-overlay, il-image-feature-with-overlay.il-align-right {
-  --il-image-feature-with-overlay-left: 60%;
-  --il-image-feature-with-overlay-width: 25%;
+  --il-image-feature-with-overlay-align: right;
+}
+
+@media only screen and (max-width: 990px) {
+  il-image-feature-with-overlay img {
+    position: initial;
+    z-index: initial;
+  }
 }

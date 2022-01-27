@@ -25,11 +25,13 @@ class ImageFeatureWithOverlayComponent extends LitElement {
 
     return html`
         <div class="il-image-feature-with-overlay">
-          <div class="il-image-feature-with-overlay-image">
-            <slot name="image"></slot>
-          </div>
-          <div class="il-image-feature-with-overlay-content">
-            <slot></slot>
+          <slot name="image"></slot>
+          <div class="il-image-feature-with-overlay-outer">
+            <div class="il-image-feature-with-overlay-inner">
+              <div class="il-image-feature-with-overlay-content">
+                <slot></slot>
+              </div>
+            </div>
           </div>
         </div>`;
   }
