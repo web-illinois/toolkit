@@ -8,7 +8,7 @@ import './components/call-to-action';
 import './components/clickable-card/clickable-card.component';
 import './components/footer';
 import './components/header';
-import './components/hero';
+import './components/hero/hero';
 import './components/image-feature/image-feature.component';
 import './components/layout/page.component';
 import './components/layout/section.component';

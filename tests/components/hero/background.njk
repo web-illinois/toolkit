@@ -4,7 +4,27 @@ group: "Components: Hero"
 layout: layouts/page.njk
 ---
 
-<il-hero background="{{ "/_assets/images/hero-bg.jpg"|url  }}">
+<p>With background image</p>
+
+<il-hero>
+    <img slot="background" src="{{ "/_assets/images/hero-bg.jpg"|url  }}" alt="">
+    <h1>Innovating solutions every year</h1>
+    <ul>
+        <li>
+            <a href="#">Link 1</a>
+        </li>
+        <li>
+            <a href="#">Link 2</a>
+        </li>
+        <li>
+            <a href="#">Link 3</a>
+        </li>
+    </ul>
+</il-hero>
+
+<p>Without background image</p>
+
+<il-hero>
     <h1>Innovating solutions every year</h1>
     <ul>
         <li>
