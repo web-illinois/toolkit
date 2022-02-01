@@ -17,6 +17,7 @@ import './components/link';
 import './components/navigation/navigation.component';
 import './components/navigation/link.component';
 import './components/navigation/section.component';
+import './components/page-title/page-title.component';
 import './components/pagination/pagination.component';
 import './components/search/search.component';
 import './components/section-nav';
