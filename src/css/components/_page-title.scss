@@ -1,4 +1,22 @@
 il-page-title {
+  --il-page-title-text-color: white;
+  --il-page-title-background-color: var(--il-blue);
+
+  &.il-theme-blue {
+    --il-page-title-text-color: white;
+    --il-page-title-background-color: var(--il-blue);
+  }
+
+  &.il-theme-orange {
+    --il-page-title-text-color: white;
+    --il-page-title-background-color: var(--il-orange);
+  }
+
+  &.il-theme-white {
+    --il-page-title-text-color: var(--il-blue);
+    --il-page-title-background-color: white;
+  }
+
   h1 {
     font-size: 1em;
     font-weight: inherit;

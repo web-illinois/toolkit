@@ -33,7 +33,7 @@ export default css`
   box-sizing: border-box;
   position: relative;
   z-index: 101;
-  color: white;
+  color: var(--il-page-title-text-color);
   text-align: left;
   font: 700 2.5em var(--il-source-sans);
   padding: 16px 14px 20px;
@@ -46,7 +46,7 @@ export default css`
   width: 100%;
   height: 100%;
   z-index: -1;
-  background-color: var(--il-blue);
+  background-color: var(--il-page-title-background-color);
   opacity: .85;
 }
 `;
