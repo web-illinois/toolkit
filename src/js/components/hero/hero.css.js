@@ -30,7 +30,7 @@ export default css`
 
 /* DEPRECATED: color attribute */
 
-.hero.orange {
+.hero[data-color="orange"] {
   --il-hero-background-color: var(--il-orange);
 }
 

@@ -52,7 +52,7 @@ class Hero extends LitElement {
     const alignment = new Alignment(this.align);
     const color = this.color;
     return html`
-        <div class="hero ${color}" data-align-x=${alignment.x} data-align-y=${alignment.y}>
+        <div class="hero" data-color=${color} data-align-x=${alignment.x} data-align-y=${alignment.y}>
           <div class="background">
             <slot name="background">
               ${this.background ? this.renderBackgroundImage() : ''}
