@@ -11,7 +11,6 @@ import './components/footer';
 import './components/header';
 import './components/hero';
 import './components/image-feature/image-feature.component';
-import './components/image-feature-with-overlay/image-feature-with-overlay.component';
 import './components/layout/page.component';
 import './components/layout/section.component';
 import './components/layout/section-with-sidebar.component';

@@ -5,7 +5,7 @@ const url = util.testUrl(__filename);
 module.exports = (viewports) => {
   return [
     {
-      url, label: "imagefeaturewithoverlay-default",
+      url, label: "featuresplit-overlay",
       viewports: [viewports.desktop, viewports.iphone, viewports.hdtv]
     }
   ]
