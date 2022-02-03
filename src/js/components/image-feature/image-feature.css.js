@@ -84,9 +84,10 @@ export default css`
     @media only screen and (max-width: 990px) {
         .il-image-feature-with-overlay {
             background: var(--il-image-feature-with-overlay-background-solid);
+            border: var(--il-image-feature-with-overlay-border);
         }
         .il-image-feature-with-overlay-outer {
-            border: var(--il-image-feature-with-overlay-border);
+            border-top: var(--il-image-feature-with-overlay-border);
         }
         .il-image-feature-with-overlay-inner {
             margin: 0;
@@ -96,7 +97,7 @@ export default css`
             position: initial;
             width: initial;
             z-index: initial;
-            padding-top: 2rem;
+            padding: 30px 0;
             background: var(--il-image-feature-with-overlay-background-solid);
             border: none;
         }

@@ -90,21 +90,8 @@
     ol,
     ul li,
     ol li,
-    a {
+    a:not(.il-button) {
       color: white;
-    }
-
-    a.il-button,
-    button {
-      color: white;
-      background: transparent;
-      border-color: white;
-
-      &:focus,
-      &:hover {
-        background: white;
-        color: var(--il-blue);
-      }
     }
 }
 
@@ -131,16 +118,5 @@ il-video-feature.il-theme-white, .il-theme-white, il-video-feature {
 
   p, a {
     color: #252525 !important;
-  }
-
-  a.il-button {
-    color: var(--il-blue) !important;
-    border-color: var(--il-blue) !important;
-    background: white !important;
-  }
-
-  a.il-button:hover, a.il-button:focus {
-    color: white !important;
-    background: var(--il-blue) !important;
   }
 }
