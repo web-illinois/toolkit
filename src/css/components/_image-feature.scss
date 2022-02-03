@@ -95,6 +95,16 @@
     }
 }
 
+.il-formatted il-image-feature.il-theme-white, il-image-feature.il-theme-white,
+.il-formatted il-video-feature.il-theme-white, il-video-feature.il-theme-white {
+    h2,
+    h3,
+    h4,
+    h5 {
+      color: var(--il-blue);
+    }
+}
+
 .il-formatted il-video-feature[background="white"], il-video-feature[background="white"],
 .il-formatted il-video-feature.il-theme-white, .il-formatted .il-theme-white, il-video-feature, 
 il-video-feature.il-theme-white, .il-theme-white, il-video-feature {
