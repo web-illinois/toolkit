@@ -24,6 +24,8 @@ Default value: --il-blue
 
 ### --il-hero-button-background-color
 
+Specifies the background color of button-style links within the hero
+
 Default value: --il-orange
 
 ### --il-hero-button-foreground-color
@@ -32,9 +34,13 @@ Default value: white
 
 ### --il-hero-button-border-color
 
+Specifies the border color of button-style links within the hero
+
 Default value: white
 
 ### --il-hero-focused-button-background-color
+
+Specifies the background color of button-style links within the hero when the links have focus or are hovered over
 
 Default value: white
 
