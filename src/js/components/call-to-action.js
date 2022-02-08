@@ -6,27 +6,25 @@ class CallToAction extends LitElement {
     return css`
     .il-calltoaction {
       display: flex;
-      align-items: center;
+      align-items: start;
       padding: 3.75rem 0 4.688rem 0;
       margin: var(--il-call-to-action-margin);
       color: var(--il-text-color);
       background: var(--il-background-color);
       width: var(--il-call-to-action-width);
     }
-    .il-calltoaction.center {
-      align-items: start;
-    }
     .il-calltoaction .il-calltoaction-body {
       padding-left: 50px;
+      flex-basis: 845px;
+      flex-grow: 0;
+      flex-shrink: 1;
     }
     .il-calltoaction .il-calltoaction-icon {
       min-width: 96px;
+      margin-top: 1.875rem;
     }
     .il-calltoaction .il-calltoaction-padding {
       flex: 1 1 auto;
-    }
-    .il-calltoaction .il-calltoaction-icon.center {
-      margin-top: 1.875rem;
     }
     .il-calltoaction .il-calltoaction-body.center {
       text-align: center;
