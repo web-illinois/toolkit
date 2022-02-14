@@ -25,6 +25,13 @@
     border-color: var(--il-focused-button-border-color);
   }
 
+  &:visited {
+    outline: 0;
+    background-color: var(--il-button-background-color);
+    color: var(--il-button-foreground-color);
+    border: 2px solid var(--il-button-border-color);
+  }
+
   &.il-white-blue {
     --il-button-background-color: white;
     --il-button-foreground-color: var(--il-blue);
