@@ -1,28 +1,33 @@
 window.addEventListener('DOMContentLoaded', (event) => {
-    let data_il_anchorlinks = {
-        privacy: { href: 'https://www.vpaa.uillinois.edu/resources/web_privacy', text: 'Privacy Policy' },
-        accessibility: { href: 'https://illinois.edu/resources/website/accessibility.html', text: 'Accessibility' },
-        copyright: { href: 'https://illinois.edu/resources/website/copyright.html', text: 'Copyright &#169; 2021' },
-        cookies: { text: 'About Cookies', id: 'ot-sdk-btn', class: 'ot-sdk-show-settings' }
-    };
+  function updateLink(link) {
+    switch (link.getAttribute('data-il')) {
 
-    document.querySelectorAll('a[data-il], button[data-il]').forEach(item => {
-        var info = data_il_anchorlinks[item.getAttribute('data-il')];
-        if (info !== undefined) {
-            if (info.href !== undefined) {
-                item.setAttribute('href', info.href);
-            }
-            if (info.text !== undefined) {
-                item.innerHTML = info.text;
-            }
-            if (info.id !== undefined) {
-               item.id = info.id;
-            }
-            if (info.class !== undefined) {
-                item.classList.add(info.class);
-            }
-        } else {
-            item.style.display = 'none';
-        }
-    });
+      case 'accessibility':
+        link.innerHTML = 'Accessibility';
+        link.setAttribute('href', 'https://illinois.edu/resources/website/accessibility.html');
+        break;
+
+      case 'copyright':
+        const year = new Date().getFullYear();
+        link.innerHTML = `Copyright &#169; ${year}`;
+        link.setAttribute('href', 'https://illinois.edu/resources/website/copyright.html');
+        break;
+
+      case 'cookies':
+        link.innerHTML = 'About Cookies';
+        link.id = 'ot-sdk-btn';
+        link.classList.add('ot-sdk-show-settings');
+        break;
+
+      case 'privacy':
+        link.innerHTML = 'Privacy Policy';
+        link.setAttribute('href', 'https://www.vpaa.uillinois.edu/resources/web_privacy');
+        break;
+
+      default:
+        link.style.display = 'none';
+
+    }
+  }
+  document.querySelectorAll('a[data-il], button[data-il]').forEach(updateLink);
 });
