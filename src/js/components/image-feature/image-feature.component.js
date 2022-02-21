@@ -34,6 +34,20 @@ class ImageFeatureComponent extends LitElement {
     }
     var contentClass = (this.background == 'solid' || this.background == 'blue') ? 'content solid' : this.background == 'white' ? 'content white' : this.background == 'orange' ? 'content orange' : 'content gradient';
     var heightOption = this.size == 'portrait' ? 'imagefeature noheight' : 'imagefeature';
+    if (this.classList.contains('il-overlay')) {
+      return html`
+      <div class="il-image-feature-with-overlay">
+        <slot name="image"></slot>
+        <div class="il-image-feature-with-overlay-outer">
+          <div class="il-image-feature-with-overlay-inner">
+            <div class="il-image-feature-with-overlay-content">
+              <slot></slot>
+            </div>
+          </div>
+        </div>
+      </div>`;
+    }
+
     return html`
         <div class="${heightOption} ${this.align} ${this.size}">
             <div class="background" role="presentation" style="background-image: url('${this.src}');">${this.alt}</div>

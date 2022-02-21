@@ -17,6 +17,13 @@
   transition: background-color 0.3s;
   cursor: pointer;
 
+  &:visited {
+    outline: 0;
+    background-color: var(--il-button-background-color);
+    color: var(--il-button-foreground-color);
+    border: 2px solid var(--il-button-border-color);
+  }
+
   &:hover,
   &:focus {
     outline: 0;
