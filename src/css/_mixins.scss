@@ -1,6 +1,11 @@
 
+@use 'sass:math';
 @function stripUnit($value) {
-  @return $value / ($value * 0 + 1);
+  @if type-of($value) == "number" and not unitless($value) {
+    @return math.div($value, ($value * 0 + 1));
+  }
+
+  @return $value;
 }
 
 @function em($pixels, $context: $base-text-size) {
@@ -12,9 +17,9 @@
     $context: $context * 1px;
   }
 
-  @return $pixels / $context * 1em;
+  @return calc($pixels / $context) * 1em;
 }
 
 @function rem($pixels, $context: 16) {
-  @return #{stripUnit($pixels) / $context}rem;
+  @return #{calc(stripUnit($pixels) / $context)}rem;
 }
