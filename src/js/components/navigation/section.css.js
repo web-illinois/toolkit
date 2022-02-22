@@ -106,6 +106,7 @@ export default css`
   grid-template-columns: auto 60px;
   background-color: var(--il-cloud-1);
   border-top: 1px solid #c0c0c0;
+  text-align: left;
 }
 .compact .heading ::slotted(a) {
   box-sizing: border-box;
