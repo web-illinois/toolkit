@@ -33,6 +33,11 @@ il-call-to-action,
   a.il-button:last-of-type {
     margin-right: 0;
   }
+
+  *[slot="icon"] {
+    display: block;
+    text-align: center;
+  }
 }
 
 .il-align-center il-call-to-action, il-call-to-action.il-align-center {
@@ -42,11 +47,6 @@ il-call-to-action,
   h4,
   h5,
   p {
-    text-align: center;
-  }
-  
-  *[slot="icon"] {
-    display: block;
     text-align: center;
   }
 }
