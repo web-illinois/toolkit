@@ -1,5 +1,5 @@
 import { LitElement, html } from 'lit';
-import Alignment from '../../lib/alignment';
+import Alignment from './alignment';
 import Debugger from '../../debug';
 import styles from './hero.css';
 
