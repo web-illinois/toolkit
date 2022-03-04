@@ -63,7 +63,7 @@ class ImageFeatureComponent extends LitElement {
     return html`
         <div style="display: none;"><slot name="image"></slot></div>
         <div class="${heightOption} ${this.align} ${this.size}">
-            <div class="background" role="presentation" style="background-image: url('${this.src}');">${this.alt}</div>
+            <div class="background" style="background-image: url('${this.src}');" role="img" aria-label="${this.alt}"></div>
             <div class="${contentClass}">
                 <slot></slot>
             </div>
