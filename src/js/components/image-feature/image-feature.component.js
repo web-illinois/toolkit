@@ -26,6 +26,18 @@ class ImageFeatureComponent extends LitElement {
     this.align = '';
   }
 
+  firstUpdated() {
+    this.shadowRoot.querySelector('slot[name="image"]').addEventListener('slotchange', (e) => this.setAttributes(e));
+  }
+
+  setAttributes(e) {
+    if (e.target.assignedNodes()[0].attributes["src"] != undefined) {
+      this.src = e.target.assignedNodes()[0].attributes["src"].value;
+    }
+    if (e.target.assignedNodes()[0].attributes["alt"] != undefined) {
+      this.alt = e.target.assignedNodes()[0].attributes["alt"].value;
+    }
+  }
 
   render() {
 
@@ -49,6 +61,7 @@ class ImageFeatureComponent extends LitElement {
     }
 
     return html`
+        <div style="display: none;"><slot name="image"></slot></div>
         <div class="${heightOption} ${this.align} ${this.size}">
             <div class="background" role="presentation" style="background-image: url('${this.src}');">${this.alt}</div>
             <div class="${contentClass}">
