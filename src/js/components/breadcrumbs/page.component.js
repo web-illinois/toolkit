@@ -1,5 +1,5 @@
 import {LitElement, html} from 'lit';
-import styles from './breadcrumbs-page.css';
+import styles from './page.css';
 
 class BreadcrumbsPage extends LitElement {
 
