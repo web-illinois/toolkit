@@ -9,6 +9,7 @@ export default css`
         text-decoration: none;
         color: var(--il-text-color);
         background: var(--il-background-color);
+        width: 100%;
     }
     article.blue {
       --il-text-color: white;
