@@ -40,11 +40,6 @@ il-image-feature.il-overlay img, .il-overlay il-image-feature img {
   --il-image-feature-with-overlay-background-solid: var(--il-orange);
   --il-image-feature-with-overlay-background: rgba(255, 85, 46, .85);
   --il-image-feature-with-overlay-border: 1px solid var(--il-orange);
-
-  p
-  {
-    color: #252525!important;
-  }
 }
 
 .il-theme-white il-image-feature, il-image-feature.il-theme-white {
@@ -55,15 +50,10 @@ il-image-feature.il-overlay img, .il-overlay il-image-feature img {
   --il-image-feature-with-overlay-background-solid: white;
   --il-image-feature-with-overlay-background: rgba(255, 255, 255, .85);
   --il-image-feature-with-overlay-border: 1px solid #707070;
+}
 
-  h2,
-  h3,
-  h4,
-  h5,
-  p
-  {
-    color: var(--il-blue);
-  }
+.il-theme-orange il-image-feature.il-overlay p, il-image-feature.il-theme-orange.il-overlay p {
+  color: var(--il-base-25);
 }
 
 .il-align-right il-image-feature, il-image-feature.il-align-right {
