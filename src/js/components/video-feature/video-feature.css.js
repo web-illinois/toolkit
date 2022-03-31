@@ -20,8 +20,8 @@ export default css`
     .videofeature .content {
         padding: 1.875rem 1.25rem;
         text-align: left;
-        color: var(--il-imagefeature-color);
-        background: var(--il-imagefeature-background);
+        color: var(--il-image-feature-color);
+        background: var(--il-image-feature-background);
     }
     .videofeature .content.orange {
         color: white;
