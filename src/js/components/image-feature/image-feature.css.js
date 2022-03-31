@@ -29,8 +29,11 @@ export default css`
     .imagefeature .content {
         padding: 1.875rem 1.25rem;
         text-align: left;
-        color: var(--il-imagefeature-color);
-        background: var(--il-imagefeature-background);
+        color: var(--il-image-feature-color);
+        background: var(--il-image-feature-background);
+        flex-grow: var(--il-image-feature-flex-grow-content);
+        flex-shrink: 1;
+        flex-basis: 0;
     }
     .imagefeature .content.orange {
         color: white;
@@ -51,11 +54,6 @@ export default css`
         flex-shrink: 1;
         flex-basis: 0;
     }
-    .imagefeature .content {
-        flex-grow: var(--il-image-feature-flex-grow-content);
-        flex-shrink: 1;
-        flex-basis: 0;
-    }
     .il-image-feature-with-overlay {
         position: relative;
     }
@@ -67,6 +65,7 @@ export default css`
         margin: auto;
         display: flex;
         justify-content: var(--il-image-feature-with-overlay-align);
+        color: var(--il-image-feature-color);
     }
     
     .il-image-feature-with-overlay-content {

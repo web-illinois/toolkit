@@ -1,7 +1,7 @@
 :root {
   --il-image-feature-display: block;
-  --il-imagefeature-color: white;
-  --il-imagefeature-background: var(--il-gradient-blue);
+  --il-image-feature-color: white;
+  --il-image-feature-background: var(--il-gradient-blue);
   --il-image-feature-flex-grow-image: 1;
   --il-image-feature-flex-grow-content: 1;
   --il-image-feature-flex-direction: row;
@@ -11,6 +11,9 @@
 .il-formatted il-image-feature, il-image-feature, .il-formatted il-video-feature, il-video-feature {
   display: var(--il-image-feature-display);
   margin-bottom: 20px;
+  --il-link-color: var(--il-image-feature-color);
+  --il-heading-color: var(--il-image-feature-color);
+  --il-text-color: var(--il-image-feature-color);
 
   h2,
   h3,
@@ -42,26 +45,34 @@
 
 .il-theme-orange il-image-feature, il-image-feature.il-theme-orange, 
 .il-theme-orange il-video-feature, il-video-feature.il-theme-orange {
-  --il-imagefeature-background: var(--il-gradient-orange);
+  --il-image-feature-background: var(--il-gradient-orange);
+}
+
+.il-theme-orange il-video-feature, il-video-feature.il-theme-orange {
+  a.il-button {
+    --il-button-border-color: var(--il-blue);
+    --il-button-foreground-color: var(--il-blue);
+    --il-button-background-color: white;
+    --il-focused-button-background-color: var(--il-blue);
+    --il-focused-button-foreground-color: white;
+  }
 }
 
 .il-theme-white il-image-feature, il-image-feature.il-theme-white, 
 .il-theme-white il-video-feature, il-video-feature.il-theme-white {
-  --il-imagefeature-background: white;
-  --il-imagefeature-color: var(--il-blue);
+  --il-image-feature-background: white;
+  --il-image-feature-color: var(--il-blue);
 }
 
 .il-theme-blue il-image-feature, il-image-feature.il-theme-blue, 
 .il-theme-blue il-video-feature, il-video-feature.il-theme-blue {
-  --il-imagefeature-background: var(--il-blue);
+  --il-image-feature-background: var(--il-blue);
 }
-
 
 .il-align-right il-image-feature, il-image-feature.il-align-right, 
 .il-align-right il-video-feature, il-video-feature.il-align-right {
   --il-image-feature-flex-direction: row-reverse;
 }
-
 
 .il-size-large il-image-feature, il-image-feature.il-size-large, 
 .il-size-large il-video-feature, il-video-feature.il-size-large {
@@ -79,54 +90,18 @@
   --il-image-feature-min-height: 10vw;
 }
 
-.il-formatted il-image-feature:not(.il-theme-white), il-image-feature:not(.il-theme-white),
-.il-formatted il-video-feature:not(.il-theme-white), il-video-feature:not(.il-theme-white) {
-    h2,
-    h3,
-    h4,
-    h5,
-    p,
-    ul,
-    ol,
-    ul li,
-    ol li,
-    a:not(.il-button) {
-      color: white;
-    }
-}
-
-.il-formatted il-image-feature.il-theme-white, il-image-feature.il-theme-white,
-.il-formatted il-video-feature.il-theme-white, il-video-feature.il-theme-white {
-    h2,
-    h3,
-    h4,
-    h5 {
-      color: var(--il-blue);
-    }
-}
-
-.il-formatted il-video-feature[background="white"], il-video-feature[background="white"],
-.il-formatted il-video-feature.il-theme-white, .il-formatted .il-theme-white, il-video-feature, 
-il-video-feature.il-theme-white, .il-theme-white, il-video-feature {
-  h2,
-  h3,
-  h4,
-  h5
-  {
-    color: var(--il-orange);
-  }
-}
-  
-.il-formatted il-image-feature[background="white"], il-image-feature[background="white"] {
-  h2,
-  h3,
-  h4,
-  h5
-  {
-    color: var(--il-orange) !important;
-  }
+il-image-feature[background="white"],
+il-video-feature[background="white"] {
+  --il-image-feature-background: white; 
 
   p, a {
-    color: #252525 !important;
+    color: var(--il-blue);
+    --il-button-border-color: var(--il-blue);
+    --il-button-foreground-color: var(--il-blue);
+    --il-focused-button-background-color: var(--il-blue);
+    --il-focused-button-foreground-color: white;
+    }
+  h2, h3, h4, h5 {
+    color: var(--il-orange);
   }
 }
