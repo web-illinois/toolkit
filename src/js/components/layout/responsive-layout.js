@@ -57,6 +57,10 @@ export default class ResponsiveLayout extends LitElement {
 
   updateMode() {
     const mode = this.getModes().find(this.matchMode);
-    this.mode = mode.name;
+    if (this.mode !== mode.name) {
+      this._mode = mode.name; 
+      this.mode = mode.name;
+      this.dispatchModeChange();
+    }
   }
 }
