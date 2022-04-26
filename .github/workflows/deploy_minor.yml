@@ -1,4 +1,4 @@
-name: deploy_cdn
+name: deploy_minor
 on:
   workflow_dispatch:
 env:
