@@ -1,0 +1,62 @@
+name: deploy_major
+on:
+  push:
+    branches:    
+      - 'main'
+env:
+  MAJORVERSION: '2'
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v1
+    - name: Get Version
+      id: get_version
+      uses: battila7/get-version-action@v2
+
+    - name: Check to see what branch we are on
+      run: echo "${{ github.ref_name }}"
+    - name: Check for correct naming convention
+      if: ${{ github.ref_name != 'main' }}
+      run: exit 1
+    - name: Display version major install
+      run: echo "Installing major version ${MAJORVERSION}"
+
+    - run: npm install
+    - run: npm rebuild
+    - run: npm run-script build
+    - name: Configure AWS Credentials (DEPRECIATED)
+      uses: aws-actions/configure-aws-credentials@v1
+      with:
+        aws-access-key-id: ${{ secrets.CDN_ACCESS_KEY_ID }}
+        aws-secret-access-key: ${{ secrets.CDN_SECRET_ACCESS_KEY }}
+        aws-region: us-east-2
+
+    - name: Deploy toolbox to CDN BRAND S3 bucket for major version (DEPRECIATED)
+      run: aws s3 sync ./dist/ s3://cdn.brand.illinois.edu/toolkit/$MAJORVERSION --delete --acl bucket-owner-full-control
+    - name: Build examples for major version (DEPRECIATED)
+      run: npm run-script create-test-html -- --pathprefix='/toolkit/$MAJORVERSION/examples/'
+    - name: Deploy examples to CDN BRAND S3 bucket for major version (DEPRECIATED)
+      run: aws s3 sync ./var/full-site-deploy/ s3://cdn.brand.illinois.edu/toolkit/$MAJORVERSION/examples --delete --acl bucket-owner-full-control
+    - name: Deploy static images in examples to CDN BRAND S3 bucket for major version (DEPRECIATED)
+      run: aws s3 sync ./tests/_reference/ s3://cdn.brand.illinois.edu/toolkit/$MAJORVERSION/examples/static-images --acl bucket-owner-full-control
+    - name: Invalidate Cloudfront cache for major version (DEPRECIATED)
+      run: aws cloudfront create-invalidation --distribution-id E2VPGHCUOM84HO --paths "/toolkit/$MAJORVERSION*"
+
+    - name: Configure AWS Credentials
+      uses: aws-actions/configure-aws-credentials@v1
+      with:
+        aws-access-key-id: 'AKIAWXY7DGWYB5GTWUX5'
+        aws-secret-access-key: ${{ secrets.AWS_TOOLKIT_SECRET_ACCESS_KEY }}
+        aws-region: us-east-2
+
+    - name: Deploy toolbox to S3 bucket for major version
+      run: aws s3 sync ./dist/ s3://s3robust-cdn.toolkit.illinois.edu/content/$MAJORVERSION --delete --acl bucket-owner-full-control
+    - name: Build examples for major version
+      run: npm run-script create-test-html -- --pathprefix='/$MAJORVERSION/examples/'
+    - name: Deploy examples to S3 bucket for major version
+      run: aws s3 sync ./var/full-site-deploy/ s3://s3robust-cdn.toolkit.illinois.edu/content/$MAJORVERSION/examples --delete --acl bucket-owner-full-control
+    - name: Deploy static images in examples to S3 bucket for major version
+      run: aws s3 sync ./tests/_reference/ s3://s3robust-cdn.toolkit.illinois.edu/content/$MAJORVERSION/examples/static-images --acl bucket-owner-full-control
+    - name: Invalidate Cloudfront cache for major version
+      run: aws cloudfront create-invalidation --distribution-id E27YR2HDBZBKRX --paths "/$MAJORVERSION*"

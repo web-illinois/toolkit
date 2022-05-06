@@ -1,9 +1,10 @@
-name: deploy_dev
+name: deploy_develop
 on:
   push:
     branches-ignore:
       - 'main'
-
+      - 'release/**'
+      - 'actions'
 env:
   VERSION: ''
 jobs:
@@ -18,8 +19,6 @@ jobs:
     - name: If from develop branch, change to latest
       if: ${{ github.ref == 'refs/heads/develop' }}
       run: echo "VERSION=latest" >> $GITHUB_ENV
-      env: 
-        GITHUB_BRANCH: ${{ github.ref_name }}
     - name: Display version install
       run: echo "Installing version ${VERSION} in dev.toolkit"
     - run: npm install
