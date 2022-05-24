@@ -1,4 +1,4 @@
-name: delete_dev
+name: delete_develop
 on:
   delete:
 
@@ -21,7 +21,7 @@ jobs:
         aws-access-key-id: 'AKIAXNR47MADGK2A4HEW'
         aws-secret-access-key: ${{ secrets.AWS_SECRET_FOR_AKIAXNR47MADGK2A4HEW }}
         aws-region: us-east-2
-    - name: Deploy toolbox to S3 bucket
+    - name: Delete S3 bucket
       run: aws s3 rm s3://dev.toolkit.illinois.edu/content/$VERSION --recursive
     - name: Invalidate Cloudfront cache
       run: aws cloudfront create-invalidation --distribution-id E2AF2WM1XJU9VI --paths "/$VERSION*"
