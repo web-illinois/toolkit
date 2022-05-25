@@ -1,0 +1,68 @@
+{% set stylesheets = ['tests.css', 'cards.css'] %}
+
+{% extends "layouts/page.njk" %}
+
+{% block body %}
+
+    <div class="card-grid {{ theme }}">
+
+        <il-card>
+            <h2>Nutrition Policy and Food</h2>
+            <p>Effectively support increasing regulatory needs and solve the challenges of food and agriculture in years
+                to
+                come.</p>
+        </il-card>
+
+        <il-card link>
+            <h2><a href="http://example.com">Nutrition Policy and Food</a></h2>
+            <p>Effectively support increasing regulatory needs and solve the challenges of food and agriculture in years
+                to
+                come.</p>
+        </il-card>
+
+        <il-card>
+            <h2>Nutrition Policy and Food</h2>
+            <p>Effectively support increasing regulatory needs and solve the challenges of food and agriculture in years
+                to
+                come.</p>
+            <p class="il-buttons">
+                <a class="il-button" href="http://example.com/">Button Text</a>
+            </p>
+        </il-card>
+
+        <il-card>
+            <div class="il-icon">alumni</div>
+            <h2>Nutrition Policy and Food</h2>
+            <p>Effectively support increasing regulatory needs and solve the challenges of food and agriculture in years
+                to
+                come.</p>
+        </il-card>
+
+        <il-card>
+            <img src="{{ '/_assets/images/1.jpg' | url }}" alt="">
+            <h2>Nutrition Policy and Food</h2>
+            <p>Effectively support increasing regulatory needs and solve the challenges of food and agriculture in years
+                to
+                come.</p>
+        </il-card>
+
+        <il-card>
+            <h2>Nutrition Policy and Food</h2>
+            <img src="{{ '/_assets/images/1.jpg' | url }}" alt="">
+            <p>Effectively support increasing regulatory needs and solve the challenges of food and agriculture in years
+                to
+                come.</p>
+        </il-card>
+
+        <il-card>
+            <div class="il-icon">alumni</div>
+            <img src="{{ '/_assets/images/1.jpg' | url }}" alt="">
+            <h2>Nutrition Policy and Food</h2>
+            <p>Effectively support increasing regulatory needs and solve the challenges of food and agriculture in years
+                to
+                come.</p>
+        </il-card>
+
+    </div>
+
+{% endblock %}
