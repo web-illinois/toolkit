@@ -17,12 +17,25 @@ il-card, .il-card {
     padding: 0;
   }
 
+  a {
+    color: var(--il-card-link-color);
+  }
+
   h2, h3, h4, h5, h6 {
-    margin: 0;
+    margin: 1rem 0 0;
     padding: 0;
     font: 700 1.39em/1em var(--il-source-sans); // 25px
+    color: var(--il-card-heading-color);
 
-    & + p {
+    &:first-child {
+      margin-top: 0;
+    }
+
+    a {
+      color: var(--il-card-heading-link-color);
+    }
+
+    + p {
       margin-top: 16px;
     }
   }
@@ -39,16 +52,43 @@ il-card, .il-card {
     }
   }
 
+  .il-buttons {
+    margin: 1.3em 0 0;
+    padding: 0;
+
+    &:first-child {
+      margin-top: 0;
+    }
+  }
+
+  .il-button {
+    font-weight: 600;
+  }
+
   .il-icon {
     display: block;
     margin: 0;
     padding: 0;
     font-size: 4.167em;
+    color: var(--il-card-icon-color);
+
+    &:first-child {
+      margin-top: -.25em;
+    }
   }
 }
 
 il-card[link] {
   text-decoration: none;
+  cursor: pointer;
+
+  a {
+    text-decoration: none;
+  }
+
+  h2 a {
+    color: var(--il-card-heading-color);
+  }
 
   h2::after {
     content: "";
@@ -69,27 +109,43 @@ il-card[link] {
 .il-theme-white {
   --il-card-background: white;
   --il-card-color: var(--il-base-25);
+  --il-card-link-color: var(--il-orange);
+  --il-card-heading-color: var(--il-orange);
+  --il-card-heading-link-color: var(--il-blue);
 }
 
 .il-theme-gray {
   --il-card-background: var(--il-gray-1);
   --il-card-color: var(--il-base-25);
+  --il-card-link-color: var(--il-blue);
+  --il-card-heading-color: var(--il-orange);
+  --il-card-heading-link-color: var(--il-blue);
 }
 
 .il-theme-blue, .il-theme-blue-gradient {
   --il-card-background: var(--il-blue);
   --il-card-border-color: var(--il-blue);
   --il-card-color: white;
+  --il-card-link-color: var(--il-orange);
+  --il-card-heading-color: white;
+  --il-card-heading-link-color: var(--il-orange);
 }
 
 .il-theme-blue-gradient {
   --il-card-background: var(--il-blue-gradient);
+  --il-card-link-color: var(--il-arches-blue-lighter-2);
+  --il-card-heading-color: white;
+  --il-card-heading-link-color: var(--il-arches-blue-lighter-2);
 }
 
 .il-theme-orange, .il-theme-orange-gradient {
   --il-card-background: var(--il-orange);
   --il-card-border-color: var(--il-orange);
   --il-card-color: var(--il-blue);
+  --il-card-icon-color: white;
+  --il-card-link-color: var(--il-blue);
+  --il-card-heading-color: white;
+  --il-card-heading-link-color: var(--il-blue);
 }
 
 .il-theme-orange-gradient {
