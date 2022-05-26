@@ -30,7 +30,7 @@ h6 {
   @include block-formatting($size: 18px, $line-height: 22px, $weight: 700, $margin-top: $h6-margin-top);
 }
 
-&.il-wp-block-editor-content {
+&.il-wp-block-editor-content, .il-wp-block-editor-content {
   h1:first-child {
     margin-top: $h1-margin-top;
   }
