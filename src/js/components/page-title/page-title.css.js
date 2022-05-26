@@ -32,7 +32,7 @@ export default css`
 .text {
   box-sizing: border-box;
   position: relative;
-  z-index: 101;
+  z-index: 100;
   color: var(--il-page-title-text-color);
   text-align: left;
   font: 700 2.5em var(--il-source-sans);
