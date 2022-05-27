@@ -1,0 +1,135 @@
+---
+title: Page title with header
+group: "Components: Page title"
+layout: layouts/page.njk
+---
+    <header class="region region-header l-region l-region--header" role="banner" aria-label="Site Header">
+  <il-header view="full">
+    <div slot="wordmark">
+      <il-unit-wordmark>
+                  <p class="il-primary-unit">
+                          <a href="https://las.illinois.edu">College of Liberal Arts &amp; Sciences</a>
+                      </p>
+                <h1><a href="/">School of Molecular & Cellular Biology</a></h1>
+      </il-unit-wordmark>
+    </div>
+    <il-search slot="search" action="/search/node" method="get" searchname="keys"></il-search>
+    <nav slot="links" class="il-links">
+      <ul>
+                                                  <li><a id="link-" href="https://mcb.web.illinois.edu/admissions">Apply</a></li>
+                                                            <li><a id="link-" href="https://mcb.web.illinois.edu/giving/make-online-gift">Make a gift</a></li>
+                                                              </ul>
+    </nav>
+    <il-nav slot="navigation">
+              
+
+        
+                            <il-nav-section >
+          <a href="/apply-mcb" slot="label">Admissions</a>
+          <ul class="il-subnav">
+                          <li>
+                <a href="/admissions/undergraduate-admissions">Undergraduate Admissions</a>
+              </li>
+                          <li>
+                <a href="/academics/masters-program">Master&#039;s Program Admissions</a>
+              </li>
+                          <li>
+                <a href="/academics/phd-programs">PhD Program Admissions</a>
+              </li>
+                      </ul>
+        </il-nav-section>
+                               <il-nav-section >
+          <a href="/" slot="label">Academics</a>
+          <ul class="il-subnav">
+                          <li>
+                <a href="/academics/undergraduate-programs">Undergraduate Programs</a>
+              </li>
+                          <li>
+                <a href="/academics/masters-program">Master&#039;s Programs</a>
+              </li>
+                          <li>
+                <a href="/academics/phd-programs">PhD Programs</a>
+              </li>
+                      </ul>
+        </il-nav-section>
+                               <il-nav-section >
+          <a href="/departments" slot="label">Departments</a>
+          <ul class="il-subnav">
+                          <li>
+                <a href="/departments/biochemistry">Biochemistry</a>
+              </li>
+                          <li>
+                <a href="/departments/cell-developmental-biology">Cell &amp; Developmental Biology</a>
+              </li>
+                          <li>
+                <a href="/departments/microbiology">Microbiology</a>
+              </li>
+                          <li>
+                <a href="/departments/molecular-integrative-physiology">Molecular &amp; Integrative Physiology</a>
+              </li>
+                      </ul>
+        </il-nav-section>
+                               <il-nav-section >
+          <a href="/research" slot="label">Research</a>
+          <ul class="il-subnav">
+                          <li>
+                <a href="/research/research-institutes-facilities-resources">Research institutes, facilities &amp; initiatives</a>
+              </li>
+                      </ul>
+        </il-nav-section>
+                               <il-nav-section >
+          <a href="/news" slot="label">News</a>
+          <ul class="il-subnav">
+                          <li>
+                <a href="https://mcb.web.illinois.edu/taxonomy/term/26">Awards and Honors</a>
+              </li>
+                          <li>
+                <a href="https://mcb.web.illinois.edu/media-mentions">Media Mentions</a>
+              </li>
+                          <li>
+                <a href="https://mcb.web.illinois.edu/meet-communications-team">Media contacts in MCB</a>
+              </li>
+                      </ul>
+        </il-nav-section>
+                               <il-nav-section >
+          <a href="/alumni-friends" slot="label">Alumni</a>
+          <ul class="il-subnav">
+                          <li>
+                <a href="/alumni-friends/giving-opportunities">Giving opportunities</a>
+              </li>
+                          <li>
+                <a href="/giving/make-online-gift">Make an online gift</a>
+              </li>
+                      </ul>
+        </il-nav-section>
+                               <il-nav-link>
+          <a href="/directory" target="_self">Directory</a>
+        </il-nav-link>
+                               <il-nav-section right="true">
+          <a href="/about-mcb" slot="label">About</a>
+          <ul class="il-subnav">
+                          <li>
+                <a href="/about/mcb-instructional-program">MCB Instructional Program</a>
+              </li>
+                          <li>
+                <a href="/about/health-wellbeing-resources">Health &amp; Wellbeing Resources</a>
+              </li>
+                          <li>
+                <a href="/about/diversity-equity-inclusion">Diversity, Equity &amp; Inclusion</a>
+              </li>
+                          <li>
+                <a href="/about/mcb-faculty-and-staff-resources">Resources for MCB Faculty &amp; Staff</a>
+              </li>
+                          <li>
+                <a href="/about/employment-opportunities">Employment Opportunities</a>
+              </li>
+                      </ul>
+        </il-nav-section>
+      </il-nav>
+  </il-header>
+</header>
+
+<il-page-title class="il-theme-white">
+  <img slot="background" src="{{ "/_assets/images/hero-bg.jpg"|url  }}" alt="">
+  <span>Molecular &amp; Integrative Physiology</span>
+</il-page-title>
