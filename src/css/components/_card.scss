@@ -9,7 +9,7 @@ il-card, .il-card {
   color: var(--il-card-color, var(--il-base-25));
   box-sizing: border-box;
   margin: 0;
-  padding: 30px;
+  padding: 40px 30px 30px;
   text-align: center;
   font: 400 1.125em/1.667em var(--il-source-sans); // 18px/30px
   border: 1px solid var(--il-card-border-color, var(--il-gray-2));
@@ -61,7 +61,7 @@ il-card, .il-card {
     margin: 30px -30px;
 
     &:first-child {
-      margin-top: -30px;
+      margin-top: -40px;
     }
   }
 
