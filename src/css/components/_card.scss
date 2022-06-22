@@ -94,12 +94,14 @@ il-card, .il-card {
 il-card[link] {
   text-decoration: none;
   cursor: pointer;
+  border-bottom-width: 3px;
+  border-bottom-color: var(--il-card-border-bottom-color, var(--il-orange));
 
   a {
     text-decoration: none;
   }
 
-  h2 a {
+  h2, h2 a {
     color: var(--il-card-heading-color);
   }
 
@@ -117,6 +119,15 @@ il-card[link] {
     position: absolute;
     margin-top: 6px;
   }
+
+  &:hover, &:focus {
+    background: var(--il-card-hover-background);
+    color: var(--il-card-hover-color);
+
+    h2, h2 a {
+      color: var(--il-card-hover-heading-color);
+    }
+  }
 }
 
 .il-theme-white {
@@ -125,6 +136,9 @@ il-card[link] {
   --il-card-link-focus-color: var(--il-orange);
   --il-card-heading-color: var(--il-orange);
   --il-card-heading-link-focus-color: var(--il-blue);
+  --il-card-hover-background: var(--il-blue);
+  --il-card-hover-color: white;
+  --il-card-hover-heading-color: var(--il-orange);
 }
 
 .il-theme-gray {
@@ -133,6 +147,9 @@ il-card[link] {
   --il-card-link-focus-color: var(--il-altgeld);
   --il-card-heading-color: var(--il-orange);
   --il-card-heading-link-focus-color: var(--il-blue);
+  --il-card-hover-background: var(--il-blue);
+  --il-card-hover-color: white;
+  --il-card-hover-heading-color: var(--il-orange);
 }
 
 .il-theme-blue, .il-theme-blue-gradient {
@@ -142,6 +159,9 @@ il-card[link] {
   --il-card-link-focus-color: var(--il-orange);
   --il-card-heading-color: white;
   --il-card-heading-link-focus-color: var(--il-orange);
+  --il-card-hover-background: white;
+  --il-card-hover-color: var(--il-base-25);
+  --il-card-hover-heading-color: var(--il-orange);
 }
 
 .il-theme-blue-gradient {
@@ -160,6 +180,10 @@ il-card[link] {
   --il-card-link-focus-outline: 2px dotted var(--il-blue);
   --il-card-heading-color: white;
   --il-card-heading-link-focus-color: var(--il-blue);
+  --il-card-border-bottom-color: var(--il-blue);
+  --il-card-hover-background: white;
+  --il-card-hover-color: var(--il-base-25);
+  --il-card-hover-heading-color: var(--il-orange);
 }
 
 .il-theme-orange-gradient {
