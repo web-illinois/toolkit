@@ -11,7 +11,7 @@
   --il-clickable-card-background-hover: var(--il-blue);
 }
 
-il-clickable-card, il-card {
+il-clickable-card {
   @extend .il-formatted;
 }
 
@@ -60,35 +60,6 @@ il-clickable-card,
 
   img {
     width: 100%;
-  }
-}
-
-il-card, .il-formatted il-card {
-  display: var(--il-clickable-card-display);
-
-  h2,
-  h3,
-  h4,
-  h5,
-  p.heading {
-    color: var(--il-clickable-card-heading-color);
-    font-size: 1.3125rem;
-    font-weight: 700;
-    line-height: 1.75rem;
-    margin: 0;
-    letter-spacing: .015em;
-    text-align: center;
-    padding: 0.625rem 0 1.25rem;
-    border-bottom: 1px solid #ddd6d6;
-
-    + * {
-      margin-top: .625rem;
-    }
-  }
-
-  p {
-    font-size: 1.25rem;
-    line-height: 1.6875rem;
   }
 }
 

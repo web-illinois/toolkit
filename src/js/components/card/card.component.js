@@ -5,9 +5,7 @@ class Card extends LitElement {
 
   static get properties() {
     return {
-        width: {type: String, attribute: true},
-        src: {type: String, attribute: true},
-        alt: {type: String, attribute: true},
+      link: {type: Boolean, default: false, attribute: true},
     };
   }
 
@@ -17,26 +15,48 @@ class Card extends LitElement {
 
   constructor() {
     super();
-    this.src = '';
-    this.alt = '';
-    this.width = '';
+    this.link = false;
+    this.handleClick = this.handleClick.bind(this);
+  }
+
+  connectedCallback() {
+    super.connectedCallback();
+    this.addEventListener('click', this.handleClick);
+  }
+
+  disconnectedCallback() {
+    super.disconnectedCallback();
+    this.removeEventListener('click', this.handleClick);
+  }
+
+  elementIsLink(elem) {
+    const link = this.getLinkElement();
+    return elem === link || link.contains(elem);
+  }
+
+  getLinkElement() {
+    return this.querySelector('a');
+  }
+
+  hasLinkElement() {
+    return !!this.getLinkElement();
+  }
+
+  isLink() {
+    return this.link;
+  }
+
+  handleClick(evt) {
+    if (this.isLink() && this.hasLinkElement()) {
+      if (!this.elementIsLink(evt.target)) this.getLinkElement().click();
+    }
   }
 
   render() {
-    let widthStyle = this.width == '' ? '' : `width: ${this.width};`;
-    if (this.src == '') {
-      return html`
-      <article style="${widthStyle}">
-          <div class="text nopicture"><slot></slot></div>
-      </article>
-      `;
-    }
-   
     return html`
-      <article style="${widthStyle}">
-        <img src="${this.src}" alt="${this.alt}">
-          <div class="text"><slot></slot></div>
-      </article>
+      <div class="card">
+          <slot></slot>
+      </div>
       `;
   }
 }
