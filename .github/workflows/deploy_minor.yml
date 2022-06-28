@@ -1,8 +1,9 @@
 name: deploy_minor
 on:
   push:
-    branches:    
-      - 'release/**'
+    tags: [ '**' ]
+  pull_request:
+    tags: [ '**' ]
 env:
   MINORVERSION: ''
   FULLVERSION: ''
@@ -18,19 +19,19 @@ jobs:
     - name: Check for correct naming convention
       if: ${{ !steps.get_version.outputs.is-semver }}
       run: exit 1
-    - name: Get minor version from release branch
+    - name: Get minor version from tag
       run: echo "MINORVERSION=${GITHUB_BRANCH}.${GITHUB_BRANCH_MINOR}" >> $GITHUB_ENV
       env: 
         GITHUB_BRANCH: ${{ steps.get_version.outputs.major }}
         GITHUB_BRANCH_MINOR: ${{ steps.get_version.outputs.minor }}
-    - name: Get full version from release branch
+    - name: Get patch (full) version from tag
       run: echo "FULLVERSION=${GITHUB_BRANCH}" >> $GITHUB_ENV
       env: 
         GITHUB_BRANCH: ${{ steps.get_version.outputs.version-without-v }}
     - name: Display version minor install
       run: echo "Installing minor version ${MINORVERSION}"
-    - name: Display version full install
-      run: echo "Installing full version ${FULLVERSION}"
+    - name: Display version patch (full) install
+      run: echo "Installing patch (full) version ${FULLVERSION}"
 
     - run: npm install
     - run: npm rebuild
