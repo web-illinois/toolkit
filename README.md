@@ -65,4 +65,9 @@ While the development server is running, all changes to files in the `src` direc
 
 ## Build process
 
-The build process will place a copy of the assets in the /toolkit/x.x/ folder, and code samples and screen shots in /toolkit/2.0/examples/index.html. This happens when the code is released to develop (/toolkit/dev) and any release branch (so branch release/2.0 goes to /toolkit/2.0).
+The build process will place a copy of the assets in the /toolkit/x.x/ folder, and code samples and screen shots in /toolkit/x.x/examples/index.html. This runs for production (main branch and tags), and development (all other branches). This will also remove develop branches when the branch is removed from Github. 
+
+[![deploy_develop](https://github.com/web-illinois/toolkit/actions/workflows/deploy_develop.yml/badge.svg)](https://github.com/web-illinois/toolkit/actions/workflows/deploy_develop.yml) [![deploy_minor](https://github.com/web-illinois/toolkit/actions/workflows/deploy_minor.yml/badge.svg)](https://github.com/web-illinois/toolkit/actions/workflows/deploy_minor.yml) [![deploy_major](https://github.com/web-illinois/toolkit/actions/workflows/deploy_major.yml/badge.svg?branch=main)](https://github.com/web-illinois/toolkit/actions/workflows/deploy_major.yml) [![delete_develop](https://github.com/web-illinois/toolkit/actions/workflows/delete_develop.yml/badge.svg)](https://github.com/web-illinois/toolkit/actions/workflows/delete_develop.yml)
+
+
+
