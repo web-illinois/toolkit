@@ -1,3 +1,24 @@
+.card-block {
+  box-sizing: border-box;
+  padding: 2em;
+}
+.card-block > * {
+  margin-bottom: 2em;
+}
+.card-block > *:last-child {
+  margin-bottom: 0;
+}
+.card-flex {
+  box-sizing: border-box;
+  padding: 2em;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 2em;
+}
+.card-flex > * {
+  flex: 0 0 280px;
+}
 .card-grid {
   box-sizing: border-box;
   padding: 2em;

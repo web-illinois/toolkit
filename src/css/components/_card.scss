@@ -5,6 +5,7 @@
 }
 
 il-card, .il-card {
+  display: block;
   background: var(--il-card-background, white);
   color: var(--il-card-color, var(--il-base-25));
   box-sizing: border-box;
