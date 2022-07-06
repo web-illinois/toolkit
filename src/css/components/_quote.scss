@@ -1,0 +1,24 @@
+il-quote, .il-quote, .il-formatted il-quote, .il-formatted .il-quote {
+  display: block;
+  position: relative;
+  padding: 30px 60px;
+  font-size: 1.25em;
+  margin: 70px auto;
+  max-width: 700px;
+  color: var(--il-blue);
+  font: 400 2.25rem/3.1875rem var(--il-source-sans);
+  font-style: italic;
+  text-align: center;
+
+  p[slot="attributed"] {
+    text-align: center;
+    color: var(--il-orange);
+    font: 700 1.813rem/2.188rem var(--il-source-sans);
+  }
+
+  p[slot="secondary"] {
+    text-align: center;
+    color: var(--il-blue);
+    font: 400 1.438rem/1.875rem var(--il-source-sans);
+  }
+}
