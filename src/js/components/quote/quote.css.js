@@ -14,7 +14,7 @@ export default css`
     font-size: 5rem;
     line-height: 0;
     top: 40px;
-    left: -50px;
+    left: -70px;
     font-weight: 700;
   }
   
@@ -25,7 +25,7 @@ export default css`
     font-size: 5rem;
     line-height: 0;
     bottom: 0;
-    left: 100%;
+    right: -70px;
     font-weight: 700;
   }
 `;

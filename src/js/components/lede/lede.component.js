@@ -3,9 +3,6 @@ import styles from './lede.css';
 
 class Lede extends LitElement {
 
-  static get properties() {
-  }
-
   static get styles() {
     return styles;
   }
