@@ -14,6 +14,7 @@ import './components/image-feature/image-feature.component';
 import './components/layout/page.component';
 import './components/layout/section.component';
 import './components/layout/section-with-sidebar.component';
+import './components/lede/lede.component';
 import './components/link/link';
 import './components/navigation/navigation.component';
 import './components/navigation/link.component';

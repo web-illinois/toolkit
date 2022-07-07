@@ -26,12 +26,11 @@ class Quote extends LitElement {
   }
 
   render() {
-    return html`
-      <div class="quote">
-          <p class="il-quote"><slot></slot></p>
-          <slot name="attributed"></slot>
-          <slot name="secondary"></slot>
-      </div>
+    return html`<blockquote ?aria-hidden=${this.pullquote}>
+      <p class="il-quote"><slot></slot></p>
+      <slot name="attributed"></slot>
+      <slot name="secondary"></slot>
+      </blockquote>
       `;
   }
 }
