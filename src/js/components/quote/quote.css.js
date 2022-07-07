@@ -11,7 +11,7 @@ export default css`
     position: absolute;
     content: "“";
     color: var(--il-orange);
-    font-size: 5rem;
+    font-size: 7.813rem;
     line-height: 0;
     top: 40px;
     left: -70px;
@@ -22,7 +22,7 @@ export default css`
     position: absolute;
     content: "”";
     color: var(--il-orange);
-    font-size: 5rem;
+    font-size: 7.813rem;
     line-height: 0;
     bottom: 0;
     right: -70px;
