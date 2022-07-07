@@ -13,8 +13,8 @@ export default css`
     color: var(--il-orange);
     font-size: 7.813rem;
     line-height: 0;
-    top: 40px;
-    left: -70px;
+    top: 55px;
+    left: -90px;
     font-weight: 700;
   }
   
@@ -25,7 +25,7 @@ export default css`
     font-size: 7.813rem;
     line-height: 0;
     bottom: 0;
-    right: -70px;
+    right: -90px;
     font-weight: 700;
   }
 `;
