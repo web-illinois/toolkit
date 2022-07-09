@@ -1,15 +1,10 @@
-New in version 2.2
-------------------
+VERSION 2.9.1 - Released June 28, 2022
 
-* New component: <il-accordion>
-  https://github.com/web-illinois/toolkit/wiki/Accordion
+* Card component works better in non-grid layouts
+* Card component works in il-formatted blocks
 
-* New "alt" attribute for the hero component
-  https://github.com/web-illinois/toolkit/wiki/Hero
+----
 
-* Automatic link URLs with the data-il attribute
-  https://github.com/web-illinois/toolkit/wiki/Data-attributes
+VERSION 2.9.0 - Released June 23, 2022
 
-* Upgraded to Lit 2.0
-
-* Bug fixes and security updates
+* New card component

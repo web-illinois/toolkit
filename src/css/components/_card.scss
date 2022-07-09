@@ -1,0 +1,196 @@
+:root {
+  --il-card-link-focus-outline: 0;
+  --il-card-heading-link-focus-outline: 0;
+  --il-card-link-icon-mask-image: url("data:image/svg+xml, %3Csvg version=\"1.1\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 1000 1000\" style=\"enable-background:new 0 0 1000 1000;\" xml:space=\"preserve\"%3E%3Cg%3E%3Cpath d=\"M589,503.6c0-17.3-6.1-28.9-18.3-40.4L203.9,117c-6.1-11.5-24.5-17.3-42.8-17.3l0,0c-12.2,0-30.6,5.8-42.8,17.3l0,0 c-24.5,23.1-24.5,57.7,0,80.8l324,305.8l-324,305.8c-24.5,23.1-24.5,57.7,0,80.8c12.2,11.5,30.6,17.3,42.8,17.3s30.6-5.8,42.8-17.3 L570.7,544C582.9,532.5,589,520.9,589,503.6z\"/%3E%3Cpath d=\"M876.3,463.2L509.6,117c-12.2-11.5-24.5-17.3-42.8-17.3l0,0c-18.3,0-30.6,5.8-42.8,17.3l0,0c-24.5,23.1-24.5,57.7,0,80.8 l324,305.8L424,809.5c-24.5,23.1-24.5,57.7,0,80.8c12.2,11.5,24.5,17.3,42.8,17.3c18.3,0,30.6-5.8,42.8-17.3L876.3,544 c12.2-11.5,18.3-23.1,18.3-40.4S888.6,474.8,876.3,463.2z\"/%3E%3C/g%3E%3C/svg%3E");
+}
+
+il-card, .il-card, .il-formatted il-card, .il-formatted .il-card {
+  display: block;
+  background: var(--il-card-background, white);
+  color: var(--il-card-color, var(--il-base-25));
+  box-sizing: border-box;
+  margin: 0;
+  padding: 40px 30px 30px;
+  text-align: center;
+  font: 400 1.125rem/1.667em var(--il-source-sans); // 18px/30px
+  border: 1px solid var(--il-card-border-color, var(--il-gray-2));
+
+  p {
+    margin: 0;
+    padding: 0;
+  }
+
+  a, a:visited {
+    color: var(--il-card-link-color);
+
+    &:focus, &:hover {
+      color: var(--il-card-link-focus-color, var(--il-card-link-color));
+      outline: var(--il-card-link-focus-outline);
+    }
+  }
+
+  h2, h3, h4, h5, h6 {
+    text-align: center;
+    margin: 1rem 0 0;
+    padding: 0;
+    font: 700 1.39em/1em var(--il-source-sans); // 25px
+    color: var(--il-card-heading-color);
+
+    &:first-child {
+      margin-top: 0;
+    }
+
+    a, a:visited {
+      text-decoration: underline;
+      color: var(--il-card-heading-link-color);
+
+      &:focus, &:hover {
+        color: var(--il-card-heading-link-focus-color, var(--il-card-heading-link-color));
+        outline: var(--il-card-heading-link-focus-outline);
+      }
+    }
+
+    + p {
+      margin-top: 16px;
+    }
+  }
+
+  img {
+    box-sizing: border-box;
+    display: block;
+    width: calc(100% + 60px);
+    height: auto;
+    margin: 30px -30px;
+
+    &:first-child {
+      margin-top: -40px;
+    }
+  }
+
+  .il-buttons {
+    margin: 1.3em 0 0;
+    padding: 0;
+
+    &:first-child {
+      margin-top: 0;
+    }
+  }
+
+  .il-button {
+    font-weight: 600;
+  }
+
+  .il-icon {
+    display: block;
+    margin: 0;
+    padding: 0;
+    font-size: 4.167em;
+    color: var(--il-card-icon-color);
+
+    &:first-child {
+      margin-top: -.25em;
+    }
+  }
+}
+
+il-card[link], .il-formatted il-card[link] {
+  text-decoration: none;
+  cursor: pointer;
+  border-bottom-width: 3px;
+  border-bottom-color: var(--il-card-border-bottom-color, var(--il-orange));
+
+  a, a:visited {
+    text-decoration: none;
+  }
+
+  h2, h2 a {
+    color: var(--il-card-heading-color);
+  }
+
+  h2::after {
+    content: "";
+    -webkit-mask-image: var(--il-card-link-icon-mask-image);
+    mask-image: var(--il-card-link-icon-mask-image);
+    background-size: 16px 16px;
+    background-color: currentColor;
+    font-weight: 500;
+    height: 16px;
+    width: 16px;
+    margin-left: 4px;
+    display: inline;
+    position: absolute;
+    margin-top: 6px;
+  }
+
+  &:hover, &:focus {
+    background: var(--il-card-hover-background);
+    color: var(--il-card-hover-color);
+
+    h2, h2 a {
+      color: var(--il-card-hover-heading-color);
+    }
+  }
+}
+
+.il-theme-white {
+  --il-card-background: white;
+  --il-card-color: var(--il-base-25);
+  --il-card-link-focus-color: var(--il-orange);
+  --il-card-heading-color: var(--il-orange);
+  --il-card-heading-link-focus-color: var(--il-blue);
+  --il-card-hover-background: var(--il-blue);
+  --il-card-hover-color: white;
+  --il-card-hover-heading-color: var(--il-orange);
+}
+
+.il-theme-gray {
+  --il-card-background: var(--il-gray-1);
+  --il-card-color: var(--il-base-25);
+  --il-card-link-focus-color: var(--il-altgeld);
+  --il-card-heading-color: var(--il-orange);
+  --il-card-heading-link-focus-color: var(--il-blue);
+  --il-card-hover-background: var(--il-blue);
+  --il-card-hover-color: white;
+  --il-card-hover-heading-color: var(--il-orange);
+}
+
+.il-theme-blue, .il-theme-blue-gradient {
+  --il-card-background: var(--il-blue);
+  --il-card-border-color: var(--il-blue);
+  --il-card-color: white;
+  --il-card-link-focus-color: var(--il-orange);
+  --il-card-heading-color: white;
+  --il-card-heading-link-focus-color: var(--il-orange);
+  --il-card-hover-background: white;
+  --il-card-hover-color: var(--il-base-25);
+  --il-card-hover-heading-color: var(--il-orange);
+}
+
+.il-theme-blue-gradient {
+  --il-card-background: var(--il-blue-gradient);
+  --il-card-link-focus-color: var(--il-arches-blue-lighter-2);
+  --il-card-heading-color: white;
+  --il-card-heading-link-focus-color: var(--il-arches-blue-lighter-2);
+}
+
+.il-theme-orange, .il-theme-orange-gradient {
+  --il-card-background: var(--il-orange);
+  --il-card-border-color: var(--il-orange);
+  --il-card-color: var(--il-blue);
+  --il-card-link-color: var(--il-blue);
+  --il-card-link-focus-color: var(--il-blue);
+  --il-card-link-focus-outline: 2px dotted var(--il-blue);
+  --il-card-heading-color: white;
+  --il-card-heading-link-focus-color: var(--il-blue);
+  --il-card-border-bottom-color: var(--il-blue);
+  --il-card-hover-background: white;
+  --il-card-hover-color: var(--il-base-25);
+  --il-card-hover-heading-color: var(--il-orange);
+}
+
+.il-theme-orange-gradient {
+  --il-card-background: var(--il-orange-gradient);
+  --il-card-border-color: var(--il-orange);
+  --il-card-color: var(--il-blue);
+}
+
