@@ -104,7 +104,7 @@ export default css`
   padding: 0;
   display: grid;
   grid-template-columns: auto 60px;
-  background-color: var(--il-cloud-1);
+  background-color: var(--il-storm-light-3);
   border-top: 1px solid #c0c0c0;
   text-align: left;
 }
@@ -114,7 +114,7 @@ export default css`
   color: var(--il-blue);
   padding: 6px 20px;
   display: block;
-  border: solid 2px var(--il-cloud-1);
+  border: solid 2px var(--il-storm-light-3);
   width: 100%;
   font: 600 20px/28px var(--il-source-sans);
 }

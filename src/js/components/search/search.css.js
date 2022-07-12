@@ -6,13 +6,13 @@ form {
   height: 40px;
   grid-template-columns: auto 60px;
   grid-gap: 2px;
-  border: 2px solid var(--il-cloud-3);
-  background-color: var(--il-cloud-3);
+  border: 2px solid var(--il-storm-light-2);
+  background-color: var(--il-storm-light-2);
   margin-left: 10px;
   border-radius: 5px;
 }
 form.input-has-focus {
-  border-color: var(--il-industrial-blue);
+  border-color: var(--il-industrial);
 }
 label {
   display: none;
@@ -42,8 +42,8 @@ button {
   border-bottom-right-radius: 5px;
 }
 button:focus {
-  outline: 0px solid var(--il-industrial-blue);
-  box-shadow: 0 0 0 2px var(--il-industrial-blue);
+  outline: 0px solid var(--il-industrial);
+  box-shadow: 0 0 0 2px var(--il-industrial);
   color: var(--il-industrial-blue);
 }
 button svg {
