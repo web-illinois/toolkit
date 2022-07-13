@@ -9,6 +9,6 @@ export default css`
     list-style: none;
     margin: 0;
     padding: 0;
-    font: 400 14px/32px var(--il-source-sans);
+    font: 400 14px/32px var(--il-font-sans);
   }
 `;

@@ -7,7 +7,7 @@
     justify-content: flex-start;
     align-items: center;
     margin: -6px;
-    font: 700 18px/30px var(--il-source-sans);
+    font: 700 18px/30px var(--il-font-sans);
   }
   li {
     @include reset-list-item;

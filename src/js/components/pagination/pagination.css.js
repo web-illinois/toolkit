@@ -4,7 +4,7 @@ export default css`
 
 :host {
   color: var(--il-blue);
-  font: 1em/1em var(--il-source-sans);
+  font: 1em/1em var(--il-font-sans);
 }
 ul {
   margin: 0 1px -6px 0;
@@ -33,14 +33,14 @@ li.current {
   border-color: var(--il-blue);
 }
 li.ellipsis {
-  color: var(--il-cloud-3);
+  color: var(--il-storm-light-2);
   border-color: transparent;
 }
 a {
   font-weight: 500;
   text-decoration: none;
   color: var(--il-blue);
-  border-color: var(--il-cloud-3)
+  border-color: var(--il-storm-light-2)
 }
 a:hover, a:focus {
   background-color: #ececed;

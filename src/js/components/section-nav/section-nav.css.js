@@ -14,7 +14,7 @@ export default css`
 .header h2 {
   margin: 0;
   padding: 0;
-  font: 700 22px/56px var(--il-source-sans);
+  font: 700 22px/56px var(--il-font-sans);
   color: var(--il-blue);
   white-space: nowrap;
   overflow: hidden;

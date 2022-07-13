@@ -12,7 +12,7 @@ ul {
   padding-top: .375rem;
   flex-direction: row;
   font-size: 1rem;
-  background-color: var(--il-cloud-1);
+  background-color: var(--il-storm-light-3);
 }
 .compact ul {
   flex-direction: column;
