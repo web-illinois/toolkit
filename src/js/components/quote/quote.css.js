@@ -16,6 +16,7 @@ export default css`
     top: 55px;
     left: -90px;
     font-weight: 700;
+    font-style: normal;
   }
   
   p.il-quote::after {
@@ -27,5 +28,6 @@ export default css`
     bottom: 0;
     right: -90px;
     font-weight: 700;
+    font-style: normal;
   }
 `;

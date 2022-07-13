@@ -13,12 +13,12 @@ il-quote, .il-quote, .il-formatted il-quote, .il-formatted .il-quote {
     text-align: center;
     margin-top: .8888888889em;
     color: var(--il-orange);
-    font: 700 1.813rem/2.188rem var(--il-font-serif);
+    font: 700 1.813rem/2.188rem var(--il-source-sans);
   }
 
   p[slot="secondary"] {
     text-align: center;
     color: var(--il-blue);
-    font: 300 1.438rem/1.875rem var(--il-font-serif);
+    font: 300 1.438rem/1.875rem var(--il-source-sans);
   }
 }
