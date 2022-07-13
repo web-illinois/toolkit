@@ -5,7 +5,7 @@ il-quote, .il-quote, .il-formatted il-quote, .il-formatted .il-quote {
   margin: 50px auto;
   max-width: 700px;
   color: var(--il-blue);
-  font: 400 2.25rem/3.1875rem var(--il-source-sans);
+  font: 400 2.25rem/3.1875rem var(--il-font-serif);
   font-style: italic;
   text-align: center;
 
@@ -13,12 +13,12 @@ il-quote, .il-quote, .il-formatted il-quote, .il-formatted .il-quote {
     text-align: center;
     margin-top: .8888888889em;
     color: var(--il-orange);
-    font: 700 1.813rem/2.188rem var(--il-source-sans);
+    font: 700 1.813rem/2.188rem var(--il-font-serif);
   }
 
   p[slot="secondary"] {
     text-align: center;
     color: var(--il-blue);
-    font: 300 1.438rem/1.875rem var(--il-source-sans);
+    font: 300 1.438rem/1.875rem var(--il-font-serif);
   }
 }
