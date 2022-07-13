@@ -33,8 +33,12 @@ class ClickableCard extends LitElement {
   }
 
   firstUpdated() {
-    this.shadowRoot.querySelector('slot[name="header"]').addEventListener('slotchange', (e) => this.removeHiddenInformation(e));
-    this.shadowRoot.querySelector('slot[name="image"]').addEventListener('slotchange', (e) => this.removeNoPicture(e));
+    if (this.shadowRoot.querySelector('slot[name="header"]') !== null) {
+      this.shadowRoot.querySelector('slot[name="header"]').addEventListener('slotchange', (e) => this.removeHiddenInformation(e));
+    }
+    if (this.shadowRoot.querySelector('slot[name="image"]') !== null) {
+      this.shadowRoot.querySelector('slot[name="image"]').addEventListener('slotchange', (e) => this.removeNoPicture(e));
+    }
   }
 
   removeHiddenInformation(e) {
