@@ -5,7 +5,7 @@ export default css`
 .footer {
   font-size: 1.5rem;
   line-height: 1.5rem;
-  font-family: var(--il-source-sans);
+  font-family: var(--il-font-sans);
   background-color: var(--il-blue);
   color: white;
 }
@@ -21,7 +21,7 @@ export default css`
 }
 
 .links {
-  border-top: 5px solid var(--il-alma-mater);
+  border-top: 5px solid var(--il-industrial-dark);
 }
 
 

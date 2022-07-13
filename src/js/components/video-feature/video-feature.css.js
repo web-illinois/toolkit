@@ -32,7 +32,7 @@ export default css`
         background: var(--il-blue);
     }
     .videofeature .content.gray, .videofeature .background.gray  {
-        background: var(--il-gray-1);
+        background: var(--il-storm-light-3);
     }
     .videofeature .background {
         display: flex;

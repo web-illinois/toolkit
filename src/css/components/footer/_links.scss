@@ -38,26 +38,26 @@
 
   li {
     @include reset-list-item;
-    font: 1rem var(--il-source-sans);
+    font: 1rem var(--il-font-sans);
     padding: 0 35px 0 0;
     color: white;
   }
 
   button {
     padding: 4px 10px;
-    background: var(--il-alma-mater);
+    background: var(--il-industrial-dark);
     border: solid 2px white;
     color: white;
     position: relative;
     display: inline-block;
     border-radius: 5px;
-    font: 1rem var(--il-source-sans);
+    font: 1rem var(--il-font-sans);
     cursor: pointer;
 
     &:hover,
     &:focus {
       background: white;
-      color: var(--il-alma-mater);
+      color: var(--il-industrial-dark);
     }
   }
 
@@ -65,7 +65,7 @@
     @extend .il-link;
     display: block;
     padding: 5px;
-    font: 1rem var(--il-source-sans);
+    font: 1rem var(--il-font-sans);
     white-space: nowrap;
   }
 
@@ -77,7 +77,7 @@
 
   a.optanon-show-settings.il-cookie-settings {
     padding: 0 10px 0 36px !important;
-    background-color: var(--il-cloud-1) !important;
+    background-color: var(--il-storm-light-3) !important;
     color: var(--il-blue) !important;
     text-decoration: underline !important;
     background-image: none !important;

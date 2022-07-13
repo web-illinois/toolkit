@@ -1,6 +1,6 @@
 
 .il-breadcrumbs {
-  font-family: var(--il-source-sans);
+  font-family: var(--il-font-sans);
   font-size: 17px;
   letter-spacing: .25px;
   text-transform: uppercase;
@@ -56,11 +56,11 @@
     text-align: center;
     margin: 1em auto 0;
     max-width: var(--il-content-max-width);
-    font: 900 27px var(--il-source-sans);
+    font: 900 27px var(--il-font-sans);
   }
 
   &--poster h1 {
-    font: normal 32px var(--il-fjalla-one);
+    font: normal 32px var(--il-font-condensed);
     text-transform: uppercase;
   }
 
