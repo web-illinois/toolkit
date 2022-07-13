@@ -9,7 +9,7 @@ export default css`
 ::slotted(a) {
   display: block;
   padding: 10px 20px;
-  font: 700 16px/18px var(--il-source-sans);
+  font: 700 16px/18px var(--il-font-sans);
   color: inherit; 
   text-decoration: none;
 }
@@ -37,7 +37,7 @@ export default css`
 .compact ::slotted(a) {
   text-decoration: none;
   color: var(--il-blue);
-  font: 600 20px/28px var(--il-source-sans);
+  font: 600 20px/28px var(--il-font-sans);
 }
 .compact ::slotted(a:hover),
 .compact ::slotted(a:focus) {

@@ -15,7 +15,7 @@ il-nav:not([compact]) il-nav-section .il-subnav {
     @include reset-link;
     display: block;
     padding: 11px 5px 8px 5px;
-    font: 700 rem(16px)/rem(18px) var(--il-source-sans);
+    font: 700 rem(16px)/rem(18px) var(--il-font-sans);
     color: var(--il-blue);
     font-weight: normal;
 
@@ -40,7 +40,7 @@ il-nav[compact] il-nav-section .il-subnav {
   a {
     @include reset-link;
     color: var(--il-blue);
-    font: 600 rem(20px)/rem(28px) var(--il-source-sans);
+    font: 600 rem(20px)/rem(28px) var(--il-font-sans);
   }
 
   a:hover, a:focus {
@@ -69,7 +69,7 @@ il-nav[compact] il-nav-section .il-subnav {
 
   .il-navigation__top-level-link {
     color: var(--il-blue);
-    font: 700 16px/18px var(--il-source-sans);
+    font: 700 16px/18px var(--il-font-sans);
   }
 
   .il-navigation__toggle {

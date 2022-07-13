@@ -82,7 +82,7 @@ il-hero {
 
   h1 {
     @include reset-heading;
-    font: 700 36px var(--il-source-sans);
+    font: 700 36px var(--il-font-sans);
     line-height: 1;
     text-shadow: 2px 2px 7px rgba(0, 0, 0, 0.45);
     text-align: inherit !important;

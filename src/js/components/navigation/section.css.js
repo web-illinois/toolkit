@@ -34,7 +34,7 @@ export default css`
   display: block;
   position: relative;
   padding: 10px 40px 10px 20px;
-  font: 700 16px/18px var(--il-source-sans);
+  font: 700 16px/18px var(--il-font-sans);
   color: inherit; 
   text-decoration: none;
   height: 100%;
@@ -116,7 +116,7 @@ export default css`
   display: block;
   border: solid 2px var(--il-storm-light-3);
   width: 100%;
-  font: 600 20px/28px var(--il-source-sans);
+  font: 600 20px/28px var(--il-font-sans);
 }
 .compact .heading ::slotted(a:hover),
 .compact .heading ::slotted(a:focus) {

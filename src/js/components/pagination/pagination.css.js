@@ -4,7 +4,7 @@ export default css`
 
 :host {
   color: var(--il-blue);
-  font: 1em/1em var(--il-source-sans);
+  font: 1em/1em var(--il-font-sans);
 }
 ul {
   margin: 0 1px -6px 0;

@@ -4,7 +4,7 @@ export default css`
 
 .header {
   position: relative;
-  font-family: var(--il-source-sans);
+  font-family: var(--il-font-sans);
 }
 
 .campus {
@@ -96,7 +96,7 @@ export default css`
   border-radius: 4px;
   background-color: var(--il-industrial-dark);
   color: white;
-  font: 700 20px/44px var(--il-source-sans);
+  font: 700 20px/44px var(--il-font-sans);
   text-transform: uppercase;
 }
 .header--compact .menu-button button:focus, .header--compact .menu-button button:hover {
