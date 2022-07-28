@@ -33,14 +33,14 @@ li.current {
   border-color: var(--il-blue);
 }
 li.ellipsis {
-  color: var(--il-storm-light-2);
+  color: var(--il-cloud-3);
   border-color: transparent;
 }
 a {
   font-weight: 500;
   text-decoration: none;
   color: var(--il-blue);
-  border-color: var(--il-storm-light-2)
+  border-color: var(--il-cloud-3)
 }
 a:hover, a:focus {
   background-color: #ececed;

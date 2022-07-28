@@ -28,7 +28,7 @@ export default css`
 
 .header--full .header__main-outer {
   border-top: 7px solid var(--il-orange);
-  border-bottom: 2px solid var(--il-storm-light-3);
+  border-bottom: 2px solid var(--il-cloud-1);
   background-color: white;
   padding: 0 var(--il-content-margin);
 }
@@ -62,7 +62,7 @@ export default css`
   padding: 20px 0;
 }
 .header--full .navigation {
-  background-color: var(--il-storm-light-3);
+  background-color: var(--il-cloud-1);
   padding: 0 var(--il-content-margin);
 }
 .header--full .navigation__inner {
@@ -94,7 +94,7 @@ export default css`
   padding: 0 20px 0 40px;
   border: 0;
   border-radius: 4px;
-  background-color: var(--il-industrial-dark);
+  background-color: var(--il-alma-mater);
   color: white;
   font: 700 20px/44px var(--il-font-sans);
   text-transform: uppercase;
@@ -105,7 +105,7 @@ export default css`
   border: none;
 }
 .header--compact.header--menu-visible .menu-button button {
-  background-color: var(--il-industrial-dark);
+  background-color: var(--il-alma-mater-1);
 }
 .header--compact.header--menu-visible .menu-button button:focus,
 .header--compact.header--menu-visible .menu-button button:hover {
