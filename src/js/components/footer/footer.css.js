@@ -21,7 +21,7 @@ export default css`
 }
 
 .links {
-  border-top: 5px solid var(--il-industrial-dark);
+  border-top: 5px solid var(--il-alma-mater);
 }
 
 

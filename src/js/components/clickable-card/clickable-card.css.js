@@ -20,7 +20,7 @@ export default css`
     article.highlight {
       color: var(--il-clickable-card-color-hover);
       background: var(--il-clickable-card-background-hover);
-      border-bottom: 3px solid var(--il-industrial);
+      border-bottom: 3px solid var(--il-industrial-blue-1);
       cursor: pointer;
     }
     img {

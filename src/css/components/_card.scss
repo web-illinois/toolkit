@@ -12,7 +12,7 @@ il-card, .il-card, .il-formatted il-card, .il-formatted .il-card {
   margin: 0;
   padding: 40px 30px 30px;
   text-align: center;
-  font: 400 1.125rem/1.667em var(--il-font-sans); // 18px/30px
+  font: 400 1.125rem/1.667em var(--il-source-sans); // 18px/30px
   border: 1px solid var(--il-card-border-color, var(--il-gray-2));
 
   p {
@@ -33,7 +33,7 @@ il-card, .il-card, .il-formatted il-card, .il-formatted .il-card {
     text-align: center;
     margin: 1rem 0 0;
     padding: 0;
-    font: 700 1.39em/1em var(--il-font-sans); // 25px
+    font: 700 1.39em/1em var(--il-source-sans); // 25px
     color: var(--il-card-heading-color);
 
     &:first-child {
@@ -168,9 +168,9 @@ il-card[link], .il-formatted il-card[link] {
 
 .il-theme-blue-gradient {
   --il-card-background: var(--il-blue-gradient);
-  --il-card-link-focus-color: var(--il-industrial-light-2);
+  --il-card-link-focus-color: var(--il-arches-blue-lighter-2);
   --il-card-heading-color: white;
-  --il-card-heading-link-focus-color: var(--il-industrial-light-2);
+  --il-card-heading-link-focus-color: var(--il-arches-blue-lighter-2);
 }
 
 .il-theme-orange, .il-theme-orange-gradient {
