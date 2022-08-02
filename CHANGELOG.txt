@@ -1,4 +1,4 @@
-VERSION 2.10.1 - Released August 2, 2022
+VERSION 2.10.0 - Released August 2, 2022
 
 * New quote and lede components
 
