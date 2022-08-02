@@ -3,7 +3,7 @@
   flex-direction: column;
   flex-wrap: nowrap;
   gap: 50px;
-  font: 18px var(--il-source-sans);
+  font: 18px var(--il-font-sans);
   padding-top: 61px;
   color: white;
 
@@ -13,7 +13,7 @@
     @include reset-heading;
     padding: 0 0 10px 0;
     margin-bottom: 6px;
-    font: bold 20px var(--il-source-sans);
+    font: bold 20px var(--il-font-sans);
     border-bottom: 1px solid white;
   }
 

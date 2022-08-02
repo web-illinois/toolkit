@@ -52,7 +52,7 @@ th {
 thead th {
   background-color: var(--il-industrial-blue);
   color: white;
-  font-family: var(--il-source-sans);
+  font-family: var(--il-font-sans);
 }
 th:first-of-type {
   border-left: 1px solid var(--il-gray-2);
@@ -63,7 +63,7 @@ th:last-of-type {
 thead th {
   background-color: var(--il-industrial-blue);
   color: white;
-  font-family: var(--il-source-sans);
+  font-family: var(--il-font-sans);
 }
 tbody th {
   color: var(--il-blue);

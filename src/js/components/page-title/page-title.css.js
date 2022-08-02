@@ -35,7 +35,7 @@ export default css`
   z-index: 100;
   color: var(--il-page-title-text-color);
   text-align: left;
-  font: 700 2.5em var(--il-source-sans);
+  font: 700 2.5em var(--il-font-sans);
   padding: 16px 14px 20px;
 }
 .text::after {

@@ -21,7 +21,7 @@ input {
   margin: 0;
   padding: 5px;
   border: 0;
-  font: 16px/18px var(--il-source-sans);
+  font: 16px/18px var(--il-font-sans);
   background-color: white;
   border-top-left-radius: 5px;
   border-bottom-left-radius: 5px;
