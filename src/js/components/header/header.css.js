@@ -79,6 +79,9 @@ export default css`
   align-items: center;
   border-bottom: 2px solid var(--il-cloud-1);
 }
+.header--compact.header--no-menu .header__main {
+  grid-template-columns: 1fr;
+}
 .header--compact .header__main .campus {
   grid-column: 1 / span 2;
 }
@@ -86,6 +89,9 @@ export default css`
   padding: 20px 0;
   margin-left: 30px;
   justify-self: flex-end;
+}
+.header--compact.header--no-menu .menu-button {
+  display: none;
 }
 .header--compact .menu-button button {
   display: inline-block;
