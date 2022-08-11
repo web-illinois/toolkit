@@ -38,6 +38,16 @@ export default css`
   font: 700 2.5em var(--il-font-sans);
   padding: 16px 14px 20px;
 }
+@media (max-width: 800px) {
+  .text {
+    font-size: 2em;
+  }
+}
+@media (max-width: 600px) {
+  .text {
+    font-size: 1.5em;
+  }
+}
 .text::after {
   content: "";
   position: absolute;

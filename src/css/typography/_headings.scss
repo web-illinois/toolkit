@@ -2,51 +2,75 @@ h1, h2, h3, h4, h5, h6 {
   color: var(--il-heading-color);
   font-family: var(--il-source-sans);
   text-align: left;
-}
+  margin: var(--il-heading-margin-top, 1.25em) 0 0;
 
-$h1-margin-top: 50px;
-$h2-margin-top: 45px;
-$h3-margin-top: 41px;
-$h4-margin-top: 39px;
-$h5-margin-top: 35px;
-$h6-margin-top: 30px;
+  box-sizing: border-box;
+  font-weight: 600;
+  padding: 0;
 
-h1 {
-  @include block-formatting($size: 40px, $line-height: 46px, $weight: 700, $margin-top: $h1-margin-top);
-}
-h2 {
-  @include block-formatting($size: 35px, $line-height: 43px, $weight: 600, $margin-top: $h2-margin-top);
-}
-h3 {
-  @include block-formatting($size: 29px, $line-height: 35px, $weight: 600, $margin-top: $h3-margin-top);
-}
-h4 {
-  @include block-formatting($size: 24px, $line-height: 29px, $weight: 600, $margin-top: $h4-margin-top);
-}
-h5 {
-  @include block-formatting($size: 21px, $line-height: 28px, $weight: 700, $margin-top: $h5-margin-top);
-}
-h6 {
-  @include block-formatting($size: 18px, $line-height: 22px, $weight: 700, $margin-top: $h6-margin-top);
+  &:first-child {
+    margin-top: 0;
+  }
 }
 
 &.il-wp-block-editor-content, .il-wp-block-editor-content {
-  h1:first-child {
-    margin-top: $h1-margin-top;
+  h1, h2, h3, h4, h5, h6 {
+    &:first-child {
+      margin-top: var(--il-heading-margin-top);
+    }
   }
-  h2:first-child {
-    margin-top: $h2-margin-top;
+}
+
+h1 {
+  font-size: em(40px);
+  font-weight: 700;
+  line-height: 1.15em;
+  --il-heading-margin-top: 1.25em;
+}
+h2 {
+  font-size: em(35px);
+  line-height: 1.23em;
+  --il-heading-margin-top: 1.286em;
+}
+h3 {
+  font-size: em(29px);
+  line-height: 1.2em;
+  --il-heading-margin-top: 1.4138em;
+}
+h4 {
+  font-size: em(24px);
+  line-height: 1.2em;
+  --il-heading-margin-top: 1.625em;
+}
+h5 {
+  font-size: em(21px);
+  font-weight: 700;
+  line-height: 1.333em;
+  --il-heading-margin-top: 1.6666em;
+}
+h6 {
+  font-size: em(18px);
+  font-weight: 700;
+  line-height: 1.222em;
+  --il-heading-margin-top: 1.6666em;
+}
+@media (max-width: 600px) {
+  h1 {
+    font-size: em(32.44px);
   }
-  h3:first-child {
-    margin-top: $h3-margin-top;
+  h2 {
+    font-size: em(28.83px);
   }
-  h4:first-child {
-    margin-top: $h4-margin-top;
+  h3 {
+    font-size: em(25.63px);
   }
-  h5:first-child {
-    margin-top: $h5-margin-top;
+  h4 {
+    font-size: em(22.78px);
   }
-  h6:first-child {
-    margin-top: $h6-margin-top;
+  h5 {
+    font-size: em(20.25px);
+  }
+  h6 {
+    font-size: em(18px);
   }
 }
