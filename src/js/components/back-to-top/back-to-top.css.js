@@ -36,9 +36,9 @@ svg {
 export default css`
 
 :host {
-  bottom: 40px;
+  bottom: var(--il-back-to-top-position-y);
   position: fixed;
-  right: 40px;
+  right: var(--il-back-to-top-position-x);
   z-index: 2;
 }
 button {
