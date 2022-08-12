@@ -19,21 +19,29 @@ export default css`
         --il-image-feature-min-height: 10vw;
     }
     .imagefeature .background {
-        padding: 1.875rem 1.25rem;
+        padding: 0;
+        position: relative;
         background-position: center; 
         background-repeat: no-repeat; 
         background-size: cover;
-        min-height: 250px;
+        min-height: 310px;
         color: transparent;
+        display: flex;
+        flex-grow: var(--il-image-feature-flex-grow-image);
+        flex-shrink: 1;
+        flex-basis: 0;
     }
     .imagefeature .content {
-        padding: 1.875rem 1.25rem;
         text-align: left;
         color: var(--il-image-feature-color);
         background: var(--il-image-feature-background);
         flex-grow: var(--il-image-feature-flex-grow-content);
         flex-shrink: 1;
         flex-basis: 0;
+        height: 100%;
+    }
+    .imagefeature .content .content-inner {
+        padding: 1.875rem 1.25rem;
     }
     .imagefeature .content.orange {
         color: white;
@@ -47,12 +55,6 @@ export default css`
     .imagefeature .content.solid {
         color: white;
         background: var(--il-blue);
-    }
-    .imagefeature .background {
-        display: flex;
-        flex-grow: var(--il-image-feature-flex-grow-image);
-        flex-shrink: 1;
-        flex-basis: 0;
     }
     .il-image-feature-with-overlay {
         position: relative;
@@ -110,25 +112,18 @@ export default css`
         }
         .imagefeature .background {
             min-height: initial;
-            padding: 3rem 4rem;
         }
-        .imagefeature .content {
+        .imagefeature .content .content-inner {
             padding: 1.875rem;
         }
     }
     @media (min-width: 993px) {
-        .imagefeature .content {
-            padding: 3rem 2.2vw;
-        }
-        .imagefeature .background {
+        .imagefeature .content .content-inner {
             padding: 3rem 2.2vw;
         }
     }
     @media (min-width: 1450px) {
-        .imagefeature .content {
-            padding: 3rem 6rem;
-        }
-        .imagefeature .background {
+        .imagefeature .content .content-inner {
             padding: 3rem 6rem;
         }
     }
