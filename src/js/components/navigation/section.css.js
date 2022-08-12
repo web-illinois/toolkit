@@ -144,6 +144,8 @@ export default css`
 }
 .compact .heading .toggle {
   height: 100%;
+  display: block;
+  align-self: center;
 }
 
 .compact .heading button svg {
