@@ -56,9 +56,8 @@ class BackToTop extends LitElement {
   }
 
   getTopOfPage() {
-    if (this.target) {
-      const elem = document.getElementById(this.target);
-      return elem.getBoundingClientRect().top + document.documentElement.scrollTop
+    if (this.target && document.getElementById(this.target)) {
+      return document.getElementById(this.target).getBoundingClientRect().top + document.documentElement.scrollTop
     }
     return 0;
   }
