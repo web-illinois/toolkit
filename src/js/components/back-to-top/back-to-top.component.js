@@ -2,12 +2,22 @@ import { LitElement, html } from 'lit';
 import styles from './back-to-top.css';
 
 class BackToTop extends LitElement {
+
+  static get properties() {
+    return {
+      alt: { type: String, attribute: true },
+      target: { type: String, attribute: true }
+    };
+  }
+
   static get styles() {
     return styles;
   }
 
   constructor() {
     super();
+    this.alt = 'Back to top';
+    this.target = null;
     this.expectedPositionAfterScroll = null;
     this.continueScroll = this.continueScroll.bind(this);
     this.handleScroll = this.handleScroll.bind(this);
@@ -38,11 +48,18 @@ class BackToTop extends LitElement {
   }
 
   getNextScrollPosition() {
-    return Math.max(0, this.getScrollPosition() - 50);
+    return Math.max(this.getTopOfPage(), this.getScrollPosition() - 50);
   }
 
   getScrollPosition() {
     return window.pageYOffset || document.documentElement.scrollTop;
+  }
+
+  getTopOfPage() {
+    if (this.target && document.getElementById(this.target)) {
+      return document.getElementById(this.target).getBoundingClientRect().top + document.documentElement.scrollTop
+    }
+    return 0;
   }
 
   handleClick(evt) {
@@ -65,11 +82,11 @@ class BackToTop extends LitElement {
   }
 
   isNearTopOfPage() {
-    return this.getScrollPosition() < 100;
+    return this.getScrollPosition() < (this.getTopOfPage() + 100);
   }
 
   isTopOfPage() {
-    return this.getScrollPosition() <= 0;
+    return this.getScrollPosition() <= this.getTopOfPage();
   }
 
   jumpToFold() {
@@ -98,23 +115,7 @@ class BackToTop extends LitElement {
 
   render() {
     return html`<button @click="${this.handleClick}" class="${this.isTopOfPage() ? 'top-of-page' : ''}"
-    aria-label="Back to the top of the page">${this.renderIcon()}</button>`;
-  }
-
-  __render() {
-    return html`
-        <button @click="${this.handleClick}" class="${this.isTopOfPage() ? 'top-of-page' : ''}"
-          aria-label="Back to the top of the page">
-          <svg width="33" height="21" xmlns:xlink="http://www.w3.org/1999/xlink">
-            <defs>
-              <path
-                d="M16.5 21c-.844 0-1.69-.343-2.333-1.025l-13.2-14c-1.29-1.368-1.29-3.58 0-4.949 1.291-1.368 3.377-1.368 4.667 0L16.54 12.593l10.867-11.13c1.316-1.34 3.398-1.301 4.666.088 1.267 1.39 1.23 3.609-.08 4.95l-13.2 13.516A3.194 3.194 0 0116.5 21"
-                id="a" />
-            </defs>
-            <use fill="#FFF" xlink:href="#a" transform="rotate(-180 16.5 10.5)" fill-rule="evenodd" />
-          </svg>
-        </button>
-    `;
+    aria-label=${this.alt}>${this.renderIcon()}</button>`;
   }
 }
 
