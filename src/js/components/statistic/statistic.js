@@ -74,7 +74,7 @@ class Statistic extends LitElement {
 
   render() {
     this.idInfo = 'statistic-' + (((1 + Math.random()) * 0x10000000) | 0);
-    const whiteValidColors = [ '#ff552e', '#13294b', '#1d58a7', '#009fd4', '#31717b', '#005677'];
+    const whiteValidColors = [ '#ff5f05', '#13294b', '#1d58a7', '#009fd4', '#31717b', '#005677'];
     const grayValidColors = [ '#13294b', '#1d58a7', '#31717b', '#005677'];
     const blueValidColors = [ 'white', '#7fc3e1', '#f09378', '#fed094', '#ffefda'];
     const blueGradientValidColors = [ 'white', '#7fc3e1', '#fed094', '#ffefda'];
@@ -93,7 +93,7 @@ class Statistic extends LitElement {
       this.style.setProperty('--il-statistic-heading-color', 'white');
       this.style.setProperty('--il-statistic-text-color', 'white');
     }
-    if (background === '#ff552e' && !orangeValidColors.includes(heading)) {
+    if (background === '#ff5f05' && !orangeValidColors.includes(heading)) {
       this.style.setProperty('--il-statistic-heading-color', 'white');
       this.style.setProperty('--il-statistic-text-color', 'white');
     }
