@@ -1,3 +1,14 @@
+VERSION 2.11.0 - Released August 15, 2022
+
+* Use new official orange color
+* Deprecated the src attribute in the image feature
+* New attributes and CSS variables for back to top component
+* Header menu button is not visible on small screens when no menu content is present
+* Use relative sizing for headings
+* Bug fixes
+
+----
+
 VERSION 2.10.0 - Released August 2, 2022
 
 * New quote and lede components
