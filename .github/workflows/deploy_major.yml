@@ -35,7 +35,7 @@ jobs:
     - name: Deploy toolbox to CDN BRAND S3 bucket for major version (DEPRECIATED)
       run: aws s3 sync ./dist/ s3://cdn.brand.illinois.edu/toolkit/$MAJORVERSION --delete --acl bucket-owner-full-control
     - name: Build examples for major version (DEPRECIATED)
-      run: npm run-script create-test-html -- --pathprefix='/toolkit/$MAJORVERSION/examples/'
+      run: npm run-script create-test-html -- --pathprefix=toolkit/$MAJORVERSION/examples/
     - name: Deploy examples to CDN BRAND S3 bucket for major version (DEPRECIATED)
       run: aws s3 sync ./var/full-site-deploy/ s3://cdn.brand.illinois.edu/toolkit/$MAJORVERSION/examples --delete --acl bucket-owner-full-control
     - name: Deploy static images in examples to CDN BRAND S3 bucket for major version (DEPRECIATED)
@@ -53,7 +53,7 @@ jobs:
     - name: Deploy toolbox to S3 bucket for major version
       run: aws s3 sync ./dist/ s3://cdn.toolkit.illinois.edu/content/$MAJORVERSION --delete --acl bucket-owner-full-control
     - name: Build examples for major version
-      run: npm run-script create-test-html -- --pathprefix='/$MAJORVERSION/examples/'
+      run: npm run-script create-test-html -- --pathprefix=$MAJORVERSION/examples/
     - name: Deploy examples to S3 bucket for major version
       run: aws s3 sync ./var/full-site-deploy/ s3://cdn.toolkit.illinois.edu/content/$MAJORVERSION/examples --delete --acl bucket-owner-full-control
     - name: Deploy static images in examples to S3 bucket for major version
