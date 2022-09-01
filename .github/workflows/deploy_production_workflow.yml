@@ -38,7 +38,7 @@ jobs:
     - name: Deploy toolbox to CDN BRAND S3 bucket for version (DEPRECIATED)
       run: aws s3 sync ./dist/ s3://cdn.brand.illinois.edu/toolkit/$VERSION --delete --acl bucket-owner-full-control
     - name: Build examples for version (DEPRECIATED)
-      run: npm run-script create-test-html -- --pathprefix='/toolkit/$VERSION/examples/'
+      run: npm run-script create-test-html -- --pathprefix=toolkit/$VERSION/examples/
     - name: Deploy examples to CDN BRAND S3 bucket for version (DEPRECIATED)
       run: aws s3 sync ./var/full-site-deploy/ s3://cdn.brand.illinois.edu/toolkit/$VERSION/examples --delete --acl bucket-owner-full-control
     - name: Deploy static images in examples to CDN BRAND S3 bucket for version (DEPRECIATED)
@@ -56,7 +56,7 @@ jobs:
     - name: Deploy toolbox to S3 bucket for version
       run: aws s3 sync ./dist/ s3://cdn.toolkit.illinois.edu/content/$VERSION --delete --acl bucket-owner-full-control
     - name: Build examples for version
-      run: npm run-script create-test-html -- --pathprefix='/$VERSION/examples/'
+      run: npm run-script create-test-html -- --pathprefix=$VERSION/examples/
     - name: Deploy examples to S3 bucket for version
       run: aws s3 sync ./var/full-site-deploy/ s3://cdn.toolkit.illinois.edu/content/$VERSION/examples --delete --acl bucket-owner-full-control
     - name: Deploy static images in examples to S3 bucket for version
