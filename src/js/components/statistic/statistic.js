@@ -74,34 +74,6 @@ class Statistic extends LitElement {
 
   render() {
     this.idInfo = 'statistic-' + (((1 + Math.random()) * 0x10000000) | 0);
-    const whiteValidColors = [ '#ff552e', '#13294b', '#1d58a7', '#009fd4', '#31717b', '#005677'];
-    const grayValidColors = [ '#13294b', '#1d58a7', '#31717b', '#005677'];
-    const blueValidColors = [ 'white', '#7fc3e1', '#f09378', '#fed094', '#ffefda'];
-    const blueGradientValidColors = [ 'white', '#7fc3e1', '#fed094', '#ffefda'];
-    const orangeValidColors = [ 'white', '#000033'];
-    let background = getComputedStyle(this).getPropertyValue('--il-background-color').trim();
-    let heading = getComputedStyle(this).getPropertyValue('--il-statistic-heading-color').trim();
-    if (background === 'white' && !whiteValidColors.includes(heading)) {
-      this.style.setProperty('--il-statistic-heading-color', 'var(--il-blue)');
-      this.style.setProperty('--il-statistic-text-color', 'var(--il-blue)');
-    }
-    if (background === '#f4f4f4' && !grayValidColors.includes(heading)) {
-      this.style.setProperty('--il-statistic-heading-color', 'var(--il-blue)');
-      this.style.setProperty('--il-statistic-text-color', 'var(--il-blue)');
-    }
-    if (background === '#13294b' && !blueValidColors.includes(heading)) {
-      this.style.setProperty('--il-statistic-heading-color', 'white');
-      this.style.setProperty('--il-statistic-text-color', 'white');
-    }
-    if (background === '#ff552e' && !orangeValidColors.includes(heading)) {
-      this.style.setProperty('--il-statistic-heading-color', 'white');
-      this.style.setProperty('--il-statistic-text-color', 'white');
-    }
-    if (background === 'linear-gradient(180deg,  #1d58a7 0%,  #13294b 100%)' && !blueGradientValidColors.includes(heading)) 
-    {
-      this.style.setProperty('--il-statistic-heading-color', 'white');
-      this.style.setProperty('--il-statistic-text-color', 'white');
-    }
     return html`
     <p class="il-statistic" id='${this.idInfo}'>
         <span class="text intro"><slot name="top"></slot></span>
