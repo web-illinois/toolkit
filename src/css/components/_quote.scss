@@ -22,3 +22,20 @@ il-quote, .il-quote, .il-formatted il-quote, .il-formatted .il-quote {
     font: 300 1.438rem/1.875rem var(--il-source-sans);
   }
 }
+
+@media only screen and (max-width: 792px) {
+  il-quote, .il-quote, .il-formatted il-quote, .il-formatted .il-quote {
+    font-size: 1.813rem;
+    line-height: 2.188rem;
+
+    p[slot="attributed"] {
+      font-size: 1.813rem;
+      line-height: 2.188rem;
+    }
+  
+    p[slot="secondary"] {
+      font-size: 1.438rem;
+      line-height: 1.875rem;
+    }
+  }
+}
