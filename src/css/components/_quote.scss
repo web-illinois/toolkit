@@ -29,13 +29,13 @@ il-quote, .il-quote, .il-formatted il-quote, .il-formatted .il-quote {
     line-height: 2.188rem;
 
     p[slot="attributed"] {
-      font-size: 1.813rem;
-      line-height: 2.188rem;
+      font-size: 1.5rem;
+      line-height: 1.875rem;
     }
   
     p[slot="secondary"] {
-      font-size: 1.438rem;
-      line-height: 1.875rem;
+      font-size: 1.188rem;
+      line-height: 1.563rem;
     }
   }
 }
