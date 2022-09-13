@@ -60,9 +60,9 @@ class SectionNavigation extends LitElement {
     const mode = this.compact ? 'compact' : 'full';
     const expanded = this.expanded ? 'expanded' : 'collapsed';
     return html`
-      <nav class=${mode + ' ' + expanded}>
+      <nav aria-labelledby="section-nav-label" class=${mode + ' ' + expanded}>
         <div class="header">
-          <h2>In this section</h2>
+          <h2 id="section-nav-label">In this section</h2>
           <button class="il-section-nav__toggle" @click=${this.handleToggleClick}>
             Toggle section navigation menu
             <svg aria-label="" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" role="presentation">
