@@ -56,7 +56,8 @@ il-image-feature.il-overlay img, .il-overlay il-image-feature img {
   color: var(--il-base-25);
 }
 
-.il-align-right il-image-feature, il-image-feature.il-align-right {
+.il-align-right il-image-feature, il-image-feature.il-align-right,
+.il-float-right il-image-feature, il-image-feature.il-float-right {
   --il-image-feature-with-overlay-align: right;
 }
 

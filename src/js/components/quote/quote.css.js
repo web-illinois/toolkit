@@ -30,4 +30,16 @@ export default css`
     font-weight: 700;
     font-style: normal;
   }
+
+  @media only screen and (max-width: 792px) {
+    p.il-quote::before {
+      font-size: 6.25rem;
+      top: 45px;
+      left: -70px;
+    }
+    p.il-quote::after {
+      font-size: 6.25rem;
+      right: -70px;
+    }
+  }
 `;
