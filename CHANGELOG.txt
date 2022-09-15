@@ -1,3 +1,9 @@
+VERSION 2.12.0 - Released September 14, 2022
+
+Information about this release can be found at https://github.com/web-illinois/toolkit/milestone/11?closed=1
+
+----
+
 VERSION 2.11.0 - Released August 15, 2022
 
 * Use new official orange color
