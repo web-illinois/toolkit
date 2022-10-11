@@ -18,6 +18,7 @@ export default css`
 
 .campus svg {
   fill: var(--il-blue);
+  transition: fill .3s;
 }
 
 .campus a:focus svg, .campus a:hover svg {
