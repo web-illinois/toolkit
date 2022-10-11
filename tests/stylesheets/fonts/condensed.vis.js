@@ -3,8 +3,8 @@ const util = require('../../tests.util');
 module.exports = (viewports) => {
   return [
     {
-      'label': 'fonts-fjalla-one',
-      'url': util.url('/stylesheets/fonts/fjalla-one/'),
+      'label': 'fonts-condensed',
+      'url': util.url('/stylesheets/fonts/condensed/'),
       'viewports': [viewports.desktop]
     }
   ];

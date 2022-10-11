@@ -3,7 +3,7 @@ const util = require('../../tests.util');
 module.exports = (viewports) => {
   return [
     {
-      'label': 'fonts-source-serif-fixed',
+      'label': 'fonts-open-sans-condensed',
       'url': util.testUrl(__filename),
       'viewports': [viewports.desktop]
     }
