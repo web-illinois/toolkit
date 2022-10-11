@@ -27,6 +27,10 @@ il-card, .il-card, .il-formatted il-card, .il-formatted .il-card {
       color: var(--il-card-link-focus-color, var(--il-card-link-color));
       outline: var(--il-card-link-focus-outline);
     }
+
+    &.il-button:focus, &.il-button:hover {
+      color: var(--il-focused-button-foreground-color);
+    }
   }
 
   h2, h3, h4, h5, h6 {
