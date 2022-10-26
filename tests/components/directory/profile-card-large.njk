@@ -1,0 +1,39 @@
+---
+title: Profile cards (large)
+group: "Components: Directory"
+layout: layouts/page.njk
+---
+
+<style>
+    #grid {
+      padding: 2em;
+      display: flex;
+      gap: 40px;
+      flex-wrap: wrap;
+    }
+    il-profile-card {
+      width: 300px;
+    }
+</style>
+
+<div id="grid">
+
+    {% for i in range(1, 5) %}
+    <il-profile-card>
+
+        <img src="{{ "/_assets/images/stock/jonas-kakaroto-mjRwhvqEC0U-unsplash.jpg" | url }}" alt="">
+
+        <h2><a href="#">Sheeba Rani Arnold Anteraper</a></h2>
+
+        <p>Director of Clinical Imaging Research Stephens Family Clinical Research Institute Carle Foundation Hospital</p>
+
+        <p class="department">Very Very Very Long Department Name</p>
+
+        <p class="phone"><a href="#">000-000-0000</a></p>
+
+        <p class="email"><a href="#">WWWWWWWWWW@illinois.edu</a></p>
+
+    </il-profile-card>
+    {% endfor %}
+
+</div>

@@ -60,7 +60,7 @@ il-profile {
     p {
       @include reset-spacing;
       margin: 1em 0 0;
-      font: normal normal 600 1em/1.25 Source Sans Pro;
+      font: 600 1em/1.25 var(--il-font-sans);
       letter-spacing: 0;
       color: var(--il-blue);
     }
@@ -74,7 +74,7 @@ il-profile {
   section[slot="contact"] {
     display: block;
     border-bottom: 6px solid var(--il-orange);
-    box-shadow: -2px 3px 6px #00000080;
+    box-shadow: -2px 3px 6px rgba(0, 0, 0, .5);
     margin-bottom: 0;
     padding: 1.33em 1.33em 2.66em;
     font-size: 1.125rem;
@@ -99,6 +99,58 @@ il-profile {
       &:first-child {
         margin-top: -1.5em;
       }
+    }
+  }
+}
+il-profile-card {
+  box-sizing: border-box;
+  position: relative;
+  border-bottom: 6px solid var(--il-orange);
+  box-shadow: -2px 3px 6px rgba(0, 0, 0, .5);
+  padding: 12px;
+  font: 400 1.125rem/1.5 var(--il-font-sans);
+
+  h2 {
+    @include reset-heading;
+    font-weight: 700;
+    font-size: 1em;
+    color: var(--il-blue);
+  }
+
+  p {
+    margin: 1em 0 0;
+    padding: 0;
+  }
+
+  .department {
+    font-weight: 300;
+    font-style: italic;
+  }
+
+  .phone, .email {
+    font-weight: 300;
+  }
+
+  .phone + .email {
+    margin-top: 0;
+  }
+
+  a {
+    color: var(--il-blue);
+    text-decoration: underline;
+
+    &:hover, &:focus {
+      color: var(--il-orange);
+    }
+  }
+
+  img {
+    display: block;
+    margin: 1em -12px;
+    max-width: calc(100% + 24px);
+
+    &:first-child {
+      margin-top: -12px;
     }
   }
 }
