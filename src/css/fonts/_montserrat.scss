@@ -465,3 +465,17 @@
   url('https://cdn.brand.illinois.edu/fonts/montserrat/montserrat-alt-900-italic.otf') format('opentype'),
   url('https://cdn.brand.illinois.edu/fonts/montserrat/montserrat-alt-900-italic.ttf') format('truetype');
 }
+
+@font-face {
+  font-family: 'Montserrat Variable';
+  font-style: normal;
+  font-stretch: normal;
+  src: url('https://cdn.brand.illinois.edu/fonts/montserrat/montserrat-var.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Montserrat Variable';
+  font-style: italic;
+  font-stretch: normal;
+  src: url('https://cdn.brand.illinois.edu/fonts/montserrat/montserrat-var-italic.ttf') format('truetype');
+}
