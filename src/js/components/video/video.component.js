@@ -35,8 +35,9 @@ class VideoComponent extends LitElement {
     }
 
   render() {
-    let getAspectRatio = getComputedStyle(this).getPropertyValue('--il-video-aspect-ratio');
+    let getAspectRatio = getComputedStyle(this).getPropertyValue('--il-video-aspect-ratio').trim();
     let padding = '56.25%';
+    debugger;
     if (getAspectRatio == 'vertical') {
       padding = '177.78%';
     } else if (getAspectRatio == 'tv') {
