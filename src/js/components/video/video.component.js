@@ -35,21 +35,20 @@ class VideoComponent extends LitElement {
     }
 
   render() {
-    var getAspectRatio = getComputedStyle(this).getPropertyValue('--il-video-aspect-ratio');
+    let getAspectRatio = getComputedStyle(this).getPropertyValue('--il-video-aspect-ratio');
+    let padding = '56.25%';
     if (getAspectRatio == 'vertical') {
-      this.style.setProperty('--il-video-padding-bottom', '177.78%');
+      padding = '177.78%';
     } else if (getAspectRatio == 'tv') {
-      this.style.setProperty('--il-video-padding-bottom', '75%');
+      padding = '75%';
     } else if (getAspectRatio.endsWith('%')) {
-      this.style.setProperty('--il-video-padding-bottom', this.aspectratio);
+      padding = getAspectRatio;
     } else if (getAspectRatio.includes('/')) {
-      var items = getAspectRatio.split('/');
-      this.style.setProperty('--il-video-padding-bottom', (parseInt(items[1].replace("'", "")))/(parseInt(items[0].replace("'", ""))) * 100 + '%');
-    } else {
-      this.style.setProperty('--il-video-padding-bottom', '56.25%');
-    }
+      let items = getAspectRatio.split('/');
+      padding = (parseInt(items[1].replace("'", "")))/(parseInt(items[0].replace("'", ""))) * 100 + '%';
+    } 
     return html`
-        <div class="videowrapper-width" style=""><div class="videowrapper-full"><div class='videowrapper'>${this.getIframe(this.src, this.title, this.view)}</div></div></div>`;
+      <div class="videowrapper-width" style=""><div class="videowrapper-full"><div class='videowrapper' style='padding-bottom: ${padding}'>${this.getIframe(this.src, this.title, this.view)}</div></div></div>`;
   }
 }
 

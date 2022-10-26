@@ -11,7 +11,6 @@ export default css`
 }
 .videowrapper {
     position: relative; 
-    padding-bottom: var(--il-video-padding-bottom); 
     height: 0;
 }
 `;
