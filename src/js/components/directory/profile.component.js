@@ -10,7 +10,15 @@ class Profile extends LitElement {
   render() {
     return html`
       <article class="profile">
-          <slot></slot>
+          <div class="primary">
+              <slot name="primary"></slot>
+          </div>
+          <div class="contact">
+              <slot name="contact"></slot>
+          </div>
+          <div class="additional">
+              <slot></slot>
+          </div>
       </article>
       `;
   }
