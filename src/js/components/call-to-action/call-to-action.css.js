@@ -21,6 +21,12 @@ export default css`
   min-width: 96px;
   margin-top: 1.875rem;
 }
+.il-calltoaction .il-calltoaction-icon.center.il-calltoaction-centered-no-icon {
+  display: none;
+}
+.il-calltoaction .il-calltoaction-body.center.il-calltoaction-centered-no-icon {
+  padding-left: 0;
+}
 .il-calltoaction .il-calltoaction-padding {
   flex: 1 1 auto;
 }
