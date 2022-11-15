@@ -1,0 +1,38 @@
+---
+title: Video (set aspect ratio)
+group: "Components: Video"
+layout: layouts/page.njk
+---
+
+<style>
+    il-video { 
+        --il-video-aspect-ratio: 4/3;
+        --il-video-max-width: 800px;
+    }
+</style>
+
+<il-video src="https://mediaspace.illinois.edu/media/t/1_0o2ypqvp" title="President Barack Obama"></il-video>
+
+<style>
+    il-video { 
+        --il-video-aspect-ratio: tv;
+    }
+</style>
+
+<il-video src="https://mediaspace.illinois.edu/media/t/1_0o2ypqvp" title="President Barack Obama"></il-video>
+
+<style>
+    il-video { 
+        --il-video-aspect-ratio: vertical;
+    }
+</style>
+
+<il-video src="https://mediaspace.illinois.edu/media/t/1_0o2ypqvp" title="President Barack Obama"></il-video>
+
+<style>
+    il-video { 
+        --il-video-aspect-ratio: default;
+    }
+</style>
+
+<il-video src="https://mediaspace.illinois.edu/media/t/1_0o2ypqvp" title="President Barack Obama"></il-video>
