@@ -65,7 +65,7 @@ il-profile {
       color: var(--il-blue);
     }
 
-    .department {
+    .il-contact-department {
       font-weight: 700;
       font-style: italic;
     }
@@ -90,6 +90,19 @@ il-profile {
       letter-spacing: 0;
     }
 
+    div {
+      margin-bottom: 1.5em;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+
+    p {
+      @include reset-spacing;
+      font-size: 1em;
+    }
+
     img {
       margin: 0 -1.33em 1.33em;
       display: block;
@@ -98,6 +111,19 @@ il-profile {
 
       &:first-child {
         margin-top: -1.5em;
+      }
+    }
+  }
+
+  section:not([slot]) {
+    &.il-directory-publications {
+      ul {
+        @include reset-list;
+      }
+      li {
+        @include reset-list-item;
+        padding-left: 2em;
+        text-indent: -2em;
       }
     }
   }
@@ -118,20 +144,20 @@ il-profile-card {
   }
 
   p {
-    margin: 1em 0 0;
+    margin: .5em 0 0;
     padding: 0;
   }
 
-  .department {
+  .il-contact-department {
     font-weight: 300;
     font-style: italic;
   }
 
-  .phone, .email {
+  .il-contact-phone, .il-contact-email {
     font-weight: 300;
   }
 
-  .phone + .email {
+  .il-contact-phone + .il-contact-email {
     margin-top: 0;
   }
 
