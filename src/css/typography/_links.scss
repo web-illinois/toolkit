@@ -1,0 +1,15 @@
+
+a {
+  transition: color .3s;
+  color: var(--il-link-color);
+  text-decoration: underline;
+}
+
+a:visited {
+  color: var(--il-visited-link-color);
+}
+
+a:hover, a:focus {
+  outline-style: none;
+  color: var(--il-focused-link-color);
+}

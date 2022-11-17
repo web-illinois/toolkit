@@ -1,15 +1,41 @@
-New in version 2.2
-------------------
+VERSION 2.13.0 - Released October 12, 2022
 
-* New component: <il-accordion>
-  https://github.com/web-illinois/toolkit/wiki/Accordion
+* Use new official fonts (serif & condensed)
 
-* New "alt" attribute for the hero component
-  https://github.com/web-illinois/toolkit/wiki/Hero
+Full information about this release can be found at https://github.com/web-illinois/toolkit/milestone/12?closed=1
 
-* Automatic link URLs with the data-il attribute
-  https://github.com/web-illinois/toolkit/wiki/Data-attributes
+----
 
-* Upgraded to Lit 2.0
+VERSION 2.12.0 - Released September 14, 2022
 
-* Bug fixes and security updates
+Information about this release can be found at https://github.com/web-illinois/toolkit/milestone/11?closed=1
+
+----
+
+VERSION 2.11.0 - Released August 15, 2022
+
+* Use new official orange color
+* Deprecated the src attribute in the image feature
+* New attributes and CSS variables for back to top component
+* Header menu button is not visible on small screens when no menu content is present
+* Use relative sizing for headings
+* Bug fixes
+
+----
+
+VERSION 2.10.0 - Released August 2, 2022
+
+* New quote and lede components
+
+----
+
+VERSION 2.9.1 - Released June 28, 2022
+
+* Card component works better in non-grid layouts
+* Card component works in il-formatted blocks
+
+----
+
+VERSION 2.9.0 - Released June 23, 2022
+
+* New card component

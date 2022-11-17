@@ -36,14 +36,7 @@ class Navigation extends LitElement {
   }
 
   getHeader() {
-    let parent = this.parentElement;
-    while (parent) {
-      if (parent.nodeName === 'IL-HEADER') {
-        return parent;
-      }
-      parent = parent.parentElement;
-    }
-    return undefined;
+    return this.closest('il-header');
   }
 
   handleContentLoaded(evt) {
@@ -51,8 +44,6 @@ class Navigation extends LitElement {
       section.addEventListener('collapse', this.handleSectionCollapse.bind(this));
       section.addEventListener('expand', this.handleSectionExpand.bind(this));
       section.addEventListener('exit', this.handleSectionExit.bind(this));
-      section.addEventListener('focus-label', this.handleSectionFocus.bind(this));
-      section.addEventListener('blur-label', this.handleSectionBlur.bind(this));
     });
     const header = this.getHeader();
     if (header) {
@@ -61,19 +52,11 @@ class Navigation extends LitElement {
     }
     const navcount = this.querySelectorAll('il-nav-section').length;
     if (navcount === 5) {
-      this.querySelectorAll('il-nav-section')[4].setAttribute('right', 'true');
+      this.querySelectorAll('il-nav-section')[4].setAttribute('align', 'right');
     } else if (navcount > 5) {
-      this.querySelectorAll('il-nav-section')[navcount - 1].setAttribute('right', 'true');
-      this.querySelectorAll('il-nav-section')[navcount - 2].setAttribute('right', 'true');
+      this.querySelectorAll('il-nav-section')[navcount - 1].setAttribute('align', 'right');
+      this.querySelectorAll('il-nav-section')[navcount - 2].setAttribute('align', 'right');
     }
-  }
-
-  handleSectionBlur(evt) {
-    this.getSections().forEach(section => {
-      if (section.shadowRoot.children.length > 0 && section.shadowRoot.children[0].getElementsByClassName('indicator').length > 0) {
-        section.shadowRoot.children[0].getElementsByClassName('indicator')[0].classList.remove('selected');
-      }
-    });
   }
 
   handleHeaderViewChange(evt) {
@@ -122,20 +105,6 @@ class Navigation extends LitElement {
     this.getSections().forEach(section => {
       if (section.expanded && section !== activeSection) {
         section.collapse();
-      }
-    });
-  }
-
-  handleSectionFocus(evt) {
-    const activeSection = evt.currentTarget;
-    if (activeSection.shadowRoot.children.length > 0 && activeSection.shadowRoot.children[0].getElementsByClassName('indicator').length > 0) {
-      activeSection.shadowRoot.children[0].getElementsByClassName('indicator')[0].classList.add('selected');
-    }
-    this.getSections().forEach(section => {
-      if (section !== activeSection) {
-        if (section.shadowRoot.children.length > 0 && section.shadowRoot.children[0].getElementsByClassName('indicator').length > 0) {
-          section.shadowRoot.children[0].getElementsByClassName('indicator')[0].classList.remove('selected');
-        }
       }
     });
   }

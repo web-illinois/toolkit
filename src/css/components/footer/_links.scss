@@ -38,7 +38,7 @@
 
   li {
     @include reset-list-item;
-    font: 1rem var(--il-source-sans);
+    font: 1rem var(--il-font-sans);
     padding: 0 35px 0 0;
     color: white;
   }
@@ -51,7 +51,7 @@
     position: relative;
     display: inline-block;
     border-radius: 5px;
-    font: 1rem var(--il-source-sans);
+    font: 1rem var(--il-font-sans);
     cursor: pointer;
 
     &:hover,
@@ -65,7 +65,7 @@
     @extend .il-link;
     display: block;
     padding: 5px;
-    font: 1rem var(--il-source-sans);
+    font: 1rem var(--il-font-sans);
     white-space: nowrap;
   }
 

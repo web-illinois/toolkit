@@ -15,8 +15,8 @@
   --il-heading-color: var(--il-blue);
 
   // Links
-  --il-link-color: var(--il-alma-mater);
-  --il-visited-link-color: var(--il-blue);
+  --il-link-color: var(--il-industrial-blue);
+  --il-visited-link-color: var(--il-industrial-blue-darker-2);
   --il-focused-link-color: var(--il-altgeld);
 
   // Buttons
@@ -25,5 +25,5 @@
   --il-button-border-color: var(--il-blue);
   --il-focused-button-foreground-color: white;
   --il-focused-button-background-color: var(--il-blue);
-  --il-focused-button-border-color: white;
+  --il-focused-button-border-color: var(--il-blue);
 }

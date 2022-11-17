@@ -1,10 +1,19 @@
 :root {
   --il-image-feature-display: block;
+  --il-image-feature-color: white;
+  --il-image-feature-background: var(--il-gradient-blue);
+  --il-image-feature-flex-grow-image: 1;
+  --il-image-feature-flex-grow-content: 1;
+  --il-image-feature-flex-direction: row;
+  --il-image-feature-min-height: initial;
 }
 
 .il-formatted il-image-feature, il-image-feature, .il-formatted il-video-feature, il-video-feature {
   display: var(--il-image-feature-display);
   margin-bottom: 20px;
+  --il-link-color: var(--il-image-feature-color);
+  --il-heading-color: var(--il-image-feature-color);
+  --il-text-color: var(--il-image-feature-color);
 
   h2,
   h3,
@@ -34,42 +43,77 @@
   }
 }
 
-.il-formatted il-image-feature:not([background="white"]), il-image-feature:not([background="white"]),
-.il-formatted il-video-feature:not([background="white"]), il-video-feature:not([background="white"]) {
-    h2,
-    h3,
-    h4,
-    h5,
-    p,
-    ul,
-    ol,
-    ul li,
-    ol li,
-    a {
-      color: white;
-    }
-
-    a.il-button,
-    button {
-      color: white;
-      background: transparent;
-      border-color: white;
-
-      &:focus,
-      &:hover {
-        background: white;
-        color: var(--il-blue);
-      }
-    }
+.il-theme-orange il-image-feature, il-image-feature.il-theme-orange, 
+.il-theme-orange il-video-feature, il-video-feature.il-theme-orange {
+  --il-image-feature-background: var(--il-gradient-orange);
 }
 
-.il-formatted il-video-feature[background="white"], il-video-feature[background="white"] {
-  h2,
-  h3,
-  h4,
-  h5
-  {
+.il-theme-orange il-video-feature, il-video-feature.il-theme-orange {
+  a.il-button {
+    --il-button-border-color: var(--il-blue);
+    --il-button-foreground-color: var(--il-blue);
+    --il-button-background-color: white;
+    --il-focused-button-background-color: var(--il-blue);
+    --il-focused-button-foreground-color: white;
+  }
+}
+
+.il-theme-white il-image-feature, il-image-feature.il-theme-white, 
+.il-theme-white il-video-feature, il-video-feature.il-theme-white {
+  --il-image-feature-background: white;
+  --il-image-feature-color: var(--il-blue);
+}
+
+.il-theme-blue il-image-feature, il-image-feature.il-theme-blue, 
+.il-theme-blue il-video-feature, il-video-feature.il-theme-blue {
+  --il-image-feature-background: var(--il-blue);
+}
+
+.il-align-right il-image-feature, il-image-feature.il-align-right, 
+.il-float-left il-image-feature, il-image-feature.il-float-left, 
+.il-align-right il-video-feature, il-video-feature.il-align-right,
+.il-float-left il-video-feature, il-video-feature.il-float-left {
+  --il-image-feature-flex-direction: row-reverse;
+}
+
+.il-size-large il-image-feature, il-image-feature.il-size-large, 
+.il-size-large il-video-feature, il-video-feature.il-size-large {
+  --il-image-feature-flex-grow-image: 1.72;
+}
+
+.il-size-small il-image-feature, il-image-feature.il-size-small, 
+.il-size-small il-video-feature, il-video-feature.il-size-small {
+  --il-image-feature-flex-grow-content: 1.72;
+}
+
+.il-size-xsmall il-image-feature, il-image-feature.il-size-xsmall, 
+.il-size-xsmall il-video-feature, il-video-feature.il-size-xsmall {
+  --il-image-feature-flex-grow-content: 2.9;
+  --il-image-feature-min-height: 10vw;
+}
+
+il-image-feature[background="white"],
+il-video-feature[background="white"] {
+  --il-image-feature-background: white; 
+
+  p, a {
+    color: var(--il-blue);
+    --il-button-border-color: var(--il-blue);
+    --il-button-foreground-color: var(--il-blue);
+    --il-focused-button-background-color: var(--il-blue);
+    --il-focused-button-foreground-color: white;
+    }
+  h2, h3, h4, h5 {
     color: var(--il-orange);
   }
 }
-  
+
+il-image-feature {
+  img {
+    object-fit: cover;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+  }
+}
+

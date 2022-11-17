@@ -8,8 +8,8 @@ body {
     padding: 0;
 }
 
-body h1,
-body h2.testheading {
+h1,
+h2.testheading {
     text-align: center;
 }
 

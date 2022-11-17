@@ -46,7 +46,7 @@ il-section-nav,
   a {
     @include reset-link;
     display: block;
-    font-family: var(--il-source-sans);
+    font-family: var(--il-font-sans);
     line-height: 1.35;
     color: var(--il-blue);
     text-align: left;
@@ -82,7 +82,27 @@ il-section-nav,
   h3 {
     background-color: #f0f0f0;
     margin: 0;
-    padding: 0;
+    padding: 10px 20px;
+    font-family: var(--il-font-sans);
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 1.35;
+    color: var(--il-blue);
+
+    a {
+      display: block;
+      margin: -10px -20px;
+      padding: 10px 20px;
+      color: var(--il-blue);
+      text-align: left;
+
+      &:hover,
+      &:focus {
+        color: var(--il-altgeld);
+        outline: none;
+        text-decoration: underline;
+      }
+    }
   }
 
   &:not([compact]) {
@@ -104,7 +124,7 @@ il-section-nav,
     }
 
     a {
-      padding: 10px 25px;
+      padding: 10px 20px;
       font-size: 20px;
     }
 
@@ -135,6 +155,7 @@ il-section-nav,
 
     h3 {
       background-color: #fff;
+      font-size: 22px;
     }
 
     > ul li {

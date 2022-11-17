@@ -1,21 +1,13 @@
 ---
-title: Hero background
+title: Hero with background image
 group: "Components: Hero"
 layout: layouts/page.njk
 ---
 
-{% macro hero(image=null, color=null, duotone=false) %}
-<il-hero 
-    {% if color -%}
-    color="{{ color }}"
-    {%- endif %}
-    {% if image -%}
-    background="{{ image|url if image }}"
-    {%- endif %}
-    {% if duotone -%}
-    duotone
-    {%- endif %}
-    >
+<p>With background image</p>
+
+<il-hero>
+    <img slot="background" src="{{ "/_assets/images/hero-bg.jpg"|url  }}" alt="">
     <h1>Innovating solutions every year</h1>
     <ul>
         <li>
@@ -29,16 +21,20 @@ layout: layouts/page.njk
         </li>
     </ul>
 </il-hero>
-{% endmacro %}
 
-<h2>Default</h2>
+<p>Without background image</p>
 
-{{ hero() }}
-
-<h2>Orange</h2>
-
-{{ hero(color='orange') }}
-
-<h2>With image</h2>
-
-{{ hero(image='/_assets/images/hero-bg.jpg') }}
+<il-hero>
+    <h1>Innovating solutions every year</h1>
+    <ul>
+        <li>
+            <a href="#">Link 1</a>
+        </li>
+        <li>
+            <a href="#">Link 2</a>
+        </li>
+        <li>
+            <a href="#">Link 3</a>
+        </li>
+    </ul>
+</il-hero>

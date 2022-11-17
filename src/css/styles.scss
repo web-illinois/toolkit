@@ -1,3 +1,7 @@
+$base-text-size: 18px;
+
+@import "mixins";
+
 @import "reset";
 @import "colors";
 @import "fonts";
@@ -63,11 +67,11 @@
     text-align: center;
     margin: 1em auto 0;
     max-width: var(--il-content-max-width);
-    font: 900 27px var(--il-source-sans);
+    font: 900 27px var(--il-font-sans);
   }
 
   &--poster h1 {
-    font: normal 32px var(--il-fjalla-one);
+    font: normal 32px var(--il-font-condensed);
     text-transform: uppercase;
   }
 
@@ -90,10 +94,9 @@
 }
 
 @import "layout";
-@import "formatting";
+@import "typography";
 
 @import "buttons";
-@import "tables";
 
 @import "details";
 

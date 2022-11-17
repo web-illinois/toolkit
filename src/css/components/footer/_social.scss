@@ -6,12 +6,12 @@
     flex-wrap: wrap;
     justify-content: flex-start;
     align-items: center;
-    margin: -6px;
-    font: 700 18px/30px var(--il-source-sans);
+    margin: -6px -24px -20px -6px;
+    font: 700 18px/30px var(--il-font-sans);
   }
   li {
     @include reset-list-item;
-    padding: 0 19px 0 0;
+    padding: 0 18px 14px 0;
   }
   a {
     @include reset-link;
@@ -40,6 +40,7 @@
   a[href*="linkedin.com/"],
   a[href*="pinterest.com/"],
   a[href*="snapchat.com/"],
+  a[href*="tiktok.com/"],
   a[href*="twitter.com/"],
   a[href*="weibo.com/"],
   a[href*="whatsapp.com/"],
@@ -105,6 +106,19 @@
   }
   a[href*="youtube.com/"]:before {
     content: "youtube";
+  }
+  a[href*="tiktok.com/"]:before {
+    --il-social-tiktok-logo: url('data:image/svg+xml;base64, PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz48c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjMwIiBoZWlnaHQ9IjMwIiB2aWV3Qm94PSIwIDAgMzQ3LjY3IDM5OC42NyI+PGcgPjxwYXRoIGQ9Ik0yOTUuNzQsNzkuOTFjLTIxLjQ4LTE0LTM2Ljk3LTM2LjQxLTQxLjgxLTYyLjUyLTEuMDQtNS42NC0xLjYyLTExLjQ1LTEuNjItMTcuMzloLTY4LjU0bC0uMTEsMjc0LjY4Yy0xLjE1LDMwLjc2LTI2LjQ3LDU1LjQ1LTU3LjUsNTUuNDUtOS42NSwwLTE4LjczLTIuNDEtMjYuNzMtNi42Mi0xOC4zNC05LjY1LTMwLjg5LTI4Ljg3LTMwLjg5LTUwLjk5LDAtMzEuNzcsMjUuODUtNTcuNjIsNTcuNjEtNTcuNjIsNS45MywwLDExLjYyLC45OCwxNywyLjY2di02OS45N2MtNS41Ny0uNzYtMTEuMjMtMS4yMy0xNy0xLjIzQzU2LjU5LDE0Ni4zNiwwLDIwMi45NSwwLDI3Mi41MmMwLDQyLjY4LDIxLjMyLDgwLjQ1LDUzLjg2LDEwMy4yOSwyMC40OSwxNC4zOSw0NS40MiwyMi44Niw3Mi4zLDIyLjg2LDY5LjU2LDAsMTI2LjE1LTU2LjU5LDEyNi4xNS0xMjYuMTVWMTMzLjIzYzI2Ljg4LDE5LjI5LDU5LjgyLDMwLjY2LDk1LjM2LDMwLjY2Vjk1LjM1Yy0xOS4xNCwwLTM2Ljk3LTUuNjktNTEuOTMtMTUuNDRaIi8+PC9nPjwvc3ZnPg==');
+    -webkit-mask-image: var(--il-social-tiktok-logo);
+    mask-image: var(--il-social-tiktok-logo);
+    content: "tiktok";
+    background-size: 16px 16px;
+    background-color: currentColor;
+    position: absolute;
+    top: 9px;
+    left: 9px;
+    width: 30px;
+    height: 30px;
   }
 }
 

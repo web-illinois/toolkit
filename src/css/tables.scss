@@ -46,6 +46,12 @@ table {
     border-right: none;
     color: var(--il-blue);
   }
+  td:first-of-type {
+    border-left: 1px solid var(--il-gray-2);
+  }
+  td:last-of-type {
+    border-right: 1px solid var(--il-gray-2);
+  }
   tr:nth-child(odd) {
     background-color: var(--il-gray-1);
   }

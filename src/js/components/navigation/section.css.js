@@ -2,27 +2,21 @@ import { css } from 'lit';
 
 export default css`
 
-li {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    position: relative;
-}
 .full {
   height: 100%;
   transition: background-color .3s; 
 }
 .heading {
-    display: flex;
-    flex-direction: row;
-    align-items: baseline;
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
 }
 .full .contents {
-    position: absolute;
-    left: 0;
-    top: 100%;
+  position: absolute;
+  left: 0;
+  top: 100%;
 }
-.full .contents.right {
+.full .contents.align-right {
   left: initial;
   right: 0;
 }
@@ -40,7 +34,7 @@ li {
   display: block;
   position: relative;
   padding: 10px 40px 10px 20px;
-  font: 700 16px/18px var(--il-source-sans);
+  font: 700 16px/18px var(--il-font-sans);
   color: inherit; 
   text-decoration: none;
   height: 100%;
@@ -80,10 +74,8 @@ li {
   height: 14px;
   fill: currentcolor;
 }
-.full .heading:hover .indicator svg {
-  transform: rotate(180deg);
-}
-.full .heading .indicator.selected svg {
+.full .heading:hover .indicator svg,
+.full.active .heading .indicator svg {
   transform: rotate(180deg);
   fill: var(--il-altgeld);
 }
@@ -114,6 +106,7 @@ li {
   grid-template-columns: auto 60px;
   background-color: var(--il-cloud-1);
   border-top: 1px solid #c0c0c0;
+  text-align: left;
 }
 .compact .heading ::slotted(a) {
   box-sizing: border-box;
@@ -123,7 +116,7 @@ li {
   display: block;
   border: solid 2px var(--il-cloud-1);
   width: 100%;
-  font: 600 20px/28px var(--il-source-sans);
+  font: 600 20px/28px var(--il-font-sans);
 }
 .compact .heading ::slotted(a:hover),
 .compact .heading ::slotted(a:focus) {
@@ -151,6 +144,8 @@ li {
 }
 .compact .heading .toggle {
   height: 100%;
+  display: block;
+  align-self: center;
 }
 
 .compact .heading button svg {

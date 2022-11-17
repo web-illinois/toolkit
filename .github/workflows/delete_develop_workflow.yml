@@ -1,0 +1,32 @@
+name: delete_develop_workflow
+on:
+  workflow_dispatch:
+
+env:
+  VERSION: ''
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v1
+    - name: Set up latest branch
+      run: echo "VERSION=latest" >> $GITHUB_ENV
+    - name: Display version install
+      run: echo "Deleting everything and reloading latest in dev.toolkit"
+    - name: Configure AWS Credentials
+      uses: aws-actions/configure-aws-credentials@v1
+      with:
+        aws-access-key-id: 'AKIAXNR47MADGK2A4HEW'
+        aws-secret-access-key: ${{ secrets.AWS_SECRET_FOR_AKIAXNR47MADGK2A4HEW }}
+        aws-region: us-east-2
+    - name: Delete S3 bucket
+      run: aws s3 rm s3://dev.toolkit.illinois.edu/content/ --recursive
+    - name: Deploy toolbox to S3 bucket
+      run: aws s3 sync ./dist/ s3://dev.toolkit.illinois.edu/content/$VERSION --delete --acl bucket-owner-full-control
+    - run: npm run-script create-test-html -- --pathprefix=$VERSION/examples/
+    - name: Deploy examples to S3 bucket
+      run: aws s3 sync ./var/full-site-deploy/ s3://dev.toolkit.illinois.edu/content/$VERSION/examples --delete --acl bucket-owner-full-control
+    - name: Deploy static images in examples to S3 bucket
+      run: aws s3 sync ./tests/_reference/ s3://dev.toolkit.illinois.edu/content/$VERSION/examples/static-images --acl bucket-owner-full-control
+    - name: Invalidate Cloudfront cache
+      run: aws cloudfront create-invalidation --distribution-id E2AF2WM1XJU9VI --paths "/*"
