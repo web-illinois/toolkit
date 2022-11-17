@@ -43,19 +43,6 @@ export default css`
     .imagefeature .content .content-inner {
         padding: 1.875rem 1.25rem;
     }
-    .imagefeature .content.orange {
-        color: white;
-        background: var(--il-gradient-orange);
-    }
-    .imagefeature .content.white {
-        background: white;
-        --color-primary: white;
-        --color-secondary: var(--il-blue);
-    }
-    .imagefeature .content.solid {
-        color: white;
-        background: var(--il-blue);
-    }
     .il-image-feature-with-overlay {
         position: relative;
     }
