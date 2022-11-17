@@ -125,7 +125,7 @@ il-image-feature, il-video-feature {
   // Themes
 
   &.il-theme-orange, .il-theme-orange &, &[background="orange"] {
-    @extend %image-feature-theme-orange-gradient;
+    @extend %image-feature-theme-orange;
   }
 
   &.il-theme-orange-gradient, .il-theme-orange-gradient {
