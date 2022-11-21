@@ -4,6 +4,11 @@ describe("loading the page and checking links", () => {
   beforeEach(async () => {
     await page.goto(util.testUrl(__filename), {waitUntil: 'domcontentloaded'});
   });
+
+  test("the elements are accessible", async () => {
+    await expect('body').toHaveColorContrast();
+  });
+
   test('check the link with blank information', async () => {
     const linkHandler = await page.$('#link-blank');
     const html = await page.evaluate(linkHandler => linkHandler.innerHTML, linkHandler);
