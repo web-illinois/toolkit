@@ -1,3 +1,14 @@
+const colors = require('../../api/colors.json');
+
+function displayColor(hex) {
+  let color = hex;
+  const colorName = Object.keys(colors).find(n => colors[n] === hex);
+  if (colorName) {
+    color += ` (${colorName})`;
+  }
+  return color;
+}
+
 function evaluateColorContrast(sel) {
   return page.evaluate((sel) => {
     return axe.run(sel, {runOnly: 'color-contrast', selectors: true});
@@ -13,7 +24,22 @@ function notToContainViolations(results) {
   }
   else {
     return {
-      message: () => results.violations[0].nodes[0].failureSummary,
+      message: () => {
+        let message = 'The following contrast violations were found:';
+        results.violations.forEach(violation => {
+          violation.nodes.forEach(node => {
+            const actualRatio = node.any[0].data.contrastRatio;
+            const requiredRatio = node.any[0].data.expectedContrastRatio;
+            message += `\n  * Contrast ratio is ${actualRatio} (should be ${requiredRatio})`;
+            message += `\n    Node: ${node.target[0]}`;
+            message += `\n    Foreground color: ${displayColor(node.any[0].data.fgColor)}`;
+            message += `\n    Background color: ${displayColor(node.any[0].data.bgColor)}`;
+            message += `\n    Font size: ${node.any[0].data.fontSize}`;
+            message += `\n    Font weight: ${node.any[0].data.fontWeight}`;
+          })
+        })
+        return message;
+      },
       pass: false
     }
   }
