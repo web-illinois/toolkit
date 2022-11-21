@@ -4,6 +4,6 @@ beforeEach(async () => {
   await page.goto(util.testUrl(__filename));
 });
 
-test("the component has correct color contrast", async () => {
+test("the component does not have correct color contrast", async () => {
   await expect('il-statistic').not.toHaveColorContrast();
 });
