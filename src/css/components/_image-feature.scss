@@ -1,7 +1,70 @@
-:root {
-  --il-image-feature-display: block;
+
+// Theme classes
+
+%image-feature-theme-blue {
+  --il-image-feature-background: var(--il-blue);
+  --il-image-feature-button-color: white;
+  --il-image-feature-button-border-color: white;
+  --il-image-feature-button-hover-background: white;
+  --il-image-feature-button-hover-color: var(--il-blue);
+  --il-image-feature-button-hover-border-color: white;
   --il-image-feature-color: white;
-  --il-image-feature-background: var(--il-gradient-blue);
+  --il-image-feature-heading-color: white;
+  --il-image-feature-link-color: white;
+  --il-image-feature-link-hover-color: var(--il-orange);
+}
+
+%image-feature-theme-blue-gradient {
+  @extend %image-feature-theme-blue;
+  --il-image-feature-background: var(--il-blue-gradient);
+}
+
+%image-feature-theme-orange {
+  --il-image-feature-background: var(--il-orange);
+  --il-image-feature-button-color: white;
+  --il-image-feature-button-border-color: white;
+  --il-image-feature-button-hover-background: white;
+  --il-image-feature-button-hover-color: var(--il-orange);
+  --il-image-feature-button-hover-border-color: white;
+  --il-image-feature-color: black;
+  --il-image-feature-heading-color: white;
+  --il-image-feature-link-color: black;
+  --il-image-feature-link-hover-color: var(--il-blue);
+
+  --il-button-border-color: var(--il-blue);
+  --il-button-foreground-color: var(--il-blue);
+  --il-button-background-color: white;
+  --il-focused-button-background-color: var(--il-blue);
+  --il-focused-button-foreground-color: white;
+}
+
+%image-feature-theme-orange-gradient {
+  @extend %image-feature-theme-orange;
+  --il-image-feature-background: var(--il-orange-gradient);
+}
+
+%image-feature-theme-white {
+  --il-image-feature-background: white;
+  --il-image-feature-button-color: var(--il-blue);
+  --il-image-feature-button-border-color: var(--il-blue);
+  --il-image-feature-button-hover-background: var(--il-blue);
+  --il-image-feature-button-hover-color: white;
+  --il-image-feature-button-hover-border-color: var(--il-blue);
+  --il-image-feature-color: var(--il-blue);
+  --il-image-feature-heading-color: var(--il-blue);
+  --il-image-feature-link-color: var(--il-industrial-blue);
+  --il-image-feature-link-hover-color: var(--il-altgeld);
+  --il-button-border-color: var(--il-blue);
+  --il-button-foreground-color: var(--il-blue);
+  --il-focused-button-background-color: var(--il-blue);
+  --il-focused-button-foreground-color: white;
+}
+
+// Implementation styles
+
+:root {
+  @extend %image-feature-theme-blue-gradient;
+  --il-image-feature-display: block;
   --il-image-feature-flex-grow-image: 1;
   --il-image-feature-flex-grow-content: 1;
   --il-image-feature-flex-direction: row;
@@ -11,28 +74,22 @@
 .il-formatted il-image-feature, il-image-feature, .il-formatted il-video-feature, il-video-feature {
   display: var(--il-image-feature-display);
   margin-bottom: 20px;
-  --il-link-color: var(--il-image-feature-color);
-  --il-heading-color: var(--il-image-feature-color);
-  --il-text-color: var(--il-image-feature-color);
 
-  h2,
-  h3,
-  h4,
-  h5,
-  p
-  {
+  h2, h3, h4, h5, p {
     max-width: 900px;
   }
 
-  > p:first {
+  p {
+    margin-top: 16px;
+  }
+
+  > p:first-child {
     margin-top: 30px;
   }
 
-
-  a.il-button,
-  button {
+  a.il-button, button {
     margin-right: 30px;
-    margin-bottom: 20px;
+    margin-top: 20px;
     width: max-content;
     width: -moz-max-content;
     text-align: left;
@@ -43,33 +100,56 @@
   }
 }
 
-.il-theme-orange il-image-feature, il-image-feature.il-theme-orange, 
-.il-theme-orange il-video-feature, il-video-feature.il-theme-orange {
-  --il-image-feature-background: var(--il-gradient-orange);
-}
+il-image-feature, il-video-feature {
 
-.il-theme-orange il-video-feature, il-video-feature.il-theme-orange {
+  h1, h2, h3, h4, h5, h6 {
+    color: var(--il-image-feature-heading-color) !important;
+  }
+
+  a, a:visited {
+    color: var(--il-image-feature-link-color) !important;
+
+    &:hover, &:focus {
+      color: var(--il-image-feature-link-hover-color) !important;
+    }
+  }
+
   a.il-button {
-    --il-button-border-color: var(--il-blue);
-    --il-button-foreground-color: var(--il-blue);
-    --il-button-background-color: white;
-    --il-focused-button-background-color: var(--il-blue);
-    --il-focused-button-foreground-color: white;
+    &, &:visited {
+      border-color: var(--il-image-feature-button-border-color) !important;
+      color: var(--il-image-feature-button-color) !important;
+    }
+    &:focus, &:hover {
+      background: var(--il-image-feature-button-hover-background) !important;
+      border-color: var(--il-image-feature-button-hover-border-color) !important;
+      color: var(--il-image-feature-button-hover-color) !important;
+    }
+  }
+
+  // Themes
+
+  &.il-theme-orange, .il-theme-orange &, &[background="orange"] {
+    @extend %image-feature-theme-orange;
+  }
+
+  &.il-theme-orange-gradient, .il-theme-orange-gradient {
+    @extend %image-feature-theme-orange-gradient;
+  }
+
+  &.il-theme-blue, .il-theme-blue &, &[background="blue"] {
+    @extend %image-feature-theme-blue;
+  }
+
+  &.il-theme-blue-gradient, .il-theme-blue-gradient & {
+    @extend %image-feature-theme-blue-gradient;
+  }
+
+  &.il-theme-white, .il-theme-white &, &[background="white"] {
+    @extend %image-feature-theme-white;
   }
 }
 
-.il-theme-white il-image-feature, il-image-feature.il-theme-white, 
-.il-theme-white il-video-feature, il-video-feature.il-theme-white {
-  --il-image-feature-background: white;
-  --il-image-feature-color: var(--il-blue);
-}
-
-.il-theme-blue il-image-feature, il-image-feature.il-theme-blue, 
-.il-theme-blue il-video-feature, il-video-feature.il-theme-blue {
-  --il-image-feature-background: var(--il-blue);
-}
-
-.il-align-right il-image-feature, il-image-feature.il-align-right, 
+.il-align-right il-image-feature, il-image-feature.il-align-right,
 .il-float-left il-image-feature, il-image-feature.il-float-left, 
 .il-align-right il-video-feature, il-video-feature.il-align-right,
 .il-float-left il-video-feature, il-video-feature.il-float-left {
@@ -90,22 +170,6 @@
 .il-size-xsmall il-video-feature, il-video-feature.il-size-xsmall {
   --il-image-feature-flex-grow-content: 2.9;
   --il-image-feature-min-height: 10vw;
-}
-
-il-image-feature[background="white"],
-il-video-feature[background="white"] {
-  --il-image-feature-background: white; 
-
-  p, a {
-    color: var(--il-blue);
-    --il-button-border-color: var(--il-blue);
-    --il-button-foreground-color: var(--il-blue);
-    --il-focused-button-background-color: var(--il-blue);
-    --il-focused-button-foreground-color: white;
-    }
-  h2, h3, h4, h5 {
-    color: var(--il-orange);
-  }
 }
 
 il-image-feature {

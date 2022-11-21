@@ -27,13 +27,31 @@ class ImageFeatureComponent extends LitElement {
     this.align = '';
   }
 
+  connectedCallback() {
+    super.connectedCallback();
+    if (this.hasAttribute('align')) {
+      Debugger.warn("il-image-feature: the \"align\" attribute is deprecated. Use alignment classes instead.");
+    }
+    if (this.hasAttribute('alt')) {
+      Debugger.warn("il-image-feature: the \"alt\" attribute is deprecated. Use the image slot instead.");
+    }
+    if (this.hasAttribute('background')) {
+      Debugger.warn("il-image-feature: the \"background\" attribute is deprecated. Use a slotted image element instead.");
+    }
+    if (this.hasAttribute('size')) {
+      Debugger.warn("il-image-feature: the \"size\" attribute is deprecated. Use size classes instead.");
+    }
+    if (this.hasAttribute('src')) {
+      Debugger.warn("il-image-feature: the \"src\" attribute is deprecated. Use the image slot instead.");
+    }
+  }
+
   render() {
     if (this.previousElementSibling != null && this.previousElementSibling.localName == "il-image-feature" && !this.previousElementSibling.classList.contains('il-align-right') && !this.previousElementSibling.classList.contains('il-align-left') && !this.classList.contains('il-align-right') && !this.classList.contains('il-align-left')) {
       this.classList.add('il-align-right');
     }
 
     if (this.background !== '') {
-      Debugger.warn("il-image-feature: the \"background\" attribute is deprecated. Use theme classes instead.");
       if (this.background == 'solid' || this.background == 'blue') {
         this.classList.add('il-theme-blue');
       }
@@ -42,7 +60,6 @@ class ImageFeatureComponent extends LitElement {
       }
     }
     if (this.align !== '') {
-      Debugger.warn("il-image-feature: the \"align\" attribute is deprecated. Use align classes instead.");
       if (this.align == 'left') {
         this.classList.add('il-align-left');
       }
@@ -51,7 +68,6 @@ class ImageFeatureComponent extends LitElement {
       }
     }
     if (this.size !== '') {
-      Debugger.warn("il-image-feature: the \"size\" attribute is deprecated. Use size classes instead.");
       if (this.size == 'portrait') {
         this.classList.add('il-size-xsmall');
       }
@@ -63,7 +79,6 @@ class ImageFeatureComponent extends LitElement {
       }
     }
     if (this.src !== undefined) {
-      Debugger.warn("il-image-feature: the \"src\" and \"alt\" attributes are deprecated. Use the image slot instead.");
       return html`
       <div class="imagefeature">
           <div class="background"><img src='${this.src}' alt='${this.alt}' style='object-fit: cover; position: absolute; width: 100%; height: 100%;'></div>
