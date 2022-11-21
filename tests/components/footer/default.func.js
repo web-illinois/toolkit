@@ -16,6 +16,10 @@ beforeEach(async () => {
   await page.goto(util.testUrl(__filename))
 });
 
+test("the component has correct color contrast", async () => {
+  await expect('il-footer').toHaveColorContrast();
+});
+
 test('has default slot', async () => {
   const slot = getDefaultSlot('il-footer');
   expect(slot).not.toBeNull();
