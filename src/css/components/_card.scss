@@ -81,7 +81,8 @@ il-card, .il-card, .il-formatted il-card, .il-formatted .il-card {
   }
 
   .il-button {
-    font-weight: 600;
+    font-weight: 700;
+    font-size: 20px;
   }
 
   .il-icon {
@@ -180,6 +181,7 @@ il-card[link], .il-formatted il-card[link] {
 .il-theme-orange, .il-theme-orange-gradient {
   --il-card-background: var(--il-orange);
   --il-card-border-color: var(--il-orange);
+  --il-card-button-color: var(--il-blue);
   --il-card-color: var(--il-blue);
   --il-card-link-color: var(--il-blue);
   --il-card-link-focus-color: var(--il-blue);
