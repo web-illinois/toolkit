@@ -3,8 +3,13 @@
     --#{$name}: #{$hex};
   }
 
-  --il-blue-gradient: linear-gradient(180deg, var(--il-industrial-blue) 0%, var(--il-blue) 100%);
-  --il-orange-gradient: linear-gradient(180deg, var(--il-orange) 0%, var(--il-altgeld) 100%);
+  --il-blue-gradient-start: var(--il-industrial-blue);
+  --il-blue-gradient-end: var(--il-blue);
+  --il-blue-gradient: linear-gradient(180deg, var(--il-blue-gradient-start) 0%, var(--il-blue-gradient-end) 100%);
+
+  --il-orange-gradient-start: var(--il-orange);
+  --il-orange-gradient-end: var(--il-altgeld);
+  --il-orange-gradient: linear-gradient(180deg, var(--il-orange-gradient-start) 0%, var(--il-orange-gradient-end) 100%);
 
   --il-gradient-blue: var(--il-blue-gradient); // Deprecated
   --il-gradient-orange: var(--il-orange-gradient); // Deprecated

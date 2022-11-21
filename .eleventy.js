@@ -2,6 +2,7 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.setTemplateFormats(['html', 'md', 'njk', '11ty.js', 'css', 'jpg', 'json']);
   eleventyConfig.addPassthroughCopy({
     "dist": ".",
+    "node_modules/axe-core": "axe",
     "tests/_reference": "reference-images"
   });
 
