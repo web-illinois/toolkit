@@ -5,6 +5,10 @@ beforeEach(async () => {
     await page.goto(util.testUrl(__filename));
 });
 
+test("the component has correct color contrast", async () => {
+    await expect('il-nav').toHaveColorContrast();
+});
+
 describe("when a submenu is open", () => {
 
     test("the submenu is visible", async () => {

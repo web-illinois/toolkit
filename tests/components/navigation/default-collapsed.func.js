@@ -5,6 +5,10 @@ beforeEach(async () => {
     await page.goto(util.testUrl(__filename));
 });
 
+test("the component has correct color contrast", async () => {
+    await expect('il-nav').toHaveColorContrast();
+});
+
 describe("hovering over a top-level link", () => {
     beforeEach(async () => {
         await page.hover('#link-1');

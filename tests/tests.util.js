@@ -20,11 +20,15 @@ function url(path) {
 
 function testUrl(testPath) {
   const relative = path.relative(__dirname, testPath);
-  let urlPath = '/' + relative.replace(/\.(func|vis|visual)\.js$/, '') + '/';
-  if (urlPath.endsWith('/index/')) {
-    urlPath = urlPath.substring(0, urlPath.length - 6);
+  const pathWithoutExtension = relative.replace(/\.(func|vis|visual)\.js$/, '');
+  const segments = pathWithoutExtension.split('/');
+  if (segments.at(-1) === 'index') {
+    segments.pop();
   }
-  return url(urlPath);
+  else if (segments.at(-1) === segments.at(-2)) {
+    segments.pop();
+  }
+  return url('/' + segments.join('/') + '/');
 }
 
 module.exports = {

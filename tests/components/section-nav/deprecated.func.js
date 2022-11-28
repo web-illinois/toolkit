@@ -20,6 +20,10 @@ describe("on large screens", () => {
     await page.goto(util.testUrl(__filename));
   });
 
+  test("the component has correct color contrast", async () => {
+    await expect('il-section-nav').toHaveColorContrast();
+  });
+
   test("does not have the 'compact' attribute", async () => {
     const hasAttr = await page.evaluate(() => {
       return document.querySelector('il-section-nav').hasAttribute('compact');
@@ -40,6 +44,10 @@ describe("on small screens", () => {
   beforeEach(async () => {
     await page.setViewport(viewports.iphone);
     await page.goto(util.testUrl(__filename));
+  });
+
+  test("the component has correct color contrast", async () => {
+    await expect('il-section-nav').toHaveColorContrast();
   });
 
   test("has the 'compact' attribute", async () => {

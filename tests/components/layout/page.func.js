@@ -8,6 +8,10 @@ describe("on large screens", () => {
     await page.goto(util.testUrl(__filename));
   });
 
+  test("the component has correct color contrast", async () => {
+    await expect('il-page').toHaveColorContrast();
+  });
+
   test("mode is 'full'", async () => {
     const mode = await page.evaluate(() => {
       return document.querySelector('il-page').getAttribute('mode');
@@ -21,6 +25,10 @@ describe("on small screens", () => {
   beforeEach(async () => {
     await page.setViewport(viewports.iphone);
     await page.goto(util.testUrl(__filename));
+  });
+
+  test("the component has correct color contrast", async () => {
+    await expect('il-page').toHaveColorContrast();
   });
 
   test("mode is 'compact'", async () => {
