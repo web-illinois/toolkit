@@ -18,14 +18,22 @@ function url(path) {
   return 'http://' + host() + ':8080' + path;
 }
 
+function lastItem(arr) {
+  return arr.at ? arr.at(-1) : arr[arr.length - 1];
+}
+
+function secondToLastItem(arr) {
+  return arr.at ? arr.at(-2) : arr[arr.length - 2];
+}
+
 function testUrl(testPath) {
   const relative = path.relative(__dirname, testPath);
   const pathWithoutExtension = relative.replace(/\.(func|vis|visual)\.js$/, '');
   const segments = pathWithoutExtension.split('/');
-  if (segments.at(-1) === 'index') {
+  if (lastItem(segments) === 'index') {
     segments.pop();
   }
-  else if (segments.at(-1) === segments.at(-2)) {
+  else if (lastItem(segments) === secondToLastItem(segments)) {
     segments.pop();
   }
   return url('/' + segments.join('/') + '/');
