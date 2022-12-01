@@ -1,4 +1,4 @@
-const util = require('../../tests.util');
+const util = require('../../../tests.util');
 
 beforeEach(async () => {
   await page.goto(util.testUrl(__filename));
