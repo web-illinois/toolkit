@@ -22,10 +22,10 @@ function testUrl(testPath) {
   const relative = path.relative(__dirname, testPath);
   const pathWithoutExtension = relative.replace(/\.(func|vis|visual)\.js$/, '');
   const segments = pathWithoutExtension.split('/');
-  if (segments.at(-1) === 'index') {
+  if (segments[segments.length - 1] === 'index') {
     segments.pop();
   }
-  else if (segments.at(-1) === segments.at(-2)) {
+  else if (segments.length > 1 && segments[segments.length - 1] === segments[segments.length - 2]) {
     segments.pop();
   }
   return url('/' + segments.join('/') + '/');
