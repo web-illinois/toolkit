@@ -2,24 +2,126 @@ import {css} from 'lit';
 
 export default css`
 
-.header {
-  position: relative;
-  font-family: var(--il-font-sans);
-}
-
-.campus {
-  text-transform: uppercase;
-}
-
-.campus a:focus {
-  outline: none;
-  border: none;
-}
-
-.campus svg {
-  fill: var(--il-blue);
-  transition: fill .3s;
-}
+  .header {
+    position: relative;
+    font-family: var(--il-font-sans);
+  }
+  .fingerprint {
+    position: absolute;
+    left: 0;
+    top: 0;
+    display: block;
+    width: 100%;
+    height: 20px;
+    background-color: var(--il-orange);
+  }
+  .campus-wordmark-and-links {
+    position: relative;
+    width: 800px;
+    overflow: hidden;
+    margin: 0 auto;
+    padding-top: 30px;
+  }
+  .campus-wordmark {
+    position: relative;
+    display: block;
+    float: left;
+    width: 417px;
+    margin-top: -30px;
+    color: var(--il-blue);
+  }
+  .campus-wordmark:focus, .campus-wordmark:hover {
+    color: var(--il-altgeld);
+  }
+  .block-i-container {
+    position: relative;
+    display: block;
+    width: 45px;
+    height: 52px;
+    background-color: var(--il-blue);
+  }
+  .block-i {
+    position: absolute;
+    top: 7px;
+    left: 10px;
+    display: block;
+    width: 24px;
+    height: 35px;
+  }
+  .block-i__outline {
+    fill: white;
+  }
+  .block-i__fill {
+    fill: var(--il-orange);
+  }
+  .wordmark-container {
+    position: absolute;
+    left: 55px;
+    top: 30px;
+    display: block;
+    width: 362px;
+    height: 10px;
+  }
+  .wordmark-uiuc {
+    fill: currentColor;
+    transition: fill .3s;
+    display: block;
+    width: 362px;
+    height: 10px;
+    outline: 0;
+  }
+  .wordmark-uiuc__of {
+    transform: translate(97.838px);
+  }
+  .wordmark-uiuc__illinois {
+    transform: translate(124.808px);
+  }
+  .wordmark-uiuc__urbana-champaign {
+    transform: translate(197.666px);
+  }
+  .wordmark-uiuc__urbana {
+    transform: translate(0 .144px);
+  }
+  .wordmark-uiuc__champaign {
+    transform: translate(71.734px);
+  }
+  
+  @media (max-width: 400px) {
+    .campus-wordmark {
+      width: 120px;
+    }
+    .wordmark-uiuc {
+      width: 65px;
+    }
+    .wordmark-uiuc__university,
+    .wordmark-uiuc__of,
+    .wordmark-uiuc__urbana-champaign {
+      display: none;
+    }
+    .wordmark-uiuc__illinois {
+      transform: translate(0);
+    }
+  }
+  
+  .links {
+    float: right;
+  }
+  
+  .identity-and-search {
+    position: relative;
+    width: 800px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    column-gap: 20px;
+  }
+  .identity {
+    text-align: left;
+  }
+  .search {
+    text-align: right;
+  }
 
 .campus a:focus svg, .campus a:hover svg {
   fill: var(--il-altgeld);
