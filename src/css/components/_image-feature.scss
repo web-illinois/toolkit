@@ -40,7 +40,6 @@
 
 %image-feature-theme-orange-gradient {
   @extend %image-feature-theme-orange;
-  --il-image-feature-background: var(--il-orange-gradient);
 }
 
 %image-feature-theme-white {
@@ -58,6 +57,23 @@
   --il-button-foreground-color: var(--il-blue);
   --il-focused-button-background-color: var(--il-blue);
   --il-focused-button-foreground-color: white;
+}
+
+%image-feature-theme-gray {
+  --il-image-feature-background: var(--il-gray-1);
+  --il-image-feature-button-color: var(--il-blue);
+  --il-image-feature-button-border-color: var(--il-blue);
+  --il-image-feature-button-hover-background: var(--il-blue);
+  --il-image-feature-button-hover-color: white;
+  --il-image-feature-button-hover-border-color: var(--il-blue);
+  --il-image-feature-color: var(--il-blue);
+  --il-image-feature-heading-color: var(--il-blue);
+  --il-image-feature-link-color: var(--il-industrial-blue);
+  --il-image-feature-link-hover-color: var(--il-altgeld);
+  --il-button-border-color: var(--il-blue);
+  --il-button-foreground-color: var(--il-blue);
+  --il-focused-button-background-color: var(--il-blue);
+  --il-focused-button-foreground-color: var(--il-gray-1);
 }
 
 // Implementation styles
@@ -146,6 +162,10 @@ il-image-feature, il-video-feature {
 
   &.il-theme-white, .il-theme-white &, &[background="white"] {
     @extend %image-feature-theme-white;
+  }
+
+  &.il-theme-gray, .il-theme-gray &, &[background="gray"] {
+    @extend %image-feature-theme-gray;
   }
 }
 

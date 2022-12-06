@@ -52,6 +52,16 @@ il-image-feature.il-overlay img, .il-overlay il-image-feature img {
   --il-image-feature-with-overlay-border: 1px solid #707070;
 }
 
+.il-theme-gray il-image-feature, il-image-feature.il-theme-gray {
+  --il-button-foreground-color: var(--il-blue);
+  --il-button-border-color: var(--il-blue);
+  --il-focused-button-foreground-color: var(--il-gray-1);
+  --il-focused-button-background-color: var(--il-blue);
+  --il-image-feature-with-overlay-background-solid: var(--il-gray-1);
+  --il-image-feature-with-overlay-background: rgba(244, 244, 244, .85);
+  --il-image-feature-with-overlay-border: 1px solid #707070;
+}
+
 .il-theme-orange il-image-feature.il-overlay p, il-image-feature.il-theme-orange.il-overlay p {
   color: var(--il-base-25);
 }
