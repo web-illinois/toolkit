@@ -1,7 +1,11 @@
+:root {
+  --il-footer-content-width: 1200px;
+}
+
 il-footer {
 
-  --il-link-color: white;
-  --il-visited-link-color: white;
+  --il-link-color: var(--il-blue);
+  --il-visited-link-color: var(--il-blue);
 
   background-color: var(--il-blue);
   color: white;
@@ -11,7 +15,7 @@ il-footer {
       color: inherit;
 
       &.hover, &:focus {
-        outline: 3px dashed var(--il-orange);
+        outline: 3px dashed var(--il-altgeld);
       }
     }
   }

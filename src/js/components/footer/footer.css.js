@@ -2,6 +2,36 @@ import {css} from 'lit';
 
 export default css`
 
+  .site-footer {
+    padding: 40px 0;
+    background-color: var(--il-gray-1);
+    border-top: 5px solid var(--il-blue);
+    color: var(--il-blue);
+  }
+  .campus-footer {
+    padding: 40px 0;
+    background-color: var(--il-blue);
+    border-top: 5px solid var(--il-orange);
+    color: white;
+  }
+  .campus-footer .links {
+    margin: 30px 0 0;
+    padding: 0;
+    list-style: none;
+    column-count: 3;
+    column-gap: 30px;
+  }
+  .campus-footer .links li {
+    margin: 0 0 .8em;
+    padding: 0;
+    list-style: none;
+    font-size: 18px;
+  }
+  .campus-footer .links a {
+    color: white;
+    text-decoration: none;
+  }
+  
 .footer {
   font-size: 1.5rem;
   line-height: 1.5rem;
@@ -20,7 +50,7 @@ export default css`
   margin-right: auto;
 }
 
-.links {
+.links-section {
   border-top: 5px solid var(--il-alma-mater);
 }
 
@@ -59,7 +89,6 @@ export default css`
   width: 100%;
   max-width: 235px;
   height: 61px;
-  margin-bottom: 60px;
 }
 .campus-wordmark a {
   display: block;
