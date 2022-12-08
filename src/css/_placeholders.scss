@@ -1,0 +1,90 @@
+/*
+  > * {
+    @include reset-spacing;
+    text-align: left !important;
+    display: block;
+    margin-bottom: .25em;
+    font-size: rem(18px);
+    font-weight: 400;
+    line-height: 1.2em;
+    font-family: var(--il-font-sans);
+  }
+  > *:first-child {
+    margin-top: -2px;
+  }
+  > *:last-child {
+    margin-bottom: -2px;
+    font-weight: 600;
+    line-height: 1em;
+    color: var(--il-blue);
+  }
+  a {
+    @extend .il-link;
+    color: var(--il-blue) !important;
+    text-decoration: none !important;
+  }
+
+  a:focus, a:hover {
+    color: var(--il-altgeld) !important;
+    outline: none;
+  }
+
+  h1 {
+    @include reset-spacing;
+    font-size: rem(24px);
+  }
+  .il-primary-unit {
+    display: none;
+  }
+  @media (min-width: 768px) {
+  .il-primary-unit {
+    display: block;
+  }
+}
+
+ */
+
+%site-name, %site-parent-name {
+  margin: 0;
+  padding: 0;
+  text-align: left;
+  line-height: 1.25;
+  font-family: var(--il-source-sans);
+  color: var(--il-blue);
+
+  a {
+    color: inherit;
+    text-decoration: none;
+
+    &:hover, &:focus {
+      color: var(--il-altgeld);
+    }
+
+    &:focus {
+      outline: 2px dotted var(--il-altgeld);
+      outline-offset: 2px;
+    }
+  }
+}
+
+%site-name {
+  font-weight: 600;
+  font-size: 1.5em;
+}
+
+%site-parent-name {
+  font-weight: 400;
+  font-size: 1.125em;
+}
+
+%site-identity {
+  font-size: 1.5rem;
+
+  > * {
+    @extend %site-parent-name;
+
+    &:last-child {
+      @extend %site-name;
+    }
+  }
+}
