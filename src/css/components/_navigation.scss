@@ -2,6 +2,10 @@ il-nav il-nav-section {
   z-index: 5000;
 }
 
+il-nav:not([compact]) {
+}
+
+
 il-nav:not([compact]) il-nav-section .il-subnav {
   @include reset-list;
   box-sizing: border-box;

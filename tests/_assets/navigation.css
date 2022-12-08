@@ -1,0 +1,8 @@
+.navigation-container {
+  background-color: black;
+}
+.navigation-container--compact {
+  background-color: transparent;
+  max-width: 400px;
+  margin: 0 auto;
+}

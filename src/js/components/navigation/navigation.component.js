@@ -116,9 +116,9 @@ class Navigation extends LitElement {
   render() {
     return html`
         <nav class=${this.compact ? 'compact' : 'full'} aria-label='main menu'>
-          <ul>
+          <div class="container">
             <slot></slot>
-          </ul>
+          </div>
         </nav>`
   }
 }

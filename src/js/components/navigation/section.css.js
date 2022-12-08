@@ -3,8 +3,9 @@ import { css } from 'lit';
 export default css`
 
 .full {
+  position: relative;
   height: 100%;
-  transition: background-color .3s; 
+  transition: background-color .3s;
 }
 .heading {
   display: flex;

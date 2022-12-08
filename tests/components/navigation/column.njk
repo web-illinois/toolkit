@@ -1,5 +1,5 @@
 ---
-title: "Navigation bar: two levels, new markup"
+title: "Navigation column: two levels, new markup"
 group: "Components: Navigation"
 layout: layouts/page.njk
 stylesheets: ["tests.css", "navigation.css"]
@@ -7,8 +7,8 @@ stylesheets: ["tests.css", "navigation.css"]
 
 {% include "outside-click-target.html" %}
 
-<div id="nav" class="navigation-container">
-    <il-nav>
+<div id="nav" class="navigation-container navigation-container--compact">
+    <il-nav compact>
         <ul>
             <li>
                 <il-nav-section id="section-1">

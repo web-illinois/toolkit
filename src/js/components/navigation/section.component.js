@@ -258,7 +258,7 @@ class NavigationSection extends NavigationItem {
     const active = this.active ? 'active' : 'inactive';
     const align = 'align-' + this.align;
     return html`
-        <li class="${state} ${view} ${current} ${active}" @mouseover=${this.handleMouseOver} @mouseout=${this.handleMouseOut}>
+        <div class="${state} ${view} ${current} ${active}" @mouseover=${this.handleMouseOver} @mouseout=${this.handleMouseOut}>
           <div class="heading">
             <div class="label">
               <slot name="label"></slot>
@@ -282,7 +282,7 @@ class NavigationSection extends NavigationItem {
           <div class="contents ${align}" id="contents">
             <slot></slot>
           </div>
-        </li>`
+        </div>`
   }
 }
 
