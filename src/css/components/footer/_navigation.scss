@@ -5,7 +5,7 @@
   gap: 50px;
   font: 18px var(--il-font-sans);
   padding-top: 61px;
-  color: white;
+  color: var(--il-blue);
 
   h2,
   h3,
@@ -14,7 +14,7 @@
     padding: 0 0 10px 0;
     margin-bottom: 6px;
     font: bold 20px var(--il-font-sans);
-    border-bottom: 1px solid white;
+    border-bottom: 1px solid var(--il-blue);
   }
 
   ul {
