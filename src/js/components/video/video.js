@@ -9,7 +9,9 @@ class UrlItem extends Item {
         this._videoUrl = '';
 
         let urlLowerCase = url.toLowerCase();
-        if (urlLowerCase.includes("youtube") || urlLowerCase.includes("youtu.be")) {
+        if (urlLowerCase == '') {
+          this._videoType = "blank";
+        } else if (urlLowerCase.includes("youtube") || urlLowerCase.includes("youtu.be")) {
           const youTubeV = url.split("v=");
           if (youTubeV.length > 1) {
             this._videoId = youTubeV[1];
