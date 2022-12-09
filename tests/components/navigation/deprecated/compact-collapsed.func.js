@@ -1,8 +1,8 @@
-const util = require('../../tests.util');
-const nav = require('./nav.util');
+const util = require('../../../tests.util');
+const nav = require('../nav.util');
 
 beforeEach(async () => {
-  await page.goto(util.testUrl(__filename));
+  await util.gotoTestPage();
 });
 
 test("the component has correct color contrast", async () => {

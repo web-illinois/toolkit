@@ -15,16 +15,16 @@ export default css`
 
   /* Navbar */
 
-  nav.full {
+  nav.bar {
     background-color: var(--il-cloud-1);
     padding-top: .375rem;
     font-size: 1rem;
   }
-  nav.full .container {
+  nav.bar .container {
     display: flex;
     flex-direction: row;
   }
-  nav.full ::slotted(ul) {
+  nav.bar ::slotted(ul) {
     margin-top: -.375rem;
     padding-top: .375rem;
     display: flex;
@@ -33,10 +33,10 @@ export default css`
 
   /* Accordion */
   
-  nav.compact .container {
+  nav.column .container {
     flex-direction: column;
   }
-  nav.compact ::slotted(ul) {
+  nav.column ::slotted(ul) {
     flex-direction: column;
   }
 

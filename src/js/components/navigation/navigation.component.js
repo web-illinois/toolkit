@@ -1,8 +1,105 @@
 import { LitElement, html } from 'lit';
+import Link from './link';
 import styles from './navigation.css';
 
-
 class Navigation extends LitElement {
+
+  // Class methods
+
+  static get properties() {
+    return {
+      hasCurrentSection: { type: Boolean, default: false, attribute: false },
+      view: { type: String, default: 'bar', attribute: true, reflect: true }
+    };
+  }
+
+  static get styles() {
+    return styles;
+  }
+
+  // Constructor
+
+  constructor() {
+    super();
+    this._view = 'bar';
+    document.addEventListener('DOMContentLoaded', this.handleContentLoaded.bind(this));
+  }
+
+  // Property getters/setters
+
+  get view() {
+    return this._view;
+  }
+
+  set view(newView) {
+    const previousView = this._view;
+    if (newView !== previousView) {
+      this._view = newView;
+      this.requestUpdate('view', previousView);
+      this.updateComplete.then(() => {
+        const evt = new CustomEvent('viewChange', { detail: { view: newView, previous: previousView } });
+        this.dispatchEvent(evt);
+      });
+    }
+  }
+
+  // Event handlers
+
+  handleContentLoaded(evt) {
+    this.querySelectorAll('a').forEach(a => {
+      a.ilNavLink = new Link(a);
+    })
+    const resizeObserver = new ResizeObserver((entries) => {
+      for (const entry of entries) {
+        this.determineViewMode();
+        this.positionContents();
+      }
+    })
+    resizeObserver.observe(this);
+    this.positionContents();
+  }
+
+  // Object methods
+
+  collapseAllSectionsExcept(section) {
+    this.getAllSections().forEach(s => {
+      if (s.expanded && !(s === section || s.contains(section))) {
+        s.collapse();
+      }
+    });
+  }
+
+  determineViewMode() {
+    // TODO TODO
+  }
+
+  getAllSections() {
+    return this.querySelectorAll('il-nav-section');
+  }
+
+  getAllSectionsAsArray() {
+    return [...this.getAllSections()];
+  }
+
+  getTopLevelSections() {
+    return this.getAllSectionsAsArray().filter(s => s.isTopLevel());
+  }
+
+  positionContents() {
+    // TODO TODO
+    return;
+    this.getTopLevelSections().forEach(s => s.positionSelf());
+  }
+
+  setCurrentSection(section) {
+    this.getAllSections().forEach(s => {
+      s.current = s === section;
+    })
+    this.hasCurrentSection = this.getAllSectionsAsArray().some(s => s.current);
+  }
+
+
+  /*
   static get properties() {
     return {
       compact: { type: Boolean, default: false, attribute: true, reflect: true }
@@ -113,9 +210,11 @@ class Navigation extends LitElement {
     return this.querySelectorAll('il-nav-section, il-nav-link');
   }
 
+   */
+
   render() {
     return html`
-        <nav class=${this.compact ? 'compact' : 'full'} aria-label='main menu'>
+        <nav class=${this.view} aria-label='main menu'>
           <div class="container">
             <slot></slot>
           </div>

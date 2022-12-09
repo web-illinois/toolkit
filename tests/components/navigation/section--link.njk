@@ -1,0 +1,18 @@
+---
+title: "Navigation bar section: link label"
+group: "Components: Navigation"
+layout: layouts/page.njk
+stylesheets: ["tests.css", "navigation.css"]
+---
+
+<div id="nav" class="navigation-container">
+    <il-nav view="bar">
+        <ul>
+            <li>
+                <il-nav-section id="section-1">
+                    <a href="http://example.com/" slot="label">Section title</a>
+                </il-nav-section>
+            </li>
+        </ul>
+    </il-nav>
+</div>
