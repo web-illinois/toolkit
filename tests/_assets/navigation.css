@@ -5,5 +5,6 @@
 .navigation-container--compact {
   background-color: transparent;
   max-width: 400px;
-  margin: 0 auto;
+  margin-left: auto;
+  margin-right: auto;
 }

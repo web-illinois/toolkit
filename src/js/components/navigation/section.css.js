@@ -22,6 +22,8 @@ export default css`
     padding: 0 var(--il-nav-section-heading-indicator-width) 0 0;
     text-align: left;
     transition: background-color .3s;
+    background: var(--il-nav-section-heading-background);
+    color: var(--il-nav-section-heading-color);
   }
   .heading:hover, .heading:focus-within {
     background-color: white;
@@ -34,14 +36,14 @@ export default css`
     z-index: 200;
     margin: 0;
     padding: 0;
-    font-weight: var(--il-nav-item-font-weight);
-    font-size: var(--il-nav-item-font-size);
     line-height: 1.125;
     font-family: var(--il-font-sans);
     white-space: var(--il-nav-item-white-space);
+    color: var(--il-nav-section-heading-color);
   }
   .label ::slotted(a) {
     pointer-events: all;
+    color: var(--il-nav-section-heading-color);
   }
 
   .toggle {
@@ -66,7 +68,7 @@ export default css`
     color: var(--il-altgeld);
   }
   .toggle:focus {
-    outline: 2px dotted var(--il-altgeld);
+    outline: 2px dotted;
   }
   
   .indicator {

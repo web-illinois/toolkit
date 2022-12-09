@@ -1,48 +1,13 @@
 
-
-:root {
-  --il-nav-background-color: var(--il-cloud-1);
-  --il-nav-shadow-color: rgba(0, 0, 0, .15);
-
-  // Section heading
-  --il-nav-section-heading-indicator-width: 2em;
-
-  // Nav section
-  --il-nav-section-display: block;
-  --il-nav-section-position: relative;
-  --il-nav-section-flex-direction: column;
-  --il-nav-section-left: auto;
-  --il-nav-section-top: auto;
-  --il-nav-section-opacity: 1;
-  --il-nav-section-pointer-events: auto;
-  --il-nav-section-max-width: auto;
-  --il-nav-section-min-width: auto;
-  --il-nav-section-border-width: 0;
-  --il-nav-section-border-style: solid;
-  --il-nav-section-border-color: var(--il-nav-shadow-color);
-
-  // Nav item
-  --il-nav-item-padding-left: 40px;
-  --il-nav-item-padding-right: 20px;
-  --il-nav-item-padding-top: 10px;
-  --il-nav-item-padding-bottom: 10px;
-  --il-nav-item-background-color: transparent;
-  --il-nav-item-color: var(--il-blue);
-  --il-nav-item-font-size: 1rem;
-  --il-nav-item-font-weight: 400;
-  --il-nav-item-white-space: normal;
-
-  // Nav indicator
-  --il-nav-indicator-point-down: none;
-  --il-nav-indicator-point-up: rotate(-180deg);
-  --il-nav-indicator-point-left: rotate(90deg);
-  --il-nav-indicator-point-right: rotate(-90deg);
-  --il-nav-indicator-transform: var(--il-nav-indicator-point-down);
+%il-nav-section-heading-top-level {
+  --il-nav-section-heading-background: var(--il-cloud-1);
+  --il-nav-section-heading-color: var(--il-blue);
 }
 
 il-nav {
   background-color: var(--il-nav-background-color);
   --il-nav-item-white-space: nowrap;
+  --il-nav-section-heading-indicator-width: 2em;
 
   ul {
     @include reset-list;
@@ -56,20 +21,9 @@ il-nav {
   }
   a {
     @include reset-link;
-    background-color: var(--il-nav-item-background-color);
-    color: var(--il-nav-item-color);
     display: block;
-    font-family: var(--il-font-sans);
-    font-size: var(--il-nav-item-font-size);
-    font-weight: var(--il-nav-item-font-weight);
     line-height: 1.125;
-    padding-bottom: var(--il-nav-item-padding-bottom);
-    padding-left: var(--il-nav-item-padding-left);
-    padding-right: var(--il-nav-item-padding-right);
-    padding-top: var(--il-nav-item-padding-top);
     transition: background-color .3s;
-    width: fit-content;
-    block-size: fit-content;
 
     &:hover, &:focus {
       --il-nav-item-color: var(--il-altgeld);
@@ -80,45 +34,55 @@ il-nav {
     }
   }
 
-  &[view="column"] {
-    --il-nav-item-font-size: 1.25rem;
+  // Section
 
-    il-nav-section {
-      --il-nav-section-display: none;
+  il-nav-section {
+
+    &[expanded], &[expanded] il-nav-section {
     }
 
-    il-nav-section[expanded] {
-      --il-nav-section-display: block;
+    &[current][expanded], &[current] il-nav-section {
     }
 
     ul {
-      flex-direction: column;
+      display: block;
     }
-    ul ul {
-      --il-nav-item-padding-left: 60px;
-      border-top: 1px solid var(--il-cloud-3);
+
+    a {
+      display: block;
+      line-height: 1.125rem;
+
+      &:hover, &:focus {
+        text-decoration: underline;
+        outline: 0;
+      }
     }
-    ul ul ul {
-      --il-nav-item-padding-left: 80px;
+    li:last-of-type a {
+      --il-nav-item-padding-bottom: 20px;
     }
-    ul ul ul ul {
-      --il-nav-item-padding-left: 100px;
+
+    *[slot="label"] {
+      display: block;
+      line-height: 1.125;
+      padding: var(--il-nav-section-heading-label-padding);
+      font-weight: 600;
+      font-family: var(--il-font-sans);
     }
-    ul ul ul ul ul {
-      --il-nav-item-padding-left: 120px;
-    }
-    ul ul ul ul ul ul {
-      --il-nav-item-padding-left: 140px;
-    }
-    li {
-      border-top: 1px solid var(--il-cloud-3);
-    }
-    li:first-of-type {
-      border-top: 0;
+    a[slot="label"] {
+      &:hover {
+        color: var(--il-altgeld);
+        text-decoration: underline;
+      }
+      &:focus {
+        outline: 2px dotted var(--il-nav-item-color);
+        outline-offset: -4px;
+      }
     }
   }
 
-  &[view="bar"] {
+  // Navigation bar
+
+  &:not([view="column"]) {
     --il-nav-section-position: absolute;
     --il-nav-item-padding-left: 20px;
     --il-nav-section-left: 0;
@@ -162,64 +126,49 @@ il-nav {
       min-width: auto;
     }
   }
-}
 
-il-nav-section {
-  --il-nav-item-background-color: transparent;
-  --il-nav-item-color: var(--il-blue);
+  // Navigation column
 
-  &[expanded], &[expanded] il-nav-section {
-    --il-nav-item-background-color: var(--il-blue);
-    --il-nav-item-color: white;
-  }
+  &[view="column"] {
+    --il-nav-item-font-size: 1.25rem;
 
-  &[current][expanded], &[current] il-nav-section {
-    --il-nav-item-background-color: white;
-    --il-nav-item-color: var(--il-blue);
-  }
+    il-nav-section {
+      @extend %il-nav-section-heading-top-level;
+      --il-nav-section-display: none;
+    }
 
-  ul {
-    display: block;
-  }
+    il-nav-section[expanded] {
+      --il-nav-section-display: block;
+    }
 
-  a {
-    display: block;
-    font-size: var(--il-nav-item-font-size);
-    line-height: 1.125rem;
-    font-weight: var(--il-nav-item-font-weight);
-    font-family: var(--il-font-sans);
-    background-color: var(--il-nav-item-background-color);
-    color: var(--il-nav-item-color);
-
-    &:hover, &:focus {
-      text-decoration: underline;
-      outline: 0;
+    ul {
+      flex-direction: column;
+    }
+    ul ul {
+      --il-nav-item-padding-left: 60px;
+      border-top: 1px solid var(--il-cloud-3);
+    }
+    ul ul ul {
+      --il-nav-item-padding-left: 80px;
+    }
+    ul ul ul ul {
+      --il-nav-item-padding-left: 100px;
+    }
+    ul ul ul ul ul {
+      --il-nav-item-padding-left: 120px;
+    }
+    ul ul ul ul ul ul {
+      --il-nav-item-padding-left: 140px;
+    }
+    li {
+      border-top: 1px solid var(--il-cloud-3);
+    }
+    li:first-of-type {
+      border-top: 0;
     }
   }
-  li:last-of-type a {
-    --il-nav-item-padding-bottom: 20px;
-  }
 
-  *[slot="label"] {
-    display: block;
-    font-family: var(--il-font-sans);
-    font-size: var(--il-nav-item-font-size);
-    font-weight: var(--il-nav-item-font-weight);
-    line-height: 1.125;
-    padding-bottom: var(--il-nav-item-padding-bottom);
-    padding-left: var(--il-nav-item-padding-left);
-    padding-right: var(--il-nav-item-padding-right);
-    padding-top: var(--il-nav-item-padding-top);
-  }
-  a[slot="label"] {
-    &:hover {
-      color: var(--il-altgeld);
-      text-decoration: underline;
-    }
-    &:focus {
-      outline: 2px dotted var(--il-nav-item-color);
-      outline-offset: -4px;
-    }
+  &[view="bar"] {
   }
 }
 
