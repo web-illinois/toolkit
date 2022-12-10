@@ -9,7 +9,7 @@ stylesheets: ["tests.css", "navigation.css"]
     <il-nav view="column">
         <ul>
             <li>
-                <il-nav-section expanded current>
+                <il-nav-section expanded>
                     <a href="#" slot="label">Top-level section</a>
                     <ul>
                         <li>
@@ -39,6 +39,16 @@ stylesheets: ["tests.css", "navigation.css"]
                             </il-nav-section>
                         </li>
                     </ul>
+                </il-nav-section>
+            </li>
+            <li>
+                <il-nav-section>
+                    <a href="#" slot="label">Top-level section</a>
+                </il-nav-section>
+            </li>
+            <li>
+                <il-nav-section>
+                    <a href="#" slot="label">Top-level section</a>
                 </il-nav-section>
             </li>
         </ul>

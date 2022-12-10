@@ -1,19 +1,34 @@
 
-%il-nav-section-heading-top-level {
-  --il-nav-section-heading-background: var(--il-cloud-1);
-  --il-nav-section-heading-color: var(--il-blue);
+%il-nav-section-heading-expanded {
 }
 
 il-nav {
   background-color: var(--il-nav-background-color);
   --il-nav-item-white-space: nowrap;
-  --il-nav-section-heading-indicator-width: 2em;
+  --il-nav-section-heading-indicator-width: 2.5em;
 
   ul {
     @include reset-list;
     position: relative;
     display: flex;
     flex-direction: var(--il-nav-section-flex-direction);
+    --il-nav-indent: 0em;
+
+    ul {
+      --il-nav-indent: 1em;
+    }
+
+    ul ul {
+      --il-nav-indent: 2em;
+    }
+
+    ul ul ul {
+      --il-nav-indent: 3em;
+    }
+
+    ul ul ul {
+      --il-nav-indent: 4em;
+    }
   }
   li {
     @include reset-list;
@@ -38,44 +53,50 @@ il-nav {
 
   il-nav-section {
 
-    &[expanded], &[expanded] il-nav-section {
-    }
-
-    &[current][expanded], &[current] il-nav-section {
-    }
-
     ul {
+      @include reset-list;
       display: block;
+    }
+
+    li {
+      @include reset-list-item;
     }
 
     a {
+      background: var(--il-nav-background);
+      color: var(--il-nav-color);
       display: block;
+      font-size: 1.25em;
+      font-family: var(--il-font-sans);
       line-height: 1.125rem;
+      padding: .75em;
+      padding-left: calc(.75em + var(--il-nav-indent));
 
       &:hover, &:focus {
-        text-decoration: underline;
+        background: var(--il-nav-hover-background);
+        color: var(--il-nav-hover-color);
         outline: 0;
+        text-decoration: underline;
       }
-    }
-    li:last-of-type a {
-      --il-nav-item-padding-bottom: 20px;
     }
 
     *[slot="label"] {
       display: block;
       line-height: 1.125;
-      padding: var(--il-nav-section-heading-label-padding);
+      padding: .75em;
+      padding-left: calc(.75em + var(--il-nav-indent));
       font-weight: 600;
       font-family: var(--il-font-sans);
     }
+
     a[slot="label"] {
-      &:hover {
-        color: var(--il-altgeld);
+      background-color: var(--il-nav-background);
+      color: var(--il-nav-color);
+
+      &:hover, &:focus {
+        background-color: var(--il-nav-hover-background);
+        color: var(--il-nav-hover-color);
         text-decoration: underline;
-      }
-      &:focus {
-        outline: 2px dotted var(--il-nav-item-color);
-        outline-offset: -4px;
       }
     }
   }
@@ -131,14 +152,25 @@ il-nav {
 
   &[view="column"] {
     --il-nav-item-font-size: 1.25rem;
+    --il-nav-background: var(--il-cloud-1);
+    --il-nav-color: var(--il-blue);
+    --il-nav-hover-background: var(--il-altgeld);
+    --il-nav-hover-color: white;
 
     il-nav-section {
-      @extend %il-nav-section-heading-top-level;
-      --il-nav-section-display: none;
+      --il-nav-section-contents-display: none;
     }
 
     il-nav-section[expanded] {
-      --il-nav-section-display: block;
+      --il-nav-background: white;
+      --il-nav-color: var(--il-blue);
+      --il-nav-section-contents-display: block;
+    }
+
+    il-nav-section[current] {
+      --il-nav-background: var(--il-blue);
+      --il-nav-color: white;
+      --il-nav-section-contents-display: block;
     }
 
     ul {

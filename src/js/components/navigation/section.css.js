@@ -22,11 +22,10 @@ export default css`
     padding: 0 var(--il-nav-section-heading-indicator-width) 0 0;
     text-align: left;
     transition: background-color .3s;
-    background: var(--il-nav-section-heading-background);
-    color: var(--il-nav-section-heading-color);
+    background: var(--il-nav-background);
+    color: var(--il-nav-color);
   }
   .heading:hover, .heading:focus-within {
-    background-color: white;
   }
 
   .label {
@@ -62,10 +61,12 @@ export default css`
     pointer-events: all;
     cursor: pointer;
     font-size: 1em;
-    background-color: transparent;
+    background: var(--il-nav-background);
+    color: var(--il-nav-color);
   }
   .toggle:hover, .toggle:focus {
-    color: var(--il-altgeld);
+    background: var(--il-nav-hover-background);
+    color: var(--il-nav-hover-color);
   }
   .toggle:focus {
     outline: 2px dotted;
@@ -93,17 +94,17 @@ export default css`
 
   .contents {
     z-index: 101;
-    max-width: var(--il-nav-section-max-width);
-    min-width: var(--il-nav-section-min-width);
-    display: var(--il-nav-section-display);
-    position: var(--il-nav-section-position);
-    left: var(--il-nav-section-left);
-    top: var(--il-nav-section-top);
-    opacity: var(--il-nav-section-opacity);
-    pointer-events: var(--il-nav-section-pointer-events);
-    border-width: var(--il-nav-section-border-width);
-    border-style: var(--il-nav-section-border-style);
-    border-color: var(--il-nav-section-border-color);
+    display: var(--il-nav-section-contents-display);
+    //max-width: var(--il-nav-section-max-width);
+    //min-width: var(--il-nav-section-min-width);
+    //position: var(--il-nav-section-position);
+    //left: var(--il-nav-section-left);
+    //top: var(--il-nav-section-top);
+    //opacity: var(--il-nav-section-opacity);
+    //pointer-events: var(--il-nav-section-pointer-events);
+    //border-width: var(--il-nav-section-border-width);
+    //border-style: var(--il-nav-section-border-style);
+    //border-color: var(--il-nav-section-border-color);
   }
 `;
 
