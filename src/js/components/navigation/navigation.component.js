@@ -125,6 +125,18 @@ class Navigation extends LitElement {
     this.hasCurrentSection = this.getAllSectionsAsArray().some(s => s.current);
   }
 
+  setTabIndexes() {
+    this.querySelectorAll('il-nav-section il-nav-section').forEach(s => {
+      s.setTabIndex(s.parentElement.closest('il-nav-section').expanded ? '0' : '-1');
+    });
+    this.querySelectorAll('il-nav-section a').forEach(a => {
+      if (a.getAttribute('slot') === 'label') {
+        return;
+      }
+      a.setAttribute('tabindex', a.closest('il-nav-section').expanded ? '0' : '-1');
+    });
+  }
+
   render() {
     return html`
         <nav class=${this.view} aria-label='main menu'>

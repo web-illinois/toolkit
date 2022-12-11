@@ -1,11 +1,96 @@
 
-%il-nav-section-heading-expanded {
+%il-nav-item {
+  --il-nav-background: var(--il-cloud-1);
+  --il-nav-color: var(--il-blue);
+  --il-nav-hover-background: white;
+  --il-nav-hover-color: var(--il-altgeld);
+}
+
+%il-nav-expanded-item {
+  --il-nav-background: white;
+  --il-nav-color: var(--il-blue);
+  --il-nav-hover-background: var(--il-altgeld);
+  --il-nav-hover-color: white;
+}
+
+%il-nav-current-item {
+  --il-nav-background: var(--il-blue);
+  --il-nav-color: white;
+  --il-nav-hover-background: var(--il-altgeld);
+  --il-nav-hover-color: white;
+}
+
+%il-nav-bar {
+  @extend %il-nav-item;
+  --il-nav-font-size: 1em;
+  --il-nav-indent: 0em;
+  --il-nav-item-white-space: nowrap;
+  --il-nav-section-heading-indicator-width: 2.5em;
+  --il-nav-section-contents-display: block;
+  --il-nav-section-contents-position: absolute;
+  --il-nav-section-contents-border-color: rgba(0, 0, 0, .15);
+  --il-nav-section-contents-border-width: 0 1px 3px;
+  --il-nav-section-contents-border-style: solid;
+  --il-nav-section-contents-max-width: 20em;
+  --il-nav-section-contents-min-width: 100%;
+  --il-nav-section-contents-left: 0;
+  --il-nav-section-contents-top: 100%;
+
+  /*
+    --il-nav-item-padding-left: 20px;
+    --il-nav-item-font-weight: 600;
+    --il-nav-section-display: block;
+   */
+
+  il-nav-section {
+    --il-nav-section-contents-opacity: 0;
+    --il-nav-section-contents-pointer-events: none;
+  }
+
+  il-nav-section[expanded] {
+    @extend %il-nav-expanded-item;
+    --il-nav-section-contents-opacity: 1;
+    --il-nav-section-contents-pointer-events: auto;
+  }
+
+  il-nav-section il-nav-section {
+    --il-nav-section-contents-border-width: 1px 1px 3px 0;
+    --il-nav-section-contents-border-style: solid;
+    --il-nav-section-contents-left: 100%;
+    --il-nav-section-contents-top: -1px;
+    --il-nav-section-contents-min-width: 100%;
+
+    --il-nav-indicator-transform: var(--il-nav-indicator-point-right);
+    --il-nav-item-white-space: normal;
+    --il-nav-item-padding-left: 20px;
+
+    &[current], &[current] il-nav-section {
+      @extend %il-nav-current-item;
+    }
+  }
+}
+
+%il-nav-column {
+  --il-nav-background: var(--il-cloud-1);
+  --il-nav-color: var(--il-blue);
+  --il-nav-font-size: 1.25em;
+  --il-nav-hover-background: var(--il-altgeld);
+  --il-nav-hover-color: white;
+  --il-nav-section-contents-display: none;
+  --il-nav-section-contents-position: relative;
+  --il-nav-section-contents-opacity: 1;
+  --il-nav-section-contents-pointer-events: auto;
+  --il-nav-section-contents-border-width: 0;
+  --il-nav-section-contents-border-style: none;
+  --il-nav-section-contents-max-width: 100%;
+  --il-nav-section-contents-min-width: 100%;
+  --il-nav-section-contents-left: 0;
+  --il-nav-section-contents-top: 0;
 }
 
 il-nav {
+  @extend %il-nav-bar;
   background-color: var(--il-nav-background-color);
-  --il-nav-item-white-space: nowrap;
-  --il-nav-section-heading-indicator-width: 2.5em;
 
   ul {
     @include reset-list;
@@ -13,23 +98,8 @@ il-nav {
     display: flex;
     flex-direction: var(--il-nav-section-flex-direction);
     --il-nav-indent: 0em;
-
-    ul {
-      --il-nav-indent: 1em;
-    }
-
-    ul ul {
-      --il-nav-indent: 2em;
-    }
-
-    ul ul ul {
-      --il-nav-indent: 3em;
-    }
-
-    ul ul ul {
-      --il-nav-indent: 4em;
-    }
   }
+
   li {
     @include reset-list;
     position: relative;
@@ -38,7 +108,6 @@ il-nav {
     @include reset-link;
     display: block;
     line-height: 1.125;
-    transition: background-color .3s;
 
     &:hover, &:focus {
       --il-nav-item-color: var(--il-altgeld);
@@ -66,17 +135,22 @@ il-nav {
       background: var(--il-nav-background);
       color: var(--il-nav-color);
       display: block;
-      font-size: 1.25em;
+      font-size: var(--il-nav-font-size);
       font-family: var(--il-font-sans);
       line-height: 1.125rem;
       padding: .75em;
       padding-left: calc(.75em + var(--il-nav-indent));
 
-      &:hover, &:focus {
+      &:hover {
         background: var(--il-nav-hover-background);
         color: var(--il-nav-hover-color);
         outline: 0;
         text-decoration: underline;
+      }
+
+      &:focus {
+        outline: 4px dotted;
+        outline-offset: -4px;
       }
     }
 
@@ -87,53 +161,30 @@ il-nav {
       padding-left: calc(.75em + var(--il-nav-indent));
       font-weight: 600;
       font-family: var(--il-font-sans);
+      color: currentColor;
     }
 
     a[slot="label"] {
       background-color: var(--il-nav-background);
       color: var(--il-nav-color);
 
-      &:hover, &:focus {
+      &:hover {
         background-color: var(--il-nav-hover-background);
         color: var(--il-nav-hover-color);
         text-decoration: underline;
+      }
+      &:focus {
+        outline: 4px dotted;
+        outline-offset: -4px;
       }
     }
   }
 
   // Navigation bar
 
-  &:not([view="column"]) {
-    --il-nav-section-position: absolute;
-    --il-nav-item-padding-left: 20px;
-    --il-nav-section-left: 0;
-    --il-nav-section-top: 100%;
-    --il-nav-section-max-width: 20em;
-    --il-nav-section-min-width: 100%;
-    --il-nav-section-border-width: 0 1px 3px;
-    --il-nav-section-border-style: solid;
-    --il-nav-item-font-weight: 600;
-    --il-nav-section-display: block;
+  .disabled &:not([view="column"]) {
 
     il-nav-section {
-      --il-nav-section-opacity: 0;
-      --il-nav-section-pointer-events: none;
-    }
-
-    il-nav-section[expanded] {
-      --il-nav-section-opacity: 1;
-      --il-nav-section-pointer-events: auto;
-    }
-
-    il-nav-section il-nav-section {
-      --il-nav-section-left: 100%;
-      --il-nav-section-top: -1px;
-      --il-nav-section-min-width: 100%;
-      --il-nav-section-border-width: 1px 1px 3px 0;
-      --il-nav-section-border-style: solid;
-      --il-nav-indicator-transform: var(--il-nav-indicator-point-right);
-      --il-nav-item-white-space: normal;
-      --il-nav-item-padding-left: 20px;
     }
 
     ul {
@@ -151,14 +202,29 @@ il-nav {
   // Navigation column
 
   &[view="column"] {
-    --il-nav-item-font-size: 1.25rem;
-    --il-nav-background: var(--il-cloud-1);
-    --il-nav-color: var(--il-blue);
-    --il-nav-hover-background: var(--il-altgeld);
-    --il-nav-hover-color: white;
+    @extend %il-nav-column;
+
+    ul {
+      --il-nav-indent: 0em;
+
+      ul {
+        --il-nav-indent: 1em;
+
+        ul {
+          --il-nav-indent: 2em;
+
+          ul {
+            --il-nav-indent: 3em;
+
+            ul {
+              --il-nav-indent: 4em;
+            }
+          }
+        }
+      }
+    }
 
     il-nav-section {
-      --il-nav-section-contents-display: none;
     }
 
     il-nav-section[expanded] {

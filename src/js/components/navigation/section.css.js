@@ -21,11 +21,12 @@ export default css`
     margin: 0;
     padding: 0 var(--il-nav-section-heading-indicator-width) 0 0;
     text-align: left;
-    transition: background-color .3s;
     background: var(--il-nav-background);
     color: var(--il-nav-color);
   }
-  .heading:hover, .heading:focus-within {
+  .heading:hover {
+    background: var(--il-nav-hover-background);
+    color: var(--il-nav-hover-color);
   }
 
   .label {
@@ -38,11 +39,9 @@ export default css`
     line-height: 1.125;
     font-family: var(--il-font-sans);
     white-space: var(--il-nav-item-white-space);
-    color: var(--il-nav-section-heading-color);
   }
   .label ::slotted(a) {
     pointer-events: all;
-    color: var(--il-nav-section-heading-color);
   }
 
   .toggle {
@@ -64,12 +63,13 @@ export default css`
     background: var(--il-nav-background);
     color: var(--il-nav-color);
   }
-  .toggle:hover, .toggle:focus {
+  .toggle:hover {
     background: var(--il-nav-hover-background);
     color: var(--il-nav-hover-color);
   }
   .toggle:focus {
-    outline: 2px dotted;
+    outline: 4px dotted;
+    outline-offset: -4px;
   }
   
   .indicator {
@@ -95,16 +95,16 @@ export default css`
   .contents {
     z-index: 101;
     display: var(--il-nav-section-contents-display);
-    //max-width: var(--il-nav-section-max-width);
-    //min-width: var(--il-nav-section-min-width);
-    //position: var(--il-nav-section-position);
-    //left: var(--il-nav-section-left);
-    //top: var(--il-nav-section-top);
-    //opacity: var(--il-nav-section-opacity);
-    //pointer-events: var(--il-nav-section-pointer-events);
-    //border-width: var(--il-nav-section-border-width);
-    //border-style: var(--il-nav-section-border-style);
-    //border-color: var(--il-nav-section-border-color);
+    position: var(--il-nav-section-contents-position);
+    opacity: var(--il-nav-section-contents-opacity);
+    pointer-events: var(--il-nav-section-contents-pointer-events);
+    border-width: var(--il-nav-section-contents-border-width);
+    border-style: var(--il-nav-section-contents-border-style);
+    border-color: var(--il-nav-section-contents-border-color);
+    max-width: var(--il-nav-section-contents-max-width);
+    min-width: var(--il-nav-section-contents-min-width);
+    left: var(--il-nav-section-contents-left);
+    top: var(--il-nav-section-contents-top);
   }
 `;
 

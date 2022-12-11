@@ -29,6 +29,13 @@ class NavigationSection extends LitElement {
     document.addEventListener('DOMContentLoaded', this.handleContentLoaded.bind(this));
   }
 
+  // Lifecycle methods
+
+  updated(changedProperties) {
+    super.updated(changedProperties);
+    this.getNavigation().setTabIndexes();
+  }
+
   // Event handlers
 
   handleContentLoaded(evt) {
@@ -59,12 +66,21 @@ class NavigationSection extends LitElement {
     return this.closest('il-nav');
   }
 
+  getLinks() {
+    const links = [...this.querySelectorAll('a:not([slot="label"])')];
+    return links.filter(l => l.closest('il-nav-section') === this);
+  }
+
   getParentSection() {
     return this.parentElement.closest('il-nav-section');
   }
 
   getToggle() {
     return this.shadowRoot.querySelector('button');
+  }
+
+  hasLabelLink() {
+
   }
 
   expand() {
@@ -83,8 +99,16 @@ class NavigationSection extends LitElement {
     return !!this.getNavigation();
   }
 
+  isExpanded() {
+    return this.expanded;
+  }
+
   isTopLevel() {
     return !this.getParentSection();
+  }
+
+  isVisible() {
+    return this.isTopLevel() || this.getParentSection().expanded;
   }
 
   positionSelf() {
@@ -92,6 +116,11 @@ class NavigationSection extends LitElement {
       this.reverseDirection();
     }
     this.positionChildren();
+  }
+
+  setTabIndex(tabindex) {
+    console.debug(tabindex);
+    this.getToggle().setAttribute('tabindex', tabindex);
   }
 
   toggle() {
@@ -125,7 +154,8 @@ class NavigationSection extends LitElement {
   }
 
   renderToggle() {
-    return html`<button class="toggle" aria-controls="contents" aria-expanded="${this.expanded ? 'true' : 'false'}" @click=${this.handleToggleClick}>
+    const ariaExpanded = this.expanded ? 'true' : 'false';
+    return html`<button class="toggle" aria-controls="contents" aria-expanded=${ariaExpanded} @click=${this.handleToggleClick}>
       <span class="indicator">${this.renderChevron()}</span>
     </button>`;
   }
