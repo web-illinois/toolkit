@@ -86,6 +86,10 @@ class Navigation extends LitElement {
     // TODO TODO
   }
 
+  findElementParentSection(elem) {
+    return elem.parentElement.closest('il-nav-section');
+  }
+
   getAllLinks() {
     return this.querySelectorAll('a');
   }
@@ -127,13 +131,16 @@ class Navigation extends LitElement {
 
   setTabIndexes() {
     this.querySelectorAll('il-nav-section il-nav-section').forEach(s => {
-      s.setTabIndex(s.parentElement.closest('il-nav-section').expanded ? '0' : '-1');
+      const parentSection = this.findElementParentSection(s);
+      s.setTabIndex(parentSection.expanded ? '0' : '-1');
     });
-    this.querySelectorAll('il-nav-section a').forEach(a => {
-      if (a.getAttribute('slot') === 'label') {
-        return;
-      }
-      a.setAttribute('tabindex', a.closest('il-nav-section').expanded ? '0' : '-1');
+    this.querySelectorAll('il-nav-section il-nav-section a[slot="label"]').forEach(a => {
+      let parentSection = this.findElementParentSection(a.closest('il-nav-section'));
+      a.setAttribute('tabindex', parentSection.expanded ? '0' : '-1');
+    });
+    this.querySelectorAll('il-nav-section a:not([slot="label"])').forEach(a => {
+      let parentSection = this.findElementParentSection(a);
+      a.setAttribute('tabindex', parentSection.expanded ? '0' : '-1');
     });
   }
 
