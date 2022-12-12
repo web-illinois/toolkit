@@ -61,12 +61,7 @@ export default css`
         width: var(--il-image-feature-with-overlay-width);
         padding: var(--il-image-feature-with-overlay-padding);
         background: var(--il-image-feature-with-overlay-background);
-    }
-    
-    @media only screen and (max-width: 1270px) {
-        .il-image-feature-with-overlay-inner {
-            margin: 0 70px;
-        }
+        margin: 0 70px;
     }
     
     @media only screen and (max-width: 990px) {

@@ -1,6 +1,6 @@
 :root {
   --il-image-feature-with-overlay-width: 40%;
-  --il-image-feature-with-overlay-background: rgba(19, 41, 75, .85);
+  --il-image-feature-with-overlay-background: rgba(19, 41, 75, .9);
   --il-image-feature-with-overlay-background-solid: var(--il-blue);
   --il-image-feature-with-overlay-padding: 3.125rem 1.875rem;
   --il-image-feature-with-overlay-align: left;
@@ -38,7 +38,7 @@ il-image-feature.il-overlay img, .il-overlay il-image-feature img {
 .il-theme-orange il-image-feature.il-overlay, il-image-feature.il-theme-orange.il-overlay {
   --il-focused-button-foreground-color: var(--il-orange);
   --il-image-feature-with-overlay-background-solid: var(--il-orange);
-  --il-image-feature-with-overlay-background: rgba(255, 85, 46, .85);
+  --il-image-feature-with-overlay-background: rgba(255, 95, 5, .9);
   --il-image-feature-with-overlay-border: 1px solid var(--il-orange);
 }
 
@@ -48,8 +48,19 @@ il-image-feature.il-overlay img, .il-overlay il-image-feature img {
   --il-focused-button-foreground-color: white;
   --il-focused-button-background-color: var(--il-blue);
   --il-image-feature-with-overlay-background-solid: white;
-  --il-image-feature-with-overlay-background: rgba(255, 255, 255, .85);
+  --il-image-feature-with-overlay-background: rgba(255, 255, 255, .9);
   --il-image-feature-with-overlay-border: 1px solid #707070;
+}
+
+.il-theme-gray il-image-feature, il-image-feature.il-theme-gray {
+  --il-button-foreground-color: var(--il-blue);
+  --il-button-border-color: var(--il-blue);
+  --il-focused-button-foreground-color: var(--il-gray-1);
+  --il-focused-button-background-color: var(--il-blue);
+  --il-image-feature-with-overlay-background-solid: var(--il-gray-1);
+  --il-image-feature-with-overlay-background: rgba(244, 244, 244, .9);
+  --il-image-feature-with-overlay-border: 1px solid #707070;
+  --il-button-background-color: white;
 }
 
 .il-theme-orange il-image-feature.il-overlay p, il-image-feature.il-theme-orange.il-overlay p {
