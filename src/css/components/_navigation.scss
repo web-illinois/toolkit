@@ -1,4 +1,10 @@
 
+:root {
+  --il-nav-indicator-point-down: none;
+  --il-nav-indicator-point-up: rotate(180deg);
+  --il-nav-indicator-point-right: rotate(-90deg);
+}
+
 %il-nav-item {
   --il-nav-background: transparent;
   --il-nav-color: var(--il-blue);
@@ -22,17 +28,17 @@
 
 %il-nav-bar {
   @extend %il-nav-item;
-  --il-nav-font-size: 1em;
+  --il-nav-font-size: 1rem;
   --il-nav-indent: 0em;
   --il-nav-item-white-space: nowrap;
-  --il-nav-section-heading-indicator-width: 2.5em;
+  --il-nav-section-heading-indicator-width: 2.5rem;
   --il-nav-section-contents-display: block;
   --il-nav-section-contents-position: absolute;
   --il-nav-section-contents-border-color: rgba(0, 0, 0, .15);
   --il-nav-section-contents-border-width: 0 1px 3px;
   --il-nav-section-contents-border-style: solid;
   --il-nav-section-contents-max-width: 100%;
-  --il-nav-section-contents-min-width: 16em;
+  --il-nav-section-contents-min-width: 16rem;
   --il-nav-section-contents-left: 0;
   --il-nav-section-contents-top: 100%;
 
@@ -73,7 +79,7 @@
 %il-nav-column {
   --il-nav-background: var(--il-cloud-1);
   --il-nav-color: var(--il-blue);
-  --il-nav-font-size: 1.25em;
+  --il-nav-font-size: 1.25rem;
   --il-nav-hover-background: var(--il-altgeld);
   --il-nav-hover-color: white;
   --il-nav-section-contents-display: none;
@@ -86,6 +92,21 @@
   --il-nav-section-contents-min-width: 100%;
   --il-nav-section-contents-left: 0;
   --il-nav-section-contents-top: 0;
+
+  il-nav-section il-nav-section {
+    --il-nav-section-contents-border-width: 0;
+    --il-nav-section-contents-border-style: none;
+    --il-nav-section-contents-left: 0;
+    --il-nav-section-contents-top: 0;
+    --il-nav-section-contents-max-width: 100%;
+    --il-nav-section-contents-min-width: 100%;
+    --il-nav-indicator-transform: var(--il-nav-indicator-point-down);
+    --il-nav-item-white-space: normal;
+  }
+
+  il-nav-section[expanded], il-nav-section il-nav-section[expanded] {
+    --il-nav-indicator-transform: var(--il-nav-indicator-point-up);
+  }
 }
 
 il-nav {
@@ -151,6 +172,7 @@ il-nav {
       line-height: 1.125;
       padding: .75em;
       padding-left: calc(.75em + var(--il-nav-indent));
+      font-size: var(--il-nav-font-size);
       font-weight: 600;
       font-family: var(--il-font-sans);
       color: currentColor;

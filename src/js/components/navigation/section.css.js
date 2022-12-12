@@ -59,7 +59,7 @@ export default css`
     outline: 0;
     pointer-events: all;
     cursor: pointer;
-    font-size: 1em;
+    font-size: var(--il-nav-font-size);
     background: var(--il-nav-background);
     color: var(--il-nav-color);
   }
@@ -87,9 +87,7 @@ export default css`
     width: 1em;
     height: 1em;
     fill: currentColor;
-  }
-  .expanded .indicator svg {
-    transform: var(--il-nav-indicator-point-up);
+    transform: var(--il-nav-indicator-transform);
   }
 
   .contents {

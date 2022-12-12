@@ -1,30 +1,30 @@
 ---
-title: "Navigation bar: Three levels"
+title: "Navigation column: Three levels with section links"
 group: "Components: Navigation"
 layout: layouts/page.njk
 stylesheets: ["tests.css", "navigation.css"]
 ---
-<div id="nav" class="navigation-container">
-    <il-nav label="Mythical University" view="bar">
+<div id="nav" class="navigation-container navigation-container--compact">
+    <il-nav label="Mythical University" view="column">
         <ul>
             <li><a href="#">Consectetur</a></li>
             <li>
                 <il-nav-section expanded>
-                    <span slot="label">Adipiscing</span>
+                    <a href="#" slot="label">Adipiscing</a>
                     <ul>
                         <li>
                             <il-nav-section>
-                                <span slot="label">Eiusmod Tempor</span>
+                                <a href="#" slot="label">Eiusmod Tempor</a>
                             </il-nav-section>
                         </li>
                         <li>
                             <il-nav-section>
-                                <span slot="label">Incididunt ut Labore</span>
+                                <a href="#" slot="label">Incididunt ut Labore</a>
                             </il-nav-section>
                         </li>
                         <li>
                             <il-nav-section id="section" expanded current>
-                                <span slot="label">Reprehenderit in Voluptate</span>
+                                <a id="link" href="#" slot="label">Reprehenderit in Voluptate</a>
                                 <ul>
                                     <li><a href="#">Parturient Montes</a></li>
                                     <li><a href="#">Tellus at Urna Condimentum</a></li>
@@ -35,7 +35,7 @@ stylesheets: ["tests.css", "navigation.css"]
                         </li>
                         <li>
                             <il-nav-section>
-                                <span slot="label">Occaecat Cupidatat</span>
+                                <a href="#" slot="label">Occaecat Cupidatat</a>
                             </il-nav-section>
                         </li>
                     </ul>
