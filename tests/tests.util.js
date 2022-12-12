@@ -18,13 +18,25 @@ function url(path) {
   return 'http://' + host() + ':8080' + path;
 }
 
+function lastItem(arr) {
+  return arr.at ? arr.at(-1) : arr[arr.length - 1];
+}
+
+function secondToLastItem(arr) {
+  return arr.at ? arr.at(-2) : arr[arr.length - 2];
+}
+
 function testUrl(testPath) {
   const relative = path.relative(__dirname, testPath);
-  let urlPath = '/' + relative.replace(/\.(func|vis|visual)\.js$/, '') + '/';
-  if (urlPath.endsWith('/index/')) {
-    urlPath = urlPath.substring(0, urlPath.length - 6);
+  const pathWithoutExtension = relative.replace(/\.(func|vis|visual)\.js$/, '');
+  const segments = pathWithoutExtension.split('/');
+  if (lastItem(segments) === 'index') {
+    segments.pop();
   }
-  return url(urlPath);
+  else if (lastItem(segments) === secondToLastItem(segments)) {
+    segments.pop();
+  }
+  return url('/' + segments.join('/') + '/');
 }
 
 module.exports = {

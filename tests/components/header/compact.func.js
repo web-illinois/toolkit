@@ -18,6 +18,10 @@ beforeEach(async () => {
   await page.goto(util.testUrl(__filename));
 });
 
+test("the component has correct color contrast", async () => {
+  await expect('il-header').toHaveColorContrast();
+});
+
 describe("when the menu is expanded", () => {
   beforeEach(async () => {
     const toggle = await getMenuToggle(page);

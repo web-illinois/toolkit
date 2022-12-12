@@ -30,14 +30,16 @@ class VideoComponent extends LitElement {
         return html`<iframe title='${title} (video)' id='kaltura_player_${urlHelper.videoId}' class='kmsembed' style='position: absolute; top: 0; left: 0; width: 100%; height: 100%;' src='${urlHelper.videoUrl}' style='float: left; margin: 10px 10px 10px 0;' allowfullscreen webkitallowfullscreen mozAllowFullScreen allow='autoplay *; fullscreen *; encrypted-media *' frameborder='0'></iframe>`;
       } else if (urlHelper.videoType == "vimeo") {
         return html`<iframe title='${title} (video)' style='position: absolute; top: 0; left: 0; width: 100%; height: 100%;' src='${urlHelper.videoUrl}' frameborder='0' allowfullscreen></iframe>`;
+      } else if (urlHelper.videoType == "blank") {
+        return html`<div style='position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: black; color: white; display: flex; justify-content: center; align-items: center; font-weight: bold;'>${title}</div>`;
+      } else {
+        return '';
       }
-      return '';
     }
 
   render() {
     let getAspectRatio = getComputedStyle(this).getPropertyValue('--il-video-aspect-ratio').trim();
     let padding = '56.25%';
-    debugger;
     if (getAspectRatio == 'vertical') {
       padding = '177.78%';
     } else if (getAspectRatio == 'tv') {

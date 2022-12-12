@@ -5,6 +5,10 @@ beforeEach(async () => {
   await page.goto(util.testUrl(__filename));
 });
 
+test("the component has correct color contrast", async () => {
+  await expect('il-nav').toHaveColorContrast();
+});
+
 describe("when the last submenu link has focus", () => {
   beforeEach(async () => {
     await util.moveFocus(page, '#link-2C');

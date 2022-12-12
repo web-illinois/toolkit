@@ -18,9 +18,6 @@ il-unit-wordmark {
     line-height: 1em;
     color: var(--il-blue);
   }
-  * > {
-    display: inline !important;
-  }
   a {
     @extend .il-link;
     color: var(--il-blue) !important;
