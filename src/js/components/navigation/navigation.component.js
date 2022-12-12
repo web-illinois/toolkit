@@ -63,6 +63,7 @@ class Navigation extends LitElement {
     })
     resizeObserver.observe(this);
     this.positionContents();
+    this.setTabIndexes();
   }
 
   handleLinkKeydown(evt) {
@@ -113,7 +114,6 @@ class Navigation extends LitElement {
   moveFocusToNext() {
     const focused = document.activeElement;
     const links = this.getAllLinksAsArray();
-    console.debug(links.indexOf(focused));
   }
 
   positionContents() {

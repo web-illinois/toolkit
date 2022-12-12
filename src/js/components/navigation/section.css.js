@@ -67,10 +67,6 @@ export default css`
     background: var(--il-nav-hover-background);
     color: var(--il-nav-hover-color);
   }
-  .toggle:focus {
-    outline: 4px dotted;
-    outline-offset: -4px;
-  }
   
   .indicator {
     position: absolute;
@@ -81,6 +77,10 @@ export default css`
     align-items: center;
     width: var(--il-nav-section-heading-indicator-width);
     height: 100%;
+  }
+  .toggle:focus .indicator {
+    outline: 4px dotted;
+    outline-offset: -4px;
   }
   .indicator svg {
     display: block;

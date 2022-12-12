@@ -119,7 +119,6 @@ class NavigationSection extends LitElement {
   }
 
   setTabIndex(tabindex) {
-    console.debug(tabindex);
     this.getToggle().setAttribute('tabindex', tabindex);
   }
 

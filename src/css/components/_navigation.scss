@@ -1,6 +1,6 @@
 
 %il-nav-item {
-  --il-nav-background: var(--il-cloud-1);
+  --il-nav-background: transparent;
   --il-nav-color: var(--il-blue);
   --il-nav-hover-background: white;
   --il-nav-hover-color: var(--il-altgeld);
@@ -31,8 +31,8 @@
   --il-nav-section-contents-border-color: rgba(0, 0, 0, .15);
   --il-nav-section-contents-border-width: 0 1px 3px;
   --il-nav-section-contents-border-style: solid;
-  --il-nav-section-contents-max-width: 20em;
-  --il-nav-section-contents-min-width: 100%;
+  --il-nav-section-contents-max-width: 100%;
+  --il-nav-section-contents-min-width: 16em;
   --il-nav-section-contents-left: 0;
   --il-nav-section-contents-top: 100%;
 
@@ -108,13 +108,24 @@ il-nav {
     @include reset-link;
     display: block;
     line-height: 1.125;
+    padding: .75em;
+    background: var(--il-nav-background);
+    color: var(--il-nav-color);
+    font-size: var(--il-nav-font-size);
+    font-family: var(--il-font-sans);
 
     &:hover, &:focus {
-      --il-nav-item-color: var(--il-altgeld);
+      background-color: var(--il-nav-hover-background);
+      color: var(--il-nav-hover-color);
     }
 
     &:hover {
       text-decoration: underline;
+    }
+
+    &:focus {
+      outline: 4px dotted;
+      outline-offset: -4px;
     }
   }
 
@@ -132,26 +143,7 @@ il-nav {
     }
 
     a {
-      background: var(--il-nav-background);
-      color: var(--il-nav-color);
-      display: block;
-      font-size: var(--il-nav-font-size);
-      font-family: var(--il-font-sans);
-      line-height: 1.125rem;
-      padding: .75em;
       padding-left: calc(.75em + var(--il-nav-indent));
-
-      &:hover {
-        background: var(--il-nav-hover-background);
-        color: var(--il-nav-hover-color);
-        outline: 0;
-        text-decoration: underline;
-      }
-
-      &:focus {
-        outline: 4px dotted;
-        outline-offset: -4px;
-      }
     }
 
     *[slot="label"] {
