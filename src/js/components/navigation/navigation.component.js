@@ -46,7 +46,13 @@ class Navigation extends LitElement {
 
   // Lifecycle methods
 
-
+  connectedCallback() {
+    super.connectedCallback();
+    const header = this.closest('il-header');
+    if (header) {
+      header.addEventListener('viewChange', this.handleHeaderViewChange.bind(this));
+    }
+  }
 
   // Event handlers
 
@@ -64,6 +70,11 @@ class Navigation extends LitElement {
     resizeObserver.observe(this);
     this.positionContents();
     this.setTabIndexes();
+  }
+
+  handleHeaderViewChange(evt) {
+    const view = evt.detail;
+    this.view = view === 'full' ? 'bar' : 'column';
   }
 
   handleLinkKeydown(evt) {
