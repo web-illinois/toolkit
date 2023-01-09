@@ -24,6 +24,10 @@ class AccordionPanel extends LitElement {
     }
   }
 
+  collapse() {
+    this.open = false;
+  }
+
   updateHeader(e) {
     const childNode = e.target.assignedNodes({flatten: true})[0];
     if (typeof childNode !== 'undefined') {
@@ -37,6 +41,7 @@ class AccordionPanel extends LitElement {
 
   triggerExpand(e) {
     this.open = !this.open;
+    this.dispatchEvent(new Event('expand', { panelId: 'testid' }));
   }
 
   firstUpdated() {
