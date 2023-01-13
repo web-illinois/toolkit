@@ -47,4 +47,10 @@ export default css`
     margin-left: 40px;
     padding-bottom: 20px;
   }
+
+  @media only screen and (min-width: 792px) {
+    button {
+      display: none;
+    }
+  }
 `;

@@ -1,7 +1,7 @@
 import { LitElement, html } from 'lit';
-import styles from './accordion-panel.css';
+import styles from './vertical-tab-panel.css';
 
-class AccordionPanel extends LitElement {
+class VerticalTabPanel extends LitElement {
 
   static get properties() {
     return {
@@ -34,9 +34,9 @@ class AccordionPanel extends LitElement {
       this.headerTagName = childNode.tagName;
       this.headerTitle = childNode.innerText;
       let id = this.headerTitle.replace(/[^A-Za-z0-9]/g, "").toLowerCase();
-      this.id = "il-accordion-id-" + id;
-      this.buttonId = "il-accordion-button-" + id;
-      this.panelId = "il-accordion-panel-" + id;
+      this.id = "il-vertical-tab-id-" + id;
+      this.buttonId = "il-vertical-tab-button-" + id;
+      this.panelId = "il-vertical-tab-panel-" + id;
     }
   }
 
@@ -59,7 +59,7 @@ class AccordionPanel extends LitElement {
   render() {
     if (this.headerTagName == 'H2') {
       return html`
-      <div class="accordion-panel">
+      <div class="vertical-tab-panel">
       <div class="invisible"><slot name="header"></slot></div>
       <h2><button id="${this.buttonId}" aria-expanded="${this.open}" aria-controls="${this.panelId}" @click=${this.triggerExpand}><span>${this.renderChevron()}</span>${this.headerTitle}</button></h2>
           <div role="region" class="panel" id="${this.panelId}" aria-labelledby="${this.buttonId}" ?hidden=${!this.open}>
@@ -70,7 +70,7 @@ class AccordionPanel extends LitElement {
     }
     if (this.headerTagName == 'H3') {
       return html`
-      <div class="accordion-panel">
+      <div class="vertical-tab-panel">
       <div class="invisible"><slot name="header"></slot></div>
       <h3><button id="${this.buttonId}" aria-expanded="${this.open}" aria-controls="${this.panelId}" @click=${this.triggerExpand}><span>${this.renderChevron()}</span>${this.headerTitle}</button></h3>
           <div role="region" class="panel" id="${this.panelId}" aria-labelledby="${this.id}" ?hidden=${!this.open}>
@@ -81,7 +81,7 @@ class AccordionPanel extends LitElement {
     }
     if (this.headerTagName == 'H4') {
       return html`
-      <div class="accordion-panel">
+      <div class="vertical-tab-panel">
       <div class="invisible"><slot name="header"></slot></div>
       <h4><button id="${this.buttonId}" aria-expanded="${this.open}" aria-controls="${this.panelId}" @click=${this.triggerExpand}><span></span>${this.headerTitle}</button></h4>
           <div role="region" class="panel" id="${this.panelId}" aria-labelledby="${this.id}" ?hidden=${!this.open}>
@@ -92,7 +92,7 @@ class AccordionPanel extends LitElement {
     }
     if (this.headerTagName == 'H5') {
       return html`
-      <div class="accordion-panel">
+      <div class="vertical-tab-panel">
       <div class="invisible"><slot name="header"></slot></div>
       <h5><button id="${this.buttonId}" aria-expanded="${this.open}" aria-controls="${this.panelId}" @click=${this.triggerExpand}><span></span>${this.headerTitle}</button></h5>
           <div role="region" class="panel" id="${this.panelId}" aria-labelledby="${this.id}" ?hidden=${!this.open}>
@@ -103,7 +103,7 @@ class AccordionPanel extends LitElement {
     }
     if (this.headerTagName == 'H6') {
       return html`
-      <div class="accordion-panel">
+      <div class="vertical-tab-panel">
       <div class="invisible"><slot name="header"></slot></div>
           <h6><button id="${this.buttonId}" aria-expanded="${this.open}" aria-controls="${this.panelId}" @click=${this.triggerExpand}><span></span>${this.headerTitle}</button></h6>
           <div role="region" class="panel" id="${this.panelId}" aria-labelledby="${this.id}" ?hidden=${!this.open}>
@@ -113,7 +113,7 @@ class AccordionPanel extends LitElement {
       `;
     }
     return html`
-    <div class="accordion-panel">
+    <div class="vertical-tab-panel">
     <div class="invisible"><slot name="header"></slot></div>
     <button id="${this.buttonId}" aria-expanded="${this.open}" aria-controls="${this.panelId}" @click=${this.triggerExpand}><span></span>${this.headerTitle}</button>
         <div role="region" class="panel" id="${this.panelId}" aria-labelledby="${this.id}" ?hidden=${!this.open}>
@@ -124,4 +124,4 @@ class AccordionPanel extends LitElement {
   }
 }
 
-customElements.define('il-accordion-panel', AccordionPanel);
+customElements.define('il-vertical-tab-panel', VerticalTabPanel);

@@ -1,0 +1,12 @@
+il-accordion-panel {
+    border: var(--il-details-border);
+    max-width: var(--il-details-maxwidth);
+    margin: 20px 0;
+}
+
+il-accordion-panel.il-theme-white, .il-theme-white il-accordion-panel {
+    --il-details-color: var(--il-blue);
+    --il-details-background: white;
+    --il-details-background-hover: var(--il-cloud-2);
+    --il-details-border: thin solid var(--il-blue);
+}

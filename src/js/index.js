@@ -30,5 +30,7 @@ import './components/search/search.component';
 import './components/section-nav/section-nav.component';
 import './components/statistic/statistic';
 import './components/unit-wordmark/unit-wordmark.component';
+import './components/vertical-tab/vertical-tab.component';
+import './components/vertical-tab-panel/vertical-tab-panel.component';
 import './components/video/video.component';
 import './components/video-feature/video-feature.component';

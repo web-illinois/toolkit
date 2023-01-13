@@ -23,7 +23,6 @@ class Accordion extends LitElement {
 
   handleContentLoaded(evt) {
     this.getPanels().forEach(section => {
-        console.log('test');
         section.addEventListener('expand', this.collapsePanels.bind(this));
       });
   }
@@ -42,13 +41,9 @@ class Accordion extends LitElement {
     return this.querySelectorAll('il-accordion-panel');
   }
 
-  firstUpdated() {
-  }
-
-
   render() {
     return html`
-        <slot></slot>
+      <slot></slot>
     `;
   }
 }
