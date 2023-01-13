@@ -26,10 +26,15 @@ class VerticalTab extends LitElement {
   }
 
   handleContentLoaded(evt) {
+    let firstItem = true;
     this.getPanels().forEach(section => {
         this.titles.push(section.headerTitle); 
         this.ids.push(section.panelId); 
         section.addEventListener('expand', this.collapsePanels.bind(this));
+        if (firstItem) {
+          section.setAttribute('open', true);
+          firstItem = false;
+        }
       });
       this.requestUpdate();
   }
@@ -65,7 +70,7 @@ class VerticalTab extends LitElement {
     return html`
     <ul>
     ${this.titles.map((title, i) =>
-      html`<li><button aria-expanded="false" aria-controls="${this.ids[i]}" @click=${this.triggerExpandChild}>${title}</button></li>`
+      html`<li><button aria-expanded="${i == 0 ? 'true' : 'false'}" aria-controls="${this.ids[i]}" @click=${this.triggerExpandChild}>${title}</button></li>`
     )}
   </ul>`;
   }
@@ -73,6 +78,7 @@ class VerticalTab extends LitElement {
   render() {
     return html`
     <div class="full">
+      <div class="title"><slot name="title"></slot></div>
       <div class="headings">${this.printHeaders()}
       </div>
       <div class="information">

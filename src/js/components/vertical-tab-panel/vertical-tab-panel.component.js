@@ -60,9 +60,9 @@ class VerticalTabPanel extends LitElement {
     if (this.headerTagName == 'H2') {
       return html`
       <div class="vertical-tab-panel">
-      <div class="invisible"><slot name="header"></slot></div>
       <h2><button id="${this.buttonId}" aria-expanded="${this.open}" aria-controls="${this.panelId}" @click=${this.triggerExpand}><span>${this.renderChevron()}</span>${this.headerTitle}</button></h2>
           <div role="region" class="panel" id="${this.panelId}" aria-labelledby="${this.buttonId}" ?hidden=${!this.open}>
+          <slot name="header"></slot>
           <slot></slot>
           </div>
       </div>
@@ -71,9 +71,9 @@ class VerticalTabPanel extends LitElement {
     if (this.headerTagName == 'H3') {
       return html`
       <div class="vertical-tab-panel">
-      <div class="invisible"><slot name="header"></slot></div>
       <h3><button id="${this.buttonId}" aria-expanded="${this.open}" aria-controls="${this.panelId}" @click=${this.triggerExpand}><span>${this.renderChevron()}</span>${this.headerTitle}</button></h3>
           <div role="region" class="panel" id="${this.panelId}" aria-labelledby="${this.id}" ?hidden=${!this.open}>
+          <slot name="header"></slot>
           <slot></slot>
           </div>
       </div>
@@ -82,9 +82,9 @@ class VerticalTabPanel extends LitElement {
     if (this.headerTagName == 'H4') {
       return html`
       <div class="vertical-tab-panel">
-      <div class="invisible"><slot name="header"></slot></div>
       <h4><button id="${this.buttonId}" aria-expanded="${this.open}" aria-controls="${this.panelId}" @click=${this.triggerExpand}><span></span>${this.headerTitle}</button></h4>
           <div role="region" class="panel" id="${this.panelId}" aria-labelledby="${this.id}" ?hidden=${!this.open}>
+          <slot name="header"></slot>
           <slot></slot>
           </div>
       </div>
@@ -93,9 +93,9 @@ class VerticalTabPanel extends LitElement {
     if (this.headerTagName == 'H5') {
       return html`
       <div class="vertical-tab-panel">
-      <div class="invisible"><slot name="header"></slot></div>
       <h5><button id="${this.buttonId}" aria-expanded="${this.open}" aria-controls="${this.panelId}" @click=${this.triggerExpand}><span></span>${this.headerTitle}</button></h5>
           <div role="region" class="panel" id="${this.panelId}" aria-labelledby="${this.id}" ?hidden=${!this.open}>
+          <slot name="header"></slot>
           <slot></slot>
           </div>
       </div>
@@ -104,9 +104,9 @@ class VerticalTabPanel extends LitElement {
     if (this.headerTagName == 'H6') {
       return html`
       <div class="vertical-tab-panel">
-      <div class="invisible"><slot name="header"></slot></div>
           <h6><button id="${this.buttonId}" aria-expanded="${this.open}" aria-controls="${this.panelId}" @click=${this.triggerExpand}><span></span>${this.headerTitle}</button></h6>
           <div role="region" class="panel" id="${this.panelId}" aria-labelledby="${this.id}" ?hidden=${!this.open}>
+          <slot name="header"></slot>
           <slot></slot>
           </div>
       </div>
@@ -114,9 +114,9 @@ class VerticalTabPanel extends LitElement {
     }
     return html`
     <div class="vertical-tab-panel">
-    <div class="invisible"><slot name="header"></slot></div>
     <button id="${this.buttonId}" aria-expanded="${this.open}" aria-controls="${this.panelId}" @click=${this.triggerExpand}><span></span>${this.headerTitle}</button>
         <div role="region" class="panel" id="${this.panelId}" aria-labelledby="${this.id}" ?hidden=${!this.open}>
+        <slot name="header"></slot>
         <slot></slot>
         </div>
     </div>
