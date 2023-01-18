@@ -1,0 +1,31 @@
+:root {
+    --il-panel-background-color: var(--il-blue);
+    --il-panel-foreground-color: white;
+    --il-panel-text-color: white;
+    --il-panel-border: thin solid var(--il-blue-lighter-1);
+    --il-panel-link-focused-color: var(--il-orange);
+    --il-selected-panel-background-color: var(--il-orange);
+    --il-selected-panel-foreground-color: white;
+  }
+
+  il-vertical-tab-panel, .il-formatted il-vertical-tab-panel {
+    h2, h3, h4, h5, h6, p {
+        color: var(--il-panel-text-color);
+    }
+
+    a, a:visited {
+        color: var(--il-panel-text-color);
+    }
+    a:focus, a:hover {
+        color: var(--il-panel-link-focused-color);
+    }
+  }
+  
+  il-vertical-tab, .il-formatted il-vertical-tab {
+    display: block;
+    background: var(--il-panel-background-color);
+
+    h2, h3, h4, h5, h6, p {
+        color: var(--il-panel-text-color);
+    }
+  }

@@ -56,69 +56,62 @@ class VerticalTabPanel extends LitElement {
     </svg>`;
   }
 
+  renderHeading() {
+    return html`<button id="${this.buttonId}" aria-expanded="${this.open}" aria-controls="${this.panelId}" @click=${this.triggerExpand}>${this.headerTitle}<span>${this.renderChevron()}</span></button>`;
+  }
+
+  renderBody() {
+    return html`<div role="region" class="panel" id="${this.panelId}" aria-labelledby="${this.buttonId}" ?hidden=${!this.open}>
+    <slot name="header"></slot>
+    <slot></slot>
+    </div>`;
+  }
+
   render() {
     if (this.headerTagName == 'H2') {
       return html`
       <div class="vertical-tab-panel">
-      <h2><button id="${this.buttonId}" aria-expanded="${this.open}" aria-controls="${this.panelId}" @click=${this.triggerExpand}><span>${this.renderChevron()}</span>${this.headerTitle}</button></h2>
-          <div role="region" class="panel" id="${this.panelId}" aria-labelledby="${this.buttonId}" ?hidden=${!this.open}>
-          <slot name="header"></slot>
-          <slot></slot>
-          </div>
+      <h2>${this.renderHeading()}</h2>
+      ${this.renderBody()}
       </div>
       `;
     }
     if (this.headerTagName == 'H3') {
       return html`
       <div class="vertical-tab-panel">
-      <h3><button id="${this.buttonId}" aria-expanded="${this.open}" aria-controls="${this.panelId}" @click=${this.triggerExpand}><span>${this.renderChevron()}</span>${this.headerTitle}</button></h3>
-          <div role="region" class="panel" id="${this.panelId}" aria-labelledby="${this.id}" ?hidden=${!this.open}>
-          <slot name="header"></slot>
-          <slot></slot>
-          </div>
+      <h3>${this.renderHeading()}</h3>
+      ${this.renderBody()}
       </div>
       `;
     }
     if (this.headerTagName == 'H4') {
       return html`
       <div class="vertical-tab-panel">
-      <h4><button id="${this.buttonId}" aria-expanded="${this.open}" aria-controls="${this.panelId}" @click=${this.triggerExpand}><span></span>${this.headerTitle}</button></h4>
-          <div role="region" class="panel" id="${this.panelId}" aria-labelledby="${this.id}" ?hidden=${!this.open}>
-          <slot name="header"></slot>
-          <slot></slot>
-          </div>
+      <h4>${this.renderHeading()}</h4>
+      ${this.renderBody()}
       </div>
       `;
     }
     if (this.headerTagName == 'H5') {
       return html`
       <div class="vertical-tab-panel">
-      <h5><button id="${this.buttonId}" aria-expanded="${this.open}" aria-controls="${this.panelId}" @click=${this.triggerExpand}><span></span>${this.headerTitle}</button></h5>
-          <div role="region" class="panel" id="${this.panelId}" aria-labelledby="${this.id}" ?hidden=${!this.open}>
-          <slot name="header"></slot>
-          <slot></slot>
-          </div>
+      <h5>${this.renderHeading()}</h5>
+      ${this.renderBody()}
       </div>
       `;
     }
     if (this.headerTagName == 'H6') {
       return html`
       <div class="vertical-tab-panel">
-          <h6><button id="${this.buttonId}" aria-expanded="${this.open}" aria-controls="${this.panelId}" @click=${this.triggerExpand}><span></span>${this.headerTitle}</button></h6>
-          <div role="region" class="panel" id="${this.panelId}" aria-labelledby="${this.id}" ?hidden=${!this.open}>
-          <slot name="header"></slot>
-          <slot></slot>
-          </div>
+      <h6>${this.renderHeading()}</h6>
+      ${this.renderBody()}
       </div>
       `;
     }
     return html`
     <div class="vertical-tab-panel">
-    <button id="${this.buttonId}" aria-expanded="${this.open}" aria-controls="${this.panelId}" @click=${this.triggerExpand}><span></span>${this.headerTitle}</button>
-        <div role="region" class="panel" id="${this.panelId}" aria-labelledby="${this.id}" ?hidden=${!this.open}>
-        <slot name="header"></slot>
-        <slot></slot>
-        </div>
+    ${this.renderHeading()}
+    ${this.renderBody()}
     </div>
     `;
   }
