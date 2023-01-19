@@ -41,12 +41,12 @@ export default css`
     display: none;
 }
 
-.headings button[aria-expanded="true"] {
+.headings button[aria-selected="true"] {
     background: var(--il-selected-panel-background-color);
     color: var(--il-selected-panel-foreground-color);
 } 
 
-.headings button[aria-expanded="true"] span {
+.headings button[aria-selected="true"] span {
     float: right;
     width: 18px;
     height: 18px;

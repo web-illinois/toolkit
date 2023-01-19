@@ -63,15 +63,15 @@ class VerticalTab extends LitElement {
           section.setAttribute('open', true);
         }
     });
-    this.renderRoot.querySelectorAll('button').forEach(button => { button.setAttribute('aria-expanded', false); });
-    evt.target.setAttribute('aria-expanded', true);
+    this.renderRoot.querySelectorAll('button').forEach(button => { button.setAttribute('aria-selected', false); });
+    evt.target.setAttribute('aria-selected', true);
   }
 
   printHeaders() {
     return html`
     <ul>
     ${this.titles.map((title, i) =>
-      html`<li><button aria-expanded="${i == 0 ? 'true' : 'false'}" aria-controls="${this.ids[i]}" @click=${this.triggerExpandChild}>${title}<span>${this.renderChevron()}</span></button></li>`
+      html`<li><button role="tab" aria-selected="${i == 0 ? 'true' : 'false'}" aria-controls="${this.ids[i]}" @click=${this.triggerExpandChild}>${title}<span>${this.renderChevron()}</span></button></li>`
     )}
   </ul>`;
   }
@@ -80,7 +80,7 @@ class VerticalTab extends LitElement {
     return html`
     <div class="full">
       <div class="title"><slot name="title"></slot></div>
-      <div class="headings">${this.printHeaders()}
+      <div class="headings" role="tablist">${this.printHeaders()}
       </div>
       <div class="information">
       <slot></slot>
