@@ -17,7 +17,7 @@ export default css`
 
 .headings button {
     width: 100%;
-    display: flex;
+    display: block;
     padding: 15px 20px;
     background: var(--il-panel-background-color);
     border: none;
@@ -29,18 +29,13 @@ export default css`
     font-family: var(--il-font-sans);
 }
 
-.headings button div {
-    flex-grow: 1;
+.headings ul li:first-child button {
+    border-top: var(--il-panel-border);
 }
 
 .headings button:focus, .headings button:hover {
-    text-decoration: underline solid var(--il-panel-foreground-color);
     color: var(--il-focused-panel-foreground-color);
     background: var(--il-focused-panel-background-color);
-}
-
-.headings button span {
-    display: none;
 }
 
 .headings button[aria-selected="true"] {
@@ -49,20 +44,9 @@ export default css`
 } 
 
 .headings button[aria-selected="true"]:focus, .headings button[aria-selected="true"]:hover {
-    text-decoration: underline solid var(--il-selected-panel-foreground-color);
     background: var(--il-selected-panel-background-color);
     color: var(--il-selected-panel-foreground-color);
 } 
-
-.headings button[aria-selected="true"] span {
-    float: right;
-    width: 18px;
-    height: 18px;
-    display: inline-block;
-    transform: rotate(-90deg);
-    fill: var(--il-selected-panel-foreground-color);
-    margin-top: 3px;
-}
 
 .headings ul, .headings ul li  {
     list-style: none;
@@ -73,7 +57,6 @@ export default css`
 .information {
     grid-column: 3;
 }
-
 
 @media only screen and (max-width: 792px) {
     .full {

@@ -3,12 +3,12 @@
     --il-panel-foreground-color: white;
     --il-panel-text-color: white;
     --il-panel-title-color: var(--il-orange);
-    --il-panel-border: 2px solid var(--il-arches-blue);
+    --il-panel-border: 1px solid #C8C6C7;
     --il-panel-link-focused-color: var(--il-orange);
     --il-selected-panel-background-color: var(--il-orange);
     --il-selected-panel-foreground-color: white;
     --il-focused-panel-background-color: var(--il-blue-darker-1);
-    --il-focused-panel-foreground-color: var(--il-white);
+    --il-focused-panel-foreground-color: white;
   }
 
   il-vertical-tab, .il-formatted il-vertical-tab {

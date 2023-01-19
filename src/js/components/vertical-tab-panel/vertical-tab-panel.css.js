@@ -30,20 +30,17 @@ export default css`
     flex-grow: 1;
   }
 
-
   button[aria-expanded="true"] {
     background: var(--il-selected-panel-background-color);
     color: var(--il-selected-panel-foreground-color);
   } 
 
   button:focus, button:hover {
-    text-decoration: underline solid var(--il-panel-foreground-color);
     color: var(--il-focused-panel-foreground-color);
     background: var(--il-focused-panel-background-color);
   }
 
   button[aria-expanded="true"]:focus, button[aria-expanded="true"]:hover {
-    text-decoration: underline solid var(--il-selected-panel-foreground-color);
     background: var(--il-selected-panel-background-color);
     color: var(--il-selected-panel-foreground-color);
   } 
@@ -73,11 +70,18 @@ export default css`
   }
 
   .panel {
-    padding: 20px;
+    padding: 0 20px 20px 20px;
     border-bottom: var(--il-panel-border);
   }
 
+  slot[name="header"] {
+    display: none;
+  }
+
   @media only screen and (min-width: 792px) {
+    slot[name="header"] {
+      display: block;
+    }
     button {
       display: none;
     }
