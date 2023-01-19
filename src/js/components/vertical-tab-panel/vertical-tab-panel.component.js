@@ -57,7 +57,7 @@ class VerticalTabPanel extends LitElement {
   }
 
   renderHeading() {
-    return html`<button id="${this.buttonId}" aria-expanded="${this.open}" aria-controls="${this.panelId}" @click=${this.triggerExpand}>${this.headerTitle}<span>${this.renderChevron()}</span></button>`;
+    return html`<button id="${this.buttonId}" aria-expanded="${this.open}" aria-controls="${this.panelId}" @click=${this.triggerExpand}><div>${this.headerTitle}</div><span>${this.renderChevron()}</span></button>`;
   }
 
   renderBody() {

@@ -6,23 +6,18 @@ export default css`
     grid-template-columns: 26.9% 60px 1fr;
     color: var(--il-panel-foreground-color);
     padding: 60px 0 75px 0;
-    margin: 0 auto;
+    margin: 0 30px;
     max-width: 1310px;
 }
 
 .title {
-    margin-left: 30px;
     grid-column: 1 / span 3;
     padding-bottom: 40px;
 }
 
-.headings {
-    margin-left: 30px;
-}
-
 .headings button {
     width: 100%;
-    display: block;
+    display: flex;
     padding: 15px 20px;
     background: var(--il-panel-background-color);
     border: none;
@@ -31,10 +26,17 @@ export default css`
     font-weight: 700;
     text-align: left;
     border-bottom: var(--il-panel-border);
+    font-family: var(--il-font-sans);
+}
+
+.headings button div {
+    flex-grow: 1;
 }
 
 .headings button:focus, .headings button:hover {
     text-decoration: underline solid var(--il-panel-foreground-color);
+    color: var(--il-focused-panel-foreground-color);
+    background: var(--il-focused-panel-background-color);
 }
 
 .headings button span {
@@ -42,6 +44,12 @@ export default css`
 }
 
 .headings button[aria-selected="true"] {
+    background: var(--il-selected-panel-background-color);
+    color: var(--il-selected-panel-foreground-color);
+} 
+
+.headings button[aria-selected="true"]:focus, .headings button[aria-selected="true"]:hover {
+    text-decoration: underline solid var(--il-selected-panel-foreground-color);
     background: var(--il-selected-panel-background-color);
     color: var(--il-selected-panel-foreground-color);
 } 
@@ -64,19 +72,16 @@ export default css`
 
 .information {
     grid-column: 3;
-    padding-right: 30px;
 }
 
 
 @media only screen and (max-width: 792px) {
     .full {
         display: block;
+        margin: 0 20px;
     }
     .headings {
         display: none;
-    }
-    .information {
-        padding-left: 30px;
     }
 }
 `;
