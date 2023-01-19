@@ -56,6 +56,7 @@ class VerticalTab extends LitElement {
 
   triggerExpandChild(evt) {
     let panelId = evt.target.getAttribute('aria-controls');
+    debugger;
     this.getPanels().forEach(section => {
         if (panelId !== section.panelId) {
             section.removeAttribute('open');
@@ -71,7 +72,7 @@ class VerticalTab extends LitElement {
     return html`
     <ul>
     ${this.titles.map((title, i) =>
-      html`<li><button role="tab" aria-selected="${i == 0 ? 'true' : 'false'}" aria-controls="${this.ids[i]}" @click=${this.triggerExpandChild}><div>${title}</div><span>${this.renderChevron()}</span></button></li>`
+      html`<li><button role="tab" aria-selected="${i == 0 ? 'true' : 'false'}" aria-controls="${this.ids[i]}" @click=${this.triggerExpandChild}>${title}<span>${this.renderChevron()}</span></button></li>`
     )}
   </ul>`;
   }
