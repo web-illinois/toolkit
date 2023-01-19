@@ -12,3 +12,9 @@ il-introduction, .il-formatted il-introduction {
     margin-right: 20px;
   }
 }
+
+@media only screen and (max-width: 792px) {
+  il-introduction, .il-formatted il-introduction {
+    padding: 20px;  
+  }
+}
