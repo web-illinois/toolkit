@@ -30,4 +30,10 @@
         color: var(--il-panel-link-focused-color);
     }
   }
+
+  @media only screen and (max-width: 792px) {
+    il-vertical-tab-panel:first-of-type {
+      border-top: var(--il-panel-border);
+    }
+  }
 }

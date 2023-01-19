@@ -26,6 +26,10 @@ export default css`
     border-bottom: var(--il-panel-border);
   }
 
+  .headings ul li:first-child button {
+    border-top: var(--il-panel-border);
+  }
+
   button div {
     flex-grow: 1;
   }
