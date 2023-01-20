@@ -15,6 +15,7 @@ import './components/footer/footer.component';
 import './components/header/header.component';
 import './components/hero/hero.component';
 import './components/image-feature/image-feature.component';
+import './components/introduction/introduction.component';
 import './components/layout/page.component';
 import './components/layout/section.component';
 import './components/layout/section-with-sidebar.component';

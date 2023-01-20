@@ -1,0 +1,20 @@
+il-introduction, .il-formatted il-introduction {
+  display: block;
+  background: var(--il-background-color);
+  color: var(--il-heading-color);
+  padding: 30px;
+
+  &.il-align-center {
+    text-align: center;
+  }
+
+  a.il-button, button.il-button {
+    margin-right: 20px;
+  }
+}
+
+@media only screen and (max-width: 792px) {
+  il-introduction, .il-formatted il-introduction {
+    padding: 20px;  
+  }
+}
