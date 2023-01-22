@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en" class="{{ htmlClass }}" {% block htmlAttrs %}{{ htmlAttrs|safe }}{% endblock %}>
+<head>
+    <meta charset="utf-8">
+    <title>{{ title }}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0">
+    <link rel="icon" href="https://cdn.brand.illinois.edu/favicon.ico">
+    <link rel="stylesheet" href="{{ "/toolkit.css" | url }}">
+    <link rel="stylesheet" href="{{ "/_assets/demo.css" | url }}">
+    <script src="{{ "/toolkit.js" | url }}"></script>
+    {% if stylesheets %}
+        {% for stylesheet in stylesheets %}
+            <link rel="stylesheet" href="{{ ("/_assets/" + stylesheet) | url }}">
+        {% endfor %}
+    {% endif %}
+</head>
+<body class="{% block bodyClass %}{{ bodyClass }}{% endblock %}">
+{% block body %}
+    {{ content | safe }}
+{% endblock %}
+</body>
+</html>

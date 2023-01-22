@@ -1,0 +1,10 @@
+.navigation-container {
+  margin-top: 2em;
+  background-color: black;
+}
+.navigation-container--compact {
+  background-color: transparent;
+  max-width: 400px;
+  margin-left: auto;
+  margin-right: auto;
+}
