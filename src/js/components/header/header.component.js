@@ -3,6 +3,8 @@ import styles from './header.css';
 import blockI from './block-i.html';
 import uiucWordmark from './wordmark-uiuc.html';
 import '../unit-wordmark/unit-wordmark.component';
+import fingerprintSmall from './fingerprint-1400x78.svg';
+import fingerprintLarge from './fingerprint-2400x78.svg';
 
 class Header extends LitElement {
   static get properties() {
@@ -206,7 +208,10 @@ class Header extends LitElement {
     const menuState = this.menuVisible ? 'menu-visible' : 'menu-hidden';
     return html`
       <div class="header ${viewState} ${menuState}">
-        <div class="fingerprint"></div>
+        <div class="fingerprint">
+          <div class="fingerprint-narrow fingerprint-texture">${fingerprintSmall}</div>
+          <div class="fingerprint-wide fingerprint-texture">${fingerprintLarge}</div>
+        </div>
         <div class="content">
           <div class="top-content">
             <a href="https://www.illinois.edu/" class="campus-wordmark">

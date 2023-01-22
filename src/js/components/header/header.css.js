@@ -15,7 +15,49 @@ export default css`
     display: block;
     width: 100%;
     height: 20px;
+    overflow: hidden;
     background-color: var(--il-orange);
+  }
+  .fingerprint-texture {
+    position: absolute;
+    left: 0;
+    top: -29px;
+    display: block;
+    height: 78px;
+  }
+  .fingerprint-texture path {
+    fill: none;
+    stroke: white;
+    opacity: .9;
+    stroke-width: 0.75;
+    stroke-miterlimit: 10;
+    enable-background: new;
+  }
+  .fingerprint-narrow {
+    left: calc(50vw - 700px);
+    width: 1400px;
+  }
+  .fingerprint-narrow.fingerprint-texture path {
+    stroke-width: 2;
+    opacity: .7;
+  }
+  .fingerprint-wide {
+    left: calc(50vw - 1200px);
+    width: 2400px;
+    display: none;
+  }
+  @media (min-width: 1400px) {
+    .fingerprint-narrow {
+      display: none;
+    }
+    .fingerprint-wide {
+      display: block;
+    }
+  }
+  .fingerprint-texture svg {
+    display: block;
+    width: 100%;
+    height: 100%;
   }
   
   /* Layout */
@@ -35,6 +77,7 @@ export default css`
   }
 
   .bottom-content {
+    clear: both;
     position: relative;
     box-sizing: border-box;
     width: 100%;
