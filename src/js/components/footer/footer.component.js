@@ -13,6 +13,7 @@ class Footer extends LitElement {
   }
 
   render() {
+    const year = new Date().getFullYear();
     return html`
       <div class="footer">
         <div class="site-footer section">
@@ -29,6 +30,7 @@ class Footer extends LitElement {
             <div class="site-footer__bottom">
               <div class="site-footer__bottom-left">
                 <slot name="contact"></slot>
+                <slot name="parent"></slot>
               </div>
               <div class="site-footer__bottom-right">
                 <slot></slot>
@@ -53,13 +55,11 @@ class Footer extends LitElement {
               <nav class="il-footer-links" aria-label="Legal notices">
                 <ul>
                   <li>
-                    <button data-il="cookies"></button>
+                    <button data-il="cookies" id="ot-sdk-btn" class="ot-sdk-show-settings">About Cookies</button>
                   </li>
-                  <li><a data-il="privacy"></a></li>
-                  <li><a data-il="copyright"></a></li>
-                  <li><a data-il="accessibility"></a></li>
-                  <li><a href="#">College Bylaws</a></li>
-                  <li><a href="#">Login</a></li>
+                  <li><a data-il="privacy" href="https://www.vpaa.uillinois.edu/resources/web_privacy">Privacy Policy</a></li>
+                  <li><a data-il="copyright" href="https://illinois.edu/resources/website/copyright.html">Copyright &#169; ${year}</a></li>
+                  <li><a data-il="accessibility" href="https://illinois.edu/resources/website/accessibility.html">Accessibility</a></li>
                 </ul>
               </nav>
             </slot>

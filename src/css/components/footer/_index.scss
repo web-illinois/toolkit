@@ -17,18 +17,48 @@ il-footer {
       font-weight: 700;
       font-family: var(--il-font-sans);
     }
+
+    a {
+      @extend .il-link;
+      text-decoration: none;
+    }
+
+    a:hover, a:focus {
+      outline: none;
+      text-decoration: underline;
+      color: var(--il-orange);
+    }
   }
 
   *[slot=social] {
     margin-top: 1em;
   }
 
+  *[slot=parent],
   *[slot=parent-unit] {
+    font-weight: 600;
+    
     a {
       color: inherit;
 
       &.hover, &:focus {
         outline: 3px dashed var(--il-altgeld);
+      }
+    }
+  }
+
+  *[slot=buttons] {
+    a {
+      @include reset-link;
+      padding: .5em 1em;
+      display: inline-block;
+      color: white;
+      background: var(--il-orange);
+      font-size: 19px;
+      font-weight: 600;
+
+      &:hover, &:focus {
+        background-color: var(--il-blue);
       }
     }
   }
