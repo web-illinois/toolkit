@@ -10,6 +10,19 @@ il-footer {
   background-color: var(--il-blue);
   color: white;
 
+  *[slot=identity] {
+    &, * {
+      @include reset-spacing;
+      font-size: 24px;
+      font-weight: 700;
+      font-family: var(--il-font-sans);
+    }
+  }
+
+  *[slot=social] {
+    margin-top: 1em;
+  }
+
   *[slot=parent-unit] {
     a {
       color: inherit;
