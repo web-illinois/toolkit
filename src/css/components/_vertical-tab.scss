@@ -1,0 +1,39 @@
+:root {
+    --il-panel-background-color: var(--il-blue);
+    --il-panel-foreground-color: white;
+    --il-panel-text-color: white;
+    --il-panel-title-color: var(--il-orange);
+    --il-panel-border: 1px solid #C8C6C7;
+    --il-panel-link-focused-color: var(--il-orange);
+    --il-selected-panel-background-color: var(--il-orange);
+    --il-selected-panel-foreground-color: white;
+    --il-focused-panel-background-color: var(--il-blue-darker-1);
+    --il-focused-panel-foreground-color: white;
+  }
+
+  il-vertical-tab, .il-formatted il-vertical-tab {
+    display: block;
+    background: var(--il-panel-background-color);
+
+    h2, h3, h4, h5, h6, p {
+        color: var(--il-panel-text-color);
+    }
+
+  il-vertical-tab-panel, .il-formatted il-vertical-tab-panel {
+    h2, h3, h4, h5, h6 {
+        color: var(--il-panel-title-color);
+    }
+    p, ul, a, a:visited {
+        color: var(--il-panel-text-color);
+    }
+    a:focus, a:hover {
+        color: var(--il-panel-link-focused-color);
+    }
+  }
+
+  @media only screen and (max-width: 792px) {
+    il-vertical-tab-panel:first-of-type {
+      border-top: var(--il-panel-border);
+    }
+  }
+}
