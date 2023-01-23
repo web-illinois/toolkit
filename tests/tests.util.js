@@ -6,6 +6,10 @@ function elementHasFocus(page, sel) {
   }, [sel]);
 }
 
+function gotoTestPage() {
+  return page.goto(testUrl(jasmine.testPath));
+}
+
 function host() {
   return process.env.BACKSTOP_ENV === 'docker' ? 'host.docker.internal' : 'localhost';
 }
@@ -41,6 +45,7 @@ function testUrl(testPath) {
 
 module.exports = {
   elementHasFocus,
+  gotoTestPage,
   moveFocus,
   url,
   testUrl

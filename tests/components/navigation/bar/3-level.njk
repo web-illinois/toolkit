@@ -1,0 +1,48 @@
+---
+title: "Navigation bar: Three levels"
+group: "Components: Navigation"
+layout: layouts/page.njk
+stylesheets: ["tests.css", "navigation.css"]
+---
+<div id="nav" class="navigation-container">
+    <il-nav label="Mythical University" view="bar">
+        <ul>
+            <li><a href="#">Consectetur</a></li>
+            <li>
+                <il-nav-section expanded>
+                    <span slot="label">Adipiscing</span>
+                    <ul>
+                        <li>
+                            <il-nav-section>
+                                <span slot="label">Eiusmod Tempor</span>
+                            </il-nav-section>
+                        </li>
+                        <li>
+                            <il-nav-section>
+                                <span slot="label">Incididunt ut Labore</span>
+                            </il-nav-section>
+                        </li>
+                        <li>
+                            <il-nav-section id="section" expanded current>
+                                <span slot="label">Reprehenderit in Voluptate</span>
+                                <ul>
+                                    <li><a href="#">Parturient Montes</a></li>
+                                    <li><a href="#">Tellus at Urna Condimentum</a></li>
+                                    <li><a href="#">Velit Egestas</a></li>
+                                    <li><a href="#">Tellus Pellentesque</a></li>
+                                </ul>
+                            </il-nav-section>
+                        </li>
+                        <li>
+                            <il-nav-section>
+                                <span slot="label">Occaecat Cupidatat</span>
+                            </il-nav-section>
+                        </li>
+                    </ul>
+                </il-nav-section>
+            </li>
+            <li><a href="#">Incididunt</a></li>
+            <li><a href="#">Exercitation</a></li>
+        </ul>
+    </il-nav>
+</div>

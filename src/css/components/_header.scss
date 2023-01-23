@@ -1,4 +1,13 @@
 il-header {
+
+  > h1 {
+    @extend %site-name;
+  }
+
+  > p {
+    @extend %site-parent-name;
+  }
+
   &[view="full"] {
 
     il-unit-wordmark {

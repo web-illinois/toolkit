@@ -1,0 +1,26 @@
+---
+title: "Navigation column: Two levels with section link"
+group: "Components: Navigation"
+layout: layouts/page.njk
+stylesheets: ["tests.css", "navigation.css"]
+---
+<div id="nav" class="navigation-container navigation-container--compact">
+    <il-nav label="Mythical University" view="column">
+        <ul>
+            <li><a href="#">Consectetur</a></li>
+            <li>
+                <il-nav-section id="section" expanded current>
+                    <a id="link" slot="label" href="#">Adipiscing</a>
+                    <ul>
+                        <li><a href="#">Eiusmod Tempor</a></li>
+                        <li><a href="#">Incididunt ut Labore</a></li>
+                        <li><a href="#">Reprehenderit in Voluptate</a></li>
+                        <li><a href="#">Occaecat Cupidatat</a></li>
+                    </ul>
+                </il-nav-section>
+            </li>
+            <li><a href="#">Incididunt</a></li>
+            <li><a href="#">Exercitation</a></li>
+        </ul>
+    </il-nav>
+</div>
