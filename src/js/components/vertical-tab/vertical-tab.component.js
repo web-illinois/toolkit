@@ -22,14 +22,15 @@ class VerticalTab extends LitElement {
   }
 
   handleContentLoaded(evt) {
-    let firstItem = true;
+    this.titles.length = 0;
+    this.ids.length = 0;
     this.getPanels().forEach(section => {
         this.titles.push(section.headerTitle); 
         this.ids.push(section.panelId); 
         section.addEventListener('expand', this.collapsePanels.bind(this));
-        if (firstItem) {
+        section.addEventListener('changeheader', this.refreshPanels.bind(this));
+        if (this.titles.length == 1) {
           section.setAttribute('open', true);
-          firstItem = false;
         }
       });
       this.requestUpdate();
@@ -41,6 +42,10 @@ class VerticalTab extends LitElement {
             section.removeAttribute('open');
         }
     });
+  }
+
+  refreshPanels(evt) {
+    this.requestUpdate();
   }
 
   getPanels() {
@@ -56,15 +61,16 @@ class VerticalTab extends LitElement {
           section.setAttribute('open', true);
         }
     });
-    this.renderRoot.querySelectorAll('button').forEach(button => { button.setAttribute('aria-selected', false); });
-    evt.target.setAttribute('aria-selected', true);
+    this.renderRoot.querySelectorAll('button').forEach(button => { button.setAttribute('aria-expanded', false); });
+    evt.target.setAttribute('aria-expanded', true);
   }
 
   printHeaders() {
+    this.handleContentLoaded(this);
     return html`
     <ul>
     ${this.titles.map((title, i) =>
-      html`<li><button aria-selected="${i == 0 ? 'true' : 'false'}" aria-controls="${this.ids[i]}" @click=${this.triggerExpandChild}>${title}</button></li>`
+      html`<li><button aria-expanded="${i == 0 ? 'true' : 'false'}" aria-controls="${this.ids[i]}" @click=${this.triggerExpandChild}>${title}</button></li>`
     )}
   </ul>`;
   }

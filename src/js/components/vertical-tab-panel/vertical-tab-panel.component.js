@@ -38,11 +38,12 @@ class VerticalTabPanel extends LitElement {
       this.buttonId = "il-vertical-tab-button-" + id;
       this.panelId = "il-vertical-tab-panel-" + id;
     }
+    this.dispatchEvent(new Event('changeheader', { detail: {name: this.headerTitle }, bubbles: true }));
   }
 
   triggerExpand(e) {
     this.open = !this.open;
-    this.dispatchEvent(new Event('expand', { panelId: 'testid' }));
+    this.dispatchEvent(new Event('expand', { detail: {panelId: this.panelId }, bubbles: true }));
   }
 
   firstUpdated() {
