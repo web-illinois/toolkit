@@ -38,12 +38,12 @@ export default css`
     background: var(--il-focused-panel-background-color);
 }
 
-.headings button[aria-selected="true"] {
+.headings button[aria-expanded="true"] {
     background: var(--il-selected-panel-background-color);
     color: var(--il-selected-panel-foreground-color);
 } 
 
-.headings button[aria-selected="true"]:focus, .headings button[aria-selected="true"]:hover {
+.headings button[aria-expanded="true"]:focus, .headings button[aria-expanded="true"]:hover {
     background: var(--il-selected-panel-background-color);
     color: var(--il-selected-panel-foreground-color);
 } 
