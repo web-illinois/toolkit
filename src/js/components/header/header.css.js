@@ -25,6 +25,11 @@ export default css`
     display: block;
     height: 78px;
   }
+  @media (prefers-reduced-motion: reduce) {
+    .fingerprint-texture {
+      display: none;
+    }
+  }
   .fingerprint-texture path {
     fill: none;
     stroke: white;
