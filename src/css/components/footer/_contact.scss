@@ -6,12 +6,12 @@
     padding: 0;
     font-size: 1rem;
     line-height: 1.75rem;
-  }
 
-  h1, h2 {
-    font-weight: 700;
-    font-size: 1.5rem;
-    margin-bottom: 2px;
+    &:first-child {
+      font-weight: 700;
+      font-size: 1.5rem;
+      margin-bottom: 2px;
+    }
   }
 
   dl {

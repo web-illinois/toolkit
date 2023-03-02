@@ -4,8 +4,8 @@
   flex-wrap: nowrap;
   gap: 50px;
   font: 18px var(--il-font-sans);
-  //padding-top: 61px;
-  color: var(--il-blue);
+  padding-top: 61px;
+  color: white;
 
   h2,
   h3,
@@ -14,7 +14,7 @@
     padding: 0 0 10px 0;
     margin-bottom: 6px;
     font: bold 20px var(--il-font-sans);
-    border-bottom: 1px solid var(--il-blue);
+    border-bottom: 1px solid white;
   }
 
   ul {
@@ -72,7 +72,7 @@
   }
 
   @media (min-width: 992px) {
-    //padding-top: 115px;
+    padding-top: 115px;
 
     ul li a {
       padding: 6px 0;
