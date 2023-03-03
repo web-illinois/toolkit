@@ -11,17 +11,6 @@ function getSectionToggle(page, sel) {
   }, [sel])
 }
 
-async function hoverOverSectionToggle(page, sel) {
-  const coords = await page.evaluate(sel => {
-    const rect = document.querySelector(sel).shadowRoot.querySelector('.indicator').getBoundingClientRect();
-    return {
-      x: rect.left + Math.round(rect.width/2),
-      y: rect.top + Math.round(rect.height/2)
-    };
-  }, [sel]);
-  return page.mouse.move(coords.x, coords.y);
-}
-
 function sectionisExpanded(page, sel) {
   return page.evaluate(sel => {
     return document.querySelector(sel).expanded;
@@ -31,6 +20,5 @@ function sectionisExpanded(page, sel) {
 module.exports = {
   dropdownIsVisible,
   getSectionToggle,
-  hoverOverSectionToggle,
   sectionisExpanded
 }

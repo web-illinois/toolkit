@@ -1,0 +1,44 @@
+---
+title: Navigation (long labels)
+group: "Components: Navigation"
+layout: layouts/page.njk
+---
+<il-nav>
+  <il-nav-section>
+    <a href="#" slot="label" id="short-section-link">Short&nbsp;section</a>
+    <ul class="il-subnav">
+      <li>
+        <a href="#">Link 1</a>
+      </li>
+      <li>
+        <a href="#">Link 2</a>
+      </li>
+      <li>
+        <a href="#">Link 3</a>
+      </li>
+    </ul>
+  </il-nav-section>
+  <il-nav-link>
+    <a href="#">Short&nbsp;link</a>
+  </il-nav-link>
+  <il-nav-link>
+    <a href="#">Link with a long label that should wrap to two&nbsp;lines</a>
+  </il-nav-link>
+  <il-nav-link>
+    <a href="#">Another link with a long label that should wrap to two&nbsp;lines</a>
+  </il-nav-link>
+  <il-nav-section>
+    <a href="#" slot="label" id="long-section-link">Section with a long label that should&nbsp;wrap</a>
+    <ul class="il-subnav">
+      <li>
+        <a href="#">Link 1</a>
+      </li>
+      <li>
+        <a href="#">Link 2</a>
+      </li>
+      <li>
+        <a href="#">Link 3</a>
+      </li>
+    </ul>
+  </il-nav-section>
+</il-nav>

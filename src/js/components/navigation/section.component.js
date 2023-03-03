@@ -1,170 +1,288 @@
 import { LitElement, html, css } from 'lit';
 import Debugger from '../../debug';
+import NavigationItem from './item.component';
+import itemStyles from './item.css';
 import styles from './section.css'
 
-class NavigationSection extends LitElement {
-
-  // Class methods
-
+class NavigationSection extends NavigationItem {
   static get properties() {
-    return {
-      align: { type: String, default: null },
-      current: { type: Boolean, default: false, reflect: true },
-      direction: { type: String, default: null },
-      expanded: { type: Boolean, default: false, reflect: true }
-    };
+    const props = NavigationItem.properties;
+    props.align = { type: String, default: "left", attribute: true };
+    props.expanded = { type: Boolean, default: false, attribute: true, reflect: true };
+    props.right = { type: Boolean, default: false, attribute: true }; // Deprecated
+    return props;
   }
 
   static get styles() {
-    return styles;
+    return [itemStyles, styles];
   }
-
-  // Constructor
 
   constructor() {
     super();
-    this.current = false;
-    this.expanded = false;
-    this.handleToggleClick = this.handleToggleClick.bind(this);
-    document.addEventListener('DOMContentLoaded', this.handleContentLoaded.bind(this));
+    this.align = 'left';
+    this._expanded = false;
+    document.addEventListener('click', this.handleDocumentClick.bind(this));
   }
 
-  // Lifecycle methods
-
-  updated(changedProperties) {
-    super.updated(changedProperties);
-    this.getNavigation().setTabIndexes();
+  get expanded() {
+    return this._expanded;
   }
 
-  // Event handlers
+  set expanded(isExpanded) {
+    const wasExpanded = this._expanded;
+    if (wasExpanded !== isExpanded) {
+      this._expanded = isExpanded;
+      this.requestUpdate('expanded', wasExpanded);
+
+      this.updateComplete.then(() => {
+        const evt = new Event(isExpanded ? 'expand' : 'collapse');
+        this.dispatchEvent(evt);
+      });
+    }
+  }
 
   handleContentLoaded(evt) {
-    if (this.hasNavigation()) {
-      this.getNavigation().addEventListener('viewChange', this.handleNavigationViewChange.bind(this));
+    super.handleContentLoaded(evt);
+    if (this.right !== undefined) {
+      Debugger.warn('il-nav-section: attribute "right" is deprecated; use align="right" instead');
+      this.align = 'right';
     }
-    //document.addEventListener('keydown', this.handleKeyDown.bind(this));
-    //document.addEventListener('focusin', this.handleFocusChange.bind(this), false);
+    const link = this.getLink();
+    if (link) {
+      link.addEventListener('blur', this.handleLinkBlur.bind(this));
+      link.addEventListener('focus', this.handleLinkFocus.bind(this));
+    }
+    this.getSubmenuLinks().forEach(submenuLink => {
+      submenuLink.addEventListener('keydown', this.handleSubmenuLinkKeypress.bind(this));
+      submenuLink.addEventListener('blur', this.handleSubmenuLinkBlur.bind(this));
+    });
   }
 
-  handleNavigationViewChange(evt) {
+  handleDocumentClick(evt) {
+    if (this.expanded && !this.contains(evt.target)) {
+      this.collapse();
+    }
+  }
+
+  handleLinkBlur(evt) {
+    this.active = false;
+    this.collapseIfUnfocused();
+  }
+
+  handleLinkFocus(evt) {
+    if (!this.expanded) {
+      this.expand();
+      this.active = true;
+    }
+  }
+
+  handleLinkKeypress(evt) {
+    super.handleLinkKeypress(evt);
+    if (evt.code === 'Escape') {
+      evt.preventDefault();
+      if (this.expanded) {
+        this.collapse();
+      }
+    }
+    else if (evt.code === 'ArrowDown') {
+      evt.preventDefault();
+      if (!this.expanded) {
+        this.expandAndMoveFocusToFirstSubmenuLink();
+      }
+      else {
+        this.moveFocusToFirstSubmenuLink();
+      }
+    }
+    else if (evt.code === 'ArrowUp') {
+      evt.preventDefault();
+      if (!this.expanded) {
+        this.expandAndMoveFocusToLastSubmenuLink();
+      }
+    }
+  }
+
+  handleMouseOut(evt) {
+    if (!this.isCompact()) {
+      this.collapse();
+    }
+  }
+
+  handleMouseOver(evt) {
+    if (!this.isCompact()) {
+      this.expand();
+    }
+  }
+
+  handleSubmenuLinkBlur(evt) {
+    this.collapseIfUnfocused();
+  }
+
+  handleSubmenuLinkKeypress(evt) {
+    const link = evt.currentTarget;
+    const item = link.parentNode;
+    if (evt.code === 'Escape') {
+      evt.preventDefault();
+      this.collapseAndMoveFocusToParent();
+    }
+    else if (evt.code === 'ArrowDown') {
+      evt.preventDefault();
+      if (item.nextElementSibling) {
+        item.nextElementSibling.querySelector('a').focus();
+      }
+      else if (this.isCompact()) {
+        const event = new CustomEvent('exit', { detail: 'forward' });
+        this.dispatchEvent(event);
+      }
+      else {
+        item.parentNode.firstElementChild.querySelector('a').focus();
+      }
+    }
+    else if (evt.code === 'ArrowUp') {
+      evt.preventDefault();
+      if (item.previousElementSibling) {
+        item.previousElementSibling.querySelector('a').focus();
+      }
+      else if (this.isCompact()) {
+        this.getLink().focus();
+      }
+      else {
+        item.parentNode.lastElementChild.querySelector('a').focus();
+      }
+    }
+    else if (evt.code === 'ArrowLeft') {
+      evt.preventDefault();
+      this.collapseAndMoveFocusToParent();
+      const event = new CustomEvent('exit', { detail: 'back' });
+      this.dispatchEvent(event);
+    }
+    else if (evt.code === 'ArrowRight') {
+      evt.preventDefault();
+      this.collapseAndMoveFocusToParent();
+      const event = new CustomEvent('exit', { detail: 'forward' });
+      this.dispatchEvent(event);
+    }
   }
 
   handleToggleClick(evt) {
-    evt.stopPropagation();
-    this.toggle();
-  }
-
-  // Object methods
-
-  collapse() {
-    this.shadowRoot.querySelector('#container').className = 'collapsed';
-    this.expanded = false;
-    this.getNavigation().setCurrentSection(this.getParentSection());
-  }
-
-  getNavigation() {
-    return this.closest('il-nav');
-  }
-
-  getLinks() {
-    const links = [...this.querySelectorAll('a:not([slot="label"])')];
-    return links.filter(l => l.closest('il-nav-section') === this);
-  }
-
-  getParentSection() {
-    return this.parentElement.closest('il-nav-section');
-  }
-
-  getToggle() {
-    return this.shadowRoot.querySelector('button');
-  }
-
-  hasLabelLink() {
-
-  }
-
-  expand() {
-    this.getNavigation().collapseAllSectionsExcept(this);
-    this.getNavigation().setCurrentSection(this);
-    this.shadowRoot.querySelector('#container').className = 'expanded';
-    this.getToggle().focus();
-    this.expanded = true;
-  }
-
-  hasAvailableSpace() {
-    return this.getAvailableSpace() >= this.getContentWidth();
-  }
-
-  hasNavigation() {
-    return !!this.getNavigation();
-  }
-
-  isExpanded() {
-    return this.expanded;
-  }
-
-  isTopLevel() {
-    return !this.getParentSection();
-  }
-
-  isVisible() {
-    return this.isTopLevel() || this.getParentSection().expanded;
-  }
-
-  positionSelf() {
-    if (!this.hasAvailableSpace() && this.hasAvailableSpaceInOppositeDirection()) {
-      this.reverseDirection();
-    }
-    this.positionChildren();
-  }
-
-  setTabIndex(tabindex) {
-    this.getToggle().setAttribute('tabindex', tabindex);
-  }
-
-  toggle() {
     this.expanded ? this.collapse() : this.expand();
   }
 
-  // Rendering
-
-  renderChevron() {
-    return html`
-      <svg aria-label="Toggle menu" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
-        <path
-            d="M207.029 381.476L12.686 187.132c-9.373-9.373-9.373-24.569 0-33.941l22.667-22.667c9.357-9.357 24.522-9.375 33.901-.04L224 284.505l154.745-154.021c9.379-9.335 24.544-9.317 33.901.04l22.667 22.667c9.373 9.373 9.373 24.569 0 33.941L240.971 381.476c-9.373 9.372-24.569 9.372-33.942 0z" />
-      </svg>
-    `;
+  collapse() {
+    this.expanded = false;
   }
 
-  renderContents() {
-    return html`<div class="contents" id="contents">
-      <slot></slot>
-    </div>`;
+  collapseAndMoveFocusToParent() {
+    this.getLink().focus();
+    this.collapse();
   }
 
-  renderHeading() {
-    return html`<div class="heading">
-      <div class="label">
-        <slot name="label"></slot>
-      </div>
-      ${this.renderToggle()}
-    </div>`;
+  collapseIfUnfocused() {
+    if (this.expanded) {
+      window.setTimeout(() => {
+        if (!this.containsFocus()) this.collapse();
+      }, 100);
+    }
   }
 
-  renderToggle() {
-    const ariaExpanded = this.expanded ? 'true' : 'false';
-    return html`<button class="toggle" aria-controls="contents" aria-expanded=${ariaExpanded} @click=${this.handleToggleClick}>
-      <span class="indicator">${this.renderChevron()}</span>
-    </button>`;
+  containsFocus() {
+    return this.contains(document.activeElement);
+  }
+
+  expand() {
+    this.expanded = true;
+  }
+
+  expandAndMoveFocusToFirstSubmenuLink() {
+    this.expand();
+    this.updateComplete.then(() => this.moveFocusToFirstSubmenuLink());
+  }
+
+  expandAndMoveFocusToLastSubmenuLink() {
+    this.expand();
+    this.updateComplete.then(() => this.moveFocusToLastSubmenuLink());
+  }
+
+  focus() {
+    this.getLink().focus();
+  }
+
+  getButton() {
+    return this.shadowRoot.querySelector('button');
+  }
+
+  getFirstSubmenuLink() {
+    const links = this.getSubmenuLinks();
+    return links.item(0);
+  }
+
+  getLastSubmenuLink() {
+    const links = this.getSubmenuLinks();
+    return links.item(links.length - 1);
+  }
+
+  getLink() {
+    return this.querySelector("a[slot='label']")
+  }
+
+  getLinkText() {
+    const link = this.getLink();
+    return link ? link.textContent : '';
+  }
+
+  getSubmenuLinks() {
+    return this.querySelectorAll('ul a');
+  }
+
+  isCompact() {
+    return this.compact;
+  }
+
+  isCurrent() {
+    if (this.current) return true;
+    const link = this.getLink();
+    return link && link.getAttribute('aria-current') === 'page';
+  }
+
+  moveFocusToFirstSubmenuLink() {
+    this.getFirstSubmenuLink().focus();
+  }
+
+  moveFocusToLastSubmenuLink() {
+    this.getLastSubmenuLink().focus();
   }
 
   render() {
+    const state = this.expanded ? 'expanded' : 'collapsed';
+    const view = this.compact ? 'compact' : 'full';
+    const current = this.isCurrent() ? 'current' : '';
+    const active = this.active ? 'active' : 'inactive';
+    const align = 'align-' + this.align;
     return html`
-        <div id="container" class="section ${this.expanded ? 'expanded' : 'collapsed'}">
-          ${this.renderHeading()}
-          ${this.renderContents()}
-        </div>`
+        <li class="${state} ${view} ${current} ${active}" @mouseover=${this.handleMouseOver} @mouseout=${this.handleMouseOut}>
+          <div class="heading">
+            <div class="label">
+              <slot name="label"></slot>
+            </div>
+            <div class="indicator" role="presentation">
+              <svg aria-label="Toggle menu" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                <path
+                  d="M207.029 381.476L12.686 187.132c-9.373-9.373-9.373-24.569 0-33.941l22.667-22.667c9.357-9.357 24.522-9.375 33.901-.04L224 284.505l154.745-154.021c9.379-9.335 24.544-9.317 33.901.04l22.667 22.667c9.373 9.373 9.373 24.569 0 33.941L240.971 381.476c-9.373 9.372-24.569 9.372-33.942 0z" />
+              </svg>
+            </div>
+            <div class="toggle">
+              <button aria-controls="contents" aria-expanded="${this.expanded ? 'true' : 'false'}"
+                @click=${this.handleToggleClick}>
+                <svg aria-label="Toggle ${this.getLinkText()} menu" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                  <path
+                    d="M207.029 381.476L12.686 187.132c-9.373-9.373-9.373-24.569 0-33.941l22.667-22.667c9.357-9.357 24.522-9.375 33.901-.04L224 284.505l154.745-154.021c9.379-9.335 24.544-9.317 33.901.04l22.667 22.667c9.373 9.373 9.373 24.569 0 33.941L240.971 381.476c-9.373 9.372-24.569 9.372-33.942 0z" />
+                </svg>
+              </button>
+            </div>
+          </div>
+          <div class="contents ${align}" id="contents">
+            <slot></slot>
+          </div>
+        </li>`
   }
 }
 
