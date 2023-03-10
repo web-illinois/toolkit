@@ -30,7 +30,7 @@
         color: var(--il-panel-text-color);
     }
 
-    a.il-button, button.il-button {
+    a.il-button, button.il-button, a.il-button:visited, button.il-button:visited {
       background: var(--il-panel-button-background-color);
       color: var(--il-panel-button-foreground-color);
       border-color: var(--il-panel-button-border-color);
