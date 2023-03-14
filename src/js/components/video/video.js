@@ -53,4 +53,4 @@ class UrlItem extends Item {
       }
 }
 
-module.exports = { UrlItem };
+export default { UrlItem };

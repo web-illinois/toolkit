@@ -1,7 +1,8 @@
 import { LitElement, html } from 'lit';
 import Alignment from './alignment';
-import Debugger from '../../debug';
+import Debugger from '../../js/debug';
 import styles from './hero.css';
+import './hero.scss';
 
 class Hero extends LitElement {
 

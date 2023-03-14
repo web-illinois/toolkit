@@ -170,4 +170,4 @@ class Navigation {
   }
 }
 
-module.exports = { CurrentPage, Ellipsis, FirstPageLink, LastPageLink, Navigation, NextPageLink, PageLink, PreviousPageLink };
+export default { CurrentPage, Ellipsis, FirstPageLink, LastPageLink, Navigation, NextPageLink, PageLink, PreviousPageLink };

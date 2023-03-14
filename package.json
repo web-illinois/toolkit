@@ -1,40 +1,22 @@
 {
-  "name": "il-toolkit",
-  "version": "2.15.0",
-  "description": "Web toolkit",
-  "repository": "https://github.com/web-illinois/toolkit",
-  "author": "Web Implementation Guidelines Group",
-  "license": "NCSA",
+  "name": "toolkit",
+  "private": true,
+  "version": "3.0.0-dev",
+  "main": "dist/js/index.js",
+  "files": [
+    "dist"
+  ],
   "scripts": {
-    "approve-backstop": "backstop approve --config=backstop.config.js",
-    "build": "encore prod",
-    "build-html": "eleventy",
-    "create-test-html": "eleventy --config=.eleventy-test-site.js",
-    "dev": "encore dev",
-    "start": "encore dev-server",
-    "test": "npm run test-jest && npm run test-backstop",
-    "test-backstop": "backstop test --config=backstop.config.js",
-    "test-jest": "jest --config=jest.func.config.js",
-    "func-tests": "jest --config=jest.func.config.js",
-    "unit-tests": "jest --config=jest.unit.config.js",
-    "vis-tests": "backstop test --config=backstop.config.js --docker",
-    "watch-html": "eleventy --watch"
+    "dev": "vite",
+    "build": "vite build"
   },
   "dependencies": {
-    "@symfony/webpack-encore": "^0.30.2",
-    "lit": "^2.0.0-rc.3",
-    "node": "^14.17.4",
-    "remove-files-webpack-plugin": "^1.4.4",
-    "sass": "^1.44.0",
-    "sass-loader": "^8.0.2"
+    "@axe-core/playwright": "^4.6.0",
+    "lit": "^2.6.1"
   },
   "devDependencies": {
-    "@11ty/eleventy": "^0.12.1",
-    "axe-core": "^4.5.2",
-    "backstopjs": "^4.5.1",
-    "fast-glob": "^3.2.7",
-    "jest": "^25.5.4",
-    "jest-html-reporter": "^3.3.0",
-    "jest-puppeteer": "^4.4.0"
+    "@playwright/test": "^1.31.2",
+    "sass": "^1.59.2",
+    "vite": "^4.1.0"
   }
 }

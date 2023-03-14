@@ -1,4 +1,4 @@
-module.exports = class Alignment {
+export default class Alignment {
     constructor(str) {
         this.x = 'center';
         this.y = 'center';

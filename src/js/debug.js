@@ -1,4 +1,4 @@
-module.exports = class Debugger {
+export default class Debugger {
 
   static isActive() {
     return document.documentElement.getAttribute('data-il-debug') === 'true';
