@@ -1,27 +1,15 @@
----
-title: Profile cards (large)
-group: "Components: Directory"
-layout: layouts/page.njk
----
+<!DOCTYPE html>
+<script src="./card.component.js" type="module"></script>
 
 <style>
-    #grid {
-      padding: 2em;
-      display: flex;
-      gap: 40px;
-      flex-wrap: wrap;
-    }
     il-profile-card {
       width: 300px;
     }
 </style>
 
-<div id="grid">
-
-    {% for i in range(1, 2) %}
     <il-profile-card>
 
-        <img src="{{ "/_assets/images/stock/jonas-kakaroto-mjRwhvqEC0U-unsplash.jpg" | url }}" alt="">
+        <img src="./test-assets/jonas-kakaroto-mjRwhvqEC0U-unsplash.jpg" alt="">
 
         <h2><a href="#">Sheeba Rani Arnold Anteraper</a></h2>
 
@@ -34,6 +22,5 @@ layout: layouts/page.njk
         <p class="il-contact-email"><a href="#">WWWWWWWWWW@illinois.edu</a></p>
 
     </il-profile-card>
-    {% endfor %}
 
 </div>

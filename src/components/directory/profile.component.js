@@ -1,5 +1,6 @@
 import { LitElement, html } from 'lit';
 import styles from './profile.css';
+import "./directory.scss";
 
 class Profile extends LitElement {
 

@@ -1,10 +1,6 @@
----
-title: Profile page
-group: "Components: Directory"
-layout: layouts/page.njk
----
+<!DOCTYPE html>
+<script src="./profile.component.js" type="module"></script>
 
-<div style="padding: 2em">
 <il-profile>
 
     <section slot="primary">
@@ -19,7 +15,7 @@ layout: layouts/page.njk
 
     <section slot="contact">
 
-        <img src="{{ "/_assets/images/stock/jonas-kakaroto-mjRwhvqEC0U-unsplash.jpg" | url }}" alt="">
+        <img src="./test-assets/jonas-kakaroto-mjRwhvqEC0U-unsplash.jpg" alt="">
 
         <h2>Contact Information</h2>
 
@@ -86,4 +82,3 @@ layout: layouts/page.njk
     </section>
 
 </il-profile>
-</div>
