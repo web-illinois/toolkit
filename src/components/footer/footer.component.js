@@ -1,5 +1,6 @@
 import { LitElement, html, css } from 'lit';
 import styles from './footer.css';
+import "./footer.scss";
 
 class Footer extends LitElement {
     static get styles() {
