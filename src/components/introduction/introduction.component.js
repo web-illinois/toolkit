@@ -1,6 +1,7 @@
 import { LitElement, html } from 'lit';
 import styles from './introduction.css';
-import Debugger from '../../debug';
+import Debugger from '../../js/debug';
+import "./introduction.scss";
 
 class IntroductionComponent extends LitElement {
 

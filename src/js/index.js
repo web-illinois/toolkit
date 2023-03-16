@@ -1,6 +1,5 @@
 import '../css/toolkit.scss';
 
-import './components/introduction/introduction.component';
 import './components/layout/page.component';
 import './components/layout/section.component';
 import './components/layout/section-with-sidebar.component';
