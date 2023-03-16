@@ -1,5 +1,6 @@
 import { LitElement, html } from 'lit';
 import styles from './lede.css';
+import "./lede.scss";
 
 class Lede extends LitElement {
 

@@ -17,7 +17,7 @@ export default defineConfig({
   build: {
     outDir: '../dist',
     lib: {
-      entry: 'js/index.js',
+      entry: 'index.js',
       fileName: 'toolkit',
       formats: ['es', 'cjs'],
     },
