@@ -1,5 +1,6 @@
 import { LitElement, html } from 'lit';
 import styles from './unit-wordmark.css';
+import "./unit-wordmark.scss";
 
 const breakpoint = 400;
 

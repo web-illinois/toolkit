@@ -1,6 +1,7 @@
 import {LitElement, html, css} from 'lit';
-import Debugger from '../../debug';
+import Debugger from '../../js/debug';
 import styles from './search.css';
+import "../header/header.scss";
 
 class Search extends LitElement {
   static get properties() {

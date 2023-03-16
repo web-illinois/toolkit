@@ -1,12 +1,7 @@
----
-title: Navigation (default view, all submenus collapsed)
-group: "Components: Navigation"
-layout: layouts/page.njk
----
+<!DOCTYPE html>
+<script src="./navigation.component.js" type="module"></script>
+<script src="./section.component.js" type="module"></script>
 
-{% include "outside-click-target.html" %}
-
-<div id="nav">
 <il-nav>
     <il-nav-section id="section-1">
         <a id="link-1" href="/tests/success.html" slot="label">Link 1</a>
@@ -45,4 +40,3 @@ layout: layouts/page.njk
         </ul>
     </il-nav-section>
 </il-nav>
-</div>

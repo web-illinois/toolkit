@@ -1,6 +1,6 @@
 import { LitElement, html } from 'lit';
 import styles from './navigation.css';
-
+import "./navigation.scss";
 
 class Navigation extends LitElement {
   static get properties() {

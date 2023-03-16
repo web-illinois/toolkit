@@ -1,8 +1,9 @@
 import { LitElement, html, css } from 'lit';
-import Debugger from '../../debug';
+import Debugger from '../../js/debug';
 import NavigationItem from './item.component';
 import itemStyles from './item.css';
 import styles from './section.css'
+import "./navigation.scss";
 
 class NavigationSection extends NavigationItem {
   static get properties() {

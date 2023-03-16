@@ -1,6 +1,7 @@
 import {LitElement, html, css} from 'lit';
 import styles from './header.css';
 import '../unit-wordmark/unit-wordmark.component';
+import './header.scss';
 
 class Header extends LitElement {
     static get properties() {

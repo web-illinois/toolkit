@@ -1,6 +1,5 @@
 import '../css/toolkit.scss';
 
-import './components/header/header.component';
 import './components/image-feature/image-feature.component';
 import './components/introduction/introduction.component';
 import './components/layout/page.component';
