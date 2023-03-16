@@ -1,5 +1,5 @@
 import { LitElement, html } from 'lit';
-import styles from './accordion-panel.css';
+import styles from './panel.css';
 
 class AccordionPanel extends LitElement {
 

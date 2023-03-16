@@ -18,6 +18,8 @@
     "@axe-core/playwright": "^4.6.0",
     "@playwright/test": "^1.31.2",
     "autoprefixer": "^10.4.14",
+    "postcss-autoreset": "^3.0.4",
+    "postcss-initial": "^3.0.4",
     "postcss-nested": "^6.0.1",
     "sass": "^1.59.2",
     "vite": "^4.1.0"

@@ -1,5 +1,6 @@
 import { LitElement, html } from 'lit';
 import styles from './accordion.css';
+import './accordion.scss';
 
 class Accordion extends LitElement {
 

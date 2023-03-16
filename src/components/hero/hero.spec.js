@@ -1,6 +1,10 @@
 import { test, expect } from '@playwright/test';
 const AxeBuilder = require('@axe-core/playwright').default;
 
+const themes = ['il-theme-blue', 'il-theme-orange'];
+
+test.use({ viewport: { width: 1200, height: 800 }});
+
 test.beforeEach(async({page}) => {
     await page.goto('components/hero/hero.html');
 })
