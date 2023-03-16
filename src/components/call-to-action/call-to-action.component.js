@@ -1,5 +1,6 @@
 import { LitElement, html, css } from 'lit';
 import styles from './call-to-action.css';
+import "./call-to-action.scss"
 
 class CallToAction extends LitElement {
 
