@@ -1,6 +1,7 @@
 import { LitElement, html } from 'lit';
 import ResponsiveLayout from './responsive-layout';
 import styles from './page.css';
+import "../../css/styles.scss";
 
 class PageComponent extends ResponsiveLayout {
 
