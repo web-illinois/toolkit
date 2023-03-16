@@ -1,5 +1,6 @@
 import { LitElement, html } from 'lit';
 import styles from './breadcrumbs.css';
+import "./breadcrumbs.scss";
 
 class Breadcrumbs extends LitElement {
 
