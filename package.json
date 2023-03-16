@@ -8,14 +8,17 @@
   ],
   "scripts": {
     "dev": "vite",
-    "build": "vite build"
+    "build": "vite build",
+    "test": "playwright test"
   },
   "dependencies": {
-    "@axe-core/playwright": "^4.6.0",
     "lit": "^2.6.1"
   },
   "devDependencies": {
+    "@axe-core/playwright": "^4.6.0",
     "@playwright/test": "^1.31.2",
+    "autoprefixer": "^10.4.14",
+    "postcss-nested": "^6.0.1",
     "sass": "^1.59.2",
     "vite": "^4.1.0"
   }

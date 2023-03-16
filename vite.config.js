@@ -15,10 +15,11 @@ function makeSassVariables() {
 export default defineConfig({
   root: 'src',
   build: {
+    outDir: '../dist',
     lib: {
-      entry: 'src/js/index.js',
+      entry: 'js/index.js',
       fileName: 'toolkit',
-      formats: ['es'],
+      formats: ['es', 'cjs'],
     },
     rollupOptions: {
       output: {
@@ -34,5 +35,8 @@ export default defineConfig({
         additionalData: makeSassVariables(),
       }
     }
+  },
+  server: {
+    hmr: false
   }
 })
