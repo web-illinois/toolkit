@@ -3,7 +3,7 @@ import '../css/toolkit.scss';
 //import './components/accordion/accordion';
 //import './components/accordion/accordion.component';
 //import './components/accordion-panel/accordion-panel.component';
-import './components/back-to-top/back-to-top.component';
+//import './components/back-to-top/back-to-top.component';
 import './components/breadcrumbs/page.component';
 import './components/breadcrumbs/breadcrumbs.component';
 import './components/call-to-action/call-to-action.component';

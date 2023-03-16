@@ -1,5 +1,6 @@
 import { LitElement, html } from 'lit';
 import styles from './back-to-top.css';
+import './back-to-top.scss';
 
 class BackToTop extends LitElement {
 
