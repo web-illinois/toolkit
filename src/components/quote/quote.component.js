@@ -1,5 +1,6 @@
 import { LitElement, html } from 'lit';
 import styles from './quote.css';
+import "./quote.scss";
 
 class Quote extends LitElement {
 

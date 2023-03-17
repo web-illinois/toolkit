@@ -1,8 +1,6 @@
 import '../css/toolkit.scss';
 
 
-import './components/pagination/pagination.component';
-import './components/quote/quote.component';
 import './components/section-nav/section-nav.component';
 import './components/statistic/statistic';
 import './components/vertical-tab/vertical-tab.component';
