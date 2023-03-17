@@ -27,4 +27,5 @@ import "./components/pagination/pagination.component";
 import "./components/quote/quote.component";
 import "./components/search/search.component";
 import "./components/section-nav/section-nav.component";
+import './components/statistic/statistic.component';
 import "./components/unit-wordmark/unit-wordmark.component";
