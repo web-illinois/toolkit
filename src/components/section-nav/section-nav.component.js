@@ -1,5 +1,6 @@
 import { LitElement, html, css } from 'lit';
 import styles from './section-nav.css.js';
+import "./section-nav.scss";
 
 class SectionNavigation extends LitElement {
   static get properties() {
