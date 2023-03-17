@@ -17,9 +17,10 @@ export default defineConfig({
   build: {
     outDir: '../dist',
     lib: {
+      name: 'toolkit',
       entry: 'index.js',
-      fileName: 'toolkit',
-      formats: ['es', 'cjs'],
+      //fileName: 'toolkit',
+      //formats: ['es', 'cjs'],
     },
     rollupOptions: {
       output: {
@@ -30,6 +31,7 @@ export default defineConfig({
     },
   },
   css: {
+    postcss: "..",
     preprocessorOptions: {
       scss: {
         additionalData: makeSassVariables(),
