@@ -11,4 +11,11 @@
   --il-focused-button-background-color: white;
   --il-focused-button-foreground-color: var(--il-blue);
   --il-focused-button-border-color: white;
+
+  --il-panel-button-background-color: var(--il-button-background-color);
+  --il-panel-button-foreground-color: var(--il-button-foreground-color);
+  --il-panel-button-border-color: var(--il-button-border-color);
+  --il-focused-panel-button-background-color: var(--il-focused-button-background-color);
+  --il-focused-panel-button-foreground-color: var(--il-focused-button-foreground-color);
+  --il-focused-panel-button-border-color: var(--il-focused-button-border-color);
 }
