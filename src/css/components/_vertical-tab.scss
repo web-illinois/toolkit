@@ -7,8 +7,11 @@
     --il-panel-link-focused-color: var(--il-orange);
     --il-selected-panel-background-color: var(--il-orange);
     --il-selected-panel-foreground-color: white;
-    --il-focused-panel-background-color: var(--il-blue-darker-1);
-    --il-focused-panel-foreground-color: white;
+    --il-focused-panel-background-color: white;
+    --il-focused-panel-foreground-color: var(--il-blue);
+    --il-focused-panel-button-background-color: white;
+    --il-focused-panel-button-foreground-color: var(--il-blue);
+    --il-focused-panel-button-border-color: white;
   }
 
   il-vertical-tab, .il-formatted il-vertical-tab {
@@ -26,6 +29,21 @@
     p, ul, a, a:visited {
         color: var(--il-panel-text-color);
     }
+
+    a.il-button, button.il-button, a.il-button:visited, button.il-button:visited {
+      background: var(--il-panel-button-background-color);
+      color: var(--il-panel-button-foreground-color);
+      border-color: var(--il-panel-button-border-color);
+
+      &:hover,
+      &:focus {
+        outline: 0;
+        background-color: var(--il-focused-panel-button-background-color);
+        color: var(--il-focused-panel-button-foreground-color);
+        border-color: var(--il-focused-panel-button-border-color);
+      }
+    }
+
     a:focus, a:hover {
         color: var(--il-panel-link-focused-color);
     }
