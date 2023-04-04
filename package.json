@@ -1,8 +1,12 @@
 {
-  "name": "toolkit",
+  "name": "il-toolkit",
+  "version": "3.0.0-dev",
+  "description": "Web toolkit",
+  "repository": "https://github.com/web-illinois/toolkit",
+  "author": "University of Illinois Urbana-Champaign",
+  "license": "NCSA",
   "type": "module",
   "private": true,
-  "version": "3.0.0-dev",
   "main": "dist/js/index.js",
   "files": [
     "dist"
