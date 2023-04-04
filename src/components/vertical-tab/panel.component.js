@@ -1,6 +1,5 @@
 import { LitElement, html } from 'lit';
-import styles from './vertical-tab-panel.css';
-
+import styles from './panel.css';
 class VerticalTabPanel extends LitElement {
 
   static get properties() {

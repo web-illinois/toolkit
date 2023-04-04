@@ -1,5 +1,6 @@
 import { LitElement, html } from 'lit';
-import styles from './vertical-tab.css';
+import './vertical-tab.scss';
+import styles from './vertical-tab.css.js';
 
 class VerticalTab extends LitElement {
 
