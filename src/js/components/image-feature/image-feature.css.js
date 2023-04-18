@@ -93,6 +93,7 @@ export default css`
             display: flex;
             flex-direction: var(--il-image-feature-flex-direction);
             min-height: var(--il-image-feature-min-height);
+            background: var(--il-image-feature-background);
         }
         .imagefeature .background {
             min-height: initial;

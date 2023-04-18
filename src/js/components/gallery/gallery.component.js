@@ -1,8 +1,8 @@
 import { LitElement, html } from 'lit';
-import styles from './image-gallery.css';
+import styles from './gallery.css';
 import Debugger from '../../debug';
 
-class ImageGalleryComponent extends LitElement {
+class GalleryComponent extends LitElement {
 
     static get styles() {
         return styles;
@@ -10,11 +10,11 @@ class ImageGalleryComponent extends LitElement {
 
     render() {
         return html`
-        <ul class="image-gallery">
+        <ul class="gallery">
             <slot></slot>
         </ul>`;
 
     }
 }
 
-customElements.define('il-image-gallery', ImageGalleryComponent);
+customElements.define('il-gallery', GalleryComponent);

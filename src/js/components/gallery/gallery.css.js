@@ -1,9 +1,9 @@
 import { css } from 'lit';
 
 export default css`
-ul.image-gallery {
+ul.gallery {
     display: grid;
-    grid-template-columns: repeat(auto-fill,var(--il-image-gallery-width));
+    grid-template-columns: repeat(auto-fill,var(--il-gallery-width));
     grid-column-gap: 60px;
     grid-row-gap: 40px;
     justify-content: center;
