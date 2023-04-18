@@ -1,0 +1,10 @@
+:root {
+    --il-image-gallery-item-height: 60vh;
+  }
+
+  il-image-gallery-item, .il-formatted il-image-gallery {
+    img {
+       max-height: var(--il-image-gallery-item-height);
+       object-fit: contain;
+    }
+}

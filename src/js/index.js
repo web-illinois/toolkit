@@ -15,6 +15,8 @@ import './components/footer/footer.component';
 import './components/header/header.component';
 import './components/hero/hero.component';
 import './components/image-feature/image-feature.component';
+import './components/image-gallery/image-gallery.component';
+import './components/image-gallery-item/image-gallery-item.component';
 import './components/introduction/introduction.component';
 import './components/layout/page.component';
 import './components/layout/section.component';
