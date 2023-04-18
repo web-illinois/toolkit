@@ -24,6 +24,10 @@ il-image-feature, .il-formatted il-image-feature
   }
 }
 
+il-image-feature.il-overlay, .il-overlay il-image-feature {
+  background: none;
+}
+
 il-image-feature.il-overlay img, .il-overlay il-image-feature img {
   position: absolute;
   width: 100%;

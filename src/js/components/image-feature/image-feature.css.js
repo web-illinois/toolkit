@@ -4,6 +4,8 @@ import { css } from 'lit';
 export default css`
     .imagefeature {
         display: block;
+        margin: 0 auto;
+        max-width: var(--il-image-feature-max-width);
     }
     .imagefeature.right {
         --il-image-feature-flex-direction: row-reverse;
