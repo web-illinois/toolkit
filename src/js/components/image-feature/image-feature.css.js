@@ -41,7 +41,7 @@ export default css`
         height: 100%;
     }
     .imagefeature .content .content-inner {
-        padding: 1.875rem 1.25rem;
+        padding: var(--il-image-feature-content-padding);
     }
     .il-image-feature-with-overlay {
         position: relative;
@@ -94,19 +94,6 @@ export default css`
         }
         .imagefeature .background {
             min-height: initial;
-        }
-        .imagefeature .content .content-inner {
-            padding: 1.875rem;
-        }
-    }
-    @media (min-width: 993px) {
-        .imagefeature .content .content-inner {
-            padding: 3rem 2.2vw;
-        }
-    }
-    @media (min-width: 1450px) {
-        .imagefeature .content .content-inner {
-            padding: 3rem 6rem;
         }
     }
 `;

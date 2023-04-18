@@ -192,6 +192,8 @@ il-image-feature, il-video-feature {
 }
 
 il-image-feature {
+  --il-image-feature-content-padding: 1.875rem 1.25rem;
+
   img {
     object-fit: cover;
     position: absolute;
@@ -200,3 +202,31 @@ il-image-feature {
   }
 }
 
+@media (min-width: 767px) {
+  il-image-feature {
+    --il-image-feature-content-padding: 1.875rem;
+  }
+}
+@media (min-width: 993px) {
+  il-image-feature {
+    --il-image-feature-content-padding: 3rem 2.2vw;
+  }
+}
+@media (min-width: 1450px) {
+  il-image-feature {
+    --il-image-feature-content-padding: 3rem 6rem;
+  }
+}
+
+il-image-feature.il-original, .il-formatted .il-original il-image-feature {
+  --il-image-feature-flex-grow-image: 0;
+  --il-image-feature-flex-direction: row;
+  --il-image-feature-content-padding: 1.875rem;
+
+  img {
+    object-fit: initial;
+    position: initial;
+    width: initial;
+    height: initial;
+  }
+}
