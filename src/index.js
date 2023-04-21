@@ -1,4 +1,4 @@
-import './css/toolkit.scss';
+import './css/styles.scss';
 
 import "./components/accordion/accordion.component";
 import "./components/accordion/panel.component";
