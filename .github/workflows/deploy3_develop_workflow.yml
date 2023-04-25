@@ -34,7 +34,9 @@ jobs:
         aws-access-key-id: 'AKIAXNR47MADGK2A4HEW'
         aws-secret-access-key: ${{ secrets.AWS_SECRET_FOR_AKIAXNR47MADGK2A4HEW }}
         aws-region: us-east-2
-    - name: Deploy toolbox to S3 bucket
+    - name: Delete S3 bucket in dev area
+      run: aws s3 rm s3://dev.toolkit.illinois.edu/content/$VERSION --recursive
+    - name: Deploy toolbox to S3 bucket in dev area
       run: aws s3 sync ./dist/ s3://dev.toolkit.illinois.edu/content/$VERSION --delete --acl bucket-owner-full-control
     - name: Invalidate Cloudfront cache
       run: aws cloudfront create-invalidation --distribution-id E2AF2WM1XJU9VI --paths "/$VERSION*"
