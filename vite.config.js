@@ -19,8 +19,8 @@ export default defineConfig({
     lib: {
       name: 'toolkit',
       entry: 'index.js',
-      //fileName: 'toolkit',
-      //formats: ['es', 'cjs'],
+      fileName: 'toolkit',
+      formats: ['es', 'cjs'],
     },
     rollupOptions: {
       output: {
