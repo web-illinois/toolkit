@@ -5,7 +5,6 @@
   "repository": "https://github.com/web-illinois/toolkit",
   "author": "University of Illinois Urbana-Champaign",
   "license": "NCSA",
-  "type": "module",
   "private": true,
   "main": "dist/js/index.js",
   "files": [
@@ -13,8 +12,9 @@
   ],
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
-    "test": "playwright test"
+    "build": "vite build --emptyOutDir",
+    "test": "playwright test",
+    "test-dev": "vite --port 5174"
   },
   "dependencies": {
     "lit": "^2.6.1"
