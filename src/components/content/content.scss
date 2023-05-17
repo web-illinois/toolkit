@@ -10,6 +10,8 @@ The base content styles. Here are the rules:
 4. spacing between elements is controlled *exclusively* by the `margin-top` property
 5. stylesheet is ordered alphabetically by element name (last element in a compound declaration)
 6. don't group elements (use variables to share settings among elements)
+7. use container queries, not media queries
+8. container queries follow the base rules, and their contents are ordered the same as the base rules
 
  */
 
@@ -255,6 +257,38 @@ il-content li ol, il-content li ol:first-child {
   margin-top: em(10px, 18px);
 }
 
+/* <p> */
+
+il-content p {
+  @include block-formatting($size: 18px, $line-height: 30px, $margin-top: 16px);
+}
+il-content h1 + p {
+  margin-top: em(20px, 18px);
+}
+il-content h2 + p {
+  margin-top: em(17px, 18px);
+}
+il-content h3 + p {
+  margin-top: em(15px, 18px);
+}
+il-content h4 + p {
+  margin-top: em(12px, 18px);
+}
+il-content h5 + p {
+  margin-top: em(12px, 18px);
+}
+il-content h6 + p {
+  margin-top: em(12px, 18px);
+}
+
+/* <pre> */
+
+il-content pre {
+  position: relative;
+  max-width: 100%;
+  overflow: auto;
+}
+
 /* <strong> */
 
 il-content strong {
@@ -337,68 +371,7 @@ il-content li ul, il-content li ul:first-child {
   margin-top: em(10px, 18px);
 }
 
-
-
-figcaption {
-  @include block-formatting($size: 14px, $line-height: 23px);
-  padding: 0.1em 0 0.35em;
-  border-bottom: 1px solid var(--il-industrial-blue);
-}
-
-figure {
-  display: inline-block;
-  margin: 1.5em 0 0;
-  padding: 0;
-
-  @media (min-width: 800px) {
-    &.il-left, &.il-align-left {
-      clear: left;
-      float: left;
-      margin: 0 1.5em 1em 0;
-    }
-
-    &.il-right, &.il-align-right {
-      clear: right;
-      float: right;
-      margin: 0 0 1em 1.5em;
-    }
-  }
-}
-
-hr {
-  margin: em(27px) 0 0;
-  padding: 0;
-  border: 0;
-  height: 1px;
-  background-color: var(--il-industrial-blue);
-}
-
-p {
-  @include block-formatting($size: 18px, $line-height: 30px, $margin-top: 16px);
-}
-h1 + p {
-  margin-top: em(20px, 18px);
-}
-h2 + p {
-  margin-top: em(17px, 18px);
-}
-h3 + p {
-  margin-top: em(15px, 18px);
-}
-h4, h5, h6 {
-  + p {
-    margin-top: em(12px, 18px);
-  }
-}
-
-pre {
-  position: relative;
-  max-width: 100%;
-  overflow: auto;
-}
-
-
-
+/* CONTAINER QUERIES */
 
 @container (max-width: 600px) {
   il-content h1 {
@@ -420,6 +393,8 @@ pre {
     font-size: em(18px);
   }
 }
+
+/* TODO: WP BLOCK EDITOR COMPATIBILITY */
 
 &.il-wp-block-editor-content, .il-wp-block-editor-content {
   h1, h2, h3, h4, h5, h6 {
