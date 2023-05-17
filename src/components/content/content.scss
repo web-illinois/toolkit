@@ -1,0 +1,387 @@
+@import "../../css/styles";
+
+/**
+
+The base content styles. Here are the rules:
+
+1. relative (em) measurements only
+2. no classes
+3. block elements should not have any padding unless they have a border or background
+4. spacing between elements is controlled *exclusively* by the `margin-top` property
+5. stylesheet is ordered alphabetically by element name (last element in a compound declaration)
+6. don't group elements (use variables to share settings among elements)
+
+ */
+
+il-content {
+  display: block;
+  container-type: inline-size;
+  position: relative;
+}
+
+il-content a {
+  transition: color .3s;
+  color: var(--il-link-color);
+  text-decoration: underline;
+}
+
+il-content a:visited {
+  color: var(--il-visited-link-color);
+}
+
+il-content a:hover, il-content a:focus {
+  outline-style: none;
+  color: var(--il-focused-link-color);
+}
+
+il-content b {
+  font-weight: 600;
+}
+
+il-content dfn {
+  font-style: normal;
+  font-weight: bold;
+}
+
+il-content dt {
+  font-weight: bold;
+  margin-top: 12px;
+}
+
+il-content dt:first-of-type {
+  margin-top: 0;
+}
+
+il-content h1 {
+  color: var(--il-heading-color);
+  font-family: var(--il-source-sans);
+  text-align: left;
+  margin: var(--il-heading-margin-top, 1.25em) 0 0;
+
+  box-sizing: border-box;
+  padding: 0;
+  font-size: em(40px);
+  font-weight: 700;
+  line-height: 1.15em;
+  --il-heading-margin-top: 1.25em;
+}
+
+il-content h1:first-child {
+  margin-top: 0;
+}
+
+il-content h2 {
+  color: var(--il-heading-color);
+  font-family: var(--il-source-sans);
+  text-align: left;
+  margin: var(--il-heading-margin-top, 1.25em) 0 0;
+
+  box-sizing: border-box;
+  font-weight: 600;
+  padding: 0;
+  font-size: em(35px);
+  line-height: 1.23em;
+  --il-heading-margin-top: 1.286em;
+}
+
+il-content h2:first-child {
+  margin-top: 0;
+}
+
+il-content h3 {
+  color: var(--il-heading-color);
+  font-family: var(--il-source-sans);
+  text-align: left;
+  margin: var(--il-heading-margin-top, 1.25em) 0 0;
+
+  box-sizing: border-box;
+  font-weight: 600;
+  padding: 0;
+  font-size: em(29px);
+  line-height: 1.2em;
+  --il-heading-margin-top: 1.4138em;
+}
+
+il-content h3:first-child {
+  margin-top: 0;
+}
+
+il-content h4 {
+  color: var(--il-heading-color);
+  font-family: var(--il-source-sans);
+  text-align: left;
+  margin: var(--il-heading-margin-top, 1.25em) 0 0;
+
+  box-sizing: border-box;
+  font-weight: 600;
+  padding: 0;
+  font-size: em(24px);
+  line-height: 1.2em;
+  --il-heading-margin-top: 1.625em;
+}
+il-content h4:first-child {
+  margin-top: 0;
+}
+
+il-content h5 {
+  color: var(--il-heading-color);
+  font-family: var(--il-source-sans);
+  text-align: left;
+  margin: var(--il-heading-margin-top, 1.25em) 0 0;
+
+  box-sizing: border-box;
+  font-weight: 600;
+  padding: 0;
+  font-size: em(21px);
+  font-weight: 700;
+  line-height: 1.333em;
+  --il-heading-margin-top: 1.6666em;
+}
+
+il-content h5:first-child {
+  margin-top: 0;
+}
+
+il-content h6 {
+  color: var(--il-heading-color);
+  font-family: var(--il-source-sans);
+  text-align: left;
+  margin: var(--il-heading-margin-top, 1.25em) 0 0;
+
+  box-sizing: border-box;
+  font-weight: 600;
+  padding: 0;
+  font-size: em(18px);
+  font-weight: 700;
+  line-height: 1.222em;
+  --il-heading-margin-top: 1.6666em;
+}
+
+il-content h6:first-child {
+  margin-top: 0;
+}
+
+il-content li {
+  @include block-formatting($size: 18px, $line-height: 27px, $margin-top: 10px);
+  margin-left: em(40px, 18px);
+}
+
+il-content li:first-child {
+  margin-top: 0;
+}
+
+il-content ul li {
+  list-style: disc;
+}
+
+il-content ul li::marker {
+  font-size: .9em;
+}
+
+il-content mark {
+  background-color: var(--il-cloud-1);
+}
+
+il-content ol {
+  @include block-formatting($size: 18px, $line-height: 27px, $margin-top: 16px);
+  text-align: left;
+}
+
+il-content ol ol {
+  list-style-type: lower-alpha;
+}
+
+il-content ol ol ol {
+  list-style-type: lower-roman;
+}
+
+il-content ol ol ol ol {
+  list-style-type: decimal;
+}
+
+il-content li ol, il-content li ol:first-child {
+  margin-top: em(10px, 18px);
+}
+
+il-content strong {
+  font-weight: 600;
+}
+
+il-content ul {
+  @include block-formatting($size: 18px, $line-height: 27px, $margin-top: 16px);
+  text-align: left;
+}
+
+il-content li ul, il-content li ul:first-child {
+  margin-top: em(10px, 18px);
+}
+
+
+
+
+
+table {
+  box-sizing: border-box;
+  border-collapse: collapse;
+  border: 1px solid var(--il-cloud);
+  width: 100%;
+  overflow: auto;
+}
+
+table caption {
+  text-align: left;
+}
+th {
+  text-align: left;
+  font-weight: 700;
+  font-size: 1.2rem;
+  border-top: 1px solid var(--il-gray-2);
+  border-bottom: 1px solid var(--il-gray-2);
+  border-left: none;
+  border-right: none;
+  padding: rem(25px) rem(16px) rem(30px) rem(16px);
+  vertical-align: middle;
+}
+thead th {
+  background-color: var(--il-industrial-blue);
+  color: white;
+  font-family: var(--il-font-sans);
+}
+th:first-of-type {
+  border-left: 1px solid var(--il-gray-2);
+}
+th:last-of-type {
+  border-right: 1px solid var(--il-gray-2);
+}
+thead th {
+  background-color: var(--il-industrial-blue);
+  color: white;
+  font-family: var(--il-font-sans);
+}
+tbody th {
+  color: var(--il-blue);
+}
+td {
+  text-align: left;
+  vertical-align: top;
+  padding: rem(25px) rem(16px);
+  border-top: 1px solid var(--il-cloud-3);
+  border-bottom: 1px solid var(--il-cloud-3);
+  border-left: none;
+  border-right: none;
+  color: var(--il-blue);
+}
+tr:nth-child(odd) {
+  background-color: var(--il-gray-1);
+}
+
+blockquote {
+  @include block-formatting($size: 18px, $line-height: 30px, $margin-top: 25px);
+  margin-left: em(48px, 18px);
+  margin-right: em(48px, 18px);
+}
+h1 + blockquote {
+  margin-top: em(20px, 18px);
+}
+h2 + blockquote {
+  margin-top: em(17px, 18px);
+}
+h3 + blockquote {
+  margin-top: em(15px, 18px);
+}
+h4, h5, h6 {
+  + blockquote {
+    margin-top: em(12px, 18px);
+  }
+}
+
+figcaption {
+  @include block-formatting($size: 14px, $line-height: 23px);
+  padding: 0.1em 0 0.35em;
+  border-bottom: 1px solid var(--il-industrial-blue);
+}
+
+figure {
+  display: inline-block;
+  margin: 1.5em 0 0;
+  padding: 0;
+
+  @media (min-width: 800px) {
+    &.il-left, &.il-align-left {
+      clear: left;
+      float: left;
+      margin: 0 1.5em 1em 0;
+    }
+
+    &.il-right, &.il-align-right {
+      clear: right;
+      float: right;
+      margin: 0 0 1em 1.5em;
+    }
+  }
+}
+
+hr {
+  margin: em(27px) 0 0;
+  padding: 0;
+  border: 0;
+  height: 1px;
+  background-color: var(--il-industrial-blue);
+}
+
+p {
+  @include block-formatting($size: 18px, $line-height: 30px, $margin-top: 16px);
+}
+h1 + p {
+  margin-top: em(20px, 18px);
+}
+h2 + p {
+  margin-top: em(17px, 18px);
+}
+h3 + p {
+  margin-top: em(15px, 18px);
+}
+h4, h5, h6 {
+  + p {
+    margin-top: em(12px, 18px);
+  }
+}
+
+pre {
+  position: relative;
+  max-width: 100%;
+  overflow: auto;
+}
+
+
+
+
+@container (max-width: 600px) {
+  il-content h1 {
+    font-size: em(32.44px);
+  }
+  il-content h2 {
+    font-size: em(28.83px);
+  }
+  il-content h3 {
+    font-size: em(25.63px);
+  }
+  il-content h4 {
+    font-size: em(22.78px);
+  }
+  il-content h5 {
+    font-size: em(20.25px);
+  }
+  il-content h6 {
+    font-size: em(18px);
+  }
+}
+
+&.il-wp-block-editor-content, .il-wp-block-editor-content {
+  h1, h2, h3, h4, h5, h6 {
+    &:first-child {
+      margin-top: var(--il-heading-margin-top);
+    }
+  }
+}
+
