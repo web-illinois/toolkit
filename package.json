@@ -15,7 +15,7 @@
     "dev": "vite",
     "build": "vite build --emptyOutDir",
     "test": "playwright test",
-    "serve-dist": "vite serve dist",
+    "serve-for-builder": "vite serve dist",
     "test-dev": "vite --port 5174"
   },
   "dependencies": {
