@@ -10,10 +10,8 @@ class ContentComponent extends LitElement {
 
     render() {
         return html`
-<div id="container">
-    <div id="content">
-        <slot></slot>
-    </div>
+<div>
+    <slot></slot>
 </div>
     `;
     }

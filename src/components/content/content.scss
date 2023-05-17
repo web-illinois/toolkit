@@ -47,7 +47,9 @@ il-content b {
 /* <blockquote> */
 
 il-content blockquote {
-  @include block-formatting($size: 18px, $line-height: 30px, $margin-top: 25px);
+  font-size: 18px;
+  line-height: 30px;
+  margin-top: 25px;
   margin-left: em(48px, 18px);
   margin-right: em(48px, 18px);
 }
@@ -212,7 +214,9 @@ il-content h6:first-child {
 /* <li> */
 
 il-content li {
-  @include block-formatting($size: 18px, $line-height: 27px, $margin-top: 10px);
+  font-size: 18px;
+  line-height: 27px;
+  margin-top: 10px;
   margin-left: em(40px, 18px);
 }
 
@@ -237,7 +241,9 @@ il-content mark {
 /* <ol> */
 
 il-content ol {
-  @include block-formatting($size: 18px, $line-height: 27px, $margin-top: 16px);
+  font-size: 18px;
+  line-height: 27px;
+  margin-top: 16px;
   text-align: left;
 }
 
@@ -260,7 +266,9 @@ il-content li ol, il-content li ol:first-child {
 /* <p> */
 
 il-content p {
-  @include block-formatting($size: 18px, $line-height: 30px, $margin-top: 16px);
+  font-size: 18px;
+  line-height: 30px;
+  margin-top: 16px;
 }
 il-content h1 + p {
   margin-top: em(20px, 18px);
@@ -363,7 +371,9 @@ il-content tr:nth-child(odd) {
 /* <ul> */
 
 il-content ul {
-  @include block-formatting($size: 18px, $line-height: 27px, $margin-top: 16px);
+  font-size: 18px;
+  line-height: 27px;
+  margin-top: 16px;
   text-align: left;
 }
 
@@ -396,7 +406,7 @@ il-content li ul, il-content li ul:first-child {
 
 /* TODO: WP BLOCK EDITOR COMPATIBILITY */
 
-&.il-wp-block-editor-content, .il-wp-block-editor-content {
+il-content.il-wp-block-editor-content {
   h1, h2, h3, h4, h5, h6 {
     &:first-child {
       margin-top: var(--il-heading-margin-top);
