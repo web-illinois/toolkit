@@ -19,6 +19,8 @@ il-content {
   position: relative;
 }
 
+/* <a> */
+
 il-content a {
   transition: color .3s;
   color: var(--il-link-color);
@@ -34,14 +36,46 @@ il-content a:hover, il-content a:focus {
   color: var(--il-focused-link-color);
 }
 
+/* <b> */
+
 il-content b {
   font-weight: 600;
 }
+
+/* <blockquote> */
+
+il-content blockquote {
+  @include block-formatting($size: 18px, $line-height: 30px, $margin-top: 25px);
+  margin-left: em(48px, 18px);
+  margin-right: em(48px, 18px);
+}
+il-content h1 + blockquote {
+  margin-top: em(20px, 18px);
+}
+il-content h2 + blockquote {
+  margin-top: em(17px, 18px);
+}
+il-content h3 + blockquote {
+  margin-top: em(15px, 18px);
+}
+il-content h4 + blockquote {
+  margin-top: em(12px, 18px);
+}
+il-content h5 + blockquote {
+  margin-top: em(12px, 18px);
+}
+il-content h6 + blockquote {
+  margin-top: em(12px, 18px);
+}
+
+/* <dfn> */
 
 il-content dfn {
   font-style: normal;
   font-weight: bold;
 }
+
+/* <dt> */
 
 il-content dt {
   font-weight: bold;
@@ -51,6 +85,8 @@ il-content dt {
 il-content dt:first-of-type {
   margin-top: 0;
 }
+
+/* <h1> */
 
 il-content h1 {
   color: var(--il-heading-color);
@@ -70,6 +106,8 @@ il-content h1:first-child {
   margin-top: 0;
 }
 
+/* <h2> */
+
 il-content h2 {
   color: var(--il-heading-color);
   font-family: var(--il-source-sans);
@@ -87,6 +125,8 @@ il-content h2 {
 il-content h2:first-child {
   margin-top: 0;
 }
+
+/* <h3> */
 
 il-content h3 {
   color: var(--il-heading-color);
@@ -106,6 +146,8 @@ il-content h3:first-child {
   margin-top: 0;
 }
 
+/* <h4> */
+
 il-content h4 {
   color: var(--il-heading-color);
   font-family: var(--il-source-sans);
@@ -122,6 +164,8 @@ il-content h4 {
 il-content h4:first-child {
   margin-top: 0;
 }
+
+/* <h5> */
 
 il-content h5 {
   color: var(--il-heading-color);
@@ -142,6 +186,8 @@ il-content h5:first-child {
   margin-top: 0;
 }
 
+/* <h6> */
+
 il-content h6 {
   color: var(--il-heading-color);
   font-family: var(--il-source-sans);
@@ -161,6 +207,8 @@ il-content h6:first-child {
   margin-top: 0;
 }
 
+/* <li> */
+
 il-content li {
   @include block-formatting($size: 18px, $line-height: 27px, $margin-top: 10px);
   margin-left: em(40px, 18px);
@@ -178,9 +226,13 @@ il-content ul li::marker {
   font-size: .9em;
 }
 
+/* <mark> */
+
 il-content mark {
   background-color: var(--il-cloud-1);
 }
+
+/* <ol> */
 
 il-content ol {
   @include block-formatting($size: 18px, $line-height: 27px, $margin-top: 16px);
@@ -203,9 +255,78 @@ il-content li ol, il-content li ol:first-child {
   margin-top: em(10px, 18px);
 }
 
+/* <strong> */
+
 il-content strong {
   font-weight: 600;
 }
+
+/* <table> */
+
+il-content table {
+  box-sizing: border-box;
+  border-collapse: collapse;
+  border: 1px solid var(--il-cloud);
+  width: 100%;
+  overflow: auto;
+}
+
+il-content table caption {
+  text-align: left;
+}
+
+/* <td> */
+
+il-content td {
+  text-align: left;
+  vertical-align: top;
+  padding: rem(25px) rem(16px);
+  border-top: 1px solid var(--il-cloud-3);
+  border-bottom: 1px solid var(--il-cloud-3);
+  border-left: none;
+  border-right: none;
+  color: var(--il-blue);
+}
+
+/* <th> */
+
+il-content th {
+  text-align: left;
+  font-weight: 700;
+  font-size: 1.2rem;
+  border-top: 1px solid var(--il-gray-2);
+  border-bottom: 1px solid var(--il-gray-2);
+  border-left: none;
+  border-right: none;
+  padding: rem(25px) rem(16px) rem(30px) rem(16px);
+  vertical-align: middle;
+}
+
+il-content th:first-of-type {
+  border-left: 1px solid var(--il-gray-2);
+}
+
+il-content th:last-of-type {
+  border-right: 1px solid var(--il-gray-2);
+}
+
+il-content thead th {
+  background-color: var(--il-industrial-blue);
+  color: white;
+  font-family: var(--il-font-sans);
+}
+
+il-content tbody th {
+  color: var(--il-blue);
+}
+
+/* <tr> */
+
+il-content tr:nth-child(odd) {
+  background-color: var(--il-gray-1);
+}
+
+/* <ul> */
 
 il-content ul {
   @include block-formatting($size: 18px, $line-height: 27px, $margin-top: 16px);
@@ -217,83 +338,6 @@ il-content li ul, il-content li ul:first-child {
 }
 
 
-
-
-
-table {
-  box-sizing: border-box;
-  border-collapse: collapse;
-  border: 1px solid var(--il-cloud);
-  width: 100%;
-  overflow: auto;
-}
-
-table caption {
-  text-align: left;
-}
-th {
-  text-align: left;
-  font-weight: 700;
-  font-size: 1.2rem;
-  border-top: 1px solid var(--il-gray-2);
-  border-bottom: 1px solid var(--il-gray-2);
-  border-left: none;
-  border-right: none;
-  padding: rem(25px) rem(16px) rem(30px) rem(16px);
-  vertical-align: middle;
-}
-thead th {
-  background-color: var(--il-industrial-blue);
-  color: white;
-  font-family: var(--il-font-sans);
-}
-th:first-of-type {
-  border-left: 1px solid var(--il-gray-2);
-}
-th:last-of-type {
-  border-right: 1px solid var(--il-gray-2);
-}
-thead th {
-  background-color: var(--il-industrial-blue);
-  color: white;
-  font-family: var(--il-font-sans);
-}
-tbody th {
-  color: var(--il-blue);
-}
-td {
-  text-align: left;
-  vertical-align: top;
-  padding: rem(25px) rem(16px);
-  border-top: 1px solid var(--il-cloud-3);
-  border-bottom: 1px solid var(--il-cloud-3);
-  border-left: none;
-  border-right: none;
-  color: var(--il-blue);
-}
-tr:nth-child(odd) {
-  background-color: var(--il-gray-1);
-}
-
-blockquote {
-  @include block-formatting($size: 18px, $line-height: 30px, $margin-top: 25px);
-  margin-left: em(48px, 18px);
-  margin-right: em(48px, 18px);
-}
-h1 + blockquote {
-  margin-top: em(20px, 18px);
-}
-h2 + blockquote {
-  margin-top: em(17px, 18px);
-}
-h3 + blockquote {
-  margin-top: em(15px, 18px);
-}
-h4, h5, h6 {
-  + blockquote {
-    margin-top: em(12px, 18px);
-  }
-}
 
 figcaption {
   @include block-formatting($size: 14px, $line-height: 23px);
