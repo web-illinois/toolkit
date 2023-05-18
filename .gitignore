@@ -6,5 +6,6 @@ package-lock.json
 /playwright-report
 templates/_data/tests.json
 /test-results
+/screenshots
 var
 yarn.lock

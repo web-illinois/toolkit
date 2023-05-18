@@ -15,27 +15,11 @@
   --il-statistic-intro-padding-bottom: 5px;
 }
 
-il-statistic {
-  @extend .il-formatted;
-}
-
-il-statistic,
-.il-formatted il-statistic {
-  font-size: var(--il-statistic-font-size);
-  line-height: var(--il-statistic-line-height);
-  --il-statistic-text-color: var(--il-heading-color);
-  --il-statistic-heading-color: var(--il-heading-color);
-
-  em {
-    font-style: normal;
-  }
-}
-
-il-statistic.il-theme-white, .il-theme-white il-statistic {
+.il-theme-white {
   --il-statistic-heading-color: var(--il-orange);
 }
 
-.il-size-small il-statistic, il-statistic.il-size-small {
+.il-size-small {
   --il-statistic-font-size: 1.125rem;
   --il-statistic-line-height: 1.188rem;
   --il-statistic-stat-font-size: 3rem;
@@ -45,8 +29,7 @@ il-statistic.il-theme-white, .il-theme-white il-statistic {
   --il-statistic-source-margin: 12px 0 0 0;
 }
 
-
-.il-size-large il-statistic, il-statistic.il-size-large {
+.il-size-large {
   --il-statistic-font-size: 1.375rem;
   --il-statistic-line-height: 1.625rem;
   --il-statistic-stat-font-size: 5.875rem;
@@ -55,7 +38,7 @@ il-statistic.il-theme-white, .il-theme-white il-statistic {
   --il-statistic-source-margin: 19px 0 0 0;
 }
 
-.il-size-xlarge il-statistic, il-statistic.il-size-xlarge {
+.il-size-xlarge {
   --il-statistic-font-size: 1.5rem;
   --il-statistic-line-height: 1.75rem;
   --il-statistic-stat-font-size: 8.25rem;
@@ -65,4 +48,18 @@ il-statistic.il-theme-white, .il-theme-white il-statistic {
   --il-statistic-heading-margin: 0 0 0.3125rem 0;
   --il-statistic-source-margin: 22px 0 0 0;
   --il-statistic-intro-padding-bottom: 14px;
+}
+
+il-statistic {
+  @extend .il-formatted;
+}
+
+il-statistic {
+  font-size: var(--il-statistic-font-size);
+  line-height: var(--il-statistic-line-height);
+  font-family: var(--il-font-sans);
+
+  em {
+    font-style: normal;
+  }
 }
