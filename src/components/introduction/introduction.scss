@@ -1,6 +1,5 @@
-@import "../../css/styles.scss";
 
-il-introduction, .il-formatted il-introduction {
+il-introduction {
   display: block;
   background: var(--il-background-color);
   color: var(--il-heading-color);
@@ -16,7 +15,7 @@ il-introduction, .il-formatted il-introduction {
 }
 
 @media only screen and (max-width: 792px) {
-  il-introduction, .il-formatted il-introduction {
+  il-introduction {
     padding: 20px;  
   }
 }

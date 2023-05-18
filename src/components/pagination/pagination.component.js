@@ -1,7 +1,6 @@
 import { LitElement, html, css } from 'lit';
 import Pagination from './pagination';
 import styles from './pagination.css';
-import "../../css/styles.scss";
 
 class PaginationComponent extends LitElement {
 
