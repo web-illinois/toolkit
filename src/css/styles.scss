@@ -1,24 +1,25 @@
 $base-text-size: 18px;
 
 @import "mixins";
-@import "placeholders";
 @import "colors";
 @import "fonts";
 @import "icons";
+@import "classes";
+@import "themes";
 
-:root {
-  font-size: 16px;
+html.il-toolkit {
   --il-content-margin: 20px;
   --il-content-max-width: 1140px;
   --il-focus-outline: 3px dashed var(--il-focus-outline-color);
   --il-dotted-focus-outline: 4px dotted var(--il-focus-outline-color);
 
+  body {
+    margin: 0;
+    padding: 0;
+    font: 400 16px var(--il-font-sans);
+  }
+
   @media (min-width: 768px) {
     --il-content-margin: 30px;
   }
 }
-
-@import "classes";
-@import "layout";
-@import "details";
-@import "themes";
