@@ -1,7 +1,6 @@
 @import '../../css/styles.scss';
 
 il-accordion-panel {
-    @extend %content;
     border: var(--il-details-border);
     max-width: var(--il-details-maxwidth);
     margin: 20px 0;

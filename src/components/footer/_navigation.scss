@@ -10,7 +10,7 @@
   h2,
   h3,
   h4 {
-    @include reset-heading;
+    all: initial;
     padding: 0 0 10px 0;
     margin-bottom: 6px;
     font: bold 20px var(--il-font-sans);
@@ -18,10 +18,10 @@
   }
 
   ul {
-    @include reset-list;
+    all: initial;
 
     li {
-      @include reset-list;
+      all: initial;
 
       a {
         display: block;
@@ -32,7 +32,6 @@
   }
 
   a {
-    @extend .il-link;
   }
 
   a:hover,
@@ -44,7 +43,7 @@
 
   .il-actions {
     ul {
-      @include reset-list();
+      all: initial;
       display: flex;
       flex-direction: row;
       flex-wrap: wrap;
@@ -53,12 +52,11 @@
     }
 
     li {
-      @include reset-list-item;
+      all: initial;
       margin: 0 20px 20px 0;
     }
 
     a {
-      @extend .il-button;
       border: 0;
       background-color: var(--il-orange);
       color: white;

@@ -1,7 +1,6 @@
 @import "../../css/styles.scss";
 
-.il-content-with-section-nav,
-.il-formatted .il-content-with-section-nav {
+.il-content-with-section-nav {
   display: grid;
   grid-gap: 20px;
   grid-template-rows: auto auto;
@@ -35,18 +34,17 @@
   }
 }
 
-il-section-nav,
-.il-formatted il-section-nav {
+il-section-nav {
   ul {
-    @include reset-list;
+    all: initial;
   }
 
   li {
-    @include reset-list-item;
+    all: initial;
   }
 
   a {
-    @include reset-link;
+    all: initial;
     display: block;
     font-family: var(--il-font-sans);
     line-height: 1.35;

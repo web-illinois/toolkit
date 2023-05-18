@@ -83,7 +83,7 @@ il-hero {
   }
 
   h1 {
-    @include reset-heading;
+    all: initial;
     font: 700 36px var(--il-font-sans);
     line-height: 1;
     text-shadow: 2px 2px 2px rgba(0, 0, 0, 1);
@@ -115,7 +115,6 @@ il-hero {
       padding: 0;
 
       a {
-        @extend .il-button;
         --il-button-background-color: var(--il-hero-button-background-color);
         --il-button-background-color: var(--il-hero-button-background-color);
         --il-button-foreground-color: var(--il-hero-button-foreground-color);

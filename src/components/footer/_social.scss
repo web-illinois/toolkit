@@ -1,6 +1,6 @@
 .il-footer-social {
   ul {
-    @include reset-list;
+    all: initial;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -10,11 +10,11 @@
     font: 700 18px/30px var(--il-font-sans);
   }
   li {
-    @include reset-list-item;
+    all: initial;
     padding: 0 18px 14px 0;
   }
   a {
-    @include reset-link;
+    all: initial;
     position: relative;
     display: block;
     background-color: var(--il-link-color);
@@ -67,7 +67,6 @@
     }
 
     &:before {
-      @extend %il-icon;
       position: absolute;
       top: 0;
       left: 0;
