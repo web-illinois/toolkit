@@ -61,29 +61,6 @@ il-hero {
     li {
       all: initial;
       margin: 0 32px 18px 0;
-
-      a {
-        all: initial;
-        background-color: var(--il-orange);
-        color: white;
-        display: inline-block;
-        margin: .31em 0;
-        padding: .63em 1.05em;
-        text-align: center;
-        text-decoration: none;
-        border-radius: 0.25em;
-        border: .125em solid white;
-        font: 700 1.187em/1em var(--il-font-sans);
-        letter-spacing: .01em;
-        transition: background-color 0.3s;
-        cursor: pointer;
-
-        &:focus, &:hover {
-          background-color: white;
-          color: var(--il-orange);
-          border-color: var(--il-orange);
-        }
-      }
     }
   }
 
