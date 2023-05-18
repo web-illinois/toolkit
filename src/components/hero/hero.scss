@@ -2,12 +2,6 @@
 :root {
   --il-hero-align-items: center;
   --il-hero-background-color: var(--il-blue);
-  --il-hero-button-background-color: var(--il-orange);
-  --il-hero-button-foreground-color: white;
-  --il-hero-button-border-color: white;
-  --il-hero-focused-button-background-color: white;
-  --il-hero-focused-button-foreground-color: var(--il-orange);
-  --il-hero-focused-button-border-color: var(--il-orange);
   --il-hero-justify-content: center;
   --il-hero-margin-left: auto;
   --il-hero-margin-right: auto;
@@ -15,6 +9,85 @@
 }
 
 il-hero {
+
+  img {
+    display: block;
+    position: relative;
+    width: 100%;
+    height: 223px;
+    object-fit: cover;
+    object-position: center;
+
+    @media (min-width: 576px) {
+      height: 315px;
+    }
+
+    @media (min-width: 767px) {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      z-index: 101;
+    }
+  }
+
+  h1 {
+    all: initial;
+    font: 700 36px/1em var(--il-font-sans);
+    color: white;
+    text-shadow: 2px 2px 2px rgba(0, 0, 0, 1);
+    text-align: inherit;
+
+    @media (min-width: 576px) {
+      font-size: 48px;
+    }
+
+    @media (min-width: 768px) {
+      font-size: 64px;
+    }
+
+    @media (min-width: 992px) {
+      font-size: 72px;
+    }
+  }
+  ul {
+    all: initial;
+    margin: 30px -32px -18px 0;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    li {
+      all: initial;
+      margin: 0 32px 18px 0;
+
+      a {
+        all: initial;
+        background-color: var(--il-orange);
+        color: white;
+        display: inline-block;
+        margin: .31em 0;
+        padding: .63em 1.05em;
+        text-align: center;
+        text-decoration: none;
+        border-radius: 0.25em;
+        border: .125em solid white;
+        font: 700 1.187em/1em var(--il-font-sans);
+        letter-spacing: .01em;
+        transition: background-color 0.3s;
+        cursor: pointer;
+
+        &:focus, &:hover {
+          background-color: white;
+          color: var(--il-orange);
+          border-color: var(--il-orange);
+        }
+      }
+    }
+  }
+
+  /* Alignment */
 
   &.il-align-left {
     --il-hero-align-items: flex-start;
@@ -49,78 +122,20 @@ il-hero {
     --il-hero-justify-content: flex-end;
   }
 
-  &.il-theme-orange, &[color="orange"], &[duotone] {
+  /* Themes */
+
+  &.il-theme-orange {
     --il-hero-background-color: var(--il-orange);
-    --il-hero-button-background-color: var(--il-blue);
-    --il-hero-button-foreground-color: white;
-    --il-hero-button-border-color: white;
-    --il-hero-focused-button-background-color: white;
-    --il-hero-focused-button-foreground-color: var(--il-blue);
-    --il-hero-focused-button-border-color: var(--il-blue);
-  }
 
-  img {
-    display: block;
-    position: relative;
-    width: 100%;
-    height: 223px;
-    object-fit: cover;
-    object-position: center;
+    ul li a {
+      background-color: var(--il-blue);
+      color: white;
+      border-color: white;
 
-    @media (min-width: 576px) {
-      height: 315px;
-    }
-
-    @media (min-width: 767px) {
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      top: 0;
-      left: 0;
-      z-index: 101;
-    }
-  }
-
-  h1 {
-    all: initial;
-    font: 700 36px var(--il-font-sans);
-    line-height: 1;
-    text-shadow: 2px 2px 2px rgba(0, 0, 0, 1);
-    text-align: inherit !important;
-
-    @media (min-width: 576px) {
-      font-size: 48px;
-    }
-
-    @media (min-width: 768px) {
-      font-size: 64px;
-    }
-
-    @media (min-width: 992px) {
-      font-size: 72px;
-    }
-  }
-  ul {
-    list-style: none;
-    margin: 30px -32px -18px 0;
-    padding: 0;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-
-    li {
-      list-style: none;
-      margin: 0 32px 18px 0;
-      padding: 0;
-
-      a {
-        --il-button-background-color: var(--il-hero-button-background-color);
-        --il-button-background-color: var(--il-hero-button-background-color);
-        --il-button-foreground-color: var(--il-hero-button-foreground-color);
-        --il-button-border-color: var(--il-hero-button-border-color);
-        --il-focused-button-background-color: var(--il-hero-focused-button-background-color);
-        --il-focused-button-foreground-color: var(--il-hero-focused-button-foreground-color);
-        --il-focused-button-border-color: var(--il-hero-focused-button-border-color);
+      &:focus, &:hover {
+        background-color: white;
+        color: var(--il-blue);
+        border-color: var(--il-blue);
       }
     }
   }

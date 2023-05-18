@@ -7,9 +7,12 @@ $base-text-size: 18px;
 @import "classes";
 @import "themes";
 
-html.il-toolkit {
+:root {
   --il-content-margin: 20px;
   --il-content-max-width: 1140px;
+}
+
+html.il-toolkit {
   --il-focus-outline: 3px dashed var(--il-focus-outline-color);
   --il-dotted-focus-outline: 4px dotted var(--il-focus-outline-color);
 
