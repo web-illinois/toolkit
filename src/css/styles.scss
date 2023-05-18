@@ -4,7 +4,9 @@ $base-text-size: 18px;
 @import "colors";
 @import "fonts";
 @import "icons";
-@import "classes";
+
+@import "classes/il-button/il-button";
+@import "classes/il-icon/il-icon";
 
 @import "themes";
 
