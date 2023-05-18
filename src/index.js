@@ -7,6 +7,7 @@ import "./components/breadcrumbs/breadcrumbs.component";
 import "./components/breadcrumbs/page.component";
 import "./components/call-to-action/call-to-action.component";
 import "./components/card/card.component";
+import "./components/content/content.component";
 import "./components/directory/card.component";
 import "./components/directory/profile.component";
 import "./components/footer/footer.component";

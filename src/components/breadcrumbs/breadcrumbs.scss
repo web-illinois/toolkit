@@ -1,4 +1,3 @@
-@import "../../css/styles.scss";
 
 .il-breadcrumbs {
   font-family: var(--il-font-sans);
@@ -7,7 +6,7 @@
   text-transform: uppercase;
 
   h2 {
-    @include reset-heading;
+    all: initial;
     display: inline;
     font-weight: bold;
     color: var(--il-orange);
@@ -18,12 +17,12 @@
   }
 
   ol, ul {
-    @include reset-list;
+    all: initial;
     display: inline;
   }
 
   li {
-    @include reset-list-item;
+    all: initial;
     display: inline;
 
     &:before {
@@ -40,7 +39,7 @@
   }
 
   a {
-    @include reset-link;
+    all: initial;
     text-decoration: underline;
   }
 }
@@ -53,7 +52,7 @@
   }
 
   h1 {
-    @include reset-heading;
+    all: initial;
     text-align: center;
     margin: 1em auto 0;
     max-width: var(--il-content-max-width);

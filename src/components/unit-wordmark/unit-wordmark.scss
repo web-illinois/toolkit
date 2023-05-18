@@ -1,12 +1,11 @@
-@import "../../css/styles.scss";
 
 il-unit-wordmark {
   > * {
-    @include reset-spacing;
+    all: initial;
     text-align: left !important;
     display: block;
     margin-bottom: .25em;
-    font-size: rem(18px);
+    font-size: 1.125em;
     font-weight: 400;
     line-height: 1.2em;
     font-family: var(--il-font-sans);
@@ -21,7 +20,7 @@ il-unit-wordmark {
     color: var(--il-blue);
   }
   a {
-    @extend .il-link;
+    all: initial;
     color: var(--il-blue) !important;
     text-decoration: none !important;
   }
@@ -32,15 +31,15 @@ il-unit-wordmark {
   }
 
   h1 {
-    @include reset-spacing;
-    font-size: rem(24px);
+    all: initial;
+    font-size: 1.5em;
   }
   .il-primary-unit {
     display: none;
   }
   @media (min-width: 768px) {
-  .il-primary-unit {
-    display: block;
+    .il-primary-unit {
+      display: block;
+    }
   }
-}
 }

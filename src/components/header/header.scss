@@ -1,4 +1,3 @@
-@import "../../css/styles.scss";
 
 il-header {
   &[view="full"] {
@@ -9,12 +8,12 @@ il-header {
 
     .il-links {
       ul {
-        @include reset-list;
+        all: initial;
         display: flex;
         flex-direction: row;
       }
       li {
-        @include reset-list-item;
+        all: initial;
         position: relative;
         padding: 0 1em 0 0;
 
@@ -38,7 +37,7 @@ il-header {
         }
       }
       a {
-        @include reset-link;
+        all: initial;
         display: block;
         font: 600 16px var(--il-font-sans);
         color: var(--il-blue);
@@ -69,15 +68,15 @@ il-header {
       background-color: var(--il-cloud-1);
 
       ul {
-        @include reset-list;
+        all: initial;
       }
       li {
-        @include reset-list-item;
+        all: initial;
         padding: 0;
         border-bottom: 1px solid #c0c0c0;;
       }
       a {
-        @include reset-link;
+        all: initial;
         text-decoration: none;
         color: var(--il-blue);
         padding: 8px 20px;
@@ -96,20 +95,20 @@ il-header {
 
     .il-navigation {
       ul {
-        @include reset-list;
+        all: initial;
       }
 
       li {
-        @include reset-list-item;
+        all: initial;
       }
 
       a {
-        @include reset-link;
+        all: initial;
       }
     }
 
     .il-search {
-      @include reset-spacing;
+      all: initial;
       display: grid;
       grid-template-columns: auto auto;
     }

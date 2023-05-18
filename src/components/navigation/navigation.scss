@@ -1,11 +1,10 @@
-@import "../../css/styles.scss";
 
 il-nav il-nav-section {
   z-index: 5000;
 }
 
 il-nav:not([compact]) il-nav-section .il-subnav {
-  @include reset-list;
+  all: initial;
   box-sizing: border-box;
   padding: 10px 20px 25px;
   width: 250px;
@@ -14,10 +13,10 @@ il-nav:not([compact]) il-nav-section .il-subnav {
   clip-path: inset(0px -5px -5px -5px);
 
   a {
-    @include reset-link;
+    all: initial;
     display: block;
     padding: 11px 5px 8px 5px;
-    font: 700 rem(16px)/rem(18px) var(--il-font-sans);
+    font: 700 1em/1.125em var(--il-font-sans);
     color: var(--il-blue);
     font-weight: normal;
 
@@ -29,18 +28,18 @@ il-nav:not([compact]) il-nav-section .il-subnav {
   }
 }
 il-nav[compact] il-nav-section .il-subnav {
-  @include reset-list;
+  all: initial;
   padding: 10px 40px;
   background-color: white;
   border-top: 1px solid var(--il-cloud-3);
 
   li {
-    @include reset-list-item;
+    all: initial;
     padding: 10px 0;
   }
 
   a {
-    @include reset-link;
+    all: initial;
     color: var(--il-blue);
     font: 600 rem(20px)/rem(28px) var(--il-font-sans);
   }
@@ -54,13 +53,13 @@ il-nav[compact] il-nav-section .il-subnav {
 .il-navigation--full {
 
   .il-navigation__menu {
-    @include reset-list;
+    all: initial;
     display: flex;
     flex-direction: row;
   }
 
   .il-navigation__menu-item {
-    @include reset-list-item;
+    all: initial;
   }
 
   .il-navigation__top-level {
@@ -75,7 +74,7 @@ il-nav[compact] il-nav-section .il-subnav {
   }
 
   .il-navigation__toggle {
-    @include reset-button;
+    all: initial;
   }
 
   .il-navigation__toggle-icon {
