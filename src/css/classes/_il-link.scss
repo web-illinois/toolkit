@@ -1,0 +1,17 @@
+.il-link {
+  color: var(--il-link-color);
+  transition: color .3s;
+  text-decoration: underline;
+
+  &:visited {
+    color: var(--il-visited-link-color);
+  }
+
+  &:hover, &:focus {
+    color: var(--il-link-hover-color);
+  }
+}
+
+.il-links a {
+  @extend .il-link;
+}
