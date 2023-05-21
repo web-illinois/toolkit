@@ -51,10 +51,6 @@
 }
 
 il-statistic {
-  @extend .il-formatted;
-}
-
-il-statistic {
   font-size: var(--il-statistic-font-size);
   line-height: var(--il-statistic-line-height);
   font-family: var(--il-font-sans);

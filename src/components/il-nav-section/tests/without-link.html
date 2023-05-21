@@ -1,7 +1,18 @@
 <!DOCTYPE html>
 <script src="../il-nav-section.component.js" type="module"></script>
+<link rel="stylesheet" href="../../../css/colors.scss">
+<link rel="stylesheet" href="../../../css/fonts.scss">
 
-<il-nav-section>
+<style>
+    body {
+        background-color: #ccc;
+        padding: 2em;
+    }
+    il-nav-section {
+        max-width: 400px;
+    }
+</style>
+<il-nav-section class="flyout">
     <span slot="label">About Us</span>
     <ul>
         <li><a href="/mission-vision">Mission &amp; Vision</a></li>

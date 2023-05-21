@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+
+<style>
+    @layer cascade, reversals;
+
+    @layer cascade {
+        .container {
+            width: 80vw;
+            position: relative;
+            container-type: inline-size;
+        }
+        .cascade {
+            position: absolute;
+            width: calc(100% - 20cqw);
+            height: 100px;
+            right: 0;
+            top: 50px;
+            z-index: 1;
+        }
+        .cascade:before {
+            content: '';
+            position: absolute;
+            background-color: rgba(0, 0, 0, .15);
+            left: 0;
+            top: 0;
+            width: 20cqw;
+            height: 100%;
+        }
+        .level-1 {
+            top: 0;
+            width: 100cqw;
+        }
+        .reverse .cascade {
+            right: auto;
+            left: 0;
+        }
+        .reverse .cascade:before {
+            left: auto;
+            right: 0;
+        }
+        .forward .cascade {
+            left: auto;
+            right: 0;
+        }
+        .forward .cascade:before {
+            right: auto;
+            left: 0;
+        }
+    }
+    @layer reversals {
+        .reverse, .forward {
+            width: 100cqw;
+        }
+        .reverse.cascade:before {
+            left: auto;
+            right: 0;
+        }
+        .forward.cascade:before {
+            right: auto;
+            left: 0;
+        }
+    }
+    .level-1, .level-8 {
+        background-color: red;
+    }
+    .level-2, .level-9 {
+        background-color: orange;
+    }
+    .level-3, .level-10 {
+        background-color: yellow;
+    }
+    .level-4, .level-11 {
+        background-color: green;
+    }
+    .level-5, .level-12 {
+        background-color: blue;
+    }
+    .level-6, .level-13 {
+        background-color: indigo;
+    }
+    .level-7, .level-14 {
+        background-color: violet;
+    }
+</style>
+
+<div class="container">
+    <div class="cascade level-1">
+        <div class="cascade level-2">
+            <div class="cascade level-3">
+                <div class="cascade level-4">
+                    <div class="cascade level-5 reverse">
+                        <div class="cascade level-6">
+                            <div class="cascade level-7">
+                                <div class="cascade level-8">
+                                    <div class="cascade level-9 forward">
+                                        <div class="cascade level-10">
+                                            <div class="cascade level-11">
+                                                <div class="cascade level-12">
+                                                    <div class="cascade level-13 reverse">
+                                                        <div class="cascade level-14">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

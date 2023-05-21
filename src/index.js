@@ -20,9 +20,11 @@ import "./components/layout/section.component";
 import "./components/layout/section-with-sidebar.component";
 import "./components/lede/lede.component";
 import "./components/link/link";
-import "./components/navigation/link.component";
-import "./components/navigation/navigation.component";
-import "./components/navigation/section.component";
+
+import "./components/il-nav/il-nav.component";
+//import "./components/il-nav-link/il-nav-link.component";
+import "./components/il-nav-section/il-nav-section.component";
+
 import "./components/page-title/page-title.component";
 import "./components/pagination/pagination.component";
 import "./components/quote/quote.component";

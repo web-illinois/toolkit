@@ -15,10 +15,6 @@ $base-text-size: 18px;
   --il-content-max-width: 1140px;
 }
 
-.il-links a {
-  @extend .il-link;
-}
-
 .il-invisible {
   position: absolute !important;
   left: -9999px !important;
@@ -30,32 +26,6 @@ $base-text-size: 18px;
   height: 1px !important;
   overflow: hidden !important;
 }
-
-.il-page-title {
-  background-color: var(--il-blue);
-  //background-image: url(../images/fingerprint.svg), linear-gradient(to bottom, rgba(0, 0, 0, 0) 33%, #0a5dde 96%);
-  background-repeat: no-repeat;
-  background-size: cover;
-  color: white;
-  padding: 14px var(--il-content-margin) 27px;
-
-  .il-breadcrumbs {
-    margin: 0 auto;
-    max-width: var(--il-content-max-width);
-  }
-
-  h1 {
-    @include reset-heading;
-    text-align: center;
-    margin: 1em auto 0;
-    max-width: var(--il-content-max-width);
-    font: 900 27px var(--il-font-sans);
-  }
-
-  &--poster h1 {
-    font: normal 32px var(--il-font-condensed);
-    text-transform: uppercase;
-  }
 
 html.il-toolkit {
   --il-focus-outline: 3px dashed var(--il-focus-outline-color);
