@@ -6,18 +6,33 @@ const AxeBuilder = require('@axe-core/playwright').default;
 test('nav section without link', async ({page}) => {
     await page.goto('components/il-nav-section/tests/without-link.html');
     await expect(page.getByTestId('nav-section')).toHaveScreenshot();
+    const results = await new AxeBuilder({ page })
+        .include('il-nav-section')
+        .withRules('color-contrast')
+        .analyze();
+    expect(results.violations).toEqual([]);
 });
 
 test('hover over button in nav section without link', async ({page}) => {
     await page.goto('components/il-nav-section/tests/without-link.html');
     await page.getByRole('button').hover();
     await expect(page.getByTestId('nav-section')).toHaveScreenshot();
+    const results = await new AxeBuilder({ page })
+        .include('il-nav-section')
+        .withRules('color-contrast')
+        .analyze();
+    expect(results.violations).toEqual([]);
 });
 
 test('focus on button in nav section without link', async ({page}) => {
     await page.goto('components/il-nav-section/tests/without-link.html');
     await page.getByRole('button').focus();
     await expect(page.getByTestId('nav-section')).toHaveScreenshot();
+    const results = await new AxeBuilder({ page })
+        .include('il-nav-section')
+        .withRules('color-contrast')
+        .analyze();
+    expect(results.violations).toEqual([]);
 });
 
 test('expand', async ({ page }) => {
@@ -42,28 +57,53 @@ test('collapse', async ({ page }) => {
 test('nav section with link', async ({page}) => {
     await page.goto('components/il-nav-section/tests/with-link.html');
     await expect(page.getByTestId('nav-section')).toHaveScreenshot();
+    const results = await new AxeBuilder({ page })
+        .include('il-nav-section')
+        .withRules('color-contrast')
+        .analyze();
+    expect(results.violations).toEqual([]);
 });
 
 test('hover over link in nav section', async ({page}) => {
     await page.goto('components/il-nav-section/tests/with-link.html');
     await page.getByTestId('link').hover();
     await expect(page.getByTestId('nav-section')).toHaveScreenshot();
+    const results = await new AxeBuilder({ page })
+        .include('il-nav-section')
+        .withRules('color-contrast')
+        .analyze();
+    expect(results.violations).toEqual([]);
 });
 
 test('focus on link in nav section', async ({page}) => {
     await page.goto('components/il-nav-section/tests/with-link.html');
     await page.getByTestId('link').focus();
     await expect(page.getByTestId('nav-section')).toHaveScreenshot();
+    const results = await new AxeBuilder({ page })
+        .include('il-nav-section')
+        .withRules('color-contrast')
+        .analyze();
+    expect(results.violations).toEqual([]);
 });
 
 test('hover over button in nav section with link', async ({page}) => {
     await page.goto('components/il-nav-section/tests/with-link.html');
     await page.getByRole('button').hover();
     await expect(page.getByTestId('nav-section')).toHaveScreenshot();
+    const results = await new AxeBuilder({ page })
+        .include('il-nav-section')
+        .withRules('color-contrast')
+        .analyze();
+    expect(results.violations).toEqual([]);
 });
 
 test('focus on button in nav section with link', async ({page}) => {
     await page.goto('components/il-nav-section/tests/with-link.html');
     await page.getByRole('button').focus();
     await expect(page.getByTestId('nav-section')).toHaveScreenshot();
+    const results = await new AxeBuilder({ page })
+        .include('il-nav-section')
+        .withRules('color-contrast')
+        .analyze();
+    expect(results.violations).toEqual([]);
 });
