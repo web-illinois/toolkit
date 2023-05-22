@@ -29,7 +29,7 @@ class NavigationSection extends LitElement {
     const expanded = this.expanded ? 'expanded' : 'collapsed';
     const ariaExpanded = this.expanded ? 'true' : 'false';
     return html`
-      <div id="section" class=${expanded}>
+      <div id="container" class=${expanded}>
         <div id="header">
           <slot name="link"></slot>
           <button aria-controls="content" aria-expanded=${ariaExpanded} @click=${this.handleButtonClick}>

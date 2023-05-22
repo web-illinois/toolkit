@@ -6,10 +6,28 @@ export default css`
     display: block;
     width: 100%;
   }
-  #section {
+  #container {
     position: relative;
     display: block;
   }
+  
+  #header ::slotted(a) {
+    all: initial;
+    display: block;
+    padding: .75em;
+    background-color: var(--il-blue);
+    color: white;
+    font: 600 1.1875em/1em var(--il-font-sans);
+    cursor: pointer;
+    position: relative;
+    width: calc(100% - 3em);
+  }
+  #header ::slotted(a:focus),
+  #header ::slotted(a:hover) {
+    background-color: var(--il-orange);
+    color: var(--il-blue);
+  }
+  
   button {
     all: initial;
     display: flex;
@@ -33,6 +51,16 @@ export default css`
     color: inherit;
     font: 600 1.1875em/1em var(--il-font-sans);
     pointer-events: none;
+  }
+  button .placeholder {
+    position: absolute;
+    left: -99vw;
+    top: 0;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    text-indent: 99vw;
+    white-space: nowrap;
   }
 
   #icon {
@@ -87,15 +115,6 @@ export default css`
     flex-direction: row;
     justify-content: space-between;
     align-items: stretch;
-  }
-  button .placeholder {
-    position: absolute;
-    left: -99vw;
-    width: 1px;
-    height: 1px;
-    overflow: hidden;
-    text-indent: 1px;
-    white-space: nowrap;
   }
   button ::slotted(*) {
     display: block;
