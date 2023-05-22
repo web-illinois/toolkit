@@ -3,20 +3,27 @@ import { css } from 'lit';
 export default css`
   :host {
     position: relative;
-    display: block;
-    width: 100%;
+    display: var(--il-nav-section-display);
+    width: var(--il-nav-section-width);
   }
+  
   #container {
     position: relative;
     display: block;
   }
-  
+
+  #header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: stretch;
+  }
   #header ::slotted(a) {
     all: initial;
     display: block;
-    padding: .75em;
-    background-color: var(--il-blue);
-    color: white;
+    padding: var(--il-nav-section-header-padding);
+    background-color: var(--il-nav-section-header-link-background-color);
+    color: var(--il-nav-section-header-link-color);
     font: 600 1.1875em/1em var(--il-font-sans);
     cursor: pointer;
     position: relative;
@@ -24,24 +31,24 @@ export default css`
   }
   #header ::slotted(a:focus),
   #header ::slotted(a:hover) {
-    background-color: var(--il-orange);
-    color: var(--il-blue);
+    background-color: var(--il-nav-section-header-link-focus-background-color);
+    color: var(--il-nav-section-header-link-focus-color);
   }
   
   button {
     all: initial;
-    display: flex;
+    display: var(--il-nav-section-header-button-display);
     flex: 1 1 2em;
     flex-direction: row;
     justify-content: space-between;
     align-items: stretch;
-    background-color: var(--il-blue);
-    color: white;
+    background-color: var(--il-nav-section-header-button-background-color);
+    color: var(--il-nav-section-header-button-color);
     cursor: pointer;
   }
   button:hover, button:focus {
-    background-color: var(--il-orange);
-    color: var(--il-blue);
+    background-color: var(--il-nav-section-header-button-focus-background-color);
+    color: var(--il-nav-section-header-button-focus-color);
   }
   button ::slotted(*) {
     all: initial;
@@ -74,8 +81,11 @@ export default css`
     width: 1.2em;
     height: 1.2em;
     overflow: hidden;
-    transform: rotate(-90deg);
+    transform: var(--il-nav-section-header-chevron-transform);
     opacity: .75;
+  }
+  button:hover #chevron, button:focus #chevron {
+    opacity: 1;
   }
   #chevron svg {
     position: relative;
@@ -87,17 +97,21 @@ export default css`
 
 
   #content {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    display: none;
+    position: var(--il-nav-section-content-position);
+    top: var(--il-nav-section-content-top);
+    left: var(--il-nav-section-content-left);
+    z-index: 100;
+    display: var(--il-nav-section-content-display);
+    width: var(--il-nav-section-content-width);
+    opacity: 0;
+    pointer-events: none;
   }
-  #header {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: stretch;
+  .expanded #content {
+    opacity: 1;
+    pointer-events: all;
   }
+  
+  
   /*
   #section {
     position: relative;

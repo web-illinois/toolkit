@@ -1,6 +1,7 @@
 import { LitElement, html, css } from 'lit';
 import itemStyles from '../../shared/navigation/item.css';
 import styles from './il-nav-section.css'
+import './il-nav-section.scss'
 
 class NavigationSection extends LitElement {
 
