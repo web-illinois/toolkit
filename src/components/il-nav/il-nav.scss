@@ -1,4 +1,3 @@
-
 // Base variables
 
 :root {
@@ -30,7 +29,6 @@
   --il-nav--content--invisible--display: block;
 
   --il-nav--content--collapsed--display: none;
-
 
 
   // Section styles: accordion, dropdown, & flyout
@@ -65,7 +63,6 @@
   --il-nav--flyout--section--content--left: 100%;
   --il-nav--flyout--section--header-chevron--transform: var(--il-nav-section-chevron-right);
   --il-nav--flyout--section--content--position: absolute;
-
 
 
   // Navigation levels
@@ -128,6 +125,7 @@
       color: var(--il-nav--link--focus--color);
     }
   }
+
   il-nav-section {
     display: block;
   }
@@ -174,6 +172,7 @@
   & > ul > li > il-nav-section {
     @extend %il-nav--bar--dropdown;
   }
+
   il-nav-section il-nav-section {
     @extend %il-nav--bar--flyout;
   }
@@ -229,7 +228,6 @@
 }
 
 
-
 %il-nav--bar--flyout {
   --il-nav-section--content--left: 100%;
   --il-nav-section--content--top: 0;
@@ -238,7 +236,6 @@
   --il-nav-section--content--background-color: var(--il-cloud-1);
   --il-nav-indicator--arrow--transform: var(--il-nav-indicator--right);
 }
-
 
 
 // Column
@@ -347,37 +344,47 @@
   il-nav-section[data-il-nav-level] {
     display: none;
   }
+
   il-nav-section[data-il-nav-level="1"] {
     display: block;
     --il-nav--item--padding-left: var(--il-nav--level-1--indent);
+
     & > ul > li > a {
       --il-nav--item--padding-left: var(--il-nav--level-2--indent);
     }
   }
+
   il-nav-section[data-il-nav-level="2"] {
     display: block;
     --il-nav--item--padding-left: var(--il-nav--level-2--indent);
+
     & > ul > li > a {
       --il-nav--item--padding-left: var(--il-nav--level-3--indent);
     }
   }
+
   il-nav-section[data-il-nav-level="3"] {
     display: block;
     --il-nav--item--padding-left: var(--il-nav--level-3--indent);
+
     & > ul > li > a {
       --il-nav--item--padding-left: var(--il-nav--level-4--indent);
     }
   }
+
   il-nav-section[data-il-nav-level="4"] {
     display: block;
     --il-nav--item--padding-left: var(--il-nav--level-4--indent);
+
     & > ul > li > a {
       --il-nav--item--padding-left: var(--il-nav--level-5--indent);
     }
   }
+
   il-nav-section[data-il-nav-level="5"] {
     display: block;
     --il-nav--item--padding-left: var(--il-nav--level-5--indent);
+
     & > ul > li > a {
       --il-nav--item--padding-left: var(--il-nav--level-6--indent);
     }
@@ -389,7 +396,66 @@
   }
 }
 
+%il-nav--eyebrow {
+  display: block;
 
+  ul {
+    all: initial;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    width: auto;
+  }
+
+  li {
+    all: initial;
+    display: block;
+    position: relative;
+    padding: 0 1em 0 0;
+
+    &:last-of-type {
+      padding-right: 0;
+    }
+
+    &::after {
+      position: absolute;
+      top: .5em;
+      right: 0;
+      content: "/";
+      width: 1.5em;
+      text-align: center;
+      color: var(--il-altgeld);
+      font: 600 .75em/1em var(--il-font-sans);
+    }
+
+    &:last-of-type::after {
+      content: "";
+      display: none;
+    }
+  }
+
+  a {
+    all: initial;
+    display: block;
+    font: 600 1em var(--il-font-sans);
+    color: var(--il-blue);
+    cursor: pointer;
+
+    &:focus, &:hover {
+      color: var(--il-altgeld);
+      text-decoration: underline;
+    }
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  il-nav-section {
+    display: none;
+  }
+}
 
 
 il-nav {
@@ -408,18 +474,26 @@ il-nav {
 il-nav {
   &.il-nav-bar {
     @extend %il-nav--bar;
+
     & > ul > li > il-nav-section {
       @extend %il-nav--bar--dropdown;
+
       &[data-il-nav-size="expanded"] {
         @extend %il-nav--bar--dropdown--expanded;
       }
     }
+
     il-nav-section il-nav-section {
       @extend %il-nav--bar--flyout;
     }
   }
+
   // Accordion
   &.il-nav-column {
     @extend %il-nav--column;
   }
+}
+
+il-header il-nav[slot=links] {
+  @extend %il-nav--eyebrow;
 }

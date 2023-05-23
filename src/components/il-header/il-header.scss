@@ -1,4 +1,48 @@
 
+%il-header--identity--link {
+  all: inherit;
+  cursor: pointer;
+
+  &:focus, &:hover {
+    color: var(--il-altgeld);
+  }
+}
+
+%il-header--identity--major {
+  all: initial;
+  text-align: left;
+  display: block;
+  color: var(--il-blue);
+  font: 600 1.75em/1.2em var(--il-font-sans);
+  a {
+    @extend %il-header--identity--link;
+  }
+}
+
+%il-header--identity--minor {
+  all: initial;
+  text-align: left;
+  display: block;
+  color: var(--il-blue);
+  font: 400 1.25em/1.2em var(--il-font-sans);
+  a {
+    @extend %il-header--identity--link;
+  }
+}
+
+il-header {
+  --il-content-max-width: 1200px;
+  --il-content-margin: 20px;
+
+  & > p {
+    @extend %il-header--identity--minor;
+  }
+  & > h1 {
+    @extend %il-header--identity--major;
+  }
+}
+
+/*
 il-header {
   &[view="full"] {
 
@@ -114,3 +158,5 @@ il-header {
     }
   }
 }
+
+ */

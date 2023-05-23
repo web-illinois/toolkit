@@ -1,16 +1,12 @@
 import {LitElement, html, css} from 'lit';
-import styles from './header.css';
-import '../unit-wordmark/unit-wordmark.component';
-import './header.scss';
+import styles from './il-header.css';
+import './il-header.scss';
 
 class Header extends LitElement {
     static get properties() {
         return {
-            compact: {type: String, attribute: true},
-            full: {type: String, attribute: true},
-            view: {type: String, default: 'full', attribute: true, reflect: true},
-            hasMenu: { type: Boolean, attribute: false },
-            menuVisible: {type: Boolean, attribute: false}
+            size: { type: String, reflect: true },
+            view: {type: String, default: 'full', attribute: true, reflect: true}
         }
     }
 
@@ -20,43 +16,45 @@ class Header extends LitElement {
 
     constructor() {
         super();
-        this.view = this.determineView();
-        this.menuVisible = false;
-        window.addEventListener('resize', this.handleWindowResize.bind(this));
-        window.addEventListener('DOMContentLoaded', this.handleContentLoaded.bind(this));
-        document.addEventListener('click', this.handleDocumentClick.bind(this));
-        this.handleWindowResize();
+        this.size = 'full';
     }
 
-    get view() {
-        return this._view;
+    render() {
+        return html`
+            <div id="header">
+                <div id="top-stripe" aria-hidden="true"></div>
+                <div id="main">
+                    <div class="content-container">
+                        <div id="wordmark-and-links">
+                            <div id="wordmark">
+                                <a href="https://illinois.edu/">University of Illinois Urbana-Champaign</a>
+                            </div>
+                            <div id="links">
+                                <slot name="links"></slot>
+                            </div>
+                        </div>
+                        <div id="identity-and-search">
+                            <div id="identity">
+                                <slot></slot>
+                            </div>
+                            <div id="search">
+                                <slot name="search"></slot>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="navigation">
+                    <div class="content-container">
+                        <slot name="navigation"></slot>
+                    </div>
+                </div>
+            </div>
+        `
     }
 
-    set view(newView) {
-        const oldView = this._view;
-        if (oldView !== newView) {
-            this._view = newView;
-            this.requestUpdate('view', oldView);
-            this.updateComplete.then(() => {
-                const evt = new CustomEvent('viewChange', {detail: newView});
-                this.dispatchEvent(evt);
-            });
-        }
-    }
 
-    determineView() {
-        let isCompact = false;
-        if (this.compact) {
-            isCompact = window.matchMedia(this.compact).matches;
-        }
-        else if (this.full) {
-            isCompact = !window.matchMedia(this.full).matches;
-        }
-        else {
-            isCompact = window.matchMedia('(max-width: 992px)').matches;
-        }
-        return isCompact ? 'compact' : 'full';
-    }
+
+
 
     hasLinks() {
         console.debug(this.querySelector('[slot="links"]'));
@@ -129,8 +127,8 @@ class Header extends LitElement {
         <div class="campus">
             ${this.renderCampusWordmark()}
         </div>
-        <div class="wordmark">
-            <slot name="wordmark"></slot>
+        <div class="identity">
+            <slot></slot>
         </div>
         <div class="menu-button">${this.renderMenuButton()}</div>
     </div>
@@ -186,7 +184,7 @@ class Header extends LitElement {
         `;
     }
 
-    render() {
+    _render() {
         return this.isFullView() ? this.renderFullView() : this.renderCompactView();
     }
 }

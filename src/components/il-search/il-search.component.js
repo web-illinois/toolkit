@@ -1,7 +1,7 @@
 import {LitElement, html, css} from 'lit';
 import Debugger from '../../js/debug';
-import styles from './search.css';
-import "../header/header.scss";
+import '../il-icon/il-icon.component';
+import styles from './il-search.css';
 
 class Search extends LitElement {
   static get properties() {
@@ -14,7 +14,6 @@ class Search extends LitElement {
       method: {type: String, attribute: true},
       placeholder: {type: String, attribute: true},
       query: {type: String, attribute: true},
-      searchname: {type: String, attribute: true}
     }
   }
 
@@ -31,8 +30,6 @@ class Search extends LitElement {
     this.name = 's';
     this.placeholder = 'Search this site';
     this.query = '';
-    this.searchname = undefined;
-    document.addEventListener('DOMContentLoaded', this.handleContentLoaded.bind(this));
   }
 
   getName() {
@@ -45,16 +42,6 @@ class Search extends LitElement {
 
   handleButtonFocus(evt) {
     this.buttonHasFocus = true;
-  }
-
-  handleContentLoaded(evt) {
-    const header = this.getHeader();
-    if (this.searchname) {
-      Debugger.warn('Search component: The "searchname" is deprecated; use "name" instead.');
-    }
-    if (header) {
-      header.addEventListener('viewChange', this.handleHeaderViewChange.bind(this));
-    }
   }
 
   handleHeaderViewChange(evt) {
@@ -92,7 +79,7 @@ class Search extends LitElement {
     <label for="query">Search</label>
     <input type="search" id="query" name=${this.getName()} value=${this.query} placeholder=${this.placeholder} @focus=${this.handleInputFocus} @blur=${this.handleInputBlur}>
     <button type="submit" @focus=${this.handleButtonFocus} @blur=${this.handleButtonBlur}>
-        ${this.renderSearchIcon()}
+        <il-icon>search</il-icon>
     </button>
 </form>
     `;

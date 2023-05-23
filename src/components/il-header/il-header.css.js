@@ -1,7 +1,57 @@
 import {css} from 'lit';
 
 export default css`
+  #top-stripe {
+    position: relative;
+    height: .5em;
+    background-color: var(--il-orange);
+  }
+  #wordmark-and-links {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  #wordmark {
+    font: 700 14px/1em var(--il-montserrat);
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    flex: 1 1 auto;
+  }
+  #wordmark a {
+    all: inherit;
+    display: inline-block;
+    margin-left: -.5em;
+    padding: .5em;
+    cursor: pointer;
+  }
+  #wordmark a:focus, #wordmark a:hover {
+    color: var(--il-altgeld);
+  }
+  #links {
+    flex: 1 1 0;
+    align-self: flex-end;
+  }
+  
+  #identity-and-search {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
 
+  .content-container {
+    max-width: var(--il-content-max-width);
+    margin: 0 auto;
+    padding-left: var(--il-content-margin);
+    padding-right: var(--il-content-margin);
+  }
+
+  #navigation {
+    background-color: var(--il-cloud-1);
+  }
+
+`;
+
+const oldcss = css`
 .header {
   position: relative;
   font-family: var(--il-font-sans);

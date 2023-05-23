@@ -46,13 +46,8 @@ button:focus {
   box-shadow: 0 0 0 2px var(--il-industrial-blue);
   color: var(--il-industrial-blue);
 }
-button svg {
-  display: block;
-  position: absolute;
-  left: calc(50% - 10px);
-  top: calc(50% - 10px);
-  width: 20px;
-  height: 20px;
-  fill: currentcolor;
+button il-icon {
+  font-size: 2em;
+  color: inherit;
 }
 `;

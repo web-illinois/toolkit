@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<script src="../il-header.component.js" type="module"></script>
+<script src="../../il-nav/il-nav.component.js" type="module"></script>
+<script src="../../il-nav-section/il-nav-section.component.js" type="module"></script>
+<script src="../../il-search/il-search.component.js" type="module"></script>
+<link rel="stylesheet" href="../../il-nav/il-nav.scss">
+<link rel="stylesheet" href="../../../css/colors.scss">
+<link rel="stylesheet" href="../../../css/fonts.scss">
+<link rel="stylesheet" href="../../../css/icons.scss">
+
+<style>
+    body { margin: 0; padding: 0; }
+</style>
+
+<il-header>
+
+    <p><a href="#">College of Malkovich Malkovich</a></p>
+    <h1><a href="#">Department of Malkovich Malkovich</a></h1>
+
+    <il-search slot="search"></il-search>
+
+    <il-nav slot="links" label="Top">
+        <ul>
+            <li><a id="link-1" href="#">Apply</a></li>
+            <li><a href="#">Donate</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </il-nav>
+
+    <il-nav slot="navigation" class="il-nav-bar">
+        <ul>
+            <li>
+                <il-nav-section>
+                    <a href="https://www.google.com" slot="link">About</a>
+                    <ul class="il-subnav">
+                        <li>
+                            <a href="https://www.google.com">Overview of ACES</a>
+                        </li>
+                        <li>
+                            <a href="#">Programs of Study</a>
+                        </li>
+                        <li>
+                            <a href="#">Diversity</a>
+                        </li>
+                        <li>
+                            <a href="#">Contact Us</a>
+                        </li>
+                        <li>
+                            <a href="#">Visit</a>
+                        </li>
+                    </ul>
+                </il-nav-section>
+            </li>
+            <li>
+                <il-nav-section>
+                    <a href="#" slot="link">Academics</a>
+                    <ul class="il-subnav">
+                        <li>
+                            <a href="#">Programs of Study</a>
+                        </li>
+                        <li>
+                            <a href="#">Future Students</a>
+                        </li>
+                        <li>
+                            <a href="#">Admissions</a>
+                        </li>
+                        <li>
+                            <a href="#">Student Life</a>
+                        </li>
+                        <li>
+                            <a href="#">Current Students</a>
+                        </li>
+                        <li>
+                            <a href="#">Study Abroad</a>
+                        </li>
+                        <li>
+                            <a href="#">Career Services</a>
+                        </li>
+                        <li>
+                            <a href="#">Student Diversity and Inclusion</a>
+                        </li>
+                        <li>
+                            <a href="#">Contact Us</a>
+                        </li>
+                        <li>
+                            <a href="#">Staff</a>
+                        </li>
+                    </ul>
+                </il-nav-section>
+            </li>
+            <li>
+                <il-nav-section>
+                    <a href="#" slot="link">Research</a>
+                    <ul class="il-subnav">
+                        <li>
+                            <a href="#">Research Areas</a>
+                        </li>
+                        <li>
+                            <a href="#">Research History</a>
+                        </li>
+                        <li>
+                            <a href="#">Facilities</a>
+                        </li>
+                        <li>
+                            <a href="#">Resources</a>
+                        </li>
+                        <li>
+                            <a href="#">Safety and Compliance</a>
+                        </li>
+                        <li>
+                            <a href="#">Civil Rights</a>
+                        </li>
+                        <li>
+                            <a href="#">Staff</a>
+                        </li>
+                    </ul>
+                </il-nav-section>
+            </li>
+            <li>
+                <il-nav-section>
+                    <a href="#" slot="link">Extension</a>
+                    <ul class="il-subnav">
+                        <li>
+                            <a href="#">About</a>
+                        </li>
+                        <li>
+                            <a href="#">Staff</a>
+                        </li>
+                        <li>
+                            <a href="#">Programs</a>
+                        </li>
+                    </ul>
+                </il-nav-section>
+            </li>
+            <li>
+                <il-nav-section>
+                    <a href="#" slot="link">International</a>
+                    <ul class="il-subnav">
+                        <li>
+                            <a href="#">About</a>
+                        </li>
+                        <li>
+                            <a href="#">International Engagements</a>
+                        </li>
+                        <li>
+                            <a href="#">Resources</a>
+                        </li>
+                        <li>
+                            <a href="#">Newsletter &amp; Publications</a>
+                        </li>
+                        <li>
+                            <a href="#">Study Abroad</a>
+                        </li>
+                        <li>
+                            <a href="#">Contact Us</a>
+                        </li>
+                        <li>
+                            <a href="#">Events</a>
+                        </li>
+                        <li>
+                            <a href="#">Staff</a>
+                        </li>
+                    </ul>
+                </il-nav-section>
+            </li>
+            <li>
+                <il-nav-section>
+                    <a href="#" slot="link">News</a>
+                    <ul class="il-subnav">
+                        <li>
+                            <a href="#">Events</a>
+                        </li>
+                        <li>
+                            <a href="#">#askACES Podcast</a>
+                        </li>
+                        <li>
+                            <a href="#">Voices of ACES Blog</a>
+                        </li>
+                        <li>
+                            <a href="#">Subscribe</a>
+                        </li>
+                        <li>
+                            <a href="#">ACES Seminars</a>
+                        </li>
+                        <li>
+                            <a href="#">COVID-19</a>
+                        </li>
+                    </ul>
+                </il-nav-section>
+            </li>
+            <li>
+                <il-nav-section>
+                    <a href="#" slot="link">People</a>
+                    <ul class="il-subnav">
+                        <li>
+                            <a href="#">College Leadership</a>
+                        </li>
+                        <li>
+                            <a href="#">Academic Department Heads</a>
+                        </li>
+                        <li>
+                            <a href="#">Academic Units</a>
+                        </li>
+                        <li>
+                            <a href="#">Administrative Units</a>
+                        </li>
+                    </ul>
+                </il-nav-section>
+            </li>
+            <li>
+                <il-nav-section>
+                    <a href="#" slot="link">Giving</a>
+                    <ul class="il-subnav">
+                        <li>
+                            <a href="#">With ACES Priorities</a>
+                        </li>
+                        <li>
+                            <a href="#">Ways to Give</a>
+                        </li>
+                        <li>
+                            <a href="#">Give Now</a>
+                        </li>
+                        <li>
+                            <a href="#">Alumni Association</a>
+                        </li>
+                        <li>
+                            <a href="#">Student Committee</a>
+                        </li>
+                        <li>
+                            <a href="#">4-H Foundation</a>
+                        </li>
+                    </ul>
+                </il-nav-section>
+            </li>
+        </ul>
+    </il-nav>
+
+</il-header>
