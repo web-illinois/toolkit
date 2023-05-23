@@ -4,6 +4,12 @@
 <link rel="stylesheet" href="../../../css/colors.scss">
 <link rel="stylesheet" href="../../../css/fonts.scss">
 
+<style>
+    il-nav.il-nav-column {
+        max-width: 30em;
+    }
+</style>
+
 <il-nav class="il-nav-bar">
     <ul>
         <li><a href="/home">Home</a></li>
@@ -76,14 +82,14 @@
             </il-nav-section>
         </li>
         <li>
-            <il-nav-section>
+            <il-nav-section expanded>
                 <a slot="link" href="/student-life">Student Life</a>
                 <ul>
                     <li><a href="/housing-dining">Housing & Dining</a></li>
                     <li><a href="/student-activities">Student Activities</a></li>
                     <li><a href="/athletics-recreation">Athletics &amp; Recreation</a></li>
                     <li>
-                        <il-nav-section>
+                        <il-nav-section expanded>
                             <a slot="link" href="/student-services">Student Services</a>
                             <ul>
                                 <li><a href="/student-organizations">Student Organizations</a></li>
@@ -121,3 +127,13 @@
         </li>
     </ul>
 </il-nav>
+
+
+<script>
+    const component = document.querySelector("il-nav");
+    const params = new URLSearchParams(window.location.search);
+    if (params.has('view')) {
+        component.classList.remove('il-nav-bar');
+        component.classList.add(`il-nav-${params.get('view')}`);
+    }
+</script>

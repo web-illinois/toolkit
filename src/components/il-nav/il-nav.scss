@@ -1,4 +1,73 @@
 
+%il-nav--bar--dropdown {
+  --il-nav-section--display: var(--il-nav--dropdown--section--display);
+  --il-nav--link--padding: .75em .25em .75em 1em;
+  --il-nav--link--background-color: var(--il-cloud-1);
+  --il-nav--link--color: var(--il-blue);
+  --il-nav--link--focus--background-color: white;
+  --il-nav--link--focus--color: var(--il-altgeld);
+
+  --il-nav-section--header--link--padding: .75em .25em .75em 1em;
+  --il-nav-section--header--link--background-color: var(--il-cloud-1);
+  --il-nav-section--header--link--color: var(--il-blue);
+  --il-nav-section--header--link--focus--background-color: white;
+  --il-nav-section--header--link--focus--color: var(--il-altgeld);
+
+  --il-nav-section--header--button--background-color: var(--il-cloud-1);
+  --il-nav-section--header--button--color: var(--il-blue);
+  --il-nav-section--header--button--focus--background-color: white;
+  --il-nav-section--header--button--focus--color: var(--il-altgeld);
+
+  --il-nav-section--content--position: absolute;
+  --il-nav-section--content--left: 0;
+  --il-nav-section--content--top: 100%;
+  --il-nav-section--content--display: none;
+  --il-nav-section--content--background-color: var(--il-cloud-1);
+  --il-nav-section--content--padding: 0 1px 1px;
+  --il-nav-section--content--margin: 0 -1px;
+
+  --il-nav-section-width: auto;
+  --il-nav-section-display: inline-block;
+  --il-nav-section--header--button--padding: .75em .25em .75em 1em;
+  --il-nav-section--header--icon--padding: 0 .75em 0 .25em;
+
+  &[expanded] {
+    --il-nav-section--content--display: block;
+    --il-nav--link--background-color: var(--il-blue);
+    --il-nav--link--color: white;
+    --il-nav--link--focus--background-color: var(--il-orange);
+    --il-nav--link--focus--color: var(--il-blue);
+    --il-nav-section--header--link--background-color: var(--il-blue);
+    --il-nav-section--header--link--color: white;
+    --il-nav-section--header--link--focus--background-color: var(--il-orange);
+    --il-nav-section--header--link--focus--color: var(--il-blue);
+    --il-nav-section--header--button--background-color: var(--il-blue);
+    --il-nav-section--header--button--color: white;
+    --il-nav-section--header--button--focus--background-color: var(--il-orange);
+    --il-nav-section--header--button--focus--color: var(--il-blue);
+  }
+
+  & > a {
+    white-space: nowrap;
+  }
+
+  li:first-child {
+    --il-nav--link--border-top: 0;
+  }
+}
+
+%il-nav--bar--flyout {
+  --il-nav-section--content--left: 100%;
+  --il-nav-section--content--top: 0;
+  --il-nav-section--content--padding: 1px;
+  --il-nav-section--content--margin: -1px -1px 0;
+  --il-nav-section--content--background-color: var(--il-cloud-1);
+}
+
+%il-nav--column--section {
+
+}
+
 :root {
 
 
@@ -92,7 +161,7 @@ il-nav {
   box-sizing: border-box;
 
   &.il-nav-bar, &.il-nav-column {
-    a {
+    a:not([slot=link]) {
       all: initial;
       display: block;
       padding: var(--il-nav--link--padding);
@@ -101,7 +170,6 @@ il-nav {
       font: 600 1.1875em/1em var(--il-font-sans);
       cursor: pointer;
       position: relative;
-      border-top: 1px solid var(--il-nav--link--border-top);
 
       &:hover, &:focus {
         background-color: var(--il-nav--link--focus--background-color);
@@ -119,16 +187,26 @@ il-nav {
   &.il-nav-bar {
     background-color: var(--il-cloud-1);
     --il-nav-section-content-display: none;
+    --il-nav-section--content--width: 20em;
+
+    ul {
+      all: initial;
+      display: block;
+    }
 
     & > ul {
-      all: initial;
       display: flex;
       flex-direction: row;
     }
 
-    & > ul > li {
+    li {
       all: initial;
       display: block;
+      margin-top: 1px;
+
+      &:first-child {
+        margin-top: 0;
+      }
     }
 
     // Top-level link
@@ -143,43 +221,11 @@ il-nav {
       }
     }
 
-    // Dropdown
     & > ul > li > il-nav-section {
-      --il-nav-section--display: var(--il-nav--dropdown--section--display);
-      --il-nav--link--padding: .75em .25em .75em 1em;
-      --il-nav--link--background-color: var(--il-cloud-1);
-      --il-nav--link--color: var(--il-blue);
-      --il-nav--link--focus--background-color: white;
-      --il-nav--link--focus--color: var(--il-altgeld);
-
-      --il-nav-section--header--link--padding: .75em .25em .75em 1em;
-      --il-nav-section--header--link--background-color: var(--il-cloud-1);
-      --il-nav-section--header--link--color: var(--il-blue);
-      --il-nav-section--header--link--focus--background-color: white;
-      --il-nav-section--header--link--focus--color: var(--il-altgeld);
-
-      --il-nav-section--header--button--background-color: var(--il-cloud-1);
-      --il-nav-section--header--button--color: var(--il-blue);
-      --il-nav-section--header--button--focus--background-color: white;
-      --il-nav-section--header--button--focus--color: var(--il-altgeld);
-
-      --il-nav-section--content--position: absolute;
-      --il-nav-section--content--left: 0;
-      --il-nav-section--content--top: 100%;
-
-      --il-nav-section-width: auto;
-      --il-nav-section-display: inline-block;
-      --il-nav-section--header--button--padding: .75em .25em .75em 1em;
-      --il-nav-section--header--icon--padding: 0 .75em 0 .25em;
-
-      & > a {
-        white-space: nowrap;
-      }
+      @extend %il-nav--bar--dropdown;
     }
-
-    // Flyout
     il-nav-section il-nav-section {
-      --il-nav-section--display: var(--il-nav--flyout--section--display);
+      @extend %il-nav--bar--flyout;
     }
 
   }

@@ -58,6 +58,8 @@ export default css`
     color: inherit;
     font: 600 1.1875em/1em var(--il-font-sans);
     pointer-events: none;
+    width: calc(100% - 3em);
+    align-self: flex-start;
   }
   button .placeholder {
     position: absolute;
@@ -72,6 +74,7 @@ export default css`
 
   #icon {
     display: flex;
+    flex: 1 0 2em;
     justify-content: center;
     align-items: center;
     padding: var(--il-nav-section--header--icon--padding);
@@ -101,27 +104,20 @@ export default css`
     top: var(--il-nav-section--content--top);
     left: var(--il-nav-section--content--left);
     z-index: 100;
-    display: var(--il-nav-section--content--display);
+    display: none;
     width: var(--il-nav-section--content--width);
-    opacity: var(--il-nav-section--content--opacity);
-    pointer-events: var(--il-nav-section--content--pointer-events);
+    pointer-events: none;
+    padding: var(--il-nav-section--content--padding, 0);
+    margin: var(--il-nav-section--content--margin, 0);
+    background-color: var(--il-nav-section--content--background-color, transparent);
   }
   .expanded #content {
-    opacity: 1;
+    display: block;
     pointer-events: all;
   }
   
   
   /*
-  #section {
-    position: relative;
-    display: block;
-  }
-  #header ::slotted(a) {
-    display: block;
-    position: relative;
-    width: calc(100% - 3em);
-  }
   button {
     all: initial;
     display: flex;
