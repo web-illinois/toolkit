@@ -22,9 +22,42 @@ class NavigationSection extends LitElement {
     this.handleButtonClick = this.handleButtonClick.bind(this);
   }
 
+  connectedCallback() {
+    super.connectedCallback();
+    this.updateDataAttributes();
+  }
+
   handleButtonClick(evt) {
-    console.debug('click');
+    this.toggle();
+  }
+
+  collapse() {
+    this.expanded = false;
+    this.updateDataAttributes();
+  }
+
+  getLevel() {
+    let level = 1, parent = this.parentElement;
+    while (parent.closest('il-nav-section')) {
+      level++;
+      parent = parent.closest('il-nav-section').parentElement;
+    }
+    return level;
+  }
+
+  expand() {
+    this.expanded = true;
+    this.updateDataAttributes();
+  }
+
+  toggle() {
     this.expanded = !this.expanded;
+    this.updateDataAttributes();
+  }
+
+  updateDataAttributes() {
+    this.setAttribute('data-il-state', this.expanded ? 'expanded' : 'collapsed');
+    this.setAttribute('data-il-nav-level', this.getLevel());
   }
 
   render() {
@@ -38,7 +71,9 @@ class NavigationSection extends LitElement {
             <slot name="label">
               <span class="placeholder">Toggle this section</span>
             </slot>
-            <il-nav-indicator></il-nav-indicator>
+            <span id="indicator">
+              <il-nav-indicator></il-nav-indicator>
+            </span>
           </button>
         </div>
         <div id="content">

@@ -3,8 +3,7 @@ import { css } from 'lit';
 export default css`
   :host {
     position: relative;
-    display: var(--il-nav-section-display);
-    width: var(--il-nav-section-width);
+    display: block;
   }
   
   #container {
@@ -21,24 +20,31 @@ export default css`
   #header ::slotted(a) {
     all: initial;
     display: block;
-    padding: var(--il-nav-section--header--link--padding);
+    
+    //padding: var(--il-nav-section--header--link--padding);
+    padding-top: var(--il-nav--item--padding-top, .75em);
+    padding-right: var(--il-nav--item--label--padding-right, 1em);
+    padding-bottom: var(--il-nav--item--padding-bottom, .75em);
+    padding-left: var(--il-nav--item--padding-left, 1em);
+    
     background-color: var(--il-nav-section--header--link--background-color);
     color: var(--il-nav-section--header--link--color);
     font: 600 1.1875em/1em var(--il-font-sans);
     cursor: pointer;
     position: relative;
-    width: calc(100% - 2em);
+    //width: calc(100% - 2em);
+    flex: 1 1 100%;
   }
   #header ::slotted(a:focus),
   #header ::slotted(a:hover) {
     background-color: var(--il-nav-section--header--link--focus--background-color);
     color: var(--il-nav-section--header--link--focus--color);
   }
-  
+
   button {
     all: initial;
-    display: var(--il-nav-section--header--button--display);
-    flex: 1 1 2em;
+    display: flex;
+    flex: 1 1 0;
     flex-direction: row;
     justify-content: space-between;
     align-items: stretch;
@@ -52,13 +58,19 @@ export default css`
   }
   button ::slotted(*) {
     all: initial;
+    position: relative;
     display: block;
-    padding: var(--il-nav-section--header--button--padding);
+    //padding: var(--il-nav-section--header--button--padding);
+    padding-top: var(--il-nav--item--padding-top, .75em);
+    padding-right: var(--il-nav--item--label--padding-right, 1em);
+    padding-bottom: var(--il-nav--item--padding-bottom, .75em);
+    padding-left: var(--il-nav--item--padding-left, 1em);
+
     background-color: inherit;
     color: inherit;
     font: 600 1.1875em/1em var(--il-font-sans);
     pointer-events: none;
-    width: calc(100% - 3em);
+    flex: 1 1 100%;
     align-self: flex-start;
   }
   button .placeholder {
@@ -71,45 +83,32 @@ export default css`
     text-indent: 99vw;
     white-space: nowrap;
   }
-
-  #icon {
+  #indicator {
+    box-sizing: border-box;
+    flex: 0 0 0;
     display: flex;
-    flex: 1 0 2em;
     justify-content: center;
     align-items: center;
-    padding: var(--il-nav-section--header--icon--padding);
+    padding-top: var(--il-nav--item--padding-top);
+    padding-right: var(--il-nav--item--padding-right);
+    padding-bottom: var(--il-nav--item--padding-bottom);
+    padding-left: var(--il-nav--item--indicator--padding-left);
   }
-  #chevron {
+  il-nav-indicator {
     position: relative;
-    width: 1.2em;
-    height: 1.2em;
-    overflow: hidden;
-    transform: var(--il-nav-section--header--icon--transform);
-    opacity: .75;
   }
-  button:hover #chevron, button:focus #chevron {
-    opacity: 1;
-  }
-  #chevron svg {
-    position: relative;
-    display: block;
-    width: 100%;
-    height: 100%;
-    fill: currentColor;
-  }
-
-
+  
   #content {
-    position: var(--il-nav-section--content--position);
-    top: var(--il-nav-section--content--top);
-    left: var(--il-nav-section--content--left);
-    z-index: 100;
     display: none;
-    width: var(--il-nav-section--content--width);
     pointer-events: none;
-    padding: var(--il-nav-section--content--padding, 0);
-    margin: var(--il-nav-section--content--margin, 0);
+    z-index: 100;
     background-color: var(--il-nav-section--content--background-color, transparent);
+    left: var(--il-nav-section--content--left, 0);
+    margin: var(--il-nav-section--content--margin, 0);
+    padding: var(--il-nav-section--content--padding, 0);
+    position: var(--il-nav-section--content--position, relative);
+    top: var(--il-nav-section--content--top, 0);
+    width: var(--il-nav-section--content--width, 100%);
   }
   .expanded #content {
     display: block;
@@ -117,33 +116,4 @@ export default css`
   }
   
   
-  /*
-  button {
-    all: initial;
-    display: flex;
-    flex: 1 1 2em;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: stretch;
-  }
-  button ::slotted(*) {
-    display: block;
-    position: relative;
-    width: calc(100% - 3em);
-    align-self: flex-start;
-  }
-  #chevron {
-    position: relative;
-    display: flex;
-    flex: 1 0 2em;
-    justify-content: center;
-    align-items: center;
-  }
-  #chevron svg {
-    position: relative;
-    display: block;
-    width: 2em;
-    height: 2em;
-  }
-   */
 `
