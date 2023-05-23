@@ -8,7 +8,9 @@ class NavigationSection extends LitElement {
 
   static get properties() {
     return {
-      expanded: { type: Boolean, default: false, reflect: true }
+      //size: { type: String, default: 'collapsed', reflect: true },
+      //expanded: { type: Boolean, default: false, attribute: false },
+      _expanded: { state: true, type: Boolean, default: false }
     }
   }
 
@@ -19,21 +21,25 @@ class NavigationSection extends LitElement {
   constructor() {
     super();
     this.expanded = false;
+    this._expanded = false;
+    this.size = 'collapsed';
     this.handleButtonClick = this.handleButtonClick.bind(this);
   }
 
   connectedCallback() {
     super.connectedCallback();
-    this.updateDataAttributes();
+    this.setAttribute('data-il-nav-level', this.getLevel());
   }
 
   handleButtonClick(evt) {
-    this.toggle();
+    this.dispatchEvent(new CustomEvent('toggle'));
+    //this.toggle();
   }
 
   collapse() {
     this.expanded = false;
-    this.updateDataAttributes();
+    this._expanded = false;
+    this.size = 'collapsed';
   }
 
   getLevel() {
@@ -47,29 +53,30 @@ class NavigationSection extends LitElement {
 
   expand() {
     this.expanded = true;
-    this.updateDataAttributes();
+    this._expanded = true;
+    this.size = 'expanded';
+  }
+
+  isExpanded() {
+    return this._expanded;
+    return this.size === 'expanded';
   }
 
   toggle() {
-    this.expanded = !this.expanded;
-    this.updateDataAttributes();
-  }
-
-  updateDataAttributes() {
-    this.setAttribute('data-il-state', this.expanded ? 'expanded' : 'collapsed');
-    this.setAttribute('data-il-nav-level', this.getLevel());
+    this.isExpanded() ? this.collapse() : this.expand();
   }
 
   render() {
-    const expanded = this.expanded ? 'expanded' : 'collapsed';
-    const ariaExpanded = this.expanded ? 'true' : 'false';
+    const size = this.isExpanded() ? 'expanded' : 'collapsed';
+    const ariaExpanded = this.isExpanded() ? 'true' : 'false';
+    const label = "Toggle this section";
     return html`
-      <div id="container" class=${expanded}>
+      <div id="container" class=${size}>
         <div id="header">
           <slot name="link"></slot>
           <button aria-controls="content" aria-expanded=${ariaExpanded} @click=${this.handleButtonClick}>
             <slot name="label">
-              <span class="placeholder">Toggle this section</span>
+              <span class="placeholder">${label}</span>
             </slot>
             <span id="indicator">
               <il-nav-indicator></il-nav-indicator>

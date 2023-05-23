@@ -95,7 +95,7 @@ il-nav {
     @extend %il-nav--bar;
     & > ul > li > il-nav-section {
       @extend %il-nav--bar--dropdown;
-      &[expanded] {
+      &[data-il-nav-size="expanded"] {
         @extend %il-nav--bar--dropdown--expanded;
       }
     }

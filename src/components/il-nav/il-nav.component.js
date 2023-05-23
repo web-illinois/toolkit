@@ -6,7 +6,7 @@ import "./il-nav.scss";
 class Navigation extends LitElement {
   static get properties() {
     return {
-      compact: { type: Boolean, default: false, attribute: true, reflect: true }
+      label: { type: String }
     };
   }
 
@@ -16,107 +16,72 @@ class Navigation extends LitElement {
 
   constructor() {
     super();
-    this._compact = false;
-    this._links = [];
+    this.label = "Main menu";
     document.addEventListener('DOMContentLoaded', this.handleContentLoaded.bind(this));
   }
 
-  get compact() {
-    return this._compact;
-  }
-
-  set compact(isCompact) {
-    const wasCompact = this._compact;
-    if (wasCompact !== isCompact) {
-      this._compact = isCompact;
-      this.requestUpdate('compact', wasCompact);
-      this.updateComplete.then(() => {
-        const evt = new CustomEvent('compact', { detail: isCompact });
-        this.dispatchEvent(evt);
-      });
-    }
-  }
-
-  getHeader() {
-    return this.closest('il-header');
-  }
+  // Event handlers
 
   handleContentLoaded(evt) {
+    this.initializeContents();
     const observer = new MutationObserver(this.handleMutation.bind(this));
     observer.observe(this, { attributes: false, childList: true, subtree: true });
-    this.updateLinks();
   }
 
   handleMutation(evt) {
-    this.updateLinks();
+
   }
 
-  updateLinks() {
-    this._links = [];
-    this.querySelectorAll('a').forEach(a => {
-      const link = new Link(a);
-      // TODO: Add event listeners
-      this._links.push(link);
-    })
+  handleSectionToggle(evt) {
+    this.toggleSection(evt.target);
   }
 
-  handleHeaderViewChange(evt) {
-    console.debug(evt);
-    this.compact = evt.detail === 'compact';
+  // Instance methods
+
+  collapseSection(section) {
+    section.collapse();
+    this.setSectionSize(section, 'collapsed');
   }
 
-  handleSectionCollapse(evt) {
+  expandSection(section) {
+    section.expand();
+    this.setSectionSize(section, 'expanded');
   }
 
-  handleSectionExit(evt) {
-    const section = evt.currentTarget;
-    if (evt.detail === 'back') {
-      if (section.previousElementSibling) {
-        if (section.previousElementSibling.children.length > 0) {
-          section.previousElementSibling.children[0].focus();
-        } else {
-          section.previousElementSibling.focus();
-        }
-      } else {
-        if (section.parentNode.lastElementChild.children.length > 0) {
-          section.parentNode.lastElementChild.children[0].focus();
-        } else {
-          section.parentNode.lastElementChild.focus();
-        }
-      }
-    } else if (evt.detail === 'forward') {
-      if (section.nextElementSibling) {
-        if (section.nextElementSibling.children.length > 0) {
-          section.nextElementSibling.children[0].focus();
-        } else {
-          section.nextElementSibling.focus();
-        }
-      } else {
-        if (section.parentNode.firstElementChild.children.length > 0) {
-          section.parentNode.firstElementChild.children[0].focus();
-        } else {
-          section.parentNode.firstElementChild.focus();
-        }
-      }
-    }
-  }
-
-  handleSectionExpand(evt) {
-    const activeSection = evt.currentTarget;
-    this.getSections().forEach(section => {
-      if (section.expanded && section !== activeSection) {
-        section.collapse();
-      }
-    });
+  getSectionSize(section) {
+    return section.getAttribute('data-il-nav-size', 'collapsed');
   }
 
   getSections() {
-    return this.querySelectorAll('il-nav-section, il-nav-link');
+    return this.querySelectorAll('il-nav-section');
   }
+
+  initializeContents() {
+    this.getSections().forEach(section => this.initializeSection(section));
+  }
+
+  initializeSection(section) {
+    if (this.sectionIsExpanded(section)) section.expand();
+    section.addEventListener('toggle', this.handleSectionToggle.bind(this));
+  }
+
+  sectionIsExpanded(section) {
+    return this.getSectionSize(section) === 'expanded';
+  }
+
+  setSectionSize(section, size) {
+    section.setAttribute('data-il-nav-size', size);
+  }
+
+  toggleSection(section) {
+    this.sectionIsExpanded(section) ? this.collapseSection(section) : this.expandSection(section);
+  }
+
+  // Render
 
   render() {
     return html`
-        <nav aria-label='main menu'>
+        <nav aria-label=${this.label}>
           <slot></slot>
         </nav>`
   }
