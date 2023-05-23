@@ -30,6 +30,7 @@
   --il-nav-section-display: inline-block;
   --il-nav-section--header--button--padding: .75em .25em .75em 1em;
   --il-nav-section--header--icon--padding: 0 .75em 0 .25em;
+  --il-nav-indicator--arrow--transform: var(--il-nav-indicator--down);
 
   &[expanded] {
     --il-nav-section--content--display: block;
@@ -45,6 +46,7 @@
     --il-nav-section--header--button--color: white;
     --il-nav-section--header--button--focus--background-color: var(--il-orange);
     --il-nav-section--header--button--focus--color: var(--il-blue);
+    --il-nav-indicator--arrow--transform: var(--il-nav-indicator--up);
   }
 
   & > a {
@@ -62,6 +64,7 @@
   --il-nav-section--content--padding: 1px;
   --il-nav-section--content--margin: -1px -1px 0;
   --il-nav-section--content--background-color: var(--il-cloud-1);
+  --il-nav-indicator--arrow--transform: var(--il-nav-indicator--right);
 }
 
 %il-nav--column--section {
