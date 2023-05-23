@@ -10,7 +10,7 @@
     }
 </style>
 
-<il-nav class="il-nav-bar">
+<il-nav>
     <ul>
         <li><a href="/home">Home</a></li>
         <li>
@@ -100,7 +100,7 @@
                             </ul>
                         </il-nav-section>
                     </li>
-                    <li><a href="/health-wellness">Health &amp;amp; Wellness</a></li>
+                    <li><a href="/health-wellness">Health &amp; Wellness</a></li>
                 </ul>
             </il-nav-section>
         </li>
@@ -128,12 +128,10 @@
     </ul>
 </il-nav>
 
-
 <script>
     const component = document.querySelector("il-nav");
     const params = new URLSearchParams(window.location.search);
     if (params.has('view')) {
-        component.classList.remove('il-nav-bar');
         component.classList.add(`il-nav-${params.get('view')}`);
     }
 </script>
