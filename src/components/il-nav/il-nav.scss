@@ -1,4 +1,202 @@
 
+:root {
+
+
+
+  --il-nav-chevron-down: rotate(0deg);
+  --il-nav-chevron-up: rotate(180deg);
+  --il-nav-chevron-left: rotate(90deg);
+  --il-nav-chevron-right: rotate(-90deg);
+
+  --il-nav--content--invisible--display: block;
+
+  --il-nav--content--collapsed--display: none;
+
+
+
+  // Section styles: accordion, dropdown, & flyout
+
+  --il-nav--accordion--section--display: block;
+  --il-nav--accordion--section--width: 100%; // TODO: Remove
+  --il-nav--accordion--section--header-chevron--transform: var(--il-nav-section-chevron-down);
+  --il-nav--accordion--section--content--width: 100%;
+  --il-nav--accordion--section--content--top: 100%;
+  --il-nav--accordion--section--content--left: 0;
+  --il-nav--accordion--section--content--position: relative;
+  --il-nav--accordion--section--content--display: none;
+  --il-nav--accordion--section--expanded--content--display: block;
+  --il-nav--accordion--level-1--padding: .75em;
+  --il-nav--accordion--level-2--padding: .75em .75em .75em 2.25em;
+  --il-nav--accordion--level-3--padding: .75em .75em .75em 3.75em;
+  --il-nav--accordion--level-4--padding: .75em .75em .75em 5.25em;
+  --il-nav--accordion--level-5--padding: .75em .75em .75em 6.75em;
+  --il-nav--accordion--level-6--padding: .75em .75em .75em 8.25em;
+
+  --il-nav--dropdown--section--display: inline-block;
+  --il-nav--dropdown--section--width: auto;
+  --il-nav--dropdown--section--content--width: 20em;
+  --il-nav--dropdown--section--content--top: 100%;
+  --il-nav--dropdown--section--content--left: 0;
+  --il-nav--dropdown--section--header-chevron--transform: var(--il-nav-section-chevron-down);
+  --il-nav--dropdown--section--content-position: absolute;
+
+  --il-nav--flyout--section--display: block;
+  --il-nav--flyout--section--width: 100%;
+  --il-nav--flyout--section--content--width: 20em;
+  --il-nav--flyout--section--content--top: 0;
+  --il-nav--flyout--section--content--left: 100%;
+  --il-nav--flyout--section--header-chevron--transform: var(--il-nav-section-chevron-right);
+  --il-nav--flyout--section--content--position: absolute;
+
+
+
+  // Navigation levels
+
+  --il-nav--level-1--background-color: white;
+  --il-nav--level-1--color: white;
+  --il-nav--level-1--focus--background-color: white;
+  --il-nav--level-1--focus--color: white;
+
+  --il-nav--level-2--background-color: white;
+  --il-nav--level-2--color: white;
+  --il-nav--level-2--focus--background-color: white;
+  --il-nav--level-2--focus--color: white;
+
+  --il-nav--level-3--background-color: white;
+  --il-nav--level-3--color: white;
+  --il-nav--level-3--focus--background-color: white;
+  --il-nav--level-3--focus--color: white;
+
+  --il-nav--level-4--background-color: white;
+  --il-nav--level-4--color: white;
+  --il-nav--level-4--focus--background-color: white;
+  --il-nav--level-4--focus--color: white;
+
+  --il-nav--level-5--background-color: white;
+  --il-nav--level-5--color: white;
+  --il-nav--level-5--focus--background-color: white;
+  --il-nav--level-5--focus--color: white;
+
+  --il-nav--level-6--background-color: white;
+  --il-nav--level-6--color: white;
+  --il-nav--level-6--focus--background-color: white;
+  --il-nav--level-6--focus--color: white;
+
+  --il-nav--bar--level-1--contents--left: 0;
+  --il-nav--bar--level-1--contents--top: 100%;
+}
+
+il-nav {
+  display: block;
+  container-type: inline-size;
+  box-sizing: border-box;
+
+  &.il-nav-bar, &.il-nav-column {
+    a {
+      all: initial;
+      display: block;
+      padding: var(--il-nav--link--padding);
+      background-color: var(--il-nav--link--background-color);
+      color: var(--il-nav--link--color);
+      font: 600 1.1875em/1em var(--il-font-sans);
+      cursor: pointer;
+      position: relative;
+      border-top: 1px solid var(--il-nav--link--border-top);
+
+      &:hover, &:focus {
+        background-color: var(--il-nav--link--focus--background-color);
+        color: var(--il-nav--link--focus--color);
+      }
+    }
+    il-nav-section {
+      display: block;
+    }
+    il-nav-section > a {
+      padding: var(--il-nav-section--header--link--padding);
+    }
+  }
+
+  &.il-nav-bar {
+    background-color: var(--il-cloud-1);
+    --il-nav-section-content-display: none;
+
+    & > ul {
+      all: initial;
+      display: flex;
+      flex-direction: row;
+    }
+
+    & > ul > li {
+      all: initial;
+      display: block;
+    }
+
+    // Top-level link
+    & > ul > li > a {
+      --il-nav--link--padding: .75em 1em;
+      background-color: var(--il-cloud-1);
+      color: var(--il-blue);
+
+      &:focus, &:hover {
+        background-color: white;
+        color: var(--il-altgeld);
+      }
+    }
+
+    // Dropdown
+    & > ul > li > il-nav-section {
+      --il-nav-section--display: var(--il-nav--dropdown--section--display);
+      --il-nav--link--padding: .75em .25em .75em 1em;
+      --il-nav--link--background-color: var(--il-cloud-1);
+      --il-nav--link--color: var(--il-blue);
+      --il-nav--link--focus--background-color: white;
+      --il-nav--link--focus--color: var(--il-altgeld);
+
+      --il-nav-section--header--link--padding: .75em .25em .75em 1em;
+      --il-nav-section--header--link--background-color: var(--il-cloud-1);
+      --il-nav-section--header--link--color: var(--il-blue);
+      --il-nav-section--header--link--focus--background-color: white;
+      --il-nav-section--header--link--focus--color: var(--il-altgeld);
+
+      --il-nav-section--header--button--background-color: var(--il-cloud-1);
+      --il-nav-section--header--button--color: var(--il-blue);
+      --il-nav-section--header--button--focus--background-color: white;
+      --il-nav-section--header--button--focus--color: var(--il-altgeld);
+
+      --il-nav-section--content--position: absolute;
+      --il-nav-section--content--left: 0;
+      --il-nav-section--content--top: 100%;
+
+      --il-nav-section-width: auto;
+      --il-nav-section-display: inline-block;
+      --il-nav-section--header--button--padding: .75em .25em .75em 1em;
+      --il-nav-section--header--icon--padding: 0 .75em 0 .25em;
+
+      & > a {
+        white-space: nowrap;
+      }
+    }
+
+    // Flyout
+    il-nav-section il-nav-section {
+      --il-nav-section--display: var(--il-nav--flyout--section--display);
+    }
+
+  }
+
+  // Accordion
+  &.il-nav-column {
+
+    il-nav-section {
+      --il-nav-section--display: var(--il-nav--accordion--section--display);
+    }
+  }
+}
+
+
+/*
+
+
 il-nav il-nav-section {
   z-index: 5000;
 }
@@ -109,3 +307,5 @@ il-nav[compact] il-nav-section .il-subnav {
     border: 1px solid #999;
   }
 }
+
+ */

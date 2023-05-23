@@ -1,4 +1,5 @@
 import { LitElement, html } from 'lit';
+import Link from './link';
 import styles from './il-nav.css';
 import "./il-nav.scss";
 
@@ -16,6 +17,7 @@ class Navigation extends LitElement {
   constructor() {
     super();
     this._compact = false;
+    this._links = [];
     document.addEventListener('DOMContentLoaded', this.handleContentLoaded.bind(this));
   }
 
@@ -40,23 +42,22 @@ class Navigation extends LitElement {
   }
 
   handleContentLoaded(evt) {
-    this.getSections().forEach(section => {
-      section.addEventListener('collapse', this.handleSectionCollapse.bind(this));
-      section.addEventListener('expand', this.handleSectionExpand.bind(this));
-      section.addEventListener('exit', this.handleSectionExit.bind(this));
-    });
-    const header = this.getHeader();
-    if (header) {
-      header.addEventListener('viewChange', this.handleHeaderViewChange.bind(this));
-      this.compact = header.view === 'compact';
-    }
-    const navcount = this.querySelectorAll('il-nav-section').length;
-    if (navcount === 5) {
-      this.querySelectorAll('il-nav-section')[4].setAttribute('align', 'right');
-    } else if (navcount > 5) {
-      this.querySelectorAll('il-nav-section')[navcount - 1].setAttribute('align', 'right');
-      this.querySelectorAll('il-nav-section')[navcount - 2].setAttribute('align', 'right');
-    }
+    const observer = new MutationObserver(this.handleMutation.bind(this));
+    observer.observe(this, { attributes: false, childList: true, subtree: true });
+    this.updateLinks();
+  }
+
+  handleMutation(evt) {
+    this.updateLinks();
+  }
+
+  updateLinks() {
+    this._links = [];
+    this.querySelectorAll('a').forEach(a => {
+      const link = new Link(a);
+      // TODO: Add event listeners
+      this._links.push(link);
+    })
   }
 
   handleHeaderViewChange(evt) {
@@ -115,10 +116,8 @@ class Navigation extends LitElement {
 
   render() {
     return html`
-        <nav class=${this.compact ? 'compact' : 'full'} aria-label='main menu'>
-          <ul>
-            <slot></slot>
-          </ul>
+        <nav aria-label='main menu'>
+          <slot></slot>
         </nav>`
   }
 }

@@ -1,4 +1,5 @@
 
+/*
 :root {
 
   // SOME SHORTHAND VARIABLES
@@ -163,31 +164,6 @@ il-nav-section {
       display: none;
     }
   }
-
-  ul {
-    all: initial;
-    display: block;
-    background-color: var(--il-nav-section-header-background-color);
-  }
-  li {
-    all: initial;
-    display: block;
-  }
-  li > a {
-    all: initial;
-    display: block;
-    padding: var(--il-nav-section-link-padding);
-    background-color: var(--il-nav-section-link-background-color);
-    color: var(--il-nav-section-link-color);
-    font: 600 1.1875em/1em var(--il-font-sans);
-    cursor: pointer;
-    position: relative;
-    border-top: 1px solid var(--il-nav-section-header-border-color);
-
-    &:hover, &:focus {
-      background-color: var(--il-nav-section-link-focus-background-color);
-      color: var(--il-nav-section-link-focus-color);
-      cursor: pointer;
-    }
-  }
 }
+
+ */
