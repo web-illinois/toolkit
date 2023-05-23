@@ -24,12 +24,6 @@ class Navigation extends LitElement {
 
   handleContentLoaded(evt) {
     this.initializeContents();
-    const observer = new MutationObserver(this.handleMutation.bind(this));
-    observer.observe(this, { attributes: false, childList: true, subtree: true });
-  }
-
-  handleMutation(evt) {
-
   }
 
   handleSectionToggle(evt) {
@@ -48,6 +42,19 @@ class Navigation extends LitElement {
     this.setSectionSize(section, 'expanded');
   }
 
+  getSectionLevel(section) {
+    let level = 1, parent = section.parentElement;
+    while (parent.closest('il-nav-section')) {
+      level++;
+      parent = parent.closest('il-nav-section').parentElement;
+    }
+    return level;
+  }
+
+  getSectionParent(section) {
+    return section.parentElement.closest('il-nav-section');
+  }
+
   getSectionSize(section) {
     return section.getAttribute('data-il-nav-size', 'collapsed');
   }
@@ -61,6 +68,7 @@ class Navigation extends LitElement {
   }
 
   initializeSection(section) {
+    section.setAttribute('data-il-nav-level', this.getSectionLevel(section));
     if (this.sectionIsExpanded(section)) section.expand();
     section.addEventListener('toggle', this.handleSectionToggle.bind(this));
   }
@@ -69,12 +77,19 @@ class Navigation extends LitElement {
     return this.getSectionSize(section) === 'expanded';
   }
 
+  setCurrentSection(currentSection) {
+    this.getSections().forEach(section => {
+      section.setAttribute('data-il-nav-current', section === currentSection ? 'true' : 'false');
+      (currentSection && section.contains(currentSection)) ? this.expandSection(section) : this.collapseSection(section);
+    });
+  }
+
   setSectionSize(section, size) {
     section.setAttribute('data-il-nav-size', size);
   }
 
   toggleSection(section) {
-    this.sectionIsExpanded(section) ? this.collapseSection(section) : this.expandSection(section);
+    this.setCurrentSection(!this.sectionIsExpanded(section) ? section : this.getSectionParent(section));
   }
 
   // Render
