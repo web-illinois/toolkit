@@ -1,6 +1,10 @@
 
 :root {
+  --il-content--color: var(--il-base-25);
+  --il-content--heading--color: var(--il-content--color);
+
   --il-content-base-font: 400 1.125em/1.66em var(--il-font-sans);
+
   --il-content-heading-base-size: 1.125em;
   --il-content-heading-ratio: 1.2;
   --il-content-h6-size: var(--il-content-heading-base-size);
@@ -13,12 +17,10 @@
 
 il-content {
 
-  @import "css/base";
-
-
   box-sizing: border-box;
   display: block;
   font: var(--il-content-base-font);
+  color: var(--il-content--color);
   container-type: inline-size;
   position: relative;
 
@@ -34,16 +36,13 @@ il-content {
   }
 }
 
-@container (max-width: 600px) {
-  il-content {
-    //--il-content-base-font: 400 1em/1.5em var(--il-font-sans);
-    --il-content-heading-ratio: 1.125;
-  }
-}
-
 il-page > il-content {
   padding-top: 2em;
   padding-bottom: 2em;
   padding-left: var(--il-page--padding-left);
   padding-right: var(--il-page--padding-right);
 }
+
+@import "base";
+@import "themes";
+@import "sizes";

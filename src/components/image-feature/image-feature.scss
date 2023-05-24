@@ -13,6 +13,21 @@ il-image-feature {
     --il-image-feature--content-background--background: var(--il-image-feature--background);
   }
 
+  &.il-theme-white {
+    --il-image-feature--background: white;
+  }
+  &.il-theme-gray {
+    --il-image-feature--background: var(--il-gray-1);
+  }
+  &.il-theme-blue {
+    --il-image-feature--background: var(--il-blue);
+  }
+  &.il-theme-orange {
+    --il-image-feature--background: var(--il-orange);
+  }
+  &.il-theme-blue-gradient {
+    --il-image-feature--background: var(--il-blue-gradient);
+  }
 }
 
 /*
