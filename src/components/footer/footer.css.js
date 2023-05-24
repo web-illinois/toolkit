@@ -3,8 +3,7 @@ import {css} from 'lit';
 export default css`
 
 .footer {
-  font-size: 1.5rem;
-  line-height: 1.5rem;
+  border-top: 1px solid white;
   font-family: var(--il-font-sans);
   background-color: var(--il-blue);
   color: white;

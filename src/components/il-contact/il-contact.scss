@@ -1,0 +1,26 @@
+il-contact {
+  & > p {
+    all: initial;
+    color: inherit;
+    display: block;
+    font: 400 1.125em/1.5em var(--il-font-sans);
+  }
+  & > a {
+    all: initial;
+    color: inherit;
+    display: block;
+    font: 400 1.125em/1.5em var(--il-font-sans);
+    cursor: pointer;
+
+    &:focus, &:hover {
+      text-decoration: underline;
+    }
+  }
+  *[slot="name"] {
+    all: initial;
+    color: inherit;
+    display: block;
+    margin-bottom: .25em;
+    font: 700 1.5em/1em var(--il-font-sans);
+  }
+}

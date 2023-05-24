@@ -1,5 +1,12 @@
 import './css/styles.scss';
 
+import "./components/il-contact/il-contact.component";
+import "./components/il-header/il-header.component";
+import "./components/il-nav/il-nav.component";
+import "./components/il-nav-section/il-nav-section.component";
+import "./components/il-page/il-page.component";
+import "./components/il-search/il-search.component";
+
 import "./components/accordion/accordion.component";
 import "./components/accordion/panel.component";
 import "./components/back-to-top/back-to-top.component";
@@ -11,21 +18,16 @@ import "./components/content/content.component";
 import "./components/directory/card.component";
 import "./components/directory/profile.component";
 import "./components/footer/footer.component";
-import "./components/il-header/il-header.component";
 import "./components/hero/hero.component";
 import "./components/image-feature/image-feature.component";
 import "./components/introduction/introduction.component";
-import "./components/layout/page.component";
 import "./components/layout/section.component";
 import "./components/layout/section-with-sidebar.component";
 import "./components/lede/lede.component";
 import "./components/link/link";
-import "./components/il-nav/il-nav.component";
-import "./components/il-nav-section/il-nav-section.component";
 import "./components/page-title/page-title.component";
 import "./components/pagination/pagination.component";
 import "./components/quote/quote.component";
-import "./components/il-search/search.component";
 import "./components/section-nav/section-nav.component";
 import './components/statistic/statistic.component';
 import "./components/unit-wordmark/unit-wordmark.component";

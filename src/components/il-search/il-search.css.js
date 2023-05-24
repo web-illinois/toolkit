@@ -11,7 +11,7 @@ form {
   margin-left: 10px;
   border-radius: 5px;
 }
-form.input-has-focus {
+form:focus-within {
   border-color: var(--il-industrial-blue);
 }
 label {

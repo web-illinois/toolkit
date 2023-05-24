@@ -7,25 +7,9 @@ $base-text-size: 18px;
 
 @import "classes/il-button/il-button";
 @import "classes/il-icon/il-icon";
+@import "classes/il-invisible";
 
 @import "themes";
-
-:root {
-  --il-content-margin: 20px;
-  --il-content-max-width: 1140px;
-}
-
-.il-invisible {
-  position: absolute !important;
-  left: -9999px !important;
-  top: auto !important;
-  display: block !important;
-  text-align: left !important;
-  text-indent: -9999em !important;
-  width: 1px !important;
-  height: 1px !important;
-  overflow: hidden !important;
-}
 
 html.il-toolkit {
   --il-focus-outline: 3px dashed var(--il-focus-outline-color);
@@ -34,10 +18,5 @@ html.il-toolkit {
   body {
     margin: 0;
     padding: 0;
-    font: 400 16px var(--il-font-sans);
-  }
-
-  @media (min-width: 768px) {
-    --il-content-margin: 30px;
   }
 }

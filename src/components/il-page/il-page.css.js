@@ -1,7 +1,11 @@
 import { css } from 'lit';
 
 export default css`
-
+:host {
+  display: block;
+  position: relative;
+  font: 400 1rem/1em var(--il-font-sans);
+}
 .page {
   margin: 0;
   padding: 0;

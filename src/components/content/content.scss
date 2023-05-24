@@ -408,3 +408,10 @@ il-content {
     --il-content-heading-ratio: 1.125;
   }
 }
+
+il-page > il-content {
+  padding-top: 2em;
+  padding-bottom: 2em;
+  padding-left: var(--il-page--padding-left);
+  padding-right: var(--il-page--padding-right);
+}
