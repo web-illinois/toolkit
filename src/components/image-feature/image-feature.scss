@@ -1,4 +1,22 @@
 
+:root {
+  --il-image-feature--background: var(--il-blue);
+  --il-image-feature--image--width: 50%;
+}
+
+il-image-feature {
+  display: block;
+  position: relative;
+
+  &.il-image-background {
+    --il-image-feature--image--width: 100%;
+    --il-image-feature--content-background--background: var(--il-image-feature--background);
+  }
+
+}
+
+/*
+
 // Theme classes
 
 %image-feature-theme-blue {
@@ -237,3 +255,5 @@ il-image-feature.il-picture-no-fill, .il-formatted .il-picture-no-fill il-image-
 il-image-feature.il-fixed-width, .il-formatted .il-fixed-width il-image-feature {
   --il-image-feature-max-width: var(--il-content-max-width);
 }
+
+*/

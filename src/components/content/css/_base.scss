@@ -1,0 +1,377 @@
+/**
+
+The base content styles. Here are the rules:
+
+1. relative (em) measurements only
+2. no classes
+3. block elements should not have any padding unless they have a border or background
+4. spacing between elements is controlled *exclusively* by the `margin-top` property
+5. stylesheet is ordered alphabetically by element name (last element in a compound declaration)
+6. don't group elements (use variables to share settings among elements)
+7. use container queries, not media queries
+8. container queries follow the base rules, and their contents are ordered the same as the base rules
+
+*/
+
+
+/* <a> */
+
+a {
+  transition: color .3s;
+  color: var(--il-link-color);
+  text-decoration: underline;
+}
+
+a:visited {
+  color: var(--il-visited-link-color);
+}
+
+a:hover, a:focus {
+  outline-style: none;
+  color: var(--il-focused-link-color);
+}
+
+/* <b> */
+
+b {
+  font-weight: 600;
+}
+
+/* <blockquote> */
+
+blockquote {
+  margin: 1.38em 2.66em 0;
+  font: var(--il-content-base-font);
+}
+h1 + blockquote {
+  margin-top: em(20px, 18px);
+}
+h2 + blockquote {
+  margin-top: em(17px, 18px);
+}
+h3 + blockquote {
+  margin-top: em(15px, 18px);
+}
+h4 + blockquote {
+  margin-top: em(12px, 18px);
+}
+h5 + blockquote {
+  margin-top: em(12px, 18px);
+}
+h6 + blockquote {
+  margin-top: em(12px, 18px);
+}
+
+/* <dfn> */
+
+dfn {
+  font-style: normal;
+  font-weight: bold;
+}
+
+/* <dt> */
+
+dt {
+  font-weight: bold;
+  margin-top: 12px;
+}
+
+dt:first-of-type {
+  margin-top: 0;
+}
+
+/* Ratio: 1.2 */
+
+/* <h1> */
+
+h1 {
+  --il-heading-margin-top: 1.25em;
+  color: var(--il-heading-color);
+  font-family: var(--il-source-sans);
+  text-align: left;
+  margin: var(--il-heading-margin-top, 1.25em) 0 0;
+  box-sizing: border-box;
+  padding: 0;
+  font-size: em(40px);
+  font-size: var(--il-content-h1-size);
+  font-weight: 700;
+  line-height: 1.15em;
+}
+
+h1:first-child {
+  margin-top: 0;
+}
+
+/* <h2> */
+
+h2 {
+  --il-heading-margin-top: 1.286em;
+  color: var(--il-heading-color);
+  font-family: var(--il-source-sans);
+  text-align: left;
+  margin: var(--il-heading-margin-top, 1.25em) 0 0;
+
+  box-sizing: border-box;
+  font-weight: 600;
+  padding: 0;
+  font-size: em(35px);
+  font-size: var(--il-content-h2-size);
+  line-height: 1.23em;
+}
+
+h2:first-child {
+  margin-top: 0;
+}
+
+/* <h3> */
+
+h3 {
+  --il-heading-margin-top: 1.4138em;
+  color: var(--il-heading-color);
+  font-family: var(--il-source-sans);
+  text-align: left;
+  margin: var(--il-heading-margin-top, 1.25em) 0 0;
+
+  box-sizing: border-box;
+  font-weight: 600;
+  padding: 0;
+  font-size: em(29px);
+  font-size: var(--il-content-h3-size);
+  line-height: 1.2em;
+}
+
+h3:first-child {
+  margin-top: 0;
+}
+
+/* <h4> */
+
+h4 {
+  --il-heading-margin-top: 1.625em;
+  color: var(--il-heading-color);
+  font-family: var(--il-source-sans);
+  text-align: left;
+  margin: var(--il-heading-margin-top, 1.25em) 0 0;
+
+  box-sizing: border-box;
+  font-weight: 600;
+  padding: 0;
+  font-size: em(24px);
+  font-size: var(--il-content-h4-size);
+  line-height: 1.2em;
+}
+h4:first-child {
+  margin-top: 0;
+}
+
+/* <h5> */
+
+h5 {
+  --il-heading-margin-top: 1.6666em;
+  color: var(--il-heading-color);
+  font-family: var(--il-source-sans);
+  text-align: left;
+  margin: var(--il-heading-margin-top, 1.25em) 0 0;
+
+  box-sizing: border-box;
+  font-weight: 600;
+  padding: 0;
+  font-size: em(21px);
+  font-size: var(--il-content-h5-size);
+  font-weight: 700;
+  line-height: 1.333em;
+}
+
+h5:first-child {
+  margin-top: 0;
+}
+
+/* <h6> */
+
+h6 {
+  --il-heading-margin-top: 1.6666em;
+  color: var(--il-heading-color);
+  font-family: var(--il-source-sans);
+  text-align: left;
+  margin: var(--il-heading-margin-top, 1.25em) 0 0;
+
+  box-sizing: border-box;
+  font-weight: 600;
+  padding: 0;
+  font-size: em(18px);
+  font-size: var(--il-content-h6-size);
+  font-weight: 700;
+  line-height: 1.222em;
+}
+
+h6:first-child {
+  margin-top: 0;
+}
+
+/* <li> */
+
+li {
+  font: var(--il-content-base-font);
+  font-size: 1em;
+  margin-top: 10px;
+  margin-left: em(40px, 18px);
+}
+
+li:first-child {
+  margin-top: 0;
+}
+
+ul li {
+  list-style: disc;
+}
+
+ul li::marker {
+  font-size: .9em;
+}
+
+/* <mark> */
+
+mark {
+  background-color: var(--il-cloud-1);
+}
+
+/* <ol> */
+
+ol {
+  font: var(--il-content-base-font);
+  margin-top: 16px;
+  text-align: left;
+}
+
+ol ol {
+  list-style-type: lower-alpha;
+}
+
+ol ol ol {
+  list-style-type: lower-roman;
+}
+
+ol ol ol ol {
+  list-style-type: decimal;
+}
+
+li ol, li ol:first-child {
+  margin-top: .55em;
+}
+
+/* <p> */
+
+p {
+  display: block;
+  margin-top: .88em;
+  font: var(--il-content-base-font);
+}
+h1 + p {
+  margin-top: 1.11em;
+}
+h2 + p {
+  margin-top: .94em;
+}
+h3 + p {
+  margin-top: .83em;
+}
+h4 + p {
+  margin-top: .66em;
+}
+h5 + p {
+  margin-top: .66em;
+}
+h6 + p {
+  margin-top: .66em;
+}
+
+/* <pre> */
+
+pre {
+  position: relative;
+  max-width: 100%;
+  overflow: auto;
+}
+
+/* <strong> */
+
+strong {
+  font-weight: 600;
+}
+
+/* <table> */
+
+table {
+  box-sizing: border-box;
+  border-collapse: collapse;
+  border: 1px solid var(--il-cloud);
+  width: 100%;
+  overflow: auto;
+}
+
+table caption {
+  text-align: left;
+}
+
+/* <td> */
+
+td {
+  text-align: left;
+  vertical-align: top;
+  padding: rem(25px) rem(16px);
+  border-top: 1px solid var(--il-cloud-3);
+  border-bottom: 1px solid var(--il-cloud-3);
+  border-left: none;
+  border-right: none;
+  color: var(--il-blue);
+}
+
+/* <th> */
+
+th {
+  text-align: left;
+  font-weight: 700;
+  font-size: 1.2rem;
+  border-top: 1px solid var(--il-gray-2);
+  border-bottom: 1px solid var(--il-gray-2);
+  border-left: none;
+  border-right: none;
+  padding: rem(25px) rem(16px) rem(30px) rem(16px);
+  vertical-align: middle;
+}
+
+th:first-of-type {
+  border-left: 1px solid var(--il-gray-2);
+}
+
+th:last-of-type {
+  border-right: 1px solid var(--il-gray-2);
+}
+
+thead th {
+  background-color: var(--il-industrial-blue);
+  color: white;
+  font-family: var(--il-font-sans);
+}
+
+tbody th {
+  color: var(--il-blue);
+}
+
+/* <tr> */
+
+tr:nth-child(odd) {
+  background-color: var(--il-gray-1);
+}
+
+/* <ul> */
+
+ul {
+  font: var(--il-content-base-font);
+  text-align: left;
+}
+
+li ul, li ul:first-child {
+  margin-top: em(10px, 18px);
+}
+
