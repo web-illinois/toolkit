@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="../statistic.component.js" type="module"></script>
+<link rel="stylesheet" href="../../../css/fonts.scss">
+<link rel="stylesheet" href="../../../css/colors.scss">
+
+<il-statistic data-testid="statistic" style="max-width: 500px">
+    <em>97%</em> of our 2020 graduates with teaching degrees
+    plus licensure are employed in the field of education.
+</il-statistic>
+
+<script>
+  const component = document.querySelector("il-statistic");
+  const params = new URLSearchParams(window.location.search);
+  if (params.has('theme')) {
+    component.classList.add(`il-theme-${params.get('theme')}`);
+  }
+  if (params.has('size')) {
+    component.classList.add(`il-size-${params.get('size')}`);
+  }
+</script>
