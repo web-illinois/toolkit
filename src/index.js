@@ -12,6 +12,7 @@ import "./components/il-image-feature/il-image-feature.component";
 import "./components/il-introduction/il-introduction.component";
 import "./components/il-nav-section/il-nav-section.component";
 import "./components/il-page/il-page.component";
+import "./components/il-pagination/il-pagination.component";
 import "./components/il-search/il-search.component";
 
 import "./components/back-to-top/back-to-top.component";
@@ -25,10 +26,8 @@ import "./components/footer/footer.component";
 import "./components/hero/hero.component";
 import "./components/layout/section.component";
 import "./components/layout/section-with-sidebar.component";
-import "./components/lede/lede.component";
 import "./components/link/link";
 import "./components/page-title/page-title.component";
-import "./components/pagination/pagination.component";
 import "./components/quote/quote.component";
 import "./components/section-nav/section-nav.component";
 import './components/statistic/statistic.component';

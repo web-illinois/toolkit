@@ -1,9 +1,9 @@
 
 @layer base, component, theme;
 
-@import "colors.css";
-@import "fonts.css";
-@import "icons.css";
+@import "colors.css" layer(base);
+@import "fonts.css" layer(base);
+@import "icons.css" layer(base);
 
 @layer base {
 

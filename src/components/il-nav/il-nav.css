@@ -1,4 +1,4 @@
-// Base variables
+/* Base variables */
 
 :root {
   --il-nav--item--padding-top: .75em;
@@ -31,10 +31,10 @@
   --il-nav--content--collapsed--display: none;
 
 
-  // Section styles: accordion, dropdown, & flyout
+  /* Section styles: accordion, dropdown, & flyout */
 
   --il-nav--accordion--section--display: block;
-  --il-nav--accordion--section--width: 100%; // TODO: Remove
+  --il-nav--accordion--section--width: 100%; /* TODO: Remove */
   --il-nav--accordion--section--header-chevron--transform: var(--il-nav-section-chevron-down);
   --il-nav--accordion--section--content--width: 100%;
   --il-nav--accordion--section--content--top: 100%;
@@ -65,7 +65,7 @@
   --il-nav--flyout--section--content--position: absolute;
 
 
-  // Navigation levels
+  /* Navigation levels */
 
   --il-nav--level-1--background-color: white;
   --il-nav--level-1--color: white;
@@ -101,9 +101,9 @@
   --il-nav--bar--level-1--contents--top: 100%;
 }
 
-// Navigation bar
+/* Navigation bar */
 
-%il-nav--bar {
+@define-mixin il-nav--bar {
   a:not([slot=link]) {
     all: initial;
     display: block;
@@ -154,7 +154,7 @@
     }
   }
 
-  // Top-level link
+  /* Top-level link */
   & > ul > li > a {
     padding-top: var(--il-nav--item--padding-top);
     padding-right: var(--il-nav--item--padding-top);
@@ -170,16 +170,16 @@
   }
 
   & > ul > li > il-nav-section {
-    @extend %il-nav--bar--dropdown;
+    @mixin il-nav--bar--dropdown;
   }
 
   il-nav-section il-nav-section {
-    @extend %il-nav--bar--flyout;
+    @mixin il-nav--bar--flyout;
   }
 
 }
 
-%il-nav--bar--dropdown {
+@define-mixin il-nav--bar--dropdown {
 
   --il-nav--link--background-color: var(--il-cloud-1);
   --il-nav--link--color: var(--il-blue);
@@ -211,7 +211,7 @@
   }
 }
 
-%il-nav--bar--dropdown--expanded {
+@define-mixin il-nav--bar--dropdown--expanded {
   --il-nav--link--background-color: var(--il-blue);
   --il-nav--link--color: white;
   --il-nav--link--focus--background-color: var(--il-orange);
@@ -228,7 +228,7 @@
 }
 
 
-%il-nav--bar--flyout {
+@define-mixin il-nav--bar--flyout {
   --il-nav-section--content--left: 100%;
   --il-nav-section--content--top: 0;
   --il-nav-section--content--padding: 1px;
@@ -238,9 +238,9 @@
 }
 
 
-// Column
+/* Column */
 
-%il-nav--column {
+@define-mixin il-nav--column {
 
   --il-nav--link--background-color: var(--il-cloud-1);
   --il-nav--link--color: var(--il-blue);
@@ -279,7 +279,6 @@
     all: initial;
     display: block;
 
-    //padding: var(--il-nav--link--padding);
     padding-top: var(--il-nav--item--padding-top);
     padding-right: var(--il-nav--item--padding-right);
     padding-bottom: var(--il-nav--item--padding-bottom);
@@ -396,7 +395,7 @@
   }
 }
 
-%il-nav--eyebrow {
+@define-mixin il-nav--eyebrow {
   display: block;
 
   ul {
@@ -473,27 +472,83 @@ il-nav {
 
 il-nav {
   &.il-nav-bar {
-    @extend %il-nav--bar;
+    @mixin il-nav--bar;
 
     & > ul > li > il-nav-section {
-      @extend %il-nav--bar--dropdown;
+      @mixin il-nav--bar--dropdown;
 
       &[data-il-nav-size="expanded"] {
-        @extend %il-nav--bar--dropdown--expanded;
+        @mixin il-nav--bar--dropdown--expanded;
       }
     }
 
     il-nav-section il-nav-section {
-      @extend %il-nav--bar--flyout;
+      @mixin il-nav--bar--flyout;
     }
   }
 
-  // Accordion
   &.il-nav-column {
-    @extend %il-nav--column;
+    @mixin il-nav--column;
   }
 }
 
 il-header il-nav[slot=links] {
-  @extend %il-nav--eyebrow;
+  @mixin il-nav--eyebrow;
+}
+
+il-nav.il-pagination {
+  color: var(--il-blue);
+  font: 1em/1em var(--il-font-sans);
+
+  ul {
+    margin: 0 1px -6px 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: center;
+  }
+  li {
+    margin: 0 -1px 6px 0;
+    padding: 0;
+    list-style: none;
+  }
+  li.il-current, li.il-ellipsis, a {
+    display: inline-block;
+    padding: .5rem .75rem;
+    border-width: 1px;
+    border-style: solid;
+  }
+  li.il-current {
+    background-color: var(--il-blue);
+    color: white;
+    border-color: var(--il-blue);
+  }
+  li.il-ellipsis {
+    color: var(--il-cloud-3);
+    border-color: transparent;
+  }
+  li.il-ellipsis-after:after,
+  li.il-ellipsis-before:before {
+    content: '\2026';
+    display: inline-block;
+    margin-right: -1px;
+    padding: .5rem .75rem;
+    border-width: 1px;
+    border-style: solid;
+    color: var(--il-cloud-3);
+    border-color: transparent;
+  }
+  a {
+    font-weight: 500;
+    text-decoration: none;
+    color: var(--il-blue);
+    border-color: var(--il-cloud-3)
+  }
+  a:hover, a:focus {
+    background-color: #ececed;
+    text-decoration: underline;
+  }
 }

@@ -1,7 +1,6 @@
 import { LitElement, html } from 'lit';
-import Link from './link';
-import styles from './il-nav.css';
-import "./il-nav.scss";
+import styles from './il-nav.styles';
+import "./il-nav.css";
 
 class Navigation extends LitElement {
   static get properties() {
