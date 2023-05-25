@@ -1,8 +1,8 @@
-@import "css/base.css" layer(component);
+@import "css/elements.css" layer(component);
 @import "css/button-links.css" layer(component);
 
 @layer component {
-  
+
   :root {
     --il-content--color: var(--il-base-25);
     --il-content--heading--color: var(--il-content--color);
@@ -56,7 +56,8 @@
 
   @container (max-width: 480px) {
     il-content {
-    //--il-content-base-font: 400 1em/1.5em var(--il-font-sans); --il-content-heading-ratio: 1.125; --il-content--font-size: 1em;
+      --il-content-heading-ratio: 1.125;
+      --il-content--font-size: 1em;
     }
   }
 }

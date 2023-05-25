@@ -1,15 +1,11 @@
 /**
 
-The base content styles. Here are the rules:
+Styles for *unclassed* HTML elements. Here are the rules:
 
 1. relative (em) measurements only
-2. no classes
-3. block elements should not have any padding unless they have a border or background
-4. spacing between elements is controlled *exclusively* by the `margin-top` property
-5. stylesheet is ordered alphabetically by element name (last element in a compound declaration)
-6. don't group elements (use variables to share settings among elements)
-7. use container queries, not media queries
-8. container queries follow the base rules, and their contents are ordered the same as the base rules
+2. block elements should not have any padding unless they have a border or background
+3. spacing between elements is controlled *exclusively* by the `margin-top` property
+4. stylesheet is ordered alphabetically by element name (last element in a compound declaration)
 
  */
 
