@@ -5,13 +5,6 @@
 @import "fonts.css";
 @import "icons.css";
 
-/*
-@import "classes/il-icon/il-icon";
-
-@import "themes";
-
-*/
-
 @layer base {
 
   html.il-toolkit body {

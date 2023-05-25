@@ -1,4 +1,5 @@
 :root {
+  --il-content--button--font-size: 1.1875em;
   --il-content--button--background-color: transparent;
   --il-content--button--color: inherit;
   --il-content--button--border-color: var(--il-content--button--color);
@@ -18,7 +19,7 @@ a.il-button, .il-buttons a.il-button {
   cursor: pointer;
   display: inline-block;
   font-family: var(--il-font-sans);
-  font-size: max(1.1875em, 19px);
+  font-size: max(var(--il-content--button--font-size), 19px);
   font-weight: 700;
   letter-spacing: .01em;
   line-height: 1em;

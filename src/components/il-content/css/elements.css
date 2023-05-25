@@ -259,8 +259,11 @@ il-content {
 
   p {
     display: block;
+    line-height: var(--il-content--line-height);
     margin-top: .88em;
-    font: var(--il-content-base-font);
+    font-family: var(--il-content--font-family);
+    font-size: var(--il-content--font-size);
+    font-weight: var(--il-content--font-weight);
   }
 
   h1 + p {
