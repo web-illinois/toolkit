@@ -21,7 +21,6 @@ export default css`
     all: initial;
     display: block;
     
-    //padding: var(--il-nav-section--header--link--padding);
     padding-top: var(--il-nav--item--padding-top, .75em);
     padding-right: var(--il-nav--item--label--padding-right, 1em);
     padding-bottom: var(--il-nav--item--padding-bottom, .75em);
@@ -29,10 +28,12 @@ export default css`
     
     background-color: var(--il-nav-section--header--link--background-color);
     color: var(--il-nav-section--header--link--color);
-    font: 600 1.1875em/1em var(--il-font-sans);
+    line-height: 1em;
+    font-family: var(--il-font-sans);
+    font-size: var(--il-nav-section--header--link--font-size, 1.1875em);
+    font-weight: var(--il-nav-section--header--link--font-weight, 600);
     cursor: pointer;
     position: relative;
-    //width: calc(100% - 2em);
     flex: 1 1 100%;
   }
   #header ::slotted(a:focus),
@@ -51,6 +52,7 @@ export default css`
     background-color: var(--il-nav-section--header--button--background-color);
     color: var(--il-nav-section--header--button--color);
     cursor: pointer;
+    pointer-events: var(--il-nav-section--header--button--pointer-events, all);
   }
   button:hover, button:focus {
     background-color: var(--il-nav-section--header--button--focus--background-color);
@@ -60,7 +62,6 @@ export default css`
     all: initial;
     position: relative;
     display: block;
-    //padding: var(--il-nav-section--header--button--padding);
     padding-top: var(--il-nav--item--padding-top, .75em);
     padding-right: var(--il-nav--item--label--padding-right, 1em);
     padding-bottom: var(--il-nav--item--padding-bottom, .75em);
@@ -95,12 +96,13 @@ export default css`
     padding-left: var(--il-nav--item--indicator--padding-left);
   }
   il-nav-indicator {
+    display: var(--il-nav-section--indicator--display, block);
     position: relative;
   }
   
   #content {
-    display: none;
-    pointer-events: none;
+    display: var(--il-nav-section--content--display, none);
+    pointer-events: var(--il-nav-section--content--pointer-events, none);
     z-index: 100;
     background-color: var(--il-nav-section--content--background-color, transparent);
     left: var(--il-nav-section--content--left, 0);

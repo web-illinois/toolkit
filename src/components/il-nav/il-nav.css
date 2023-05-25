@@ -96,6 +96,10 @@
   il-nav.il-nav-pagination {
     @mixin il-nav--pagination;
   }
+
+  il-nav.il-nav-sidebar {
+    @mixin il-nav--sidebar;
+  }
 }
 
 @layer theme {
