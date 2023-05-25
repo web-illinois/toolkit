@@ -1,0 +1,56 @@
+@define-mixin il-nav--pagination {
+  color: var(--il-blue);
+  font: 1em/1em var(--il-font-sans);
+
+  ul {
+    margin: 0 1px -6px 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: center;
+  }
+  li {
+    margin: 0 -1px 6px 0;
+    padding: 0;
+    list-style: none;
+  }
+  li.il-current, li.il-ellipsis, a {
+    display: inline-block;
+    padding: .5rem .75rem;
+    border-width: 1px;
+    border-style: solid;
+  }
+  li.il-current {
+    background-color: var(--il-blue);
+    color: white;
+    border-color: var(--il-blue);
+  }
+  li.il-ellipsis {
+    color: var(--il-cloud-3);
+    border-color: transparent;
+  }
+  li.il-ellipsis-after:after,
+  li.il-ellipsis-before:before {
+    content: '\2026';
+    display: inline-block;
+    margin-right: -1px;
+    padding: .5rem .75rem;
+    border-width: 1px;
+    border-style: solid;
+    color: var(--il-cloud-3);
+    border-color: transparent;
+  }
+  a {
+    font-weight: 500;
+    text-decoration: none;
+    color: var(--il-blue);
+    border-color: var(--il-cloud-3)
+  }
+  a:hover, a:focus {
+    background-color: #ececed;
+    text-decoration: underline;
+  }
+}
