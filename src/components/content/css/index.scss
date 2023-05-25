@@ -3,7 +3,10 @@
   --il-content--color: var(--il-base-25);
   --il-content--heading--color: var(--il-content--color);
 
-  --il-content-base-font: 400 1.125em/1.66em var(--il-font-sans);
+  --il-content--font-weight: 400;
+  --il-content--font-size: 1.125em;
+  --il-content--line-height: 1.66em;
+  --il-content--font-family: var(--il-font-sans);
 
   --il-content-heading-base-size: 1.125em;
   --il-content-heading-ratio: 1.2;
@@ -19,7 +22,11 @@ il-content {
 
   box-sizing: border-box;
   display: block;
-  font: var(--il-content-base-font);
+  font-weight: var(--il-content--font-weight);
+  font-size: var(--il-content--font-size);
+  line-height: var(--il-content--line-height);
+  font-family: var(--il-content--font-family);
+
   color: var(--il-content--color);
   container-type: inline-size;
   position: relative;
@@ -44,5 +51,6 @@ il-page > il-content {
 }
 
 @import "base";
+@import "button-links";
 @import "themes";
 @import "sizes";

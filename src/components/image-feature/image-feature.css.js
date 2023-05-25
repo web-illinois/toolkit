@@ -29,16 +29,12 @@ export default css`
     padding: 1em;
   }
   
-  ::slotted(il-content) {
-    --il-content-base-font: 1em var(--il-font-sans);
-  }
-
   #background {
     position: absolute;
-    left: 1.5em;
+    left: 0;
     top: 1.5em;
     z-index: 1;
-    width: calc(100% - 3em);
+    width: calc(100% - 1.5em);
     height: calc(100% - 3em);
     opacity: .9;
     pointer-events: none;

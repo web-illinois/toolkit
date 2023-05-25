@@ -1,11 +1,16 @@
-
-
 il-content.il-theme-white, .il-theme-white il-content {
   --il-content--color: var(--il-base-25);
   --il-content--heading--color: var(--il-blue);
   --il-content--link--color: var(--il-industrial-blue);
   --il-content--link--focus--color: var(--il-altgeld);
   --il-content--link--visited--color: var(--il-blue);
+
+  --il-content--button--background-color: white;
+  --il-content--button--color: var(--il-blue);
+  --il-content--button--border-color: var(--il-blue);
+  --il-content--button--focus--background-color: var(--il-blue);
+  --il-content--button--focus--color: white;
+  --il-content--button--focus--border-color: var(--il-blue);
 }
 
 il-content.il-theme-gray, .il-theme-gray il-content {
@@ -14,6 +19,13 @@ il-content.il-theme-gray, .il-theme-gray il-content {
   --il-content--link--color: var(--il-industrial-blue);
   --il-content--link--focus--color: var(--il-altgeld);
   --il-content--link--visited--color: var(--il-blue);
+
+  --il-content--button--background-color: white;
+  --il-content--button--color: var(--il-blue);
+  --il-content--button--border-color: var(--il-blue);
+  --il-content--button--focus--background-color: var(--il-blue);
+  --il-content--button--focus--color: white;
+  --il-content--button--focus--border-color: var(--il-blue);
 }
 
 il-content.il-theme-blue, .il-theme-blue il-content, .il-theme-blue-gradient il-content {
@@ -22,6 +34,14 @@ il-content.il-theme-blue, .il-theme-blue il-content, .il-theme-blue-gradient il-
   --il-content--link--color: white;
   --il-content--link--focus--color: var(--il-orange);
   --il-content--link--visited--color: var(--il-arches-2);
+
+  --il-content--button--background-color: var(--il-blue);
+  --il-content--button--color: white;
+  --il-content--button--border-color: white;
+  --il-content--button--focus--background-color: white;
+  --il-content--button--focus--color: var(--il-blue);
+  --il-content--button--focus--border-color: white;
+
 }
 
 il-content.il-theme-orange, .il-theme-orange il-content, .il-theme-orange-gradient il-content {
@@ -30,6 +50,14 @@ il-content.il-theme-orange, .il-theme-orange il-content, .il-theme-orange-gradie
   --il-content--link--color: black;
   --il-content--link--focus--color: var(--il-blue);
   --il-content--link--visited--color: black;
+
+  --il-content--button--background-color: var(--il-orange);
+  --il-content--button--color: white;
+  --il-content--button--border-color: white;
+  --il-content--button--focus--background-color: white;
+  --il-content--button--focus--color: var(--il-orange);
+  --il-content--button--focus--border-color: white;
+
 }
 
 il-content.il-theme-industrial-blue, .il-theme-industrial-blue il-content {
@@ -38,6 +66,13 @@ il-content.il-theme-industrial-blue, .il-theme-industrial-blue il-content {
   --il-content--link--color: white;
   --il-content--link--focus--color: var(--il-orange-lighter-4);
   --il-content--link--visited--color: var(--il-arches-2);
+
+  --il-content--button--background-color: var(--il-industrial-blue);
+  --il-content--button--color: white;
+  --il-content--button--border-color: white;
+  --il-content--button--focus--background-color: white;
+  --il-content--button--focus--color: var(--il-industrial-blue);
+  --il-content--button--focus--border-color: white;
 }
 
 il-content.il-theme-altgeld, .il-theme-altgeld il-content {
@@ -46,5 +81,11 @@ il-content.il-theme-altgeld, .il-theme-altgeld il-content {
   --il-content--link--color: black;
   --il-content--link--focus--color: var(--il-blue);
   --il-content--link--visited--color: black;
-}
 
+  --il-content--button--background-color: var(--il-altgeld);
+  --il-content--button--color: white;
+  --il-content--button--border-color: white;
+  --il-content--button--focus--background-color: white;
+  --il-content--button--focus--color: var(--il-altgeld);
+  --il-content--button--focus--border-color: white;
+}

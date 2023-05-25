@@ -1,0 +1,38 @@
+:root {
+  --il-content--button--background-color: transparent;
+  --il-content--button--color: inherit;
+  --il-content--button--border-color: var(--il-content--button--color);
+  --il-content--button--focus--background-color: transparent;
+  --il-content--button--focus--color: inherit;
+  --il-content--button--focus--border-color: var(--il-content--button--border-color);
+}
+
+a.il-button, .il-buttons a.il-button {
+  all: initial;
+  border-color: var(--il-content--button--border-color);
+  border-style: solid;
+  border-width: 2px;
+  background-color: var(--il-content--button--background-color);
+  border-radius: 0.25em;
+  color: var(--il-content--button--color, inherit);
+  cursor: pointer;
+  display: inline-block;
+  font-family: var(--il-font-sans);
+  font-size: max(1.1875em, 19px);
+  font-weight: 700;
+  letter-spacing: .01em;
+  line-height: 1em;
+  outline: 0;
+  margin: .25em .5em .25em 0;
+  padding: .5em 1em;
+  text-align: center;
+  text-decoration: none;
+
+  &:hover,
+  &:focus {
+    outline: 0;
+    background-color: var(--il-content--button--focus--background-color);
+    border-color: var(--il-content--button--focus--border-color);
+    color: var(--il-content--button--focus--color);
+  }
+}
