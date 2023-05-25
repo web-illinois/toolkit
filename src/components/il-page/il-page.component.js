@@ -1,8 +1,7 @@
 import { LitElement, html } from 'lit';
 import styles from './il-page.css';
 import "./il-page.scss";
-import "../../css/fonts.scss";
-import "../../css/colors.scss";
+import "../../css/base.css";
 
 class PageComponent extends LitElement {
 

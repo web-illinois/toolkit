@@ -1,4 +1,4 @@
-import './css/base.scss';
+import './css/base.css';
 
 // Core components
 import "./components/content/content.component";

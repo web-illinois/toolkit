@@ -1,7 +1,7 @@
 import {LitElement, html, css} from 'lit';
 import styles from './video-feature.css';
 import VideoFeature from './video-feature';
-import '../../css/styles.scss';
+import '../../css/base.css';
 
 class VideoFeatureComponent extends LitElement {
 

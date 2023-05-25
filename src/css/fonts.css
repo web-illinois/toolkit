@@ -1,12 +1,8 @@
-@import "fonts/fjalla-one";
-@import "fonts/montserrat";
-@import "fonts/open-sans";
-@import "fonts/source-sans";
-@import "fonts/source-serif";
-
-@mixin font-weight($weight: 400) {
-  font-weight: $weight;
-}
+@import "fonts/fjalla-one.css";
+@import "fonts/montserrat.css";
+@import "fonts/open-sans.css";
+@import "fonts/source-sans.css";
+@import "fonts/source-serif.css";
 
 :root {
   --il-fjalla-one: "Fjalla One", sans-serif;

@@ -1,11 +1,11 @@
 
 @layer base, component, theme;
 
-@import "mixins";
-@import "colors";
-@import "fonts";
-@import "icons";
+@import "colors.css";
+@import "fonts.css";
+@import "icons.css";
 
+/*
 @import "classes/il-icon/il-icon";
 @import "classes/il-invisible";
 
@@ -24,3 +24,4 @@
   }
 }
 
+*/

@@ -30,14 +30,6 @@ export default defineConfig({
       }
     },
   },
-  css: {
-    postcss: "..",
-    preprocessorOptions: {
-      scss: {
-        additionalData: makeSassVariables(),
-      }
-    }
-  },
   server: {
     hmr: false
   }
