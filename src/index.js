@@ -9,10 +9,8 @@ import "./components/il-accordion-panel/il-accordion-panel.component";
 import "./components/il-contact/il-contact.component";
 import "./components/il-header/il-header.component";
 import "./components/il-image-feature/il-image-feature.component";
-import "./components/il-introduction/il-introduction.component";
 import "./components/il-nav-section/il-nav-section.component";
 import "./components/il-page/il-page.component";
-import "./components/il-pagination/il-pagination.component";
 import "./components/il-search/il-search.component";
 
 import "./components/back-to-top/back-to-top.component";
