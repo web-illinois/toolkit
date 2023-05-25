@@ -1,118 +1,115 @@
-/* Base variables */
-
-:root {
   --il-nav--item--padding-top: .75em;
   --il-nav--item--padding-right: 1em;
   --il-nav--item--padding-bottom: .75em;
-  --il-nav--item--padding-left: 1em;
-  --il-nav--item--label--padding-right: .25em;
-  --il-nav--item--indicator--padding-left: .25em;
-
-  --il-nav--item--header--white-space: normal;
-
-  --il-nav--level-1--indent: .75em;
-  --il-nav--level-2--indent: calc(var(--il-nav--level-1--indent) + 1.5em);
-  --il-nav--level-3--indent: calc(var(--il-nav--level-2--indent) + 1.5em);
-  --il-nav--level-4--indent: calc(var(--il-nav--level-3--indent) + 1.5em);
-  --il-nav--level-5--indent: calc(var(--il-nav--level-4--indent) + 1.5em);
-  --il-nav--level-6--indent: calc(var(--il-nav--level-5--indent) + 1.5em);
-
-
-  --il-nav--content--invisible--display: block;
-
-  --il-nav--content--collapsed--display: none;
-
-
-  /* Section styles: accordion, dropdown, & flyout */
-
-  --il-nav--accordion--section--display: block;
-  --il-nav--accordion--section--width: 100%; /* TODO: Remove */
-  --il-nav--accordion--section--header-chevron--transform: var(--il-nav-section-chevron-down);
-  --il-nav--accordion--section--content--width: 100%;
-  --il-nav--accordion--section--content--top: 100%;
-  --il-nav--accordion--section--content--left: 0;
-  --il-nav--accordion--section--content--position: relative;
-  --il-nav--accordion--section--content--display: none;
-  --il-nav--accordion--section--expanded--content--display: block;
-
-  --il-nav--accordion--level-1--padding: .75em;
-  --il-nav--accordion--level-2--padding: .75em .75em .75em 2.25em;
-  --il-nav--accordion--level-3--padding: .75em .75em .75em 3.75em;
-  --il-nav--accordion--level-4--padding: .75em .75em .75em 5.25em;
-  --il-nav--accordion--level-5--padding: .75em .75em .75em 6.75em;
-  --il-nav--accordion--level-6--padding: .75em .75em .75em 8.25em;
-
-  --il-nav--dropdown--section--content--width: 20em;
-  --il-nav--dropdown--section--content--top: 100%;
-  --il-nav--dropdown--section--content--left: 0;
-  --il-nav--dropdown--section--header-chevron--transform: var(--il-nav-section-chevron-down);
-  --il-nav--dropdown--section--content-position: absolute;
-
-  --il-nav--flyout--section--display: block;
-  --il-nav--flyout--section--width: 100%;
-  --il-nav--flyout--section--content--width: 20em;
-  --il-nav--flyout--section--content--top: 0;
-  --il-nav--flyout--section--content--left: 100%;
-  --il-nav--flyout--section--header-chevron--transform: var(--il-nav-section-chevron-right);
-  --il-nav--flyout--section--content--position: absolute;
 
 }
-
-/* Navigation bar */
-
-
 
 
 
 
 /* Column */
 
+@layer component {
+
+  :root {
+    --il-nav--item--padding-top: .75em;
+    --il-nav--item--padding-right: 1em;
+    --il-nav--item--padding-bottom: .75em;
+    --il-nav--item--padding-left: 1em;
+    --il-nav--item--label--padding-right: .25em;
+    --il-nav--item--indicator--padding-left: .25em;
+
+    --il-nav--item--header--white-space: normal;
+
+    --il-nav--level-1--indent: .75em;
+    --il-nav--level-2--indent: calc(var(--il-nav--level-1--indent) + 1.5em);
+    --il-nav--level-3--indent: calc(var(--il-nav--level-2--indent) + 1.5em);
+    --il-nav--level-4--indent: calc(var(--il-nav--level-3--indent) + 1.5em);
+    --il-nav--level-5--indent: calc(var(--il-nav--level-4--indent) + 1.5em);
+    --il-nav--level-6--indent: calc(var(--il-nav--level-5--indent) + 1.5em);
+
+    --il-nav--content--invisible--display: block;
+    --il-nav--content--collapsed--display: none;
 
 
+    /* Section styles: accordion, dropdown, & flyout */
 
-il-nav {
-  display: block;
-  container-type: inline-size;
-  box-sizing: border-box;
+    --il-nav--accordion--section--display: block;
+    --il-nav--accordion--section--width: 100%; /* TODO: Remove */
+    --il-nav--accordion--section--header-chevron--transform: var(--il-nav-section-chevron-down);
+    --il-nav--accordion--section--content--width: 100%;
+    --il-nav--accordion--section--content--top: 100%;
+    --il-nav--accordion--section--content--left: 0;
+    --il-nav--accordion--section--content--position: relative;
+    --il-nav--accordion--section--content--display: none;
+    --il-nav--accordion--section--expanded--content--display: block;
 
-  il-nav-section > a {
-    white-space: var(--il-nav--item--header--white-space);
+    --il-nav--accordion--level-1--padding: .75em;
+    --il-nav--accordion--level-2--padding: .75em .75em .75em 2.25em;
+    --il-nav--accordion--level-3--padding: .75em .75em .75em 3.75em;
+    --il-nav--accordion--level-4--padding: .75em .75em .75em 5.25em;
+    --il-nav--accordion--level-5--padding: .75em .75em .75em 6.75em;
+    --il-nav--accordion--level-6--padding: .75em .75em .75em 8.25em;
+
+    --il-nav--dropdown--section--content--width: 20em;
+    --il-nav--dropdown--section--content--top: 100%;
+    --il-nav--dropdown--section--content--left: 0;
+    --il-nav--dropdown--section--header-chevron--transform: var(--il-nav-section-chevron-down);
+    --il-nav--dropdown--section--content-position: absolute;
+
+    --il-nav--flyout--section--display: block;
+    --il-nav--flyout--section--width: 100%;
+    --il-nav--flyout--section--content--width: 20em;
+    --il-nav--flyout--section--content--top: 0;
+    --il-nav--flyout--section--content--left: 100%;
+    --il-nav--flyout--section--header-chevron--transform: var(--il-nav-section-chevron-right);
+    --il-nav--flyout--section--content--position: absolute;
+
+    --il-nav--bar--level-1--contents--left: 0;
+    --il-nav--bar--level-1--contents--top: 100%;
   }
-}
 
-il-nav.il-nav-bar {
-  @mixin il-nav--bar;
+  il-nav {
+    display: block;
+    container-type: inline-size;
+    box-sizing: border-box;
 
-  & > ul > li > il-nav-section {
-    @mixin il-nav--bar--dropdown;
-
-    &[data-il-nav-size="expanded"] {
-      @mixin il-nav--bar--dropdown--expanded;
+    il-nav-section > a {
+      white-space: var(--il-nav--item--header--white-space);
     }
   }
 
-  il-nav-section il-nav-section {
-    @mixin il-nav--bar--flyout;
+  il-nav.il-nav-bar {
+    @mixin il-nav--bar;
+
+    & > ul > li > il-nav-section {
+      @mixin il-nav--bar--dropdown;
+
+      &[data-il-nav-size="expanded"] {
+        @mixin il-nav--bar--dropdown--expanded;
+      }
+    }
+
+    il-nav-section il-nav-section {
+      @mixin il-nav--bar--flyout;
+    }
   }
-}
 
-il-nav.il-nav-column {
-  @mixin il-nav--column;
-}
+  il-header.il-nav-column {
+    @mixin il-nav--column;
+  }
 
-il-header il-nav[slot=links] {
-  @mixin il-nav--eyebrow;
-}
+  il-header il-nav[slot=links] {
+    @mixin il-nav--eyebrow;
+  }
 
-il-nav.il-pagination {
-  @mixin il-nav--pagination;
+  il-nav.il-nav-pagination {
+    @mixin il-nav--pagination;
+  }
 }
 
 @layer theme {
   :root {
-
-    /* Navigation levels */
-
     --il-nav--level-1--background-color: white;
     --il-nav--level-1--color: white;
     --il-nav--level-1--focus--background-color: white;
@@ -142,9 +139,5 @@ il-nav.il-pagination {
     --il-nav--level-6--color: white;
     --il-nav--level-6--focus--background-color: white;
     --il-nav--level-6--focus--color: white;
-
-    --il-nav--bar--level-1--contents--left: 0;
-    --il-nav--bar--level-1--contents--top: 100%;
-
   }
 }
