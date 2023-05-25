@@ -36,7 +36,7 @@ Tests for a component are located in the same subdirectory as the component sour
 
 The accordion component, for example, contains these files:
 
-* `src/components/accordion/accordion.component.js` (the source code for the component)
+* `src/components/accordion/il-accordion.component.js` (the source code for the component)
 * `src/component/accordion/accordion.html` (test page)
 * `src/component/accordion/accordion.spec.js` (tests)
 
@@ -48,7 +48,7 @@ The test page uses only the necessary elements to run the tests. A test page for
 
 ````html
 <!DOCTYPE html>
-<script src="./accordion.component.js" type="module"></script>
+<script src="./il-accordion.component.js" type="module"></script>
 
 <il-accordion></il-accordion>
 ````

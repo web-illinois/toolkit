@@ -1,5 +1,5 @@
 import {LitElement, html, css} from 'lit';
-import "./content.css";
+import "./il-content.css";
 
 class ContentComponent extends LitElement {
 

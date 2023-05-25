@@ -1,9 +1,11 @@
 import './css/base.css';
 
 // Core components
-import "./components/content/content.component";
+import "./components/il-content/il-content.component";
 import "./components/il-nav/il-nav.component";
 
+import "./components/il-accordion/il-accordion.component";
+import "./components/il-accordion-panel/il-accordion-panel.component";
 import "./components/il-contact/il-contact.component";
 import "./components/il-header/il-header.component";
 import "./components/il-image-feature/il-image-feature.component";
@@ -11,8 +13,6 @@ import "./components/il-nav-section/il-nav-section.component";
 import "./components/il-page/il-page.component";
 import "./components/il-search/il-search.component";
 
-import "./components/accordion/accordion.component";
-import "./components/accordion/panel.component";
 import "./components/back-to-top/back-to-top.component";
 import "./components/breadcrumbs/breadcrumbs.component";
 import "./components/breadcrumbs/page.component";

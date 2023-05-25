@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<script src="../il-accordion.component.js" type="module"></script>
+<script src="../../il-accordion-panel/il-accordion-panel.component.js" type="module"></script>
+<script src="../../il-content/il-content.component.js" type="module"></script>
+<link rel="stylesheet" href="../../../css/base.css">
+
+<il-accordion data-testid="component">
+    <il-accordion-panel>
+        <h3 slot="header">Test #1 information</h3>
+        <il-content>
+            <p>First paragraph</p>
+            <p>Second paragraph</p>
+        </il-content>
+    </il-accordion-panel>
+    <il-accordion-panel>
+        <h3 slot="header">Test #2 information</h3>
+        <il-content>
+            <p>First paragraph</p>
+            <p>Second paragraph</p>
+        </il-content>
+    </il-accordion-panel>
+    <il-accordion-panel>
+        <h3 slot="header">Test #3 information</h3>
+        <il-content>
+            <p>First paragraph</p>
+            <p>Second paragraph</p>
+        </il-content>
+    </il-accordion-panel>
+</il-accordion>

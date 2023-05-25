@@ -4,15 +4,44 @@ export default css`
   :host {
     display: block;
   }
-
-  .invisible { 
-    display: none; 
+  
+  #header {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    justify-content: flex-start;
+    align-items: center;
+    background-color: var(--il-gray-1);
+    color: var(--il-blue);
+    padding: 30px 0 30px 10px;
+    cursor: pointer;
   }
-
-  h2, h3, h4, h5, h6 {
-    margin: 0;
+  #header:focus, #header:hover {
+    background-color: var(--il-cloud-2);
   }
-
+  #header ::slotted(*) {
+    all: initial;
+    color: inherit;
+    font: 500 1.4rem/1em var(--il-source-sans);
+  }
+  #indicator {
+    display: block;
+    position: relative;
+    top: .15em;
+    font-size: 1.2em;
+  }
+  .expanded #indicator {
+    --il-nav-indicator--arrow--transform: var(--il-nav-indicator--down);
+  }
+  
+  #content {
+    display: none;
+  }
+  .expanded #content {
+    display: block;
+  }
+  
+  
   button {
     font-size: 1.4rem;
     font-weight: 500;
