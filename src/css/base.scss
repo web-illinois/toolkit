@@ -1,0 +1,26 @@
+
+@layer base, component, theme;
+
+@import "mixins";
+@import "colors";
+@import "fonts";
+@import "icons";
+
+@import "classes/il-icon/il-icon";
+@import "classes/il-invisible";
+
+@import "themes";
+
+@layer base {
+
+  html.il-toolkit {
+    --il-focus-outline: 3px dashed var(--il-focus-outline-color);
+    --il-dotted-focus-outline: 4px dotted var(--il-focus-outline-color);
+  }
+
+  html.il-toolkit body {
+    margin: 0;
+    padding: 0;
+  }
+}
+

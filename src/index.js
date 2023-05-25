@@ -1,8 +1,12 @@
-import './css/styles.scss';
+import './css/base.scss';
+
+// Core components
+import "./components/content/content.component";
+import "./components/il-nav/il-nav.component";
 
 import "./components/il-contact/il-contact.component";
 import "./components/il-header/il-header.component";
-import "./components/il-nav/il-nav.component";
+import "./components/il-image-feature/il-image-feature.component";
 import "./components/il-nav-section/il-nav-section.component";
 import "./components/il-page/il-page.component";
 import "./components/il-search/il-search.component";
@@ -14,12 +18,10 @@ import "./components/breadcrumbs/breadcrumbs.component";
 import "./components/breadcrumbs/page.component";
 import "./components/call-to-action/call-to-action.component";
 import "./components/card/card.component";
-import "./components/content/content.component";
 import "./components/directory/card.component";
 import "./components/directory/profile.component";
 import "./components/footer/footer.component";
 import "./components/hero/hero.component";
-import "./components/image-feature/image-feature.component";
 import "./components/introduction/introduction.component";
 import "./components/layout/section.component";
 import "./components/layout/section-with-sidebar.component";
