@@ -44,21 +44,27 @@ il-content {
     margin: 1.38em 2.66em 0;
     font: var(--il-content-base-font);
   }
+
   h1 + blockquote {
     margin-top: em(20px, 18px);
   }
+
   h2 + blockquote {
     margin-top: em(17px, 18px);
   }
+
   h3 + blockquote {
     margin-top: em(15px, 18px);
   }
+
   h4 + blockquote {
     margin-top: em(12px, 18px);
   }
+
   h5 + blockquote {
     margin-top: em(12px, 18px);
   }
+
   h6 + blockquote {
     margin-top: em(12px, 18px);
   }
@@ -93,7 +99,6 @@ il-content {
     margin: var(--il-heading-margin-top, 1.25em) 0 0;
     box-sizing: border-box;
     padding: 0;
-    font-size: em(40px);
     font-size: var(--il-content-h1-size);
     font-weight: 700;
     line-height: 1.15em;
@@ -115,7 +120,6 @@ il-content {
     box-sizing: border-box;
     font-weight: 600;
     padding: 0;
-    font-size: em(35px);
     font-size: var(--il-content-h2-size);
     line-height: 1.23em;
   }
@@ -136,7 +140,6 @@ il-content {
     box-sizing: border-box;
     font-weight: 600;
     padding: 0;
-    font-size: em(29px);
     font-size: var(--il-content-h3-size);
     line-height: 1.2em;
   }
@@ -157,10 +160,10 @@ il-content {
     box-sizing: border-box;
     font-weight: 600;
     padding: 0;
-    font-size: em(24px);
     font-size: var(--il-content-h4-size);
     line-height: 1.2em;
   }
+
   h4:first-child {
     margin-top: 0;
   }
@@ -175,9 +178,7 @@ il-content {
     margin: var(--il-heading-margin-top, 1.25em) 0 0;
 
     box-sizing: border-box;
-    font-weight: 600;
     padding: 0;
-    font-size: em(21px);
     font-size: var(--il-content-h5-size);
     font-weight: 700;
     line-height: 1.333em;
@@ -197,9 +198,7 @@ il-content {
     margin: var(--il-heading-margin-top, 1.25em) 0 0;
 
     box-sizing: border-box;
-    font-weight: 600;
     padding: 0;
-    font-size: em(18px);
     font-size: var(--il-content-h6-size);
     font-weight: 700;
     line-height: 1.222em;
@@ -267,21 +266,27 @@ il-content {
     margin-top: .88em;
     font: var(--il-content-base-font);
   }
+
   h1 + p {
     margin-top: 1.11em;
   }
+
   h2 + p {
     margin-top: .94em;
   }
+
   h3 + p {
     margin-top: .83em;
   }
+
   h4 + p {
     margin-top: .66em;
   }
+
   h5 + p {
     margin-top: .66em;
   }
+
   h6 + p {
     margin-top: .66em;
   }

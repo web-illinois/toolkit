@@ -7,21 +7,15 @@
 
 /*
 @import "classes/il-icon/il-icon";
-@import "classes/il-invisible";
 
 @import "themes";
 
-@layer base {
+*/
 
-  html.il-toolkit {
-    --il-focus-outline: 3px dashed var(--il-focus-outline-color);
-    --il-dotted-focus-outline: 4px dotted var(--il-focus-outline-color);
-  }
+@layer base {
 
   html.il-toolkit body {
     margin: 0;
     padding: 0;
   }
 }
-
-*/

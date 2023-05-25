@@ -1,0 +1,14 @@
+@define-mixin il-content--theme-orange {
+  --il-content--color: black;
+  --il-content--heading--color: white;
+  --il-content--link--color: black;
+  --il-content--link--focus--color: var(--il-blue);
+  --il-content--link--visited--color: black;
+
+  --il-content--button--background-color: var(--il-orange);
+  --il-content--button--color: white;
+  --il-content--button--border-color: white;
+  --il-content--button--focus--background-color: white;
+  --il-content--button--focus--color: var(--il-orange);
+  --il-content--button--focus--border-color: white;
+}

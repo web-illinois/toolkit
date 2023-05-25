@@ -1,13 +1,11 @@
 
-@import "../content/css/themes";
-
 :root {
   --il-image-feature--background: var(--il-blue);
   --il-image-feature--image--width: 50%;
 }
 
 il-image-feature {
-  @extend %il-content--theme--blue;
+  @mixin il-content--theme-blue;
   display: block;
   position: relative;
 

@@ -1,4 +1,4 @@
-.il-invisible {
+@define-mixin invisible {
   position: absolute !important;
   left: -9999px !important;
   top: auto !important;

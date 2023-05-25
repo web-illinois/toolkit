@@ -1,6 +1,6 @@
 import { LitElement, html } from 'lit';
-import styles from './il-image-feature.css';
-import "./il-image-feature.scss";
+import styles from './il-image-feature.css.js';
+import "./il-image-feature.css";
 
 class ImageFeatureComponent extends LitElement {
 

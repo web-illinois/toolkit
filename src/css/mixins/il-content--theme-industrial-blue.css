@@ -1,0 +1,14 @@
+@define-mixin il-content--theme-industrial-blue {
+  --il-content--color: white;
+  --il-content--heading--color: white;
+  --il-content--link--color: white;
+  --il-content--link--focus--color: var(--il-orange-lighter-4);
+  --il-content--link--visited--color: var(--il-arches-2);
+
+  --il-content--button--background-color: var(--il-industrial-blue);
+  --il-content--button--color: white;
+  --il-content--button--border-color: white;
+  --il-content--button--focus--background-color: white;
+  --il-content--button--focus--color: var(--il-industrial-blue);
+  --il-content--button--focus--border-color: white;
+}

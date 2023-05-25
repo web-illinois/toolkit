@@ -1,0 +1,89 @@
+@import "css/base.css" layer(component);
+@import "css/button-links.css" layer(component);
+
+@layer component {
+  
+  :root {
+    --il-content--color: var(--il-base-25);
+    --il-content--heading--color: var(--il-content--color);
+
+    --il-content--font-weight: 400;
+    --il-content--font-size: 1.125em;
+    --il-content--line-height: 1.66em;
+    --il-content--font-family: var(--il-font-sans);
+
+    --il-content-heading-base-size: 1.125em;
+    --il-content-heading-ratio: 1.2;
+    --il-content-h6-size: var(--il-content-heading-base-size);
+    --il-content-h5-size: calc(var(--il-content-h6-size) * var(--il-content-heading-ratio));
+    --il-content-h4-size: calc(var(--il-content-h5-size) * var(--il-content-heading-ratio));
+    --il-content-h3-size: calc(var(--il-content-h4-size) * var(--il-content-heading-ratio));
+    --il-content-h2-size: calc(var(--il-content-h3-size) * var(--il-content-heading-ratio));
+    --il-content-h1-size: calc(var(--il-content-h2-size) * var(--il-content-heading-ratio));
+  }
+
+  il-content {
+
+    box-sizing: border-box;
+    display: block;
+    font-weight: var(--il-content--font-weight);
+    font-size: var(--il-content--font-size);
+    line-height: var(--il-content--line-height);
+    font-family: var(--il-content--font-family);
+
+    color: var(--il-content--color);
+    container-type: inline-size;
+    position: relative;
+
+
+    /* TODO: WP BLOCK EDITOR COMPATIBILITY */
+
+    &.il-wp-block-editor-content {
+      h1, h2, h3, h4, h5, h6 {
+        &:first-child {
+          margin-top: var(--il-heading-margin-top);
+        }
+      }
+    }
+  }
+
+  il-page > il-content {
+    padding-top: 2em;
+    padding-bottom: 2em;
+    padding-left: var(--il-page--padding-left);
+    padding-right: var(--il-page--padding-right);
+  }
+
+  @container (max-width: 480px) {
+    il-content {
+    //--il-content-base-font: 400 1em/1.5em var(--il-font-sans); --il-content-heading-ratio: 1.125; --il-content--font-size: 1em;
+    }
+  }
+}
+
+@layer theme {
+
+  il-content.il-theme-blue, .il-theme-blue il-content, .il-theme-blue-gradient il-content {
+    @mixin il-content--theme-blue;
+  }
+
+  il-content.il-theme-white, .il-theme-white il-content {
+    @mixin il-content--theme-white;
+  }
+
+  il-content.il-theme-gray, .il-theme-gray il-content {
+    @mixin il-content--theme-gray;
+  }
+
+  il-content.il-theme-orange, .il-theme-orange il-content, .il-theme-orange-gradient il-content {
+    @mixin il-content--theme-orange;
+  }
+
+  il-content.il-theme-industrial-blue, .il-theme-industrial-blue il-content {
+    @mixin il-content--theme-industrial-blue;
+  }
+
+  il-content.il-theme-altgeld, .il-theme-altgeld il-content {
+    @mixin il-content--theme-altgeld;
+  }
+}
