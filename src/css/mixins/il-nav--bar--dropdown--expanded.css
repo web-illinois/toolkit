@@ -1,0 +1,15 @@
+@define-mixin il-nav--bar--dropdown--expanded {
+  --il-nav--link--background-color: var(--il-blue);
+  --il-nav--link--color: white;
+  --il-nav--link--focus--background-color: var(--il-orange);
+  --il-nav--link--focus--color: var(--il-blue);
+  --il-nav-section--header--link--background-color: var(--il-blue);
+  --il-nav-section--header--link--color: white;
+  --il-nav-section--header--link--focus--background-color: var(--il-orange);
+  --il-nav-section--header--link--focus--color: var(--il-blue);
+  --il-nav-section--header--button--background-color: var(--il-blue);
+  --il-nav-section--header--button--color: white;
+  --il-nav-section--header--button--focus--background-color: var(--il-orange);
+  --il-nav-section--header--button--focus--color: var(--il-blue);
+  --il-nav-indicator--arrow--transform: var(--il-nav-indicator--up);
+}

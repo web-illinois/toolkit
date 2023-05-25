@@ -1,0 +1,60 @@
+@define-mixin il-nav--eyebrow {
+  display: block;
+
+  ul {
+    all: initial;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    width: auto;
+  }
+
+  li {
+    all: initial;
+    display: block;
+    position: relative;
+    padding: 0 1em 0 0;
+
+    &:last-of-type {
+      padding-right: 0;
+    }
+
+    &::after {
+      position: absolute;
+      top: .5em;
+      right: 0;
+      content: "/";
+      width: 1.5em;
+      text-align: center;
+      color: var(--il-altgeld);
+      font: 600 .75em/1em var(--il-font-sans);
+    }
+
+    &:last-of-type::after {
+      content: "";
+      display: none;
+    }
+  }
+
+  a {
+    all: initial;
+    display: block;
+    font: 600 1em var(--il-font-sans);
+    color: var(--il-blue);
+    cursor: pointer;
+
+    &:focus, &:hover {
+      color: var(--il-altgeld);
+      text-decoration: underline;
+    }
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  il-nav-section {
+    display: none;
+  }
+}

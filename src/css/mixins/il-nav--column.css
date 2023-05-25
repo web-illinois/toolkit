@@ -1,0 +1,154 @@
+@define-mixin il-nav--column {
+
+  --il-nav--link--background-color: var(--il-cloud-1);
+  --il-nav--link--color: var(--il-blue);
+
+  --il-nav-section--header--link--background-color: var(--il-cloud-1);
+  --il-nav-section--header--link--color: var(--il-blue);
+
+  --il-nav-section--header--button--background-color: var(--il-cloud-1);
+  --il-nav-section--header--button--color: var(--il-blue);
+
+  --il-nav-section--content--position: relative;
+  --il-nav-section--content--left: 0;
+  --il-nav-section--content--top: 0;
+  --il-nav-section--content--background-color: white;
+  --il-nav-section--content--padding: 2px 0 0;
+  --il-nav-section--content--margin: 0;
+
+  --il-nav-indicator--arrow--transform: var(--il-nav-indicator--down);
+
+  --il-nav--item--padding-top: .75em;
+  --il-nav--item--padding-right: 1em;
+  --il-nav--item--padding-bottom: .75em;
+  --il-nav--item--padding-left: 1em;
+  --il-nav--item--label--padding-right: 1em;
+  --il-nav--item--indicator--padding-left: 1em;
+
+  --il-nav--link--focus--background-color: var(--il-orange);
+  --il-nav--link--focus--color: var(--il-blue);
+  --il-nav-section--header--link--focus--background-color: var(--il-orange);
+  --il-nav-section--header--link--focus--color: var(--il-blue);
+  --il-nav-section--header--button--focus--background-color: var(--il-orange);
+  --il-nav-section--header--button--focus--color: var(--il-blue);
+
+
+  a:not([slot=link]) {
+    all: initial;
+    display: block;
+
+    padding-top: var(--il-nav--item--padding-top);
+    padding-right: var(--il-nav--item--padding-right);
+    padding-bottom: var(--il-nav--item--padding-bottom);
+    padding-left: var(--il-nav--item--padding-left);
+
+    background-color: var(--il-nav--link--background-color);
+    color: var(--il-nav--link--color);
+    font: 600 1.1875em/1em var(--il-font-sans);
+    cursor: pointer;
+    position: relative;
+
+    &:hover, &:focus {
+      background-color: var(--il-nav--link--focus--background-color);
+      color: var(--il-nav--link--focus--color);
+    }
+  }
+
+  il-nav-section {
+    display: block;
+  }
+
+  ul {
+    all: initial;
+    display: block;
+  }
+
+  li {
+    all: initial;
+    display: block;
+    margin-top: 2px;
+
+    &:first-child {
+      margin-top: 0;
+    }
+  }
+
+  & > ul > li > a {
+    --il-nav--link--background-color: var(--il-cloud-1);
+    --il-nav--link--color: var(--il-blue);
+  }
+
+  il-nav-section[data-il-nav-size="expanded"] {
+    --il-nav-section--content--background-color: var(--il-cloud-1);
+    --il-nav-section--header--link--background-color: white;
+    --il-nav-section--header--link--color: var(--il-blue);
+    --il-nav-section--header--button--background-color: white;
+    --il-nav-section--header--button--color: var(--il-blue);
+    --il-nav--link--background-color: white;
+    --il-nav--link--color: var(--il-blue);
+  }
+
+  il-nav-section[data-il-nav-current="true"] {
+    --il-nav-section--content--background-color: var(--il-cloud-1);
+    --il-nav-section--header--link--background-color: var(--il-blue);
+    --il-nav-section--header--link--color: white;
+    --il-nav-section--header--button--background-color: var(--il-blue);
+    --il-nav-section--header--button--color: white;
+    --il-nav--link--background-color: var(--il-blue);
+    --il-nav--link--color: white;
+  }
+
+  il-nav-section[data-il-nav-level] {
+    display: none;
+  }
+
+  il-nav-section[data-il-nav-level="1"] {
+    display: block;
+    --il-nav--item--padding-left: var(--il-nav--level-1--indent);
+
+    & > ul > li > a {
+      --il-nav--item--padding-left: var(--il-nav--level-2--indent);
+    }
+  }
+
+  il-nav-section[data-il-nav-level="2"] {
+    display: block;
+    --il-nav--item--padding-left: var(--il-nav--level-2--indent);
+
+    & > ul > li > a {
+      --il-nav--item--padding-left: var(--il-nav--level-3--indent);
+    }
+  }
+
+  il-nav-section[data-il-nav-level="3"] {
+    display: block;
+    --il-nav--item--padding-left: var(--il-nav--level-3--indent);
+
+    & > ul > li > a {
+      --il-nav--item--padding-left: var(--il-nav--level-4--indent);
+    }
+  }
+
+  il-nav-section[data-il-nav-level="4"] {
+    display: block;
+    --il-nav--item--padding-left: var(--il-nav--level-4--indent);
+
+    & > ul > li > a {
+      --il-nav--item--padding-left: var(--il-nav--level-5--indent);
+    }
+  }
+
+  il-nav-section[data-il-nav-level="5"] {
+    display: block;
+    --il-nav--item--padding-left: var(--il-nav--level-5--indent);
+
+    & > ul > li > a {
+      --il-nav--item--padding-left: var(--il-nav--level-6--indent);
+    }
+  }
+
+  & > ul > li > il-nav-section {
+    --il-nav-section--header--link--background-color: var(--il-cloud-1);
+    --il-nav-section--header--link--color: var(--il-blue);
+  }
+}

@@ -1,0 +1,74 @@
+@define-mixin il-nav--bar {
+  a:not([slot=link]) {
+    all: initial;
+    display: block;
+
+    padding-top: var(--il-nav--item--padding-top);
+    padding-right: var(--il-nav--item--padding-right);
+    padding-bottom: var(--il-nav--item--padding-bottom);
+    padding-left: var(--il-nav--item--padding-left);
+
+    background-color: var(--il-nav--link--background-color);
+    color: var(--il-nav--link--color);
+    font: 600 1.1875em/1em var(--il-font-sans);
+    cursor: pointer;
+    position: relative;
+
+    &:hover, &:focus {
+      background-color: var(--il-nav--link--focus--background-color);
+      color: var(--il-nav--link--focus--color);
+    }
+  }
+
+  il-nav-section {
+    display: block;
+  }
+
+  background-color: var(--il-cloud-1);
+  --il-nav-section-content-display: none;
+  --il-nav-section--content--width: 20em;
+
+  ul {
+    all: initial;
+    display: block;
+  }
+
+  & > ul {
+    display: flex;
+    flex-direction: row;
+  }
+
+  li {
+    all: initial;
+    display: block;
+    margin-top: 1px;
+
+    &:first-child {
+      margin-top: 0;
+    }
+  }
+
+  /* Top-level link */
+  & > ul > li > a {
+    padding-top: var(--il-nav--item--padding-top);
+    padding-right: var(--il-nav--item--padding-top);
+    padding-bottom: var(--il-nav--item--padding-top);
+    padding-left: var(--il-nav--item--padding-top);
+    background-color: var(--il-cloud-1);
+    color: var(--il-blue);
+
+    &:focus, &:hover {
+      background-color: white;
+      color: var(--il-altgeld);
+    }
+  }
+
+  & > ul > li > il-nav-section {
+    @mixin il-nav--bar--dropdown;
+  }
+
+  il-nav-section il-nav-section {
+    @mixin il-nav--bar--flyout;
+  }
+
+}
