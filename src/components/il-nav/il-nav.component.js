@@ -1,5 +1,6 @@
 import { LitElement, html } from 'lit';
 import styles from './il-nav.styles';
+import Cursor from './cursor';
 import "./il-nav.css";
 
 class Navigation extends LitElement {
@@ -23,6 +24,11 @@ class Navigation extends LitElement {
 
   handleContentLoaded(evt) {
     this.initializeContents();
+  }
+
+  handleLinkKeypress(evt) {
+    const cursor = new Cursor(this);
+    cursor.handleKeydown(evt);
   }
 
   handleSectionToggle(evt) {
@@ -64,6 +70,9 @@ class Navigation extends LitElement {
 
   initializeContents() {
     this.getSections().forEach(section => this.initializeSection(section));
+    this.querySelectorAll('a').forEach(link => {
+      link.addEventListener('keydown', this.handleLinkKeypress.bind(this));
+    })
   }
 
   initializeSection(section) {
