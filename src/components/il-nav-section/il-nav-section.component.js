@@ -8,6 +8,7 @@ class NavigationSection extends LitElement {
   static get properties() {
     return {
       label: { type: String },
+      _enabled: { state: true, type: Boolean, default: false },
       _expanded: { state: true, type: Boolean, default: false }
     }
   }
@@ -18,17 +19,22 @@ class NavigationSection extends LitElement {
 
   constructor() {
     super();
-    this.label = 'Toggle this section';
+    this.label = 'Expand';
+    this._enabled = false;
     this._expanded = false;
-    this.handleButtonClick = this.handleButtonClick.bind(this);
+    this.handleToggleClick = this.handleToggleClick.bind(this);
   }
 
-  handleButtonClick(evt) {
+  handleToggleClick(evt) {
     this.dispatchEvent(new CustomEvent('toggle'));
   }
 
   get collapsed() {
     return !this.expanded;
+  }
+
+  get enabled() {
+    return this._enabled;
   }
 
   get expanded() {
@@ -39,25 +45,45 @@ class NavigationSection extends LitElement {
     this._expanded = false;
   }
 
+  disable() {
+    this._enabled = false;
+  }
+
+  enable() {
+    this._enabled = true;
+  }
+
   expand() {
     this._expanded = true;
   }
 
   render() {
     const size = this.expanded ? 'expanded' : 'collapsed';
+    const enabled = this.enabled ? 'enabled' : 'disabled';
     const ariaExpanded = this.expanded ? 'true' : 'false';
+    const ariaPressed = this.expanded ? 'true' : 'false';
+    let toggle = html`
+      <div id="toggle">
+          <slot name="label"></slot>
+      </div>
+    `;
+    if (this.enabled) {
+      toggle = html`
+        <div id="toggle" role="button" aria-pressed=${ariaPressed} aria-controls="content" aria-expanded=${ariaExpanded} @click=${this.handleToggleClick}>
+          <slot name="label">
+            <span class="placeholder">${this.label}</span>
+          </slot>
+          <span id="indicator">
+            <il-nav-indicator></il-nav-indicator>
+          </span>
+        </div>
+      `;
+    }
     return html`
-      <div id="container" class=${size}>
+      <div id="container" class=${[size, enabled].join(' ')}>
         <div id="header">
           <slot name="link"></slot>
-          <button aria-controls="content" aria-expanded=${ariaExpanded} @click=${this.handleButtonClick}>
-            <slot name="label">
-              <span class="placeholder">${this.label}</span>
-            </slot>
-            <span id="indicator">
-              <il-nav-indicator></il-nav-indicator>
-            </span>
-          </button>
+          ${toggle}
         </div>
         <div id="content">
           <slot></slot>

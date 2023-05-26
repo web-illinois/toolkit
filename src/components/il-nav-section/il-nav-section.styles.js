@@ -42,7 +42,7 @@ export default css`
     color: var(--il-nav-section--header--link--focus--color);
   }
 
-  button {
+  #toggle {
     all: initial;
     display: flex;
     flex: 1 1 0;
@@ -54,11 +54,11 @@ export default css`
     cursor: pointer;
     pointer-events: var(--il-nav-section--header--button--pointer-events, all);
   }
-  button:hover, button:focus {
+  #toggle:hover, #toggle:focus {
     background-color: var(--il-nav-section--header--button--focus--background-color);
     color: var(--il-nav-section--header--button--focus--color);
   }
-  button ::slotted(*) {
+  #toggle ::slotted(*) {
     all: initial;
     position: relative;
     display: block;
@@ -74,7 +74,7 @@ export default css`
     flex: 1 1 100%;
     align-self: flex-start;
   }
-  button .placeholder {
+  #toggle .placeholder {
     position: absolute;
     left: -99vw;
     top: 0;
