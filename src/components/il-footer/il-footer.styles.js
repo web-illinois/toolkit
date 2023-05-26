@@ -1,10 +1,67 @@
 import {css} from 'lit';
 
 export default css`
+  :host {
+    font: 400 normal 1em/1em var(--il-font-sans);
+  }
+  .container {
+    box-sizing: border-box;
+    max-width: 1200px;
+    padding: 30px;
+    margin: 0 auto;
+  }
+  #site {
+    border-top: 6px solid var(--il-blue);
+    background: white;
+    color: var(--il-blue)
+  }
+  #site .container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 30px;
+  }
+  .info {
+    grid-column: 1;
+  }
+  .content {
+    grid-column: 2 / span 2;
+  }
+  
+  #campus {
+    border-top: 6px solid var(--il-orange);
+    padding: 1em;
+    background-color: var(--il-blue);
+    color: white;
+  }
+  #campus .links ul {
+    all: initial;
+    display: block;
+    margin: 2em 0 0;
+    padding: 0;
+    list-style: none;
+    column-count: 3;
+    column-gap: 30px;
+  }
+  #campus .links li {
+    display: block;
+    list-style: none;
+    margin: 0;
+    padding: .5em 0;
+  }
+  #campus .links a {
+    display: inline-block;
+    color: white;
+    font: 400 normal 1em/1em var(--il-font-sans);
+    cursor: pointer;
+    text-decoration: none;
+  }
+  #campus .links a:focus, #campus .links a:hover {
+    text-decoration: underline;
+  }
+  
   #required {
     border-top: 5px solid var(--il-alma-mater);
     background-color: var(--il-blue);
-    padding: 1em;
   }
   #required .container {
     display: flex;

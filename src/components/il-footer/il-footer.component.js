@@ -40,23 +40,50 @@ class Footer extends LitElement {
     return html`
       <div id="footer">
         <section id="site">
-          <div class="info">
-            <div class="site">
-              <slot name="contact"></slot>
+          <div class="container">
+            <div class="info">
+              <div class="identity">
+                <slot name="identity"></slot>
+              </div>
+              <div class="contact">
+                <slot name="contact"></slot>
+              </div>
+              <div class="social">
+                <slot name="social"></slot>
+              </div>
             </div>
-            <div class="social">
-              <slot name="social"></slot>
+            <div class="content">
+              <slot></slot>
             </div>
-            <div class="parent">
-              <slot name="parent"></slot>
-            </div>
-          </div>
-          <div class="content">
-            <slot></slot>
           </div>
         </section>
         <section id="campus">
-          <il-wordmark></il-wordmark>
+          <div class="container">
+            <il-wordmark></il-wordmark>
+            <div class="links">
+              <ul>
+                <li><a href="https://illinois.edu/resources/website/accessibility.html">Accessibility at Illinois</a></li>
+                <li><a href="https://illinois.edu/admissions/index.html">Admissions</a></li>
+                <li><a href="https://illinois.edu/alumni/index.html">Alumni</a></li>
+                <li><a href="https://illinois.edu/athletics/index.html">Athletics</a></li>
+                <li><a href="https://bookstore.illinois.edu/">Bookstore</a></li>
+                <li><a href="https://illinois.edu/resources/calendars.html">Calendars</a></li>
+                <li><a href="https://directory.illinois.edu/search">Campus Directory</a></li>
+                <li><a href="https://illinois.edu/map/view">Campus Map</a></li>
+                <li><a href="https://diversity.illinois.edu/">Diversity, Equity &amp; Inclusion</a></li>
+                <li><a href="https://illinois.edu/resources/emergency.html">Emergency</a></li>
+                <li><a href="https://jobs.illinois.edu/">Employment</a></li>
+                <li><a href="https://giving.illinois.edu/">Giving</a></li>
+                <li><a href="http://wellness.illinois.edu/">Mental Health</a></li>
+                <li><a href="https://news.illinois.edu/">News</a></li>
+                <li><a href="https://chancellor.illinois.edu/">Office of the Chancellor</a></li>
+                <li><a href="https://provost.illinois.edu/">Office of the Provost</a></li>
+                <li><a href="https://illinois.edu/research/index.html">Research</a></li>
+                <li><a href="https://odos.illinois.edu/community-of-care/student-assistance-center/">Student Assistance Center</a></li>
+                <li><a href="https://www.uillinois.edu/">University of Illinois System</a></li>
+              </ul>
+            </div>
+          </div>
         </section>
         <section id="required">
           <div class="container">
