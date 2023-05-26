@@ -1,4 +1,5 @@
 import {LitElement, html, css} from 'lit';
+import '../il-block-i/il-block-il.component';
 import './il-identity.css';
 
 class IdentityComponent extends LitElement {
