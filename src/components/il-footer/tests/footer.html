@@ -1,5 +1,7 @@
 <!DOCTYPE html>
 <script src="../il-footer.component.js" type="module"></script>
+<script src="../../il-identity/il-identity.component.js" type="module"></script>
+<script src="../../il-contact/il-contact.component.js" type="module"></script>
 <link rel="stylesheet" href="../../../css/base.css">
 
 <style>
@@ -11,14 +13,18 @@
 
 <il-footer>
 
-  <div slot="contact" class="il-footer-contact uofi_address">
-    <p><a href="/" id="link-1">Animal Science</a></p>
-    <p>174 Bevier Hall, MC-000</p>
-    <p>905 S. Goodwin Ave</p>
-    <p>Urbana, IL 61801</p>
-    <p>217-333-3165</p>
-    <p>Email: <a href="mailto:ACES-ALEC@illinois.edu">ACES-ALEC@illinois.edu</a></p>
-  </div>
+  <il-identity slot="identity">
+    <p slot="secondary"><a href="#">College of Malkovich Malkovich</a></p>
+    <h1><a href="#">Department of Malkovich Malkovich</a></h1>
+  </il-identity>
+
+  <il-contact slot="contact">
+    <p slot="address">174 Bevier Hall, MC-000<br>
+    905 S. Goodwin Ave<br>
+    Urbana, IL 61801</p>
+    <p slot="voice"><a>217-333-3165</a></p>
+    <p slot="email">Email: <a>ACES-ALEC@illinois.edu</a></p>
+  </il-contact>
 
   <div slot="social" class="il-footer-social">
     <ul>
@@ -29,12 +35,6 @@
       <li><a href="https://www.linkedin.com/in/educationatillinois">LinkedIn</a></li>
       <li><a href="https://www.tiktok.com/@uofillinois">TikTok</a></li>
     </ul>
-  </div>
-
-  <div slot="parent" class="il-footer-parent">
-    <p><a href="#">College of Agricultural, Consumer and Environmental Sciences</a></p>
-    <p><a href="#">Grainger College of Engineering</a></p>
-    <p><a href="#">College of Education</a></p>
   </div>
 
   <div class="il-footer-navigation">

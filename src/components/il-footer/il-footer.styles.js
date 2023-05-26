@@ -12,19 +12,24 @@ export default css`
   }
   #site {
     border-top: 6px solid var(--il-blue);
-    background: white;
+    background: var(--il-cloud-1);
     color: var(--il-blue)
   }
   #site .container {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto auto;
     grid-gap: 30px;
+    grid-template-areas: "identity identity identity" "info content content";
   }
-  .info {
-    grid-column: 1;
+  #site .identity {
+    grid-area: identity;
   }
-  .content {
-    grid-column: 2 / span 2;
+  #site .info {
+    grid-area: info;
+  }
+  #site .content {
+    grid-area: content;
   }
   
   #campus {

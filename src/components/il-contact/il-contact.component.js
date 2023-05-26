@@ -59,9 +59,6 @@ class Contact extends LitElement {
     return html`
       <div id="contact">
           <div id="structured">
-              <div id="name">
-                  <slot name="name"></slot>
-              </div>
               <div id="location">
                   <slot name="address"></slot>
               </div>

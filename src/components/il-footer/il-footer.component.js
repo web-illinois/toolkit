@@ -41,10 +41,10 @@ class Footer extends LitElement {
       <div id="footer">
         <section id="site">
           <div class="container">
+            <div class="identity">
+              <slot name="identity"></slot>
+            </div>
             <div class="info">
-              <div class="identity">
-                <slot name="identity"></slot>
-              </div>
               <div class="contact">
                 <slot name="contact"></slot>
               </div>
