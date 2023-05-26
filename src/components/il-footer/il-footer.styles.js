@@ -1,7 +1,47 @@
 import {css} from 'lit';
 
 export default css`
+  #required {
+    border-top: 5px solid var(--il-alma-mater);
+    background-color: var(--il-blue);
+    padding: 1em;
+  }
+  #required .container {
+    display: flex;
+    flex-direction: row;
+    gap: 2em;
+    justify-content: center;
+    align-items: center;
+  }
+  #required ::slotted(button#ot-sdk-btn) {
+    all: initial;
+    color: rgba(255, 255, 255, .25);
+    font-family: var(--il-font-sans);
+    cursor: not-allowed;
+  }
+  
+  #required .links ul {
+    all: initial;
+    display: flex;
+    flex-direction: row;
+    gap: 2em;
+  }
+  #required .links li {
+    all: initial;
+    display: block;
+  }
+  #required .links a {
+    display: block;
+    color: white;
+    text-decoration: none;
+    font: 400 1em/1em var(--il-font-sans);
+  }
+  #required .links a:focus, #required .links a:hover {
+    text-decoration: underline;
+  }
+`;
 
+const old = css`
 .footer {
   border-top: 1px solid white;
   font-family: var(--il-font-sans);
@@ -54,33 +94,11 @@ export default css`
 .content {
   grid-area: content;
 }
-.campus-wordmark {
-  width: 100%;
-  max-width: 235px;
-  height: 61px;
+il-wordmark {
   margin-bottom: 60px;
 }
-.campus-wordmark a {
-  display: block;
-  text-decoration: none;
-  padding: 5px;
-}
-.campus-wordmark a:focus, .campus-wordmark a:hover {
-  outline: rgb(255, 255, 255) dotted 2px;
-}
-.campus-wordmark svg {
-  display: block;
-}  
-.block-i__outline {
-  fill: white;
-}
-.block-i__fill {
-  fill: var(--il-orange);
-}
-.wordmark__text {
-  fill: white;
-}
-.social {
+
+  .social {
   clear: left;
   margin-top: 25px;
 }
