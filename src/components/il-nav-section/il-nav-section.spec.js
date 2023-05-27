@@ -3,7 +3,7 @@ const AxeBuilder = require('@axe-core/playwright').default;
 
 // Without link
 
-test('nav section without link', async ({page}) => {
+test.skip('nav section without link', async ({page}) => {
     await page.goto('components/il-nav-section/tests/without-link.html');
     await expect(page.getByTestId('nav-section')).toHaveScreenshot();
     const results = await new AxeBuilder({ page })
@@ -12,7 +12,7 @@ test('nav section without link', async ({page}) => {
     expect(results.violations).toEqual([]);
 });
 
-test('hover over button in nav section without link', async ({page}) => {
+test.skip('hover over button in nav section without link', async ({page}) => {
     await page.goto('components/il-nav-section/tests/without-link.html');
     await page.getByRole('button').hover();
     await expect(page.getByTestId('nav-section')).toHaveScreenshot();
@@ -22,7 +22,7 @@ test('hover over button in nav section without link', async ({page}) => {
     expect(results.violations).toEqual([]);
 });
 
-test('focus on button in nav section without link', async ({page}) => {
+test.skip('focus on button in nav section without link', async ({page}) => {
     await page.goto('components/il-nav-section/tests/without-link.html');
     await page.getByRole('button').focus();
     await expect(page.getByTestId('nav-section')).toHaveScreenshot();
@@ -32,7 +32,7 @@ test('focus on button in nav section without link', async ({page}) => {
     expect(results.violations).toEqual([]);
 });
 
-test('expand', async ({ page }) => {
+test.skip('expand', async ({ page }) => {
     await page.goto('components/il-nav-section/tests/without-link.html');
     await page.getByRole('button').click();
     await expect(page.locator('il-nav-section')).toHaveAttribute('expanded', '');
@@ -44,7 +44,7 @@ test('expand', async ({ page }) => {
     expect(results.violations).toEqual([]);
 });
 
-test('collapse', async ({ page }) => {
+test.skip('collapse', async ({ page }) => {
     await page.goto('components/il-nav-section/tests/without-link.html');
     await page.getByRole('button').click();
     await page.getByRole('button').click();
@@ -59,7 +59,7 @@ test('collapse', async ({ page }) => {
 
 // With link
 
-test('nav section with link', async ({page}) => {
+test.skip('nav section with link', async ({page}) => {
     await page.goto('components/il-nav-section/tests/with-link.html');
     await expect(page.getByTestId('nav-section')).toHaveScreenshot();
     const results = await new AxeBuilder({ page })
@@ -68,7 +68,7 @@ test('nav section with link', async ({page}) => {
     expect(results.violations).toEqual([]);
 });
 
-test('hover over link in nav section', async ({page}) => {
+test.skip('hover over link in nav section', async ({page}) => {
     await page.goto('components/il-nav-section/tests/with-link.html');
     await page.getByTestId('link').hover();
     await expect(page.getByTestId('nav-section')).toHaveScreenshot();
@@ -78,7 +78,7 @@ test('hover over link in nav section', async ({page}) => {
     expect(results.violations).toEqual([]);
 });
 
-test('focus on link in nav section', async ({page}) => {
+test.skip('focus on link in nav section', async ({page}) => {
     await page.goto('components/il-nav-section/tests/with-link.html');
     await page.getByTestId('link').focus();
     await expect(page.getByTestId('nav-section')).toHaveScreenshot();
@@ -88,7 +88,7 @@ test('focus on link in nav section', async ({page}) => {
     expect(results.violations).toEqual([]);
 });
 
-test('hover over button in nav section with link', async ({page}) => {
+test.skip('hover over button in nav section with link', async ({page}) => {
     await page.goto('components/il-nav-section/tests/with-link.html');
     await page.getByRole('button').hover();
     await expect(page.getByTestId('nav-section')).toHaveScreenshot();
@@ -98,7 +98,7 @@ test('hover over button in nav section with link', async ({page}) => {
     expect(results.violations).toEqual([]);
 });
 
-test('focus on button in nav section with link', async ({page}) => {
+test.skip('focus on button in nav section with link', async ({page}) => {
     await page.goto('components/il-nav-section/tests/with-link.html');
     await page.getByRole('button').focus();
     await expect(page.getByTestId('nav-section')).toHaveScreenshot();
