@@ -1,0 +1,11 @@
+
+il-footer {
+  background-color: var(--il-blue);
+  color: white;
+
+  button#ot-sdk-btn {
+    border: 1px solid;
+    padding: .5em 1.5em !important;
+    font-size: 1em !important;
+  }
+}

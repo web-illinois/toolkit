@@ -1,18 +1,31 @@
 <!DOCTYPE html>
-<script src="./footer.component.js" type="module"></script>
+<script src="../il-footer.component.js" type="module"></script>
+<script src="../../il-identity/il-identity.component.js" type="module"></script>
+<script src="../../il-contact/il-contact.component.js" type="module"></script>
+<link rel="stylesheet" href="../../../css/base.css">
+
+<style>
+  body {
+    margin: 0;
+    padding: 0;
+  }
+</style>
 
 <il-footer>
 
-  <div slot="contact" class="il-footer-contact uofi_address">
-    <p><a href="/" id="link-1">Animal Science</a></p>
-    <p>174 Bevier Hall, MC-000</p>
-    <p>905 S. Goodwin Ave</p>
-    <p>Urbana, IL 61801</p>
-    <p>217-333-3165</p>
-    <p>Email: <a href="mailto:ACES-ALEC@illinois.edu">ACES-ALEC@illinois.edu</a></p>
-  </div>
+  <il-identity slot="identity">
+    <p slot="secondary"><a href="#">College of Malkovich Malkovich</a></p>
+    <h1><a href="#">Department of Malkovich Malkovich</a></h1>
+  </il-identity>
 
-  <div slot="social" class="il-footer-social">
+  <il-contact slot="contact">
+    <p slot="address">123 Malkovich Malkovich<br>Urbana, IL 61801</p>
+    <p slot="voice">Voice: <a>(217) 555-5555</a></p>
+    <p slot="fax">Fax: <a slot="fax">(217) 555-5555</a></p>
+    <p slot="email"><a>malkovich@illinois.edu</a></p>
+  </il-contact>
+
+  <il-nav slot="social" class="il-nav-social">
     <ul>
       <li><a href="https://www.instagram.com/educationillinois/">Instagram</a></li>
       <li><a href="https://www.facebook.com/educationatillinois?ref=ts">Facebook</a></li>
@@ -21,13 +34,7 @@
       <li><a href="https://www.linkedin.com/in/educationatillinois">LinkedIn</a></li>
       <li><a href="https://www.tiktok.com/@uofillinois">TikTok</a></li>
     </ul>
-  </div>
-
-  <div slot="parent" class="il-footer-parent">
-    <p><a href="#">College of Agricultural, Consumer and Environmental Sciences</a></p>
-    <p><a href="#">Grainger College of Engineering</a></p>
-    <p><a href="#">College of Education</a></p>
-  </div>
+  </il-nav>
 
   <div class="il-footer-navigation">
     <div class="il-footer-navigation-column">
@@ -75,8 +82,6 @@
       <li><a data-il="privacy"></a></li>
       <li><a data-il="copyright"></a></li>
       <li><a data-il="accessibility"></a></li>
-      <li><a href="#">College Bylaws</a></li>
-      <li><a href="#">Login</a></li>
     </ul>
   </nav>
 
