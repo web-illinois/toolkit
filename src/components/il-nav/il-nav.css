@@ -66,6 +66,10 @@
     --il-nav-section--content--display: block;
     --il-nav-section--content--pointer-events: all;
     --il-nav-section--header--button--pointer-events: none;
+    --il-nav--item--padding-left: 0;
+    --il-nav--item--padding-right: 0;
+    --il-nav--item--padding-top: .35em;
+    --il-nav--item--padding-bottom: .35em;
 
     ul {
       all: initial;
@@ -102,10 +106,6 @@
 
     & > ul > li > il-nav-section {
       margin-top: 1em;
-      --il-nav--item--padding-left: 0;
-      --il-nav--item--padding-right: 0;
-      --il-nav--item--padding-top: .35em;
-      --il-nav--item--padding-bottom: .35em;
     }
 
     il-nav-section {
@@ -137,18 +137,6 @@
 
   il-nav.il-nav-bar {
     @mixin il-nav--bar;
-
-    & > ul > li > il-nav-section {
-      @mixin il-nav--bar--dropdown;
-
-      &[data-il-nav-size="expanded"] {
-        @mixin il-nav--bar--dropdown--expanded;
-      }
-    }
-
-    il-nav-section il-nav-section {
-      @mixin il-nav--bar--flyout;
-    }
   }
 
   il-header.il-nav-column {

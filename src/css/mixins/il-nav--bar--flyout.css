@@ -1,8 +1,0 @@
-@define-mixin il-nav--bar--flyout {
-  --il-nav-section--content--left: 100%;
-  --il-nav-section--content--top: 0;
-  --il-nav-section--content--padding: 1px;
-  --il-nav-section--content--margin: -1px -1px 0;
-  --il-nav-section--content--background-color: var(--il-cloud-1);
-  --il-nav-indicator--arrow--transform: var(--il-nav-indicator--right);
-}

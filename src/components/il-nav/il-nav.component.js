@@ -77,8 +77,20 @@ class Navigation extends LitElement {
 
   initializeSection(section) {
     section.setAttribute('data-il-nav-level', this.getSectionLevel(section));
-    if (this.sectionIsExpanded(section)) section.expand();
-    section.addEventListener('toggle', this.handleSectionToggle.bind(this));
+    if (this.sectionCanExpand(section)) {
+      section.enable();
+      section.setAttribute('data-il-nav-enabled', 'true');
+      if (this.sectionIsExpanded(section)) section.expand();
+      section.addEventListener('toggle', this.handleSectionToggle.bind(this));
+    }
+  }
+
+  isBarMode() {
+    return this.classList.contains('il-nav-bar');
+  }
+
+  sectionCanExpand(section) {
+    return this.isBarMode();
   }
 
   sectionIsExpanded(section) {

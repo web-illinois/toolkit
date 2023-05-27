@@ -3,13 +3,7 @@
 <script src="../../il-nav-section/il-nav-section.component.js" type="module"></script>
 <link rel="stylesheet" href="../../../css/base.css">
 
-<style>
-    il-nav.il-nav-column {
-        max-width: 30em;
-    }
-</style>
-
-<il-nav>
+<il-nav class="il-nav-bar">
     <ul>
         <li><a href="/home">Home</a></li>
         <li>
@@ -126,11 +120,3 @@
         </li>
     </ul>
 </il-nav>
-
-<script>
-    const component = document.querySelector("il-nav");
-    const params = new URLSearchParams(window.location.search);
-    if (params.has('view')) {
-        component.classList.add(`il-nav-${params.get('view')}`);
-    }
-</script>

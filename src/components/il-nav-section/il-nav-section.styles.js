@@ -18,7 +18,6 @@ export default css`
     align-items: stretch;
   }
   #header ::slotted(a) {
-    all: initial;
     display: block;
     
     padding-top: var(--il-nav--item--padding-top, .75em);
@@ -33,8 +32,6 @@ export default css`
     font-size: var(--il-nav-section--header--link--font-size, 1.1875em);
     font-weight: var(--il-nav-section--header--link--font-weight, 600);
     cursor: pointer;
-    position: relative;
-    flex: 1 1 100%;
   }
   #header ::slotted(a:focus),
   #header ::slotted(a:hover) {
