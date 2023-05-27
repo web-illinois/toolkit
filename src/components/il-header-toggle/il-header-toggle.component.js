@@ -1,6 +1,6 @@
 import {LitElement, html, css} from 'lit';
 
-class Button extends LitElement {
+class Toggle extends LitElement {
 
     handleButtonClick(evt) {
     }
@@ -16,4 +16,4 @@ class Button extends LitElement {
     }
 }
 
-customElements.define('il-header-menu-button', Button);
+customElements.define('il-header-toggle', Toggle);
