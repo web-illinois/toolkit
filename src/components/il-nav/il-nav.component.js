@@ -85,12 +85,16 @@ class Navigation extends LitElement {
     }
   }
 
+  isAccordionMode() {
+    return this.classList.contains('il-nav-accordion');
+  }
+
   isBarMode() {
     return this.classList.contains('il-nav-bar');
   }
 
   sectionCanExpand(section) {
-    return this.isBarMode();
+    return this.isAccordionMode() || this.isBarMode();
   }
 
   sectionIsExpanded(section) {
@@ -116,9 +120,9 @@ class Navigation extends LitElement {
 
   render() {
     return html`
-        <nav aria-label=${this.label}>
-          <slot></slot>
-        </nav>`
+      <nav aria-label=${this.label}>
+        <slot></slot>
+      </nav>`
   }
 }
 

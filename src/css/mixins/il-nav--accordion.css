@@ -1,4 +1,4 @@
-@define-mixin il-nav--column {
+@define-mixin il-nav--accordion {
 
   --il-nav--link--background-color: var(--il-cloud-1);
   --il-nav--link--color: var(--il-blue);
@@ -8,6 +8,7 @@
 
   --il-nav-section--header--button--background-color: var(--il-cloud-1);
   --il-nav-section--header--button--color: var(--il-blue);
+  --il-nav-section--header--button--pointer-events: all;
 
   --il-nav-section--content--position: relative;
   --il-nav-section--content--left: 0;
@@ -15,6 +16,8 @@
   --il-nav-section--content--background-color: white;
   --il-nav-section--content--padding: 2px 0 0;
   --il-nav-section--content--margin: 0;
+  --il-nav-section--content--display: none;
+  --il-nav-section--content--pointer-events: all;
 
   --il-nav-indicator--arrow--transform: var(--il-nav-indicator--down);
 
@@ -32,30 +35,41 @@
   --il-nav-section--header--button--focus--background-color: var(--il-orange);
   --il-nav-section--header--button--focus--color: var(--il-blue);
 
-
-  a:not([slot=link]) {
-    all: initial;
-    display: block;
-
-    padding-top: var(--il-nav--item--padding-top);
-    padding-right: var(--il-nav--item--padding-right);
-    padding-bottom: var(--il-nav--item--padding-bottom);
-    padding-left: var(--il-nav--item--padding-left);
+  li > a {
+    padding: .75em 1em;
 
     background-color: var(--il-nav--link--background-color);
     color: var(--il-nav--link--color);
     font: 600 1.1875em/1em var(--il-font-sans);
-    cursor: pointer;
-    position: relative;
 
     &:hover, &:focus {
-      background-color: var(--il-nav--link--focus--background-color);
-      color: var(--il-nav--link--focus--color);
+      background-color: var(--il-orange);
+      color: var(--il-blue);
+      text-decoration: none;
     }
   }
 
   il-nav-section {
     display: block;
+
+    & > a, & > span {
+      box-sizing: border-box;
+      padding: .75em 1em;
+      width: calc(100% - 3em);
+      flex: 1 1 100%;
+      font: 600 1.1875em/1em var(--il-font-sans);
+    }
+
+    & > a {
+      background-color: var(--il-nav--link--background-color);
+      color: var(--il-nav--link--color);
+
+      &:focus, &:hover {
+        background-color: var(--il-orange);
+        color: var(--il-blue);
+        text-decoration: none;
+      }
+    }
   }
 
   ul {
@@ -86,6 +100,12 @@
     --il-nav-section--header--button--color: var(--il-blue);
     --il-nav--link--background-color: white;
     --il-nav--link--color: var(--il-blue);
+
+    --il-nav-section--content--display: block;
+  }
+
+  il-nav-section[data-il-nav-size="collapsed"] {
+    --il-nav-section--content--display: none;
   }
 
   il-nav-section[data-il-nav-current="true"] {
@@ -148,6 +168,7 @@
   }
 
   & > ul > li > il-nav-section {
+    margin-top: 2px;
     --il-nav-section--header--link--background-color: var(--il-cloud-1);
     --il-nav-section--header--link--color: var(--il-blue);
   }

@@ -95,8 +95,10 @@
       all: initial;
       display: block;
       padding: .35em 0;
+      background-color: inherit;
       color: inherit;
       font: 400 1em/1em var(--il-font-sans);
+      cursor: pointer;
     }
 
     & > ul > li > a {
@@ -139,8 +141,8 @@
     @mixin il-nav--bar;
   }
 
-  il-header.il-nav-column {
-    @mixin il-nav--column;
+  il-nav.il-nav-accordion {
+    @mixin il-nav--accordion;
   }
 
   il-header il-nav[slot=links] {
