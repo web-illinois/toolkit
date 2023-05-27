@@ -145,6 +145,7 @@
     @mixin il-nav--accordion;
   }
 
+  il-nav.il-nav-eyebrow,
   il-header il-nav[slot=links] {
     @mixin il-nav--eyebrow;
   }

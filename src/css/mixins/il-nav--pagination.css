@@ -22,6 +22,7 @@
     padding: .5rem .75rem;
     border-width: 1px;
     border-style: solid;
+    font: 1em/1em var(--il-font-sans);
   }
   li.il-current {
     background-color: var(--il-blue);
@@ -34,6 +35,7 @@
   }
   li.il-ellipsis-after:after,
   li.il-ellipsis-before:before {
+    box-sizing: border-box;
     content: '\2026';
     display: inline-block;
     margin-right: -1px;
@@ -42,6 +44,7 @@
     border-style: solid;
     color: var(--il-cloud-3);
     border-color: transparent;
+    font: 1em/1em var(--il-font-sans);
   }
   a {
     font-weight: 500;

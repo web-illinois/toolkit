@@ -22,3 +22,13 @@ test('accordion', async ({ page }) => {
     await page.goto('components/il-nav/tests/accordion.html');
     await expect(page.getByTestId('nav')).toHaveScreenshot();
 })
+
+test('eyebrow', async ({ page }) => {
+    await page.goto('components/il-nav/tests/eyebrow.html');
+    await expect(page.getByTestId('nav')).toHaveScreenshot();
+})
+
+test('pagination', async ({ page }) => {
+    await page.goto('components/il-nav/tests/pagination.html');
+    await expect(page.getByTestId('nav')).toHaveScreenshot();
+})
