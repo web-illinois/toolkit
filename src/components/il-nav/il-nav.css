@@ -63,9 +63,75 @@
     display: block;
     container-type: inline-size;
     box-sizing: border-box;
+    --il-nav-section--content--display: block;
+    --il-nav-section--content--pointer-events: all;
+    --il-nav-section--header--button--pointer-events: none;
 
-    il-nav-section > a {
-      white-space: var(--il-nav--item--header--white-space);
+    ul {
+      all: initial;
+      display: block;
+    }
+    li {
+      all: initial;
+      display: block;
+    }
+    a {
+      all: initial;
+      display: block;
+      padding: .35em 0;
+      color: inherit;
+      font: 400 1em/1em var(--il-font-sans);
+      cursor: pointer;
+
+      &:focus, &:hover {
+        text-decoration: underline;
+      }
+    }
+    span {
+      all: initial;
+      display: block;
+      padding: .35em 0;
+      color: inherit;
+      font: 400 1em/1em var(--il-font-sans);
+    }
+
+    & > ul > li > a {
+      font-size: 1.2em;
+      font-weight: 600;
+    }
+
+    & > ul > li > il-nav-section {
+      margin-top: 1em;
+      --il-nav--item--padding-left: 0;
+      --il-nav--item--padding-right: 0;
+      --il-nav--item--padding-top: .35em;
+      --il-nav--item--padding-bottom: .35em;
+    }
+
+    il-nav-section {
+      break-inside: avoid-column;
+    }
+
+    il-nav-section > a,
+    il-nav-section > span {
+      font-size: 1.2em;
+      font-weight: 600;
+    }
+
+    il-nav-section il-nav-section {
+      margin-top: 0;
+      --il-nav-section--link--font-size: 1em;
+      --il-nav-section--button--font-size: 1em;
+    }
+
+    il-nav-section il-nav-section ul {
+      margin-left: 1em;
+    }
+
+    il-nav-section il-nav-section > a,
+    il-nav-section il-nav-section > span {
+      font-size: 1em;
+      font-weight: 400;
     }
   }
 
