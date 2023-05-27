@@ -17,3 +17,8 @@ test('bar', async ({ page }) => {
     await page.goto('components/il-nav/tests/bar.html');
     await expect(page).toHaveScreenshot();
 })
+
+test('accordion', async ({ page }) => {
+    await page.goto('components/il-nav/tests/accordion.html');
+    await expect(page.getByTestId('nav')).toHaveScreenshot();
+})
