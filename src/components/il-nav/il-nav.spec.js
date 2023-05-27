@@ -32,3 +32,8 @@ test('pagination', async ({ page }) => {
     await page.goto('components/il-nav/tests/pagination.html');
     await expect(page.getByTestId('nav')).toHaveScreenshot();
 })
+
+test('breadcrumbs', async ({ page }) => {
+    await page.goto('components/il-nav/tests/breadcrumbs.html');
+    await expect(page.getByTestId('nav')).toHaveScreenshot();
+})
