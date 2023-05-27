@@ -12,3 +12,8 @@ test('base in columns', async ({ page }) => {
     await page.goto('components/il-nav/tests/base--columns.html');
     await expect(page.getByTestId('nav')).toHaveScreenshot();
 })
+
+test('bar', async ({ page }) => {
+    await page.goto('components/il-nav/tests/bar.html');
+    await expect(page).toHaveScreenshot();
+})
