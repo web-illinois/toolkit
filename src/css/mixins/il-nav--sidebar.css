@@ -2,23 +2,14 @@
   --il-nav-section--content--display: block;
   --il-nav-section--content--pointer-events: all;
 
-  ul {
-    all: initial;
-    display: block;
-  }
-  li {
-    all: initial;
-    display: block;
-  }
-
-  a {
-    display: block;
+  span, a {
     color: var(--il-blue);
     text-align: left;
+  }
+  a {
     cursor: pointer;
 
-    &:hover,
-    &:focus {
+    &:hover, &:focus {
       color: var(--il-altgeld);
       outline: none;
       text-decoration: underline;
@@ -29,33 +20,67 @@
     }
   }
 
-  li a {
+  li a, li span {
     font: 600 18px/1.35 var(--il-font-sans);
-    padding-top: 16px;
+    padding: 16px 20px;
     padding-bottom: 16px;
   }
 
-  li li a {
+  li li a, li li span {
     font-size: 16px;
     padding-top: 10px;
     padding-bottom: 10px;
   }
 
-  li li li a {
+  li li li a, li li li span {
     padding-left: 29px;
   }
 
-  /* Top level */
-  & > il-nav-section {
-    --il-nav-section--header--button--background-color: #F0F0F0;
+  /* Nested sections */
+
+  il-nav-section il-nav-section {
+    --il-nav-section--header--button--background-color: transparent;
     --il-nav-section--header--button--pointer-events: none;
-    --il-nav-section--header--link--background-color: #F0F0F0;
-    --il-nav-section--header--link--focus--background-color: #F0F0F0;
+    --il-nav-section--header--link--background-color: transparent;
+    --il-nav-section--header--link--focus--background-color: transparent;
     --il-nav-section--header--link--font-size: 22px;
     --il-nav-section--header--link--font-weight: 700;
     --il-nav-section--header--link--color: var(--il-blue);
     --il-nav-section--indicator--display: none;
   }
+
+
+  /* Top level */
+
+  & > il-nav-section {
+    --il-nav-section--header--button--background-color: #F0F0F0;
+    --il-nav-section--header--button--pointer-events: none;
+    --il-nav-section--header--link--background-color: #F0F0F0;
+    --il-nav-section--header--link--focus--background-color: #F0F0F0;
+    --il-nav-section--indicator--display: none;
+
+    & > a, & > span {
+      display: block;
+      background-color: #f0f0f0;
+      margin: 0;
+      padding: 10px 20px;
+      font-family: var(--il-font-sans);
+      font-size: 20px;
+      font-weight: 700;
+      line-height: 1.35;
+      color: var(--il-blue);
+    }
+  }
+
+  /* Second level */
+
+  & > il-nav-section > ul > li > a,
+  & > il-nav-section > ul > li > il-nav-section {
+    border-bottom: 1px solid #d8d8d8;
+  }
+
+/*
+
   .header button {
     position: relative;
     box-sizing: border-box;
@@ -76,38 +101,9 @@
     border-color: var(--il-orange);
     color: white;
   }
-  .header button svg {
-    position: absolute;
-    left: 19px;
-    top: 11px;
-    width: 18px;
-    height: 18px;
-    fill: currentColor;
-  }
-  nav.full .header {
-    position: absolute !important;
-    left: -9999px !important;
-    top: auto !important;
-    display: block !important;
-    text-align: left !important;
-    text-indent: -9999em !important;
-    width: 1px !important;
-    height: 1px !important;
-    overflow: hidden !important;
-  }
-  nav.full .il-section-nav__toggle {
-    display: none;
-  }
 
 
   il-section-nav {
-    ul {
-      all: initial;
-    }
-
-    li {
-      all: initial;
-    }
 
     a {
       all: initial;
@@ -145,31 +141,6 @@
       font-weight: 600;
     }
 
-    h3 {
-      background-color: #f0f0f0;
-      margin: 0;
-      padding: 10px 20px;
-      font-family: var(--il-font-sans);
-      font-size: 20px;
-      font-weight: 700;
-      line-height: 1.35;
-      color: var(--il-blue);
-
-      a {
-        display: block;
-        margin: -10px -20px;
-        padding: 10px 20px;
-        color: var(--il-blue);
-        text-align: left;
-
-        &:hover,
-        &:focus {
-          color: var(--il-altgeld);
-          outline: none;
-          text-decoration: underline;
-        }
-      }
-    }
 
       li {
         background-color: white;
@@ -210,5 +181,5 @@
         padding-left: 29px;
       }
   }
-
+*/
 }

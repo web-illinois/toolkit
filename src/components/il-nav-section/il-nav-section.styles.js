@@ -17,27 +17,6 @@ export default css`
     justify-content: space-between;
     align-items: stretch;
   }
-  #header ::slotted(a) {
-    display: block;
-    
-    padding-top: var(--il-nav--item--padding-top, .75em);
-    padding-right: var(--il-nav--item--label--padding-right, 1em);
-    padding-bottom: var(--il-nav--item--padding-bottom, .75em);
-    padding-left: var(--il-nav--item--padding-left, 1em);
-    
-    background-color: var(--il-nav-section--header--link--background-color);
-    color: var(--il-nav-section--header--link--color);
-    line-height: 1em;
-    font-family: var(--il-font-sans);
-    font-size: var(--il-nav-section--header--link--font-size, 1.1875em);
-    font-weight: var(--il-nav-section--header--link--font-weight, 600);
-    cursor: pointer;
-  }
-  #header ::slotted(a:focus),
-  #header ::slotted(a:hover) {
-    background-color: var(--il-nav-section--header--link--focus--background-color);
-    color: var(--il-nav-section--header--link--focus--color);
-  }
 
   #toggle {
     all: initial;
@@ -54,22 +33,6 @@ export default css`
   #toggle:hover, #toggle:focus {
     background-color: var(--il-nav-section--header--button--focus--background-color);
     color: var(--il-nav-section--header--button--focus--color);
-  }
-  #toggle ::slotted(*) {
-    all: initial;
-    position: relative;
-    display: block;
-    padding-top: var(--il-nav--item--padding-top, .75em);
-    padding-right: var(--il-nav--item--label--padding-right, 1em);
-    padding-bottom: var(--il-nav--item--padding-bottom, .75em);
-    padding-left: var(--il-nav--item--padding-left, 1em);
-
-    background-color: inherit;
-    color: inherit;
-    font: 600 1.1875em/1em var(--il-font-sans);
-    pointer-events: none;
-    flex: 1 1 100%;
-    align-self: flex-start;
   }
   #toggle .placeholder {
     position: absolute;

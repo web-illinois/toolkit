@@ -37,3 +37,8 @@ test('breadcrumbs', async ({ page }) => {
     await page.goto('components/il-nav/tests/breadcrumbs.html');
     await expect(page.getByTestId('nav')).toHaveScreenshot();
 })
+
+test('sidebar', async ({ page }) => {
+    await page.goto('components/il-nav/tests/sidebar.html');
+    await expect(page.getByTestId('nav')).toHaveScreenshot();
+})
