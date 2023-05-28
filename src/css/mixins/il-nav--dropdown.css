@@ -1,5 +1,33 @@
-@define-mixin il-nav--select {
+@define-mixin il-nav--dropdown {
+  border-radius: 3px;
+  border: solid 2px #d8d8d8;
 
+  ul {
+    border-top: solid 1px #d8d8d8;
+  }
+
+  il-nav-section {
+    display: block;
+
+    & > a, & > span {
+      box-sizing: border-box;
+      padding: .75em 1em;
+      width: calc(100% - 3em);
+      flex: 1 1 100%;
+      font: 600 1.1875em/1em var(--il-font-sans);
+    }
+
+    & > a {
+      background-color: var(--il-nav--link--background-color);
+      color: var(--il-nav--link--color);
+
+      &:focus, &:hover {
+        background-color: var(--il-orange);
+        color: var(--il-blue);
+        text-decoration: none;
+      }
+    }
+  }
 
   .header {
     margin: 0;
@@ -50,24 +78,8 @@
     height: 18px;
     fill: currentColor;
   }
-  nav.full .header {
-    position: absolute !important;
-    left: -9999px !important;
-    top: auto !important;
-    display: block !important;
-    text-align: left !important;
-    text-indent: -9999em !important;
-    width: 1px !important;
-    height: 1px !important;
-    overflow: hidden !important;
-  }
-  nav.full .il-section-nav__toggle {
-    display: none;
-  }
-  nav.compact {
-    border-radius: 3px;
-    border: solid 2px #d8d8d8;
-  }
+
+
   nav.compact .menu {
     display: none;
     background-color: white;
@@ -154,48 +166,6 @@
       }
     }
 
-    &:not([compact]) {
-      li {
-        background-color: white;
-        border-bottom: 1px solid #d8d8d8;
-
-        ul {
-          padding-bottom: 20px;
-        }
-
-        li {
-          border-bottom: 0;
-
-          ul {
-            padding-bottom: 0;
-          }
-        }
-      }
-
-      a {
-        padding: 10px 20px;
-        font-size: 20px;
-      }
-
-      li a {
-        font-weight: 600;
-        font-size: 18px;
-        padding-top: 16px;
-        padding-bottom: 16px;
-      }
-
-      li li a {
-        font-size: 16px;
-        padding-top: 10px;
-        padding-bottom: 10px;
-      }
-
-      li li li a {
-        padding-left: 29px;
-      }
-    }
-
-    &[compact] {
       background-color: white;
 
       h3 {
@@ -262,6 +232,5 @@
         font-weight: 600;
       }
     }
-  }
 
 }

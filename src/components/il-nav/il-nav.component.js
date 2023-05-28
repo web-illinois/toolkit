@@ -93,8 +93,12 @@ class Navigation extends LitElement {
     return this.classList.contains('il-nav-bar');
   }
 
+  isDropdownMode() {
+    return this.classList.contains('il-nav-dropdown');
+  }
+
   sectionCanExpand(section) {
-    return this.isAccordionMode() || this.isBarMode();
+    return this.isAccordionMode() || this.isBarMode() || this.isDropdownMode();
   }
 
   sectionIsExpanded(section) {

@@ -161,6 +161,10 @@
   il-nav.il-nav-breadcrumbs {
     @mixin il-nav--breadcrumbs;
   }
+
+  il-nav.il-nav-dropdown {
+    @mixin il-nav--dropdown;
+  }
 }
 
 @layer theme {
