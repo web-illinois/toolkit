@@ -1,7 +1,7 @@
 import { LitElement, html } from 'lit';
 import Debugger from '../../js/debug';
-import styles from './page-title.css';
-import "./page-title.scss";
+import styles from './il-page-title.styles';
+import "./il-page-title.css";
 
 class PageTitle extends LitElement {
 
