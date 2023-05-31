@@ -1,5 +1,5 @@
 import {LitElement, html, css} from 'lit';
-import styles from './video-feature.css';
+import styles from './il-video-feature.styles';
 import VideoFeature from './video-feature';
 import '../../css/base.css';
 

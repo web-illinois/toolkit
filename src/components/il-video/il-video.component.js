@@ -1,7 +1,6 @@
 import {LitElement, html, css} from 'lit';
-import styles from './video.css';
 import Video from './video';
-import './video.scss';
+import './il-video.css';
 
 class VideoComponent extends LitElement {
 
@@ -13,7 +12,20 @@ class VideoComponent extends LitElement {
   }
 
   static get styles() {
-    return styles;
+    return css`
+.videowrapper-width {
+    width: var(--il-video-max-width);
+    margin: var(--il-video-margin);
+}
+.videowrapper-full {
+    width: 100%; 
+    align-self: center;
+}
+.videowrapper {
+    position: relative; 
+    height: 0;
+}
+`;
   }
 
   constructor() {
