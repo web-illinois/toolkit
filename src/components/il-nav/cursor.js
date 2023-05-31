@@ -16,7 +16,7 @@ export default function Cursor(elem) {
   }
 
   function getFocusableElements() {
-    return elem.querySelectorAll('a');
+    return elem.querySelectorAll('a, button');
   }
 
   function getFocusableRelativePosition(item, x, y) {
