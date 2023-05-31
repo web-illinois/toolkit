@@ -1,5 +1,5 @@
 import { LitElement, html, css } from 'lit';
-import "./statistic.scss";
+import "./il-statistic.css";
 class Statistic extends LitElement {
 
   static get styles() {
