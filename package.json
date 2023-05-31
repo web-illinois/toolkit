@@ -10,7 +10,6 @@
   "files": [
     "dist"
   ],
-  "customElements": "custom-elements.json",
   "scripts": {
     "dev": "vite",
     "build": "vite build --emptyOutDir",
@@ -22,10 +21,8 @@
   },
   "devDependencies": {
     "@axe-core/playwright": "^4.6.0",
-    "@custom-elements-manifest/analyzer": "^0.8.2",
     "@playwright/test": "^1.31.2",
     "autoprefixer": "^10.4.14",
-    "custom-elements-manifest": "*",
     "eslint": "^8.41.0",
     "eslint-plugin-lit": "^1.8.3",
     "postcss-autoreset": "^3.0.4",
