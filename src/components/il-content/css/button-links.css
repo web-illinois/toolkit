@@ -8,7 +8,18 @@
   --il-content--button--focus--border-color: var(--il-content--button--border-color);
 }
 
-a.il-button, .il-buttons a.il-button {
+.il-buttons {
+  all: initial;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 1em;
+}
+.il-buttons li {
+  all: initial;
+  display: inline-block;
+}
+a.il-button, .il-buttons a {
   all: initial;
   border-color: var(--il-content--button--border-color);
   border-style: solid;

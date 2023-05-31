@@ -1,19 +1,19 @@
 
-%il-page--full {
+@define-mixin il-page--full {
   --il-page--content-max-width: 1200px;
   --il-page--content-padding-left: 30px;
   --il-page--content-padding-right: 30px;
-  --il-page--padding-left: calc(50% - 600px - 30px);
-  --il-page--padding-right: calc(50% - 600px - 30px);
+  --il-page--padding-left: calc(50% - var(--il-page--content-max-width)/2 + var(--il-page--content-padding-left));
+  --il-page--padding-right: calc(50% - var(--il-page--content-max-width)/2 + var(--il-page--content-padding-right));
 }
-%il-page--tablet {
+@define-mixin il-page--tablet {
   --il-page--content-max-width: 100%;
   --il-page--content-padding-left: 30px;
   --il-page--content-padding-right: 30px;
   --il-page--padding-left: 30px;
   --il-page--padding-right: 30px;
 }
-%il-page--phone {
+@define-mixin il-page--phone {
   --il-page--content-max-width: 100%;
   --il-page--content-padding-left: 20px;
   --il-page--content-padding-right: 20px;
@@ -22,22 +22,34 @@
 }
 
 il-page {
-  @extend %il-page--phone;
+  @mixin il-page--phone;
+  container-type: inline-size;
 
   &[data-il-page-size="tablet"] {
-    @extend %il-page--tablet;
+    @mixin il-page--tablet;
   }
 
   &[data-il-page-size="full"] {
-    @extend %il-page--full;
+    @mixin il-page--full;
   }
 
   section {
+    container-type: inline-size;
     box-sizing: border-box;
     margin: 0;
     padding: 0;
   }
 
+  .il-cards {
+    padding-top: 2em;
+    padding-bottom: 2em;
+    padding-left: var(--il-page--padding-left);
+    padding-right: var(--il-page--padding-right);
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-gap: var(--il-page--content-padding-left);
+
+  }
   section.il-with-sidebar {
     display: grid;
     margin: 0;
@@ -54,7 +66,7 @@ il-page {
       grid-template-areas: "sidebar main";
     }
 
-    @media (min-width: 1200px) {
+    @media (min-width: 2000px) {
       section.full {
         margin-left: 0;
         margin-right: 0;
@@ -72,5 +84,29 @@ il-page {
     .sidebar {
       grid-area: sidebar;
     }
+  }
+}
+
+@container (min-width: 360px) {
+  il-page .il-cards {
+    grid-template-columns: auto;
+  }
+}
+
+@container (min-width: 600px) {
+  il-page .il-cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@container (min-width: 920px) {
+  il-page .il-cards {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@container (min-width: 1080px) {
+  il-page .il-cards {
+    grid-template-columns: repeat(4, 1fr);
   }
 }

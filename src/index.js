@@ -13,6 +13,7 @@ import "./components/il-footer/il-footer.component";
 import "./components/il-header/il-header.component";
 import "./components/il-image-feature/il-image-feature.component";
 import "./components/il-page/il-page.component";
+import "./components/il-profile/il-profile.component";
 import "./components/il-search/il-search.component";
 
 // Legacy components
@@ -20,7 +21,6 @@ import "./components/back-to-top/back-to-top.component";
 import "./components/call-to-action/call-to-action.component";
 import "./components/card/card.component";
 import "./components/directory/card.component";
-import "./components/directory/profile.component";
 import "./components/hero/hero.component";
 import "./components/layout/section.component";
 import "./components/layout/section-with-sidebar.component";
