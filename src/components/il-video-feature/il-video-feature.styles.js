@@ -1,52 +1,52 @@
 import { css } from 'lit';
 
 export default css`
-    .videofeature {
+    .video-feature {
         display: block;
     }
-    .videofeature.right {
+    .video-feature.right {
         --il-image-feature-flex-direction: row-reverse;
     }
-    .videofeature.large {
+    .video-feature.large {
         --il-image-feature-flex-grow-image: 2;
     }
-    .videofeature.small {
+    .video-feature.small {
         --il-image-feature-flex-grow-content: 2;
     }
-    .videofeature .background {
+    .video-feature .background {
         padding: 0;
         background: black;
     }
-    .videofeature .content {
+    .video-feature .content {
         padding: 1.875rem 1.25rem;
         text-align: left;
         color: var(--il-image-feature-color);
         background: var(--il-image-feature-background);
     }
-    .videofeature .content.orange {
+    .video-feature .content.orange {
         color: white;
         background: var(--il-gradient-orange);
     }
-    .videofeature .content.solid, .videofeature .background.solid  {
+    .video-feature .content.solid, .videofeature .background.solid  {
         color: white;
         background: var(--il-blue);
     }
-    .videofeature .content.gray, .videofeature .background.gray  {
+    .video-feature .content.gray, .videofeature .background.gray  {
         background: var(--il-gray-1);
     }
-    .videofeature .background {
+    .video-feature .background {
         display: flex;
         flex-grow: var(--il-image-feature-flex-grow-image);
         flex-shrink: 1;
         flex-basis: 0;
     }
-    .videofeature .content {
+    .video-feature .content {
         flex-grow: var(--il-image-feature-flex-grow-content);
         flex-shrink: 1;
         flex-basis: 0;
     }
 
-    .videowrapper {
+    .video-wrapper {
         position: relative; 
         padding-bottom: 56.25%; 
         height: 0;
