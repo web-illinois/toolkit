@@ -30,6 +30,7 @@
     "postcss-mixins": "^9.0.4",
     "postcss-nested": "^6.0.1",
     "postcss-preset-env": "^8.4.1",
+    "sass": "^1.62.1",
     "vite": "^4.1.0",
     "vite-plugin-eslint": "^1.8.1"
   }

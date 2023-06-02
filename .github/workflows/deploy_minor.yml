@@ -2,8 +2,6 @@ name: deploy_minor
 on:
   push:
     tags: [ '**' ]
-  pull_request:
-    tags: [ '**' ]
 env:
   MINORVERSION: ''
   FULLVERSION: ''
