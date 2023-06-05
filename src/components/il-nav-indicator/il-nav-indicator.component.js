@@ -1,6 +1,6 @@
 import { LitElement, html, css } from 'lit';
-import styles from './il-nav-indicator.css'
-import './il-nav-indicator.scss'
+import styles from './il-nav-indicator.styles'
+import './il-nav-indicator.css'
 
 class NavigationIndicator extends LitElement {
 

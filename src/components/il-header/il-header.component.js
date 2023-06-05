@@ -1,6 +1,6 @@
 import {LitElement, html, css} from 'lit';
-import styles from './il-header.css';
-import './il-header.scss';
+import styles from './il-header.styles';
+import './il-header.css';
 
 class Header extends LitElement {
     static get properties() {

@@ -1,12 +1,7 @@
 import {LitElement, html, css} from 'lit';
-import styles from './il-contact.css';
-import './il-contact.scss';
+import './il-contact.css';
 
 class Contact extends LitElement {
-
-  static get styles() {
-    return styles;
-  }
 
   constructor() {
     super();
