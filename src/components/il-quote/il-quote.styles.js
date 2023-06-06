@@ -32,13 +32,13 @@ export default css`
   font: var(--il-quote--source-font);
 }
 
-.marks #content {
+#content {
   position: relative;
 }
 
-.marks #content::before {
+#content::before {
   position: absolute;
-  content: "“";
+  content: var(--il-quote--mark-content-before);
   font-style: normal;
   color: var(--il-quote--mark-color);
   font: var(--il-quote--mark-font);
@@ -46,9 +46,9 @@ export default css`
   left: var(--il-quote--mark-left);
 }
 
-.marks #content::after {
+#content::after {
   position: absolute;
-  content: "”";
+  content: var(--il-quote--mark-content-after);
   font-style: normal;
   bottom: 0px;
   color: var(--il-quote--mark-color);

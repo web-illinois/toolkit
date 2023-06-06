@@ -1,4 +1,4 @@
-@layer base {
+@layer component {
   :root {
     --il-quote--background: white;
     --il-quote--color: var(--il-blue);
@@ -11,6 +11,8 @@
     --il-quote--mark-font: 700 7.813rem/0 var(--il-font-serif);
     --il-quote--mark-top: 55px;
     --il-quote--mark-left: -90px;
+    --il-quote--mark-content-before: "“";
+    --il-quote--mark-content-after: "”";
     --il-quote--max-width: 620px;
   }
 
@@ -24,10 +26,13 @@
       --il-quote--mark-left: -70px;
     }
   }
-}
 
-@layer component {
-  *[slot] {
+  .il-exclude-marks {
+    --il-quote--mark-content-before: none;
+    --il-quote--mark-content-after: none;
+  }
+
+  il-quote *[slot] {
     font: inherit;
     margin: inherit;
     padding: inherit;
