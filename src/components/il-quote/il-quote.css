@@ -1,84 +1,51 @@
-
-il-quote, .il-quote, .il-formatted il-quote, .il-formatted .il-quote {
-  display: block;
-  position: relative;
-  padding: 0 60px;
-  margin: 50px auto;
-  max-width: 700px;
-  color: var(--il-blue);
-  font: 400 2.25rem/3.1875rem var(--il-font-serif);
-  font-style: italic;
-  text-align: center;
-
-  p[slot="attributed"] {
-    text-align: center;
-    margin-top: .8888888889em;
-    color: var(--il-orange);
-    font: 700 1.813rem/2.188rem var(--il-source-sans);
+@layer base {
+  :root {
+    --il-quote--background: white;
+    --il-quote--color: var(--il-blue);
+    --il-quote--author-color: var(--il-orange);
+    --il-quote--source-color: var(--il-blue);
+    --il-quote--mark-color: var(--il-orange);
+    --il-quote--font: italic 400 2.25rem/3.1875rem var(--il-font-serif);
+    --il-quote--author-font: 700 1.813rem/2.188rem var(--il-source-sans);
+    --il-quote--source-font: 300 1.438rem/1.875rem var(--il-source-sans);
+    --il-quote--mark-font: 700 7.813rem/0 var(--il-font-serif);
+    --il-quote--mark-top: 55px;
+    --il-quote--mark-left: -90px;
+    --il-quote--max-width: 620px;
   }
 
-  p[slot="secondary"] {
-    text-align: center;
-    color: var(--il-blue);
-    font: 300 1.438rem/1.875rem var(--il-source-sans);
-  }
-}
-
-@media only screen and (max-width: 792px) {
-  il-quote, .il-quote, .il-formatted il-quote, .il-formatted .il-quote {
-    font-size: 1.813rem;
-    line-height: 2.375rem;
-
-    p[slot="attributed"] {
-      font-size: 1.5rem;
-      line-height: 1.875rem;
-    }
-  
-    p[slot="secondary"] {
-      font-size: 1.25rem;
-      line-height: 1.625rem;
+  @media only screen and (max-width: 792px) {
+    :root {
+      --il-quote--font: italic 400 1.813rem/2.375rem var(--il-font-serif);
+      --il-quote--author-font: 700 1.5rem/1.875rem var(--il-source-sans);
+      --il-quote--source-font: 300 1.25rem/1.625rem var(--il-source-sans);
+      --il-quote--mark-font: 700 6.25rem/0 var(--il-font-serif);
+      --il-quote--mark-top: 45px;
+      --il-quote--mark-left: -70px;
     }
   }
 }
 
-
-
-
-p.il-quote {
-  position: relative;
-}
-p.il-quote::before {
-  position: absolute;
-  content: "“";
-  color: var(--il-orange);
-  font-size: 7.813rem;
-  line-height: 0;
-  top: 55px;
-  left: -90px;
-  font-weight: 700;
-  font-style: normal;
-}
-
-p.il-quote::after {
-  position: absolute;
-  content: "”";
-  color: var(--il-orange);
-  font-size: 7.813rem;
-  line-height: 0;
-  bottom: 0;
-  right: -90px;
-  font-weight: 700;
-  font-style: normal;
-}
-
-@media only screen and (max-width: 792px) {
-  p.il-quote::before {
-    font-size: 6.25rem;
-    top: 45px;
-    left: -70px;
+@layer component {
+  *[slot] {
+    font: inherit;
+    margin: inherit;
+    padding: inherit;
+    color: inherit;
   }
-  p.il-quote::after {
-    font-size: 6.25rem;
-    right: -70px;
+}
+
+@layer theme {
+  .il-theme-blue {
+    --il-quote--background: var(--il-blue);
+    --il-quote--color: white;
+    --il-quote--author-color: var(--il-orange);
+    --il-quote--source-color: white;
+    --il-quote--mark-color: var(--il-orange);
+  }
+  .il-theme-gray {
+    --il-quote--background: var(--il-gray-1);
+    --il-quote--author-color: var(--il-altgeld);
+    --il-quote--mark-color: var(--il-altgeld);
   }
 }
