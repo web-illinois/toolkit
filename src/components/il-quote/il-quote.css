@@ -5,10 +5,10 @@
     --il-quote--author-color: var(--il-orange);
     --il-quote--source-color: var(--il-blue);
     --il-quote--mark-color: var(--il-orange);
-    --il-quote--font: italic 400 2.25rem/3.1875rem var(--il-font-serif);
-    --il-quote--author-font: 700 1.813rem/2.188rem var(--il-source-sans);
-    --il-quote--source-font: 300 1.438rem/1.875rem var(--il-source-sans);
-    --il-quote--mark-font: 700 7.813rem/0 var(--il-font-serif);
+    --il-quote--font: italic 400 2.25em/1.41667em var(--il-font-serif);
+    --il-quote--author-font: 700 1.813em/1.207em var(--il-source-sans);
+    --il-quote--source-font: 300 1.438em/1.304em var(--il-source-sans);
+    --il-quote--mark-font: 700 3.472em/0 var(--il-font-serif);
     --il-quote--mark-top: 55px;
     --il-quote--mark-left: -90px;
     --il-quote--mark-content-before: "“";
@@ -18,10 +18,10 @@
 
   @media only screen and (max-width: 792px) {
     :root {
-      --il-quote--font: italic 400 1.813rem/2.375rem var(--il-font-serif);
-      --il-quote--author-font: 700 1.5rem/1.875rem var(--il-source-sans);
-      --il-quote--source-font: 300 1.25rem/1.625rem var(--il-source-sans);
-      --il-quote--mark-font: 700 6.25rem/0 var(--il-font-serif);
+      --il-quote--font: italic 400 1.813em/1.3103em var(--il-font-serif);
+      --il-quote--author-font: 700 1.5em/1.207em var(--il-source-sans);
+      --il-quote--source-font: 300 1.25em/1.304em var(--il-source-sans);
+      --il-quote--mark-font: 700 3.472em/0 var(--il-font-serif);
       --il-quote--mark-top: 45px;
       --il-quote--mark-left: -70px;
     }
