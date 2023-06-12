@@ -31,13 +31,6 @@
     --il-quote--mark-content-before: none;
     --il-quote--mark-content-after: none;
   }
-
-  il-quote *[slot] {
-    font: inherit;
-    margin: inherit;
-    padding: inherit;
-    color: inherit;
-  }
 }
 
 @layer theme {
