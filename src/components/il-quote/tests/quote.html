@@ -5,8 +5,9 @@
 
 <il-quote data-testid="component">
 Either university presses will embrace new technology and offer scholarly content in new forms to researchers and under new business models, or they will follow the music industry and spend all of their resources on trying to protect their territory -- unsuccessfully.
-<p slot="author">Laura Cerruti</p>
-<p slot="source" id="test-source">Director of Digital Content Development, University of California Press, profiled in Against the Grain</p>
+<p slot="source">Laura Cerruti
+<span class="il-quote--source-byline" id="test-author">Director of Digital Content Development, University of California Press, profiled in Against the Grain</span>
+</p>
 </il-quote>
 
 <script>
@@ -16,9 +17,9 @@ Either university presses will embrace new technology and offer scholarly conten
         component.classList.add(`il-theme-${params.get('theme')}`);
     }
     if (params.has('excludequotes')) {
-        component.classList.add(`il-exclude-marks`);
+        component.classList.add(`il-quote--exclude-marks`);
     }
     if (params.has('nosource')) {
-        document.getElementById("test-source").outerHTML = "";
+        document.getElementById("test-author").outerHTML = "";
     }
 </script>

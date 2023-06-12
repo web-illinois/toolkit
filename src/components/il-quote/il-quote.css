@@ -7,7 +7,7 @@
     --il-quote--mark-color: var(--il-orange);
     --il-quote--font: italic 400 2.25em/1.41667em var(--il-font-serif);
     --il-quote--author-font: 700 1.813em/1.207em var(--il-source-sans);
-    --il-quote--source-font: 300 1.438em/1.304em var(--il-source-sans);
+    --il-quote--source-font: 300 .8em/1.3em var(--il-source-sans);
     --il-quote--mark-font: 700 3.472em/0 var(--il-font-serif);
     --il-quote--mark-top: 55px;
     --il-quote--mark-left: -90px;
@@ -20,16 +20,30 @@
     :root {
       --il-quote--font: italic 400 1.813em/1.3103em var(--il-font-serif);
       --il-quote--author-font: 700 1.5em/1.207em var(--il-source-sans);
-      --il-quote--source-font: 300 1.25em/1.304em var(--il-source-sans);
       --il-quote--mark-font: 700 3.472em/0 var(--il-font-serif);
       --il-quote--mark-top: 45px;
       --il-quote--mark-left: -70px;
     }
   }
 
-  .il-exclude-marks {
+  .il-quote--exclude-marks {
     --il-quote--mark-content-before: none;
     --il-quote--mark-content-after: none;
+  }
+
+  il-quote *[slot=source] {
+    margin-top: 1.625rem;
+    text-align: center;
+    color: var(--il-quote--author-color);
+    font: var(--il-quote--author-font);
+  }
+
+  il-quote *[slot=source] .il-quote--source-byline {
+    margin-top: 1.275rem;
+    text-align: center;
+    color: var(--il-quote--source-color);
+    font: var(--il-quote--source-font);
+    display: block;
   }
 }
 

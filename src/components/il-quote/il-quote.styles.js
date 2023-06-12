@@ -18,20 +18,6 @@ export default css`
     text-align: center;
   }
 
-#author {
-  margin-top: 1.625rem;
-  text-align: center;
-  color: var(--il-quote--author-color);
-  font: var(--il-quote--author-font);
-}
-
-#source {
-  margin-top: 1.275rem;
-  text-align: center;
-  color: var(--il-quote--source-color);
-  font: var(--il-quote--source-font);
-}
-
 #content {
   position: relative;
 }

@@ -12,7 +12,6 @@ class Quote extends LitElement {
     return html`
       <blockquote id="quote">
         <div id="content"><slot></slot></div>
-        <div id="author"><slot name="author"></slot></div>
         <div id="source"><slot name="source"></slot></div>
       </blockquote>
     `;
