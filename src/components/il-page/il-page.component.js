@@ -5,8 +5,19 @@ import "../../css/base.css";
 
 class PageComponent extends LitElement {
 
+  static get properties() {
+    return {
+      grid: { type: String }
+    }
+  }
+
   static get styles() {
     return styles;
+  }
+
+  constructor() {
+    super();
+    this.grid = null;
   }
 
   connectedCallback() {
@@ -41,7 +52,17 @@ class PageComponent extends LitElement {
     this.setAttribute('data-il-page-size', this.getSize());
   }
 
+  renderGridOverlay() {
+    return html`<div id="grid" class="overlay">
+      <div class="content">
+        <div class="content-margin left"></div>
+        <div class="content-margin right"></div>
+      </div>
+    </div>`
+  }
+
   render() {
+    const overlay = this.grid ? this.renderGridOverlay() : '';
     return html`
       <article id="page">
         <header>
@@ -53,6 +74,7 @@ class PageComponent extends LitElement {
         <footer>
           <slot name="footer"></slot>
         </footer>
+        ${overlay}
       </article>
     `;
   }

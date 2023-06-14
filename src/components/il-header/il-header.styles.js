@@ -1,10 +1,21 @@
 import {css} from 'lit';
 
 export default css`
+  :host {
+    display: block;
+    position: relative;
+  }
+  #header {
+    border-bottom: 2px solid var(--il-cloud-1);
+  }
   #top-stripe {
     position: relative;
     height: .5em;
     background-color: var(--il-orange);
+  }
+  #main {
+    position: relative;
+    min-height: 4em;
   }
   #wordmark-and-links {
     display: flex;
@@ -18,11 +29,12 @@ export default css`
     flex: 1 1 auto;
   }
   #wordmark a {
-    all: inherit;
     display: inline-block;
     margin-left: -.5em;
     padding: .5em;
     cursor: pointer;
+    color: inherit;
+    text-decoration: none;
   }
   #wordmark a:focus, #wordmark a:hover {
     color: var(--il-altgeld);
@@ -37,12 +49,13 @@ export default css`
     flex-direction: row;
     justify-content: space-between;
   }
+  #identity {
+    padding: 2em 0 .5em;
+  }
 
   .content-container {
-    max-width: var(--il-content-max-width);
-    margin: 0 auto;
-    padding-left: var(--il-content-margin);
-    padding-right: var(--il-content-margin);
+    padding-left: var(--il-page--padding-left, 2em);
+    padding-right: var(--il-page--padding-right, 2em);
   }
 
   #navigation {

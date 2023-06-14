@@ -35,7 +35,7 @@ class Header extends LitElement {
                         </div>
                         <div id="identity-and-search">
                             <div id="identity">
-                                <slot></slot>
+                                    <slot></slot>
                             </div>
                             <div id="search">
                                 <slot name="search"></slot>

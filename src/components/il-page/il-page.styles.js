@@ -6,20 +6,6 @@ export default css`
     position: relative;
     font: 400 1rem/1em var(--il-font-sans);
   }
-  :host:after {
-    box-sizing: border-box;
-    content: "";
-    position: absolute;
-    top: 0;
-    left: calc(50% - var(--il-page--content-max-width)/2);
-    width: 100%;
-    max-width: var(--il-page--content-max-width);
-    height: 100%;
-    opacity: .35;
-    pointer-events: none;
-    border-left: var(--il-page--content-padding-left) solid var(--il-orange);
-    border-right: var(--il-page--content-padding-left) solid var(--il-orange);
-  }
   .page {
     margin: 0;
     padding: 0;
@@ -44,4 +30,36 @@ export default css`
     grid-area: footer;
   }
 
+  .overlay {
+    pointer-events: none;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 9999;
+    width: 100%;
+    height: 100%;
+  }
+  #grid.overlay {
+    opacity: .5;
+  }
+  #grid .content {
+    position: relative;
+    margin: 0 auto;
+    width: 100%;
+    height: 100%;
+    max-width: var(--il-page--content-max-width);
+  }
+  #grid .content-margin {
+    position: absolute;
+    top: 0;
+    width: var(--il-page--content-padding-left);
+    height: 100%;
+    background-color: var(--il-orange);
+  }
+  #grid .content-margin.left {
+    left: 0;
+  }
+  #grid .content-margin.right {
+    right: 0;
+  }
 `;
