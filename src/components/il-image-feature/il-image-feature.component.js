@@ -33,6 +33,11 @@ class ImageFeatureComponent extends LitElement {
   }
 
   render() {
+    if (this.previousElementSibling != null && this.previousElementSibling.localName == "il-image-feature" && 
+      !this.previousElementSibling.classList.contains('il-float-right') && !this.previousElementSibling.classList.contains('il-float-left') && 
+      !this.classList.contains('il-float-right') && !this.classList.contains('il-float-left')) {
+        this.classList.add('il-float-right');
+    }
     return html`
         <div id="container" ?compact=${this.compact}>
             <div id="image">
