@@ -3,11 +3,11 @@ import styles from './il-image-feature.styles';
 import "./il-image-feature.css";
 
 class ImageFeatureComponent extends LitElement {
+  static compactSizePixelWidth = 768;
 
   static get styles() {
     return styles;
   }
-
   
   static get properties() {
     return {
@@ -26,8 +26,12 @@ class ImageFeatureComponent extends LitElement {
   }
 
   handleResize(evt) {
-    this._compact = this.offsetWidth < 768;
+    this._compact = this.offsetWidth < compactSizePixelWidth;
   }
+
+   getLinkElement() {
+     return this.querySelector("#" + this.linkedby);
+   }
 
   constructor() {
     super();
@@ -52,20 +56,17 @@ class ImageFeatureComponent extends LitElement {
   }
 
   _click(e) {
-    let anchor = this.querySelector("#" + this.linkedby);
-    anchor.click();
+    this.getLinkElement().click();
   }
 
-  _higlight(e) {
+  _highlight(e) {
     this.highlight = true;
-    let anchor = this.querySelector("#" + this.linkedby);
-    anchor.focus();
+    this.getLinkElement().focus();
   }
 
   _tonedown(e) {
     this.highlight = false;
-    let anchor = this.querySelector("#" + this.linkedby);
-    anchor.blur();
+    this.getLinkElement().blur();
   }
 
   render() {
@@ -76,7 +77,7 @@ class ImageFeatureComponent extends LitElement {
     }
     if (this.linkedby != '') {
       return html`
-        <div id="container" ?compact=${this._compact} @click="${this._click}" @mouseover="${this._higlight}" @mouseout="${this._tonedown}">
+        <div id="container" ?compact=${this._compact} @click="${this._click}" @mouseover="${this._highlight}" @mouseout="${this._tonedown}">
           <div id="image">
             <slot name="image"></slot>
           </div>
