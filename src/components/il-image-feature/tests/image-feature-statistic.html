@@ -2,18 +2,22 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <script src="../il-image-feature.component.js" type="module"></script>
+<script src="../../il-statistic/il-statistic.component.js" type="module"></script>
 <script src="../../il-content/il-content.component.js" type="module"></script>
 <link rel="stylesheet" href="../../../css/base.css">
 
 <il-image-feature data-testid="component">
-    <img id="sample-image" slot="image" src="image-feature.jpg">
+    <il-statistic slot="image" class="il-theme-blue" id="sample-statistic">
+        <p>Nation&lsquo;s <em slot="stat">Top Six</em> overall ranking among undergraduate programs in the U.S.</p>
+        <cite><a href="https://example.org">U.S. News and World 2022</a></cite>
+    </il-statistic>
     <il-content>
         <h3>Student Life</h3>
         <p>Animal sciences students extend their learning and career networks beyond
             the classroom through internships, <a href="#">judging teams</a>, student organizations, undergraduate research
             projects with our faculty, as well as short- and long-term study abroad opportunities all over the world. </p>
-            <a class="il-button" href="#">Subscribe</a>
-            <a class="il-button" href="#">Find a departmental advisor</a>
+        <a href="#" class="il-button">Subscribe</a>
+        <a href="#" class="il-button">Find a departmental advisor</a>
     </il-content>
 </il-image-feature>
 
@@ -22,6 +26,7 @@
   document.querySelectorAll("il-image-feature").forEach(component => {
     if (params.has('theme')) {
       component.classList.add(`il-theme-${params.get('theme')}`);
+      document.getElementById('sample-statistic').className = `il-theme-${params.get('theme')}`;
     }
     if (params.has('size')) {
       component.classList.add(`il-size-${params.get('size')}`);
@@ -31,9 +36,6 @@
     }
     if (params.has('mobile')) {
       component.style.cssText += 'max-width: 400px';
-    }
-    if (params.has('background')) {
-        component.classList.add('il-image-background');
     }
     if (params.has('fixed')) {
         component.classList.add('il-fixed-width');
