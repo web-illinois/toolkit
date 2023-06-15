@@ -91,29 +91,30 @@
 
   il-image-feature[linkedby] {
     cursor: pointer;
+    --il-image-feature--container--border: 1px solid transparent;
   }
 
-  il-image-feature[highlight] {
+  il-image-feature[data-il-image-feature-highlight] {
     --il-image-feature--background: white;
     --il-image-feature--container--border: 1px solid var(--il-gray-2);
   }
 
-  il-image-feature[highlight] il-content {
+  il-image-feature[data-il-image-feature-highlight] il-content {
     --il-content--color: var(--il-blue);
     --il-content--heading--color: var(--il-blue);
     --il-content--link--color: var(--il-blue);
     --il-content--link--visited--color: var(--il-blue);
   }
 
-  il-image-feature[highlight].il-theme-gray, 
-  il-image-feature[highlight].il-theme-white {
+  il-image-feature[data-il-image-feature-highlight].il-theme-gray, 
+  il-image-feature[data-il-image-feature-highlight].il-theme-white {
     --il-image-feature--background: var(--il-blue);
   }
 }
  
 @layer theme {
-  il-image-feature[highlight].il-theme-gray il-content, 
-  il-image-feature[highlight].il-theme-white il-content {
+  il-image-feature[data-il-image-feature-highlight].il-theme-gray il-content, 
+  il-image-feature[data-il-image-feature-highlight].il-theme-white il-content {
     --il-content--color: white;
     --il-content--heading--color: white;
     --il-content--link--color: white;
@@ -121,16 +122,16 @@
     --il-content--link--visited--color: white;
   }
 
-  il-image-feature[highlight].il-theme-blue, 
-  il-image-feature[highlight].il-theme-orange,
-  il-image-feature[highlight].il-theme-blue-gradient {
+  il-image-feature[data-il-image-feature-highlight].il-theme-blue, 
+  il-image-feature[data-il-image-feature-highlight].il-theme-orange,
+  il-image-feature[data-il-image-feature-highlight].il-theme-blue-gradient {
     --il-image-feature--background: white;
     --il-image-feature--container--border: 1px solid var(--il-gray-2);
   }
 
-  il-image-feature[highlight].il-theme-blue il-content, 
-  il-image-feature[highlight].il-theme-orange il-content,
-  il-image-feature[highlight].il-theme-blue-gradient il-content {
+  il-image-feature[data-il-image-feature-highlight].il-theme-blue il-content, 
+  il-image-feature[data-il-image-feature-highlight].il-theme-orange il-content,
+  il-image-feature[data-il-image-feature-highlight].il-theme-blue-gradient il-content {
     --il-content--color: var(--il-blue);
     --il-content--heading--color: var(--il-blue);
     --il-content--link--color: var(--il-blue);

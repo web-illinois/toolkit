@@ -3,17 +3,22 @@ import styles from './il-image-feature.styles';
 import "./il-image-feature.css";
 
 class ImageFeatureComponent extends LitElement {
-  static compactSizePixelWidth = 768;
+  static get compactSizePixelWidth() {
+    return 768;
+  }
 
+  static get highlightAttribute() {
+    return 'data-il-image-feature-highlight';
+  }
+  
   static get styles() {
     return styles;
   }
-  
+
   static get properties() {
     return {
       _compact: { default: false, type: Boolean, attribute: false, state: true },
-      linkedby: { default: false, type: String, attribute: true },
-      highlight: {default: false, type: Boolean, attribute: true, reflect: true}
+      linkedby: { default: false, type: String, attribute: true }
     };
   }
 
@@ -21,16 +26,12 @@ class ImageFeatureComponent extends LitElement {
     return CSS.supports('container-type', 'inline-size');
   }
 
-  static determineClickable() {
-    return CSS.supports('container-type', 'inline-size');
-  }
-
   handleResize(evt) {
-    this._compact = this.offsetWidth < compactSizePixelWidth;
+    this._compact = this.offsetWidth < ImageFeatureComponent.compactSizePixelWidth;
   }
 
    getLinkElement() {
-     return this.querySelector("#" + this.linkedby);
+     return document.getElementById(this.linkedby);
    }
 
   constructor() {
@@ -43,14 +44,14 @@ class ImageFeatureComponent extends LitElement {
   }
 
   firstUpdated() {
-    if (this.linkedby != '') {
-      let anchor = this.querySelector("#" + this.linkedby);
+    if (this.linkedby && this.linkedby != '') {
+      let anchor = this.getLinkElement();
       if (anchor != null) {
-        anchor.addEventListener("focus", (event) => { this.highlight = true; });
-        anchor.addEventListener("blur", (event) => { this.highlight = false; });
+        anchor.addEventListener("focus", (event) => { this.setHighlight(); });
+        anchor.addEventListener("blur", (event) => { this.removeHighlight(); });
       } else {
         console.debug(`Image Feature: ID ${this.linkedby} not found`);
-        this.linkedby = ''
+        this.linkedby = null;
       }
     }
   }
@@ -59,13 +60,21 @@ class ImageFeatureComponent extends LitElement {
     this.getLinkElement().click();
   }
 
+  setHighlight() {
+    return this.setAttribute(ImageFeatureComponent.highlightAttribute, true);
+  }
+
+  removeHighlight() {
+    return this.removeAttribute(ImageFeatureComponent.highlightAttribute);
+  }
+
   _highlight(e) {
-    this.highlight = true;
+    this.setHighlight();
     this.getLinkElement().focus();
   }
 
   _tonedown(e) {
-    this.highlight = false;
+    this.removeHighlight();
     this.getLinkElement().blur();
   }
 
@@ -75,7 +84,7 @@ class ImageFeatureComponent extends LitElement {
       !this.classList.contains('il-float-right') && !this.classList.contains('il-float-left')) {
         this.classList.add('il-float-right');
     }
-    if (this.linkedby != '') {
+    if (this.linkedby && this.linkedby != '') {
       return html`
         <div id="container" ?compact=${this._compact} @click="${this._click}" @mouseover="${this._highlight}" @mouseout="${this._tonedown}">
           <div id="image">
