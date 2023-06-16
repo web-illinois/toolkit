@@ -1,0 +1,44 @@
+il-tabs {
+    --il-tabs--display: block;
+}
+
+il-tabs button.il-tabs-button {
+    background: white;
+    color: var(--il-blue);
+    line-height: var(--il-content--line-height);
+    font-family: var(--il-content--font-family);
+    font-size: var(--il-content--font-size);
+    font-weight: var(--il-content--font-weight);
+    border-radius: 5px 5px 0 0;
+    border: 2px solid var(--il-blue);
+    border-bottom: none;
+    padding: 15px 20px;
+}
+
+il-tabs button.il-tabs-button:hover, il-tabs button.il-tabs-button:focus {
+    outline: none;
+    border: 2px solid var(--il-orange);
+    border-bottom: none;
+    background: var(--il-gray-1);
+}
+
+il-tabs button.il-tabs-button[aria-selected] {
+    border-top: 6px solid var(--il-blue);
+    border-left: 2px solid var(--il-blue);
+    border-right: 2px solid var(--il-blue);
+}
+
+il-tabs button.il-tabs-button[aria-selected]:hover, il-tabs button.il-tabs-button[aria-selected]:focus {
+    border-top: 6px solid var(--il-orange);
+    border-left: 2px solid var(--il-orange);
+    border-right: 2px solid var(--il-orange);
+}
+
+il-tabs.il-vertical-tabs {
+    --il-tabs--display: flex;
+}
+
+il-tabs.il-vertical-tabs *[slot=tabs] {
+    display: flex;
+    flex-direction: column;
+}
