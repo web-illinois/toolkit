@@ -13,7 +13,7 @@ class TabComponent extends LitElement {
 
   static get properties() {
     return {
-      _compact: { default: false, type: Boolean, attribute: false, state: true }
+      compact: { default: false, type: Boolean, attribute: true, reflect: true }
     };
   }
 
@@ -22,7 +22,7 @@ class TabComponent extends LitElement {
   }
 
   handleResize(evt) {
-    this._compact = this.offsetWidth < TabComponent.compactSizePixelWidth;
+    this.compact = this.offsetWidth < TabComponent.compactSizePixelWidth;
   }
 
    getLinkElement() {
@@ -113,7 +113,7 @@ class TabComponent extends LitElement {
 
   render() {
     return html`
-        <div id="container" ?compact=${this._compact}>
+        <div id="container">
             <div id="tablist" role="tablist">
                 <div id="tablist-inner" role="tablist">
                     <slot name="tabs" @slotchange=${this.handleTabsChange}></slot>
