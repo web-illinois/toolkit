@@ -6,7 +6,10 @@ export default css`
   position: relative;
   width: 100%;
   overflow: hidden;
-  padding: 0 var(--il-content-margin);
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: var(--il-page--padding-left);
+  padding-right: var(--il-page--padding-right);
 }
 .background {
   position: absolute;
@@ -21,7 +24,6 @@ export default css`
   position: relative;
   width: 100%;
   min-height: 12.5rem;
-  max-width: var(--il-content-max-width);
   margin: 0 auto;
   padding-top: 16px;
   display: flex;
