@@ -36,62 +36,61 @@ class TabComponent extends LitElement {
       window.addEventListener('load', this.handleResize.bind(this));
       window.addEventListener('resize', this.handleResize.bind(this));
     }
+    let firstItem = true;
+    this.getAllTabs().forEach(item => {
+      item.addEventListener('keydown', this.keyboard);
+      item.addEventListener('click', e => this.setActivePanel(item));
+      item.setAttribute('role', 'tab');
+      if (firstItem) {
+        item.setAttribute('tabindex', 0);
+        item.setAttribute('aria-selected', 'true');
+        this.setActivePanel(item);
+        firstItem = false;
+      } else {
+        item.setAttribute('tabindex', -1);
+      }
+    });
   }
 
-  handleTabsChange(e) {
-    const childNodes = e.target.assignedNodes({flatten: true});
-    childNodes.map((node) => {
-        if (node.children.length > 0) {
-            Array.from(node.children).forEach(e => {
-                let button = document.createElement('button');
-                if (!e.parentElement.hasAttribute('data-il-panel-visible')) {
-                    e.parentElement.setAttribute('data-il-panel-visible', e.getAttribute('data-il-panel'));
-                    button.setAttribute('aria-selected', 'true');
-                } else {
-                    button.tabIndex = -1;
-                }
-                button.innerText = e.innerText;
-                button.classList.add('il-tabs-button');
-                button.setAttribute('data-il-panel', e.getAttribute('data-il-panel'));
-                button.setAttribute('role', 'tab');
-                button.setAttribute('aria-controls', e.getAttribute('data-il-panel'));
-                button.addEventListener("click", (event) => {
-                    var previousSelectedItem = document.getElementById(event.target.parentElement.getAttribute('data-il-panel-visible'));
-                    previousSelectedItem.style.display = 'none';
+  getAllTabs() {
+    return Array.from(this.querySelector('*[slot=tabs]').children);
+  }
 
-                    var previousSelectedButton = document.querySelector(`[data-il-panel='${event.target.parentElement.getAttribute('data-il-panel-visible')}']`);
-                    previousSelectedButton.removeAttribute('aria-selected');
-                    previousSelectedButton.tabIndex = -1;
+  getAllPanels() {
+    return Array.from(this.querySelectorAll('*:not([slot])'));
+  }
 
-                    var currentSelectedItem = document.getElementById(event.target.getAttribute('data-il-panel'));
-                    currentSelectedItem.style.display = '';
-
-                    var currentSelectedButton = event.target;
-                    currentSelectedButton.setAttribute('aria-selected', 'true');
-                    currentSelectedButton.removeAttribute('tabindex');
-
-                    event.target.parentElement.setAttribute('data-il-panel-visible', event.target.getAttribute('data-il-panel'));
-                });
-                button.addEventListener("keydown", (event) => {
-                    if (event.code == "ArrowLeft" || event.code == "ArrowUp") {
-                        if (event.target.previousElementSibling) {
-                            event.target.previousElementSibling.focus();
-                        } else {
-                            event.target.parentElement.lastElementChild.focus();
-                        }
-                    } else if (event.code == "ArrowRight" || event.code == "ArrowDown") {
-                        if (event.target.nextElementSibling) {
-                            event.target.nextElementSibling.focus();
-                        }else {
-                            event.target.parentElement.firstElementChild.focus();
-                        }
-                    }
-                });
-                node.removeChild(e);
-                node.appendChild(button);
-            }); 
-        }
+  setActivePanel(item) {
+    let panelId = item.getAttribute("aria-controls");
+    let panel = document.getElementById(panelId);
+    this.getAllPanels().forEach(panel => { 
+      panel.removeAttribute('data-il-tab-visible');
     });
+    panel.setAttribute('data-il-tab-visible', true);
+    this.getAllTabs().forEach(tab => { 
+      tab.setAttribute('tabindex', -1); 
+      tab.removeAttribute('aria-selected');
+    });
+    item.setAttribute('tabindex', 0);
+    item.setAttribute('aria-selected', 'true');
+  }
+
+  keyboard(event) {
+    if (event.code == "ArrowLeft" || event.code == "ArrowUp") {
+      if (event.target.previousElementSibling) {
+          event.target.previousElementSibling.focus();
+      } else {
+          event.target.parentElement.lastElementChild.focus();
+      }
+    } else if (event.code == "ArrowRight" || event.code == "ArrowDown") {
+        if (event.target.nextElementSibling) {
+            event.target.nextElementSibling.focus();
+        } else {
+            event.target.parentElement.firstElementChild.focus();
+        }
+    } else if (event.code == "Enter" || event.code == "Space") {
+      event.target.click();
+    }
   }
 
   handlePanelsChange(e) {
@@ -108,19 +107,14 @@ class TabComponent extends LitElement {
     });
   }
 
-  firstUpdated() {
-  }
-
   render() {
     return html`
         <div id="container" ?compact=${this.compact}>
             <div id="tablist" role="tablist">
-                <div id="tablist-inner" role="tablist">
-                    <slot name="tabs" @slotchange=${this.handleTabsChange}></slot>
-                </div>
+                <slot name="tabs"></slot>
             </div>
             <div id="tabpanels">
-                <slot @slotchange=${this.handlePanelsChange}></slot>
+                <slot></slot>
             </div>
         </div>`;
   }
