@@ -93,20 +93,6 @@ class TabComponent extends LitElement {
     }
   }
 
-  handlePanelsChange(e) {
-    const childNodes = e.target.assignedNodes({flatten: true});
-    let firstNode = true;
-    childNodes.map((node) => {
-        if (node.nodeType == 1) {
-            if (firstNode) {
-                firstNode = false;
-            } else {
-                node.style.display = 'none';
-            }
-        }
-    });
-  }
-
   render() {
     return html`
         <div id="container" ?compact=${this.compact}>
