@@ -113,7 +113,7 @@ class TabComponent extends LitElement {
 
   render() {
     return html`
-        <div id="container">
+        <div id="container" ?compact=${this.compact}>
             <div id="tablist" role="tablist">
                 <div id="tablist-inner" role="tablist">
                     <slot name="tabs" @slotchange=${this.handleTabsChange}></slot>

@@ -91,12 +91,6 @@
     }
 
     @container (max-width: 767px) {
-        il-tabs {
-            --il-tabs--tablist--border-width: 0;
-        }
-        il-tabs.il-vertical-tabs {
-            --il-tabs--display: block;
-        }
         il-tabs.il-vertical-tabs il-content {
             margin-top: 30px;
         }
@@ -110,14 +104,6 @@
         }
      }
     
-     il-tabs[compact] {
-        --il-tabs--tablist--border-width: 0;
-     }
-     il-tabs[compact] button.il-tabs-button {
-        border-bottom: 1px solid var(--il-tabs--button--border-color);
-        display: block;
-        width: 100%;
-     }
      il-tabs[compact].il-vertical-tabs {
          --il-tabs--display: block;
      }

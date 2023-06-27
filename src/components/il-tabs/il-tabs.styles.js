@@ -19,11 +19,15 @@ export default css `
 
     @container (max-width: 767px) {
         #container {
+            --il-tabs--tablist--border-width: 0;
+            --il-tabs--display: block;
             padding: 60px 20px 75px;
         }
      }
     
       #container[compact] {
+        --il-tabs--tablist--border-width: 0;
+        --il-tabs--display: block;
         padding: 60px 20px 75px;
     }
 `;
