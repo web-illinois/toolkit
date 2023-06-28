@@ -23,7 +23,7 @@ jobs:
       env: 
         GITHUB_BRANCH: ${{ github.event.inputs.version }}
     - name: Display version install
-      run: echo "Installing dev version ${VERSION}"
+      run: echo "Installing CDN version ${VERSION}"
 
     - run: npm install
     - run: npm rebuild
@@ -34,7 +34,7 @@ jobs:
         aws-access-key-id: 'AKIAXNR47MADGK2A4HEW'
         aws-secret-access-key: ${{ secrets.AWS_SECRET_FOR_AKIAXNR47MADGK2A4HEW }}
         aws-region: us-east-2
-    - name: Delete S3 bucket in dev area
+    - name: Delete S3 bucket in CDN area
       run: aws s3 rm s3://cdn.toolkit.illinois.edu/content/$VERSION --recursive
-    - name: Deploy toolbox to S3 bucket in dev area
+    - name: Deploy toolbox to S3 bucket in CDN area
       run: aws s3 sync ./dist/ s3://cdn.toolkit.illinois.edu/content/$VERSION --delete --acl bucket-owner-full-control
