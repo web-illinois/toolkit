@@ -1,12 +1,12 @@
 {
   "name": "il-toolkit",
-  "version": "3.0.0-dev",
+  "version": "3.0.0-alpha.1",
   "description": "Brand toolkit for the web",
   "repository": "https://github.com/web-illinois/toolkit",
   "author": "University of Illinois Urbana-Champaign",
   "license": "NCSA",
   "private": true,
-  "main": "dist/js/index.js",
+  "main": "src/index.js",
   "files": [
     "dist"
   ],
@@ -30,7 +30,6 @@
     "postcss-mixins": "^9.0.4",
     "postcss-nested": "^6.0.1",
     "postcss-preset-env": "^8.4.1",
-    "sass": "^1.63.6",
     "vite": "^4.1.0",
     "vite-plugin-eslint": "^1.8.1"
   }
