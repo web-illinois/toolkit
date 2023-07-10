@@ -64,7 +64,7 @@ class TabComponent extends LitElement {
   }
 
   setTabs() {
-    console.debug("Set tab information");
+    console.debug("Tab: set information from tabs slot");
     this.getAllTabs().forEach((item, i) => {
       item.addEventListener('keydown', this.handleKeypress);
       item.addEventListener('click', e => this.setActivePanel(item));
@@ -80,6 +80,7 @@ class TabComponent extends LitElement {
   }
 
   setActivePanel(item) {
+    console.debug("Tab: set active panel");
     let panelId = item.getAttribute("aria-controls");
     let panel = document.getElementById(panelId);
     this.getAllPanels().forEach(panel => { 
@@ -95,16 +96,16 @@ class TabComponent extends LitElement {
   }
 
   handleKeypress(event) {
-    // if vertical, use up and down arrows -- otherwise, use left and right arrows
+    // if vertical (compact or il-vertical-tabs), use up and down arrows -- otherwise, use left and right arrows
     let tabComponent = event.target.closest('il-tabs');
     var arrowDirectionVertical = tabComponent.compact || tabComponent.classList.contains('il-vertical-tabs');
-    if ((!arrowDirectionVertical && event.code == "ArrowLeft") || (arrowDirectionVertical && event.code == "ArrowUp")) {
+    if ((arrowDirectionVertical && event.code == "ArrowUp") || (!arrowDirectionVertical && event.code == "ArrowLeft")) {
       if (event.target.previousElementSibling) {
           event.target.previousElementSibling.focus();
       } else {
           event.target.parentElement.lastElementChild.focus();
       }
-    } else if ((!arrowDirectionVertical && event.code == "ArrowRight") || (arrowDirectionVertical && event.code == "ArrowDown")) {
+    } else if ((arrowDirectionVertical && event.code == "ArrowDown") || (!arrowDirectionVertical && event.code == "ArrowRight")) {
         if (event.target.nextElementSibling) {
             event.target.nextElementSibling.focus();
         } else {
