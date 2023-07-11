@@ -77,18 +77,6 @@
     --il-image-feature--content--margin: 75px 50px 105px auto;
   }
 
-  il-image-feature il-content {
-    --il-content-heading-base-size: 1.65em;
-    --il-content-heading-ratio: 1;
-    --il-content--font-size: 1.05em;
-    --il-content--color: white;
-    --il-content--heading--color: white;
-    --il-content--link--focus--color: var(--il-orange);
-    --il-content--button--focus--background-color: white;
-    --il-content--button--focus--border-color: white;
-    --il-content--button--focus--color: var(--il-blue);
-  }
-
   il-image-feature[linkedby] {
     cursor: pointer;
     --il-image-feature--container--border: 1px solid transparent;
