@@ -40,7 +40,7 @@ export default css`
     flex-basis: 0px;
     max-width: var(--il-feature--main--max-width);
     margin: auto;
-    background: var(--il-feature--background);
+    background: var(--il-feature--main--background);
   }
   
   #background {
@@ -64,14 +64,6 @@ export default css`
     width: var(--il-feature--content--width, auto);
   }
 
-  @container (max-width: 1450px) {
-    #content {
-      padding: 20px 30px;
-      margin: auto;
-      width: auto;
-    }
-  }
-
   @container (max-width: 767px) {
     #container {
       display: block;
@@ -79,6 +71,11 @@ export default css`
     }
     #image ::slotted(img) {
       position: initial;
+    }
+    #content {
+      padding: 20px 30px;
+      margin: auto;
+      width: auto;
     }
   }
 
@@ -89,7 +86,7 @@ export default css`
   #container[data-compact] #image ::slotted(img) {
     position: initial;
   }
-  #container[data-tablet] #content {
+  #container[data-compact] #content {
     padding: 20px 30px;
     margin: auto;
     width: auto;

@@ -2,10 +2,12 @@
   :root {
     --il-feature--display: flex;
     --il-feature--background: var(--il-content--background, var(--il-blue));
+    --il-feature--main--background: var(--il-content--background, var(--il-blue));
     --il-feature--min-height: initial;
     --il-feature--max-width: initial;
     --il-feature--main--max-width: initial;
     --il-feature--main--flex-grow: 1;
+    --il-feature--main--max-width: initial;
     --il-feature--image--position: relative;
     --il-feature--image--display: flex;
     --il-feature--image--width: 50%;
@@ -21,6 +23,10 @@
     background: var(--il-feature--background);
   }
 
+  il-feature il-content.il-card {
+    --il-content--padding: auto;
+  }
+
   il-feature.il-image-background {
     --il-feature--display: block;
     --il-feature--image--width: 100%;
@@ -30,6 +36,7 @@
     --il-feature--content--width: 360px;
     --il-feature--content--padding: 50px 30px;
     --il-feature--main--max-width: 1140px;
+    --il-feature--main--background: transparent;
   }
 
   il-feature.il-theme-white, il-feature.il-theme-gray {
@@ -78,6 +85,16 @@
 
   il-feature.il-image-background.il-float-right {
     --il-feature--content--margin: 75px 50px 105px auto;
+  }
+
+  il-feature.il-image-background.il-float-center {
+    --il-feature--content--margin: 75px auto 105px auto;
+  }
+
+  @media screen and (max-width: 1400px) {
+    il-feature:not(.il-image-background) {
+      --il-feature--content--padding: 20px 30px;
+    }
   }
 }
  
