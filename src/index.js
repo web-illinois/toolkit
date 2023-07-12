@@ -15,7 +15,7 @@ import "./components/il-contact/il-contact.component";
 import "./components/il-footer/il-footer.component";
 import "./components/il-header/il-header.component";
 import "./components/il-hero/il-hero.component";
-import "./components/il-image-feature/il-image-feature.component";
+import "./components/il-feature/il-feature.component";
 import "./components/il-page-title/il-page-title.component";
 import "./components/il-profile/il-profile.component";
 import "./components/il-quote/il-quote.component";
