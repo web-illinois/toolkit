@@ -22,6 +22,10 @@
   border: var(--il-content--border, none);
 }
 
+.il-cards il-content {
+  --il-content--height: 100%;
+}
+
 .il-cards il-content il-icon, il-content.il-card il-icon {
   font-size: 4.167em;
   align-self: center;

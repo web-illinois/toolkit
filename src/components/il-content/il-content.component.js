@@ -13,7 +13,7 @@ class ContentComponent extends LitElement {
             margin: auto;
             display: var(--il-content--display, block);
             flex-flow: column nowrap;
-            height: 100%;
+            height: var(--il-content--height, auto);
           }`
     }
 
