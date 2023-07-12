@@ -1,29 +1,36 @@
-il-content.il-card {
-    --il-content-heading-base-size: 1.65em;
-    --il-content-heading-ratio: 1;
-    --il-content--font-size: 1.05em;
-    --il-content--color: white;
-    --il-content--heading--color: white;
-    --il-content--link--focus--color: var(--il-orange);
-    --il-content--button--focus--background-color: white;
-    --il-content--button--focus--border-color: white;
-    --il-content--button--focus--color: var(--il-blue);
-    --il-content--background: var(--il-blue);
-    --il-content--padding: 36px 46px;
-    --il-content--display: flex;
-    max-width: 900px;
-    padding: var(--il-content--padding);
-  }
+.il-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(350px,1fr));
+  grid-gap: 40px;
+  justify-content: space-between;
+}
 
-  il-content.il-card il-icon {
-    font-size: 4.167em;
-    align-self: center;
-  }
+.il-cards il-content, il-content.il-card {
+  --il-content-heading-base-size: 1.65em;
+  --il-content-heading-ratio: 1;
+  --il-content--font-size: 1.05em;
+  --il-content--color: white;
+  --il-content--heading--color: white;
+  --il-content--link--focus--color: var(--il-orange);
+  --il-content--button--focus--background-color: white;
+  --il-content--button--focus--border-color: white;
+  --il-content--button--focus--color: var(--il-blue);
+  --il-content--background: var(--il-blue);
+  --il-content--padding: 36px 46px;
+  --il-content--display: flex;
+  padding: var(--il-content--padding, auto);
+  border: var(--il-content--border, none);
+}
 
-  il-content.il-card.il-align-center > * {
-    align-self: center;
-  }
+.il-cards il-content il-icon, il-content.il-card il-icon {
+  font-size: 4.167em;
+  align-self: center;
+}
 
-  il-content.il-card .il-card-bottom {
-    margin-top: auto;
-  }
+.il-cards.il-align-center il-content>*, il-content.il-card.il-align-center>* {
+  align-self: center;
+}
+
+.il-cards il-content .il-card-bottom, il-content.il-card .il-card-bottom {
+  margin-top: auto;
+}

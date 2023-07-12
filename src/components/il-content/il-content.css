@@ -8,7 +8,6 @@
 
   :root {
     --il-content--color: var(--il-base-25);
-    --il-content--background: white;
     --il-content--heading--color: var(--il-content--color);
 
     --il-content--font-weight: 400;
@@ -24,13 +23,9 @@
     --il-content-h3-size: calc(var(--il-content-h4-size) * var(--il-content-heading-ratio));
     --il-content-h2-size: calc(var(--il-content-h3-size) * var(--il-content-heading-ratio));
     --il-content-h1-size: calc(var(--il-content-h2-size) * var(--il-content-heading-ratio));
-
-    --il-content--padding: auto;
-    --il-content--display: block;
   }
 
   il-content {
-
     box-sizing: border-box;
     display: block;
     font-weight: var(--il-content--font-weight);
@@ -39,7 +34,7 @@
     font-family: var(--il-content--font-family);
 
     color: var(--il-content--color);
-    background: var(--il-content--background);
+    background: var(--il-content--background, white);
     container-type: inline-size;
     position: relative;
 
@@ -53,6 +48,17 @@
         }
       }
     }
+  }
+
+  il-content.il-fixed-width {
+    --il-content--max-width: 1200px;
+  }
+
+  il-content.il-size-small {
+    --il-content--font-size: 1em;
+  }
+  il-content.il-size-large {
+    --il-content--font-size: 1.45em;
   }
 
   il-page > il-content {
@@ -71,9 +77,18 @@
 }
 
 @layer theme {
-
-  il-content.il-theme-blue, .il-theme-blue il-content, .il-theme-blue-gradient il-content {
+  il-content.il-theme-blue, .il-theme-blue il-content, il-content.il-theme-blue-gradient, .il-theme-blue-gradient il-content {
     @mixin il-content--theme-blue;
+  }
+
+  .il-theme-blue-gradient il-content {
+    --il-content--background: transparent;
+    --il-content--button--background-color: transparent;
+  }
+
+  il-content.il-theme-blue-gradient {
+    --il-content--background: var(--il-blue-gradient);
+    --il-content--button--background-color: transparent;
   }
 
   il-content.il-theme-white, .il-theme-white il-content {

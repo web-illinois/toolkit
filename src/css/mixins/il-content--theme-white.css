@@ -1,9 +1,11 @@
 @define-mixin il-content--theme-white {
   --il-content--color: var(--il-base-25);
+  --il-content--background: white;
   --il-content--heading--color: var(--il-blue);
   --il-content--link--color: var(--il-industrial-blue);
   --il-content--link--focus--color: var(--il-altgeld);
   --il-content--link--visited--color: var(--il-blue);
+  --il-content--border: 1px solid var(--il-base-25);
 
   --il-content--button--background-color: white;
   --il-content--button--color: var(--il-blue);
