@@ -3,10 +3,6 @@ import styles from './il-feature.styles';
 import "./il-feature.css";
 
 class FeatureComponent extends LitElement {
-  static get tabletSizePixelWidth() {
-    return 1450;
-  }
-
   static get compactSizePixelWidth() {
     return 768;
   }
@@ -17,8 +13,7 @@ class FeatureComponent extends LitElement {
 
   static get properties() {
     return {
-      _compact: { default: false, type: Boolean, attribute: false, state: true },
-      _tablet: { default: false, type: Boolean, attribute: false, state: true }
+      _compact: { default: false, type: Boolean, attribute: false, state: true }
     };
   }
 
@@ -27,20 +22,19 @@ class FeatureComponent extends LitElement {
   }
 
   handleResize(evt) {
-    this._tablet = this.offsetWidth < FeatureComponent.tabletSizePixelWidth;
     this._compact = this.offsetWidth < FeatureComponent.compactSizePixelWidth;
   }
 
   handleResizeEvent() {
   }
 
-   addPolyfillForContainerSupprt() {
+  addResizeListeners() {
     console.debug("Feature: No support for @container detected: using manual resize");
     window.addEventListener('load', this.handleResize.bind(this));
     window.addEventListener('resize', this.handleResize.bind(this));
    }
 
-   removePolyfillForContainerSupprt() {
+   removeResizeListeners() {
     console.debug("Feature: removing resize");
     window.removeEventListener('load', this.handleResize.bind(this));
     window.removeEventListener('resize', this.handleResize.bind(this));
@@ -53,20 +47,20 @@ class FeatureComponent extends LitElement {
   connectedCallback() {
     super.connectedCallback();
     if (!FeatureComponent.hasContainerSupport()) {
-     this.addPolyfillForContainerSupprt();
+     this.addResizeListeners();
    }
  }
    
    disconnectedCallback() {
      if (!FeatureComponent.hasContainerSupport()) {
-       this.removePolyfillForContainerSupprt();
+       this.removeResizeListeners();
      }
      super.disconnectedCallback();
    }
 
   render() {
     return html`
-        <div id="container" ?data-compact=${this._compact} ?data-tablet=${this._tablet}>
+        <div id="container" class="${this.compact ? 'compact' : ''}">
             <div id="image">
                 <slot name="image"></slot>
             </div>
