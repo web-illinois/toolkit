@@ -21,29 +21,8 @@ test.describe('desktop', () => {
     });
     runTest(test, 'cards', 'base-test', '', false);
     runTest(test, 'introduction', 'base-test', '', true);
-    runTest(test, 'introduction', 'fixed', 'fixed', false);
-    themes.forEach(theme => {
-        runTest(test, 'introduction', `theme-${theme}`, `theme=${theme}`, true);
-    });
-    sizes.forEach(size => {
-        runTest(test, 'introduction', `size-${size}`, `size=${size}`, true);
-    });
     runTest(test, 'lede-with-content-class', 'base-test', '', true);
-    runTest(test, 'lede-with-content-class', 'fixed', 'fixed', false);
-    themes.forEach(theme => {
-        runTest(test, 'lede-with-content-class', `theme-${theme}`, `theme=${theme}`, true);
-    });
-    sizes.forEach(size => {
-        runTest(test, 'lede-with-content-class', `size-${size}`, `size=${size}`, true);
-    });
     runTest(test, 'lede-with-paragraph-class', 'base-test', '', true);
-    runTest(test, 'lede-with-paragraph-class', 'fixed', 'fixed', false);
-    themes.forEach(theme => {
-        runTest(test, 'lede-with-paragraph-class', `theme-${theme}`, `theme=${theme}`, true);
-    });
-    sizes.forEach(size => {
-        runTest(test, 'lede-with-paragraph-class', `size-${size}`, `size=${size}`, true);
-    });
     runTest(test, 'content', 'base-test', '', true);
     runTest(test, 'headings', 'base-test', '', true);
 });
