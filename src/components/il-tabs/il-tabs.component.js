@@ -7,6 +7,8 @@ class TabComponent extends LitElement {
     return 768;
   }
 
+  // Static methods
+
   static get styles() {
     return styles;
   }
@@ -17,118 +19,132 @@ class TabComponent extends LitElement {
     };
   }
 
-  static hasContainerSupport() {
-    return CSS.supports('container-type', 'inline-size');
-  }
-
-  handleResize(evt) {
-    this.compact = this.offsetWidth < TabComponent.compactSizePixelWidth;
-    if (this.compact) {
-      this.classList.add('il-compact');
-    } else {
-      this.classList.remove('il-compact');
-    }
-  }
-
-  addResizeListeners() {
-    console.debug("Tab: No support for @container detected: using manual resize");
-    window.addEventListener('load', this.handleResize.bind(this));
-    window.addEventListener('resize', this.handleResize.bind(this));
-  }
-
-  removeResizeListeners() {
-    console.debug("Tab: removing resize");
-    window.removeEventListener('load', this.handleResize.bind(this));
-    window.removeEventListener('resize', this.handleResize.bind(this));
-  }
+  // Constructor
 
   constructor() {
     super();
+    this.handleMutation = this.handleMutation.bind(this);
+    this.handleResize = this.handleResize.bind(this);
+    this.handleTabClick = this.handleTabClick.bind(this);
+    document.addEventListener('DOMContentLoaded', this.handleDocumentLoaded.bind(this));
   }
+
+  // Component lifecycle
 
   connectedCallback() {
     super.connectedCallback();
-    if (!TabComponent.hasContainerSupport()) {
+    if (!this.hasContainerSupport()) {
       this.addResizeListeners();
     }
+    this.addMutationObserver();
   }
 
   disconnectedCallback() {
-    if (!TabComponent.hasContainerSupport()) {
+    if (!this.hasContainerSupport()) {
       this.removeResizeListeners();
     }
     super.disconnectedCallback();
   }
 
-  getAllTabs() {
-    return Array.from(this.querySelector('*[slot=tabs]').children);
-  }
+  // Event handlers
 
-  getAllPanels() {
-    return Array.from(this.querySelectorAll('*:not([slot])'));
-  }
-
-  setPanelInactive(item) {
-    item.setAttribute('tabindex', -1);
-    item.removeAttribute('aria-selected');
-  }
-
-  setTabs() {
-    console.debug("Tab: set information from tabs slot");
-    this.getAllTabs().forEach((item, i) => {
-      item.addEventListener('keydown', this.handleKeypress);
-      item.addEventListener('click', e => this.setActivePanel(item));
-      item.setAttribute('role', 'tab');
-      if (i == 0) {
-        this.setActivePanel(item);
-      }
-    });
-  }
-
-  setActivePanel(item) {
-    console.debug("Tab: set active panel");
-    let panelId = item.getAttribute("aria-controls");
-    let panel = document.getElementById(panelId);
-    this.getAllPanels().forEach(panel => {
-      panel.removeAttribute('data-il-tab-visible');
-    });
-    panel.setAttribute('data-il-tab-visible', true);
-    this.getAllTabs().forEach(tab => {
-      this.setPanelInactive(tab);
-    });
-    item.setAttribute('tabindex', 0);
-    item.setAttribute('aria-selected', 'true');
-  }
-
-  isVertical() {
-    return this.compact || this.classList.contains('il-vertical-tabs');
-  }
-
-  handleKeypress(event) {
-    // if vertical (compact or il-vertical-tabs), use up and down arrows -- otherwise, use left and right arrows
-    let tabComponent = event.target.closest('il-tabs');
-    let arrowDirectionVertical = tabComponent.isVertical();
-    if ((arrowDirectionVertical && event.code == "ArrowUp") || (!arrowDirectionVertical && event.code == "ArrowLeft")) {
-      if (event.target.previousElementSibling) {
-        event.target.previousElementSibling.focus();
-      } else {
-        event.target.parentElement.lastElementChild.focus();
-      }
-    } else if ((arrowDirectionVertical && event.code == "ArrowDown") || (!arrowDirectionVertical && event.code == "ArrowRight")) {
-      if (event.target.nextElementSibling) {
-        event.target.nextElementSibling.focus();
-      } else {
-        event.target.parentElement.firstElementChild.focus();
-      }
-    } else if (event.code == "Enter" || event.code == "Space") {
-      event.target.click();
+  handleDocumentLoaded() {
+    this.initializeTabs();
+    if (!this.hasActiveTab()) {
+      this.setActiveTab(this.getFirstTab());
     }
   }
 
+  handleMutation(evt) {
+    this.initializeTabs();
+  }
+
+  handleResize(evt) {
+    this.classList[this.isCompact() ? 'add' : 'remove']('il-compact');
+  }
+
+  handleTabClick(evt) {
+    this.setActiveTab(evt.currentTarget);
+  }
+
+  // Object methods
+
+  addMutationObserver() {
+    const observer = new MutationObserver(this.handleMutation);
+    observer.observe(this, { attributes: false, childList: true, subtree: true });
+  }
+
+  addResizeListeners() {
+    window.addEventListener('load', this.handleResize.bind(this));
+    window.addEventListener('resize', this.handleResize.bind(this));
+  }
+
+  getAllTabs() {
+    return this.querySelectorAll('*[role="tab"]');
+  }
+
+  getFirstTab() {
+    return this.querySelector('*[role="tab"]');
+  }
+
+  getTabPanel(tab) {
+    return document.getElementById(tab.getAttribute('aria-controls'));
+  }
+
+  hasActiveTab() {
+    return this.querySelector('*[role="tab"][aria-selected="true"]')
+  }
+
+  hasContainerSupport() {
+    return CSS.supports('container-type', 'inline-size');
+  }
+
+  initializeTab(tab) {
+    if (!this.tabIsInitialized(tab)) {
+      tab.setAttribute('data-il-initialized', '1');
+      tab.addEventListener('click', this.handleTabClick);
+    }
+  }
+
+  initializeTabs() {
+    this.getAllTabs().forEach(tab => this.initializeTab(tab));
+  }
+
+  isCompact() {
+    return this.offsetWidth < TabComponent.compactSizePixelWidth
+  }
+
+  removeResizeListeners() {
+    window.removeEventListener('load', this.handleResize.bind(this));
+    window.removeEventListener('resize', this.handleResize.bind(this));
+  }
+
+  setActiveTab(activeTab) {
+    console.debug(activeTab);
+    this.getAllTabs().forEach(tab => {
+      (tab === activeTab) ? this.setTabAsActive(tab) : this.setTabAsInactive(tab)
+    });
+  }
+
+  setTabAsActive(tab) {
+    tab.setAttribute('aria-selected', 'true');
+    this.getTabPanel(tab).setAttribute('data-il-tab-visible', '1');
+  }
+
+  setTabAsInactive(tab) {
+    tab.setAttribute('aria-selected', 'false');
+    this.getTabPanel(tab).setAttribute('data-il-tab-visible', '0');
+  }
+
+  tabIsInitialized(tab) {
+    return tab.hasAttribute('data-il-initialized');
+  }
+
+  // Render
+
   render() {
-    this.setTabs();
     return html`
-        <div id="container" class="${this.compact ? 'compact' : ''}">
+        <div id="container">
             <div id="tablist" role="tablist">
                 <slot name="tabs"></slot>
             </div>
