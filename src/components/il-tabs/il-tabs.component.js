@@ -34,25 +34,25 @@ class TabComponent extends LitElement {
     console.debug("Tab: No support for @container detected: using manual resize");
     window.addEventListener('load', this.handleResize.bind(this));
     window.addEventListener('resize', this.handleResize.bind(this));
-   }
+  }
 
-   removeResizeListeners() {
+  removeResizeListeners() {
     console.debug("Tab: removing resize");
     window.removeEventListener('load', this.handleResize.bind(this));
     window.removeEventListener('resize', this.handleResize.bind(this));
-   }
+  }
 
   constructor() {
     super();
-  }   
+  }
 
   connectedCallback() {
-   super.connectedCallback();
-   if (!TabComponent.hasContainerSupport()) {
-    this.addResizeListeners();
+    super.connectedCallback();
+    if (!TabComponent.hasContainerSupport()) {
+      this.addResizeListeners();
+    }
   }
-}
-  
+
   disconnectedCallback() {
     if (!TabComponent.hasContainerSupport()) {
       this.removeResizeListeners();
@@ -68,13 +68,7 @@ class TabComponent extends LitElement {
     return Array.from(this.querySelectorAll('*:not([slot])'));
   }
 
-  makePanelActive(item) {
-    item.setAttribute('tabindex', 0);
-    item.setAttribute('aria-selected', 'true');
-    this.setActivePanel(item);
-  }
-
-  makePanelInactive(item) {
+  setPanelInactive(item) {
     item.setAttribute('tabindex', -1);
     item.removeAttribute('aria-selected');
   }
@@ -86,7 +80,7 @@ class TabComponent extends LitElement {
       item.addEventListener('click', e => this.setActivePanel(item));
       item.setAttribute('role', 'tab');
       if (i == 0) {
-        this.makePanelActive(item);
+        this.setActivePanel(item);
       }
     });
   }
@@ -95,37 +89,37 @@ class TabComponent extends LitElement {
     console.debug("Tab: set active panel");
     let panelId = item.getAttribute("aria-controls");
     let panel = document.getElementById(panelId);
-    this.getAllPanels().forEach(panel => { 
+    this.getAllPanels().forEach(panel => {
       panel.removeAttribute('data-il-tab-visible');
     });
     panel.setAttribute('data-il-tab-visible', true);
-    this.getAllTabs().forEach(tab => { 
-      this.makePanelInactive(tab);
+    this.getAllTabs().forEach(tab => {
+      this.setPanelInactive(tab);
     });
     item.setAttribute('tabindex', 0);
     item.setAttribute('aria-selected', 'true');
   }
 
-  isVertical(target) {
-    let tabComponent = target.closest('il-tabs');
-    return tabComponent.compact || tabComponent.classList.contains('il-vertical-tabs');
+  isVertical() {
+    return this.compact || this.classList.contains('il-vertical-tabs');
   }
 
   handleKeypress(event) {
     // if vertical (compact or il-vertical-tabs), use up and down arrows -- otherwise, use left and right arrows
-    let arrowDirectionVertical = this.isVertical(event.target);
+    let tabComponent = event.target.closest('il-tabs');
+    let arrowDirectionVertical = tabComponent.isVertical();
     if ((arrowDirectionVertical && event.code == "ArrowUp") || (!arrowDirectionVertical && event.code == "ArrowLeft")) {
       if (event.target.previousElementSibling) {
-          event.target.previousElementSibling.focus();
+        event.target.previousElementSibling.focus();
       } else {
-          event.target.parentElement.lastElementChild.focus();
+        event.target.parentElement.lastElementChild.focus();
       }
     } else if ((arrowDirectionVertical && event.code == "ArrowDown") || (!arrowDirectionVertical && event.code == "ArrowRight")) {
-        if (event.target.nextElementSibling) {
-            event.target.nextElementSibling.focus();
-        } else {
-            event.target.parentElement.firstElementChild.focus();
-        }
+      if (event.target.nextElementSibling) {
+        event.target.nextElementSibling.focus();
+      } else {
+        event.target.parentElement.firstElementChild.focus();
+      }
     } else if (event.code == "Enter" || event.code == "Space") {
       event.target.click();
     }
