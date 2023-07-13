@@ -114,14 +114,14 @@
         }
      }
     
-     il-tabs[compact].il-vertical-tabs il-content {
+     il-tabs.il-compact.il-vertical-tabs il-content {
          margin-top: 30px;
      }
-     il-tabs[compact] *[role=tab] {
+     il-tabs.il-compact *[role=tab] {
         display: block;
         border-bottom: 1px solid var(--il-tabs--button--border-color);
       }
-      il-tabs[compact] *[role=tab]:first-of-type {
+      il-tabs.il-compact *[role=tab]:first-of-type {
          border-top: 1px solid var(--il-tabs--button--border-color);
       }
 

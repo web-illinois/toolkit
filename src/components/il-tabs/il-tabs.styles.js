@@ -27,7 +27,7 @@ export default css `
         }
      }
     
-      #container[compact] {
+      #container.compact {
         --il-tabs--tablist--border-width: 0;
         --il-tabs--display: block;
         --il-tabs--tabpanels--margin-top: 30px;

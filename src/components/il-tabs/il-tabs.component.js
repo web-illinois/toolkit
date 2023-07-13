@@ -13,7 +13,7 @@ class TabComponent extends LitElement {
 
   static get properties() {
     return {
-      compact: { default: false, type: Boolean, attribute: true, reflect: true }
+      compact: { default: false, type: Boolean, attribute: false, reflect: true }
     };
   }
 
@@ -23,15 +23,20 @@ class TabComponent extends LitElement {
 
   handleResize(evt) {
     this.compact = this.offsetWidth < TabComponent.compactSizePixelWidth;
+    if (this.compact) {
+      this.classList.add('il-compact');
+    } else {
+      this.classList.remove('il-compact');
+    }
   }
 
-   addPolyfillForContainerSupprt() {
+  addResizeListeners() {
     console.debug("Tab: No support for @container detected: using manual resize");
     window.addEventListener('load', this.handleResize.bind(this));
     window.addEventListener('resize', this.handleResize.bind(this));
    }
 
-   removePolyfillForContainerSupprt() {
+   removeResizeListeners() {
     console.debug("Tab: removing resize");
     window.removeEventListener('load', this.handleResize.bind(this));
     window.removeEventListener('resize', this.handleResize.bind(this));
@@ -44,13 +49,13 @@ class TabComponent extends LitElement {
   connectedCallback() {
    super.connectedCallback();
    if (!TabComponent.hasContainerSupport()) {
-    this.addPolyfillForContainerSupprt();
+    this.addResizeListeners();
   }
 }
   
   disconnectedCallback() {
     if (!TabComponent.hasContainerSupport()) {
-      this.removePolyfillForContainerSupprt();
+      this.removeResizeListeners();
     }
     super.disconnectedCallback();
   }
@@ -63,6 +68,17 @@ class TabComponent extends LitElement {
     return Array.from(this.querySelectorAll('*:not([slot])'));
   }
 
+  makePanelActive(item) {
+    item.setAttribute('tabindex', 0);
+    item.setAttribute('aria-selected', 'true');
+    this.setActivePanel(item);
+  }
+
+  makePanelInactive(item) {
+    item.setAttribute('tabindex', -1);
+    item.removeAttribute('aria-selected');
+  }
+
   setTabs() {
     console.debug("Tab: set information from tabs slot");
     this.getAllTabs().forEach((item, i) => {
@@ -70,11 +86,7 @@ class TabComponent extends LitElement {
       item.addEventListener('click', e => this.setActivePanel(item));
       item.setAttribute('role', 'tab');
       if (i == 0) {
-        item.setAttribute('tabindex', 0);
-        item.setAttribute('aria-selected', 'true');
-        this.setActivePanel(item);
-      } else {
-        item.setAttribute('tabindex', -1);
+        this.makePanelActive(item);
       }
     });
   }
@@ -88,17 +100,20 @@ class TabComponent extends LitElement {
     });
     panel.setAttribute('data-il-tab-visible', true);
     this.getAllTabs().forEach(tab => { 
-      tab.setAttribute('tabindex', -1); 
-      tab.removeAttribute('aria-selected');
+      this.makePanelInactive(tab);
     });
     item.setAttribute('tabindex', 0);
     item.setAttribute('aria-selected', 'true');
   }
 
+  isVertical(target) {
+    let tabComponent = target.closest('il-tabs');
+    return tabComponent.compact || tabComponent.classList.contains('il-vertical-tabs');
+  }
+
   handleKeypress(event) {
     // if vertical (compact or il-vertical-tabs), use up and down arrows -- otherwise, use left and right arrows
-    let tabComponent = event.target.closest('il-tabs');
-    var arrowDirectionVertical = tabComponent.compact || tabComponent.classList.contains('il-vertical-tabs');
+    let arrowDirectionVertical = this.isVertical(event.target);
     if ((arrowDirectionVertical && event.code == "ArrowUp") || (!arrowDirectionVertical && event.code == "ArrowLeft")) {
       if (event.target.previousElementSibling) {
           event.target.previousElementSibling.focus();
@@ -119,7 +134,7 @@ class TabComponent extends LitElement {
   render() {
     this.setTabs();
     return html`
-        <div id="container" ?compact=${this.compact}>
+        <div id="container" class="${this.compact ? 'compact' : ''}">
             <div id="tablist" role="tablist">
                 <slot name="tabs"></slot>
             </div>
