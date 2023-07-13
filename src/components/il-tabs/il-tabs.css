@@ -53,13 +53,13 @@
         background: var(--il-tabs--button--background--focus);
     }
 
-    il-tabs *[role=tab][aria-selected] {
+    il-tabs *[role=tab][aria-selected="true"] {
         color: var(--il-tabs--button--color--selected);
         background: var(--il-tabs--button--background--selected);
     }
 
-    il-tabs *[role=tab][aria-selected]:hover,
-    il-tabs *[role=tab][aria-selected]:focus {
+    il-tabs *[role=tab][aria-selected="true"]:hover,
+    il-tabs *[role=tab][aria-selected="true"]:focus {
         color: var(--il-tabs--button--color--selected--focus);
         background: var(--il-tabs--button--background--selected--focus);
     }

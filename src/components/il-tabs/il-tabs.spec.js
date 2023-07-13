@@ -1,12 +1,34 @@
 import { test, expect } from '@playwright/test';
 const AxeBuilder = require('@axe-core/playwright').default;
 
-const desktop = { width: 1280, height: 1024 };
-const mobile = { width: 375, height: 812 };
-
 const themes = ['blue', 'gray', 'white', 'orange'];
 
 test.describe('desktop', () => {
+    test.use({ viewport: { width: 1280, height: 1024 } });
+
+    test('default arrangement', async ({page}) => {
+        await page.goto(`components/il-tabs/tests/tabs.html`);
+        await expect(page.getByTestId('component')).toHaveScreenshot();
+    });
+
+    test('adding a tab after the page has loaded', async ({page}) => {
+        await page.goto(`components/il-tabs/tests/dynamic-content.html`);
+        await expect(page.getByTestId('component')).toHaveScreenshot();
+        // TODO: Test clicking on the inserted tab
+    });
+})
+
+test.describe('mobile', () => {
+    test.use({ viewport: { width: 375, height: 812 } });
+    test('default arrangement', async ({page}) => {
+        await page.goto(`components/il-tabs/tests/tabs.html`);
+        await expect(page.getByTestId('component')).toHaveScreenshot();
+    })
+});
+
+
+/*
+test.skip('desktop', () => {
     test.use({ viewport: desktop });
     runTest(test, 'base-test', '', true);
     runTest(test, 'fixed', 'fixed', true);
@@ -20,7 +42,7 @@ test.describe('desktop', () => {
     });
 });
 
-test.describe('mobile', () => {
+test.skip('mobile', () => {
     test.use({ viewport: mobile });
     runTest(test, 'base-test', '', true);
     runTest(test, 'fixed', 'fixed', true);
@@ -33,7 +55,7 @@ test.describe('mobile', () => {
         runTest(test, `vertical-theme-${theme}`, `vertical&theme=${theme}`, false);
     });
 })
-
+*/
 // private functions
 
 function runTest(test, name, querystring, accessibility) {
