@@ -20,10 +20,9 @@
   --il-content--display: flex;
   padding: var(--il-content--padding, auto);
   border: var(--il-content--border, none);
-}
-
-.il-cards il-content {
-  --il-content--height: 100%;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
 }
 
 .il-cards il-content il-icon, il-content.il-card il-icon {
@@ -37,4 +36,9 @@
 
 .il-cards il-content .il-card-bottom, il-content.il-card .il-card-bottom {
   margin-top: auto;
+}
+
+.il-cards il-content.il-theme-white, .il-cards il-content.il-theme-gray, 
+il-content.il-card.il-theme-white, il-content.il-card.il-theme-gray {
+  --il-content--border: 1px solid var(--il-base-25);
 }

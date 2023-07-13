@@ -27,6 +27,10 @@
     --il-content--padding: auto;
   }
 
+  il-feature.il-theme-white il-content.il-card, il-feature.il-theme-gray il-content.il-card {
+    --il-content--border: none;
+  }
+
   il-feature.il-image-background {
     --il-feature--display: block;
     --il-feature--image--width: 100%;
@@ -45,22 +49,27 @@
 
   il-feature.il-theme-white {
     --il-feature--background: white;
+    --il-feature--main--background: white;
   }
 
   il-feature.il-theme-gray {
     --il-feature--background: var(--il-gray-1);
+    --il-feature--main--background: var(--il-gray-1);
   }
 
   il-feature.il-theme-blue {
     --il-feature--background: var(--il-blue);
+    --il-feature--main--background: var(--il-blue);
   }
 
   il-feature.il-theme-orange {
     --il-feature--background: var(--il-orange);
+    --il-feature--main--background: var(--il-orange);
   }
 
   il-feature.il-theme-blue-gradient {
     --il-feature--background: var(--il-blue-gradient);
+    --il-feature--main--background: var(--il-blue-gradient);
   }
 
   il-feature.il-fixed-width {
