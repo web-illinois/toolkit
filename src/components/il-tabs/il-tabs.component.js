@@ -26,6 +26,7 @@ class TabComponent extends LitElement {
     this.handleMutation = this.handleMutation.bind(this);
     this.handleResize = this.handleResize.bind(this);
     this.handleTabClick = this.handleTabClick.bind(this);
+    this.handleKeyPress = this.handleKeyPress.bind(this);
     document.addEventListener('DOMContentLoaded', this.handleDocumentLoaded.bind(this));
   }
 
@@ -67,6 +68,12 @@ class TabComponent extends LitElement {
     this.setActiveTab(evt.currentTarget);
   }
 
+  handleKeyPress(evt) {
+    if (evt.code == 'Enter' || evt.code == 'Space') {
+      this.setActiveTab(evt.currentTarget);
+    }
+  }
+
   // Object methods
 
   addMutationObserver() {
@@ -101,8 +108,10 @@ class TabComponent extends LitElement {
 
   initializeTab(tab) {
     if (!this.tabIsInitialized(tab)) {
+      tab.setAttribute("tabindex", 0);
       tab.setAttribute('data-il-initialized', '1');
       tab.addEventListener('click', this.handleTabClick);
+      tab.addEventListener('keydown', this.handleKeyPress);
     }
   }
 

@@ -21,12 +21,8 @@
         transition: color .3s;
       }
 
-      il-tabs > *:not([slot]) {
+      il-tabs *[data-il-tab-visible="0"] {
         display: none;
-      }
-
-      il-tabs > *[data-il-tab-visible]:not([slot]) {
-        display: initial;
       }
 
     il-tabs.il-fixed-width {
