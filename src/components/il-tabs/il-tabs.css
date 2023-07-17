@@ -1,170 +1,120 @@
 @layer component {
-    :root {
-        --il-tabs--display: block;
-        --il-tabs--background: var(--il-blue);
-        --il-tabs--button--color: white;
-        --il-tabs--button--color--focus: var(--il-blue);
-        --il-tabs--button--background--focus: white;
-        --il-tabs--button--color--selected: white;
-        --il-tabs--button--background--selected: var(--il-orange);
-        --il-tabs--button--color--selected--focus: var(--il-orange);
-        --il-tabs--button--background--selected--focus: white;
-        --il-tabs--button--border-color: #c8c6c7;
-        --il-tabs--tablist--border-width: 1px;
-        --il-tabs--tabpanels--margin-top: 30px;
+  :root {
+    --il-tabs--display: block;
+    --il-tabs--background: var(--il-blue);
+    --il-tabs--button--color: white;
+    --il-tabs--button--color--focus: var(--il-blue);
+    --il-tabs--button--background--focus: white;
+    --il-tabs--button--color--selected: white;
+    --il-tabs--button--background--selected: var(--il-orange);
+    --il-tabs--button--color--selected--focus: var(--il-orange);
+    --il-tabs--button--background--selected--focus: white;
+    --il-tabs--button--border-color: #c8c6c7;
+    --il-tabs--tablist--border-width: 1px;
+    --il-tabs--tabpanels--margin-top: 30px;
+  }
+
+  il-tabs {
+    display: block;
+    position: relative;
+    container-type: inline-size;
+  }
+
+  il-tabs *[role=tab] {
+    display: inline-block;
+    background: var(--il-tabs--background);
+    color: var(--il-tabs--button--color);
+    line-height: var(--il-content--line-height);
+    font-family: var(--il-content--font-family);
+    font-size: 1.25em;
+    font-weight: 700;
+    border: none;
+    padding: .75em 1em;
+
+    &:hover, &:focus {
+      outline: none;
+      color: var(--il-tabs--button--color--focus);
+      background: var(--il-tabs--button--background--focus);
     }
 
-    il-tabs {
-        display: block;
-        position: relative;
-        container-type: inline-size;
-        transition: color .3s;
+    &[aria-selected="true"] {
+      color: var(--il-tabs--button--color--selected);
+      background: var(--il-tabs--button--background--selected);
+
+      &:hover, &:focus {
+        color: var(--il-tabs--button--color--selected--focus);
+        background: var(--il-tabs--button--background--selected--focus);
       }
 
-      il-tabs > *:not([slot]) {
+      il-tabs *[data-il-tab-visible="0"] {
         display: none;
       }
+    }
+  }
 
-      il-tabs > *[data-il-tab-visible]:not([slot]) {
-        display: initial;
-      }
+  il-tabs.il-vertical-tabs {
+    --il-tabs--tabpanels--margin-top: 0;
+    --il-tabs--tablist--border-width: 0;
+    --il-tabs--display: flex;
+  }
 
-    il-tabs.il-fixed-width {
-        --il-tabs--max-width: 1140px;
-        background: var(--il-tabs--background);
+  il-tabs.il-vertical-tabs *[slot=tabs] {
+    display: flex;
+    flex-direction: column;
+    width: 350px;
+  }
+
+  il-tabs.il-vertical-tabs *[role=tab] {
+    border-bottom: 1px solid var(--il-tabs--button--border-color);
+  }
+
+  il-tabs.il-vertical-tabs *[role=tab]:first-of-type {
+    border-top: 1px solid var(--il-tabs--button--border-color);
+  }
+
+  il-tabs il-content {
+    margin-top: 30px;
+    --il-content-heading-base-size: 1.65em;
+    --il-content-heading-ratio: 1;
+    --il-content--font-size: 1.05em;
+    --il-content--color: white;
+    --il-content--heading--color: white;
+    --il-content--link--focus--color: var(--il-orange);
+    --il-content--button--focus--background-color: white;
+    --il-content--button--focus--border-color: white;
+    --il-content--button--focus--color: var(--il-blue);
+  }
+
+  il-tabs.il-vertical-tabs il-content {
+    margin-top: 0;
+  }
+
+  @container (max-width: 767px) {
+    il-tabs.il-vertical-tabs il-content {
+      margin-top: 30px;
     }
 
     il-tabs *[role=tab] {
-        display: inline-block;
-        background: var(--il-tabs--background);
-        color: var(--il-tabs--button--color);
-        line-height: var(--il-content--line-height);
-        font-family: var(--il-content--font-family);
-        font-size: 20px;
-        font-weight: 700;
-        border: none;
-        padding: 15px 20px;
+      display: block;
+      border-bottom: 1px solid var(--il-tabs--button--border-color);
     }
 
-    il-tabs *[role=tab]:hover,
-    il-tabs *[role=tab]:focus {
-        outline: none;
-        color: var(--il-tabs--button--color--focus);
-        background: var(--il-tabs--button--background--focus);
-    }
-
-    il-tabs *[role=tab][aria-selected] {
-        color: var(--il-tabs--button--color--selected);
-        background: var(--il-tabs--button--background--selected);
-    }
-
-    il-tabs *[role=tab][aria-selected]:hover,
-    il-tabs *[role=tab][aria-selected]:focus {
-        color: var(--il-tabs--button--color--selected--focus);
-        background: var(--il-tabs--button--background--selected--focus);
-    }
-
-    il-tabs.il-vertical-tabs {
-        --il-tabs--tabpanels--margin-top: 0;
-        --il-tabs--tablist--border-width: 0;
-        --il-tabs--display: flex;
-    }
-
-    il-tabs.il-vertical-tabs *[slot=tabs] {
-        display: flex;
-        flex-direction: column;
-        width: 350px;
-    }
-
-    il-tabs.il-vertical-tabs *[role=tab] {
-        border-bottom: 1px solid var(--il-tabs--button--border-color);
-    }
-
-    il-tabs.il-vertical-tabs *[role=tab]:first-of-type {
-        border-top: 1px solid var(--il-tabs--button--border-color);
-    }
-
-    il-tabs il-content {
-        margin-top: 30px;
-        --il-content-heading-base-size: 1.65em;
-        --il-content-heading-ratio: 1;
-        --il-content--font-size: 1.05em;
-        --il-content--color: white;
-        --il-content--heading--color: white;
-        --il-content--link--focus--color: var(--il-orange);
-        --il-content--button--focus--background-color: white;
-        --il-content--button--focus--border-color: white;
-        --il-content--button--focus--color: var(--il-blue);
-    }
-
-    il-tabs.il-vertical-tabs il-content {
-        margin-top: 0;
-    }
-
-    @container (max-width: 767px) {
-        il-tabs.il-vertical-tabs il-content {
-            margin-top: 30px;
-        }
-        il-tabs *[role=tab] {
-            display: block;
-            border-bottom: 1px solid var(--il-tabs--button--border-color);
-        }
-        il-tabs *[role=tab]:first-of-type {
-            border-top: 1px solid var(--il-tabs--button--border-color);
-        }
-     }
-    
-     il-tabs[compact].il-vertical-tabs il-content {
-         margin-top: 30px;
-     }
-     il-tabs[compact] *[role=tab] {
-        display: block;
-        border-bottom: 1px solid var(--il-tabs--button--border-color);
-      }
-      il-tabs[compact] *[role=tab]:first-of-type {
-         border-top: 1px solid var(--il-tabs--button--border-color);
-      }
-
-}
-
-@layer theme {
-    il-tabs.il-theme-white, il-tabs.il-theme-gray {
-        --il-tabs--background: white;
-        --il-tabs--button--color: var(--il-blue);
-        --il-tabs--button--color--focus: white;
-        --il-tabs--button--background--focus: var(--il-blue);
-        --il-tabs--button--color--selected: white;
-        --il-tabs--button--background--selected: var(--il-orange);
-        --il-tabs--button--color--selected--focus: white;
-        --il-tabs--button--background--selected--focus: var(--il-altgeld);
-        --il-tabs--button--border-color: var(--il-blue);
-    }
-
-    il-tabs.il-theme-gray {
-        --il-tabs--background: var(--il-gray-1);
-    }
-
-    il-tabs.il-theme-orange {
-        --il-tabs--background: var(--il-orange);
-        --il-tabs--button--background--selected: var(--il-blue);
-        --il-tabs--button--color--selected--focus: white;
-        --il-tabs--button--background--selected--focus: var(--il-industrial-blue);
-        --il-tabs--button--border-color: white;
-    }
-
-    il-tabs.il-theme-gray il-content, 
-    il-tabs.il-theme-white il-content {
-        --il-content--color: var(--il-base-25);
-        --il-content--heading--color: var(--il-blue);
-        --il-content--link--color: var(--il-industrial-blue);
-        --il-content--link--focus--color: var(--il-altgeld);
-        --il-content--link--visited--color: var(--il-blue);
-      
-        --il-content--button--background-color: white;
-        --il-content--button--color: var(--il-blue);
-        --il-content--button--border-color: var(--il-blue);
-        --il-content--button--focus--background-color: var(--il-blue);
-        --il-content--button--focus--color: white;
-        --il-content--button--focus--border-color: var(--il-blue);
+    il-tabs *[role=tab]:first-of-type {
+      border-top: 1px solid var(--il-tabs--button--border-color);
     }
   }
+
+  il-tabs.il-compact.il-vertical-tabs il-content {
+    margin-top: 30px;
+  }
+
+  il-tabs.il-compact *[role=tab] {
+    display: block;
+    border-bottom: 1px solid var(--il-tabs--button--border-color);
+  }
+
+  il-tabs.il-compact *[role=tab]:first-of-type {
+    border-top: 1px solid var(--il-tabs--button--border-color);
+  }
+
+}
