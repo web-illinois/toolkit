@@ -54,6 +54,10 @@
         color: var(--il-tabs--button--color--selected--focus);
         background: var(--il-tabs--button--background--selected--focus);
       }
+
+      il-tabs *[data-il-tab-visible="0"] {
+        display: none;
+      }
     }
   }
 
