@@ -20,15 +20,6 @@
     container-type: inline-size;
   }
 
-  il-tabs > * {
-    display: none !important;
-  }
-
-  il-tabs > *[slot="tabs"],
-  il-tabs > *[data-il-tab-visible="1"] {
-    display: block !important;
-  }
-
   il-tabs *[role=tab] {
     display: inline-block;
     background: var(--il-tabs--background);
