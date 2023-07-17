@@ -1,0 +1,109 @@
+@layer component {
+  :root {
+    --il-feature--display: flex;
+    --il-feature--background: var(--il-content--background, var(--il-blue));
+    --il-feature--main--background: var(--il-content--background, var(--il-blue));
+    --il-feature--min-height: initial;
+    --il-feature--max-width: initial;
+    --il-feature--main--max-width: initial;
+    --il-feature--main--flex-grow: 1;
+    --il-feature--main--max-width: initial;
+    --il-feature--image--position: relative;
+    --il-feature--image--display: flex;
+    --il-feature--image--width: 50%;
+    --il-feature--content--padding: 48px 96px;
+  }
+
+  il-feature {
+    display: block;
+    position: relative;
+    container-type: inline-size;
+    transition: color .3s;
+    @mixin il-content--theme-blue;
+    background: var(--il-feature--background);
+  }
+
+  il-feature il-content.il-card {
+    --il-content--padding: auto;
+  }
+
+  il-feature.il-theme-white il-content.il-card, il-feature.il-theme-gray il-content.il-card {
+    --il-content--border: none;
+  }
+
+  il-feature.il-image-background {
+    --il-feature--display: block;
+    --il-feature--image--width: 100%;
+    --il-feature--image--position: initial;
+    --il-feature--image--display: block;
+    --il-feature--content--margin: 75px auto 105px 50px;
+    --il-feature--content--width: 360px;
+    --il-feature--content--padding: 50px 30px;
+    --il-feature--main--max-width: 1140px;
+    --il-feature--main--background: transparent;
+  }
+
+  il-feature.il-theme-white, il-feature.il-theme-gray {
+    --il-feature--container--border: 1px solid var(--il-gray-2);
+  }
+
+  il-feature.il-theme-white {
+    --il-feature--background: white;
+    --il-feature--main--background: white;
+  }
+
+  il-feature.il-theme-gray {
+    --il-feature--background: var(--il-gray-1);
+    --il-feature--main--background: var(--il-gray-1);
+  }
+
+  il-feature.il-theme-blue {
+    --il-feature--background: var(--il-blue);
+    --il-feature--main--background: var(--il-blue);
+  }
+
+  il-feature.il-theme-orange {
+    --il-feature--background: var(--il-orange);
+    --il-feature--main--background: var(--il-orange);
+  }
+
+  il-feature.il-theme-blue-gradient {
+    --il-feature--background: var(--il-blue-gradient);
+    --il-feature--main--background: var(--il-blue-gradient);
+  }
+
+  il-feature.il-fixed-width {
+    --il-feature--max-width: 1200px;
+  }
+
+  il-feature.il-size-large {
+    --il-feature--main--flex-grow: 0.5;
+  }
+
+  il-feature.il-size-small {
+    --il-feature--main--flex-grow: 2;
+  }
+
+  il-feature.il-size-xsmall {
+    --il-feature--main--flex-grow: 4;
+  }
+
+  il-feature.il-float-right {
+    --il-feature--flex-direction: row-reverse;
+  }
+
+  il-feature.il-image-background.il-float-right {
+    --il-feature--content--margin: 75px 50px 105px auto;
+  }
+
+  il-feature.il-image-background.il-float-center {
+    --il-feature--content--margin: 75px auto 105px auto;
+  }
+
+  @media screen and (max-width: 1400px) {
+    il-feature:not(.il-image-background) {
+      --il-feature--content--padding: 20px 30px;
+    }
+  }
+}
+ 

@@ -3,7 +3,6 @@
   --il-content--button--background-color: transparent;
   --il-content--button--color: inherit;
   --il-content--button--border-color: var(--il-content--button--color);
-  --il-content--button--focus--background-color: transparent;
   --il-content--button--focus--color: inherit;
   --il-content--button--focus--border-color: var(--il-content--button--border-color);
 }
@@ -19,7 +18,7 @@
   all: initial;
   display: inline-block;
 }
-a.il-button, .il-buttons a {
+a.il-button, .il-buttons a, button.il-button, .il-buttons button {
   all: initial;
   border-color: var(--il-content--button--border-color);
   border-style: solid;
@@ -43,8 +42,8 @@ a.il-button, .il-buttons a {
   &:hover,
   &:focus {
     outline: 0;
-    background-color: var(--il-content--button--focus--background-color);
-    border-color: var(--il-content--button--focus--border-color);
-    color: var(--il-content--button--focus--color);
+    background-color: var(--il-content--button--focus--background-color, var(--il-blue));
+    border-color: var(--il-content--button--focus--border-color, var(--il-blue));
+    color: var(--il-content--button--focus--color, white);
   }
 }

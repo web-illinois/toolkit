@@ -7,14 +7,21 @@ class ContentComponent extends LitElement {
         return css`
           :host {
             display: block;
+          }
+          div {
+            max-width: var(--il-content--max-width, none);
+            margin: auto;
+            display: var(--il-content--display, block);
+            flex-flow: column nowrap;
+            flex-grow: 1;
           }`
     }
 
     render() {
         return html`
-            <div>
-                <slot></slot>
-            </div>`
+        <div>
+            <slot></slot>
+        </div>`;
     }
 }
 

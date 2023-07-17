@@ -1,5 +1,6 @@
 @define-mixin il-content--theme-blue {
   --il-content--color: white;
+  --il-content--background: var(--il-blue);
   --il-content--heading--color: white;
   --il-content--link--color: white;
   --il-content--link--focus--color: var(--il-orange);

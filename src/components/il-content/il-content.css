@@ -2,6 +2,7 @@
 @import "css/button-links.css" layer(component);
 @import "css/introduction.css" layer(component);
 @import "css/lede.css" layer(component);
+@import "css/card.css" layer(component);
 
 @layer component {
 
@@ -25,7 +26,6 @@
   }
 
   il-content {
-
     box-sizing: border-box;
     display: block;
     font-weight: var(--il-content--font-weight);
@@ -34,6 +34,7 @@
     font-family: var(--il-content--font-family);
 
     color: var(--il-content--color);
+    background: var(--il-content--background, white);
     container-type: inline-size;
     position: relative;
 
@@ -47,6 +48,17 @@
         }
       }
     }
+  }
+
+  il-content.il-fixed-width {
+    --il-content--max-width: 1200px;
+  }
+
+  il-content.il-size-small {
+    --il-content--font-size: 1em;
+  }
+  il-content.il-size-large {
+    --il-content--font-size: 1.45em;
   }
 
   il-page > il-content {
@@ -65,9 +77,18 @@
 }
 
 @layer theme {
-
-  il-content.il-theme-blue, .il-theme-blue il-content, .il-theme-blue-gradient il-content {
+  il-content.il-theme-blue, .il-theme-blue il-content, il-content.il-theme-blue-gradient, .il-theme-blue-gradient il-content {
     @mixin il-content--theme-blue;
+  }
+
+  .il-theme-blue-gradient il-content {
+    --il-content--background: transparent;
+    --il-content--button--background-color: transparent;
+  }
+
+  il-content.il-theme-blue-gradient {
+    --il-content--background: var(--il-blue-gradient);
+    --il-content--button--background-color: transparent;
   }
 
   il-content.il-theme-white, .il-theme-white il-content {
