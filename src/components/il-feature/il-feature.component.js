@@ -3,6 +3,9 @@ import styles from './il-feature.styles';
 import "./il-feature.css";
 
 class FeatureComponent extends LitElement {
+
+  // Static methods
+
   static get compactSizePixelWidth() {
     return 768;
   }
@@ -17,50 +20,60 @@ class FeatureComponent extends LitElement {
     };
   }
 
-  static hasContainerSupport() {
+  // Constructor  
+
+  constructor() {
+    super();
+    this.handleResize = this.handleResize.bind(this);
+  }
+
+  // Component lifecycle
+
+  connectedCallback() {
+    super.connectedCallback();
+    if (!this.hasContainerSupport()) {
+      this.addResizeListeners();
+    }
+  }
+
+  disconnectedCallback() {
+    if (!this.hasContainerSupport()) {
+      this.removeResizeListeners();
+    }
+    super.disconnectedCallback();
+  }
+
+  // Event handlers
+
+  hasContainerSupport() {
     return CSS.supports('container-type', 'inline-size');
   }
 
   handleResize(evt) {
-    this._compact = this.offsetWidth < FeatureComponent.compactSizePixelWidth;
-  }
-
-  handleResizeEvent() {
+    this._compact = this.isCompact();
   }
 
   addResizeListeners() {
     console.debug("Feature: No support for @container detected: using manual resize");
     window.addEventListener('load', this.handleResize.bind(this));
     window.addEventListener('resize', this.handleResize.bind(this));
-   }
+  }
 
-   removeResizeListeners() {
+  removeResizeListeners() {
     console.debug("Feature: removing resize");
     window.removeEventListener('load', this.handleResize.bind(this));
     window.removeEventListener('resize', this.handleResize.bind(this));
-   }
-
-  constructor() {
-    super();
   }
 
-  connectedCallback() {
-    super.connectedCallback();
-    if (!FeatureComponent.hasContainerSupport()) {
-     this.addResizeListeners();
-   }
- }
-   
-   disconnectedCallback() {
-     if (!FeatureComponent.hasContainerSupport()) {
-       this.removeResizeListeners();
-     }
-     super.disconnectedCallback();
-   }
+  // Object methods
+
+  isCompact() {
+    return this.offsetWidth < FeatureComponent.compactSizePixelWidth
+  }
 
   render() {
     return html`
-        <div id="container" class="${this.compact ? 'compact' : ''}">
+        <div id="container" class="${this._compact ? 'compact' : ''}">
             <div id="image">
                 <slot name="image"></slot>
             </div>
