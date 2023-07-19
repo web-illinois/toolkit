@@ -6,24 +6,15 @@ class FeatureComponent extends LitElement {
 
   // Static methods
 
-  static get compactSizePixelWidth() {
-    return 768;
-  }
-
   static get styles() {
     return styles;
   }
 
-  static get properties() {
-    return {
-      _compact: { default: false, type: Boolean, attribute: false, state: true }
-    };
-  }
-
-  // Constructor  
+  // Constructor
 
   constructor() {
     super();
+    this.containerBreakpoint = 770;
     this.handleResize = this.handleResize.bind(this);
   }
 
@@ -33,47 +24,40 @@ class FeatureComponent extends LitElement {
     super.connectedCallback();
     if (!this.hasContainerSupport()) {
       this.addResizeListeners();
+      this.updateContainerSizeAttribute();
     }
-  }
-
-  disconnectedCallback() {
-    if (!this.hasContainerSupport()) {
-      this.removeResizeListeners();
-    }
-    super.disconnectedCallback();
   }
 
   // Event handlers
+
+  handleResize(evt) {
+    this.updateContainerSizeAttribute();
+  }
+
+  // Object methods
+
+  addResizeListeners() {
+    window.addEventListener('load', this.handleResize);
+    window.addEventListener('resize', this.handleResize);
+  }
+
+  containerIsSmallerThanBreakpoint() {
+    return this.offsetWidth < this.containerBreakpoint
+  }
 
   hasContainerSupport() {
     return CSS.supports('container-type', 'inline-size');
   }
 
-  handleResize(evt) {
-    this._compact = this.isCompact();
+  updateContainerSizeAttribute() {
+    this.setAttribute('data-il-container-size', this.containerIsSmallerThanBreakpoint() ? 'small' : 'large');
   }
 
-  addResizeListeners() {
-    console.debug("Feature: No support for @container detected: using manual resize");
-    window.addEventListener('load', this.handleResize.bind(this));
-    window.addEventListener('resize', this.handleResize.bind(this));
-  }
-
-  removeResizeListeners() {
-    console.debug("Feature: removing resize");
-    window.removeEventListener('load', this.handleResize.bind(this));
-    window.removeEventListener('resize', this.handleResize.bind(this));
-  }
-
-  // Object methods
-
-  isCompact() {
-    return this.offsetWidth < FeatureComponent.compactSizePixelWidth
-  }
+  // Render
 
   render() {
     return html`
-        <div id="container" class="${this._compact ? 'compact' : ''}">
+        <div id="container">
             <div id="image">
                 <slot name="image"></slot>
             </div>
