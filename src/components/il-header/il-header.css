@@ -1,0 +1,9 @@
+il-header {
+  container-type: inline-size;
+}
+
+@container (max-width: 549px) {
+  il-header .il-primary-unit {
+    display: none;
+  }
+}
