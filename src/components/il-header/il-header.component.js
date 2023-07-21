@@ -3,10 +3,10 @@ import styles from './il-header.styles';
 import './il-header.css';
 
 class Header extends LitElement {
+
     static get properties() {
         return {
-            size: { type: String, reflect: true },
-            view: {type: String, default: 'full', attribute: true, reflect: true}
+            _collapsed: { type: Boolean, state: true }
         }
     }
 
@@ -16,10 +16,91 @@ class Header extends LitElement {
 
     constructor() {
         super();
-        this.size = 'full';
+        this.collapseBreakpoint = 990;
+        this._collapsed = false;
+        this.menuVisible = false;
+        this.handleToggleClick = this.handleToggleClick.bind(this);
     }
 
+    connectedCallback() {
+        super.connectedCallback();
+        this.listenForResize();
+    }
+
+    get collapsed() {
+        return this._collapsed;
+    }
+
+    getToggle() {
+        return this.shadowRoot.querySelector('button');
+    }
+
+    handleResize() {
+        this._collapsed = this.offsetWidth < this.collapseBreakpoint;
+    }
+
+    handleToggleClick() {
+        this.toggleMenu();
+    }
+
+    isCollapsed() {
+        return this._collapsed;
+    }
+
+    listenForResize() {
+        const observer = new ResizeObserver(this.handleResize.bind(this));
+        observer.observe(this);
+    }
+
+    toggleMenu() {
+        this.menuVisible = !this.menuVisible;
+        this.updateMenuVisibilityAttribute();
+    }
+
+    updateMenuVisibilityAttribute() {
+        this.setAttribute('data-il-menu-visible', this.menuVisible ? '1' : '0');
+    }
+
+    // Render
+
     render() {
+        return this.isCollapsed() ? this.renderCollapsed() : this.renderUncollapsed();
+    }
+
+    renderCollapsed() {
+        return html`
+            <div id="header">
+                <div id="top-stripe" aria-hidden="true"></div>
+                <div id="wordmark">
+                    <a href="https://illinois.edu/">University of Illinois Urbana-Champaign</a>
+                </div>
+                <div id="identity">
+                    <slot></slot>
+                </div>
+                <div id="menu">
+                    <button id="menu-toggle" @click=${this.handleToggleClick}>
+                        <span>Menu</span>
+                        <span class="menu-icon-bar menu-icon-bar--top"></span>
+                        <span class="menu-icon-bar menu-icon-bar--middle"></span>
+                        <span class="menu-icon-bar menu-icon-bar--bottom"></span>
+                    </button>
+                    <div id="menu-contents">
+                        <div id="links">
+                            <slot name="links"></slot>
+                        </div>
+                        <div id="search">
+                            <slot name="search"></slot>
+                        </div>
+                        <div id="navigation">
+                            <slot name="navigation"></slot>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        `
+    }
+
+    renderUncollapsed() {
         return html`
             <div id="header">
                 <div id="top-stripe" aria-hidden="true"></div>
