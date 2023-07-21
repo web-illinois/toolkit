@@ -6,6 +6,7 @@ export default css`
     position: relative;
   }
   #header {
+    container-type: inline-size;
     border-bottom: 2px solid var(--il-cloud-1);
   }
   #top-stripe {
@@ -60,6 +61,59 @@ export default css`
 
   #navigation {
     background-color: var(--il-cloud-1);
+  }
+
+
+
+  #menu-toggle {
+    all: initial;
+    display: inline-block;
+    position: relative;
+    background-color: var(--il-blue);
+    color: white;
+    font: 600 1em/1em var(--il-font-sans);
+    letter-spacing: .05em;
+    text-transform: uppercase;
+    padding: .5em .4em .5em 2em;
+  }
+  .menu-icon-bar {
+    position: absolute;
+    top: calc(50% - .05em);
+    left: .35em;
+    display: block;
+    width: 1em;
+    height: .12em;
+    background-color: white;
+    transition: transform .2s, opacity .2s;
+  }
+  .menu-icon-bar--top {
+    transform: translateY(-.3em);
+  }
+  .menu-icon-bar--bottom {
+    transform: translateY(.3em);
+  }
+  
+  :host(*[data-il-menu-visible="1"]) .menu-icon-bar--top {
+    transform: rotate(135deg);
+  }
+  :host(*[data-il-menu-visible="1"]) .menu-icon-bar--middle {
+    opacity: 0;
+  }
+  :host(*[data-il-menu-visible="1"]) .menu-icon-bar--bottom {
+    transform: rotate(-135deg);
+  }
+  
+  #menu-contents {
+    display: none;
+  }
+  :host(*[data-il-menu-visible="1"]) #menu-contents {
+    display: block;
+  }
+  
+  @container (max-width: 549px) {
+    #wordmark {
+      display: none;
+    }
   }
 
 `;
