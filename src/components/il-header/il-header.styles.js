@@ -92,22 +92,55 @@ export default css`
   }
 
 
+  /* Collapsed layout */
 
-  #menu-toggle {
+  #header.collapsed #branding {
+    float: none;
+  }
+  #header.collapsed #identity-and-menu-toggle {
+    padding: 1em 0;
+    display: grid;
+    grid-template-columns: auto 6em;
+    grid-gap: 1em;
+    align-items: start;
+  }
+  @media (max-width: 480px) {
+    #header.collapsed #identity-and-menu-toggle {
+      grid-template-columns: auto 2em;
+    }
+  }
+  #header.collapsed #menu-toggle {
+    display: block;
+    container-type: inline-size;
+  }
+  
+  
+  /* Menu toggle button */
+  
+  #menu-toggle button {
     all: initial;
     display: inline-block;
     position: relative;
     background-color: var(--il-blue);
+    box-sizing: border-box;
+    height: 2em;
+    width: 100%;
+    overflow: hidden;
+    border-radius: .25em;
+    text-align: center;
+    white-space: nowrap;
+    text-indent: 10em;
+  }
+  #menu-toggle button .label {
     color: white;
-    font: 600 1em/1em var(--il-font-sans);
+    font: 600 1em/2em var(--il-font-sans);
     letter-spacing: .05em;
     text-transform: uppercase;
-    padding: .5em .4em .5em 2em;
   }
   .menu-icon-bar {
     position: absolute;
     top: calc(50% - .05em);
-    left: .35em;
+    left: .5em;
     display: block;
     width: 1em;
     height: .12em;
@@ -120,7 +153,6 @@ export default css`
   .menu-icon-bar--bottom {
     transform: translateY(.3em);
   }
-  
   :host(*[data-il-menu-visible="1"]) .menu-icon-bar--top {
     transform: rotate(135deg);
   }
@@ -130,6 +162,26 @@ export default css`
   :host(*[data-il-menu-visible="1"]) .menu-icon-bar--bottom {
     transform: rotate(-135deg);
   }
+  @container (min-width: 6em) {
+    #menu-toggle button {
+      padding-left: 2em;
+      padding-right: .4em;
+      text-indent: 0;
+    }
+    .menu-icon-bar {
+      left: .6em;
+    }
+  }
+
+  
+  
+  
+  
+  
+  /* Default styles */
+
+
+
   
   #menu-contents {
     display: none;
@@ -139,7 +191,7 @@ export default css`
   }
   
   @container (max-width: 549px) {
-    #wordmark {
+    #branding {
       display: none;
     }
   }
