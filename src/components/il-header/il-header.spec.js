@@ -14,7 +14,7 @@ test('collapses below 990px', async ({page}) => {
   await expect(page.getByTestId('search')).toBeHidden();
 });
 
-test('campus wordmark disappears below 550px', async ({page}) => {
+test('branding disappears below 550px', async ({page}) => {
   await page.setViewportSize({ width: 550, height: 800});
   await page.goto('components/il-header/tests/header.html');
   await expect(page.getByText('University of Illinois Urbana-Champaign')).toBeVisible();

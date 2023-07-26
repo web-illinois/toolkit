@@ -16,47 +16,75 @@ export default css`
   }
   #main {
     position: relative;
-    min-height: 4em;
   }
-  #wordmark-and-links {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+  
+  /* Uncollapsed */
+  
+  #main .row {
+    clear: both;
+    position: relative;
+  }
+  #branding-and-eyebrow {
+  }
+  #branding {
+    float: left;
+    clear: left;
+    position: relative;
+    box-sizing: border-box;
+    min-height: 2.75em;
+    padding-left: 2.8em;
+    color: var(--il-blue);
+  }
+  #branding a {
+    text-decoration: none;
+    cursor: pointer;
+    color: inherit;
+  }
+  #branding a:focus, #branding a:hover {
+    color: var(--il-altgeld);
+  }
+  #block-i {
+    position: absolute;
+    left: -.656em;
+    top: -.5em;
+    display: block;
+    width: 2.8em;
+    height: 3.25em;
+    box-sizing: border-box;
+    background-color: var(--il-blue);
+    padding: .53em .656em 
+  }
+  #block-i il-block-i {
+    width: 1.5em;
+    height: 2.19em;
+    --il-block-i--outline-color: white;
   }
   #wordmark {
+    top: 0;
+    display: block;
+    box-sizing: border-box;
     font: 700 14px/1em var(--il-montserrat);
     letter-spacing: 1.5px;
     text-transform: uppercase;
     flex: 1 1 auto;
+    padding: .5em .5em .5em 0;
   }
-  #wordmark a {
-    display: inline-block;
-    margin-left: -.5em;
-    padding: .5em;
-    cursor: pointer;
-    color: inherit;
-    text-decoration: none;
-  }
-  #wordmark a:focus, #wordmark a:hover {
-    color: var(--il-altgeld);
-  }
-  #links {
+  #eyebrow {
     flex: 1 1 0;
     align-self: flex-end;
   }
-  
   #identity-and-search {
+    padding: 1em 0;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
   }
   #identity {
-    padding: 2em 0 .5em;
   }
 
   .content-container {
-    padding-left: var(--il-page--padding-left, 2em);
-    padding-right: var(--il-page--padding-right, 2em);
+    padding-left: 2em;
+    padding-right: 2em;
   }
 
   #navigation {
@@ -64,22 +92,55 @@ export default css`
   }
 
 
+  /* Collapsed layout */
 
-  #menu-toggle {
+  #header.collapsed #branding {
+    float: none;
+  }
+  #header.collapsed #identity-and-menu-toggle {
+    padding: 1em 0;
+    display: grid;
+    grid-template-columns: auto 6em;
+    grid-gap: 1em;
+    align-items: start;
+  }
+  @media (max-width: 480px) {
+    #header.collapsed #identity-and-menu-toggle {
+      grid-template-columns: auto 2em;
+    }
+  }
+  #header.collapsed #menu-toggle {
+    display: block;
+    container-type: inline-size;
+  }
+  
+  
+  /* Menu toggle button */
+  
+  #menu-toggle button {
     all: initial;
     display: inline-block;
     position: relative;
     background-color: var(--il-blue);
+    box-sizing: border-box;
+    height: 2em;
+    width: 100%;
+    overflow: hidden;
+    border-radius: .25em;
+    text-align: center;
+    white-space: nowrap;
+    text-indent: 10em;
+  }
+  #menu-toggle button .label {
     color: white;
-    font: 600 1em/1em var(--il-font-sans);
+    font: 600 1em/2em var(--il-font-sans);
     letter-spacing: .05em;
     text-transform: uppercase;
-    padding: .5em .4em .5em 2em;
   }
   .menu-icon-bar {
     position: absolute;
     top: calc(50% - .05em);
-    left: .35em;
+    left: .5em;
     display: block;
     width: 1em;
     height: .12em;
@@ -92,7 +153,6 @@ export default css`
   .menu-icon-bar--bottom {
     transform: translateY(.3em);
   }
-  
   :host(*[data-il-menu-visible="1"]) .menu-icon-bar--top {
     transform: rotate(135deg);
   }
@@ -102,6 +162,26 @@ export default css`
   :host(*[data-il-menu-visible="1"]) .menu-icon-bar--bottom {
     transform: rotate(-135deg);
   }
+  @container (min-width: 6em) {
+    #menu-toggle button {
+      padding-left: 2em;
+      padding-right: .4em;
+      text-indent: 0;
+    }
+    .menu-icon-bar {
+      left: .6em;
+    }
+  }
+
+  
+  
+  
+  
+  
+  /* Default styles */
+
+
+
   
   #menu-contents {
     display: none;
@@ -111,7 +191,7 @@ export default css`
   }
   
   @container (max-width: 549px) {
-    #wordmark {
+    #branding {
       display: none;
     }
   }
