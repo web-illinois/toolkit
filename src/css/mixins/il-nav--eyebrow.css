@@ -23,12 +23,11 @@
     &::after {
       position: absolute;
       top: .5em;
-      right: 0;
-      content: "/";
-      width: 1.5em;
-      text-align: center;
-      color: var(--il-altgeld);
-      font: 600 .75em/1em var(--il-font-sans);
+      right: .5em;
+      content: "";
+      width: 1px;
+      height: 1em;
+      background-color: var(--il-altgeld);
     }
 
     &:last-of-type::after {
@@ -40,7 +39,7 @@
   a {
     all: initial;
     display: block;
-    font: 600 1em var(--il-font-sans);
+    font: 400 1em/1.875 var(--il-font-sans);
     color: var(--il-blue);
     cursor: pointer;
 

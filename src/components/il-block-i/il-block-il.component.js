@@ -10,19 +10,18 @@ class Wordmark extends LitElement {
       #block-i {
         display: block;
         width: 100%;
-        max-width: 235px;
       }
     .outline {
-      fill: var(--il-blue);
+      fill: var(--il-block-i--outline-color, var(--il-blue));
     }
     .fill {
-      fill: var(--il-orange);
+      fill: var(--il-block-i--fill-color, var(--il-orange));
     }`
   }
 
   render() {
     return html`
-      <div id="block-1">
+      <div id="block-i">
         <a href="https://illinois.edu/">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 55 79">
             <title>Block I logo</title>
