@@ -20,7 +20,7 @@ class Navigation extends LitElement {
   constructor() {
     super();
     this.label = "Main menu";
-    this.type = 'auto';
+    this.type = null;
     this._initialized = false;
     this.handleHeaderCompactChange = this.handleHeaderCompactChange.bind(this);
     this.handleSectionToggle = this.handleSectionToggle.bind(this);
@@ -148,7 +148,7 @@ class Navigation extends LitElement {
   }
 
   isAutomatic() {
-    return this.type === 'auto';
+    return !this.type || this.type === 'auto';
   }
 
   isBarType() {
