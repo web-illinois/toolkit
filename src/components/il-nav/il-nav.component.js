@@ -15,17 +15,35 @@ class Navigation extends LitElement {
     return styles;
   }
 
+  // Lifecycle
+
   constructor() {
     super();
     this.label = "Main menu";
     this.type = 'auto';
+    this.handleHeaderCompactChange = this.handleHeaderCompactChange.bind(this);
+    this.handleSectionToggle = this.handleSectionToggle.bind(this);
     document.addEventListener('DOMContentLoaded', this.handleContentLoaded.bind(this));
+  }
+
+  connectedCallback() {
+    super.connectedCallback();
+    this.listenToHeader();
+  }
+
+  disconnectedCallback() {
+    this.stopListeningToHeader();
+    super.disconnectedCallback();
   }
 
   // Event handlers
 
   handleContentLoaded(evt) {
     this.initializeContents();
+  }
+
+  handleHeaderCompactChange(evt) {
+    this.enableOrDisableAllSections();
   }
 
   handleLinkKeypress(evt) {
@@ -44,9 +62,33 @@ class Navigation extends LitElement {
     this.setSectionSize(section, 'collapsed');
   }
 
+  disableSection(section) {
+    section.disable();
+    section.setAttribute('data-il-nav-enabled', 'false');
+    section.expand();
+  }
+
+  enableOrDisableAllSections() {
+    this.getSections().forEach(section => this.enableOrDisableSection(section));
+  }
+
+  enableOrDisableSection(section) {
+    this.sectionCanExpand(section) ? this.enableSection(section) : this.disableSection(section);
+  }
+
+  enableSection(section) {
+    section.enable();
+    section.setAttribute('data-il-nav-enabled', 'true');
+    this.sectionIsExpanded(section) ? section.expand() : section.collapse();
+  }
+
   expandSection(section) {
     section.expand();
     this.setSectionSize(section, 'expanded');
+  }
+
+  getHeader() {
+    return this.closest('il-header');
   }
 
   getSectionLevel(section) {
@@ -70,37 +112,80 @@ class Navigation extends LitElement {
     return this.querySelectorAll('il-nav-section');
   }
 
+  headerIsCompact() {
+    return this.getHeader().isCompact();
+  }
+
   initializeContents() {
-    this.getSections().forEach(section => this.initializeSection(section));
+    this.initializeSections();
+    this.initializeLinks();
+  }
+
+  initializeLinks() {
     this.querySelectorAll('a').forEach(link => {
       link.addEventListener('keydown', this.handleLinkKeypress.bind(this));
     })
   }
 
+  initializeSections() {
+    this.getSections().forEach(section => this.initializeSection(section));
+    this.enableOrDisableAllSections();
+  }
+
   initializeSection(section) {
     section.setAttribute('data-il-nav-level', this.getSectionLevel(section));
-    if (this.sectionCanExpand(section)) {
-      section.enable();
-      section.setAttribute('data-il-nav-enabled', 'true');
-      if (this.sectionIsExpanded(section)) section.expand();
-      section.addEventListener('toggle', this.handleSectionToggle.bind(this));
+    section.addEventListener('toggle', this.handleSectionToggle);
+  }
+
+  isAccordionType() {
+    if (this.isAutomatic()) {
+      return this.isInsideCompactHeaderLinksSlot() || this.isInsideCompactHeaderNavigationSlot();
     }
+    return this.type === 'accordion'
   }
 
-  isAccordionMode() {
-    return this.type === 'accordion';
+  isAutomatic() {
+    return this.type === 'auto';
   }
 
-  isBarMode() {
+  isBarType() {
+    if (this.isAutomatic()) {
+      return this.isInsideFullHeaderNavigationSlot();
+    }
     return this.type === 'bar';
   }
 
-  isDropdownMode() {
+  isDropdownType() {
     return this.type === 'dropdown';
   }
 
+  isInSlot(name) {
+    return this.getAttribute('slot') === name;
+  }
+
+  isInsideHeader() {
+    return this.getHeader() !== null;
+  }
+
+  isInsideCompactHeaderLinksSlot() {
+    return this.isInsideHeader() && this.headerIsCompact() && this.isInSlot('links');
+  }
+
+  isInsideCompactHeaderNavigationSlot() {
+    return this.isInsideHeader() && this.headerIsCompact() && this.isInSlot('navigation');
+  }
+
+  isInsideFullHeaderNavigationSlot() {
+    return this.isInsideHeader() && !this.headerIsCompact() && this.isInSlot('navigation');
+  }
+
+  listenToHeader() {
+    if (!this.isInsideHeader()) return;
+    this.getHeader().addEventListener('compact', this.handleHeaderCompactChange);
+  }
+
   sectionCanExpand(section) {
-    return this.isAccordionMode() || this.isBarMode() || this.isDropdownMode();
+    return this.isAccordionType() || this.isBarType() || this.isDropdownType();
   }
 
   sectionIsExpanded(section) {
@@ -116,6 +201,11 @@ class Navigation extends LitElement {
 
   setSectionSize(section, size) {
     section.setAttribute('data-il-nav-size', size);
+  }
+
+  stopListeningToHeader() {
+    if (!this.isInsideHeader()) return;
+    this.getHeader().removeEventListener('compact', this.handleHeaderCompactChange);
   }
 
   toggleSection(section) {
