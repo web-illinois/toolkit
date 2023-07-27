@@ -137,16 +137,19 @@
     }
   }
 
-  il-nav.il-nav-bar {
+  il-nav[type=bar],
+  il-header:not([compact]) il-nav[slot=navigation] {
     @mixin il-nav--bar;
   }
 
-  il-nav.il-nav-accordion {
+  il-nav[type=accordion],
+  il-header[compact] il-nav[slot=navigation],
+  il-header[compact] il-nav[slot=links] {
     @mixin il-nav--accordion;
   }
 
-  il-nav.il-nav-eyebrow,
-  il-header il-nav[slot=links] {
+  il-nav[type=eyebrow],
+  il-header:not([compact]) il-nav[slot=links] {
     @mixin il-nav--eyebrow;
   }
 

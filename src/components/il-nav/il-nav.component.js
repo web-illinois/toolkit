@@ -6,7 +6,8 @@ import "./il-nav.css";
 class Navigation extends LitElement {
   static get properties() {
     return {
-      label: { type: String }
+      label: { type: String },
+      type: { type: String, reflect: true }
     };
   }
 
@@ -17,6 +18,7 @@ class Navigation extends LitElement {
   constructor() {
     super();
     this.label = "Main menu";
+    this.type = 'auto';
     document.addEventListener('DOMContentLoaded', this.handleContentLoaded.bind(this));
   }
 
@@ -86,15 +88,15 @@ class Navigation extends LitElement {
   }
 
   isAccordionMode() {
-    return this.classList.contains('il-nav-accordion');
+    return this.type === 'accordion';
   }
 
   isBarMode() {
-    return this.classList.contains('il-nav-bar');
+    return this.type === 'bar';
   }
 
   isDropdownMode() {
-    return this.classList.contains('il-nav-dropdown');
+    return this.type === 'dropdown';
   }
 
   sectionCanExpand(section) {
