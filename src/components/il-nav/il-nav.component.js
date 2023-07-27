@@ -21,6 +21,8 @@ class Navigation extends LitElement {
     super();
     this.label = "Main menu";
     this.type = 'auto';
+    this.handleHeaderCompactChange = this.handleHeaderCompactChange.bind(this);
+    this.handleSectionToggle = this.handleSectionToggle.bind(this);
     document.addEventListener('DOMContentLoaded', this.handleContentLoaded.bind(this));
   }
 
@@ -41,7 +43,7 @@ class Navigation extends LitElement {
   }
 
   handleHeaderCompactChange(evt) {
-    if (this._initialized) this.enableOrDisableAllSections();
+    this.enableOrDisableAllSections();
   }
 
   handleLinkKeypress(evt) {
@@ -115,8 +117,6 @@ class Navigation extends LitElement {
   }
 
   initializeContents() {
-    if (this._initialized) return;
-    this._initialized = true;
     this.initializeSections();
     this.initializeLinks();
   }
@@ -144,16 +144,44 @@ class Navigation extends LitElement {
     return this.type === 'accordion'
   }
 
-  isAccordionMode() {
-    return this.type === 'accordion';
+  isAutomatic() {
+    return this.type === 'auto';
   }
 
-  isBarMode() {
+  isBarType() {
+    if (this.isAutomatic()) {
+      return this.isInsideFullHeaderNavigationSlot();
+    }
     return this.type === 'bar';
   }
 
-  isDropdownMode() {
+  isDropdownType() {
     return this.type === 'dropdown';
+  }
+
+  isInSlot(name) {
+    return this.getAttribute('slot') === name;
+  }
+
+  isInsideHeader() {
+    return this.getHeader() !== null;
+  }
+
+  isInsideCompactHeaderLinksSlot() {
+    return this.isInsideHeader() && this.headerIsCompact() && this.isInSlot('links');
+  }
+
+  isInsideCompactHeaderNavigationSlot() {
+    return this.isInsideHeader() && this.headerIsCompact() && this.isInSlot('navigation');
+  }
+
+  isInsideFullHeaderNavigationSlot() {
+    return this.isInsideHeader() && !this.headerIsCompact() && this.isInSlot('navigation');
+  }
+
+  listenToHeader() {
+    if (!this.isInsideHeader()) return;
+    this.getHeader().addEventListener('compact', this.handleHeaderCompactChange);
   }
 
   sectionCanExpand(section) {
