@@ -92,12 +92,12 @@ export default css`
   }
 
 
-  /* Collapsed layout */
+  /* Compact layout */
 
-  #header.collapsed #branding {
+  #header.compact #branding {
     float: none;
   }
-  #header.collapsed #identity-and-menu-toggle {
+  #header.compact #identity-and-menu-toggle {
     padding: 1em 0;
     display: grid;
     grid-template-columns: auto 6em;
@@ -105,11 +105,11 @@ export default css`
     align-items: start;
   }
   @media (max-width: 480px) {
-    #header.collapsed #identity-and-menu-toggle {
+    #header.compact #identity-and-menu-toggle {
       grid-template-columns: auto 2em;
     }
   }
-  #header.collapsed #menu-toggle {
+  #header.compact #menu-toggle {
     display: block;
     container-type: inline-size;
   }
