@@ -20,10 +20,7 @@ class Navigation extends LitElement {
   constructor() {
     super();
     this.label = "Main menu";
-    this.type = null;
-    this._initialized = false;
-    this.handleHeaderCompactChange = this.handleHeaderCompactChange.bind(this);
-    this.handleSectionToggle = this.handleSectionToggle.bind(this);
+    this.type = 'auto';
     document.addEventListener('DOMContentLoaded', this.handleContentLoaded.bind(this));
   }
 
@@ -147,44 +144,16 @@ class Navigation extends LitElement {
     return this.type === 'accordion'
   }
 
-  isAutomatic() {
-    return !this.type || this.type === 'auto';
+  isAccordionMode() {
+    return this.type === 'accordion';
   }
 
-  isBarType() {
-    if (this.isAutomatic()) {
-      return this.isInsideFullHeaderNavigationSlot();
-    }
+  isBarMode() {
     return this.type === 'bar';
   }
 
-  isDropdownType() {
+  isDropdownMode() {
     return this.type === 'dropdown';
-  }
-
-  isInSlot(name) {
-    return this.getAttribute('slot') === name;
-  }
-
-  isInsideHeader() {
-    return this.getHeader() !== null;
-  }
-
-  isInsideCompactHeaderLinksSlot() {
-    return this.isInsideHeader() && this.headerIsCompact() && this.isInSlot('links');
-  }
-
-  isInsideCompactHeaderNavigationSlot() {
-    return this.isInsideHeader() && this.headerIsCompact() && this.isInSlot('navigation');
-  }
-
-  isInsideFullHeaderNavigationSlot() {
-    return this.isInsideHeader() && !this.headerIsCompact() && this.isInSlot('navigation');
-  }
-
-  listenToHeader() {
-    if (!this.isInsideHeader()) return;
-    this.getHeader().addEventListener('compact', this.handleHeaderCompactChange);
   }
 
   sectionCanExpand(section) {
