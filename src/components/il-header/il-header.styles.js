@@ -194,6 +194,18 @@ export default css`
     #branding {
       display: none;
     }
+    #menu-contents {
+      position: relative;
+      width: 100%;
+    }
+  }
+  @container (min-width: 550px) {
+    #menu-contents {
+      position: absolute;
+      top: 100%;
+      right: 0;
+      width: 480px;
+    }
   }
 
 `;
