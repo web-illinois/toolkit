@@ -21,6 +21,7 @@ class Navigation extends LitElement {
     super();
     this.label = "Main menu";
     this.type = 'auto';
+    this._initialized = false;
     this.handleHeaderCompactChange = this.handleHeaderCompactChange.bind(this);
     this.handleSectionToggle = this.handleSectionToggle.bind(this);
     document.addEventListener('DOMContentLoaded', this.handleContentLoaded.bind(this));
@@ -43,7 +44,7 @@ class Navigation extends LitElement {
   }
 
   handleHeaderCompactChange(evt) {
-    this.enableOrDisableAllSections();
+    if (this._initialized) this.enableOrDisableAllSections();
   }
 
   handleLinkKeypress(evt) {
@@ -117,6 +118,8 @@ class Navigation extends LitElement {
   }
 
   initializeContents() {
+    if (this._initialized) return;
+    this._initialized = true;
     this.initializeSections();
     this.initializeLinks();
   }
