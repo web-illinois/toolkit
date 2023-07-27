@@ -79,14 +79,14 @@ export default css`
     }
   }
 
-  #container.compact {
+  :host(*[data-il-container-size="small"]) #container {
     display: block;
     border: var(--il-feature--container--border, none);
   }
-  #container.compact #image ::slotted(img) {
+  :host(*[data-il-container-size="small"]) #image ::slotted(img) {
     position: initial;
   }
-  #container.compact #content {
+  :host(*[data-il-container-size="small"]) #content {
     padding: 20px 30px;
     margin: auto;
     width: auto;
