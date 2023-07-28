@@ -1,13 +1,36 @@
 
 il-accordion-panel {
-    border: var(--il-details-border);
-    max-width: var(--il-details-maxwidth);
+    border: var(--il-accordion-panel--border);
     margin: 20px 0;
 }
 
-.il-theme-white {
-    --il-details-color: var(--il-blue);
-    --il-details-background: white;
-    --il-details-background-hover: var(--il-cloud-2);
-    --il-details-border: thin solid var(--il-blue);
+il-accordion.il-fixed-width, il-accordion-panel.il-fixed-width {
+    --il-content--max-width: 1200px;
 }
+
+@layer theme {
+    il-accordion.il-theme-blue, .il-theme-blue il-accordion {
+      @mixin il-content--theme-blue;
+    }
+  
+    il-accordion.il-theme-white, .il-theme-white il-accordion {
+      @mixin il-content--theme-white;
+    }
+  
+    il-accordion.il-theme-gray, .il-theme-gray il-accordion {
+      @mixin il-content--theme-gray;
+    }
+  
+    il-accordion.il-theme-orange, .il-theme-orange il-accordion {
+      @mixin il-content--theme-orange;
+    }
+  
+    il-accordion.il-theme-industrial-blue, .il-theme-industrial-blue il-accordion {
+      @mixin il-content--theme-industrial-blue;
+    }
+  
+    il-accordion.il-theme-altgeld, .il-theme-altgeld il-accordion {
+      @mixin il-content--theme-altgeld;
+    }
+  }
+  

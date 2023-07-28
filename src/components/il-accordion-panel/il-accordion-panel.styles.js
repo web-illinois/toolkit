@@ -4,6 +4,13 @@ export default css`
   :host {
     display: block;
   }
+
+  #panel {
+    max-width: var(--il-content--max-width, none);
+    margin: 0 auto;
+    padding-bottom: 1px;
+    background-color: var(--il-content--background, white);
+  }
   
   #header {
     display: flex;
@@ -11,13 +18,13 @@ export default css`
     gap: 10px;
     justify-content: flex-start;
     align-items: center;
-    background-color: var(--il-gray-1);
-    color: var(--il-blue);
-    padding: 30px 0 30px 10px;
+    background-color: var(--il-content--background, var(--il-gray-1));
+    color: var(--il-content--color, var(--il-blue));
+    padding: 30px 0 30px 20px;
     cursor: pointer;
   }
   #header:focus, #header:hover {
-    background-color: var(--il-cloud-2);
+    background-color: var(--il-accordion-panel--focus--background, var(--il-cloud-2));
   }
   #header ::slotted(*) {
     all: initial;
@@ -39,6 +46,8 @@ export default css`
   }
   .expanded #content {
     display: block;
+    padding-left: 50px;
+    background: var(--il-content--background);
   }
   
   
@@ -47,8 +56,8 @@ export default css`
     font-weight: 500;
     font-family: var(--il-source-sans);
     padding: var(--il-details-padding);
-    background: var(--il-details-background);
-    color: var(--il-details-color);
+    background: var(--il-content--background, var(--il-gray-1));
+    color: var(--il-content--color, var(--il-blue));
     width: 100%;
     text-align: left;
     border: none;
@@ -57,7 +66,7 @@ export default css`
   }
 
   button:focus, button:hover {
-    background: var(--il-details-background-hover);
+    background: var(--il-accordion-panel--focus--background, var(--il-cloud-2));
   }
 
   button span {
