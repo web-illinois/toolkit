@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<script src="../il-content.component.js" type="module"></script>
+<link rel="stylesheet" href="../../../css/base.css">
+
+<il-content data-testid="component">
+<a href="#" class="il-button">Sample Button</a>
+</il-content>
+
+<script>
+    const params = new URLSearchParams(window.location.search);
+    document.querySelectorAll("a").forEach(component => {
+      if (params.has('theme')) {
+        component.classList.add(`il-theme-${params.get('theme')}`);
+      }
+    });
+  </script>

@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<script src="../il-icon.component.js" type="module"></script>
+<script src="../../il-content/il-content.component.js" type="module"></script>
+<link rel="stylesheet" href="../../../css/base.css">
+
+<il-content>
+<il-icon data-testid="component">faq</il-icon>
+</il-content>
+
+<script>
+    const params = new URLSearchParams(window.location.search);
+    document.querySelectorAll("il-icon").forEach(component => {
+      if (params.has('text')) {
+        component.innerText = params.get('text');
+      }
+    });
+  </script>
