@@ -1,13 +1,14 @@
 import { LitElement, html } from 'lit';
-import styles from './il-page.styles';
-import "./il-page.css";
+import styles from './il-layout.styles';
+import "./il-layout.css";
 import "../../css/base.css";
 
-class PageComponent extends LitElement {
+class LayoutComponent extends LitElement {
 
   static get properties() {
     return {
-      grid: { type: String }
+      columns: { type: Number, default: 1 },
+      type: { type: String }
     }
   }
 
@@ -17,7 +18,8 @@ class PageComponent extends LitElement {
 
   constructor() {
     super();
-    this.grid = null;
+    this.columns = 1;
+    this.type = null;
   }
 
   connectedCallback() {
@@ -52,17 +54,7 @@ class PageComponent extends LitElement {
     this.setAttribute('data-il-page-size', this.getSize());
   }
 
-  renderGridOverlay() {
-    return html`<div id="grid" class="overlay">
-      <div class="content">
-        <div class="content-margin left"></div>
-        <div class="content-margin right"></div>
-      </div>
-    </div>`
-  }
-
-  render() {
-    const overlay = this.grid ? this.renderGridOverlay() : '';
+  renderPage() {
     return html`
       <article id="page">
         <header>
@@ -74,10 +66,20 @@ class PageComponent extends LitElement {
         <footer>
           <slot name="footer"></slot>
         </footer>
-        ${overlay}
       </article>
+    `;
+  }
+
+  render() {
+    if (this.type === 'page') {
+      return this.renderPage();
+    }
+    return html`
+      <div class="grid columns-${this.columns}">
+        <slot></slot>
+      </div>
     `;
   }
 }
 
-customElements.define('il-page', PageComponent);
+customElements.define('il-layout', LayoutComponent);
