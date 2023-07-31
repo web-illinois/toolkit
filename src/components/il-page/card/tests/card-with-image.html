@@ -1,9 +1,5 @@
 <!DOCTYPE html>
-<link rel="stylesheet" href="../../../css/colors.scss">
-<link rel="stylesheet" href="../../../css/fonts.scss">
-<link rel="stylesheet" href="../../../css/icons.scss">
-<link rel="stylesheet" href="../../../css/classes/il-button/il-button.scss">
-<link rel="stylesheet" href="../../../css/classes/il-icon/il-icon.scss">
+<link rel="stylesheet" href="../../../../css/base.css">
 <script src="../card.component.js" type="module"></script>
 
 <il-card data-testid="card" style="max-width: 300px">
@@ -16,11 +12,3 @@
         <a class="il-button" href="http://example.com/">Button Text</a>
     </p>
 </il-card>
-
-<script>
-    const component = document.querySelector("il-card");
-    const params = new URLSearchParams(window.location.search);
-    if (params.has('theme')) {
-        component.classList.add(`il-theme-${params.get('theme')}`);
-    }
-</script>
