@@ -3,21 +3,20 @@
 <script src="../../il-nav/il-nav.component.js" type="module"></script>
 <script src="../../il-nav-section/il-nav-section.component.js" type="module"></script>
 <script src="../../il-search/il-search.component.js" type="module"></script>
-<link rel="stylesheet" href="../../il-nav/il-nav.scss">
-<link rel="stylesheet" href="../../../css/colors.scss">
-<link rel="stylesheet" href="../../../css/fonts.scss">
-<link rel="stylesheet" href="../../../css/icons.scss">
+<link rel="stylesheet" href="../il-header.css">
+<link rel="stylesheet" href="../../il-nav/il-nav.css">
+<link rel="stylesheet" href="../../../css/base.css">
 
 <style>
     body { margin: 0; padding: 0; }
 </style>
 
-<il-header>
+<il-header data-testid="header">
 
-    <p><a href="#">College of Malkovich Malkovich</a></p>
-    <h1><a href="#">Department of Malkovich Malkovich</a></h1>
+    <p class="il-primary-unit"><a href="#">College of Malkovich Malkovich</a></p>
+    <h1 class="il-site-name"><a href="#">Department of Malkovich Malkovich</a></h1>
 
-    <il-search slot="search"></il-search>
+    <il-search slot="search" data-testid="search"></il-search>
 
     <il-nav slot="links" label="Top">
         <ul>
@@ -27,12 +26,12 @@
         </ul>
     </il-nav>
 
-    <il-nav slot="navigation" class="il-nav-bar">
+    <il-nav slot="navigation">
         <ul>
             <li>
                 <il-nav-section>
                     <a href="https://www.google.com" slot="link">About</a>
-                    <ul class="il-subnav">
+                    <ul>
                         <li>
                             <a href="https://www.google.com">Overview of ACES</a>
                         </li>
@@ -236,3 +235,5 @@
     </il-nav>
 
 </il-header>
+
+<p>Content after the header should be covered up by any dropdowns</p>

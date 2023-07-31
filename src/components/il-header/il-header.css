@@ -1,0 +1,33 @@
+il-header {
+  container-type: inline-size;
+
+  .il-site-name {
+    all: initial;
+    color: var(--il-blue);
+    display: block;
+    font: 700 1.5em/1em var(--il-font-sans);
+  }
+  .il-primary-unit {
+    all: initial;
+    color: var(--il-blue);
+    display: block;
+    font: 400 1em/1em var(--il-font-sans);
+  }
+  .il-primary-unit + .il-site-name {
+    margin-top: .25em;
+  }
+  .il-site-name a, .il-primary-unit a {
+    all: inherit;
+    cursor: pointer;
+
+    &:focus, &:hover {
+      color: var(--il-altgeld);
+    }
+  }
+}
+
+@container (max-width: 549px) {
+  il-header .il-primary-unit {
+    display: none;
+  }
+}
