@@ -1,6 +1,6 @@
 import { LitElement, html } from 'lit';
-import styles from './card.css';
-import "./card.scss";
+import styles from './card.styles';
+import "./card.css";
 
 class Card extends LitElement {
 
