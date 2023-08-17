@@ -2,9 +2,9 @@ import './css/base.css';
 
 // Core components
 import "./components/il-content/il-content.component";
+import "./components/il-layout/il-layout.component";
 import "./components/il-nav/il-nav.component";
 import "./components/il-nav-section/il-nav-section.component";
-import "./components/il-page/il-page.component";
 
 // Additional components
 import "./components/il-accordion/il-accordion.component";

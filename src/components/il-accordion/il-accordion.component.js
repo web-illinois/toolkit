@@ -1,5 +1,4 @@
 import {LitElement, html} from 'lit';
-import styles from './il-accordion.styles';
 import './il-accordion.css';
 
 class Accordion extends LitElement {
@@ -8,10 +7,6 @@ class Accordion extends LitElement {
     return {
       single: {type: Boolean, default: false }
     };
-  }
-
-  static get styles() {
-    return styles;
   }
 
   constructor() {
