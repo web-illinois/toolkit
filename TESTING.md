@@ -24,7 +24,7 @@ npm test
 To run tests for one component:
 
 ````shell
-npx playwright test src/components/accordion/
+npx playwright test src/components/il-accordion/
 ````
 
 ## Writing tests
@@ -36,9 +36,9 @@ Tests for a component are located in the same subdirectory as the component sour
 
 The accordion component, for example, contains these files:
 
-* `src/components/accordion/il-accordion.component.js` (the source code for the component)
-* `src/component/accordion/accordion.html` (test page)
-* `src/component/accordion/accordion.spec.js` (tests)
+* `src/components/il-accordion/il-accordion.component.js` (the source code for the component)
+* `src/components/il-accordion/tests/accordion.html` (test page)
+* `src/components/il-accordion/accordion.spec.js` (tests)
 
 Components with more extensive testing may require multiple pairs of HTML and JavaScript files, each tailored to a specific testing scenario. (See below.)
 
@@ -65,7 +65,7 @@ import { test, expect } from '@playwright/test';
 test.use({ viewport: { width: 1200, height: 800 }});
 
 test.beforeEach(async({page}) => {
-    await page.goto('components/accordion/accordion.html');
+    await page.goto('components/il-accordion/tests/accordion.html');
 })
 ````
 
