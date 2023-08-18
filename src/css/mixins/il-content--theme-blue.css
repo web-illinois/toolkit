@@ -12,4 +12,8 @@
   --il-content--button--focus--background-color: white;
   --il-content--button--focus--color: var(--il-blue);
   --il-content--button--focus--border-color: white;
+
+  --il-accordion-panel--color: var(--il-blue);
+  --il-accordion-panel--background: white;
+  --il-accordion-panel--focus--background: var(--il-blue-darker-2);
 }

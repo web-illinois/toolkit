@@ -27,3 +27,18 @@
         </il-content>
     </il-accordion-panel>
 </il-accordion>
+
+<script>
+    const params = new URLSearchParams(window.location.search);
+    document.querySelectorAll("il-accordion").forEach(component => {
+      if (params.has('theme')) {
+        component.classList.add(`il-theme-${params.get('theme')}`);
+      }
+      if (params.has('fixed')) {
+        component.classList.add('il-fixed-width');
+      }
+      if (params.has('single')) {
+        component.setAttribute('single', true);
+      }
+    });
+</script>
