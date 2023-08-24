@@ -64,7 +64,7 @@ export default css`
     width: var(--il-feature--content--width, auto);
   }
 
-  @container (max-width: 767px) {
+  @container (max-width: 770px) {
     #container {
       display: block;
       border: var(--il-feature--container--border, none);
