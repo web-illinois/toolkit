@@ -28,5 +28,5 @@ The footer component implements the standard campus footer. It contains informat
 </il-footer>
 ```
 
-## Content slots
+## Advanced usage
 
