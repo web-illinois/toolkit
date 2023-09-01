@@ -1,4 +1,4 @@
-# il-carousel
+# `il-carousel`
 
 This component presents a series of slides in a continuously rotating carousel.
 
