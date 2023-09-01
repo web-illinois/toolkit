@@ -1,8 +1,6 @@
-# il-nav
+# `il-nav`
 
 The navigation component is used for lists of navigation links, often with multiple nested levels. It has several presentation formats, and is capable of changing its appearance based on its location on the page.
-
-## Basic usage
 
 ```html
 <il-nav>
@@ -134,5 +132,3 @@ If no type is provided, the navigation component will try to choose a type based
 | desktop | il-layout, sidebar slot      | sidebar   |
 | mobile  | il-layout, sidebar slot      | dropdown  |
 
-
-## Advanced usage

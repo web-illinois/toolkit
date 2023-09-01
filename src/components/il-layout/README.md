@@ -1,8 +1,6 @@
-# il-layout
+# `il-layout`
 
 The layout component is a presentation element for arranging elements onscreen. Content within the layout component is arranged on a regular grid.
-
-## Basic usage
 
 The most basic layout presents its content in the following environment:
 
@@ -17,7 +15,7 @@ This ensures a regular horizontal position of content as well as adequate vertic
 </il-layout>
 ````
 
-### Backgrounds
+## Backgrounds
 
 ```html
 <il-layout color="blue">
@@ -33,7 +31,7 @@ This ensures a regular horizontal position of content as well as adequate vertic
 </il-layout>
 ```
 
-### Columns
+## Columns
 
 ```html
 <il-layout columns="3">
@@ -43,16 +41,9 @@ This ensures a regular horizontal position of content as well as adequate vertic
 </il-layout>
 ```
 
-### Pages
+## Pages
 
 ```html
 <il-layout type="page">
 </il-layout>
 ```
-
-
-## Specifications
-
-## Advanced usage
-
-## FAQ
