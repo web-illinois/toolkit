@@ -8,7 +8,7 @@ This component follows the [ARIA APG carousel pattern](https://www.w3.org/WAI/AR
 
 ## Appearance
 
-![Screenshot of a carousel on a mobile device](./mockups/Property 1=mobile carousel.jpg)
+![Screenshot of a carousel on a mobile device](./mockups/mobile.jpg)
 
 To the left and right of the current slide are two arrow buttons. Clicking the left button causes the carousel to move to the previous slide in the sequence, and clicking the right button moves to the next slide int he sequence.
 
@@ -16,15 +16,15 @@ Below the slides are the carousel controls. The first control is a play/pause to
 
 Next to the play/pause toggle are buttons for each slide in the carousel. Clicking on of these buttons will advance the carousel to that slide. This button now expands in width, and if autoplay is enabled, it displays the status of the timer. 
 
-![Screenshot of a carousel on a tablet](./mockups/Property 1=tablet carousel.jpg)
+![Screenshot of a carousel on a tablet](./mockups/tablet.jpg)
 
 On tablets, the previous and next buttons also include a preview of the previous and next slides in the sequence. When these buttons are clicked, these previews rotate into place and become the current slide.
 
-![Screenshot of a carousel on desktop monitor](./mockups/Property 1=desktop carousel.jpg)
+![Screenshot of a carousel on desktop monitor](./mockups/desktop.jpg)
 
 These slide previews increase in size as the width of the display increases.
 
-![Screenshot of a carousel on a very wide display](./mockups/Property 1=xl desktop carousel.jpg)
+![Screenshot of a carousel on a very wide display](./mockups/xl-desktop.jpg)
 
 On very wide displays, a significant portion of the next and previous slides is visible.
 
