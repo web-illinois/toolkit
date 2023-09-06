@@ -103,8 +103,39 @@ If your background image doesn't provide the adequate color contrast for your co
 
 ## Arranging content in columns
 
+A column layout spreads content across multiple, newspaper-style columns. This is not ideal for long sections of content, but it can improve the readability of long lists of short items.
+
+```html
+<il-layout columns="3">
+  <ul>
+    <li>This list</li>
+    <li>of items</li>
+    <li>will be</li>
+    <li>distributed</li>
+    <li>evenly</li>
+    <li>across the</li>
+    <li>three columns</li>
+    <li>of this layout</li>
+  </ul>
+</il-layout>
+```
+If there is not enough available horizontal space for the requested number of columns, the number will be reduced to accommodate the available space. On very small screens, the content will be presented in a single column.
+
 ## Arranging content in grids
 
-## Advanced usage
+Grids are also made up of columns, but grid content is also arranged in rows, with one item placed in each column of a row.
 
-### Complex layouts
+```html
+<il-layout grid columns="3">
+  <p>Row 1, column 1</p>
+  <p>Row 1, column 2</p>
+  <p>Row 1, column 3</p>
+  <p>Row 2, column 1</p>
+  <p>Row 2, column 2</p>
+  <p>Row 2, column 3</p>
+  <p>Row 3, column 1</p>
+  <p>Row 3, column 2</p>
+  <p>Row 3, column 3</p>
+</il-layout>
+```
+As with column layouts, grids will adjust the number of columns based on available horizontal space.
