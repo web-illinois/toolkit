@@ -77,8 +77,14 @@
 }
 
 @layer theme {
-  il-content.il-theme-blue, .il-theme-blue il-content, il-content.il-theme-blue-gradient, .il-theme-blue-gradient il-content {
+  il-content.il-theme-blue, .il-theme-blue il-content, il-content.il-theme-blue-gradient, .il-theme-blue-gradient il-content,
+  .il-button.il-theme-blue, .il-button.il-theme-blue-gradient {
     @mixin il-content--theme-blue;
+  }
+
+  .il-button.il-theme-blue, .il-button.il-theme-blue-gradient {
+    --il-content--button--focus--border-color: var(--il-blue);
+    --il-content--button--border-color: var(--il-blue);
   }
 
   .il-theme-blue-gradient il-content {
@@ -91,23 +97,40 @@
     --il-content--button--background-color: transparent;
   }
 
-  il-content.il-theme-white, .il-theme-white il-content {
+  il-content.il-theme-white, .il-theme-white il-content, .il-button.il-theme-white {
     @mixin il-content--theme-white;
   }
 
-  il-content.il-theme-gray, .il-theme-gray il-content {
+  il-content.il-theme-gray, .il-theme-gray il-content, .il-button.il-theme-gray {
     @mixin il-content--theme-gray;
   }
 
-  il-content.il-theme-orange, .il-theme-orange il-content, .il-theme-orange-gradient il-content {
+  il-content.il-theme-orange, .il-theme-orange il-content, .il-theme-orange-gradient il-content, 
+  .il-button.il-theme-orange, .il-button.il-theme-orange-gradient{
     @mixin il-content--theme-orange;
   }
 
-  il-content.il-theme-industrial-blue, .il-theme-industrial-blue il-content {
+  .il-button.il-theme-orange, .il-button.il-theme-orange-gradient {
+    --il-content--button--focus--border-color: var(--il-orange);
+    --il-content--button--border-color: var(--il-orange);
+  }
+
+  il-content.il-theme-industrial-blue, .il-theme-industrial-blue il-content, .il-button.il-theme-industrial-blue {
     @mixin il-content--theme-industrial-blue;
   }
 
-  il-content.il-theme-altgeld, .il-theme-altgeld il-content {
+  .il-button.il-theme-industrial-blue {
+    --il-content--button--focus--border-color: var(--il-industrial-blue);
+    --il-content--button--border-color: var(--il-industrial-blue);
+  }
+
+  il-content.il-theme-altgeld, .il-theme-altgeld il-content, .il-button.il-theme-altgeld {
     @mixin il-content--theme-altgeld;
   }
+
+  .il-button.il-theme-altgeld {
+    --il-content--button--focus--border-color: var(--il-altgeld);
+    --il-content--button--border-color: var(--il-altgeld);
+  }
+
 }

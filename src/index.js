@@ -20,6 +20,7 @@ import "./components/il-page-title/il-page-title.component";
 import "./components/il-profile/il-profile.component";
 import "./components/il-quote/il-quote.component";
 import "./components/il-search/il-search.component";
-import './components/il-statistic/il-statistic.component';
+import "./components/il-statistic/il-statistic.component";
+import "./components/il-tabs/il-tabs.component";
 import "./components/il-video/il-video.component";
 import "./components/il-video-feature/il-video-feature.component";
