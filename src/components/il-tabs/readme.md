@@ -4,10 +4,6 @@ This is a component that groups a lot of related, parallel text into a collapsab
 
 In a mobile view, this is collapsed to a list of tabs with a section under it where the text resides. 
 
-If you only have one block of text that you are hiding or want a traditional accordion, consider using the `<detail>` and `<summary>` tag. Remember that the `<summary>` is considered a button, so any headings you add in the summary tag are ignored. 
-
-Most of the time, you'll want to put the panels inside of a `<il-content>` tag. Using the `<il-content class="il-card">` will normalize the headings. 
-
 ## Basic usage
 
 ```
