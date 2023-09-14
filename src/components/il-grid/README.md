@@ -1,6 +1,6 @@
 # `il-grid`
 
-Grids arrange in their content into rows, each row divided into a prescribed number of columns. Items in the grid are arranged from left to right until the row is full, then from left to right again in a new row below the previous row.
+Grids arrange their content into rows, each row divided into a prescribed number of columns. Items in the grid are arranged from left to right until the row is full, then from left to right again in a new row below the previous row.
 
 The maximum number of columns is 6. 
 
