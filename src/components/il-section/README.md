@@ -106,13 +106,3 @@ The markup would be a 2-column grid with content in the second column of the gri
   </il-grid>
 </il-section>
 ```
-
-would produce:
-
-```
-+------------------------------------+
-|/ / / / /|               |
-| / / / / |  Feature      |
-|/ / / / /|               |
-+------------------------------------+
-
