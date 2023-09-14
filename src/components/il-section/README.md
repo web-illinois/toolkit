@@ -48,3 +48,30 @@ If your background image doesn't provide the adequate color contrast for your co
 
 [Screenshot of a page section with a very busy background. Floating in the center of the photo is a blue box with the section content]
 
+## Example: Feature component in the middle of an illustration
+
+The following markup:
+
+```html
+<il-section>
+  <img slot="background" src="diagonal-stripes.png" alt="">
+  <il-feature color="blue">
+    Feature
+  </il-feature>
+</il-section>
+```
+
+would produce:
+
+```
++------------------------------------+
+|/ / / / / / / / / / / / / / / / / / |
+| / / / / +---------------+ / / / / /|
+|/ / / / /|               |/ / / / / |
+| / / / / |  Feature      | / / / / /|
+|/ / / / /|               |/ / / / / |
+| / / / / +---------------+ / / / / /|
+|/ / / / / / / / / / / / / / / / / / |
++------------------------------------+
+
+```
