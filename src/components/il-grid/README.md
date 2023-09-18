@@ -145,9 +145,9 @@ A similar grid can be placed in the background of the section, in order to fill 
 ```html
 <il-section>
   <il-grid slot="background" columns="3">
-    <img src="stripes-1.png">
+    <img src="stripes-1.png" alt="">
     <div></div>
-    <img src="stripes-2.png">
+    <img src="stripes-2.png" alt="">
   </il-grid>
   <il-grid columns="3">
     <div></div>
@@ -172,3 +172,37 @@ This would produce something like:
          : boundary                                         boundary :
 ```
 Notice that the background grid is wider than the content grid, and yet the edges of the columns line up. The first and last columns of a background grid will expand to take up additional space on the edges of the page, and will generally be wider than middle columns.
+
+### Example: Image/content split
+
+The goal is a section with an image on one side and text on the other. The image should stretch from the left edge to the center of the screen. The text side should have a blue background which extends to the right edge of the page, but the text should stay within the content boundaries:
+
+```
+         :             1/2             :             1/2             :
++--------------------------------------+--------------------------------------+
+|\ \ \ \ : \ \ \ \ \ \ \ \ \ \ \ \ \ \ |                             :        |
+| \ \ \ \:\ \ \ \ \ \ \ \ \ \ \ \ \ \ \|  This text does not         :        |
+|\ \ \ \ : \ \ \ \ \ \ \ \ \ \ \ \ \ \ |  extend beyond the content  :        |
+| \ \ \ \:\ \ \ \ \ \ \ \ \ \ \ \ \ \ \|  boundaries, but its        :        |
+|\ \ \ \ : \ \ \ \ \ \ \ \ \ \ \ \ \ \ |  background does            :        |
+| \ \ \ \:\ \ \ \ \ \ \ \ \ \ \ \ \ \ \|                             :        |
++--------------------------------------+--------------------------------------+
+         :                                                           :
+         : left content                                right content :
+         : boundary                                         boundary :
+```
+
+The markup would be a 2-column grid with content in the second column of the grid. The background of the section would be another 2-column grid, with an image in the first column.
+
+```html
+<il-section color="blue">
+  <il-grid slot="background" columns="2">
+    <img src="diagonal-stripes.png" alt="">
+    <div></div>
+  </il-grid>
+  <il-grid columns="2">
+    <div></div>
+    <div>This text does not extend beyond the content boundaries, but its background does</div>
+  </il-grid>
+</il-section>
+```

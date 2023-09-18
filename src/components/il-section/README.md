@@ -75,34 +75,3 @@ would produce:
 +------------------------------------+
 
 ```
-
-## Example: background/feature split
-
-The goal is a section with an image on one side and content on the other. The image should stretch from the left edge to the center of the screen. The content begins at the center of the screen but it doesn't extend beyond the page margins:
-
-```
-     :                                               :
-+---------------------------------------------------------+
-+ / /:/ / / / / / / / / / / / |                      :    |
-|/ / : / / / / / / / / / / / /| Content begins       :    |
-| / /:/ / / / / / / / / / / / | at the center, but   :    |
-|/ / : / / / / / / / / / / / /| doesn't extend past  :    |
-| / /:/ / / / / / / / / / / / | the page margins.    :    |
-|/ / : / / / / / / / / / / / /|                      :    |
-+---------------------------------------------------------+
-     :                                               :
-```
-
-The markup would be a 2-column grid with content in the second column of the grid, within a section that has an image on only one side.
-
-```html
-<il-section>
-  <div slot="background">
-    <img src="diagonal-stripes.png" alt="" style="width:50%; left:0px">
-  </div>
-  <il-grid columns="2">
-    <div></div>
-    <il-feature>Feature</il-feature>
-  </il-grid>
-</il-section>
-```
