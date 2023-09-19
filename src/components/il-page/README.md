@@ -63,7 +63,6 @@ On screens smaller than 650 pixels wide, the page margin is 20 pixels.
 | :dolore magna     : |
 | :aliqua.          : |
 | :                 : |
-\ /                 \ /
 20px               20px
 ```
 
@@ -81,31 +80,28 @@ On screens 650 pixels wide or larger, the page margin is 30 pixels.
 |  :                       :  |
 |  :                       :  |
 |  :                       :  |
-\  /                       \  /
 30px                       30px
 ```
 
 The maximum width of the content area is 1140 pixels. When the screen size is wider than the maximum width, the page margin increases to take up the available space.
 
 ```
- _____________________________ 1600px ____________________________
-/                                                                 \
+===============================1600px===============================
 |        :Lorem ipsum dolor sit amet, consectetur         :        |
 |        :adipiscing elit, sed do eiusmod tempor          :        |
 |        :incididunt ut labore et dolore magna aliqua.    :        |
 |        :                                                :        |
- \       /\_______________________  _____________________/\       /
-   230px                        1140px                      230px
+--------- ------------------------------------------------ ---------
+  230px                        1140px                        230px
 ```
 
 ```
- _____________________________________ 2000px ____________________________________
-/                                                                                 \
+=======================================2000px=======================================
 |                :Lorem ipsum dolor sit amet, consectetur         :                |
 |                :adipiscing elit, sed do eiusmod tempor          :                |
 |                :incididunt ut labore et dolore magna aliqua.    :                |
 |                :                                                :                |
-\_______  _______/\__________________________  __________________/\_______  ______/
+----------------- ------------------------------------------------ -----------------
       430px                                1140px                       430px
 ```
 
