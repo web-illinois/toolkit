@@ -29,14 +29,10 @@ Of note:
 In order to increase readability, the page component enforces consistent left and right margins around page content, and limits the line length of content on large screens
 
 ```
-+------------------------------------------------------------------------------+
-|                  :                                        :                  |
 |                  :Lorem ipsum dolor sit amet,             :                  |
 |                  :consectetur adipiscing elit, sed do     :                  |
 |                  :eiusmod tempor incididunt ut labore     :                  |
 |                  :et dolore magna aliqua.                 :                  |                              
-|                  :                                        :                  |
-+------------------------------------------------------------------------------+
 |                  :                                        :                  |
 | left edge        : left edge                   right edge :       right edge |
 | of screen        : of content                  of content :        of screen |
@@ -47,73 +43,68 @@ The horizontal distance between the edge of the screen and the edge of the conte
 On screens smaller than 650 pixels wide, the page margin is 20 pixels.
 
 ```
-+------------------+
-| :              : |
-| :              : |
-| :              : |
-| :              : |
-| :              : |
-| :              : |
-| :              : |
-| :              : |
-| :              : |
-| :              : |
-| :              : |
-| :              : |
-+------------------+
-\ /              \ /
-20px            20px
++---------------------+
+| :Lorem ipsum      : |
+| :dolor sit amet,  : |
+| :consectetur      : |
+| :adipiscing elit, : |
+| :sed do eiusmod   : |
+| :tempor incididunt: |
+| :ut labore et     : |
+| :dolore magna     : |
+| :aliqua.          : |
+| :                 : |
++---------------------+
+\ /                 \ /
+20px               20px
 ```
 
 On screens 650 pixels wide or larger, the page margin is 30 pixels.
 
 ```
-+----------------------------+
-|  :                      :  |
-|  :                      :  |
-|  :                      :  |
-|  :                      :  |
-|  :                      :  |
-|  :                      :  |
-|  :                      :  |
-|  :                      :  |
-|  :                      :  |
-|  :                      :  |
-|  :                      :  |
-|  :                      :  |
-|  :                      :  |
-|  :                      :  |
-|  :                      :  |
-|  :                      :  |
-+----------------------------+
-\  /                      \  /
-30px                      30px
++-----------------------------+
+|  :Lorem ipsum dolor      :  |
+|  :sit amet, consectetur  :  |
+|  :adipiscing elit, sed   :  |
+|  :do eiusmod tempor      :  |
+|  :incididunt ut labore   :  |
+|  :et dolore magna aliqua.:  |
+|  :                       :  |
+|  :                       :  |
+|  :                       :  |
+|  :                       :  |
+|  :                       :  |
++-----------------------------+
+\  /                       \  /
+30px                       30px
 ```
 
-The maximum width of the content area is 1140 pixels. When the screen size is wider than the maximum width, any additional space is divided among 
+The maximum width of the content area is 1140 pixels. When the screen size is wider than the maximum width, the page margin increases to take up the available space.
 
 ```
+ _____________________________ 1600px ____________________________
+/                                                                 \
 +------------------------------------------------------------------+
-|        :                                                :        |
-|        :                                                :        |
-|        :                                                :        |
-|        :                                                :        |
+|        :Lorem ipsum dolor sit amet, consectetur         :        |
+|        :adipiscing elit, sed do eiusmod tempor          :        |
+|        :incididunt ut labore et dolore magna aliqua.    :        |
 |        :                                                :        |
 +------------------------------------------------------------------+
-         \_______________________  _______________________/
-                               1140px     
+ \       /\_______________________  _____________________/\       /
+   230px                        1140px                      230px
 ```
 
 ```
-+----------------------------------------------------------------------------+
-|             :                                                :             |
-|             :                                                :             |
-|             :                                                :             |
-|             :                                                :             |
-|             :                                                :             |
-+----------------------------------------------------------------------------+
-              \__________________________  ____________________/
-                                       1140px     
+ _____________________________________ 2000px ____________________________________
+/                                                                                 \
++----------------------------------------------------------------------------------+
+|                :Lorem ipsum dolor sit amet, consectetur         :                |
+|                :adipiscing elit, sed do eiusmod tempor          :                |
+|                :incididunt ut labore et dolore magna aliqua.    :                |
+|                :                                                :                |
++----------------------------------------------------------------------------------+
+\_______  _______/\__________________________  __________________/\_______  ______/
+      430px                                1140px                       430px
 ```
 
 
