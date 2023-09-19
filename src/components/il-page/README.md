@@ -2,7 +2,9 @@
 
 This component is used to create complete web pages. It has slots for the standard header and footer components, and it provides standard margins and line widths for page content.
 
-A basic HTML page using this component would look something like:
+A page can contain HTML elements or toolkit components. Special layout components are available to create custom arrangements of page content.
+
+## A sample HTML page
 
 ```html
 <!DOCTYPE html>
@@ -24,6 +26,14 @@ Of note:
 2. The `meta name="viewport"` element is necessary for the component to respond appropriately on different screen sizes.
 3. The `il-page` element is the first element within the `body` element. Nesting the page component within other elements can cause the layout to behave unpredictably.
 
+## Base page styles
+
+General styling is applied to all content within a page, in particular:
+
+* Headings
+* Lists
+* Tables
+
 ## Page margins
 
 In order to increase readability, the page component enforces consistent left and right margins around page content, and limits the line length of content on large screens
@@ -43,7 +53,6 @@ The horizontal distance between the edge of the screen and the edge of the conte
 On screens smaller than 650 pixels wide, the page margin is 20 pixels.
 
 ```
-+---------------------+
 | :Lorem ipsum      : |
 | :dolor sit amet,  : |
 | :consectetur      : |
@@ -54,7 +63,6 @@ On screens smaller than 650 pixels wide, the page margin is 20 pixels.
 | :dolore magna     : |
 | :aliqua.          : |
 | :                 : |
-+---------------------+
 \ /                 \ /
 20px               20px
 ```
@@ -62,7 +70,6 @@ On screens smaller than 650 pixels wide, the page margin is 20 pixels.
 On screens 650 pixels wide or larger, the page margin is 30 pixels.
 
 ```
-+-----------------------------+
 |  :Lorem ipsum dolor      :  |
 |  :sit amet, consectetur  :  |
 |  :adipiscing elit, sed   :  |
@@ -74,7 +81,6 @@ On screens 650 pixels wide or larger, the page margin is 30 pixels.
 |  :                       :  |
 |  :                       :  |
 |  :                       :  |
-+-----------------------------+
 \  /                       \  /
 30px                       30px
 ```
@@ -84,12 +90,10 @@ The maximum width of the content area is 1140 pixels. When the screen size is wi
 ```
  _____________________________ 1600px ____________________________
 /                                                                 \
-+------------------------------------------------------------------+
 |        :Lorem ipsum dolor sit amet, consectetur         :        |
 |        :adipiscing elit, sed do eiusmod tempor          :        |
 |        :incididunt ut labore et dolore magna aliqua.    :        |
 |        :                                                :        |
-+------------------------------------------------------------------+
  \       /\_______________________  _____________________/\       /
    230px                        1140px                      230px
 ```
@@ -97,12 +101,10 @@ The maximum width of the content area is 1140 pixels. When the screen size is wi
 ```
  _____________________________________ 2000px ____________________________________
 /                                                                                 \
-+----------------------------------------------------------------------------------+
 |                :Lorem ipsum dolor sit amet, consectetur         :                |
 |                :adipiscing elit, sed do eiusmod tempor          :                |
 |                :incididunt ut labore et dolore magna aliqua.    :                |
 |                :                                                :                |
-+----------------------------------------------------------------------------------+
 \_______  _______/\__________________________  __________________/\_______  ______/
       430px                                1140px                       430px
 ```
@@ -125,3 +127,41 @@ The page component has predefined content slots intended for the `il-header` and
   </il-footer>
 </il-page>
 ```
+## Dividing a page into sections
+
+The [`il-section`](../il-section/README.md) component can be used to group sections of a page or to change the appearance of portions of the page.
+
+```html
+<il-page>
+  
+  <p>Lorem ipsum...</p>
+  
+  <il-section>
+    <p>Lorem ipsum...</p>
+  </il-section>
+
+  <p>Lorem ipsum...</p>
+  
+</il-page>
+```
+
+The section component inserts a vertical break between itself and its surrounding content, and it extends into the page margins to edges of the screen. Page sections can have custom color schemes and complex backgrounds. 
+
+
+```
+.     adipiscing elit, sed do eiusmod tempor               .
+.     incididunt ut labore et dolore magna aliqua.         .
+.                                                          .
++----------------------------------------------------------+
+|                                                          |
+|     Lorem ipsum dolor sit amet, consectetur              |
+|     adipiscing elit, sed do eiusmod tempor               |
+|     incididunt ut labore et dolore magna aliqua.         |
+|                                                          |
++----------------------------------------------------------+
+.                                                          .
+.     Lorem ipsum dolor sit amet, consectetur              .
+.     adipiscing elit, sed do eiusmod tempor               .
+```
+
+[Read more about the `il-section` component](../il-section/README.md)
