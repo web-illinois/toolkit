@@ -123,6 +123,53 @@ The page component has predefined content slots intended for the `il-header` and
   </il-footer>
 </il-page>
 ```
+
+## Adding a page title and breadcrumbs
+
+```html
+<il-page>
+  <il-header slot="header">
+    <!-- ... -->
+  </il-header>
+  
+  <il-page-title>
+    <h1>Graduate Programs</h1>
+  </il-page-title>
+  
+  <il-footer slot="footer">
+    <!-- ... -->
+  </il-footer>
+</il-page>
+```
+
+For more information, see the [`il-page-title` documentation](../il-page-title/README.md).
+
+```html
+<il-page>
+  <il-header slot="header">
+    <!-- ... -->
+  </il-header>
+  
+  <il-nav type="breadcrumbs">
+    <ul>
+      <li><a href="/">Home</a></li>
+      <li><a href="/programs">Programs</a></li>
+      <li><a aria-current="true" href="/programs/grad">Graduate Programs</a></li>
+    </ul>
+  </il-nav>
+  
+  <il-page-title>
+    <h1>Graduate Programs</h1>
+  </il-page-title>
+  
+  <il-footer slot="footer">
+    <!-- ... -->
+  </il-footer>
+</il-page>
+```
+
+For more information about breadcrumbs, see the [`il-nav` documentation](../il-nav/README.md).
+
 ## Dividing a page into sections
 
 The [`il-section`](../il-section/README.md) component can be used to group sections of a page or to change the appearance of portions of the page.
@@ -161,3 +208,5 @@ The section component inserts a vertical break between itself and its surroundin
 ```
 
 [Read more about the `il-section` component](../il-section/README.md)
+
+## Adding a hero component
