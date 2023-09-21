@@ -10,18 +10,7 @@ To join the organization, you need to sign in with your Illinois credentials usi
 
 As a member of the web-illinois organization, you will be able to see the repositories within the organization. You can download the code for your own use, create issues, and comment on existing issues and pull requests.
 
-## Building and testing
-
-Uses NPM. See the general readme.md to check this. 
-
 ## Code Standards
-
-Building the site:
-* .eleventy.js manages the test area
-* .eleventy-test-site.js manages the samples section
-
-File suffixes:
-* .vis.js handles the visual test cases
 
 
 ### HTML
@@ -83,15 +72,11 @@ When you are ready for beta testing, first make sure all the code has been pushe
 #### Before deployment
 
 * Make sure the package.json has been updated
-* Make sure visual tests have been updated
-* Make sure all unit tests have been run and have passed
-* Make sure all accessibility tests have been run and have passed
+* Make sure all tests have been run and have passed
 
 
 #### After deployment
 
 * Merge the main branch back to develop.
 * Delete the release branch (if one exists).
-* Make a note in the wiki saying the new release is done.
-* Create codepens from the develop to the new release if you are updating a major or minor release.
 * Push announcements to Teams, listserv, etc. 
