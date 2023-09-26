@@ -2,7 +2,7 @@
 
 This is a large number or word that you want to emphasize in a page. It may have header text (before the main text), footer text (after the main text), and/or a source, but the number or word is central to the statistic. 
 
-The header text, main text, or footer text is never a hyperlink. The main text is wrapped in a `<em></em>` tag. The header text is wrapped in a `<span slot='source'></span>` tag. The source text may be a link and is wrapped in a `<span slot='source'></span>` tag. None of the text is a header, list, or other component other than plain text. 
+The header text, main text, or footer text is never a hyperlink. The main text is wrapped in a `<em></em>` tag. The header text is wrapped in a `<span slot='header'></span>` tag. The source text may be a link and is wrapped in a `<span slot='source'></span>` tag. None of the text is a header, list, or other component other than plain text. 
 
 There will always be one and only one `<em>` in the component. 
 
@@ -58,13 +58,13 @@ You can use the `<il-section>` and `<il-grid>` to create columns and backgrounds
 If multiple statistics are in a column, the main statistic will be lined up at the middle of the component, and the source will be lined up at the bottom of the component. 
 
 ```
-               Xxxxxxxxx           |                               |                               |
-                                   |                               |                               |
-                  XX%              |              XX%              |              XX%              |
-                                   |                               |                               |
-             xx xxx xxxxxx         |          xx xxx xxxxxx        |          xx xxx xxxxxx        | 
-            xxxxxxxxxxxxxxx.       |         xxxxxxxxxxxxxxx.      |         xxxxxxxxxxxxxxx       |
-                                   |                               |         xxxxxxxxxxxxxxx.      |
-                                   |                               |                               |
-                                   |           xxxxxxxxxxx         |            xxxxxxxxx          |
+|            Xxxxxxxxx           |                               |                               |
+|                                |                               |                               |
+|               XX%              |              XX%              |              XX%              |
+|                                |                               |                               |
+|          xx xxx xxxxxx         |          xx xxx xxxxxx        |          xx xxx xxxxxx        | 
+|         xxxxxxxxxxxxxxx.       |         xxxxxxxxxxxxxxx.      |         xxxxxxxxxxxxxxx       |
+|                                |                               |         xxxxxxxxxxxxxxx.      |
+|                                |                               |                               |
+|                                |           xxxxxxxxxxx         |            xxxxxxxxx          |
 ```
