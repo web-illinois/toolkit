@@ -2,6 +2,8 @@
 
 The hero component is intended to provide a visually-impressive element at the top of pages. It typically contains a short piece of text in a large font size, an interesting image used as a background, and may also contains links and additional text.
 
+See also: [il-page-title](../il-page-title/README.md)
+
 ```html
 <il-hero>
   
