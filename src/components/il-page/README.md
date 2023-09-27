@@ -210,3 +210,5 @@ The section component inserts a vertical break between itself and its surroundin
 [Read more about the `il-section` component](../il-section/README.md)
 
 ## Adding a hero component
+
+See the [`il-hero` documentation](../il-hero/README.md).
