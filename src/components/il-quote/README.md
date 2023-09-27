@@ -1,6 +1,6 @@
 # `il-quote`
 
-This component represents a quote or testimontial, with optional attribution.
+This component represents a quote or testimontial, with optional attribution. The quote or testimonial is intended to be intermixed with copy and the quote is highlighted and called out. 
 
 All the text is centered, and the attributed and secondary text is below the quote at a fixed length. 
 
