@@ -2,20 +2,20 @@
 
 This component represents a quote or testimontial, with optional attribution. The quote or testimonial is intended to be intermixed with copy and the quote is highlighted and called out. 
 
-All the text is centered, and the attributed and secondary text is below the quote at a fixed length. 
+Quotation marks are added automatically before and after the quote. 
 
-The margins are set before and after the quote. 
-
-Quote marks are added automatically before and after the quote. 
-
-The quote itself does not have special formatting, links, etc. The attributed and/or secondary text may be links, and may use emphasis. None of the text may have heading information. 
+This component should not contain a heading element. 
 
 ## Basic use
 
-```
+```html
 <il-quote>
-    Either university presses will embrace new technology and offer scholarly content in new forms to researchers and under new business models, or they will follow the music industry and spend all of their resources on trying to protect their territory -- unsuccessfully.
-    <p slot="attributed">Laura Cerruti</p>
-    <p slot="secondary">Director of Digital Content Development, University of California Press, profiled in Against the Grain</p>
+  <p>Either university presses will embrace new technology and offer scholarly content in new forms
+    to researchers and under new business models, or they will follow the music industry and spend
+    all of their resources on trying to protect their territory &mdash; unsuccessfully.</p>
+  <div slot="attribution">
+    <p slot="il-attribution-name">Laura Cerruti</p>
+    <p>Director of Digital Content Development</p>
+  </div>
 </il-quote>
 ```
