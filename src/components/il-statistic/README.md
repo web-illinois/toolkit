@@ -1,7 +1,9 @@
 # `il-statistic`
 
 This is a large number or word that you want to emphasize in a page. It may have header text (before the main text),
-footer text (after the main text), and/or a source, but the number or word is central to the statistic.
+footer text (after the main text), and/or an attribution, but the number or word is central to the statistic.
+
+The statistic should read as a complete sentence (minus the attribution).
 
 ## Basic use
 
@@ -11,7 +13,7 @@ Example of full statistic with citation.
 <il-statistic>
     Nation's <em>Top Six</em> Overall ranking 
     among undergraduate programs in the U.S.
-    <p slot="source">U.S. News and World 2022</span>
+    <p slot="attribution">U.S. News and World 2022</span>
 </il-statistic>
 ```
 
@@ -35,7 +37,7 @@ You can use CSS to change the color of the emphasized number or text.
 
 ### Columns
 
-You can use the `<il-section>` and `<il-grid>` to create columns and backgrounds to show multiple .
+You can use the `<il-section>` and `<il-grid>` to create columns and backgrounds to show multiple statistics.
 
 ```html
 
@@ -46,27 +48,27 @@ You can use the `<il-section>` and `<il-grid>` to create columns and backgrounds
     </il-statistic>
     <il-statistic>
       <em>XX%</em> xx xxx xxxxxx xxxxxxxxxxxxxxx.
-      <span slot="source">xxxxxxxx</span>
+      <span slot="attribution">xxxxxxxx</span>
     </il-statistic>
     <il-statistic>
       <em>XX%</em> xx xxx xxxxxx xxxxxxxxxxxxxxx xxxxxxxxxxxxxxx xxxxxxxxxxxxxxx.
-      <span slot="source">xxxxxxxx</span>
+      <span slot="attribution">xxxxxxxx</span>
     </il-statistic>
   </il-grid>
 </il-section>
 ```
 
-If multiple statistics are in a column, the main statistic will be lined up at the middle of the component, and the
-source will be lined up at the bottom of the component.
+If multiple statistics are in a column, the main statistic (including header, main stat, and footer) will be lined up at the middle of the component, and the
+attribution (if any) will be lined up at the bottom of the component.
 
 ```
-|            Xxxxxxxxx           |                               |                               |
 |                                |                               |                               |
-|               XX%              |              XX%              |              XX%              |
+|             Xxxxxxx            |              XX%              |              XX%              |
 |                                |                               |                               |
-|          xx xxx xxxxxx         |          xx xxx xxxxxx        |          xx xxx xxxxxx        | 
-|         xxxxxxxxxxxxxxx.       |         xxxxxxxxxxxxxxx.      |         xxxxxxxxxxxxxxx       |
-|                                |                               |         xxxxxxxxxxxxxxx.      |
-|                                |                               |                               |
+|               XX%              |          xx xxx xxxxxx        |          xx xxx xxxxxx        | 
+|                                |         xxxxxxxxxxxxxxx.      |         xxxxxxxxxxxxxxx       |
+|          xx xxx xxxxxx         |                               |         xxxxxxxxxxxxxxx.      |
+|         xxxxxxxxxxxxxxx.       |                               |                               |
 |                                |           xxxxxxxxxxx         |            xxxxxxxxx          |
+|                                |                               |                               |
 ```
