@@ -14,8 +14,8 @@ The quote itself does not have special formatting, links, etc. The attributed an
 
 ```
 <il-quote>
-Either university presses will embrace new technology and offer scholarly content in new forms to researchers and under new business models, or they will follow the music industry and spend all of their resources on trying to protect their territory -- unsuccessfully.
-<p slot="attributed">Laura Cerruti</p>
-<p slot="secondary">Director of Digital Content Development, University of California Press, profiled in Against the Grain</p>
+    Either university presses will embrace new technology and offer scholarly content in new forms to researchers and under new business models, or they will follow the music industry and spend all of their resources on trying to protect their territory -- unsuccessfully.
+    <p slot="attributed">Laura Cerruti</p>
+    <p slot="secondary">Director of Digital Content Development, University of California Press, profiled in Against the Grain</p>
 </il-quote>
 ```
