@@ -6,7 +6,7 @@ In a mobile view, this is collapsed to a list of tabs with a section under it wh
 
 ## Basic usage
 
-```
+```html
 <il-tabs>
     <div slot="tabs">
         <div role="tab" aria-controls="panel1">Degree Programs</div>
