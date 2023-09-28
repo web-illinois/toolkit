@@ -30,4 +30,10 @@ You can use the `color` attribute to change the color of the component. Availabl
 
 You can use the `align` attribute to change the alignment of the text to center. 
 
+```html
+<il-call-to-action align='center'>
+   ...
+</il-call-to-action>
+``````
+
 You can use this along with the `il-section` component to limit the margins of the component.
