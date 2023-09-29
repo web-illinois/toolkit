@@ -109,7 +109,7 @@ The 6-column grid base can accommodate grids of 1, 2, 3, or 6 columns:
 
 ## Using grids as section backgrounds
 
-Grids can be used as section backgrounds to create complex layouts. A background grid takes up the full width of the section but it is designed to match the grid in the content area.
+Grids can be used as section backgrounds to create complex layouts. A background grid takes up the full width of the section, but it is designed to match the grid in the content area.
 
 For instance, the following markup defines a section containing a 3-column grid, with content in the middle column:
 
