@@ -1,108 +1,75 @@
-# `il-accordion` and `il-accordion-panel`
+# `il-accordion`
 
-This is a vertically stacked set of headings that contain a title or content snippet. The headings act as controls that allow users to show or hide the content associated with the heading (content stored in an il-accordion-panel). Opening one accordion panel may or may not close other panels in the accordion, depending on configuration. 
+[Accordions](https://www.w3.org/WAI/ARIA/apg/patterns/accordion/) arrange multiple sections of content into columns. Each section can be expanded or collapsed by the user.
 
-https://www.w3.org/WAI/ARIA/apg/patterns/accordion/
+Each section of an accordion contains 2 parts:
 
-## Basic use
-```
+* The <dfn>header</dfn> acts as a label or summary for the section. The header is always visible. Clicking on the header expands or collapses the section. This is usually a heading element, but it is not required.
+* The <dfn>panel</dfn> contains content that is visible when the section is expanded. A panel can include any valid markup, but should not contain other toolkit components.
+
+The `il-accordion` element contains 1 or more `il-accordion-panel` components, each of which defines its corresponding `header`.
+
+```html
 <il-accordion>
-    <il-accordion-panel>
-        <h3 slot="header">Test #1 information</h3>
-        <il-content>
-            <p>First paragraph</p>
-            <p>Second paragraph</p>
-        </il-content>
-    </il-accordion-panel>
-    <il-accordion-panel>
-        <h3 slot="header">Test #2 information</h3>
-        <il-content>
-            <p>First paragraph</p>
-            <p>Second paragraph</p>
-        </il-content>
-    </il-accordion-panel>
-    <il-accordion-panel>
-        <h3 slot="header">Test #3 information</h3>
-        <il-content>
-            <p>First paragraph</p>
-            <p>Second paragraph</p>
-        </il-content>
-    </il-accordion-panel>
+  <il-accordion-panel>
+    <h3 slot="header">Student Services</h3>
+    <div>
+
+      <!-- ...content of "Student Services" panel... -->
+
+    </div>
+  </il-accordion-panel>
+  <il-accordion-panel>
+    <h3 slot="header">Faculty Services</h3>
+    <div>
+
+      <!-- ...content of "Faculty Services" panel... -->
+
+    </div>
+  </il-accordion-panel>
+  
+  <!-- ...additional panels... -->
+  
 </il-accordion>
 ```
 
-### Use limitations
+## Limiting the number of expanded panels
 
-* An `il-accordion` component may only contain `il-accordion-panel` components.
-* An `il-accordion-panel` component must have a *header* slot, and this slot must contain a heading (h2 - h6).
-* An `il-accordion-panel` component may be used outside of an `il-accordion` component. However, consider if you want to use a single `il-accordion-panel` component or a `<details><summary>` HTML element. 
+By default, there is no limit to the number of panels which can be expanded at one time. Use the `limit` attribute to keep only one panel expanded at a time.
 
-## Styling
-
-The `il-accordion` can take theme classes as normal. By default, the accordion is black headings, gray background on the headings. 
-
-The heading size in the accordion panel is fixed (in other words, an h2 and h3 will have the same size). This can be changed by updating the em size on the header. 
-
-The `il-accordion` and `il-accordion-panel` components will expand to fill as much space as possible with no margins. The `il-accordion-panel` will indent the content inside it so the text will align with the heading. 
-
-The `il-accordion-panel` component does not style its contents. If you want the contents to be styled, you must use another component. 
-
-The `il-accordion-panel` uses the `il-nav-indicator` component. 
-
-## Open Multiple
-
-By default, if you open one accordion, the rest will close. You can change this behavior to allow multiple to be open by using the `multiple` attribute
-```
-<il-accordion multiple>
-    <il-accordion-panel>
-        <h3 slot="header">Test #1 information</h3>
-        <il-content>
-            <p>First paragraph</p>
-            <p>Second paragraph</p>
-        </il-content>
-    </il-accordion-panel>
-    <il-accordion-panel>
-        <h3 slot="header">Test #2 information</h3>
-        <il-content>
-            <p>First paragraph</p>
-            <p>Second paragraph</p>
-        </il-content>
-    </il-accordion-panel>
-    <il-accordion-panel>
-        <h3 slot="header">Test #3 information</h3>
-        <il-content>
-            <p>First paragraph</p>
-            <p>Second paragraph</p>
-        </il-content>
-    </il-accordion-panel>
+```html
+<il-accordion limit="1">
+  
+  <!-- ...accordion panels... -->
+  
 </il-accordion>
 ```
 
-## Start as open
+*Note:* the only valid value for the `limit` attribute is `1`.
 
-By default, all items will be closed. You can choose to start one as open by using the `open` attribute on the il-accordion-panel. 
-```
+When a panel is expanded in an accordion using the `limit` attribute, any previously expanded panels are collapsed.
+
+## Expanding a section by default
+
+To control the initial state of a panel when the page is loaded, use the `data-il-state` attribute. Possible values for this attribute are:
+
+* `collapsed` sets the panel to be collapsed on page load
+* `expanded` sets the panel to be expanded on page load
+
+```html
 <il-accordion>
-    <il-accordion-panel open>
-        <h3 slot="header">Test #1 information</h3>
-        <il-content>
-            <p>First paragraph</p>
-            <p>Second paragraph</p>
-        </il-content>
-    </il-accordion-panel>
-    <il-accordion-panel>
-        <h3 slot="header">Test #2 information</h3>
-        <il-content>
-            <p>First paragraph</p>
-            <p>Second paragraph</p>
-        </il-content>
-    </il-accordion-panel>
-    <il-accordion-panel>
-        <h3 slot="header">Test #3 information</h3>
-        <il-content>
-            <p>First paragraph</p>
-            <p>Second paragraph</p>
-        </il-content>
-    </il-accordion-panel>
+  <il-accordion-panel data-il-state="expanded">
+    <h3 slot="header">Expanded section</h3>
+    
+    <!-- ...this content will be visible... --->
+    
+  </il-accordion-panel>
+  <il-accordion-panel data-il-state="collapsed">
+    <h3 slot="header">Test #2 information</h3>
+
+    <!-- ...this content will be hidden... --->
+
+  </il-accordion-panel>
 </il-accordion>
 ```
+When using the `limit="1"` attribute and multiple panels with `data-il-state="expanded"`, only the last panel will be expanded on page load.
