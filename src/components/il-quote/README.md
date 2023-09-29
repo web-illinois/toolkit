@@ -14,7 +14,7 @@ This component should not contain a heading element.
     to researchers and under new business models, or they will follow the music industry and spend
     all of their resources on trying to protect their territory &mdash; unsuccessfully.</p>
   <div slot="attribution">
-    <p slot="il-attribution-name">Laura Cerruti</p>
+    <p class="il-name">Laura Cerruti</p>
     <p>Director of Digital Content Development</p>
   </div>
 </il-quote>
