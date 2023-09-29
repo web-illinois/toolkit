@@ -36,6 +36,7 @@ To add additional levels of navigation, use the `il-nav-section` element:
   </ul>
 </il-nav>
 ```
+For more information, see the [`il-nav-section`](../il-nav-section/README.md) component.
 
 ## Navigation types
 
