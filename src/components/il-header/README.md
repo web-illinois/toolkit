@@ -18,42 +18,34 @@ On smaller screens, the navigation, search, and additional links are placed with
 
 ## Creating a header
 
-A minimal header contains the name of the site. For sites with multiple pages, this can include a link to the site homepage.
+A minimal header contains the name of the site. The site name is placed in the `name` content slot.
 
-The site name is placed in the `identity` content slot.
-
-````html
+```html
 <il-header>
-  <div slot="identity">
-    <h1><a href="/">College of Examples</a></h1>
-  </div>
+  <div slot="name">College of Examples</div>
 </il-header>
-````
+```
+
+For sites with multiple pages, this can include a link to the site homepage.
+
+```html
+<il-header>
+  <a slot="name" href="/">College of Examples</a>
+</il-header>
+```
 
 [screenshot]
 
-Elements other than `h1` can be used, provided they include the `il-site-name` class.
-
-````html
-<il-header>
-  <div slot="identity">
-    <div class="il-site-name"><a href="/">College of Examples</a></div>
-  </div>
-</il-header>
-````
-
 ## Adding a parent organization
 
-To add the parent organization of the site, use the `il-site-parent` class. 
+To add the parent organization of the site, use the `parent` content slot. 
 
-````html
+```html
 <il-header>
-  <div slot="identity">
-    <div class="il-site-parent"><a href="https://example.com">College of Examples</a></div>
-    <div class="il-site-name"><a href="/">Department of Hypotheticals</a></div>
-  </div>
+  <a slot="parent" href="https://example.com">College of Examples</a>
+  <a slot="name" href="/">Department of Hypotheticals</a></h1>
 </il-header>
-````
+```
 
 Including more than 3 parent organizations is discouraged.
 
