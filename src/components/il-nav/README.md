@@ -1,6 +1,10 @@
 # `il-nav`
 
-The navigation component is used for lists of navigation links, often with multiple nested levels. It has several presentation formats, and is capable of changing its appearance based on its location on the page.
+This component is used to create different types of navigation elements. These are lists of links, sometimes with nested navigation sections which may collapse or expand on user interaction.
+
+The component provides several presentation styles for navigation elements, depending on the nature of the navigation and its context on the page.
+
+A list of 3 navigation links might be:
 
 ```html
 <il-nav>
@@ -12,7 +16,9 @@ The navigation component is used for lists of navigation links, often with multi
 </il-nav>
 ```
 
-Add navigation submenus (where supported)
+## Multiple navigation levels
+
+To add additional levels of navigation, use the `il-nav-section` element:
 
 ```html
 <il-nav>
@@ -31,15 +37,17 @@ Add navigation submenus (where supported)
 </il-nav>
 ```
 
-For more information see [il-nav-section](../il-nav-section/README.md).
-
 ## Navigation types
 
-The `type` attribute allows you to specify the visual presentation of the navigation. There are 7 possible navigation types:
+The `type` attribute allows you to specify the presentation of the navigation. This includes the visual appearance of the navigation, the alignment of the items, and the number and nature of user interaction with the navigation.
+
+Some navigation types do not support multiple levels, or will not display navigation items nested beyond a certain level. No navigation type supports more than 6 levels of nesting.
+
+There are 7 possible navigation types:
 
 ### `accordion`
 
-The `accordion` navigation type presents all the navigation elements in an expandable column. Navigation items with expandible content can be toggled open or closed. If a current navigation item is specified, the sections containing the current item will be expanded by default.
+This navigation type presents all the navigation elements in an expandable column. Navigation items with expandable content can be toggled open or closed. If a current navigation item is specified, the sections containing the current item will be expanded by default.
 
 ```html
 <il-nav type="accordion"></il-nav>
@@ -47,7 +55,7 @@ The `accordion` navigation type presents all the navigation elements in an expan
 
 ### `bar`
 
-The `bar` navigation type presents the first level of navigation elements in a row. Second level menus are displayed as dropdowns, and any additional menus are displayed as flyouts. Toggling the visibility of the menus requires a mouse/keyboard click. (Hover/focus events will not toggle the menus.)
+This navigation type presents the first level of navigation elements in a row. Second level menus are displayed as dropdowns, and any additional menus are displayed as flyouts. Toggling the visibility of the menus requires a mouse/keyboard click. (Hover/focus events will not toggle the menus.)
 
 ```html
 <il-nav type="bar"></il-nav>
@@ -55,7 +63,7 @@ The `bar` navigation type presents the first level of navigation elements in a r
 
 ### `breadcrumbs`
 
-The `breadcrumb` navigation type presents the 
+This navigation type presents links in a [breadcrumb trail](https://www.w3.org/WAI/ARIA/apg/patterns/breadcrumb/) used to show the current page's place in a hierarchical site structure.
 
 ```html
 <il-nav type="breadcrumbs">
@@ -70,7 +78,7 @@ The `breadcrumb` navigation type presents the
 
 ### `dropdown`
 
-In this mode, the navigation is initially collapsed to a button which expands when clicked.
+This is a compact mode in which the navigation is collapsed to a dropdown. Clicking the dropdown reveals the navigation items.
 
 ```html
 <il-nav type="dropdown"></il-nav>
@@ -112,6 +120,8 @@ These CSS classes are meaningful within a pagination navigation:
 These classes can be used to place an ellipsis (&hellip;) before/after a navigation element. This should be used to indicate a gap in the sequence of pages.
 
 ### `sidebar`
+
+This navigation type is intended to be used in the sidebar of page. It presents the navigation in a single column and uses indentation to show nesting levels.
 
 ```html
 <il-nav type="sidebar"></il-nav>
