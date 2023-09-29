@@ -12,19 +12,11 @@ A basic hero contain the page title:
 </il-hero>
 ```
 
-+----------------------------------------------------------+
-|                                                          |
-|                                                          |
-|                                                          |
-|                     Graduate Programs                    |
-|                                                          |
-|                                                          |
-|                                                          |
-+----------------------------------------------------------+
+[screenshot]
 
-## Changing the background color
+## Changing the color
 
-By default, the hero component has a blue gradient background. To change the color of the background, use the color attribute:
+By default, the hero component has white text on a blue gradient background. To change the color scheme, use the color attribute:
 
 ```html
 <il-hero color="orange">
