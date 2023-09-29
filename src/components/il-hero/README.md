@@ -12,6 +12,7 @@ A basic hero contain the page title:
 </il-hero>
 ```
 
+```
 +----------------------------------------------------------+
 |                                                          |
 |                                                          |
@@ -21,6 +22,7 @@ A basic hero contain the page title:
 |                                                          |
 |                                                          |
 +----------------------------------------------------------+
+```
 
 ## Changing the background color
 
