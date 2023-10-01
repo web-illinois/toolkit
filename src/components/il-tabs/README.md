@@ -29,6 +29,14 @@ In a mobile view, this is collapsed to a list of tabs with a section under it wh
 </il-tabs>
 ```
 
+## Vertical tabs
+
+For vertical tabs, where the tabs are displayed in a column on the left and active tab content is displayed on the right, use the `direction` attribute with the `vertical` value:
+
+```html
+<il-tabs direction="vertical">
+```
+
 ## Content slots
 
 * tabs: The list of tabs. These should be marked as `<div>`.
