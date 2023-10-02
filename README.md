@@ -75,13 +75,13 @@ To build a local copy of the toolkit, download or check out the toolkit reposito
 
 ## Learn more
 
-* Colors
-* Fonts
+* [Colors](./src/css/colors/README.md)
+* [Fonts](./src/css/fonts/README.md)
 * [The component library](./src/components/README.md)
-* Icons
+* [Icons](./src/css/icons/README.md)
 
 
-## Contributors
+## Authors
 
 The toolkit is made possible by:
 
@@ -91,4 +91,4 @@ The toolkit is made possible by:
 ### Developers
 
 * [Matt Sharkey](mailto:msharkey@illinois.edu)
-* Bryan Jonker
+* [Bryan Jonker](mailto:jonker@illinois.edu)
