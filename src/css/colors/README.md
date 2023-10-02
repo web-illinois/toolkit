@@ -1,9 +1,5 @@
 # Colors
 
-## Color schemes
-
-## Using specific colors
-
 The following is the current list of colors, along with their hex equivalents.
 
 | Variable                       | Color   |

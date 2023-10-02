@@ -62,17 +62,6 @@ This **does not** include
 
 This URL points to 3.0.0 version of the toolkit. Patch-level URLs are never updated and always point to the same files.
 
-### Hosting the toolkit on another server
-
-For scenarios when it is preferable to host the toolkit files on a different server, downloadable builds of the toolkit can be found in ...
-
-**TODO: CDN? Box folder? Github?**
-
-### Building the toolkit locally
-
-To build a local copy of the toolkit, download or check out the toolkit repository and run `npm run build`;
-
-
 ## Learn more
 
 * [Colors](./src/css/colors/README.md)
