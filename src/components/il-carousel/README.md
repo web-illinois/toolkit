@@ -2,8 +2,6 @@
 
 This component presents a series of slides in a continuously rotating carousel.
 
-## Accessibility
-
 This component follows the [ARIA APG carousel pattern](https://www.w3.org/WAI/ARIA/apg/patterns/carousel/);
 
 ## Appearance
@@ -58,26 +56,19 @@ The carousel will begin playing when the page loads. To pause the carousel at pa
 </il-carousel>
 ```
 
-By default, the carousel starts with the first slide in the sequence. To start with a different slide, set the `slide` attribute:
+By default, the carousel starts with the first slide in the sequence. To start with a different slide, set the `data-il-selected` attribute on the slide:
 
 ```html
 <il-carousel slide="3">
-  ...
+  <il-slide>
+    Slide #1
+  </il-slide>
+  <il-slide data-il-selected="true">
+    Slide #2
+  </il-slide>
+  <!-- ... -->
 </il-carousel>
 ```
-
-## Attributes
-
-### autoplay
-
-(true/false) If true, the carousel will start playing when the page loads. If false, the carousel will be paused at page load.
-
-### slide
-
-(int) Represents the index (starting with 1) of the current slide. This attribute changes as the carousel rotates. Changing this attribute will cause the carousel to rotate to the specified slide.
-
-## Advanced usage
-
 ### JavaScript integration
 
 ```js
