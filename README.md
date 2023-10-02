@@ -13,7 +13,7 @@ The simplest way to include the toolkit on a page is to add the following lines 
 
 ````html
 <link rel="stylesheet" href="https://cdn.toolkit.illinois.edu/3/toolkit.css">
-<script src="https://cdn.toolkit.illinois.edu/3/toolkit.mjs" type="module">
+<script src="https://cdn.toolkit.illinois.edu/3/toolkit.mjs" type="module"></script>
 ````
 
 This includes the required files from the toolkit content delivery network (CDN) which is optimized for speed and minimal file size. This will also use the latest stable 3.x release of the toolkit, meaning the site will stay up to date with all future releases automatically.
