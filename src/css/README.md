@@ -1,37 +1,9 @@
-# Toolkit styles
+# The toolkit stylesheet
 
-## Global component classes
+The toolkit stylesheet defines a number of CSS variables that can be helpful when using the toolkit in combination with a custom stylesheet.
 
-The toolkit uses a number of global class names that affect the appearance of components.
+The toolkit variables fall into 3 categories:
 
-### Size
-
-Resizable components may support any of the following classes:
-
-* il-size-small
-* il-size-medium
-* il-size-large
-* il-size-xlarge
-
-### Alignment
-
-Components with variable horizontal alignment may support any of the following classes:
-
-* il-align-left
-* il-align-center
-* il-align-right
-
-Components with variable vertical alignment may support any of the following classes:
-
-* il-align-top
-* il-align-middle
-* il-align-bottom
-
-### Theme
-
-Themable components may support any of the following classes:
-
-* il-theme-blue
-* il-theme-orange
-* il-theme-white
-* il-theme-gray
+* [Color variables](./colors/README.md) contain the campus color palette, plus utilities for ensuring that certain color combinations meet accessibility contrast standards.
+* [Font variables](./fonts/README.md) provide access to campus typefaces, using files hosted on our fast content delivery network.
+* [Icon variables](./icons/README.md) make the campus's library of custom icons available for use in web content. 
