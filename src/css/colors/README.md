@@ -1,5 +1,81 @@
 # Colors
 
+Using the official color palette not only helps a website meet the campus branding requirements, but when used properly it can also ensure that content is presented in a way that is accessible to the greatest number of users.
+
+The toolkit provides a full complement of CSS variables that make it easy to reference official colors in stylesheets:
+
+```css
+.date {
+  color: var(--il-orange);
+}
+button {
+  background-color: var(--il-blue);
+}
+```
+
+The full list of color variables can be found at the bottom of this document.
+
+## Color schemes
+
+The toolkit stylesheet contains 6 preset color schemes that can be applied to certain page elements. Presets are named after their background colors and each preset contains a selected palette of colors designed to work on that background.
+
+The available color schemes are:
+
+* `il-white` (default)
+* `il-blue`
+* `il-orange`
+* `il-gray`
+* `il-blue-gradient`
+* `il-orange-gradient`
+
+Schemes can be applied to any block level element:
+
+```html
+<article class="il-blue">
+  <h2>This article uses the blue color scheme</h2>
+  <p>Content in this section will use colors appropriate for a blue background.</p>
+  <!-- ... --->
+</article>
+```
+
+## Maintaining correct color contrast
+
+Adequate color contrast is essential to web accessibility. The toolkit provides CSS variables that ease in selecting colors from the campus palette that provide the necessary amount of contrast.
+
+For non-standard or non-semantic markup, it may be necessary to specify text size in order to receive the correct contrast.
+
+```html
+<article class="il-gray">
+  <div class="big">This will be styled to be very big.</div>
+  <div class="small">This will be styled to be very small.</div>
+</article>
+```
+
+An important threshold for color contrast is **24 pixels**, at which the required ratio of foreground to background luminance changes. Text that is 24 pixels or larger requires less contrast than text 23 pixels or smaller.
+
+To select the color variation with the correct contrast, add either `--24px-or-larger` or `--23px-or-smaller` to the color variable in your stylesheet: 
+
+```css
+.big {
+  color: var(--il-blue--24px-or-larger);
+}
+.small {
+  color: var(--il-blue--23px-or-smaller);
+}
+```
+For bold text, the threshold is **19 pixels**. Add either `--bold-19-or-larger` or `--bold-18px-or-smaller` to color variables to specify the size of the text:
+
+```css
+.big-headline {
+  color: var(--il-blue--bold-19px-or-larger);
+}
+.small-headline {
+  color: var(--il-blue--bold-18px-or-smaller);
+}
+```
+
+## Full list of colors
+
 The following is the current list of colors, along with their hex equivalents.
 
 | Variable                       | Color   |
