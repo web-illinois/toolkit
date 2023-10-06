@@ -1,91 +1,107 @@
-# `il-carousel`
+# Carousels
 
-This component presents a series of slides in a continuously rotating carousel.
+Carousels present a series of slides in an unending rotation. Slides are shown one at a time, and controls are provided to advance the slides backward and forward. When the final slide in the series is reached, the series begins again with the first slide.
 
-This component follows the [ARIA APG carousel pattern](https://www.w3.org/WAI/ARIA/apg/patterns/carousel/);
+In a carousel set to autoplay, slides advance at a predetermined interval without any user interaction. Controls are provided to pause and resume autoplay.
 
-## Appearance
+This component follows the [ARIA APG carousel pattern](https://www.w3.org/WAI/ARIA/apg/patterns/carousel/) for accessible interaction.
 
-![Screenshot of a carousel on a mobile device](./mockups/mobile.jpg)
+## Creating a carousel
 
-To the left and right of the current slide are two arrow buttons. Clicking the left button causes the carousel to move to the previous slide in the sequence, and clicking the right button moves to the next slide int he sequence.
-
-Below the slides are the carousel controls. The first control is a play/pause toggle. When the carousel is paused, the toggle displays a play icon, and clicking the toggle will cause the carousel to resume autoplay. During autoplay, the carousel advances after a short period of time and the toggle displays a pause icon.
-
-Next to the play/pause toggle are buttons for each slide in the carousel. Clicking on of these buttons will advance the carousel to that slide. This button now expands in width, and if autoplay is enabled, it displays the status of the timer. 
-
-![Screenshot of a carousel on a tablet](./mockups/tablet.jpg)
-
-On tablets, the previous and next buttons also include a preview of the previous and next slides in the sequence. When these buttons are clicked, these previews rotate into place and become the current slide.
-
-![Screenshot of a carousel on desktop monitor](./mockups/desktop.jpg)
-
-These slide previews increase in size as the width of the display increases.
-
-![Screenshot of a carousel on a very wide display](./mockups/xl-desktop.jpg)
-
-On very wide displays, a significant portion of the next and previous slides is visible.
-
-## Basic usage
+The following markup defines a carousel with 5 slides:
 
 ```html
 <il-carousel>
   <il-slide>
-    Slide #1
+    <!-- ...content for slide #1 -->
   </il-slide>
   <il-slide>
-    Slide #2
+    <!-- ...content for slide #2 -->
   </il-slide>
   <il-slide>
-    Slide #3
+    <!-- ...content for slide #3 -->
   </il-slide>
   <il-slide>
-    Slide #4
+    <!-- ...content for slide #4 -->
   </il-slide>
   <il-slide>
-    Slide #5
+    <!-- ...content for slide #5 -->
   </il-slide>
 </il-carousel>
 ```
 
-The carousel will begin playing when the page loads. To pause the carousel at page load, use the `autoplay` attribute:
+For more information about slide content, see the [`il-slide` component](../il-slide/README.md).
+
+This markup would produce:
+
+```
+      +-------------------------------------+
+      |                                     |
+      |                                     |
+ /|   |                                     |   |\
+/ |   |                                     |   | \
+\ |   |                                     |   | /
+ \|   |                                     |   |/
+      |                                     |
+      |                                     |
+      +-------------------------------------+
+
+                [#] [:] [:] [:] [:]
+
+```
+
+The basic controls consist of:
+
+* Two arrows to the left and right of the current slide which rewind or advance the carousel, respectively
+* A series of buttons, one for each slide in the carousel, which advance the carousel directly to their respective slides
+
+## Autoplay
+
+Adding the `autoplay` attribute causes the carousel to automatically advance to the next slide at a designated interval.
 
 ```html
-<il-carousel autoplay="false">
-  ...
+<il-carousel autoplay>
+  <!-- ...these slides will autoplay ... -->
 </il-carousel>
 ```
 
-By default, the carousel starts with the first slide in the sequence. To start with a different slide, set the `data-il-selected` attribute on the slide:
+Autoplay introduces 2 changes to the carousel controls:
+
+* a play/pause toggle which allows autoplay to be stopped and resumed
+* the button representing the current slide expands to indicate the time until the next slide 
+
+
+```
+      +-------------------------------------+
+      |                                     |
+      |                                     |
+ /|   |                                     |   |\
+/ |   |                                     |   | \
+\ |   |                                     |   | /
+ \|   |                                     |   |/
+      |                                     |
+      |                                     |
+      +-------------------------------------+
+
+      [||] [::::::::::::::::] [:] [:] [:] [:]
+```
+
+The expanded slide button gradually fills from left to right until the carousel advances to the next slide.
+
+```
+[||] [###:::::::::::::::::] [:] [:] [:] [:]
+```
+```
+[||] [##########::::::::::] [:] [:] [:] [:]
+```
+```
+[||] [##################::] [:] [:] [:] [:]
+```
+
+### Changing the slideshow speed
+
+The default speed of the carousel is 5 seconds per slide. To adjust the speed, enter a new value (seconds per slide) with the `speed` attribute:
 
 ```html
-<il-carousel slide="3">
-  <il-slide>
-    Slide #1
-  </il-slide>
-  <il-slide data-il-selected="true">
-    Slide #2
-  </il-slide>
-  <!-- ... -->
-</il-carousel>
-```
-### JavaScript integration
-
-```js
-const carousel = document.querySelector('il-carousel');
-
-// Pause the carousel
-carousel.pause();
-
-// Resume the carousel
-carousel.play();
-
-// Move to the next slide
-carousel.advance();
-
-// Move to the previous slide
-carousel.rewind();
-
-// Move to the second slide in the sequence
-carousel.goTo(2);
+<il-carousel autoplay speed="8">
 ```

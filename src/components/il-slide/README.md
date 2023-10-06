@@ -1,3 +1,4 @@
-# `il-slide`
+# Slides
 
-This component is used within the `il-carousel` to represent a single slide in a slideshow.
+Slides are image-dominant components that are presented in [carousels](../il-carousel/README.md). Each slide is intended to direct the visitor to one or more destinations within the site.
+
