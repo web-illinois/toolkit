@@ -53,7 +53,7 @@ This markup would produce:
 The basic controls consist of:
 
 * Two arrows to the left and right of the current slide which rewind or advance the carousel, respectively
-* A series of buttons, one for each slide in the carousel, which advance the carousel directly to their respective slides
+* A series of buttons, one for each slide in the carousel, which indicate the current slide and advance the carousel directly to their respective slides
 
 ## Autoplay
 
@@ -96,6 +96,9 @@ The expanded slide button gradually fills from left to right until the carousel 
 ```
 ```
 [||] [##################::] [:] [:] [:] [:]
+```
+```
+[||] [:] [###:::::::::::::::::] [:] [:] [:]
 ```
 
 ### Changing the slideshow speed
