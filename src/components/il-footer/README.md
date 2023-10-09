@@ -1,4 +1,4 @@
-# il-footer
+# Footer
 
 The footer component implements the standard campus footer. It contains information about the website and its organization, as well as a standard set of links to campus resources.
 

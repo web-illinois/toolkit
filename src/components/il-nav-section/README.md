@@ -1,4 +1,4 @@
-# `il-nav-section`
+# Navigation section
 
 This component is used within an [`il-nav`](../il-nav) component to define sections of the navigation. In certain navigation views, sections can be collapsed and expanded to increase usability.
 

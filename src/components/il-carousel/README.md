@@ -1,4 +1,4 @@
-# Carousels
+# Carousel
 
 Carousels present a series of slides in an unending rotation. Slides are shown one at a time, and controls are provided to advance the slides backward and forward. When the final slide in the series is reached, the series begins again with the first slide.
 
@@ -101,7 +101,7 @@ The expanded slide button gradually fills from left to right until the carousel 
 [||] [:] [###:::::::::::::::::] [:] [:] [:]
 ```
 
-### Changing the slideshow speed
+### Changing the carousel speed
 
 The default speed of the carousel is 5 seconds per slide. To adjust the speed, enter a new value (seconds per slide) with the `speed` attribute:
 

@@ -1,8 +1,0 @@
-il-content {
-  p.il-lede, &.il-lede > p:first-child {
-    color: inherit;
-    font: 400 1.22em/1.6 var(--il-font-serif);
-    font-style: italic;
-    text-align: center;
-  }
-}

@@ -1,4 +1,4 @@
-# il-tabs
+# Tabs
 
 Tabs allow multiple sections of content to be combined and viewed one at a time. One section in a tabs component will always be visible. This component follows the [WAI tab pattern](https://www.w3.org/WAI/ARIA/apg/patterns/tabs/) with manual activation.
 

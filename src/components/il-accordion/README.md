@@ -1,4 +1,4 @@
-# `il-accordion`
+# Accordion
 
 [Accordions](https://www.w3.org/WAI/ARIA/apg/patterns/accordion/) arrange multiple sections of content into columns. Each section can be expanded or collapsed by the user.
 

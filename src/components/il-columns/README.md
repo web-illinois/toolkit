@@ -1,4 +1,4 @@
-# `il-columns`
+# Columns
 
 This is a layout component that spreads content across multiple, newspaper-style columns. This is not ideal for long sections of content, but it can improve the readability of long lists of short items.
 

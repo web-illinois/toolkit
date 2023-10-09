@@ -1,4 +1,4 @@
-# `il-icon`
+# Icon
 
 This component is used to insert icons from [the official campus icon library](../../css/icons/README.md).
 

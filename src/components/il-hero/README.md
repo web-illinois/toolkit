@@ -1,4 +1,4 @@
-# `il-hero`
+# Hero
 
 The hero component provides a visually-impactful element at the top of pages.
 

@@ -1,4 +1,4 @@
-# `il-page`
+# Page
 
 This component is used to create complete web pages. It has slots for the standard header and footer components, and it provides standard margins and line widths for page content.
 

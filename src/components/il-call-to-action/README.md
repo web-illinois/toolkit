@@ -1,4 +1,4 @@
-# `il-call-to-action`
+# Call to action
 
 The **call to action** component is used to prompt visitors to perform a single action, such as subscribing to a newsletter or beginning an application. It should contain a link or group of links and may include an icon.
 

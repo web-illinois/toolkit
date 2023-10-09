@@ -1,4 +1,4 @@
-# `il-header`
+# Header
 
 The header component implements the standard campus website header design. It should be placed at the top of the page.
 

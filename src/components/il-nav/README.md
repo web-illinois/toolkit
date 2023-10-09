@@ -1,4 +1,4 @@
-# `il-nav`
+# Navigation
 
 This component is used to create different types of navigation elements. These are lists of links, sometimes with nested navigation sections which may collapse or expand on user interaction.
 

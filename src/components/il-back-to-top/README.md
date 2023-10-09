@@ -1,4 +1,4 @@
-# `il-back-to-top`
+# Back to top
 
 This component places a button in the bottom-right corner of the screen which takes visitors back to the top of the page. It uses animation that simulates vertical scrolling while not being overwhelming for motion-sensitive viewers.
 

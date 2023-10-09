@@ -1,4 +1,4 @@
-# `il-statistic`
+# Statistic
 
 This is a large number or word that you want to emphasize in a page. It may have header text (before the main text),
 footer text (after the main text), and/or an attribution, but the number or word is central to the statistic.

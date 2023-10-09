@@ -1,4 +1,4 @@
-# `il-quote`
+# Quote
 
 This component represents a quote or testimontial, with optional attribution. The quote or testimonial is intended to be intermixed with copy and the quote is highlighted and called out. 
 

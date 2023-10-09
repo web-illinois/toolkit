@@ -1,4 +1,4 @@
-# `il-section`
+# Section
 
 This component is used to divide the length of a web page into distinct sections. Each section can have a different visual appearance, including color schemes and background images.
 

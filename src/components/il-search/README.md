@@ -1,4 +1,4 @@
-# `il-search`
+# Search
 
 This components creates a search form and is intended for use within the `il-header` component. It provides a default form which can be overwritten at different levels.
 
