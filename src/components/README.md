@@ -2,7 +2,7 @@
 
 The toolkit provides a variety of custom components that can be used on any web page like other HTML elements.
 
-## Simple components
+## Content components
 
 These components represent distinct, specialized pieces of content.
 
@@ -10,7 +10,7 @@ These components represent distinct, specialized pieces of content.
 * [Quotes](./il-quote/README.md) are short, meaningful pieces of text that are attributed to a person, publication, or other source. 
 * [Statistics](./il-statistic/README.md) call attention to important numbers, like rankings and percentages.
 
-## Complex components
+## Container components
 
 These components group multiple pieces of content and offer different methods of browsing them.
 
