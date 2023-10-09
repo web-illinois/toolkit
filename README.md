@@ -68,16 +68,3 @@ This URL points to 3.0.0 version of the toolkit. Patch-level URLs are never upda
 * [Fonts](./src/css/fonts/README.md)
 * [The component library](./src/components/README.md)
 * [Icons](./src/css/icons/README.md)
-
-
-## Authors
-
-The toolkit is made possible by:
-
-* [The Office of Strategic Communications & Marketing](https://brand.illinois.edu)
-* [The Web Implementation Guidelines Group](https://webtheme.illinois.edu/about/)
-
-### Developers
-
-* [Matt Sharkey](mailto:msharkey@illinois.edu)
-* [Bryan Jonker](mailto:jonker@illinois.edu)
