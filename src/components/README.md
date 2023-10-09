@@ -50,7 +50,6 @@ These components aid visitors who have reached the end of the page content.
 ## Full component list
 
 * [`il-accordion`](./il-accordion/README.md)
-* [`il-accordion-panel`](./il-accordion-panel/README.md)
 * [`il-back-to-top`](./il-back-to-top/README.md)
 * [`il-call-to-action`](./il-call-to-action/README.md)
 * [`il-carousel`](./il-carousel/README.md)
@@ -64,6 +63,7 @@ These components aid visitors who have reached the end of the page content.
 * [`il-nav-section`](./il-nav-section/README.md)
 * [`il-page`](./il-page/README.md)
 * [`il-page-title`](./il-page-title/README.md)
+* [`il-panel`](il-panel/README.md)
 * [`il-profile`](./il-profile/README.md)
 * [`il-quote`](./il-quote/README.md)
 * [`il-search`](./il-search/README.md)

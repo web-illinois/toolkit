@@ -7,26 +7,26 @@ Each section of an accordion contains 2 parts:
 * The <dfn>header</dfn> acts as a label or summary for the section. The header is always visible. Clicking on the header expands or collapses the section. This is usually a heading element, but it is not required.
 * The <dfn>panel</dfn> contains content that is visible when the section is expanded. A panel can include any valid markup, but should not contain other toolkit components.
 
-The `il-accordion` element contains 1 or more `il-accordion-panel` components, each of which defines its corresponding `header`.
+The `il-accordion` element contains 1 or more `il-panel` components, each of which defines its corresponding `header`.
 
 ```html
 <il-accordion>
-  <il-accordion-panel>
+  <il-panel>
     <h3 slot="header">Student Services</h3>
     <div>
 
       <!-- ...content of "Student Services" panel... -->
 
     </div>
-  </il-accordion-panel>
-  <il-accordion-panel>
+  </il-panel>
+  <il-panel>
     <h3 slot="header">Faculty Services</h3>
     <div>
 
       <!-- ...content of "Faculty Services" panel... -->
 
     </div>
-  </il-accordion-panel>
+  </il-panel>
   
   <!-- ...additional panels... -->
   
@@ -58,18 +58,18 @@ To control the initial state of a panel when the page is loaded, use the `data-i
 
 ```html
 <il-accordion>
-  <il-accordion-panel data-il-state="expanded">
+  <il-panel data-il-state="expanded">
     <h3 slot="header">Expanded section</h3>
     
     <!-- ...this content will be visible... --->
     
-  </il-accordion-panel>
-  <il-accordion-panel data-il-state="collapsed">
+  </il-panel>
+  <il-panel data-il-state="collapsed">
     <h3 slot="header">Test #2 information</h3>
 
     <!-- ...this content will be hidden... --->
 
-  </il-accordion-panel>
+  </il-panel>
 </il-accordion>
 ```
 When using the `limit="1"` attribute and multiple panels with `data-il-state="expanded"`, only the last panel will be expanded on page load.

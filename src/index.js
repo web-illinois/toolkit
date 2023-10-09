@@ -8,7 +8,7 @@ import "./components/il-nav-section/il-nav-section.component";
 
 // Additional components
 import "./components/il-accordion/il-accordion.component";
-import "./components/il-accordion-panel/il-accordion-panel.component";
+import "./components/il-panel/il-accordion-panel.component";
 import "./components/il-back-to-top/il-back-to-top.component";
 import "./components/il-call-to-action/il-call-to-action.component";
 import "./components/il-contact/il-contact.component";
