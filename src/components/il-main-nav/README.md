@@ -1,0 +1,183 @@
+# Main navigation
+
+This navigation type presents the first level of navigation elements in a row. Second level menus are displayed as dropdowns, and any additional menus are displayed as flyouts. Toggling the visibility of the menus requires a mouse/keyboard click. (Hover/focus events will not toggle the menus.)
+
+```html
+<il-main-nav>
+  
+</il-main-nav>
+```
+
+## Accessibility
+
+In compliance with [WCAG 2.2](https://www.w3.org/TR/WCAG22/) Level AA this component implements the following accessibility features:
+
+### [SC 1.3.1: Info and Relationships](https://www.w3.org/WAI/WCAG21/Understanding/info-and-relationships) [A]
+
+The contents of this component are contained in a [navigation landmark](https://www.w3.org/WAI/ARIA/apg/patterns/landmarks/examples/navigation.html) and  arranged in [lists](https://w3c.github.io/aria/#list). Lists can be nested to reflect the site hierarchy.
+
+#### References
+
+* [Technique H97: Grouping related links using the nav element](https://www.w3.org/WAI/WCAG21/Techniques/html/H97.html)
+* [Technique H48: Using ol, ul and dl for lists or groups of links](https://www.w3.org/WAI/WCAG21/Techniques/html/H48.html)
+
+### [SC 1.4.1: Use of Color](https://www.w3.org/WAI/WCAG22/Understanding/use-of-color.html) [A]
+
+Wherever color is used to differentiate between navigation levels or link states, there is a minimum contrast ratio of 3:1 between different colors. Shifts in position and/or indentation are used as additional indicators of navigation level.
+
+### [SC 1.4.3: Contrast (Minimum)](https://www.w3.org/WAI/WCAG22/Understanding/contrast-minimum.html) [AA]
+
+There is a minimum contrast ratio of 4.5:1 between the label of a navigation item and its background.
+
+### [SC 1.4.10: Reflow](https://www.w3.org/WAI/WCAG22/Understanding/reflow.html) [AA]
+
+The navigation reduces to a single column of items on smaller screens, eliminating the need for horizontal scrolling.
+
+### [SC 1.4.11: Non-text Contrast](https://www.w3.org/WAI/WCAG22/Understanding/non-text-contrast.html) [AA]
+
+The icon that indicates the state of an expandable navigation item uses the same foreground and background colors as the item label, ensuring that the icon meets the minimum contrast ratio for text.
+
+### [SC 1.4.13: Content on Hover or Focus](https://www.w3.org/WAI/WCAG22/Understanding/content-on-hover-or-focus.html) [AA]
+
+Expandable navigation items do not change state in response to hover and focus events. A click event (mouse click or Space/Enter keypress) is required to toggle the item.
+
+Clicking on a target outside the navigation will close any open dropdowns. Pressing Esc will close any open dropdowns and return focus to a top-level menu item.
+
+### [SC 2.1.1: Keyboard](https://www.w3.org/WAI/WCAG22/Understanding/keyboard.html) [A]
+
+The following keyboard commands are meaningful when focus is within this component:
+
+* `Tab` moves focus forward to the closest next focusable element in the navigation or to the closest next focusable element following the navigation.
+* `Shift+Tab` moves focus backward to the closest previous focusable element in the navigation or to the closest previous focusable element preceding the navigation.
+* `Space` and `Enter` activate a navigation item exactly as if they were clicked.
+* `Esc` closes any expanded navigation section and returns focus to the closest top-level item.
+
+Arrow navigation is not currently supported at this time.
+
+#### References
+ 
+* [Example Disclosure Navigation Menu](https://www.w3.org/WAI/ARIA/apg/patterns/disclosure/examples/disclosure-navigation/)
+
+
+### [SC 2.1.2: No Keyboard Trap](https://www.w3.org/WAI/WCAG22/Understanding/no-keyboard-trap.html) [A]
+
+Pressing `Esc` while focus is within the component closes any expanded sections and returns focus to the top-level navigation items.
+
+### [SC 2.4.3: Focus Order](https://www.w3.org/WAI/WCAG22/Understanding/focus-order.html) [A]
+
+Focus order is dictated by the source code order, following the links in the underlying list from first to last, skipping any focusable elements hidden within collapsed navigation sections.
+
+For expanded navigation sections, the focus order proceeds from the section toggle to the first item in the expanded section. For expanded sections with both a link and a toggle, focus order proceeds from the link to the toggle, then to the first item in the section.
+
+### [SC 2.4.6: Headings and Labels](https://www.w3.org/WAI/WCAG22/Understanding/headings-and-labels.html)
+
+The default label, `Main`, satisfies the following recommendations for a navigation landmark name:
+
+* It distinguishes the main navigation from other navigation elements on the page.
+* It does not contain the word `navigation`.
+* It is 1-3 words in length.
+* It is capitalized.
+
+#### References
+
+* [Technique ARIA14: Using aria-label to provide an invisible label where a visible label cannot be used](https://www.w3.org/WAI/WCAG21/Techniques/aria/ARIA14.html)
+* [Composing Effective and User-friendly Accessible Names](https://www.w3.org/WAI/ARIA/apg/practices/names-and-descriptions/#naming_effectively)
+
+
+### [SC 2.4.7: Focus Visible](https://www.w3.org/WAI/WCAG22/Understanding/focus-visible.html) [AA]
+
+Focus with the component is clearly indicated.
+
+### [SC 2.5.8: Target Size (Minimum)](https://www.w3.org/WAI/WCAG22/Understanding/target-size-minimum.html) [AA]
+
+Non-inline links and toggle buttons maintain a minimum size of 22&times;22 pixels.
+
+### [SC 4.1.2: Name, Role, Value](https://www.w3.org/WAI/WCAG22/Understanding/name-role-value.html) [A]
+
+
+toggle button
+* aria-controls="IDREF"
+* aria-expanded="true/false"
+  container
+* id="IDREF"
+  link
+* aria-current="page"
+
+  * removes any existing aria-current attributes in the nav
+  * sets aria-current="page" on focused link
+
+
+#### References
+
+* [Using WAI-ARIA state and property attributes to expose the state of a user interface component](https://www.w3.org/WAI/WCAG22/Techniques/aria/ARIA5)
+
+
+
+### Disclosure Navigation Menu with Top-Level Links
+
+https://www.w3.org/WAI/ARIA/apg/patterns/disclosure/examples/disclosure-navigation/
+
+* wrapped in nav landmark
+  * [Navigation Landmark](https://www.w3.org/WAI/ARIA/apg/patterns/landmarks/examples/navigation.html)
+  * [Technique H97: Grouping related links using the nav element](https://www.w3.org/WAI/WCAG21/Techniques/html/H97.html)
+    * landmark has name
+      * [Technique ARIA14: Using aria-label to provide an invisible label where a visible label cannot be used](https://www.w3.org/WAI/WCAG21/Techniques/aria/ARIA14.html)
+      * name does not include "navigation", is capitalized
+        * [Composing Effective and User-friendly Accessible Names](https://www.w3.org/WAI/ARIA/apg/practices/names-and-descriptions/#naming_effectively)
+* arranged semantically
+  * lists
+    * [Technique H48: Using ol, ul and dl for lists or groups of links](https://www.w3.org/WAI/WCAG21/Techniques/html/H48.html)
+  * list items contain button and nested list
+* when any dropdown is open and focus is inside nav
+  * moving focus outside nav
+    * closes any open dropdowns
+* visual indicator (e.g. caret) respects high-contrast mode
+  * https://www.smashingmagazine.com/2022/03/windows-high-contrast-colors-mode-css-custom-properties/
+
+[Technique F26: Failure of Success Criterion 1.3.3 due to using a graphical symbol alone to convey information](https://www.w3.org/WAI/WCAG21/Techniques/failures/F26.html)
+
+#### Keyboard
+
+
+##### Optional navigation
+
+* arrow keys should not cause screen to scroll when focus is inside nav
+
+###### Keyboard
+
+* down/right arrow
+  * when focus is on a button
+    * when its dropdown is collapsed and it is not the last button
+      * moves focus to the next button
+    * when its dropdown is expanded
+      * moves focus to the first link in the dropdown
+  * when focus is on a link and it is not the last link
+    * moves focus to the next link
+* up/left arrow
+  * when focus is on a button
+    * when its dropdown is collapsed and it is not the first button
+      * moves focus to the previous button
+  * when focus is on a link and it is not the first link
+    * moves focus to the previous link
+* home
+  * if focus is on item and it is not the first item
+    * move focus to the first item
+* end
+  * if focus is on item and it is not the last item
+    * move focus to the last item
+  
+#### ARIA attributes
+
+[Technique ARIA5: Using WAI-ARIA state and property attributes to expose the state of a user interface component](https://www.w3.org/WAI/WCAG22/Techniques/aria/ARIA5)
+
+toggle button
+  * aria-controls="IDREF"
+  * aria-expanded="true/false"
+container
+  * id="IDREF"
+link
+  * aria-current="page"
+
+### Disclosure Navigation Menu
+
+https://www.w3.org/WAI/ARIA/apg/patterns/disclosure/examples/disclosure-navigation/
