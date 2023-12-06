@@ -8,7 +8,7 @@ export default defineConfig({
     outDir: '../dist',
     lib: {
       name: 'toolkit',
-      entry: 'index.js',
+      entry: 'toolkit.js',
       fileName: 'toolkit',
       formats: ['es', 'cjs'],
     },

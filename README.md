@@ -1,10 +1,8 @@
-# Brand toolkit for the web
+# The Illinois web toolkit
 
 The toolkit is a collection of resources for building websites that meet the campus's high standards for accessibility and fully implement the campus branding guidelines. For website owners, the toolkit makes it easy to:
 
 * Add the official [header](./src/components/il-header/README.md) and [footer](./src/components/il-footer/README.md) to any webpage.
-* Use [the campus color palette](./src/css/colors/README.md) and ensure that color combinations meet contrast requirements.
-* Use [the official campus typefaces](./src/css/fonts/README.md) without hosting the font files locally.
 * Add elements like accordions, carousels, and many more from [a growing collection of custom components](./src/components/README.md).
 
 ## Using the toolkit on your website
@@ -64,7 +62,4 @@ This URL points to 3.0.0 version of the toolkit. Patch-level URLs are never upda
 
 ## Learn more
 
-* [Colors](./src/css/colors/README.md)
-* [Fonts](./src/css/fonts/README.md)
-* [The component library](./src/components/README.md)
-* [Icons](./src/css/icons/README.md)
+* [The component library](./src/README.md)
