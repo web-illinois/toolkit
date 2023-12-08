@@ -37,6 +37,15 @@ This component may vary by color and size. This component uses the following att
 * _color_: white, blue, orange, blue-gradient. Note that "orange" will produce a white background with an orange emphasis. Default is white. 
 * _size_: small, medium, large, x-large
 
+```html
+<il-statistic color="orange" size="x-large">
+    Nation's <em>Top Six</em> Overall ranking 
+    among undergraduate programs in the U.S.
+    <p slot="attribution">U.S. News and World 2022</span>
+</il-statistic>
+```
+
+
 The heading color, heading size, and body size will be controlled via CSS attributes, so they can be modified independently. If you do modify the heading color, ensure that the new color has at least 3:1 color contrast. 
 
 ### Columns
