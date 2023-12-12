@@ -1,6 +1,6 @@
-# The component library
+# Component reference
 
-The toolkit provides a variety of custom components that can be used on any web page like other HTML elements.
+The toolkit consists of custom components that can be used on any web page like other HTML elements.
 
 ## Content components
 
