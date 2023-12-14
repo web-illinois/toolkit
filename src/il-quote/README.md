@@ -2,20 +2,113 @@
 
 This component represents a quote or testimontial, with optional attribution. The quote or testimonial is intended to be intermixed with copy and the quote is highlighted and called out. 
 
-Quotation marks are added automatically before and after the quote. 
+Quotation marks are added automatically before the quote using decorative text. 
+
+The first paragraph in the attribution is bolded and a dash is added to indicate that this is an attribution.
 
 This component should not contain a heading element. 
 
 ## Basic use
 
+Example of full quote with linked attribution.
+
 ```html
 <il-quote>
-  <p>Either university presses will embrace new technology and offer scholarly content in new forms
+  <blockquote>Either university presses will embrace new technology and offer scholarly content in new forms
     to researchers and under new business models, or they will follow the music industry and spend
-    all of their resources on trying to protect their territory &mdash; unsuccessfully.</p>
+    all of their resources on trying to protect their territory &mdash; unsuccessfully.</blockquote>
   <div slot="attribution">
-    <p class="il-name">Laura Cerruti</p>
-    <p>Director of Digital Content Development</p>
+    <p>Laura Cerruti</p>
+    <p><a href="https://site.org">Director of Digital Content Development</a></p>
   </div>
 </il-quote>
 ```
+
+Example of full quote with only a name as attribution.
+
+```html
+<il-quote>
+  <blockquote>Either university presses will embrace new technology and offer scholarly content in new forms
+    to researchers and under new business models, or they will follow the music industry and spend
+    all of their resources on trying to protect their territory &mdash; unsuccessfully.</blockquote>
+  <div slot="attribution">
+    <p>Laura Cerruti</p>
+  </div>
+</il-quote>
+```
+
+Example of full quote with no attribution.
+
+```html
+<il-quote>
+  <blockquote>Either university presses will embrace new technology and offer scholarly content in new forms
+    to researchers and under new business models, or they will follow the music industry and spend
+    all of their resources on trying to protect their territory &mdash; unsuccessfully.</blockquote>
+</il-quote>
+```
+
+## Advanced use
+
+### Changing the background color
+
+This component may vary by color. This component uses the following attribute:
+
+* _color_: white, gray, blue, orange, blue-gradient, orange-gradient. Default is white. 
+
+### Section
+
+You can use the `<il-section>` to create an area that is full width. If you use the background="grid" attribute, it will generate the quote to be the full width of the page
+
+```html
+<il-section background="grid">
+   <il-quote color="blue">
+     <blockquote>xx xxx xxxxxx xxxx xxxxxxx xxx xxxxxxxxx xxxxxxxxxxxxxxx xxxxxxxxxxxxxxx xxxxxxxxxxxxxxx.</blockquote>
+     <div slot="attribution">
+       <p>Xxxxx Xxxxxxxx</p>
+     </div>
+   </il-quote>
+</il-section>
+```
+
+```
+|     : left content boundary                                                   right content boundary :     |
+|     :                                                                                                :     |
+|------------------------------------------------------------------------------------------------------------|
+| (blue)                                                                                                     |
+|                                                     "                                                      |
+|                                                                                                            |
+|          xx xxx xxxxxx xxxx xxxxxxx xxx xxxxxxxxx xxxxxxxxxxxxxxx xxxxxxxxxxxxxxx xxxxxxxxxxxxxxx.         | 
+|                                                                                                            |
+|                                              -- Xxxxx Xxxxxxxx                                             |
+|                                                                                                            |
+|                                                                                                            |
+|------------------------------------------------------------------------------------------------------------|
+|     :                                                                                                :     |
+|     : left content boundary                                                   right content boundary :     |
+```
+## Accessibility
+In compliance with WCAG 2.2 Level AA this component implements the following accessibility features:
+
+Success Criterion 1.3.1 Info and Relationships
+Despite being increased and italic font, no misleading information is being created that might imply text relationships. Quotes are being added via the blockquote tag.
+
+SC 1.3.2 Meaningful Sequence
+Content displayed in the markup matches the sequence generated by the web control. 
+
+SC 1.4.1 Use of Color
+Color is not used to define pertinent information
+
+SC 1.4.3: Contrast (Minimum) 
+There is a minimum contrast ratio of 4.5:1 between the text and the background, following color themes. 
+
+SC 1.4.5: Images of Text
+The quote is decorative and will not be read by screen readers. 
+
+SC 1.4.10: Reflow 
+The quote changes size to ensure the information retains proper flow. 
+
+SC 2.4.6 Headings and Labels
+Guidance is given to ensure headings are not used in the quote component. 
+
+SC 2.4.7: Focus Visible 
+Focus with the component is clearly indicated using the basic themes.
