@@ -1,0 +1,4 @@
+- criteria: 1.4.1
+  description: Wherever color is used to differentiate between navigation levels or link states, there is a minimum contrast ratio of 3:1 between different colors. Shifts in position and/or indentation are used as additional indicators of navigation level.
+- criteria: 1.4.3
+  techniques: [G18, G145]

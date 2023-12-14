@@ -1,0 +1,7 @@
+name: Back to top
+category: Bottom-of-page
+css:
+  - variable: --il-back-to-top-right
+    default: 48px
+  - variable: --il-back-to-top-bottom
+    default: 48px

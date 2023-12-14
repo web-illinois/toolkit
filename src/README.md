@@ -50,32 +50,3 @@ These components aid visitors who have reached the end of the page content.
 * [Social navigation](il-social-icons/README.md)
 * [Navigation menus](./il-nav/README.md) are lists of links, sometimes with multiple levels, that can be displayed in a variety of ways depending on their context.
 * [Navigation sections](./il-nav-section/README.md) are used with menus to group subsections of the navigation, often so they can be hidden or shown based on user interaction.
-
-## Full component list
-
-* [`il-accordion`](./il-accordion/README.md)
-* [`il-back-to-top`](./il-back-to-top/README.md)
-* [`il-breadcrumbs`](./il-breadcrumbs/README.md)
-* [`il-call-to-action`](./il-call-to-action/README.md)
-* [`il-carousel`](./il-carousel/README.md)
-* [`il-columns`](./il-columns/README.md)
-* [`il-footer`](./il-footer/README.md)
-* [`il-grid`](./il-grid/README.md)
-* [`il-header`](./il-header/README.md)
-* [`il-hero`](./il-hero/README.md)
-* [`il-icon`](./il-icon/README.md)
-* [`il-main-nav`](./il-main-nav/README.md)
-* [`il-nav`](./il-nav/README.md)
-* [`il-nav-section`](./il-nav-section/README.md)
-* [`il-page`](./il-page/README.md)
-* [`il-page-title`](./il-page-title/README.md)
-* [`il-pagination`](./il-pagination/README.md)
-* [`il-panel`](il-panel/README.md)
-* [`il-profile`](./il-profile/README.md)
-* [`il-quote`](./il-quote/README.md)
-* [`il-search`](./il-search/README.md)
-* [`il-section`](./il-section/README.md)
-* [`il-slide`](./il-slide/README.md)
-* [`il-social-nav`](il-social-icons/README.md)
-* [`il-statistic`](./il-statistic/README.md)
-* [`il-tabs`](./il-tabs/README.md)

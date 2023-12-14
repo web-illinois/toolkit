@@ -1,0 +1,6 @@
+name: Accordion
+category: Content
+attributes:
+  limit:
+    type: integer
+    notes: The only valid value is `1`.
