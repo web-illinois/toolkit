@@ -1,0 +1,12 @@
+slots:
+  - name: tabs
+    description: Tab elements
+  - default: true
+    description: Tab panel elements
+attributes:
+  - name: direction
+    type: string
+    values:
+      - value: horizontal
+        default: true
+      - value: vertical
