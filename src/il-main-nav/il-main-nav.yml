@@ -1,0 +1,12 @@
+releases:
+  first: 3.0.0
+related:
+  - il-header
+  - il-nav-section
+slots:
+  - default: true
+    description: |
+      Contains an unordered list of navigation items. List items may contain either of the following:
+      * A link
+      * A [navigation section](../il-nav-section/README.md)
+
