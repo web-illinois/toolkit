@@ -44,7 +44,7 @@
     For expanded navigation sections, the focus order proceeds from the section toggle to the first item in the expanded section. For expanded sections with both a link and a toggle, focus order proceeds from the link to the toggle, then to the first item in the section.
 
 - criteria: 2.4.6
-  techniques: [ARIA14]
+  techniques: [G131]
   description: |
     The default label, `Main`, satisfies the following recommendations for a navigation landmark name:
     
