@@ -1,2 +1,17 @@
+- criteria: 1.3.1
+  techniques: [G115, H49]
+
 - criteria: 1.4.3
   techniques: [G18, G145]
+
+- criteria: 1.4.4
+  techniques: [C14]
+
+- criteria: 1.4.10
+  techniques: [C31]
+
+- criteria: 2.4.7
+  techniques: [C15]
+
+- criteria: 2.5.8
+  techniques: [C42]

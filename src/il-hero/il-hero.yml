@@ -1,0 +1,7 @@
+slots:
+  - name: background
+    description: |
+      Contains a custom background for the component.
+attributes:
+  color: |
+    The color scheme of the component.
