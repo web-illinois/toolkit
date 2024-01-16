@@ -1,6 +1,14 @@
 # Main navigation
 
-This component is part of the standard header and represents the main set of navigation links for a website. On larger screens it appears as a horizontal bar with dropdowns for secondary levels of links. On small screens, it is contained within the header menu widget, and appears as a vertical column of links with expandable secondary levels.
+The main navigation provides a reliable way for visitors to locate key pages in the site. It presents links in a hierarchy that allows visitors to expand sections to reveal additional layers of links.
+
+This component is part of the standard header and is not designed for use outside that component.
+
+## Appearance
+
+On larger screens it appears as a horizontal bar with dropdowns for secondary levels of links. On small screens, it is contained within the header menu widget, and appears as a vertical column of links with expandable secondary levels.
+
+## Structure
 
 A simple main navigation component might contain a single list of links, representing important locations within the site. This component is placed in the `navigation` slot of the header component.
 
