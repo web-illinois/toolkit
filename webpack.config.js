@@ -29,7 +29,7 @@ Encore
   .enableSourceMaps(!Encore.isProduction())
   .enableSassLoader(options => {
     return {
-      prependData: makeSassVariables
+      additionalData: makeSassVariables
     }
   })
   .configureDevServerOptions(options => {
