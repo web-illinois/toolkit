@@ -16,6 +16,7 @@ export default css`
     position: relative;
     display: inline-block;
     height: 8px;
+    width: 8px;
     padding: 0 4px;
   }
   .separator svg {
