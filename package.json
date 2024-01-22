@@ -21,12 +21,12 @@
     "watch-html": "eleventy --watch"
   },
   "dependencies": {
-    "@symfony/webpack-encore": "^0.30.2",
+    "@symfony/webpack-encore": "~4.1.0",
     "lit": "^2.0.0-rc.3",
     "node": "^18.17.0",
     "remove-files-webpack-plugin": "^1.4.4",
     "sass": "^1.44.0",
-    "sass-loader": "^8.0.2"
+    "sass-loader": "^13.0.0"
   },
   "devDependencies": {
     "@11ty/eleventy": "^0.12.1",
