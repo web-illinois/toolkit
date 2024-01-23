@@ -7,7 +7,7 @@
   "license": "NCSA",
   "scripts": {
     "approve-backstop": "backstop approve --config=backstop.config.js",
-    "build": "set NODE_OPTIONS=--openssl-legacy-provider && encore prod",
+    "build": "export NODE_OPTIONS=--openssl-legacy-provider && encore prod",
     "build-html": "eleventy",
     "create-test-html": "eleventy --config=.eleventy-test-site.js",
     "dev": "encore dev",
