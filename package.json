@@ -7,7 +7,8 @@
   "license": "NCSA",
   "scripts": {
     "approve-backstop": "backstop approve --config=backstop.config.js",
-    "build": "encore prod",
+    "build": "export NODE_OPTIONS=--openssl-legacy-provider && encore prod",
+    "build-windows": "set NODE_OPTIONS=--openssl-legacy-provider && encore prod",
     "build-html": "eleventy",
     "create-test-html": "eleventy --config=.eleventy-test-site.js",
     "dev": "encore dev",
@@ -23,7 +24,7 @@
   "dependencies": {
     "@symfony/webpack-encore": "^0.30.2",
     "lit": "^2.0.0-rc.3",
-    "node": "^14.17.4",
+    "node": "^18.17.0",
     "remove-files-webpack-plugin": "^1.4.4",
     "sass": "^1.44.0",
     "sass-loader": "^8.0.2"
