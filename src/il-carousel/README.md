@@ -10,45 +10,17 @@ This component follows the [ARIA APG carousel pattern](https://www.w3.org/WAI/AR
 
 The following markup defines a carousel with 5 slides:
 
-```html
-<il-carousel>
-  <il-slide>
-    <!-- ...content for slide #1 -->
-  </il-slide>
-  <il-slide>
-    <!-- ...content for slide #2 -->
-  </il-slide>
-  <il-slide>
-    <!-- ...content for slide #3 -->
-  </il-slide>
-  <il-slide>
-    <!-- ...content for slide #4 -->
-  </il-slide>
-  <il-slide>
-    <!-- ...content for slide #5 -->
-  </il-slide>
-</il-carousel>
-```
+<object class="sample" type="text/html" data="samples/5-slides.html">
+  Example markup for a carousel with five slides 
+</object>
 
 For more information about slide content, see the [`il-slide` component](../il-slide/README.md).
 
 This markup would produce:
 
-```
-      +-------------------------------------+
-      |                                     |
-      |                                     |
- /|   |                                     |   |\
-/ |   |                                     |   | \
-\ |   |                                     |   | /
- \|   |                                     |   |/
-      |                                     |
-      |                                     |
-      +-------------------------------------+
-
-                [#] [:] [:] [:] [:]
-
-```
+<object class="screenshot" type="text/plain" data="comps/5-slides.txt">
+  Screenshot of a carousel with five slides 
+</object>
 
 The basic controls consist of:
 
@@ -59,32 +31,18 @@ The basic controls consist of:
 
 Adding the `autoplay` attribute causes the carousel to automatically advance to the next slide at a designated interval.
 
-```html
-<il-carousel autoplay>
-  <!-- ...these slides will autoplay ... -->
-</il-carousel>
-```
+<object class="sample" type="text/html" data="samples/autoplay.html">
+  Example markup for a carousel with autoplay enabled 
+</object>
 
 Autoplay introduces 2 changes to the carousel controls:
 
 * a play/pause toggle which allows autoplay to be stopped and resumed
 * the button representing the current slide expands to indicate the time until the next slide 
 
-
-```
-      +-------------------------------------+
-      |                                     |
-      |                                     |
- /|   |                                     |   |\
-/ |   |                                     |   | \
-\ |   |                                     |   | /
- \|   |                                     |   |/
-      |                                     |
-      |                                     |
-      +-------------------------------------+
-
-      [||] [::::::::::::::::] [:] [:] [:] [:]
-```
+<object class="screenshot" type="text/plain" data="comps/autoplay.txt">
+  Screenshot of a carousel with autoplay enabled 
+</object>
 
 The expanded slide button gradually fills from left to right until the carousel advances to the next slide.
 

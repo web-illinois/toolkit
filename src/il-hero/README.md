@@ -12,7 +12,7 @@ A basic hero contain the page title:
 </il-hero>
 ```
 
-[screenshot]
+<object type="text/plain" data="./comps/basic.txt"></object>
 
 ## Changing the color
 
