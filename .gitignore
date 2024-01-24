@@ -2,7 +2,6 @@
 dist
 html
 node_modules
-package-lock.json
 /playwright-report
 templates/_data/tests.json
 /test-results
