@@ -1,6 +1,9 @@
 // @ts-check
 import { defineConfig, devices } from '@playwright/test';
 
+const htmlReporter = ['html'];
+const jsonReporter = ['json', { outputFile: 'var/test-results.json' }]
+
 /**
  * Read environment variables from file.
  * https://github.com/motdotla/dotenv
@@ -31,7 +34,7 @@ module.exports = defineConfig({
   /* Opt out of parallel tests on CI. */
   workers: process.env.CI ? 1 : undefined,
   /* Reporter to use. See https://playwright.dev/docs/test-reporters */
-  reporter: 'html',
+  reporter: process.env.CI ? jsonReporter : [htmlReporter, jsonReporter],
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   use: {
     /* Maximum time each action such as `click()` can take. Defaults to 0 (no limit). */
