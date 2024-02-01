@@ -1,0 +1,20 @@
+/*
+
+appearance
+  nav bar when header is in full mode
+  accordion when header is in compact mode
+
+using a mouse
+
+using a keyboard
+
+Navigation link
+  mouse
+
+  keyboard
+
+Navigation section toggle
+
+Navigation section link
+
+ */

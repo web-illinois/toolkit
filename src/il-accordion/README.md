@@ -9,29 +9,9 @@ Each section of an accordion contains 2 parts:
 
 The `il-accordion` element contains 1 or more `il-panel` components, each of which defines its corresponding `header`.
 
-```html
-<il-accordion>
-  <il-panel>
-    <h3 slot="header">Student Services</h3>
-    <div>
-
-      <!-- ...content of "Student Services" panel... -->
-
-    </div>
-  </il-panel>
-  <il-panel>
-    <h3 slot="header">Faculty Services</h3>
-    <div>
-
-      <!-- ...content of "Faculty Services" panel... -->
-
-    </div>
-  </il-panel>
-  
-  <!-- ...additional panels... -->
-  
-</il-accordion>
-```
+<object class="sample" type="text/html" data="samples/accordion-with-three-panels.html">
+  An accordion with three panels
+</object>
 
 ## Limiting the number of expanded panels
 

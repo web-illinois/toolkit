@@ -24,7 +24,7 @@ This markup would produce:
 
 The basic controls consist of:
 
-* Two arrows to the left and right of the current slide which rewind or advance the carousel, respectively
+* <mark id="arrow-controls">Two arrows to the left and right of the current slide which rewind or advance the carousel, respectively</mark>
 * A series of buttons, one for each slide in the carousel, which indicate the current slide and advance the carousel directly to their respective slides
 
 ## Autoplay
@@ -38,7 +38,7 @@ Adding the `autoplay` attribute causes the carousel to automatically advance to 
 Autoplay introduces 2 changes to the carousel controls:
 
 * a play/pause toggle which allows autoplay to be stopped and resumed
-* the button representing the current slide expands to indicate the time until the next slide 
+* the button representing the current slide expands to indicate the time until the next slide
 
 <object class="screenshot" type="text/plain" data="comps/autoplay.txt">
   Screenshot of a carousel with autoplay enabled 
