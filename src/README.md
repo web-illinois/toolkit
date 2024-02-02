@@ -44,9 +44,10 @@ These components aid visitors who have reached the end of the page content.
 
 ## Navigation components
 
-* The [main navigation](./il-main-nav/README.md) contains the primary navigation for the site.
+These components contains links that direct the visitor to specific pages on the site.
+
+* The [main navigation](./il-main-nav/README.md) contains the primary collection of links. It is located in the page header and does not change from page to page.
+* The [sidebar navigation](./il-sidebar-nav/README.md) appears next to the page content and may change from section to section.
 * [Breadcrumbs](./il-breadcrumbs/README.md)
 * [Pagination](./il-pagination/README.md)
 * [Social navigation](il-social-icons/README.md)
-* [Navigation menus](./il-nav/README.md) are lists of links, sometimes with multiple levels, that can be displayed in a variety of ways depending on their context.
-* [Navigation sections](./il-nav-section/README.md) are used with menus to group subsections of the navigation, often so they can be hidden or shown based on user interaction.
