@@ -17,7 +17,7 @@
     "test-dev": "vite --port 5174"
   },
   "dependencies": {
-    "lit": "^2.6.1"
+    "lit": "^3.0.2"
   },
   "devDependencies": {
     "@axe-core/playwright": "^4.6.0",
