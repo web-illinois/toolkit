@@ -3,26 +3,49 @@ import {test, expect} from '@playwright/test';
 const disclosureNavigationMenuPattern = 'https://www.w3.org/WAI/ARIA/apg/patterns/disclosure/examples/disclosure-navigation/';
 const disclosureNavigationMenuWithTopLevelLinksPattern = 'https://www.w3.org/WAI/ARIA/apg/patterns/disclosure/examples/disclosure-navigation-hybrid/';
 
+// Data attributes
+
+test('navigation sections have a data-connected attribute after load', async ({page}) => {
+  await page.goto('il-main-nav/samples/two-levels-without-section-links.html');
+  const firstSectionIsConnected = await page.evaluate(() => {
+    return document.querySelector('il-nav-section').hasAttribute('data-connected');
+  })
+  await expect(firstSectionIsConnected).toBeTruthy();
+})
+test('setting "data-expanded" to "true" expands a section on load', async ({page}) => {
+  await page.goto('il-main-nav/samples/with-expanded-section.html');
+  await expect(page.getByText('Apply to LAS')).toBeVisible();
+})
+test('when multiple sections are set to be expanded, only the first section should be expanded', async ({page}) => {
+  await page.goto('il-main-nav/samples/with-multiple-expanded-sections.html');
+  await expect(page.getByText('Departments, units, and programs')).toBeVisible();
+  await expect(page.getByText('Apply to LAS')).not.toBeVisible();
+  await expect(page.getByText('Academic policies and standing')).not.toBeVisible();
+  await expect(page.getByText('Access and Achievement Program')).not.toBeVisible();
+})
+
+// Pointer interaction
+
 test('clicking the toggle of a collapsed section expands the section', async ({page}) => {
   await page.goto('il-main-nav/samples/two-levels-without-section-links.html');
   await page.getByText('About', { exact: true }).click();
   await expect(page.getByText('Departments, units, and programs')).toBeVisible();
 })
 test('clicking the toggle of an expanded section collapses the section', async ({page}) => {
-  await page.goto('il-main-nav/samples/two-levels-without-section-links.html');
-  await page.getByText('About', { exact: true }).click();
-  await expect(page.getByText('Departments, units, and programs')).not.toBeVisible();
+  await page.goto('il-main-nav/samples/with-expanded-section.html');
+  await page.getByText('Admissions', { exact: true }).click();
+  await expect(page.getByText('Apply to LAS')).not.toBeVisible();
 })
+
+// Keyboard interaction
+
 test.describe('pressing escape when any section is expanded', () => {
   test('collapses that section', async ({page}) => {
-    await page.goto('il-main-nav/samples/two-levels-without-section-links.html');
+    await page.goto('il-main-nav/samples/with-expanded-section.html');
     await page.keyboard.press('Escape');
     await expect(page.getByText('Departments, units, and programs')).not.toBeVisible();
   })
   test("moves focus to that section's toggle", async ({page}) => {
-    await page.goto('il-main-nav/samples/two-levels-without-section-links.html');
-    await page.keyboard.press('Escape');
-    await expect(page.getByText('Departments, units, and programs')).not.toBeVisible();
   })
 })
 test.describe('when a section toggle has focus', () => {
