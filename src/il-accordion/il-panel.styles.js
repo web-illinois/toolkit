@@ -2,7 +2,7 @@ import { css } from 'lit';
 
 export default css`
 #header {
-    color: var(--il-blue);
+    color: var(--il-accordion-color);
     font-family: "Source Sans Pro";
     font-size: 1.375em;
     font-weight: 600;
@@ -35,9 +35,10 @@ export default css`
   display: inline-block;
   width: 20px;
   transform: var(--il-accordion-image-transform);
-  padding: 0px;
-  margin-right: 10px;
-  color: var(--il-blue);
+  padding: 0;
+  margin: 0 10px 0 0;
+  color: var(--il-accordion-color);
+  vertical-align: middle;
 }
 
 #icon::before {
@@ -45,6 +46,5 @@ export default css`
 }
 
 .expanded #icon {
-  vertical-align: middle;
   transform: var(--il-accordion-image-transform-expand);
 }`;
