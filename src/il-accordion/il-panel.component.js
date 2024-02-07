@@ -60,11 +60,10 @@ export class Panel extends LitElement {
   }
 
   render() {
-    const headerTag = this.createButton();
     const classInfo = this.expanded ? 'expanded' : '';
     return html`
       <div id="panel" class=${classInfo}>
-        ${headerTag}
+        ${this.createButton()}
         <div role="region" aria-labelledby="header" id="content">
           <slot></slot>
         </div>
