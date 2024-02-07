@@ -27,14 +27,10 @@ export class Panel extends LitElement {
   }
 
   collapse() {
-    this.shadowRoot.getElementById('header').setAttribute('aria-expanded', false);
-    this.shadowRoot.getElementById('content').style.visibility = false;
     this._expanded = false;
   }
 
   expand() {
-    this.shadowRoot.getElementById('header').setAttribute('aria-expanded', true);
-    this.shadowRoot.getElementById('content').style.visibility = true;
     this._expanded = true;
   }
 
@@ -45,6 +41,11 @@ export class Panel extends LitElement {
     button.setAttribute('aria-expanded', this.expanded);
     button.setAttribute('aria-controls', 'content');
     button.onclick = this.handleHeaderClick;
+    if (originalHeaderTag == null) {
+      console.log('il-panel: no heading tag in the header slot');
+      button.innerHTML = "Details"
+      return button;
+    }
     const headerTag = document.createElement(originalHeaderTag.tagName);
     button.innerHTML = originalHeaderTag.innerHTML;
     headerTag.append(button);
