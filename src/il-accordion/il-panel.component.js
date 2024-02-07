@@ -1,10 +1,15 @@
 import {html, css, LitElement} from 'lit';
+import styles from './il-panel.styles';
 
 export class Panel extends LitElement {
   static get properties() {
     return {
         _expanded: { type: Boolean, default: false }
     };
+  }
+
+  static get styles() {
+    return styles;
   }
 
   constructor() {
@@ -16,10 +21,11 @@ export class Panel extends LitElement {
   handleHeaderClick(evt) {
     if (this.expanded) {
         this.collapse();
-    } else {
+        this.dispatchEvent(new CustomEvent('collapse', {bubbles: true, composed: true}));
+      } else {
         this.expand();
+        this.dispatchEvent(new CustomEvent('expand', {bubbles: true, composed: true}));
     }
-    this.dispatchEvent(new CustomEvent('toggle'));
   }
 
   get expanded() {
@@ -47,18 +53,19 @@ export class Panel extends LitElement {
       return button;
     }
     const headerTag = document.createElement(originalHeaderTag.tagName);
-    button.innerHTML = originalHeaderTag.innerHTML;
+    headerTag.classList.add('heading');
+    button.innerHTML = `<span id="icon" aria-hidden="true"></span>` + originalHeaderTag.innerHTML;
     headerTag.append(button);
     return headerTag;
   }
 
   render() {
     const headerTag = this.createButton();
-    const visibility = this.expanded ? '' : 'display: none;';
+    const classInfo = this.expanded ? 'expanded' : '';
     return html`
-      <div id="panel">
+      <div id="panel" class=${classInfo}>
         ${headerTag}
-        <div id="content" style=${visibility}>
+        <div role="region" aria-labelledby="header" id="content">
           <slot></slot>
         </div>
       </div>
