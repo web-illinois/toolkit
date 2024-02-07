@@ -12,8 +12,7 @@ export class NavigationSection extends LitElement {
   }
   button[aria-expanded="true"] + .items {
     display: block;
-  }
-  `
+  }`
 
   constructor() {
     super();
@@ -28,8 +27,9 @@ export class NavigationSection extends LitElement {
     const ariaExpanded = this.expanded ? 'true' : 'false';
     return html`
       <div>
+        <slot name="link"></slot>
         <button class="toggle" @click="${this.handleToggleClick}" aria-controls="items" aria-expanded="${ariaExpanded}">
-          <slot name="label"></slot>
+          <slot name="label">Toggle</slot>
         </button>
         <div id="items" class="items">
           <slot></slot>

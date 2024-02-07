@@ -6,7 +6,7 @@ const disclosureNavigationMenuWithTopLevelLinksPattern = 'https://www.w3.org/WAI
 // Data attributes
 
 test('navigation sections have a data-connected attribute after load', async ({page}) => {
-  await page.goto('il-main-nav/samples/two-levels-without-section-links.html');
+  await page.goto('il-main-nav/samples/without-section-links.html');
   const firstSectionIsConnected = await page.evaluate(() => {
     return document.querySelector('il-nav-section').hasAttribute('data-connected');
   })
@@ -27,7 +27,7 @@ test('when multiple sections are set to be expanded, only the first section shou
 // Pointer interaction
 
 test('clicking the toggle of a collapsed section expands the section', async ({page}) => {
-  await page.goto('il-main-nav/samples/two-levels-without-section-links.html');
+  await page.goto('il-main-nav/samples/without-section-links.html');
   await page.getByText('About', { exact: true }).click();
   await expect(page.getByText('Departments, units, and programs')).toBeVisible();
 })
@@ -51,14 +51,30 @@ test.describe('pressing escape when any section is expanded', () => {
 test.describe('when a section toggle has focus', () => {
   test.describe('and its section is collapsed', () => {
     test('pressing enter expands the section', async ({page}) => {
+      await page.goto('il-main-nav/samples/without-section-links.html');
+      await page.getByRole('button', { name: 'About' }).focus();
+      await page.keyboard.press('Enter');
+      await expect(page.getByText('Departments, units, and programs')).toBeVisible();
     })
     test('pressing space expands the section', async ({page}) => {
+      await page.goto('il-main-nav/samples/without-section-links.html');
+      await page.getByRole('button', { name: 'About' }).focus();
+      await page.keyboard.press('Space');
+      await expect(page.getByText('Departments, units, and programs')).toBeVisible();
     })
   })
   test.describe('and its section is expanded', () => {
     test('pressing enter collapses the section', async ({page}) => {
+      await page.goto('il-main-nav/samples/with-expanded-section.html');
+      await page.getByRole('button', { name: 'Admissions' }).focus();
+      await page.keyboard.press('Enter');
+      await expect(page.getByText('Apply to LAS')).not.toBeVisible();
     })
     test('pressing space collapses the section', async ({page}) => {
+      await page.goto('il-main-nav/samples/with-expanded-section.html');
+      await page.getByRole('button', { name: 'Admissions' }).focus();
+      await page.keyboard.press('Space');
+      await expect(page.getByText('Apply to LAS')).not.toBeVisible();
     })
   })
 })
