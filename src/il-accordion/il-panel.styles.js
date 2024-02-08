@@ -3,10 +3,9 @@ import { css } from 'lit';
 export default css`
 #header {
     color: var(--il-accordion-color);
-    font-family: "Source Sans Pro";
-    font-size: 1.375em;
+    font-size: 1.375rem;
     font-weight: 600;
-    line-height: 1.875em;
+    line-height: 1.875rem;
     padding: 30px 24px;
     background: var(--il-accordion-background);
     border: var(--il-accordion-border);

@@ -5,7 +5,6 @@
     --il-accordion-background: var(--il-gray-1, #F4F4F4);
     --il-accordion-background-hover: var(--il-blue, #13294B);
     --il-accordion-background-focus: var(--il-blue, #13294B);
-    --il-accordion-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 448 512' fill='currentColor' stroke='currentColor' %3E%3Cpath d='M207.029 381.476L12.686 187.132c-9.373-9.373-9.373-24.569 0-33.941l22.667-22.667c9.357-9.357 24.522-9.375 33.901-.04L224 284.505l154.745-154.021c9.379-9.335 24.544-9.317 33.901.04l22.667 22.667c9.373 9.373 9.373 24.569 0 33.941L240.971 381.476c-9.373 9.372-24.569 9.372-33.942 0z'/%3E%3C/svg%3E");
     --il-accordion-border-full: none;
     --il-accordion-border: none;
     --il-accordion-border-focus: none;
@@ -13,6 +12,11 @@
     --il-accordion-image-transform-expand: rotate(0);
 }
 
+il-accordion {
+    font-family: var(--il-font-source-sans, 'Source Sans', sans-serif);
+    font-size: 1.125rem;
+}
+
 il-accordion.border {
-    --il-accordion-border-full: 1px solid var(--il-storm-10, #252525);
+    --il-accordion-border-full: 1px solid var(--il-base-25, #252525);
 }
