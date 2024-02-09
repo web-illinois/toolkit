@@ -73,15 +73,15 @@ export class AccordionSection extends LitElement {
     const ariaExpanded = this.expanded ? "true" : "false";
     const classInfo = this.expanded ? 'expanded' : '';
     return html`
-      <div id="panel" class=${classInfo}>
+      <div id="section" class=${classInfo}>
         <div id="header-parent" @click="${this.handleHeaderClick}" @mouseover="${this.setFocus}" @mouseout="${this.leaveFocus}">
           <span id="icon" aria-hidden="true">
             ${this.renderChevron()}
           </span>
           <div id="header-text"><slot name="header"></slot></div>
-          <button id="header" aria-expanded="${ariaExpanded}" aria-labelledby="header-text" aria-controls="content" @click="${this.handleHeaderClick}" @focus="${this.setFocus}" @blur="${this.leaveFocus}" ></button>
+          <button id="header" aria-expanded="${ariaExpanded}" aria-labelledby="header-text" aria-controls="panel" @click="${this.handleHeaderClick}" @focus="${this.setFocus}" @blur="${this.leaveFocus}" ></button>
         </div>
-        <div role="region" aria-labelledby="header-text" id="content">
+        <div role="region" aria-labelledby="header-text" id="panel">
           <slot name="panel"></slot>
         </div>
       </div>`;

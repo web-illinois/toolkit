@@ -1,6 +1,15 @@
 import { css } from 'lit';
 
 export default css`
+#section {
+  margin-bottom: 20px;
+  border: var(--il-accordion-border-full);
+}
+
+#section.expanded {
+  margin-bottom: 10px;
+}
+
 #header-parent {
     color: var(--il-accordion-color);
     padding: 30px 24px;
@@ -25,20 +34,11 @@ export default css`
 }
 
 #panel {
-  margin-bottom: 20px;
-  border: var(--il-accordion-border-full);
-}
-
-#panel.expanded {
-  margin-bottom: 10px;
-}
-
-#content {
-  padding: var(--il-accordion-padding-content); 
+  padding: var(--il-accordion-padding-panel); 
   display: none;
 }
 
-.expanded #content {
+.expanded #panel {
   display: block;
 }
 
