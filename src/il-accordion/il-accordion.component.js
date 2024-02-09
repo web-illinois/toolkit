@@ -25,7 +25,7 @@ export class Accordion extends LitElement {
   }
 
   getPanels() {
-    return this.querySelectorAll('il-panel');
+    return this.querySelectorAll('il-accordion-section');
   }
 
   render() {

@@ -1,11 +1,8 @@
 import { css } from 'lit';
 
 export default css`
-#header {
+#header-parent {
     color: var(--il-accordion-color);
-    font-size: 1.375rem;
-    font-weight: 600;
-    line-height: 1.875rem;
     padding: 30px 24px;
     background: var(--il-accordion-background);
     border: var(--il-accordion-border);
@@ -13,16 +10,19 @@ export default css`
     column-gap: 20px;
   }
 
-  #header:hover {
+  #header-parent.highlight {
     color: var(--il-accordion-color-hover);
     background: var(--il-accordion-background-hover);
   }
 
-  #header:focus {
-    color: var(--il-accordion-color-focus);
-    background: var(--il-accordion-background-focus);
-    border: var(--il-accordion-border-focus);
-  }
+#header {
+  position: absolute;
+  left: -10000px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
 
 #panel {
   margin-bottom: 20px;
@@ -34,16 +34,8 @@ export default css`
 }
 
 #content {
-  padding: 15px 10px 20px 54px; 
+  padding: var(--il-accordion-padding-content); 
   display: none;
-}
-
-.heading {
-  margin: 0 0 20px 0;
-}
-
-.expanded .heading {
-  margin: 0;
 }
 
 .expanded #content {
@@ -59,12 +51,8 @@ export default css`
   color: var(--il-accordion-color);
 }
 
-#header:hover #icon {
+#header-parent.highlight #icon {
     color: var(--il-accordion-color-hover);
-  }
-
-  #header:focus #icon {
-    color: var(--il-accordion-color-focus);
   }
 
 
