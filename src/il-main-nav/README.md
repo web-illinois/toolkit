@@ -4,30 +4,32 @@ The main navigation provides a reliable way for visitors to locate key pages in 
 
 This component is part of the standard header and is not designed for use outside that component.
 
-## Appearance
-
-On larger screens it appears as a horizontal bar with dropdowns for secondary levels of links. On small screens, it is contained within the header menu widget, and appears as a vertical column of links with expandable secondary levels.
-
 ## Structure
 
-A simple main navigation component might contain a single list of links, representing important locations within the site. This component is placed in the `navigation` slot of the header component.
+Within the main navigation component are one or more <dfn>items</dfn>. There are two types of items:
 
-```html
-<il-header>
-  <il-main-nav slot="navigation">
-    <ul>
-      <li><a href="/about.html">About</a></li>
-      <li><a href="/programs.html">Programs</a></li>
-      <li><a href="/news.html">News</a></li>
-      <li><a href="/contact.html">Contact</a></li>
-    </ul>
-  </il-main-nav>
-</il-header>
-```
+<dfn>Links</dfn> take visitors to individual locations within the site. Each link has a <dfn>link label</dfn>, which is provided to the visitor, and a <dfn>link URL</dfn>, which provides the destination for the link.
 
-## Multiple navigation levels
+<object class="screenshot">
+An example of a top-level navigation link
+</object>
 
-Additional navigation levels can be created with the use of navigation sections. In this example, the `Programs` item contains an `il-nav-section` element with an additional level of navigation links.
+<dfn>Sections</dfn> are groups of items, and can contain both links and other sections. Sections can be <dfn>collapsed</dfn>, with their items hidden from the visitor, or <dfn>expanded</dfn>, with their items visible. The <dfn>section toggle</dfn> is used to alternate between these two states. 
+
+<object class="screenshot">
+An example of a top-level navigation section when collapsed
+</object>
+
+<object class="screenshot">
+The same top-level navigation section when expanded
+</object>
+
+Sections may also contain a <dfn>section link</dfn>, which is positioned beside the section toggle and takes the visitor to a primary page for the section.
+
+<object class="screenshot">
+The same top-level navigation section when expanded
+</object>
+
 
 ```html
 <il-header>
@@ -51,40 +53,7 @@ Additional navigation levels can be created with the use of navigation sections.
 </il-header>
 ```
 
-The `Programs` item in this example navigation acts as both a link and a label for this section of the navigation. This requires a separate toggle for expanding and collapsing the navigation section. For top-level navigation items, this toggle appears immediately to the right of the top-level link.
 
-```
-+---------------+
-| Programs | \/ |
-+---------------+
-```
+## Appearance
 
-In some situations it may be preferable to omit the top-level link, leaving only a toggle for the navigation section. In this case, the `label` slot is used to provide a readable label for the navigation section.
-
-```html
-<il-header>
-  <il-main-nav slot="navigation">
-    <ul>
-      <li><a href="/about.html">About</a></li>
-      <li>
-        <il-nav-section>
-          <span slot="label">Programs</span>
-          <ul>
-            <li><a href="/programs/undergrad.html">Undergraduate</a></li>
-            <li><a href="/programs/grad.html">Graduate</a></li>
-            <li><a href="/programs/doc.html">Doctorate</a></li>
-          </ul>          
-        </il-nav-section>
-      </li>
-      <li><a href="/news.html">News</a></li>
-      <li><a href="/contact.html">Contact</a></li>
-    </ul>
-  </il-main-nav>
-</il-header>
-```
-
-```
-+-------------+
-| Programs \/ |
-+-------------+
-```
+On larger screens it appears as a horizontal bar with dropdowns for secondary levels of links. On small screens, it is contained within the header menu widget, and appears as a vertical column of links with expandable secondary levels.
