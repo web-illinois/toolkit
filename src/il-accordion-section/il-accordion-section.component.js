@@ -14,7 +14,7 @@ export class AccordionSection extends LitElement {
 
   constructor() {
     super();
-    this._expanded = this.hasAttribute('data-il-state') && this.getAttribute('data-il-state') == 'expanded';
+    this._expanded = this.hasAttribute('data-expanded') && this.getAttribute('data-expanded') == 'true';
     this.handleHeaderClick = this.handleHeaderClick.bind(this);
     this.handleWindowKeypress = this.handleWindowKeypress.bind(this);
     this.setFocus = this.setFocus.bind(this);
