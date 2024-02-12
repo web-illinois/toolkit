@@ -1,0 +1,26 @@
+:root {
+    --il-accordion-color: var(--il-blue, #13294B);
+    --il-accordion-color-hover: var(--il-gray-1, #F4F4F4);
+    --il-accordion-background: var(--il-gray-1, #F4F4F4);
+    --il-accordion-background-hover: var(--il-blue, #13294B);
+    --il-accordion-border-full: none;
+    --il-accordion-border: none;
+    --il-accordion-image-transform: rotate(270deg);
+    --il-accordion-image-transform-expand: rotate(0);
+    --il-accordion-padding-panel: 15px 10px 20px 54px;
+    --il-accordion-font-heading: 600 1.375rem/1.875rem var(--il-font-source-sans, 'Source Sans', sans-serif);
+}
+
+il-accordion {
+    font-family: var(--il-font-source-sans, 'Source Sans', sans-serif);
+    font-size: 1.125rem;
+}
+
+il-accordion.border {
+    --il-accordion-border-full: 1px solid var(--il-base-25, #252525);
+}
+
+il-accordion h2[slot="header"], il-accordion h3[slot="header"], il-accordion h4[slot="header"], 
+il-accordion h5[slot="header"], il-accordion h6[slot="header"], il-accordion div[slot="header"], il-accordion p[slot="header"] {
+    font: var(--il-accordion-font-heading);
+}
