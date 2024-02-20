@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en" class="il-toolkit">
+<title>Main navigation with six levels</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="shortcut icon" href="https://cdn.brand.illinois.edu/favicon.ico">
+<link rel="stylesheet" href="../../toolkit.css">
+
+<link rel="stylesheet" href="../../il-header/il-header.css">
+<script src="../../il-header/il-header.js" type="module"></script>
+
+<link rel="stylesheet" href="../../il-nav-section/il-nav-section.css">
+<script src="../../il-nav-section/il-nav-section.js" type="module"></script>
+
+<link rel="stylesheet" href="../../il-page/il-page.css">
+<script src="../../il-page/il-page.js" type="module"></script>
+
+<link rel="stylesheet" href="../il-main-nav.css">
+<script src="../il-main-nav.js" type="module"></script>
+
+<il-page>
+  <il-header slot="header" data-compact="true">
+    <il-main-nav slot="navigation">
+      <ul>
+        <li>
+          <a href="/">Item 1A</a>
+        </li>
+        <li>
+          <il-nav-section data-expanded="true">
+            <span slot="label">Item 1B</span>
+            <ul>
+              <li>
+                <a href="/">Item 2A</a>
+              </li>
+              <li>
+                <il-nav-section data-expanded="true">
+                  <span slot="label">Item 2B</span>
+                  <ul>
+                    <li>
+                      <a href="/">Item 3A</a>
+                    </li>
+                    <li>
+                      <il-nav-section data-expanded="true">
+                        <span slot="label">Item 3B</span>
+                        <ul>
+                          <li>
+                            <a href="/">Item 4A</a>
+                          </li>
+                          <li>
+                            <il-nav-section data-expanded="true">
+                              <span slot="label">Item 4B</span>
+                              <ul>
+                                <li>
+                                  <a href="/">Item 5A</a>
+                                </li>
+                                <li>
+                                  <il-nav-section data-expanded="true">
+                                    <span slot="label">Item 5B</span>
+                                    <ul>
+                                      <li>
+                                        <a href="/">Item 6A</a>
+                                      </li>
+                                      <li>
+                                        <a href="/">Item 6B</a>
+                                      </li>
+                                      <li>
+                                        <a href="/">Item 6C</a>
+                                      </li>
+                                      <li>
+                                        <a href="/">Item 6D</a>
+                                      </li>
+                                    </ul>
+                                  </il-nav-section>
+                                </li>
+                                <li>
+                                  <a href="/">Item 5C</a>
+                                </li>
+                                <li>
+                                  <a href="/">Item 5D</a>
+                                </li>
+                              </ul>
+                            </il-nav-section>
+                          </li>
+                          <li>
+                            <a href="/">Item 4C</a>
+                          </li>
+                          <li>
+                            <a href="/">Item 4D</a>
+                          </li>
+                        </ul>
+                      </il-nav-section>
+                    </li>
+                    <li>
+                      <a href="/">Item 3C</a>
+                    </li>
+                    <li>
+                      <a href="/">Item 3D</a>
+                    </li>
+                  </ul>
+                </il-nav-section>
+              </li>
+              <li>
+                <a href="/">Item 2C</a>
+              </li>
+              <li>
+                <a href="/">Item 2D</a>
+              </li>
+            </ul>
+          </il-nav-section>
+        </li>
+        <li>
+          <a href="/">Item 1C</a>
+        </li>
+        <li>
+          <a href="/">Item 1D</a>
+        </li>
+      </ul>
+    </il-main-nav>
+  </il-header>
+</il-page>

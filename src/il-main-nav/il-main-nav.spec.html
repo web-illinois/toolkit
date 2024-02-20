@@ -1,0 +1,38 @@
+<h1>Main navigation</h1>
+
+<p>The main navigation component is used within the <a href="../il-header/il-header.spec.html">standard header</a> and offers a reliable collection of links for navigating the site. These links can be arranged in nested lists to create expandable navigation sections.</p>
+
+<h2>Structure</h2>
+
+<p>The navigation is composed of <dfn>items</dfn>. There are two primary types of items:</p>
+
+<ul>
+  <li><dfn>Links</dfn> take visitors directly to web pages.</li>
+  <li><dfn>Sections</dfn> are groups of links which can be expanded and collapsed. Sections have labels, and in some sections the label is also a link.</li>
+</ul>
+
+<p>Navigation items are arranged in an unordered list. The simplest navigation is a single list of hyperlinks:</p>
+
+<!--
+<il-main-nav>
+  <ul>
+    <li><a href="/about">About</a></li>
+    <li><a href="/academics">Academics</a></li>
+    <li><a href="/research">Research</a></li>
+    <li><a href="/alumni">Alumni</a></li>
+  </ul>
+</il-main-nav>
+-->
+
+<p>If a link in the navigation represents the current page, is it identified with the <code>aria-current="page"</code> attribute:</p>
+
+<pre>
+  <il-main-nav>
+    <ul>
+      <li><a href="/about">About</a></li>
+      <li><a href="/academics">Academics</a></li>
+      <li><a href="/research" aria-current="page">Research</a></li>
+      <li><a href="/alumni">Alumni</a></li>
+    </ul>
+  </il-main-nav>
+</pre>

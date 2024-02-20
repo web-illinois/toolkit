@@ -1,106 +1,100 @@
 # Header
 
-The header component implements the standard campus website header design. It should be placed at the top of the page.
+The header contains five content slots:
 
-The header is designed to accommodate the following pieces of content:
+  * The <dfn>site name</dfn> identifies the site. For multipage sites, this may also link to the front page of the site.
+  * The <dfn>parent unit</dfn> identifies the campus unit which manages the site or contains the unit represented by the site. This should link to the site for the parent unit.
+  * The <dfn>navigation</dfn> slot contains the main navigation component for the site.
+  * The <dfn>search</dfn> slot contains a basic search engine.
+  * The <dfn>utility</dfn> slot contains links which are displayed in the top-right corner of the header.
 
-* The name of the site (required)
-* The parent organization of the website
-* The main site navigation
-* The site search form
-* 1-3 additional important links
+## Site name
 
-[screenshot]
-
-On smaller screens, the navigation, search, and additional links are placed within a dropdown that can be expanded with a menu toggle:
-
-[screenshots]
-
-## Creating a header
-
-A minimal header contains the name of the site. The site name is placed in the `name` content slot.
+For a single page site, the site name can be an h1 or a div as required:
 
 ```html
-<il-header>
-  <div slot="name">College of Examples</div>
-</il-header>
+<div slot="site-name">Single-Page Website</div>
 ```
 
-For sites with multiple pages, this can include a link to the site homepage.
+On sites with more than one page, the site name should link to the site homepage:
 
 ```html
-<il-header>
-  <a slot="name" href="/">College of Examples</a>
-</il-header>
+<a slot="site-name" href="/">Website with Multiple Pages</a>
 ```
 
-[screenshot]
+## Parent unit
 
-## Adding a parent organization
-
-To add the parent organization of the site, use the `parent` content slot. 
+If the website represents a department within another unit, the parent unit slot can be used to link to an additional website for the parent unit:
 
 ```html
-<il-header>
-  <a slot="parent" href="https://example.com">College of Examples</a>
-  <a slot="name" href="/">Department of Hypotheticals</a></h1>
-</il-header>
+<a slot="parent-unit" href="http://parent.example.com/">Parent Unit</a>
 ```
 
-Including more than 3 parent organizations is discouraged.
+## Navigation
 
-## Adding the header to a page
-
-When using the [`il-page`](../il-page/README.md) component, the header should be placed in the `header` content slot.
+The main navigation is a multi-level list of links that should not change within the site.
 
 ```html
-<il-page>
-  <il-header slot="header">
-    <!-- ... --->
-  </il-header>
-</il-page>
+<il-main-nav>
+  <ul>
+    <li><a href="/about">About</a></li>
+    <li><a href="/academics">Academics</a></li>
+    <li><a href="/research">Research</a></li>
+    <li><a href="/alumni">Alumni</a></li>
+  </ul>
+</il-main-nav>
 ```
 
-## Adding the main navigation
+For information, see the <a href="../il-main-nav/il-main-nav.spec.html">full documentation for the main navigation component</a>.
 
-The `navigation` content slot is intended for the main site navigation and is designed to accommodate the [navigation component](../il-nav/README.md).
+## Search
+
+A simple search form can be added to the header via the <code>search</code> slot.
 
 ```html
-<il-header slot="header">
-  <il-nav slot="navigation">
-    <!-- ... --->
-  </il-nav>
-</il-header>
+<form method="get" action="/search" slot="search" role="search">
+  <input type="search" name="query" aria-labelledby="search-button">
+  <button type="submit" id="search-button">Search</button>
+</form>
 ```
 
-It is not necessary to specify a type for the `il-nav` element when used in the `navigation` content slot. The type will be automatically determined based on the state of the header:
+The following aspects of the markup are <strong>required</strong>:
 
-| Header state                      | Navigation type |
-|-----------------------------------|-----------------|
-| Full header                       | `bar`           |
-| Compact header with menu dropdown | `accordion`     |  
+  * The form element must contain the search role
+  * The form element must contain the search slot
+  * The input type must be search
+  * The input must use the submit button for its accessible label.
+  * The submit button must contain an id linking it to the input.
 
-
-See [il-nav](../il-nav/) for more information.
-
-## Adding additional links
-
-The header contains an additional navigation content slot intended for 1-3 links. Use the `links` content slot to place a navigation element in this area.
+A customized search form might include additional hidden inputs:
 
 ```html
-<il-header slot="header">
-  <il-nav slot="links">
-    <ul>
-      <li><a href="/apply">Apply</a></li>
-      <li><a href="/donate">Donate</a></li>
-      <li><a href="/contact">Contact</a></li>
-    </ul>
-  </il-nav>
-</il-header>
+<form method="post" action="/search.php" slot="search" role="search">
+  <input type="hidden" name="api-key" value="67890">
+  <input type="search" name="q" aria-labelledby="search-button">
+  <button type="submit" id="search-button" name="search" value="1">Search</button>
+</form>
 ```
-As with the main navigation, it is not necessary to provide a type for the `il-nav` as it will be determined from the state of the header.
 
-| Header state                      | Navigation type |
-|-----------------------------------|-----------------|
-| Full header                       | `eyebrow`       |
-| Compact header with menu dropdown | `accordion`     |  
+### References
+
+  * <a href="https://www.nngroup.com/articles/magnifying-glass-icon/">The Magnifying-Glass Icon in Search Design: Pros and Cons</a>, Neilsen Norman Group, February 23, 2014
+  * <a href="https://www.w3.org/WAI/tutorials/forms/labels/#using-aria-labelledby">Using aria-labelledby</a>
+
+
+## Utility links
+
+<a href="https://www.nngroup.com/articles/utility-navigation/">utility navigation</a>
+
+* Link labels must be short. One-word labels are prefered.
+* Limit links to 3 or fewer.
+* Only one level of links is allowed. Additional levels of lists may not be displayed.
+
+
+## Responsive features
+
+When the available width is 990 pixels or fewer, the header will change to a compact appearance. In this compact mode, the navigation, search, and featured links are hidden by default. In their place is a toggle button labelled "Menu" In this compact mode, the navigation, search, and links are placed into a single panel whose visibility is toggled by a menu button. 
+
+<!-- manually put the header into compact mode -->
+
+<!-- listening for compact events -->

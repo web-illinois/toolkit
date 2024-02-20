@@ -1,0 +1,23 @@
+@import "https://cdn.brand.illinois.edu/colors.css";
+@import "https://cdn.brand.illinois.edu/fonts.css";
+
+@layer base, components;
+
+/* upcoming color changes */
+:root {
+  --il-storm-lighter-3: #C6C7C7;
+  --il-storm-lighter-4: #F4F4F4;
+  --il-storm-darker-2: #252525;
+}
+
+@layer base {
+  html.il-toolkit body, body.il-toolkit {
+    margin: 0;
+    padding: 0;
+    background-color: white;
+    color: var(--il-base-25);
+    font-size: 16px;
+    font-family: var(--il-font-sans);
+  }
+}
+

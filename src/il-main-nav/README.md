@@ -1,59 +1,36 @@
 # Main navigation
 
-The main navigation provides a reliable way for visitors to locate key pages in the site. It presents links in a hierarchy that allows visitors to expand sections to reveal additional layers of links.
-
-This component is part of the standard header and is not designed for use outside that component.
+The main navigation component is used within the <a href="../il-header/README.md">standard header</a> and offers a reliable collection of links for navigating the site. These links can be arranged in nested lists to create expandable navigation sections.
 
 ## Structure
 
-Within the main navigation component are one or more <dfn>items</dfn>. There are two types of items:
+The navigation is composed of <dfn>items</dfn>. There are two primary types of items:
 
-<dfn>Links</dfn> take visitors to individual locations within the site. Each link has a <dfn>link label</dfn>, which is provided to the visitor, and a <dfn>link URL</dfn>, which provides the destination for the link.
+* <dfn>Links</dfn> take visitors directly to web pages.
+* <dfn>Sections</dfn> are groups of links which can be expanded and collapsed. Sections have labels, and in some sections the label is also a link.
 
-<object class="screenshot">
-An example of a top-level navigation link
-</object>
-
-<dfn>Sections</dfn> are groups of items, and can contain both links and other sections. Sections can be <dfn>collapsed</dfn>, with their items hidden from the visitor, or <dfn>expanded</dfn>, with their items visible. The <dfn>section toggle</dfn> is used to alternate between these two states. 
-
-<object class="screenshot">
-An example of a top-level navigation section when collapsed
-</object>
-
-<object class="screenshot">
-The same top-level navigation section when expanded
-</object>
-
-Sections may also contain a <dfn>section link</dfn>, which is positioned beside the section toggle and takes the visitor to a primary page for the section.
-
-<object class="screenshot">
-The same top-level navigation section when expanded
-</object>
-
+Navigation items are arranged in an unordered list. The simplest navigation is a single list of hyperlinks:
 
 ```html
-<il-header>
-  <il-main-nav slot="navigation">
-    <ul>
-      <li><a href="/about.html">About</a></li>
-      <li>
-        <il-nav-section>
-          <a slot="link" href="/programs.html">Programs</a>
-          <ul>
-            <li><a href="/programs/undergrad.html">Undergraduate</a></li>
-            <li><a href="/programs/grad.html">Graduate</a></li>
-            <li><a href="/programs/doc.html">Doctorate</a></li>
-          </ul>          
-        </il-nav-section>
-      </li>
-      <li><a href="/news.html">News</a></li>
-      <li><a href="/contact.html">Contact</a></li>
-    </ul>
-  </il-main-nav>
-</il-header>
+<il-main-nav>
+  <ul>
+    <li><a href="/about">About</a></li>
+    <li><a href="/academics">Academics</a></li>
+    <li><a href="/research">Research</a></li>
+    <li><a href="/alumni">Alumni</a></li>
+  </ul>
+</il-main-nav>
 ```
 
+If a link in the navigation represents the current page, is it identified with the `aria-current="page"` attribute:
 
-## Appearance
-
-On larger screens it appears as a horizontal bar with dropdowns for secondary levels of links. On small screens, it is contained within the header menu widget, and appears as a vertical column of links with expandable secondary levels.
+```html
+<il-main-nav>
+  <ul>
+    <li><a href="/about">About</a></li>
+    <li><a href="/academics">Academics</a></li>
+    <li><a href="/research" aria-current="page">Research</a></li>
+    <li><a href="/alumni">Alumni</a></li>
+  </ul>
+</il-main-nav>
+```

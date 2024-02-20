@@ -1,88 +1,106 @@
 <!DOCTYPE html>
-<script src="../il-main-nav.js" type="module"></script>
-<script src="../../il-nav-section/il-nav-section.js" type="module"></script>
+<html lang="en" class="il-toolkit">
+<title>Main navigation without section links</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="shortcut icon" href="https://cdn.brand.illinois.edu/favicon.ico">
+<link rel="stylesheet" href="../../toolkit.css">
 
-<il-main-nav>
-  <ul>
-    <li>
-      <il-nav-section>
-        <a slot="link" href="/about">About</a>
-        <ul>
-          <li><a href="/about/departments">Departments, units, and programs</a></li>
-          <li><a href="/about/leadership">College leadership</a></li>
-          <li><a href="/about/directory">Directory</a></li>
-          <li><a href="/about/diversity">Diversity, equity, and inclusion</a></li>
-          <li><a href="/about/facts">Fast facts</a></li>
-          <li><a href="/about/resources">Faculty and staff resources</a></li>
-          <li><a href="/about/plan">LAS Strategic Plan</a></li>
-        </ul>
-      </il-nav-section>
-    </li>
-    <li>
-      <il-nav-section>
-        <a slot="link" href="/admissions">Admissions</a>
-        <ul>
-          <li><a href="/admissions/apply">Apply to LAS</a></li>
-          <li><a href="/admissions/majors">Explore LAS majors</a></li>
-          <li><a href="/admissions/blog">LAS Insider blog</a></li>
-          <li><a href="/admissions/faq">Admissions FAQs</a></li>
-          <li><a href="/admissions/resources">Parent resources</a></li>
-          <li><a href="/admissions/summer">Pre-college summer programs</a></li>
-        </ul>
-      </il-nav-section>
-    </li>
-    <li>
-      <il-nav-section>
-        <a slot="link" href="/academics">Academics</a>
-        <ul>
-          <li><a href="/">Academic policies and standing</a></li>
-          <li><a href="/">Advising and support</a></li>
-          <li><a href="/">College distinctions</a></li>
-          <li><a href="/">Dates and deadlines</a></li>
-          <li><a href="/">Forms</a></li>
-          <li><a href="/">Graduation</a></li>
-          <li><a href="/">Intercollegiate transfers</a></li>
-          <li><a href="/">LAS Lineup student newsletter</a></li>
-          <li><a href="/">Programs of study</a></li>
-          <li><a href="/">Scholarships</a></li>
-        </ul>
-      </il-nav-section>
-    </li>
-    <li>
-      <il-nav-section>
-        <a slot="link" href="/">Student resources</a>
-        <ul>
-          <li><a href="/">Access and Achievement Program</a></li>
-          <li><a href="/">Career services</a></li>
-          <li><a href="/">Courses</a></li>
-          <li><a href="/">First-Year Experience</a></li>
-          <li><a href="/">Honors program</a></li>
-          <li><a href="/">International programs</a></li>
-          <li><a href="/">Internship opportunities</a></li>
-        </ul>
-      </il-nav-section>
-    </li>
-    <li>
-      <il-nav-section>
-        <a slot="link" href="/research">Research</a>
-        <ul>
-          <li><a href="/">Student research opportunities</a></li>
-          <li><a href="/">Expertise in LAS</a></li>
-          <li><a href="/">Research facilities and centers</a></li>
-          <li><a href="/">Dean's Distinguished Lecture series</a></li>
-        </ul>
-      </il-nav-section>
-    </li>
-    <li>
-      <il-nav-section>
-        <a slot="link" href="/alumni">Alumni</a>
-        <ul>
-          <li><a href="/">Alumni advice</a></li>
-          <li><a href="/">Alumni award programs</a></li>
-          <li><a href="/">Events</a></li>
-          <li><a href="/">Get involved</a></li>
-        </ul>
-      </il-nav-section>
-    </li>
-  </ul>
-</il-main-nav>
+<link rel="stylesheet" href="../../il-header/il-header.css">
+<script src="../../il-header/il-header.js" type="module"></script>
+
+<link rel="stylesheet" href="../../il-nav-section-with-link/il-nav-section-with-link.css">
+<script src="../../il-nav-section-with-link/il-nav-section-with-link.js" type="module"></script>
+
+<link rel="stylesheet" href="../../il-page/il-page.css">
+<script src="../../il-page/il-page.js" type="module"></script>
+
+<link rel="stylesheet" href="../il-main-nav.css">
+<script src="../il-main-nav.js" type="module"></script>
+
+<il-page>
+  <il-header slot="header" data-compact="true">
+    <il-main-nav slot="navigation">
+      <ul>
+        <li>
+          <il-nav-section-with-link>
+            <a href="/" slot="link">About</a>
+            <ul>
+              <li><a href="/about/history">History</a></li>
+              <li><a href="/about/mission">Mission statement</a></li>
+              <li><a href="/about/staff">Staff</a></li>
+              <li><a href="/about/contact">Contact</a></li>
+            </ul>
+          </il-nav-section-with-link>
+        <li>
+          <il-nav-section-with-link data-expanded="true">
+            <a href="/" slot="link">Academics</a>
+            <ul>
+              <li>
+                <il-nav-section-with-link data-expanded="true" data-current="true">
+                  <a href="/" slot="link">Undergraduate</a>
+                  <ul>
+                    <li><a href="/academics/undergrad/majors">Majors</a></li>
+                    <li><a href="/academics/undergrad/minors">Minors</a></li>
+                    <li><a href="/academics/undergrad/majors">Certificates</a></li>
+                  </ul>
+                </il-nav-section-with-link>
+              </li>
+              <li>
+                <il-nav-section-with-link>
+                  <a href="/" slot="link">Graduate</a>
+                  <ul>
+                    <li><a href="/academics/grad/majors">Majors</a></li>
+                    <li><a href="/academics/grad/minors">Minors</a></li>
+                    <li><a href="/academics/grad/majors">Certificates</a></li>
+                  </ul>
+                </il-nav-section-with-link>
+              </li>
+              <li><a href="/academics/online">Online programs</a></li>
+              <li><a href="/academics/professional">Professional education</a></li>
+            </ul>
+          </il-nav-section-with-link>
+        </li>
+        <li>
+          <il-nav-section-with-link>
+            <a href="/" slot="link">Research</a>
+            <ul>
+              <li><a href="/research/centers">Research centers</a></li>
+              <li><a href="/research/news">Latest research news</a></li>
+              <li><a href="/research/seminars">Seminars &amp; speakers</a></li>
+            </ul>
+          </il-nav-section-with-link>
+        </li>
+        <li>
+          <il-nav-section-with-link>
+            <a href="/" slot="link">Diversity</a>
+            <ul>
+              <li><a href="/diversity/initiatives">Diversity initiatives</a></li>
+              <li><a href="/diversity/access-equity">Access &amp; equity</a></li>
+              <li><a href="/diversity/officers">Diversity officers</a></li>
+            </ul>
+          </il-nav-section-with-link>
+        </li>
+        <li>
+          <il-nav-section-with-link>
+            <a href="/" slot="link">News &amp; Events</a>
+            <ul>
+              <li><a href="/news">Latest news</a></li>
+              <li><a href="/calendar">Calendar</a></li>
+            </ul>
+          </il-nav-section-with-link>
+        </li>
+        <li>
+          <il-nav-section-with-link>
+            <a href="/" slot="link">Alumni</a>
+            <ul>
+              <li><a href="/alumni/distinguished">Distinguished alumni</a></li>
+              <li><a href="/alumni/events">Upcoming alumni events</a></li>
+              <li><a href="/alumni/newsletter">Alumni newsletter</a></li>
+            </ul>
+          </il-nav-section-with-link>
+        <li>
+      </ul>
+    </il-main-nav>
+  </il-header>
+</il-page>

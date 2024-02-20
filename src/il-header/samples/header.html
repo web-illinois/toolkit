@@ -1,13 +1,16 @@
 <!DOCTYPE html>
 <html lang="en" class="il-toolkit">
-<title>Main navigation without section links</title>
+<title>Sample header</title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="shortcut icon" href="https://cdn.brand.illinois.edu/favicon.ico">
 <link rel="stylesheet" href="../../toolkit.css">
 
-<link rel="stylesheet" href="../../il-header/il-header.css">
-<script src="../../il-header/il-header.js" type="module"></script>
+<link rel="stylesheet" href="../il-header.css">
+<script src="../il-header.js" type="module"></script>
+
+<link rel="stylesheet" href="../../il-main-nav/il-main-nav.css">
+<script src="../../il-main-nav/il-main-nav.js" type="module"></script>
 
 <link rel="stylesheet" href="../../il-nav-section/il-nav-section.css">
 <script src="../../il-nav-section/il-nav-section.js" type="module"></script>
@@ -15,11 +18,28 @@
 <link rel="stylesheet" href="../../il-page/il-page.css">
 <script src="../../il-page/il-page.js" type="module"></script>
 
-<link rel="stylesheet" href="../il-main-nav.css">
-<script src="../il-main-nav.js" type="module"></script>
+<link rel="stylesheet" href="../../il-search/il-search.css">
+<script src="../../il-search/il-search.js" type="module"></script>
 
 <il-page>
   <il-header slot="header" data-compact="true">
+
+    <a slot="primary-unit" href="/">Illinois Web Toolkit</a>
+    <a slot="site-name" href="/">Sample Pages</a>
+
+    <nav slot="links">
+      <ul>
+        <li><a href="/apply">Apply</a></li>
+        <li><a href="/visit">Visit</a></li>
+        <li><a href="/give">Give</a></li>
+      </ul>
+    </nav>
+
+    <form slot="search" method="get" action="/search" role="search">
+      <input type="search" name="search" aria-labelledby="search-button">
+      <button id="search-button" type="submit">Search</button>
+    </form>
+
     <il-main-nav slot="navigation">
       <ul>
         <li>
@@ -37,7 +57,7 @@
             <span slot="label">Academics</span>
             <ul>
               <li>
-                <il-nav-section data-expanded="true">
+                <il-nav-section data-expanded="true" data-current="true">
                   <span slot="label">Undergraduate</span>
                   <ul>
                     <li><a href="/academics/undergrad/majors">Majors</a></li>
@@ -103,4 +123,7 @@
       </ul>
     </il-main-nav>
   </il-header>
+
+  <h1>Sample header</h1>
+
 </il-page>
