@@ -1,5 +1,6 @@
 import {LitElement, css, html} from 'lit';
 import styles from './il-main-nav.styles';
+import "./il-main-nav.css";
 
 export class MainNavigation extends LitElement {
 

@@ -1,0 +1,24 @@
+@layer base {
+  il-section > *:first-child {
+    margin-top: 0;
+  }
+}
+@layer components {
+  :root {
+    --il-section-padding-top: 4rem;
+    --il-section-padding-bottom: 4rem;
+    --il-section-background: white;
+    --il-section-alt-background: var(--il-cloud-1);
+    --il-section-color--orange: var(--il-orange);
+  }
+  il-section {
+    --il-section-color--orange: var(--il-orange);
+    background: var(--il-section-background);
+  }
+  il-section:nth-of-type(even) {
+    --il-section-color--orange: var(--il-altgeld);
+    background: var(--il-section-alt-background);
+    container-type: inline-size;
+  }
+}
+

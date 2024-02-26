@@ -1,0 +1,95 @@
+@layer components {
+
+  il-hero {
+    --il-hero-background: linear-gradient(var(--il-storm-lighter-3), var(--il-cloud-1));
+    --il-hero-hr-color: var(--il-orange);
+    color: var(--il-blue);
+  }
+
+  il-hero.il-blue {
+    --il-hero-background: linear-gradient(var(--il-blue), var(--il-industrial-blue));
+    --il-hero-hr-color: var(--il-orange);
+    color: white;
+  }
+  il-hero.il-orange {
+    --il-hero-background: linear-gradient(var(--il-orange), var(--il-harvest));
+    --il-hero-hr-color: white;
+    color: var(--il-blue);
+  }
+
+  il-hero.il-ascend, il-hero.il-finial {
+    color: var(--il-blue);
+    --il-pattern-fill: white;
+    --il-hero-background: var(--il-cloud-1);
+    --il-hero-pattern-wash: linear-gradient(transparent, var(--il-cloud-1));
+  }
+  il-hero.il-ascend.il-blue, il-hero.il-finial.il-blue {
+    color: white;
+    --il-pattern-fill: var(--il-industrial-blue);
+    --il-hero-background: var(--il-blue);
+    --il-hero-pattern-wash: linear-gradient(transparent, var(--il-blue));
+  }
+  il-hero.il-ascend.il-orange, il-hero.il-finial.il-orange {
+    color: var(--il-blue);
+    --il-pattern-fill: var(--il-harvest);
+    --il-hero-background: var(--il-orange);
+    --il-hero-pattern-wash: linear-gradient(transparent, var(--il-orange));
+  }
+  il-hero.il-ascend {
+    --il-hero-ascend-pattern-display: block;
+  }
+  il-hero.il-finial {
+    --il-hero-finial-pattern-display: block;
+  }
+
+  il-hero h1 {
+    all: initial;
+    color: inherit;
+    text-align: center;
+    font: 700 4rem/1.125 var(--il-font-montserrat);
+  }
+  il-hero.il-ascend h1, il-hero.il-finial h1 {
+    text-shadow: .1em .1em 0 var(--il-hero-background);
+  }
+
+  il-hero p {
+    all: initial;
+    display: block;
+    position: relative;
+    color: inherit;
+    text-align: center;
+    font: 400 1.75rem/1.428 var(--il-font-sans);
+  }
+  il-hero h1 + p {
+    margin-top: 6rem;
+  }
+  il-hero h1 + p::before {
+    content: "";
+    position: absolute;
+    top: -3.25rem;
+    left: calc(50% - 2.5rem);
+    width: 5rem;
+    height: .5rem;
+    background-color: var(--il-hero-hr-color);
+  }
+
+  il-page[data-columns="4"] il-hero h1 {
+    font-size: 3.25rem;
+  }
+  il-page[data-columns="4"] il-hero h1 + p {
+    margin-top: 4.5rem;
+  }
+  il-page[data-columns="4"] il-hero h1 + p::before {
+    top: -2.5rem;
+  }
+
+  il-page[data-columns="2"] il-hero h1 {
+    font-size: 2.5rem;
+  }
+  il-page[data-columns="2"] il-hero h1 + p {
+    margin-top: 3rem;
+  }
+  il-page[data-columns="2"] il-hero h1 + p::before {
+    top: -1.75rem;
+  }
+}

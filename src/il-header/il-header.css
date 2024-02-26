@@ -1,4 +1,4 @@
-@layer component {
+@layer components {
 
   il-header[data-compact="true"] {
     --il-nav-item-background: var(--il-cloud-1);

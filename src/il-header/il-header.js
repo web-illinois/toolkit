@@ -1,5 +1,6 @@
 import {LitElement, html} from "lit";
 import styles from './il-header.styles';
+import './il-header.css';
 
 export class HeaderComponent extends LitElement {
   static properties = {

@@ -1,0 +1,6 @@
+@layer components {
+  il-stats il-stat {
+    display: block;
+    max-width: 12rem;
+  }
+}

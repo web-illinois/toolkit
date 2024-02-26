@@ -1,0 +1,22 @@
+:root {
+  --il-card-content-padding: 1.5rem;
+}
+
+il-card-with-image[color="blue"] {
+  background-color: var(--il-blue);
+  border-color: var(--il-blue);
+  color: white;
+}
+il-card-with-image[color="orange"] {
+  background-color: var(--il-orange);
+  border-color: var(--il-orange);
+  color: var(--il-blue);
+}
+
+il-card-with-image > *[slot="image"] + * {
+  margin-top: 0;
+}
+
+il-featured-section.il-bleed il-card-with-image {
+
+}

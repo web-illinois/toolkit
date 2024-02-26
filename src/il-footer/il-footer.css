@@ -1,0 +1,32 @@
+il-footer {
+
+  *[slot="identity"] {
+    all: initial;
+
+    p {
+      all: initial;
+      display: block;
+      color: var(--il-blue);
+      font: 400 1.125rem/1.5rem var(--il-font-sans);
+    }
+    p.il-site-name {
+      font-weight: 700;
+      font-size: 1.5rem;
+      line-height: 1.8125rem;
+    }
+    a {
+      all: initial;
+      font: inherit;
+      color: inherit;
+    }
+    a:hover, a:focus {
+      color: var(--il-altgeld);
+      text-decoration: underline;
+      cursor: pointer;
+    }
+    a:focus {
+      outline: 2px dotted;
+    }
+  }
+}
+

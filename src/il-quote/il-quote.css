@@ -1,0 +1,22 @@
+@layer components {
+  :root {
+    --il-quote-accent-color: var(--il-orange);
+  }
+  il-quote {
+    text-align: center;
+
+    p {
+      all: inherit;
+      margin-top: 1.5rem;
+      display: block;
+    }
+    p:first-child {
+      margin-top: 0;
+    }
+
+    *[slot="attribution"] b {
+      font-weight: 700;
+      display: block;
+    }
+  }
+}

@@ -1,0 +1,53 @@
+@layer components {
+  il-featured-section {
+    position: relative;
+    box-sizing: border-box;
+    overflow: hidden;
+  }
+  il-featured-section.il-blue {
+    background-color: var(--il-blue);
+    color: white;
+  }
+  il-featured-section.il-orange {
+    background-color: var(--il-orange);
+    color: var(--il-blue);
+    --il-quote-accent-color: white;
+  }
+
+  il-featured-section > *:first-child {
+    margin-top: 0;
+  }
+  il-featured-section > *[slot="background"] + * {
+    margin-top: 2rem;
+  }
+  il-featured-section > *[slot="background"] ~ *:last-child {
+    margin-bottom: 2rem;
+  }
+
+
+
+  il-featured-section > il-card-with-image {
+    border-color: transparent;
+  }
+  il-featured-section.il-blue > il-card-with-image {
+    background-color: var(--il-blue);
+    border-color: var(--il-blue);
+    color: white;
+  }
+  il-featured-section.il-orange > il-card-with-image {
+    background-color: var(--il-orange);
+    border-color: var(--il-orange);
+    color: var(--il-blue);
+  }
+  il-featured-section > il-card-with-image.il-bleed {
+    margin-left: var(--il-page-offset-left);
+    margin-right: var(--il-page-offset-right);
+    --il-card-content-padding: 1.5rem var(--il-page-padding-right) 1.5rem 1.5rem;
+    --il-card-content-container-padding: 0 1.5rem 0 0;
+  }
+
+  il-featured-section > il-stats {
+    margin-top: 4rem !important;
+    margin-bottom: 4rem;
+  }
+}

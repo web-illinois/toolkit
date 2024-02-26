@@ -8,7 +8,7 @@ These components represent distinct, specialized pieces of content.
 
 * [Calls to action](./il-call-to-action/README.md) invite users to perform a specific action, like start an application or create an email.
 * [Quotes](./il-quote/README.md) are short, meaningful pieces of text that are attributed to a person, publication, or other source. 
-* [Statistics](./il-statistic/README.md) call attention to important numbers, like rankings and percentages.
+* [Statistics](il-stat/README.md) call attention to important numbers, like rankings and percentages.
 
 ## Container components
 
