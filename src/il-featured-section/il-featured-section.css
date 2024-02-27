@@ -46,6 +46,11 @@
     --il-card-content-container-padding: 0 1.5rem 0 0;
   }
 
+  il-featured-section > il-call-to-action {
+    margin-top: 4rem !important;
+    margin-bottom: 4rem;
+  }
+
   il-featured-section > il-stats {
     margin-top: 4rem !important;
     margin-bottom: 4rem;

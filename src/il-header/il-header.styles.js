@@ -127,11 +127,12 @@ export default css`
   }
   
   .menu-toggle button {
+    position: relative;
     background-color: var(--il-blue);
     color: white;
     border: 0;
-    border-radius: .1875rem;
-    padding: .75rem;
+    border-radius: 3px;
+    padding: .75rem .75rem .75rem 2.5rem;
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
@@ -142,23 +143,35 @@ export default css`
     background-color: var(--il-orange);
     cursor: pointer;
   }
-  .menu-toggle .icon {
-    display: block;
-    position: relative;
-    width: 1.125rem;
-    height: 1rem;
+  .menu-toggle button:active {
+    background-color: var(--il-industrial-blue);
   }
-  .menu-toggle .icon svg {
-    display: block;
+  .menu-toggle .icons {
+    position: absolute;
+    top: .35rem;
+    left: .5rem;
+    width: 1.75rem;
+    height: 1.75rem;
+  }
+  .menu-toggle .icon {
     position: relative;
     width: 100%;
     height: 100%;
-    fill: white;
+    display: none;
+  }
+  .menu-toggle .icon.exit-icon {
+    transform: scale(1.25);
+  }
+  .header.menu-collapsed .menu-toggle .icon.menu-icon {
+    display: block;
+  }
+  .header.menu-expanded .menu-toggle .icon.exit-icon {
+    display: block;
   }
   .menu-toggle .label {
     display: block;
     color: white;
-    font: 700 1.25rem/1 var(--il-font-sans);
+    font: 700 1.25rem/.85 var(--il-font-sans);
     text-transform: uppercase;
   }
   
@@ -167,6 +180,13 @@ export default css`
     top: 100%;
     right: 0;
     width: 100%;
+    max-height: 100vh;
+    overflow: auto;
+    background: var(--il-cloud-1);
+    display: none;
+  }
+  .header.menu-expanded .menu {
+    display: block;
   }
   .menu .navigation.stripe {
     padding: 0;

@@ -1,32 +1,157 @@
-il-footer {
+@layer components {
+  il-footer {
 
-  *[slot="identity"] {
-    all: initial;
+    address {
+      all: inherit;
+      margin-top: 3rem;
+      font-size: 1.125rem;
+    }
 
-    p {
-      all: initial;
+    address > a {
       display: block;
+      margin: .5em 0 0;
+    }
+
+    il-action {
+      margin-top: 0;
+      margin-left: .5rem;
+    }
+    il-action:first-child {
+      margin-left: 0;
+    }
+
+    /* Site name */
+
+    *[slot="site-name"] {
+      all: initial;
+      color: var(--il-blue);
+      font: normal 700 1.5rem/1.8125rem var(--il-font-sans);
+    }
+    a[slot="site-name"], *[slot="site-name"] a {
+      color: var(--il-blue);
+      cursor: pointer;
+      text-decoration: none;
+    }
+    a[slot="site-name"]:hover, *[slot="site-name"] a:hover {
+      text-decoration: underline;
+      color: var(--il-altgeld);
+    }
+    a[slot="site-name"]:focus, *[slot="site-name"] a:focus {
+      outline: 2px dotted;
+    }
+
+    /* Primary unit */
+
+    *[slot="primary-unit"] {
+      all: initial;
       color: var(--il-blue);
       font: 400 1.125rem/1.5rem var(--il-font-sans);
     }
-    p.il-site-name {
-      font-weight: 700;
-      font-size: 1.5rem;
-      line-height: 1.8125rem;
-    }
-    a {
-      all: initial;
-      font: inherit;
-      color: inherit;
-    }
-    a:hover, a:focus {
-      color: var(--il-altgeld);
-      text-decoration: underline;
+    a[slot="primary-unit"], *[slot="primary-unit"] a {
+      color: var(--il-blue);
       cursor: pointer;
+      text-decoration: none;
     }
-    a:focus {
+    a[slot="primary-unit"]:hover, *[slot="primary-unit"] a:hover {
+      text-decoration: underline;
+    }
+    a[slot="primary-unit"]:focus, *[slot="primary-unit"] a:focus {
       outline: 2px dotted;
     }
+
+    /* Social media */
+
+    address nav.il-social {
+      all: initial;
+
+      ul {
+        all: initial;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: .5rem 1rem;
+      }
+      li {
+        all: initial;
+        display: inline-block;
+        white-space: nowrap;
+      }
+      a {
+        all: initial;
+        position: relative;
+        display: inline-block;
+        color: var(--il-blue);
+        font: 700 1rem var(--il-font-sans);
+        cursor: pointer;
+      }
+      a:focus {
+        outline: 2px dotted var(--il-blue);
+      }
+      a[data-service="facebook"],
+      a[data-service="instagram"],
+      a[data-service="linkedin"],
+      a[data-service="pinterest"],
+      a[data-service="snapchat"],
+      a[data-service="twitter"],
+      a[data-service="weibo"],
+      a[data-service="whatsapp"],
+      a[data-service="x"],
+      a[data-service="youtube"] {
+        width: max(22px, 2rem);
+        height: max(22px, 2rem);
+        overflow: hidden;
+        background-repeat: no-repeat;
+        background-size: 3rem 3rem;
+        background-position: center;
+        text-indent: 3rem;
+      }
+      a[data-service="facebook"] {
+        background-image: url("https://cdn.brand.illinois.edu/icons/line/blue/facebook.svg");
+      }
+      a[data-service="instagram"] {
+        background-image: url("https://cdn.brand.illinois.edu/icons/line/blue/instagram.svg");
+      }
+      a[data-service="linkedin"] {
+        background-image: url("https://cdn.brand.illinois.edu/icons/line/blue/linkedin.svg");
+      }
+      a[data-service="pinterest"] {
+        background-image: url("https://cdn.brand.illinois.edu/icons/line/blue/pinterest.svg");
+      }
+      a[data-service="snapchat"] {
+        background-image: url("https://cdn.brand.illinois.edu/icons/line/blue/snapchat.svg");
+      }
+      a[data-service="twitter"] {
+        background-image: url("https://cdn.brand.illinois.edu/icons/line/blue/twitter.svg");
+      }
+      a[data-service="weibo"] {
+        background-image: url("https://cdn.brand.illinois.edu/icons/line/blue/weibo.svg");
+      }
+      a[data-service="whatsapp"] {
+        background-image: url("https://cdn.brand.illinois.edu/icons/line/blue/whatsapp.svg");
+      }
+      a[data-service="x"] {
+        background-size: 1.5rem 1.5rem;
+        background-image: url("https://cdn.brand.illinois.edu/icons/line/blue/x.svg");
+      }
+      a[data-service="youtube"] {
+        background-image: url("https://cdn.brand.illinois.edu/icons/line/blue/youtube.svg");
+      }
+    }
+  }
+
+  il-page[data-columns="12"] il-footer {
+
+  }
+  il-page[data-columns="8"] il-footer {
+
+  }
+  il-page[data-columns="6"] il-footer {
+
+  }
+  il-page[data-columns="4"] il-footer {
+
+  }
+  il-page[data-columns="2"] il-footer {
+
   }
 }
-

@@ -1,5 +1,6 @@
 import {LitElement, html} from "lit";
 import styles from "./il-featured-section.styles";
+import './il-featured-section.css';
 
 export class FeaturedSectionComponent extends LitElement {
   static styles = styles;

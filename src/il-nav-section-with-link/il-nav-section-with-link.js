@@ -1,7 +1,11 @@
 import {html, LitElement} from "lit";
 import {NavigationSection} from "../il-nav-section/il-nav-section";
+import {baseStyles} from "../il-nav-section/il-nav-section.styles";
+import styles from "./il-nav-section-with-link.styles";
 
 export class NavigationSectionWithLink extends NavigationSection {
+  static styles = [baseStyles, styles];
+
   renderHeader() {
     const ariaExpanded = this.expanded ? 'true' : 'false';
     return html`

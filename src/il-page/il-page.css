@@ -47,6 +47,7 @@
       display: inline;
       font-style: italic;
     }
+
     a {
       all: inherit;
       display: inline;
@@ -222,6 +223,10 @@
       font-size: 1em;
       font-weight: 700;
       text-transform: uppercase;
+    }
+
+    il-action {
+      margin-top: 2em;
     }
 
     il-cards, il-card-with-image {

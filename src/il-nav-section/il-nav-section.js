@@ -1,4 +1,5 @@
 import {LitElement, css, html} from 'lit';
+import {baseStyles} from './il-nav-section.styles';
 import styles from './il-nav-section.styles';
 
 export class NavigationSection extends LitElement {
@@ -7,7 +8,7 @@ export class NavigationSection extends LitElement {
     expanded: { attribute: false }
   }
 
-  static styles = styles;
+  static styles = [baseStyles, styles];
 
   constructor() {
     super();

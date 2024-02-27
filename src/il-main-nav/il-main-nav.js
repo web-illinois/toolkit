@@ -64,7 +64,9 @@ export class MainNavigation extends LitElement {
   }
 
   handleWindowKeypress(evt) {
-    if (evt.key === 'Escape') this.collapseAllSections();
+    if (evt.key === 'Escape') {
+      this.collapseAllSections();
+    }
   }
 
   initializeSection(elem) {

@@ -4,21 +4,32 @@ export default css`
   :host {
     display: block;
   }
-  .container {
-    box-sizing: border-box;
-    position: relative;
+  .section {
+    padding-top: 1.875rem;
+    padding-bottom: 1.875rem;
+    padding-left: var(--il-page-padding-left);
+    padding-right: var(--il-page-padding-right);
   }
-  .fixed-width.container {
-    margin: 0 auto;
-    max-width: 75rem;
-    padding: 1.875rem 2.25rem;
-  }
-  .site.full-width {
-    background-color: white;
+
+  .site.section {
+    background-color: var(--il-storm-lighter-4);
     color: var(--il-blue);
     border-top: .5rem solid var(--il-blue);
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-template-rows: auto auto;
+    grid-template-areas: "site-name actions" "address content";
+    grid-gap: 1rem;
   }
-  .campus.full-width {
+  .site.section .site-name {
+    grid-area: site-name;
+  }
+  .site.section .actions {
+    grid-area: actions;
+    justify-self: end;
+  }
+  
+  .campus.section {
     background-color: var(--il-blue);
     color: white;
     border-top: .5rem solid var(--il-orange);
@@ -71,7 +82,8 @@ export default css`
   .campus a:focus {
     outline: 2px dotted;
   }
-  .legal.full-width {
+  
+  .legal.section {
     background-color: var(--il-blue);
     color: white;
     border-top: .5rem solid var(--il-industrial-blue-darker-2);

@@ -16,10 +16,13 @@ export class HeaderComponent extends LitElement {
     this.compact = false;
     this.menuExpanded = false;
     this.handlePageResize = this.handlePageResize.bind(this);
+    this.handleWindowResize = this.handleWindowResize.bind(this);
+    document.addEventListener('DOMContentLoaded', this.adjustMenuSize.bind(this));
   }
 
   connectedCallback() {
     super.connectedCallback();
+    window.addEventListener('resize', this.handleWindowResize);
     this.getPage().addEventListener('resize', this.handlePageResize);
     this.setAttribute('data-menu-expanded', this.menuExpanded ? 'true' : 'false');
     if (this.getAttribute('data-compact') === 'true') this.compact = true;
@@ -28,7 +31,23 @@ export class HeaderComponent extends LitElement {
   disconnectedCallback() {
     super.disconnectedCallback();
     this.page.removeEventListener('resize', this.handlePageResize);
+    window.removeEventListener('resize', this.handleWindowResize);
     this.page = undefined;
+  }
+
+  adjustDropdownPositions() {
+    if (this.compact) return;
+  }
+
+  adjustMenuSize() {
+    if (!this.compact) return;
+    const screenHeight = screen.availHeight;
+    const menu = this.shadowRoot.querySelector('.menu');
+    if (menu) {
+      const bounds = menu.getBoundingClientRect();
+      console.debug(bounds);
+      menu.style.height = screenHeight - bounds.top + 'px';
+    }
   }
 
   adjustToPageSize() {
@@ -42,7 +61,7 @@ export class HeaderComponent extends LitElement {
   }
 
   expandMenu() {
-
+    this.adjustMenuSize();
   }
 
   getPage() {
@@ -51,10 +70,15 @@ export class HeaderComponent extends LitElement {
 
   handleMenuButtonClick() {
     this.menuExpanded = !this.menuExpanded;
+    this.adjustMenuSize();
   }
 
   handlePageResize(evt) {
     this.adjustToPageSize();
+  }
+
+  handleWindowResize(evt) {
+    this.compact ? this.adjustMenuSize() : this.adjustDropdownPositions();
   }
 
   renderBlockI() {
@@ -115,13 +139,10 @@ export class HeaderComponent extends LitElement {
     return html`
       <div class="menu-toggle">
         <button @click=${this.handleMenuButtonClick.bind(this)} aria-controls="menu" aria-expanded="${expanded}">
-        <span class="icon" aria-hidden="true">
-          <svg viewBox="0 0 20 19" xmlns="http://www.w3.org/2000/svg">
-            <path d="M18.0952 7.0769H1.90476C0.852791 7.0769 0 7.97233 0 9.0769C0 10.1815 0.852791 11.0769 1.90476 11.0769H18.0952C19.1472 11.0769 20 10.1815 20 9.0769C20 7.97233 19.1472 7.0769 18.0952 7.0769Z"/>
-            <path d="M18.0952 14.0769H1.90476C0.852791 14.0769 0 14.9723 0 16.0769C0 17.1815 0.852791 18.0769 1.90476 18.0769H18.0952C19.1472 18.0769 20 17.1815 20 16.0769C20 14.9723 19.1472 14.0769 18.0952 14.0769Z"/>
-            <path d="M18.0952 0.0769043H1.90476C0.852791 0.0769043 0 0.972335 0 2.0769C0 3.18147 0.852791 4.0769 1.90476 4.0769H18.0952C19.1472 4.0769 20 3.18147 20 2.0769C20 0.972335 19.1472 0.0769043 18.0952 0.0769043Z"/>
-          </svg>
-        </span>
+          <span class="icons" aria-hidden="true">
+            <img class="menu-icon icon" src="https://cdn.brand.illinois.edu/icons/solid/white/menu.svg" alt="">
+            <img class="exit-icon icon" src="https://cdn.brand.illinois.edu/icons/solid/white/exit.svg" alt="">
+          </span>
           <span class="label">Menu</span>
         </button>
       </div>`
@@ -150,8 +171,9 @@ export class HeaderComponent extends LitElement {
   }
 
   render() {
+    const menuExpanded = this.menuExpanded ? 'menu-expanded' : 'menu-collapsed';
     return html`
-      <div class="header">
+      <div class="header ${menuExpanded}">
         <div class="top stripe">
           ${this.renderTopStripe()}
         </div>

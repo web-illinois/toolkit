@@ -15,7 +15,7 @@
     --il-section-color--orange: var(--il-orange);
     background: var(--il-section-background);
   }
-  il-section:nth-of-type(even) {
+  il-section:nth-of-type(even), il-section.il-alt {
     --il-section-color--orange: var(--il-altgeld);
     background: var(--il-section-alt-background);
     container-type: inline-size;

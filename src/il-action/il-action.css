@@ -1,0 +1,32 @@
+il-action {
+  --il-action-background: var(--il-blue);
+  --il-action-border: var(--il-blue);
+  --il-action-color: white;
+  --il-action-hover-background: white;
+  --il-action-hover-border: var(--il-blue);
+  --il-action-hover-color: var(--il-blue);
+}
+il-action[type="secondary"] {
+  --il-action-hover-background: var(--il-blue);
+  --il-action-border: var(--il-blue);
+  --il-action-hover-color: white;
+  --il-action-background: white;
+  --il-action-hover-border: var(--il-blue);
+  --il-action-color: var(--il-blue);
+}
+il-featured-section.il-blue il-action {
+  --il-action-background: var(--il-orange);
+  --il-action-border: var(--il-orange);
+  --il-action-color: white;
+  --il-action-hover-background: white;
+  --il-action-hover-border: var(--il-orange);
+  --il-action-hover-color: var(--il-orange);
+}
+il-featured-section.il-blue il-action[type="secondary"] {
+  --il-action-hover-background: var(--il-orange);
+  --il-action-border: var(--il-orange);
+  --il-action-hover-color: white;
+  --il-action-background: white;
+  --il-action-hover-border: var(--il-orange);
+  --il-action-color: var(--il-orange);
+}

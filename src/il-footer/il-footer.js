@@ -1,7 +1,6 @@
 import {LitElement, html} from "lit";
 import styles from './il-footer.styles';
 import "./il-footer.css";
-import "../toolkit.css";
 
 export class FooterComponent extends LitElement {
   static properties = {
@@ -58,50 +57,43 @@ export class FooterComponent extends LitElement {
 
   renderCampusFooter() {
     return html`
-      <div class="full-width campus container">
-        <div class="fixed-width campus container">
-          ${this.renderCampusLogo()}
-          ${this.renderCampusLinks()}
-        </div>
+      <div class="campus section">
+        ${this.renderCampusLogo()}
+        ${this.renderCampusLinks()}
       </div>`;
   }
 
   renderLegalFooter() {
     return html`
-      <div class="full-width legal container">
-        <div class="fixed-width legal container">
-          <div class="cookies-button-and-links">
-            <slot name="cookies-button"></slot>
-            <a href="https://www.vpaa.uillinois.edu/resources/web_privacy">Privacy</a></li>
-            <a href="https://illinois.edu/resources/website/copyright.html">Copyright</a></li>
-            <a href=https://illinois.edu/resources/website/accessibility.html">Accessibility</a></li>
-          </div>
+      <div class="legal section">
+        <div class="cookies-button-and-links">
+          <slot name="cookies-button"></slot>
+          <a href="https://www.vpaa.uillinois.edu/resources/web_privacy">Privacy</a></li>
+          <a href="https://illinois.edu/resources/website/copyright.html">Copyright</a></li>
+          <a href=https://illinois.edu/resources/website/accessibility.html">Accessibility</a></li>
         </div>
       </div>`;
   }
 
   renderSiteFooter() {
     return html`
-      <div class="full-width site container">
-        <div class="fixed-width site container">
-          <div class="site-name">
-            <slot name="site-name"></slot>
-          </div>
-          <div class="social-links">
-            <slot name="social"></slot>
-          </div>
-          <div class="contact">
-            <slot name="contact"></slot>
+      <div class="site section">
+        <div class="site-name">
+          <slot name="site-name"></slot>
+        </div>
+        <div class="actions">
+          <slot name="actions"></slot>
+        </div>
+        <div class="address-and-primary-unit">
+          <div class="address">
+            <slot name="address"></slot>
           </div>
           <div class="primary-unit">
             <slot name="primary-unit"></slot>
           </div>
-          <div class="buttons">
-            <slot name="buttons"></slot>
-          </div>
-          <div class="content">
-            <slot></slot>
-          </div>
+        </div>
+        <div class="content">
+          <slot></slot>
         </div>
       </div>`;
   }
