@@ -1,4 +1,6 @@
 import './toolkit.css';
+import './il-accordion/il-accordion';
+import './il-accordion-section/il-accordion-section';
 import './il-action/il-action';
 import './il-card-with-image/il-card-with-image';
 import './il-call-to-action/il-call-to-action';
