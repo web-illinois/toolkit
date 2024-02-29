@@ -13,6 +13,7 @@ import './il-main-nav/il-main-nav';
 import './il-nav-section/il-nav-section';
 import './il-nav-section-with-link/il-nav-section-with-link';
 import './il-page/il-page';
+import './il-panels/il-panels';
 import './il-section/il-section';
 import './il-stats/il-stats';
 import './il-stat/il-stat';

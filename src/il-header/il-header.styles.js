@@ -105,6 +105,7 @@ export default css`
     text-decoration: none;
     letter-spacing: .056875rem;
     font: 700 .875rem/3.1875rem var(--il-font-montserrat);
+    -webkit-font-smoothing: antialiased;
   }
   .featured-links {
     padding: 1.125rem 0 0 1.875rem;

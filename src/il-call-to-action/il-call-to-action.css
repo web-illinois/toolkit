@@ -27,3 +27,54 @@
     color: white;
   }
 }
+
+@layer components {
+  il-call-to-action il-action {
+    --il-action-background: transparent;
+    --il-action-border: var(--il-blue);
+    --il-action-color: var(--il-blue);
+    --il-action-hover-background: var(--il-blue);
+    --il-action-hover-border: var(--il-blue);
+    --il-action-hover-color: white;
+  }
+  il-call-to-action il-action[type="secondary"] {
+    --il-action-background: transparent;
+    --il-action-border: var(--il-orange);
+    --il-action-color: var(--il-orange);
+    --il-action-hover-background: var(--il-orange);
+    --il-action-hover-border: var(--il-orange);
+    --il-action-hover-color: white;
+  }
+  il-call-to-action.il-blue il-action {
+    --il-action-background: transparent;
+    --il-action-border: var(--il-orange);
+    --il-action-color: var(--il-orange);
+    --il-action-hover-background: var(--il-orange);
+    --il-action-hover-border: var(--il-orange);
+    --il-action-hover-color: white;
+  }
+  il-call-to-action.il-blue il-action[type="secondary"] {
+    --il-action-background: transparent;
+    --il-action-border: white;
+    --il-action-color: white;
+    --il-action-hover-background: white;
+    --il-action-hover-border: white;
+    --il-action-hover-color: var(--il-blue);
+  }
+  il-call-to-action.il-orange il-action {
+    --il-action-background: transparent;
+    --il-action-border: var(--il-blue);
+    --il-action-color: var(--il-blue);
+    --il-action-hover-background: var(--il-blue);
+    --il-action-hover-border: var(--il-blue);
+    --il-action-hover-color: white;
+  }
+  il-call-to-action.il-orange il-action[type="secondary"] {
+    --il-action-background: transparent;
+    --il-action-border: white;
+    --il-action-color: white;
+    --il-action-hover-background: white;
+    --il-action-hover-border: white;
+    --il-action-hover-color: var(--il-orange);
+  }
+}

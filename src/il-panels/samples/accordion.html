@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en" class="il-toolkit">
+<title>Accordion</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="shortcut icon" href="https://cdn.brand.illinois.edu/favicon.ico">
+<script src="../../toolkit.js" type="module"></script>
+
+<il-page>
+  <il-header slot="header">
+
+    <a slot="primary-unit" href="/">Illinois Web Toolkit</a>
+    <a slot="site-name" href="/">Example Website</a>
+
+    <nav slot="eyebrow" aria-label="Utility">
+      <ul>
+        <li><a href="/apply">Apply</a></li>
+        <li><a href="/visit">Visit</a></li>
+        <li><a href="/give">Give</a></li>
+      </ul>
+    </nav>
+
+    <form slot="search" method="get" action="/search" role="search">
+      <input type="search" name="search" aria-labelledby="search-button">
+      <button id="search-button" type="submit">Search</button>
+    </form>
+
+    <il-main-nav slot="navigation">
+      <ul>
+        <li>
+          <il-nav-section-with-link>
+            <a slot="link" href="#">Galena</a>
+            <ul>
+              <li><a href="#">Copper</a></li>
+              <li>
+                <il-nav-section-with-link>
+                  <a slot="link" href="#">Marcasite</a>
+                  <ul>
+                    <li><a href="#">Melanterite</a></li>
+                    <li>
+                      <il-nav-section-with-link>
+                        <a slot="link" href="#">Calcite</a>
+                        <ul>
+                          <li><a href="#">Barite</a></li>
+                          <li>
+                            <il-nav-section-with-link>
+                              <a slot="link" href="#">Cerussite</a>
+                              <ul>
+                                <li><a href="#">Siderite</a></li>
+                                <li>
+                                  <il-nav-section-with-link>
+                                    <a slot="link" href="#">Smithsonite</a>
+                                    <ul>
+                                      <li><a href="#">Amphibole</a></li>
+                                      <li><a href="#">Pyroxene</a></li>
+                                      <li><a href="#">Feldspar</a></li>
+                                    </ul>
+                                  </il-nav-section-with-link>
+                                </li>
+                                <li><a href="#">Sphalerite</a></li>
+                                <li><a href="#">Fluorite</a></li>
+                              </ul>
+                            </il-nav-section-with-link>
+                          </li>
+                          <li><a href="#">Witherite</a></li>
+                          <li><a href="#">Dolomite</a></li>
+                        </ul>
+                      </il-nav-section-with-link>
+                    </li>
+                    <li><a href="#">Muscovite</a></li>
+                    <li><a href="#">Biotite</a></li>
+                  </ul>
+                </il-nav-section-with-link>
+              </li>
+              <li><a href="#">Limonite</a></li>
+              <li><a href="#">Pyrite</a></li>
+            </ul>
+          </il-nav-section-with-link>
+        </li>
+        <li>
+          <il-nav-section-with-link>
+            <a slot="link" href="#">Chalcedony</a>
+            <ul>
+              <li><a href="#">Quartz</a></li>
+              <li>
+                <il-nav-section-with-link>
+                  <a slot="link" href="#">Garnet</a>
+                  <ul>
+                    <li><a href="#">Gneiss</a></li>
+                    <li>
+                      <il-nav-section-with-link>
+                        <a slot="link" href="#">Gabbro</a>
+                        <ul>
+                          <li><a href="#">Peridotite</a></li>
+                          <li><a href="#">Syenite</a></li>
+                          <li><a href="#">Porphyry</a></li>
+                        </ul>
+                      </il-nav-section-with-link>
+                    </li>
+                    <li><a href="#">Schist</a></li>
+                    <li><a href="#">Granite</a></li>
+                  </ul>
+                </il-nav-section-with-link>
+              </li>
+              <li><a href="#">Jasper</a></li>
+              <li><a href="#">Agate</a></li>
+            </ul>
+          </il-nav-section-with-link>
+        </li>
+        <li>
+          <il-nav-section-with-link>
+            <a slot="link" href="#">Quartzite</a>
+            <ul>
+              <li><a href="#">Conglomerate</a></li>
+              <li>
+                <il-nav-section-with-link>
+                  <a slot="link" href="#">Sand</a>
+                  <ul>
+                    <li><a href="#">Sandstone</a></li>
+                    <li>
+                      <il-nav-section-with-link>
+                        <a slot="link" href="#">Basalt</a>
+                        <ul>
+                          <li><a href="#">Quartzite</a></li>
+                          <li><a href="#">Clay</a></li>
+                          <li><a href="#">Silt</a></li>
+                        </ul>
+                      </il-nav-section-with-link>
+                    </li>
+                    <li><a href="#">Chert</a></li>
+                    <li><a href="#">Felsite</a></li>
+                  </ul>
+                </il-nav-section-with-link>
+              </li>
+              <li><a href="#">Breccia</a></li>
+              <li><a href="#">Gravel</a></li>
+            </ul>
+          </il-nav-section-with-link>
+        </li>
+        <li>
+          <il-nav-section-with-link>
+            <a slot="link" href="#">Siltstone</a>
+            <ul>
+              <li><a href="#">Shale</a></li>
+              <li>
+                <il-nav-section-with-link>
+                  <a slot="link" href="#">Tripoli</a>
+                  <ul>
+                    <li><a href="#">Peat</a></li>
+                    <li><a href="#">Muck</a></li>
+                    <li><a href="#">Coal</a></li>
+                  </ul>
+                </il-nav-section-with-link>
+              </li>
+              <li><a href="#">Mudstone</a></li>
+              <li><a href="#">Slate</a></li>
+            </ul>
+          </il-nav-section-with-link>
+        </li>
+      </ul>
+    </il-main-nav>
+  </il-header>
+
+  <il-section>
+
+    <h1>Accordion</h1>
+
+    <p>Two keys, one for minerals and one for rocks, briefly present
+      clues that may aid the collector in identifying rocks and minerals found
+      in Illinois. In outline form, the keys are a guide to some of the easily
+      observable properties that various rocks and minerals display.</p>
+
+    <il-panels class="il-accordion">
+      <div id="granite-label" aria-controls="granite">
+        <h3>Granite</h3>
+      </div>
+      <div id="granite" aria-labelledby="granite-label">
+        Granite is one of the most widespread intrusive (originating deep within the earth) igneous rocks. It consists chiefly of feldspar and quartz with small amounts of biotite, muscovite, or hornblende. Most granite is light colored, but it can be white, gray, yellow, pink, or deep red. The texture ranges from medium grained to coarse grained.
+
+        Granite pebbles or boulders are the most common igneous rocks found in glacial deposits in Illinois. They are not native to the state but were brought here by the great ice sheets or glaciers that advanced from southern Canada to cover much of northern United States during Pleistocene time.
+
+        Native granitic rock probably lies very deep beneath the entire state. It has been found in deep oil-test drillings along the western and northern margins of Illinois.
+      </div>
+      <div id="gabbro-label" aria-controls="gabbro">
+        <h3>Gabbro</h3>
+      </div>
+      <div id="gabbro" aria-labelledby="gabbro-label">
+        Gabbro is another intrusive igneous rock, but it is heavier and darker than granite. It is composed mainly of feldspar and dark iron-bearing minerals that give the rock a dark color. It is coarse grained and contains little or no quartz.
+
+        Mineral crystals of gabbro are especially tightly interlocked, making the rock very difficult to break. Weathered gabbro is a rusty color on the surface, because the iron in gabbro changes color just as a piece of metallic iron becomes coated with rust when left out of doors.
+
+        Like other igneous rocks found near the surface in Illinois, gabbro was carried into Illinois by the glaciers and deposited as glacial debris.
+      </div>
+      <div id="porphyry-label" aria-controls="porphyry">
+        <h3>Porphyry</h3>
+      </div>
+      <div id="porphyry" aria-labelledby="porphyry-label">
+        Porphyry is an igneous rock identified by its texture rather than its mineral content, which is variable. Distinct crystals (phenocrysts) of minerals are embedded in a matrix of fine-grained rock. The phenocrysts formed before the main mass of the rock hardened.
+
+        Any igneous rock may have a porphyritic variety, such as granite porphyry and rhyolite porphyry, although porphyries are most likely to form in association with fine-grained igneous rocks.
+
+        Porphyry is found in Illinois only in glacial drift.
+      </div>
+      <div id="peridotite-label" aria-controls="peridotite">
+        <h3>Peridotite</h3>
+      </div>
+      <div id="peridotite" aria-labelledby="peridotite-label">
+        Peridotite is the only igneous rock native to Illinois that crops out at the surface. It is found as dikes (irregular veins) or sills (thin sheets) that were formed when molten rock from deeper in the earth intruded into cracks and fissures in the bedrock of southeastern Illinois (Hardin, Pope, Gallatin, and Saline Counties). Peridotite pebbles and boulders also may be found in the glacial drift.
+
+        Peridotite ranges from very fine grained to medium grained and has an even texture. It is dark gray to greenish gray, depending on the minerals present. In general it is composed of olivine, hornblende, pyroxene, and mica, with little or no feldspar or quartz.
+      </div>
+    </il-panels>
+
+  </il-section>
+
+  <il-footer slot="footer">
+
+    <p slot="primary-unit"><a href="/">Illinois Web Toolkit</a></p>
+    <p slot="site-name"><a href="/">Example Website</a></p>
+
+    <address slot="address">
+      <nav aria-label="Social media" class="il-social">
+        <ul>
+          <li><a data-service="twitter" href="http://example.com/">Twitter</a></li>
+          <li><a data-service="youtube" href="http://example.com/">YouTube</a></li>
+          <li><a data-service="facebook" href="http://example.com/">Facebook</a></li>
+          <li><a data-service="instagram" href="http://example.com/">Instagram</a></li>
+          <li><a data-service="linkedin" href="http://example.com/">LinkedIn</a></li>
+          <li><a data-service="pinterest" href="http://example.com/">Pinterest</a></li>
+          <li><a data-service="snapchat" href="http://example.com/">Snapchat</a></li>
+          <li><a data-service="weibo" href="http://example.com/">Weibo</a></li>
+          <li><a data-service="whatsapp" href="http://example.com/">WhatsApp</a></li>
+          <li><a data-service="x" href="http://example.com/">X</a></li>
+        </ul>
+      </nav>
+      <p>5678 West Example Street<br>
+        MC-0000<br>
+        Champaign, IL 61820</p>
+      <a href="mailto:address@example.com">address@example.com</a>
+      <a href="tel:+12175551234">(217) 555-1234</a>
+    </address>
+
+    <div slot="actions">
+      <il-action href="/give">Give</il-action>
+      <il-action href="/apply">Apply</il-action>
+    </div>
+
+  </il-footer>
+</il-page>

@@ -1,0 +1,54 @@
+@layer base {
+
+}
+@layer components {
+  il-panels {
+    display: block;
+    position: relative;
+  }
+  il-panels[data-il-panels-view="accordion"] {
+    div[data-il-role="heading"] {
+      display: block;
+      background-color: var(--il-cloud-1);
+      border-left: 4px solid var(--il-orange);
+      padding: .5em 1em;
+
+      h2, h3, h4, h5, h6 {
+        all: initial;
+        font: 700 1.25em var(--il-font-sans);
+      }
+    }
+    div[data-il-role="panel"] {
+      display: none;
+      padding: 1em 1em 1em calc(1em + 4px);
+    }
+    div[data-il-role="heading"][aria-expanded="true"] + div[data-il-role="panel"] {
+      display: block;
+    }
+  }
+  il-panels[data-il-panels-view="tabs"] {
+    div[data-il-construct="tabs-headers"] {
+      display: flex;
+      flex-direction: row;
+      gap: .5em;
+    }
+    div[data-il-role="heading"] {
+      display: block;
+      background-color: var(--il-cloud-1);
+      border-top: 4px solid var(--il-orange);
+      padding: .5em 1em;
+
+      h2, h3, h4, h5, h6 {
+        all: initial;
+        font: 700 1.25em var(--il-font-sans);
+      }
+    }
+    div[data-il-role="panel"] {
+      display: none;
+      padding: 1em 1em 1em calc(1em + 4px);
+    }
+    div[data-il-role="heading"][aria-expanded="true"] + div[data-il-role="panel"] {
+      display: block;
+    }
+  }
+}

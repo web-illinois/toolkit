@@ -46,11 +46,9 @@ export class HeaderComponent extends LitElement {
   adjustMenuSize() {
     if (!this.compact) return;
     const screenHeight = window.innerHeight;
-    console.debug('screen height is ' + screenHeight);
     const menu = this.shadowRoot.querySelector('.menu');
     if (menu) {
       const bounds = menu.getBoundingClientRect();
-      console.debug(bounds);
       menu.style.height = screenHeight - bounds.top + 'px';
     }
   }
