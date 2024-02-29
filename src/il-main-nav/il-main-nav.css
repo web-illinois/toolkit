@@ -1,3 +1,9 @@
+@layer base {
+  :root {
+
+  }
+}
+
 @layer components {
 
   il-header {
@@ -14,8 +20,8 @@
       background: var(--il-nav-item-background);
       color: var(--il-nav-item-color);
       display: block;
-      font-weight: bold;
-      font-size: max(14pt, 1rem);
+      font-weight: 600;
+      font-size: 1rem;
       font-family: var(--il-font-sans);
       padding-left: var(--il-nav-item-padding-left);
       padding-right: var(--il-nav-item-padding-right);
@@ -45,6 +51,7 @@
     --il-nav-section-items-width: 20rem;
     --il-nav-section-background: var(--il-cloud-1);
     --il-nav-item-background: var(--il-cloud-1);
+    --il-nav-item-border-color: white;
     --il-nav-item-color: var(--il-blue);
     --il-nav-section-items-left: 0;
     --il-nav-section-items-top: 100%;
@@ -95,7 +102,7 @@
     il-nav-section-with-link[data-current="true"] {
       --il-nav-item-background: var(--il-orange);
       --il-nav-item-color: var(--il-blue);
-      --il-nav-item-border-bottom-color: white;
+      --il-nav-item-border-bottom-color: var(--il-harvest);
     }
   }
 
@@ -103,6 +110,7 @@
     --il-nav-section-background: var(--il-cloud-1);
     --il-nav-item-background: var(--il-cloud-1);
     --il-nav-item-color: var(--il-blue);
+    --il-nav-item-border-bottom-color: white;
     --il-nav-item-padding-left: 1rem;
     --il-nav-item-padding-right: 1rem;
     --il-nav-item-padding-top: .5rem;
@@ -114,13 +122,6 @@
     --il-nav-section-items-position: relative;
     --il-nav-section-items-left: 0;
     --il-nav-section-items-width: auto;
-
-    > ul {
-      background-color: white;
-    }
-    li {
-      margin-top: 2px;
-    }
 
     il-nav-section[data-level="2"],
     il-nav-section[data-level="1"] a,
@@ -151,6 +152,18 @@
     il-nav-section-with-link[data-level="5"] li a,
     il-nav-section-with-link[data-level="6"] > a[slot="link"] {
       --il-nav-item-padding-left: 8.25rem;
+    }
+
+    il-nav-section-with-link[data-expanded="true"] {
+      --il-nav-item-background: var(--il-blue);
+      --il-nav-item-color: white;
+      --il-nav-item-border-bottom-color: var(--il-industrial-blue);
+    }
+
+    il-nav-section-with-link[data-current="true"] {
+      --il-nav-item-background: var(--il-orange);
+      --il-nav-item-color: white;
+      --il-nav-item-border-bottom-color: var(--il-harvest);
     }
   }
 

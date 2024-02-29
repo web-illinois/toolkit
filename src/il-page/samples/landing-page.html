@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" class="il-toolkit">
-<title>Sample header</title>
+<title>Rocks and Minerals of Illinois</title>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="shortcut icon" href="https://cdn.brand.illinois.edu/favicon.ico">
 <script src="../../toolkit.js" type="module"></script>
 
@@ -10,7 +9,7 @@
   <il-header slot="header">
 
     <a slot="primary-unit" href="/">Illinois Web Toolkit</a>
-    <a slot="site-name" href="/">Sample Pages</a>
+    <a slot="site-name" href="/">Example Website</a>
 
     <nav slot="eyebrow" aria-label="Utility">
       <ul>
@@ -161,6 +160,98 @@
     </il-main-nav>
   </il-header>
 
-  <h1>Sample header</h1>
+  <il-hero slot="hero" class="il-blue il-ascend">
+    <h1>Rocks and Minerals of Illinois</h1>
+  </il-hero>
 
+  <il-section>
+    <p class="il-lede">Illinois has so long been known as the Prairie State that
+      it seems a most unlikely place in which to
+      collect rock and mineral specimens. But Illinois has a surprising wealth of rock and mineral resources,
+      not only to be collected as interesting specimens but
+      to be put to practical and profitable use.</p>
+
+    <p>The rich prairies that gave the state its nickname are themselves
+      derived from ancient rocks, worn and changed by millions
+      of years of action by weather, water, wind, plants, and animals.
+      Unmeasured depths of rock underlie the prairies, hills, and valleys,
+      and in some parts of the state are exposed in outcrops,
+      canyons, and river valleys. Boulders and gravel brought in by
+      the glaciers thousands of years ago are strewn over many parts
+      of the state.</p>
+  </il-section>
+
+    <il-stats role="list" class="il-feature il-orange">
+      <il-stat role="listitem">
+        Coal is mined from depths greater than <em>800ft.</em>
+      </il-stat>
+      <il-stat role="listitem">
+        Minable coal beds underlie about <em>66%</em> of the state
+      </il-stat>
+      <il-stat role="listitem">
+        <em>20+</em> different coal beds have been mined in Illinois
+      </il-stat>
+      <il-stat role="listitem">
+        Quartz makes up about <em>12%</em> of the earth’s crust
+      </il-stat>
+    </il-stats>
+
+  <il-featured-section class="il-blue il-inset">
+    <img slot="background" src="assets/levi-meir-clancy-oG_qUVRE9qo-unsplash.jpg" alt="Limestone">
+    <il-card-with-image class="il-blue">
+      <img slot="image" src="assets/dylan-mcleod-4X5ySjDNLPg-unsplash.jpg" alt="Limestone">
+      <h2>Basalt</h2>
+      <p>Basalt is the most widely distributed volcanic rock. Pyroxene,
+        feldspar, magnetite (an iron ore), and in some instances
+        olivine, biotite, and hornblende, compose this rock. The dark
+        green, gray, or black color is due to the dark-colored minerals
+        that make up much of the rock. The minerals in basalt are fine
+        grained and are packed closely together. Phenocrysts of olivine,
+        pyroxene, and hornblende may be present. Basalt is easily identified
+        by its color and fine-grained texture.</p>
+      <p>The glaciers brought basalt into Illinois along with other
+        igneous rocks.</p>
+    </il-card-with-image>
+  </il-featured-section>
+
+  <il-call-to-action icon="training" class="il-blue il-feature">
+    <h2>Want to learn more?</h2>
+    <p>Sign up for our upcoming workshop or browse our library of online training videos.</p>
+    <il-action type="primary" href="workshop.html">Attend the workshop</il-action>
+    <il-action type="secondary" href="videos.html">Browse the training videos</il-action>
+  </il-call-to-action>
+
+  <il-footer slot="footer">
+
+    <p slot="primary-unit"><a href="/">Illinois Web Toolkit</a></p>
+    <p slot="site-name"><a href="/">Example Website</a></p>
+
+    <address slot="address">
+      <nav aria-label="Social media" class="il-social">
+        <ul>
+          <li><a data-service="twitter" href="http://example.com/">Twitter</a></li>
+          <li><a data-service="youtube" href="http://example.com/">YouTube</a></li>
+          <li><a data-service="facebook" href="http://example.com/">Facebook</a></li>
+          <li><a data-service="instagram" href="http://example.com/">Instagram</a></li>
+          <li><a data-service="linkedin" href="http://example.com/">LinkedIn</a></li>
+          <li><a data-service="pinterest" href="http://example.com/">Pinterest</a></li>
+          <li><a data-service="snapchat" href="http://example.com/">Snapchat</a></li>
+          <li><a data-service="weibo" href="http://example.com/">Weibo</a></li>
+          <li><a data-service="whatsapp" href="http://example.com/">WhatsApp</a></li>
+          <li><a data-service="x" href="http://example.com/">X</a></li>
+        </ul>
+      </nav>
+      <p>5678 West Example Street<br>
+        MC-0000<br>
+        Champaign, IL 61820</p>
+      <a href="mailto:address@example.com">address@example.com</a>
+      <a href="tel:+12175551234">(217) 555-1234</a>
+    </address>
+
+    <div slot="actions">
+      <il-action href="/give">Give</il-action>
+      <il-action href="/apply">Apply</il-action>
+    </div>
+
+  </il-footer>
 </il-page>

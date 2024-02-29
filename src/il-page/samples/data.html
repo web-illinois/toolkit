@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en" class="il-toolkit">
+<title>Rocks and Minerals of Illinois</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="shortcut icon" href="https://cdn.brand.illinois.edu/favicon.ico">
+<script src="../../toolkit.js" type="module"></script>
+
+<il-page>
+  <il-header slot="header">
+
+    <a slot="primary-unit" href="/">Illinois Web Toolkit</a>
+    <a slot="site-name" href="/">Example Website</a>
+
+    <nav slot="eyebrow" aria-label="Utility">
+      <ul>
+        <li><a href="/apply">Apply</a></li>
+        <li><a href="/visit">Visit</a></li>
+        <li><a href="/give">Give</a></li>
+      </ul>
+    </nav>
+
+    <form slot="search" method="get" action="/search" role="search">
+      <input type="search" name="search" aria-labelledby="search-button">
+      <button id="search-button" type="submit">Search</button>
+    </form>
+
+    <il-main-nav slot="navigation">
+      <ul>
+        <li>
+          <il-nav-section-with-link>
+            <a slot="link" href="#">Galena</a>
+            <ul>
+              <li><a href="#">Copper</a></li>
+              <li>
+                <il-nav-section-with-link>
+                  <a slot="link" href="#">Marcasite</a>
+                  <ul>
+                    <li><a href="#">Melanterite</a></li>
+                    <li>
+                      <il-nav-section-with-link>
+                        <a slot="link" href="#">Calcite</a>
+                        <ul>
+                          <li><a href="#">Barite</a></li>
+                          <li>
+                            <il-nav-section-with-link>
+                              <a slot="link" href="#">Cerussite</a>
+                              <ul>
+                                <li><a href="#">Siderite</a></li>
+                                <li>
+                                  <il-nav-section-with-link>
+                                    <a slot="link" href="#">Smithsonite</a>
+                                    <ul>
+                                      <li><a href="#">Amphibole</a></li>
+                                      <li><a href="#">Pyroxene</a></li>
+                                      <li><a href="#">Feldspar</a></li>
+                                    </ul>
+                                  </il-nav-section-with-link>
+                                </li>
+                                <li><a href="#">Sphalerite</a></li>
+                                <li><a href="#">Fluorite</a></li>
+                              </ul>
+                            </il-nav-section-with-link>
+                          </li>
+                          <li><a href="#">Witherite</a></li>
+                          <li><a href="#">Dolomite</a></li>
+                        </ul>
+                      </il-nav-section-with-link>
+                    </li>
+                    <li><a href="#">Muscovite</a></li>
+                    <li><a href="#">Biotite</a></li>
+                  </ul>
+                </il-nav-section-with-link>
+              </li>
+              <li><a href="#">Limonite</a></li>
+              <li><a href="#">Pyrite</a></li>
+            </ul>
+          </il-nav-section-with-link>
+        </li>
+        <li>
+          <il-nav-section-with-link>
+            <a slot="link" href="#">Chalcedony</a>
+            <ul>
+              <li><a href="#">Quartz</a></li>
+              <li>
+                <il-nav-section-with-link>
+                  <a slot="link" href="#">Garnet</a>
+                  <ul>
+                    <li><a href="#">Gneiss</a></li>
+                    <li>
+                      <il-nav-section-with-link>
+                        <a slot="link" href="#">Gabbro</a>
+                        <ul>
+                          <li><a href="#">Peridotite</a></li>
+                          <li><a href="#">Syenite</a></li>
+                          <li><a href="#">Porphyry</a></li>
+                        </ul>
+                      </il-nav-section-with-link>
+                    </li>
+                    <li><a href="#">Schist</a></li>
+                    <li><a href="#">Granite</a></li>
+                  </ul>
+                </il-nav-section-with-link>
+              </li>
+              <li><a href="#">Jasper</a></li>
+              <li><a href="#">Agate</a></li>
+            </ul>
+          </il-nav-section-with-link>
+        </li>
+        <li>
+          <il-nav-section-with-link>
+            <a slot="link" href="#">Quartzite</a>
+            <ul>
+              <li><a href="#">Conglomerate</a></li>
+              <li>
+                <il-nav-section-with-link>
+                  <a slot="link" href="#">Sand</a>
+                  <ul>
+                    <li><a href="#">Sandstone</a></li>
+                    <li>
+                      <il-nav-section-with-link>
+                        <a slot="link" href="#">Basalt</a>
+                        <ul>
+                          <li><a href="#">Quartzite</a></li>
+                          <li><a href="#">Clay</a></li>
+                          <li><a href="#">Silt</a></li>
+                        </ul>
+                      </il-nav-section-with-link>
+                    </li>
+                    <li><a href="#">Chert</a></li>
+                    <li><a href="#">Felsite</a></li>
+                  </ul>
+                </il-nav-section-with-link>
+              </li>
+              <li><a href="#">Breccia</a></li>
+              <li><a href="#">Gravel</a></li>
+            </ul>
+          </il-nav-section-with-link>
+        </li>
+        <li>
+          <il-nav-section-with-link>
+            <a slot="link" href="#">Siltstone</a>
+            <ul>
+              <li><a href="#">Shale</a></li>
+              <li>
+                <il-nav-section-with-link>
+                  <a slot="link" href="#">Tripoli</a>
+                  <ul>
+                    <li><a href="#">Peat</a></li>
+                    <li><a href="#">Muck</a></li>
+                    <li><a href="#">Coal</a></li>
+                  </ul>
+                </il-nav-section-with-link>
+              </li>
+              <li><a href="#">Mudstone</a></li>
+              <li><a href="#">Slate</a></li>
+            </ul>
+          </il-nav-section-with-link>
+        </li>
+      </ul>
+    </il-main-nav>
+  </il-header>
+
+  <il-section>
+
+    <h1>Collecting rocks and minerals</h1>
+
+    <p>Two keys, one for minerals and one for rocks, briefly present
+      clues that may aid the collector in identifying rocks and minerals found
+      in Illinois. In outline form, the keys are a guide to some of the easily
+      observable properties that various rocks and minerals display.</p>
+
+    <h2>Equipment for collecting</h2>
+
+    <p>All specimens should be labeled with the following information: name of mineral or rock type, where found, collector’s name, and date. As your collection grows, you may want to set up a system of cataloging. List specimens and assign a number to each one. Place a small amount of white enamel on a corner of each specimen; when the enamel dries, number the sample with India ink; coat number with lacquer. Corresponding numbers should be entered on your list of specimens.</p>
+
+    <ol>
+      <li>Hammer (bricklayer’s) with one chisel or pick head.
+      <li>Cold chisel about 6 inches long with an edge about ½-inch wide.
+      <li>Dilute hydrochloric (muriatic) acid (10 percent solution) in a dropper bottle for testing the presence of carbonate minerals. Mark the bottle POISON. If acid is spilled on skin or clothing, wipe immediately and, if possible, rinse with water.
+      <li>Magnifying glass or hand lens—10 power is probably most useful.
+      <li>Hardness testers—penny, square of window glass, pocket knife, or nail.
+      <li>Streak plate—piece of unglazed white porcelain (such as the back of a tile) for testing the color of the streak of minerals.
+      <li>Notebook and pencil for keeping records of the locality and bed from which specimens are collected.
+      <li>Collecting bag—a musette bag, a knapsack, or similar bag of strong material.
+      <li>Heavy gloves and goggles to protect hands and eyes.
+      <li>Labels and wrappings. Field identification of specimens may be written on adhesive tape and attached to the specimen or on a slip of paper enclosed in the wrapping. Newspaper, brown paper, or paper bags can be used for wrapping specimens. Label the outside of the wrapped specimen too. Take only the best specimens home with you. Trim specimens to hand size (about 2 by 3 inches).
+    </ol>
+
+
+    <h2>Keys for identification of common rocks and minerals</h2>
+
+    <p>The rocks and minerals in the school set of “Typical Rocks and
+      Minerals of Illinois” are included, plus other relatively common ones
+      you might find in Illinois. Because of the great diversity of rocks and
+      minerals in this state, the keys are not conclusive. It is therefore suggested
+      you consult other more complete keys (such as that in Dana’s
+      <i>Manual of Mineralogy</i>) when identifying rocks and minerals that are either
+      from other states or are difficult to identify.</p>
+    <p>The minerals are arranged in two groups: 1) those with
+      a metallic luster, and 2) those with a nonmetallic luster. Each group is
+      arranged according to increasing hardness. Other characteristics such
+      as color, streak, cleavage, fracture, and composition are listed.</p>
+    <p>The rocks are arranged according to their reaction to
+      dilute hydrochloric acid applied to a scratched surface. (The acid reacts
+      more readily to powdered material produced by scratching the rock.) After
+      the reaction to acid has been determined, the texture and components
+      of the rock should be noted. Because rocks grade into one another, clear
+      distinctions are not always possible.</p>
+
+    <table>
+      <caption>Mineral identification key</caption>
+      <tr>
+        <th>Name</th>
+        <th>Color</th>
+        <th>Streak</th>
+        <th>Hardness</th>
+        <th>Remarks</th>
+      </tr>
+      <tr>
+        <td>Galena</td>
+        <td>lead gray</td>
+        <td>black</td>
+        <td>2.5</td>
+        <td>Very heavy; occurs as crystals, grains, or masses; easily identified by color and cleavage</td>
+      </tr>
+      <tr>
+        <td>Gypsum</td>
+        <td>usually white but may be almost any color</td>
+        <td></td>
+        <td>2</td>
+        <td>Commonly found in Illinois as twinned or needle-shaped crystals in weathered shales containing pyrite and calcium carbonate</td>
+      </tr>
+      <tr>
+        <td>Sphalerite</td>
+        <td>yellow, yellow-brown to almost black</td>
+        <td>light yellow to brown</td>
+        <td>3.5</td>
+        <td>In crystals, in fibrous or layered masses; associated with galena in northwestern Illinois, with fluorite and galena in southern Illinois</td>
+      </tr>
+      <tr>
+        <td>Quartz</td>
+        <td>colorless, white, or almost any color</td>
+        <td></td>
+        <td>7</td>
+        <td>Most abundant mineral; occurs in 6-sided crystals capped by pyramids, in grains or masses; principal mineral in sandstone, also abundant in igneous and metamorphic rocks; is a variety of silica</td>
+      </tr>
+    </table>
+
+  </il-section>
+
+  <il-call-to-action icon="training" class="il-blue il-feature">
+    <h2>Want to learn more?</h2>
+    <p>Sign up for our upcoming workshop or browse our library of online training videos.</p>
+    <il-action type="primary" href="workshop.html">Attend the workshop</il-action>
+    <il-action type="secondary" href="videos.html">Browse the training videos</il-action>
+  </il-call-to-action>
+
+  <il-footer slot="footer">
+
+    <p slot="primary-unit"><a href="/">Illinois Web Toolkit</a></p>
+    <p slot="site-name"><a href="/">Example Website</a></p>
+
+    <address slot="address">
+      <nav aria-label="Social media" class="il-social">
+        <ul>
+          <li><a data-service="twitter" href="http://example.com/">Twitter</a></li>
+          <li><a data-service="youtube" href="http://example.com/">YouTube</a></li>
+          <li><a data-service="facebook" href="http://example.com/">Facebook</a></li>
+          <li><a data-service="instagram" href="http://example.com/">Instagram</a></li>
+          <li><a data-service="linkedin" href="http://example.com/">LinkedIn</a></li>
+          <li><a data-service="pinterest" href="http://example.com/">Pinterest</a></li>
+          <li><a data-service="snapchat" href="http://example.com/">Snapchat</a></li>
+          <li><a data-service="weibo" href="http://example.com/">Weibo</a></li>
+          <li><a data-service="whatsapp" href="http://example.com/">WhatsApp</a></li>
+          <li><a data-service="x" href="http://example.com/">X</a></li>
+        </ul>
+      </nav>
+      <p>5678 West Example Street<br>
+        MC-0000<br>
+        Champaign, IL 61820</p>
+      <a href="mailto:address@example.com">address@example.com</a>
+      <a href="tel:+12175551234">(217) 555-1234</a>
+    </address>
+
+    <div slot="actions">
+      <il-action href="/give">Give</il-action>
+      <il-action href="/apply">Apply</il-action>
+    </div>
+
+  </il-footer>
+</il-page>

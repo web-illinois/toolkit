@@ -1,9 +1,14 @@
+@layer base {
+  :root {
+    --il-stat-background: none;
+    --il-stat-color: inherit;
+    --il-stat-em-color: inherit;
+  }
+}
 @layer components {
   il-stat {
     display: block;
     text-align: center;
-    background: var(--il-stat-background);
-    color: var(--il-stat-color);
     font-weight: 400;
     line-height: 1.35;
     padding: 2rem 0;
@@ -20,17 +25,18 @@
     font-weight: 800;
     font-family: var(--il-font-montserrat);
     text-align: center;
-    color: var(--il-section-color--orange);
+    color: var(--il-stat-em-color);
     vertical-align: middle;
   }
-  il-featured-section.il-blue il-stat {
+  il-stat.il-blue em {
+    background-color: var(--il-blue);
     color: white;
+    --il-stat-em-color: var(--il-orange);
   }
-  il-featured-section.il-blue il-stat em {
-    color: var(--il-orange);
-  }
+
+
   il-featured-section.il-orange il-stat em {
-    color: white;
+    --il-stat-em-color: white;
   }
 
   @container (max-width: 50rem) {

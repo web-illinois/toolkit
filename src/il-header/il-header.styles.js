@@ -26,6 +26,7 @@ export default css`
     flex-direction: row;
     justify-content: space-between;
     align-items: flex-start;
+    gap: 1rem;
   }
   .bottom.stripe {
     padding-bottom: 1rem;
@@ -34,6 +35,7 @@ export default css`
     justify-content: space-between;
     align-items: flex-end;
     border-bottom: 2px solid var(--il-cloud-1);
+    gap: 1rem;
   }
   .navigation.stripe {
     box-sizing: border-box;
@@ -114,6 +116,14 @@ export default css`
     justify-content: space-between;
     align-items: center;
   }
+  .primary-unit {
+    display: none;
+  }
+  @container (min-width: 30rem) {
+    .primary-unit {
+      display: block;
+    }
+  }
   
   .compact .branding {
     padding: 0 1.25rem;
@@ -128,11 +138,14 @@ export default css`
   
   .menu-toggle button {
     position: relative;
+    box-sizing: border-box;
+    width: 2.75rem;
+    height: 2.5rem;
+    overflow: hidden;
     background-color: var(--il-blue);
     color: white;
     border: 0;
     border-radius: 3px;
-    padding: .75rem .75rem .75rem 2.5rem;
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
@@ -171,9 +184,19 @@ export default css`
   .menu-toggle .label {
     display: block;
     color: white;
+    padding: 0 .5em 0 2em;
     font: 700 1.25rem/.85 var(--il-font-sans);
     text-transform: uppercase;
   }
+  @container (min-width: 30rem) {
+    .menu-toggle button {
+      width: auto;
+    }
+    .menu-toggle .label {
+      padding-left: 1.75em;
+    }
+  }
+  
   
   .menu {
     position: absolute;

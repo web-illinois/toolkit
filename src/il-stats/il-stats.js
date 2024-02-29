@@ -1,4 +1,5 @@
 import {LitElement, html, css} from "lit";
+import './il-stats.css';
 
 export class StatisticsComponent extends LitElement {
   static styles = css`

@@ -1,4 +1,5 @@
 import {LitElement, html, css} from "lit";
+import './il-stat.css';
 
 export class StatisticComponent extends LitElement {
 
@@ -10,6 +11,7 @@ export class StatisticComponent extends LitElement {
     }
     div {
       font-size: 1.25rem;
+      font-weight: 500;
     }
   @container (min-width: 50rem) {
     div {

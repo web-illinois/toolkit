@@ -24,7 +24,11 @@ export class HeaderComponent extends LitElement {
     super.connectedCallback();
     window.addEventListener('resize', this.handleWindowResize);
     this.getPage().addEventListener('resize', this.handlePageResize);
-    this.setAttribute('data-menu-expanded', this.menuExpanded ? 'true' : 'false');
+    if (this.hasAttribute('data-menu-expanded')) {
+      this.menuExpanded = this.getAttribute('data-menu-expanded') === 'true';
+    } else {
+      this.setAttribute('data-menu-expanded', this.menuExpanded ? 'true' : 'false');
+    }
     if (this.getAttribute('data-compact') === 'true') this.compact = true;
   }
 
@@ -41,7 +45,8 @@ export class HeaderComponent extends LitElement {
 
   adjustMenuSize() {
     if (!this.compact) return;
-    const screenHeight = screen.availHeight;
+    const screenHeight = window.innerHeight;
+    console.debug('screen height is ' + screenHeight);
     const menu = this.shadowRoot.querySelector('.menu');
     if (menu) {
       const bounds = menu.getBoundingClientRect();
@@ -83,7 +88,7 @@ export class HeaderComponent extends LitElement {
 
   renderBlockI() {
     return html`
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 55 79">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 55 79" aria-labelledby="wordmark">
         <path class="outline" d="M54.2 21.1V0H0v21.1h12v36.1H0v21.1h54.2V57.2h-12V21.1z" />
         <path class="fill" d="M42.1 18.1h9V3H3v15h9c1.7 0 3 1.3 3 3v36.1c0 1.7-1.3 3-3 3H3v15h48.1v-15h-9c-1.7 0-3-1.3-3-3v-36c0-1.7 1.4-3 3-3z" />
       </svg>`
@@ -94,7 +99,7 @@ export class HeaderComponent extends LitElement {
       <div class="branding">
         <a href="https://illinois.edu/">
           <span class="elements">
-            <span class="block-i" aria-labelledby="wordmark">
+            <span class="block-i">
               ${this.renderBlockI()}
             </span>
             <span class="wordmark" id="wordmark">
@@ -109,7 +114,7 @@ export class HeaderComponent extends LitElement {
   renderFeaturedLinks() {
     return html`
       <div class="featured-links">
-        <slot name="links"></slot>
+        <slot name="eyebrow"></slot>
       </div>`
   }
 
@@ -128,9 +133,9 @@ export class HeaderComponent extends LitElement {
   renderMenu() {
     return html`
       <div class="menu" id="menu">
+        ${this.renderFeaturedLinks()}
         ${this.renderSearch()}
         ${this.renderNavigation()}
-        ${this.renderFeaturedLinks()}
       </div>`
   }
 

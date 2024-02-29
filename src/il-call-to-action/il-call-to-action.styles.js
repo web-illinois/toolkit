@@ -1,6 +1,12 @@
 import {css} from "lit";
 
 export default css`
+  :host {
+    display: block;
+  }
+  .call-to-action {
+    position: relative;
+  }
   .call {
     position: relative;
     padding-left: 9.5rem;

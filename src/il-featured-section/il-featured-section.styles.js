@@ -5,11 +5,13 @@ export default css`
     display: block;
     position: relative;
     overflow: hidden;
-    margin-left: var(--il-page-offset-left, auto);
-    margin-right: var(--il-page-offset-right, auto);
   }
   section {
     display: relative;
+    padding-top: var(--il-featured-section-padding-top);
+    padding-bottom: var(--il-featured-section-padding-bottom);
+    padding-left: var(--il-featured-section-padding-left);
+    padding-right: var(--il-featured-section-padding-right);
   }
   .background {
     position: absolute;
@@ -33,7 +35,5 @@ export default css`
     position: relative;
     z-index: 1;
     overflow: hidden;
-    padding-top: var(--il-section-padding-top);
-    padding-bottom: var(--il-section-padding-bottom);
   }
 `

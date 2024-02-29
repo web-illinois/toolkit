@@ -1,36 +1,5 @@
 @layer components {
 
-  il-header[data-compact="true"] > nav[slot="links"] {
-    all: initial;
-
-    ul {
-      all: initial;
-      display: flex;
-      flex-direction: column;
-      gap: 2px;
-      background: white;
-    }
-    li {
-      all: initial;
-      display: block;
-    }
-    a {
-      all: initial;
-      display: block;
-      padding: var(--il-nav-item-padding);
-      background: var(--il-nav-item-background);
-      color: var(--il-nav-item-color);
-      font-size: 1rem;
-      font-weight: 400;
-      font-family: var(--il-font-sans);
-      cursor: pointer;
-    }
-    a:hover, a:focus {
-      background: var(--il-nav-item-focus-background);
-      color: var(--il-nav-item-focus-color);
-    }
-  }
-
 
   il-header {
     position: relative;
@@ -73,57 +42,70 @@
       }
     }
 
-    /*
-    *[slot="links"] {
+  }
+
+  /* EYEBROW */
+
+  il-header *[slot="eyebrow"] {
+    all: initial;
+
+    ul {
       all: initial;
-
-      ul {
-        all: initial;
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-      }
-
-      li {
-        all: initial;
-        display: block;
-        position: relative;
-        padding: 0 0 0 1rem;
-      }
-      li::before {
-        content: '';
-        position: absolute;
-        left: .5rem;
-        top: .125rem;
-        background-color: var(--il-altgeld);
-        height: 1rem;
-        width: .0625rem;
-        transform: rotate(20deg);
-      }
-      li:first-child {
-        padding-left: 0;
-      }
-      li:first-child::before {
-        display: none;
-      }
-
-      a {
-        all: initial;
-        display: inline-block;
-        padding: 0 .125rem;
-        color: var(--il-blue);
-        font: 700 1rem/1.375rem var(--il-font-sans);
-      }
-      a:hover, a:focus {
-        color: var(--il-altgeld);
-        text-decoration: underline;
-        cursor: pointer;
-      }
-      a:focus {
-        outline: 2px dotted;
-      }
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
     }
-    */
+    li {
+      all: initial;
+      display: block;
+      position: relative;
+      padding: 0 0 0 1rem;
+    }
+    li::before {
+      content: '';
+      position: absolute;
+      left: .5rem;
+      top: 20%;
+      background-color: var(--il-orange);
+      height: 60%;
+      width: 2px;
+    }
+    li:first-child {
+      padding-left: 0;
+    }
+    li:first-child::before {
+      display: none;
+    }
+
+    a {
+      all: initial;
+      display: inline-block;
+      padding: 0 .25rem;
+      color: var(--il-blue);
+      font: 700 1rem/1.375rem var(--il-font-sans);
+    }
+    a:hover, a:focus {
+      color: var(--il-altgeld);
+      text-decoration: underline;
+      cursor: pointer;
+    }
+    a:focus {
+      outline: 2px dotted;
+    }
+  }
+
+  il-header[data-compact="true"] > nav[slot="eyebrow"] {
+
+    ul {
+      justify-content: center;
+      align-items: center;
+    }
+    li:before {
+      background-color: white;
+    }
+    a {
+      padding: 1rem;
+    }
   }
 
   /* SEARCH */

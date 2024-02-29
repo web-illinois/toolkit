@@ -1,29 +1,29 @@
-il-call-to-action {
-  --il-call-to-action-icon-blue-display: block;
-  color: var(--il-blue);
+@layer components {
+  il-call-to-action {
+    --il-call-to-action-icon-blue-display: block;
+    color: var(--il-blue);
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+    padding-left: var(--il-page-padding-left);
+    padding-right: var(--il-page-padding-right);
 
-  h2 {
-    all: initial;
-    color: inherit;
-    display: block;
-    font: 700 2.5em var(--il-font-montserrat);
+    h2 {
+      all: initial;
+      color: inherit;
+      display: block;
+      font: 700 2.5em var(--il-font-montserrat);
+    }
+    p {
+      all: initial;
+      color: inherit;
+      display: block;
+      font: 400 1.5em var(--il-font-sans);
+    }
   }
-  p {
-    all: initial;
-    color: inherit;
-    display: block;
-    font: 400 1.5em var(--il-font-sans);
+  il-call-to-action.il-blue {
+    --il-call-to-action-icon-blue-display: none;
+    --il-call-to-action-icon-white-display: block;
+    background: var(--il-blue);
+    color: white;
   }
-}
-il-section il-call-to-action, il-featured-section il-call-to-action {
-  margin-top: -1rem;
-  color: inherit;
-}
-il-featured-section.il-blue il-call-to-action {
-  --il-call-to-action-icon-blue-display: none;
-  --il-call-to-action-icon-white-display: block;
-}
-il-featured-section.il-blue il-call-to-action {
-  --il-call-to-action-icon-blue-display: none;
-  --il-call-to-action-icon-white-display: block;
 }

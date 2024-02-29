@@ -16,9 +16,9 @@ export default css`
     color: var(--il-blue);
     border-top: .5rem solid var(--il-blue);
     display: grid;
-    grid-template-columns: 1fr 2fr;
-    grid-template-rows: auto auto;
-    grid-template-areas: "site-name actions" "address content";
+    grid-template-columns: var(--il-footer-site-grid-template-columns);
+    grid-auto-rows: var(--il-footer-site-grid-template-rows);
+    grid-template-areas: var(--il-footer-site-grid-template-areas);
     grid-gap: 1rem;
   }
   .site.section .site-name {
@@ -63,8 +63,8 @@ export default css`
     margin: 0;
     padding: 0;
     list-style: none;
-    column-count: 3;
-    column-gap: 1rem;
+    column-count: var(--il-footer-campus-column-count);
+    column-gap: 2rem;
   }
   .campus li {
     margin: 0;
@@ -90,7 +90,7 @@ export default css`
   }
   .legal a {
     display: block;
-    padding: .625rem .3125rem;
+    padding: .3125rem;
     color: white;
     font: 400 1rem/1 var(--il-font-sans);
     text-decoration: underline;
@@ -100,9 +100,9 @@ export default css`
   }
   .cookies-button-and-links {
     display: flex;
-    flex-direction: row;
+    flex-direction: var(--il-footer-legal-flex-direction);
     justify-content: flex-start;
-    align-items: center;
+    align-items: var(--il-footer-legal-align-items);
     gap: 1.875rem;
   }
 `

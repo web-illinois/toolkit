@@ -1,4 +1,5 @@
 import {LitElement, html} from "lit";
+import {SectionComponent} from "../il-section/il-section";
 import styles from "./il-featured-section.styles";
 import './il-featured-section.css';
 

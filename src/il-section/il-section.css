@@ -1,24 +1,31 @@
 @layer base {
+  :root {
+    --il-section-padding-top: 4rem;
+    --il-section-padding-bottom: 4rem;
+    --il-section-padding-left: var(--il-page-padding-left);
+    --il-section-padding-right: var(--il-page-padding-right);
+    --il-section-offset-top: -4rem;
+    --il-section-offset-bottom: -4rem;
+    --il-section-offset-left: var(--il-page-offset-left);
+    --il-section-offset-right: var(--il-page-offset-right);
+    --il-section-background: white;
+    --il-section-alt-background: var(--il-cloud-1);
+    --il-section-color--orange: var(--il-orange);
+  }
   il-section > *:first-child {
     margin-top: 0;
   }
 }
 @layer components {
-  :root {
-    --il-section-padding-top: 4rem;
-    --il-section-padding-bottom: 4rem;
-    --il-section-background: white;
-    --il-section-alt-background: var(--il-cloud-1);
-    --il-section-color--orange: var(--il-orange);
-  }
   il-section {
-    --il-section-color--orange: var(--il-orange);
+    padding-top: var(--il-section-padding-top);
+    padding-bottom: var(--il-section-padding-bottom);
+    padding-left: var(--il-section-padding-left);
+    padding-right: var(--il-section-padding-right);
     background: var(--il-section-background);
   }
-  il-section:nth-of-type(even), il-section.il-alt {
-    --il-section-color--orange: var(--il-altgeld);
+  il-section.il-alt {
     background: var(--il-section-alt-background);
-    container-type: inline-size;
   }
 }
 

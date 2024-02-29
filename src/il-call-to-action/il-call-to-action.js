@@ -3,6 +3,7 @@ import styles from './il-call-to-action.styles'
 import './il-call-to-action.css'
 
 export class CallToActionComponent extends LitElement {
+
   static properties = {
     icon: {type: String}
   }

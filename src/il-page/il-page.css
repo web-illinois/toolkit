@@ -1,31 +1,14 @@
-@layer components {
-  il-page {
+@layer base {
+  :root {
     --il-page-padding-left: max(1.875rem, calc(50cqw - 37.5rem));
     --il-page-padding-right: max(1.875rem, calc(50cqw - 37.5rem));
     --il-page-offset-left: min(-1.875rem, calc(37.5rem - 50cqw));
     --il-page-offset-right: min(-1.875rem, calc(37.5rem - 50cqw));
   }
-  il-page[data-columns="2"] {
-    --il-page-padding-left: 1.25rem;
-    --il-page-padding-right: 1.25rem;
-    --il-page-offset-left: 1.25rem;
-    --il-page-offset-right: 1.25rem;
-  }
-  il-page > il-section {
-    margin-top: 4rem;
-  }
-  il-page > il-section:first-child, il-page > *[slot="hero"] + il-section {
-    margin-top: -2rem;
-  }
-  il-page > il-section + il-section {
-    margin-top: 0;
-  }
-}
-
-@layer base {
   il-page {
     color: var(--il-storm-darker-2);
     container-type: inline-size;
+    font-size: 1.125rem;
 
     /* All sizes in this section are in em, so that text can scale contextually */
     /* Base size is 18px (1.125rem), as set in il-page#main */
@@ -33,8 +16,8 @@
     p {
       all: initial;
       display: block;
-      margin-top: 1.33em;
-      font: 400 1em/1.667 var(--il-font-sans);
+      margin-top: 1.5rem;
+      font: 400 1.125rem/1.667 var(--il-font-sans);
       color: inherit;
     }
     b, strong {
@@ -65,55 +48,45 @@
       color: var(--il-blue);
     }
 
-    h1 {
-      /* 64px/72px */
+    h1, h2, h3, h4, h5, h6 {
       all: initial;
       display: block;
       color: inherit;
-      font: 700 3.556em/1.125 var(--il-font-montserrat);
+      line-height: 1.2;
+      font-style: normal;
+      font-weight: 700;
+      font-family: var(--il-font-montserrat);
+    }
+    h1 {
+      font-size: 3rem;
     }
     h2 {
-      /* 35px/43px */
-      all: initial;
-      display: block;
-      margin-top: 2.28em;
-      color: inherit;
-      font: 700 1.944em/1.23 var(--il-font-montserrat);
+      font-size: 2.667rem;
+      margin-top: 4rem;
     }
     h2:first-child {
       margin-top: 0;
     }
     h3 {
-      /* 29px/35px */
-      all: initial;
-      display: block;
-      margin-top: 2.76em;
-      color: inherit;
-      font: 700 1.611em/1.201 var(--il-font-montserrat);
+      font-size: 2.333rem;
+      margin-top: 3.5rem;
     }
     h4 {
-      /* 25px/29px */
-      all: initial;
-      display: block;
-      margin-top: 3.2em;
-      color: inherit;
-      font: 700 1.389em/1.166 var(--il-font-montserrat);
+      font-size: 2rem;
+      margin-top: 3rem;
     }
     h5 {
-      /* 21px/28px */
-      all: initial;
-      display: block;
-      margin-top: 3.8em;
-      color: inherit;
-      font: 700 1.166em/1.333 var(--il-font-montserrat);
+      font-size: 1.667rem;
+      margin-top: 2.5rem;
     }
     h6 {
-      /* 18px/22px */
-      all: initial;
-      display: block;
-      margin-top: 4.44em;
+      font-size: 1.333rem;
+      margin-top: 2rem;
+    }
+
+    li {
+      font: 400 1.125rem/1.667 var(--il-font-sans);
       color: inherit;
-      font: 700 1em/1.222 var(--il-font-montserrat);
     }
 
     figure {
@@ -238,5 +211,11 @@
     il-cards + p {
       margin-top: 4.44em;
     }
+  }
+  il-page[data-columns="2"] {
+    --il-page-padding-left: 1.25rem;
+    --il-page-padding-right: 1.25rem;
+    --il-page-offset-left: 1.25rem;
+    --il-page-offset-right: 1.25rem;
   }
 }

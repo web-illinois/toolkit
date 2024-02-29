@@ -3,4 +3,22 @@
     display: block;
     max-width: 12rem;
   }
+  il-stats.il-feature {
+    margin-left: var(--il-page-offset-left);
+    margin-right: var(--il-page-offset-right);
+    padding-left: var(--il-page-padding-left);
+    padding-right: var(--il-page-padding-right);
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
+  il-stats.il-feature.il-blue {
+    background-color: var(--il-blue);
+    color: white;
+    --il-stat-em-color: var(--il-orange);
+  }
+  il-stats.il-feature.il-orange {
+    background-color: var(--il-orange);
+    color: var(--il-blue);
+    --il-stat-em-color: white;
+  }
 }
