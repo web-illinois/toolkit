@@ -1,13 +1,21 @@
 @import "https://cdn.brand.illinois.edu/colors.css";
 @import "https://cdn.brand.illinois.edu/fonts.css";
+@import "https://cdn.brand.illinois.edu/fonts/montserrat.css";
 
-@layer base, components;
+@layer brand, base, components;
 
-/* upcoming color changes */
-:root {
-  --il-storm-lighter-3: #C6C7C7;
-  --il-storm-lighter-4: #F4F4F4;
-  --il-storm-darker-2: #252525;
+@layer brand {
+  :root {
+    --il-orange: #FF5F05;
+    --il-blue: #13294B;
+    --il-storm: #707372;
+    --il-storm-lighter-1: #8d8f8e;
+    --il-storm-lighter-2: #a9abaa;
+    --il-storm-lighter-3: #c6c7c7;
+    --il-storm-lighter-4: #F4F4F4;
+    --il-storm-darker-1: #4a4c4b;
+    --il-storm-darker-2: #252525;
+  }
 }
 
 /* these will probably move to the brand cdn too */

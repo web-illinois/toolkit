@@ -1,25 +1,31 @@
 # Header
 
+The standard campus header should appear at the top of every page of a campus website. The [page component](../il-page/README.md) has a dedicated content slot for the header.
+
 The header contains five content slots:
 
   * The <dfn>site name</dfn> identifies the site. For multipage sites, this may also link to the front page of the site.
   * The <dfn>parent unit</dfn> identifies the campus unit which manages the site or contains the unit represented by the site. This should link to the site for the parent unit.
   * The <dfn>navigation</dfn> slot contains the main navigation component for the site.
   * The <dfn>search</dfn> slot contains a basic search engine.
-  * The <dfn>utility</dfn> slot contains links which are displayed in the top-right corner of the header.
+  * The <dfn>eyebrow</dfn> slot contains links which are displayed in the top-right corner of the header.
 
 ## Site name
 
 For a single page site, the site name can be an h1 or a div as required:
 
 ```html
-<div slot="site-name">Single-Page Website</div>
+<il-header>
+  <div slot="site-name">Single-Page Website</div>
+</il-header>
 ```
 
 On sites with more than one page, the site name should link to the site homepage:
 
 ```html
-<a slot="site-name" href="/">Website with Multiple Pages</a>
+<il-header>
+  <a slot="site-name" href="/">Website with Multiple Pages</a>
+</il-header>
 ```
 
 ## Parent unit
@@ -27,7 +33,10 @@ On sites with more than one page, the site name should link to the site homepage
 If the website represents a department within another unit, the parent unit slot can be used to link to an additional website for the parent unit:
 
 ```html
-<a slot="parent-unit" href="http://parent.example.com/">Parent Unit</a>
+<il-header>
+  <a slot="parent-unit" href="http://parent.example.com/">Parent Unit</a>
+  <a slot="site-name" href="/">Website with Parent Unit</a>
+</il-header>
 ```
 
 ## Navigation
@@ -35,27 +44,31 @@ If the website represents a department within another unit, the parent unit slot
 The main navigation is a multi-level list of links that should not change within the site.
 
 ```html
-<il-main-nav>
-  <ul>
-    <li><a href="/about">About</a></li>
-    <li><a href="/academics">Academics</a></li>
-    <li><a href="/research">Research</a></li>
-    <li><a href="/alumni">Alumni</a></li>
-  </ul>
-</il-main-nav>
+<il-header>
+  <il-main-nav slot="navigation">
+    <ul>
+      <li><a href="/about">About</a></li>
+      <li><a href="/academics">Academics</a></li>
+      <li><a href="/research">Research</a></li>
+      <li><a href="/alumni">Alumni</a></li>
+    </ul>
+  </il-main-nav>
+</il-header>
 ```
 
-For information, see the <a href="../il-main-nav/il-main-nav.spec.html">full documentation for the main navigation component</a>.
+For information, see the full documentation for the [main navigation component](../il-main-nav/README.md).
 
 ## Search
 
 A simple search form can be added to the header via the <code>search</code> slot.
 
 ```html
-<form method="get" action="/search" slot="search" role="search">
-  <input type="search" name="query" aria-labelledby="search-button">
-  <button type="submit" id="search-button">Search</button>
-</form>
+<il-header>
+  <form method="get" action="/search" slot="search" role="search">
+    <input type="search" name="query" aria-labelledby="search-button">
+    <button type="submit" id="search-button">Search</button>
+  </form>
+</il-header>
 ```
 
 The following aspects of the markup are <strong>required</strong>:
@@ -69,32 +82,37 @@ The following aspects of the markup are <strong>required</strong>:
 A customized search form might include additional hidden inputs:
 
 ```html
-<form method="post" action="/search.php" slot="search" role="search">
-  <input type="hidden" name="api-key" value="67890">
-  <input type="search" name="q" aria-labelledby="search-button">
-  <button type="submit" id="search-button" name="search" value="1">Search</button>
-</form>
+<il-header>
+  <form method="post" action="/search.php" slot="search" role="search">
+    <input type="hidden" name="api-key" value="67890">
+    <input type="search" name="q" aria-labelledby="search-button">
+    <button type="submit" id="search-button" name="search" value="1">Search</button>
+  </form>
+</il-header>
 ```
 
 ### References
 
-  * <a href="https://www.nngroup.com/articles/magnifying-glass-icon/">The Magnifying-Glass Icon in Search Design: Pros and Cons</a>, Neilsen Norman Group, February 23, 2014
-  * <a href="https://www.w3.org/WAI/tutorials/forms/labels/#using-aria-labelledby">Using aria-labelledby</a>
+  * [The Magnifying-Glass Icon in Search Design: Pros and Cons](https://www.nngroup.com/articles/magnifying-glass-icon/), Neilsen Norman Group, February 23, 2014
+  * [Using aria-labelledby](https://www.w3.org/WAI/tutorials/forms/labels/#using-aria-labelledby)
 
 
-## Utility links
+## Eyebrow
 
-<a href="https://www.nngroup.com/articles/utility-navigation/">utility navigation</a>
+The top-right (or "eyebrow") section can be used for utility navigation:
+
+```html
+<il-header>
+  <nav slot="eyebrow" aria-label="Utility">
+    <ul>
+      <li><a href="/apply">Apply</a></li>
+      <li><a href="/visit">Visit</a></li>
+      <li><a href="/donate">Donate</a></li>
+    </ul>
+  </nav>
+</il-header>
+```
 
 * Link labels must be short. One-word labels are prefered.
 * Limit links to 3 or fewer.
 * Only one level of links is allowed. Additional levels of lists may not be displayed.
-
-
-## Responsive features
-
-When the available width is 990 pixels or fewer, the header will change to a compact appearance. In this compact mode, the navigation, search, and featured links are hidden by default. In their place is a toggle button labelled "Menu" In this compact mode, the navigation, search, and links are placed into a single panel whose visibility is toggled by a menu button. 
-
-<!-- manually put the header into compact mode -->
-
-<!-- listening for compact events -->

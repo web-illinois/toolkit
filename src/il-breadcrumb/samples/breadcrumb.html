@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" class="il-toolkit">
-<title>Sample header</title>
+<title>Breadcrumbs</title>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="shortcut icon" href="https://cdn.brand.illinois.edu/favicon.ico">
 <script src="../../toolkit.js" type="module"></script>
 
@@ -10,7 +9,7 @@
   <il-header slot="header">
 
     <a slot="primary-unit" href="/">Illinois Web Toolkit</a>
-    <a slot="site-name" href="/">Sample Pages</a>
+    <a slot="site-name" href="/">Example Website</a>
 
     <nav slot="eyebrow" aria-label="Utility">
       <ul>
@@ -160,9 +159,18 @@
       </ul>
     </il-main-nav>
   </il-header>
-
   <il-section>
-    <h1>Sample header</h1>
-  </il-section>
 
+    <nav aria-label="Breadcrumb" class="il-breadcrumb">
+      <ol>
+        <li><a href="/">Home</a></li>
+        <li><a href="/components">Components</a></li>
+        <li><a href="/components/nav">Navigation</a></li>
+        <li><a href="/components/nav/breadcrumb" aria-current="page">Breadcrumb</a></li>
+      </ol>
+    </nav>
+
+    <h1>Breadcrumbs</h1>
+
+  </il-section>
 </il-page>
