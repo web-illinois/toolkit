@@ -2,6 +2,14 @@
 
 The standard campus header should appear at the top of every page of a campus website. The [page component](../il-page/README.md) has a dedicated content slot for the header.
 
+The header is placed in the `header` slot of the `il-page` component:
+
+```html
+<il-page>
+  <il-header slot="header"></il-header>
+</il-page>
+```
+
 The header contains five content slots:
 
   * The <dfn>site name</dfn> identifies the site. For multipage sites, this may also link to the front page of the site.
@@ -15,7 +23,7 @@ The header contains five content slots:
 For a single page site, the site name can be an h1 or a div as required:
 
 ```html
-<il-header>
+<il-header slot="header">
   <div slot="site-name">Single-Page Website</div>
 </il-header>
 ```
@@ -23,7 +31,7 @@ For a single page site, the site name can be an h1 or a div as required:
 On sites with more than one page, the site name should link to the site homepage:
 
 ```html
-<il-header>
+<il-header slot="header">
   <a slot="site-name" href="/">Website with Multiple Pages</a>
 </il-header>
 ```
@@ -33,7 +41,7 @@ On sites with more than one page, the site name should link to the site homepage
 If the website represents a department within another unit, the parent unit slot can be used to link to an additional website for the parent unit:
 
 ```html
-<il-header>
+<il-header slot="header">
   <a slot="parent-unit" href="http://parent.example.com/">Parent Unit</a>
   <a slot="site-name" href="/">Website with Parent Unit</a>
 </il-header>
@@ -44,7 +52,7 @@ If the website represents a department within another unit, the parent unit slot
 The main navigation is a multi-level list of links that should not change within the site.
 
 ```html
-<il-header>
+<il-header slot="header">
   <il-main-nav slot="navigation">
     <ul>
       <li><a href="/about">About</a></li>
@@ -63,7 +71,7 @@ For information, see the full documentation for the [main navigation component](
 A simple search form can be added to the header via the <code>search</code> slot.
 
 ```html
-<il-header>
+<il-header slot="header">
   <form method="get" action="/search" slot="search" role="search">
     <input type="search" name="query" aria-labelledby="search-button">
     <button type="submit" id="search-button">Search</button>
@@ -82,7 +90,7 @@ The following aspects of the markup are <strong>required</strong>:
 A customized search form might include additional hidden inputs:
 
 ```html
-<il-header>
+<il-header slot="header">
   <form method="post" action="/search.php" slot="search" role="search">
     <input type="hidden" name="api-key" value="67890">
     <input type="search" name="q" aria-labelledby="search-button">
@@ -102,7 +110,7 @@ A customized search form might include additional hidden inputs:
 The top-right (or "eyebrow") section can be used for utility navigation:
 
 ```html
-<il-header>
+<il-header slot="header">
   <nav slot="eyebrow" aria-label="Utility">
     <ul>
       <li><a href="/apply">Apply</a></li>

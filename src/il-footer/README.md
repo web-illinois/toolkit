@@ -1,93 +1,84 @@
 # Footer
 
-The footer component implements the standard campus footer. It contains information about the website and its organization, as well as a standard set of links to campus resources.
+The standard campus footer should appear at the bottom of every page of a campus website. The [page component](../il-page/README.md) has a dedicated content slot for the footer.
 
-The footer is designed to accommodate the following pieces of content:
-
-* The name of the site (required)
-* The parent organization of the website
-* contact information for the site
-* social media links
-
-There is also a general purpose content area on the right side of the footer that is most commonly used for navigation but which can be used for alternate purposes.
-
-## Creating a footer
-
-A minimal header contains the name of the site. 
-
-The site name is placed in the `name` content slot.
-
-```html
-<il-footer>
-  <div slot="name">College of Examples</a></h1>
-</il-footer>
-```
-For sites with multiple pages, this can include a link to the site homepage.
-
-```html
-<il-footer>
-  <a slot="name" href="/">College of Examples</a>
-</il-footer>
-```
-
-[screenshot]
-
-## Adding a parent organization
-
-To display the parent organization of the site, use the `parent` content slot:
-
-```html
-<il-footer>
-  <a slot="parent" href="https://example.com">College of Examples</a>
-  <a slot="name" href="/">Department of Hypotheticals</a></h1>
-</il-footer>
-```
-
-Including more than 3 parent organizations is discouraged.
-
-## Adding the footer to a page
-
-When using the [`il-page`](../il-page/README.md) component, the footer should be placed in the `footer` content slot.
+The header is placed in the `header` slot of the `il-page` component:
 
 ```html
 <il-page>
-  <il-footer slot="footer">
-    <!-- ... --->
-  </il-footer>
+  <il-footer slot="footer"></il-footer>
 </il-page>
 ```
+
+The footer contains four content slots:
+
+* The <dfn>site name</dfn> identifies the site. For multipage sites, this may also link to the front page of the site.
+* The <dfn>parent unit</dfn> identifies the campus unit which manages the site or contains the unit represented by the site. This should link to the site for the parent unit.
+* The <dfn>address</dfn> slot contact information for the site.
+* The <dfn>actions</dfn> slot contains action buttons.
+
+## Site name
+
+For a single page site, the site name can be an h1 or a div as required:
+
+```html
+<il-footer slot="footer">
+  <div slot="site-name">Single-Page Website</div>
+</il-footer>
+```
+
+On sites with more than one page, the site name should link to the site homepage:
+
+```html
+<il-footer slot="footer">
+  <a slot="site-name" href="/">Website with Multiple Pages</a>
+</il-footer>
+```
+
+## Parent unit
+
+If the website represents a department within another unit, the parent unit slot can be used to link to an additional website for the parent unit:
+
+```html
+<il-footer slot="footer">
+  <a slot="parent-unit" href="http://parent.example.com/">Parent Unit</a>
+  <a slot="site-name" href="/">Website with Parent Unit</a>
+</il-footer>
+```
+
 ## Adding contact information
 
-Contact information is placed in the `contact` content slot:
+Contact information is placed in the `address` content slot. This slot also contains social media links, which are placed before other contact information:
 
 ```html
-<il-footer>
-  <div slot="contact">
-    <div>123 Green Street</div>
-    <div>Champaign, IL 61820</div>
-    <div><a href="tel:+12175550000">1 (217) 555-0000</a></div>
-    <div><a href="mailto:contact@example.com">contact@example.com</a></div>
-  </div>
-</il-footer>
+    <address slot="address">
+      <nav aria-label="Social media" class="il-social">
+        <ul>
+          <li><a data-service="twitter" href="http://example.com/">Twitter</a></li>
+          <li><a data-service="youtube" href="http://example.com/">YouTube</a></li>
+          <li><a data-service="facebook" href="http://example.com/">Facebook</a></li>
+          <li><a data-service="instagram" href="http://example.com/">Instagram</a></li>
+          <li><a data-service="linkedin" href="http://example.com/">LinkedIn</a></li>
+        </ul>
+      </nav>
+      <p>5678 West Example Street<br>
+        MC-0000<br>
+        Champaign, IL 61820</p>
+      <a href="mailto:address@example.com">address@example.com</a>
+      <a href="tel:+12175551234">(217) 555-1234</a>
+    </address>
 ```
 
-## Adding social media links
+For social media links, the `data-service` attribute is required. Valid attributes are:
 
-Social media links are placed in the `social` content slot:
-
-```html
-<il-footer>
-  <div slot="social">
-    <a href="https://facebook.com">Facebook</a>
-    <a href="https://instagram.com">Instagram</a>
-    <a href="https://linkedin.com">LinkedIn</a>
-  </div>
-</il-footer>
-```
-
-For recognized social networking site, links are replaced with icons. Recognition is based on the URL of the link. To manually specify the source of a link, use the `data-il-type` attribute:
-
-```html
-<a href="https://facebook.com" data-il-type="facebook">Facebook</a>
-```
+* facebook
+* instagram
+* linkedin
+* pinterest
+* snapchat
+* twitter
+* weibo
+* whatsapp
+* x
+* youtube
 
