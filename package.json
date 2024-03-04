@@ -26,7 +26,7 @@
     "eslint": "^8.41.0",
     "eslint-plugin-lit": "^1.8.3",
     "postcss-autoreset": "^3.0.4",
-    "postcss-initial": "^3.0.4",
+    "postcss-initial": "^4.0.1",
     "postcss-mixins": "^9.0.4",
     "postcss-nested": "^6.0.1",
     "postcss-preset-env": "^8.4.1",
