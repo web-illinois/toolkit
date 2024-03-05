@@ -1,4 +1,4 @@
-@layer components {
+@layer base {
   :root {
     --il-featured-section-background: var(--il-blue);
     --il-featured-section-color: white;
@@ -7,6 +7,20 @@
     --il-featured-section-padding-left: 0;
     --il-featured-section-padding-right: 0;
   }
+  il-page il-featured-section {
+    margin-left: var(--il-page-offset-left);
+    margin-right: var(--il-page-offset-right);
+    --il-featured-section-padding-top: 4rem;
+    --il-featured-section-padding-bottom: 4rem;
+    --il-featured-section-padding-left: var(--il-page-padding-left);
+    --il-featured-section-padding-right: var(--il-page-padding-right);
+  }
+  il-page il-featured-section > il-card:first-child,
+  il-page il-featured-section > *[slot="background"]:first-child + il-card {
+    margin-top: 0;
+  }
+}
+@layer components {
   il-featured-section {
     position: relative;
     box-sizing: border-box;

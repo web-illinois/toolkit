@@ -1,0 +1,89 @@
+@layer base {
+  :root {
+    --il-card-content-padding-top: 1.5rem;
+    --il-card-content-padding-bottom: 1.5rem;
+    --il-card-content-padding-left: 1.5rem;
+    --il-card-content-padding-right: 1.5rem;
+    --il-card-content-container-padding: 0;
+    --il-card-image-area: left;
+    --il-card-content-area: right;
+  }
+  il-page il-card {
+    margin-top: 4rem;
+    border-width: 2px;
+    border-style: solid;
+    border-color: var(--il-cloud-1);
+    background: var(--il-cloud-1);
+    color: var(--il-blue);
+  }
+  il-page il-card > *:first-child {
+    margin-top: 0;
+  }
+  il-page il-card + il-card {
+    margin-top: 3rem;
+  }
+  il-page il-section.il-alt il-card {
+    border-color: white;
+    background: white;
+    color: var(--il-blue);
+  }
+  il-page il-featured-section il-card {
+    border-color: white;
+    background: white;
+    color: var(--il-blue);
+  }
+  il-card.il-blue {
+    border-color: var(--il-blue);
+    background: var(--il-blue);
+    color: white;
+  }
+  il-card.il-orange {
+    border-color: var(--il-orange);
+    background: var(--il-orange);
+    color: var(--il-blue);
+  }
+  il-page il-card + p {
+    margin-top: 4.44em;
+  }
+  il-page il-cards il-card {
+    margin-top: 0;
+
+    h2 {
+      font-size: 2em;
+    }
+  }
+
+
+  il-page il-card.il-feature {
+    margin-top: 6rem;
+    --il-card-content-padding-top: 4rem;
+    --il-card-content-padding-bottom: 4rem;
+    --il-card-content-padding-left: var(--il-page-padding-right);
+    --il-card-content-padding-right: var(--il-page-padding-right);
+    margin-left: var(--il-page-offset-left);
+    margin-right: var(--il-page-offset-right);
+  }
+  il-page il-card.il-feature *:first-child {
+    margin-top: 0;
+  }
+  il-page il-section + il-card.il-feature,
+  il-page .il-feature + il-card.il-feature {
+    margin-top: 0;
+  }
+}
+@layer components {
+
+  il-featured-section.il-blue il-card {
+    border-color: var(--il-orange);
+    background: var(--il-orange);
+    color: var(--il-blue);
+  }
+  il-featured-section il-card.il-feature {
+    --il-card-content-padding-right: calc(var(--il-section-padding-right) + 1.5rem);
+    margin-top: var(--il-section-offset-top);
+    margin-bottom: var(--il-section-offset-bottom);
+    margin-left: var(--il-section-offset-left);
+    margin-right: var(--il-section-offset-right);
+  }
+}
+

@@ -12,6 +12,10 @@
     --il-section-alt-background: var(--il-cloud-1);
     --il-section-color--orange: var(--il-orange);
   }
+  il-page il-section {
+    margin-left: var(--il-page-offset-left);
+    margin-right: var(--il-page-offset-right);
+  }
   il-section > *:first-child {
     margin-top: 0;
   }

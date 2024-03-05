@@ -264,3 +264,11 @@
     --il-page-offset-right: 1.25rem;
   }
 }
+@layer component {
+  il-page main {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+    padding-left: var(--il-page-padding-left);
+    padding-right: var(--il-page-padding-right);
+  }
+}

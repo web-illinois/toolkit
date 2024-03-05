@@ -19,6 +19,9 @@ export class CardsComponent extends LitElement {
       display: grid;
       grid-gap: 1.25rem;
     }
+    .cards.columns-2 {
+      grid-template-columns: repeat(2, 1fr);
+    }
     .cards.columns-3 {
       grid-template-columns: repeat(3, 1fr);
     }
