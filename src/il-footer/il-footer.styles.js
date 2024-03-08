@@ -86,7 +86,7 @@ export default css`
   .legal.section {
     background-color: var(--il-blue);
     color: white;
-    border-top: .5rem solid var(--il-industrial-blue-darker-2);
+    border-top: .5rem solid var(--il-industrial-darker-2);
   }
   .legal a {
     display: block;

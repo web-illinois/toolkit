@@ -1,45 +1,35 @@
 @layer components {
 
   il-hero {
-    --il-hero-background: linear-gradient(var(--il-storm-lighter-3), var(--il-cloud-1));
+    background: var(--il-gradient-white), var(--il-cloud-1);
     --il-hero-hr-color: var(--il-orange);
     color: var(--il-blue);
   }
-
-  il-hero.il-blue {
-    --il-hero-background: linear-gradient(var(--il-blue), var(--il-industrial-blue));
+  il-hero.il-ascend {
+    background: var(--il-background-ascend-white);
+  }
+  il-hero.il-finial {
+    background: var(--il-background-finial-white);
+  }
+  il-hero.il-ascend.il-blue, il-hero.il-finial.il-blue {
     --il-hero-hr-color: var(--il-orange);
     color: white;
   }
-  il-hero.il-orange {
-    --il-hero-background: linear-gradient(var(--il-orange), var(--il-harvest));
+  il-hero.il-ascend.il-blue {
+    background: var(--il-background-ascend-blue);
+  }
+  il-hero.il-finial.il-blue {
+    background: var(--il-background-finial-blue);
+  }
+  il-hero.il-ascend.il-orange, il-hero.il-finial.il-orange {
     --il-hero-hr-color: white;
     color: var(--il-blue);
   }
-
-  il-hero.il-ascend, il-hero.il-finial {
-    color: var(--il-blue);
-    --il-pattern-fill: white;
-    --il-hero-background: var(--il-cloud-1);
-    --il-hero-pattern-wash: linear-gradient(transparent, var(--il-cloud-1));
+  il-hero.il-ascend.il-orange {
+    background: var(--il-background-ascend-orange);
   }
-  il-hero.il-ascend.il-blue, il-hero.il-finial.il-blue {
-    color: white;
-    --il-pattern-fill: var(--il-industrial-blue);
-    --il-hero-background: var(--il-blue);
-    --il-hero-pattern-wash: linear-gradient(transparent, var(--il-blue));
-  }
-  il-hero.il-ascend.il-orange, il-hero.il-finial.il-orange {
-    color: var(--il-blue);
-    --il-pattern-fill: var(--il-harvest);
-    --il-hero-background: var(--il-orange);
-    --il-hero-pattern-wash: linear-gradient(transparent, var(--il-orange));
-  }
-  il-hero.il-ascend {
-    --il-hero-ascend-pattern-display: block;
-  }
-  il-hero.il-finial {
-    --il-hero-finial-pattern-display: block;
+  il-hero.il-finial.il-orange {
+    background: var(--il-background-finial-orange);
   }
 
   il-hero h1 {
@@ -71,6 +61,15 @@
     width: 5rem;
     height: .5rem;
     background-color: var(--il-hero-hr-color);
+  }
+
+  il-page il-hero {
+    margin-left: var(--il-page-offset-left);
+    margin-right: var(--il-page-offset-right);
+  }
+
+  il-page main > il-hero:first-child {
+    margin-top: var(--il-page-offset-top);
   }
 
   il-page[data-columns="4"] il-hero h1 {

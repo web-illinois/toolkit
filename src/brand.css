@@ -1,0 +1,13 @@
+/*
+
+These styles come from the brand guidelines and are likely to be moved to the brand CDN.
+
+ */
+
+:root {
+  --il-box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .15);
+  --il-box-shadow-small: 0 .125rem .25rem rgba(0, 0, 0, .075);
+  --il-box-shadow-larger: 0 1rem 3rem rgba(0, 0, 0, .175);
+  --il-aspect-ratio-square: 1;
+  --il-aspect-ratio-2-1: 2;
+}

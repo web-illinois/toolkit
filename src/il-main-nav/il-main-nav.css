@@ -1,9 +1,3 @@
-@layer base {
-  :root {
-
-  }
-}
-
 @layer components {
 
   il-header {
@@ -102,7 +96,7 @@
     il-nav-section-with-link[data-current="true"] {
       --il-nav-item-background: var(--il-blue);
       --il-nav-item-color: white;
-      --il-nav-item-border-bottom-color: var(--il-industrial-blue);
+      --il-nav-item-border-bottom-color: var(--il-industrial);
     }
   }
 
@@ -163,7 +157,7 @@
     il-nav-section-with-link[data-current="true"] {
       --il-nav-item-background: var(--il-blue);
       --il-nav-item-color: white;
-      --il-nav-item-border-bottom-color: var(--il-industrial-blue);
+      --il-nav-item-border-bottom-color: var(--il-industrial);
     }
   }
 

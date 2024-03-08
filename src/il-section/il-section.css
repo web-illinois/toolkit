@@ -9,7 +9,7 @@
     --il-section-offset-left: var(--il-page-offset-left);
     --il-section-offset-right: var(--il-page-offset-right);
     --il-section-background: white;
-    --il-section-alt-background: var(--il-cloud-1);
+    --il-section-alt-background: var(--il-storm-lighter-4);
     --il-section-color--orange: var(--il-orange);
   }
   il-page il-section {

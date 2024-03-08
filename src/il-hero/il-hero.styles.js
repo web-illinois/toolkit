@@ -26,7 +26,6 @@ export default css`
   }
   .background.layer {
     z-index: 1;
-    background: var(--il-hero-background);
   }
   .background ::slotted(img) {
     display: block;
@@ -35,31 +34,6 @@ export default css`
     position: absolute;
     top: 0;
     left: 0;
-  }
-  .patterns.layer {
-    z-index: 5;
-  }
-  .pattern {
-    display: block;
-    position: relative;
-    width: 100%;
-    height: 100%;
-  }
-  .pattern.ascend {
-    display: var(--il-hero-ascend-pattern-display, none);
-  }
-  .pattern.finial {
-    display: var(--il-hero-finial-pattern-display, none);
-  }
-  .patterns::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 10;
-    width: 100%;
-    height: 100%;
-    background: var(--il-hero-pattern-wash, transparent);
   }
   .content {
     position: relative;

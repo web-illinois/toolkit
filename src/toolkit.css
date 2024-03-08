@@ -1,33 +1,11 @@
-@import "https://cdn.brand.illinois.edu/colors.css";
-@import "https://cdn.brand.illinois.edu/fonts.css";
-@import "https://cdn.brand.illinois.edu/fonts/montserrat.css";
+@import "https://cdn.brand.illinois.edu/illinois.css";
 
-@layer brand, base, components;
-
-@layer brand {
-  :root {
-    --il-orange: #FF5F05;
-    --il-blue: #13294B;
-    --il-storm: #707372;
-    --il-storm-lighter-1: #8d8f8e;
-    --il-storm-lighter-2: #a9abaa;
-    --il-storm-lighter-3: #c6c7c7;
-    --il-storm-lighter-4: #F4F4F4;
-    --il-storm-darker-1: #4a4c4b;
-    --il-storm-darker-2: #252525;
-  }
-}
-
-/* these will probably move to the brand cdn too */
-:root {
-  --il-box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .15);
-  --il-box-shadow-small: 0 .125rem .25rem rgba(0, 0, 0, .075);
-  --il-box-shadow-larger: 0 1rem 3rem rgba(0, 0, 0, .175);
-  --il-aspect-ratio-square: 1;
-  --il-aspect-ratio-2-1: 2;
-}
+@layer base, components;
 
 @layer base {
+  :root {
+    --il-cloud-1: #E8E9EB;
+  }
   html.il-toolkit body, body.il-toolkit {
     margin: 0;
     padding: 0;
@@ -37,5 +15,3 @@
     font-family: var(--il-font-sans);
   }
 }
-
-@include "./il-page/il-page.css";

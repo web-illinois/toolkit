@@ -12,8 +12,8 @@
     margin-top: 4rem;
     border-width: 2px;
     border-style: solid;
-    border-color: var(--il-cloud-1);
-    background: var(--il-cloud-1);
+    border-color: var(--il-storm-lighter-3);
+    background: var(--il-storm-lighter-4);
     color: var(--il-blue);
   }
   il-page il-card > *:first-child {
@@ -23,7 +23,6 @@
     margin-top: 3rem;
   }
   il-page il-section.il-alt il-card {
-    border-color: white;
     background: white;
     color: var(--il-blue);
   }
