@@ -51,6 +51,14 @@ export class PanelsComponent extends LitElement {
       heading.closest('div[data-il-construct="accordion-section"]').setAttribute('data-il-expanded', expanded);
       heading.setAttribute('aria-expanded', expanded);
     }
+    if (this.isTabs()) {
+      heading.closest('div[data-il-construct="tabs-headers"]').querySelectorAll('div[data-il-role="heading"]').forEach(h => {
+        const isSelected = h === heading;
+        h.setAttribute('aria-selected', isSelected ? 'true' : 'false');
+        const panel = this.getPanelForHeading(h);
+        panel.setAttribute('data-il-selected', isSelected ? 'true' : 'false');
+      });
+    }
   }
 
   handleRefreshClick() {
@@ -64,7 +72,11 @@ export class PanelsComponent extends LitElement {
   }
 
   isAccordion() {
-    return this._type === 'accordion';
+    return this.getType() === 'accordion';
+  }
+
+  isTabs() {
+    return this.getType() === 'tabs' || this.getType() === 'vertical-tabs';
   }
 
   arrangeContents() {
@@ -77,7 +89,7 @@ export class PanelsComponent extends LitElement {
       if (type === 'accordion') {
         this.buildAccordion(sections);
       }
-      if (type === 'tabs') {
+      if (type === 'tabs' || type === 'vertical-tabs') {
         this.buildTabs(sections);
       }
       this._type = type;
