@@ -46,11 +46,9 @@ export class HeaderComponent extends LitElement {
   adjustMenuSize() {
     if (!this.compact) return;
     const screenHeight = window.innerHeight;
-    console.debug('screen height is ' + screenHeight);
     const menu = this.shadowRoot.querySelector('.menu');
     if (menu) {
       const bounds = menu.getBoundingClientRect();
-      console.debug(bounds);
       menu.style.height = screenHeight - bounds.top + 'px';
     }
   }
@@ -84,6 +82,22 @@ export class HeaderComponent extends LitElement {
 
   handleWindowResize(evt) {
     this.compact ? this.adjustMenuSize() : this.adjustDropdownPositions();
+  }
+
+  hasEyebrow() {
+    return !!this.querySelector('*[slot="eyebrow"]');
+  }
+
+  hasMenuContents() {
+    return this.hasEyebrow() || this.hasSearch() || this.hasNavigation();
+  }
+
+  hasNavigation() {
+    return !!this.querySelector('*[slot="navigation"]');
+  }
+
+  hasSearch() {
+    return !!this.querySelector('*[slot="search"]');
   }
 
   renderBlockI() {
@@ -131,6 +145,7 @@ export class HeaderComponent extends LitElement {
   }
 
   renderMenu() {
+    if (!this.hasMenuContents()) return null;
     return html`
       <div class="menu" id="menu">
         ${this.renderFeaturedLinks()}
@@ -140,6 +155,7 @@ export class HeaderComponent extends LitElement {
   }
 
   renderMenuToggleButton() {
+    if (!this.hasMenuContents()) return null;
     const expanded = this.menuExpanded ? 'true' : 'false';
     return html`
       <div class="menu-toggle">
