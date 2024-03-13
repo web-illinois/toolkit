@@ -1,4 +1,4 @@
-import {LitElement, css, html} from 'lit';
+import {LitElement, html} from 'lit';
 import {baseStyles} from './il-nav-section.styles';
 import styles from './il-nav-section.styles';
 
@@ -12,7 +12,6 @@ export class NavigationSection extends LitElement {
 
   constructor() {
     super();
-    this.nav = undefined;
     this.expanded = false;
     document.addEventListener('DOMContentLoaded', this.handleDomContentLoaded.bind(this));
   }

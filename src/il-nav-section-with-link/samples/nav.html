@@ -1,36 +1,19 @@
 <!DOCTYPE html>
 <html lang="en" class="il-toolkit">
-<title>Sample header</title>
+<title>Navigation sections with links, three levels</title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="shortcut icon" href="https://cdn.brand.illinois.edu/favicon.ico">
 <script src="../../toolkit.js" type="module"></script>
 
 <il-page>
-  <il-header slot="header">
-
-    <a slot="primary-unit" href="/">Illinois Web Toolkit</a>
-    <a slot="site-name" href="/">Sample Pages</a>
-
-    <nav slot="eyebrow" aria-label="Utility">
-      <ul>
-        <li><a href="/apply">Apply</a></li>
-        <li><a href="/visit">Visit</a></li>
-        <li><a href="/give">Give</a></li>
-      </ul>
-    </nav>
-
-    <form slot="search" method="get" action="/search" role="search">
-      <input type="search" name="search" aria-labelledby="search-button">
-      <button id="search-button" type="submit">Search</button>
-    </form>
-
+  <il-header slot="header" data-compact="true">
     <il-main-nav slot="navigation">
       <ul>
         <li>
-          <il-nav-section-with-link>
-            <a slot="link" href="#">Galena</a>
-            <ul>
+          <il-nav-section-with-link data-testid="first-top-level-section">
+            <a slot="link" href="#" data-testid="first-top-level-section-link">Galena</a>
+            <ul data-testid="first-top-level-section-contents">
               <li><a href="#">Copper</a></li>
               <li>
                 <il-nav-section-with-link>
@@ -160,11 +143,7 @@
       </ul>
     </il-main-nav>
   </il-header>
-
   <main slot="main">
-    <il-section>
-      <h1>Sample header</h1>
-    </il-section>
+    <h1>Navigation sections with links, three levels</h1>
   </main>
-
 </il-page>

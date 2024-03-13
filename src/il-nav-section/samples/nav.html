@@ -1,170 +1,149 @@
 <!DOCTYPE html>
 <html lang="en" class="il-toolkit">
-<title>Sample header</title>
+<title>Navigation sections, three levels</title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="shortcut icon" href="https://cdn.brand.illinois.edu/favicon.ico">
 <script src="../../toolkit.js" type="module"></script>
 
 <il-page>
-  <il-header slot="header">
-
-    <a slot="primary-unit" href="/">Illinois Web Toolkit</a>
-    <a slot="site-name" href="/">Sample Pages</a>
-
-    <nav slot="eyebrow" aria-label="Utility">
-      <ul>
-        <li><a href="/apply">Apply</a></li>
-        <li><a href="/visit">Visit</a></li>
-        <li><a href="/give">Give</a></li>
-      </ul>
-    </nav>
-
-    <form slot="search" method="get" action="/search" role="search">
-      <input type="search" name="search" aria-labelledby="search-button">
-      <button id="search-button" type="submit">Search</button>
-    </form>
-
+  <il-header slot="header" data-compact="true">
     <il-main-nav slot="navigation">
       <ul>
         <li>
-          <il-nav-section-with-link>
-            <a slot="link" href="#">Galena</a>
-            <ul>
+          <il-nav-section data-testid="first-top-level-section">
+            <span slot="label" data-testid="first-top-level-section-link">Galena</span>
+            <ul data-testid="first-top-level-section-contents">
               <li><a href="#">Copper</a></li>
               <li>
-                <il-nav-section-with-link>
-                  <a slot="link" href="#">Marcasite</a>
+                <il-nav-section>
+                  <span slot="label">Marcasite</span>
                   <ul>
                     <li><a href="#">Melanterite</a></li>
                     <li>
-                      <il-nav-section-with-link>
-                        <a slot="link" href="#">Calcite</a>
+                      <il-nav-section>
+                        <span slot="label">Calcite</span>
                         <ul>
                           <li><a href="#">Barite</a></li>
                           <li>
-                            <il-nav-section-with-link>
-                              <a slot="link" href="#">Cerussite</a>
+                            <il-nav-section>
+                              <span slot="label">Cerussite</span>
                               <ul>
                                 <li><a href="#">Siderite</a></li>
                                 <li>
-                                  <il-nav-section-with-link>
-                                    <a slot="link" href="#">Smithsonite</a>
+                                  <il-nav-section>
+                                    <span slot="label">Smithsonite</span>
                                     <ul>
                                       <li><a href="#">Amphibole</a></li>
                                       <li><a href="#">Pyroxene</a></li>
                                       <li><a href="#">Feldspar</a></li>
                                     </ul>
-                                  </il-nav-section-with-link>
+                                  </il-nav-section>
                                 </li>
                                 <li><a href="#">Sphalerite</a></li>
                                 <li><a href="#">Fluorite</a></li>
                               </ul>
-                            </il-nav-section-with-link>
+                            </il-nav-section>
                           </li>
                           <li><a href="#">Witherite</a></li>
                           <li><a href="#">Dolomite</a></li>
                         </ul>
-                      </il-nav-section-with-link>
+                      </il-nav-section>
                     </li>
                     <li><a href="#">Muscovite</a></li>
                     <li><a href="#">Biotite</a></li>
                   </ul>
-                </il-nav-section-with-link>
+                </il-nav-section>
               </li>
               <li><a href="#">Limonite</a></li>
               <li><a href="#">Pyrite</a></li>
             </ul>
-          </il-nav-section-with-link>
+          </il-nav-section>
         </li>
         <li>
-          <il-nav-section-with-link>
-            <a slot="link" href="#">Chalcedony</a>
+          <il-nav-section>
+            <span slot="label">Chalcedony</span>
             <ul>
               <li><a href="#">Quartz</a></li>
               <li>
-                <il-nav-section-with-link>
-                  <a slot="link" href="#">Garnet</a>
+                <il-nav-section>
+                  <span slot="label">Garnet</span>
                   <ul>
                     <li><a href="#">Gneiss</a></li>
                     <li>
-                      <il-nav-section-with-link>
-                        <a slot="link" href="#">Gabbro</a>
+                      <il-nav-section>
+                        <span slot="label">Gabbro</span>
                         <ul>
                           <li><a href="#">Peridotite</a></li>
                           <li><a href="#">Syenite</a></li>
                           <li><a href="#">Porphyry</a></li>
                         </ul>
-                      </il-nav-section-with-link>
+                      </il-nav-section>
                     </li>
                     <li><a href="#">Schist</a></li>
                     <li><a href="#">Granite</a></li>
                   </ul>
-                </il-nav-section-with-link>
+                </il-nav-section>
               </li>
               <li><a href="#">Jasper</a></li>
               <li><a href="#">Agate</a></li>
             </ul>
-          </il-nav-section-with-link>
+          </il-nav-section>
         </li>
         <li>
-          <il-nav-section-with-link>
-            <a slot="link" href="#">Quartzite</a>
+          <il-nav-section>
+            <span slot="label">Quartzite</span>
             <ul>
               <li><a href="#">Conglomerate</a></li>
               <li>
-                <il-nav-section-with-link>
-                  <a slot="link" href="#">Sand</a>
+                <il-nav-section>
+                  <span slot="label">Sand</span>
                   <ul>
                     <li><a href="#">Sandstone</a></li>
                     <li>
-                      <il-nav-section-with-link>
-                        <a slot="link" href="#">Basalt</a>
+                      <il-nav-section>
+                        <span slot="label">Basalt</span>
                         <ul>
                           <li><a href="#">Quartzite</a></li>
                           <li><a href="#">Clay</a></li>
                           <li><a href="#">Silt</a></li>
                         </ul>
-                      </il-nav-section-with-link>
+                      </il-nav-section>
                     </li>
                     <li><a href="#">Chert</a></li>
                     <li><a href="#">Felsite</a></li>
                   </ul>
-                </il-nav-section-with-link>
+                </il-nav-section>
               </li>
               <li><a href="#">Breccia</a></li>
               <li><a href="#">Gravel</a></li>
             </ul>
-          </il-nav-section-with-link>
+          </il-nav-section>
         </li>
         <li>
-          <il-nav-section-with-link>
-            <a slot="link" href="#">Siltstone</a>
+          <il-nav-section>
+            <span slot="label">Siltstone</span>
             <ul>
               <li><a href="#">Shale</a></li>
               <li>
-                <il-nav-section-with-link>
-                  <a slot="link" href="#">Tripoli</a>
+                <il-nav-section>
+                  <span slot="label">Tripoli</span>
                   <ul>
                     <li><a href="#">Peat</a></li>
                     <li><a href="#">Muck</a></li>
                     <li><a href="#">Coal</a></li>
                   </ul>
-                </il-nav-section-with-link>
+                </il-nav-section>
               </li>
               <li><a href="#">Mudstone</a></li>
               <li><a href="#">Slate</a></li>
             </ul>
-          </il-nav-section-with-link>
+          </il-nav-section>
         </li>
       </ul>
     </il-main-nav>
   </il-header>
-
   <main slot="main">
-    <il-section>
-      <h1>Sample header</h1>
-    </il-section>
+    <h1>Navigation sections, three levels</h1>
   </main>
-
 </il-page>

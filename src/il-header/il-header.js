@@ -84,6 +84,22 @@ export class HeaderComponent extends LitElement {
     this.compact ? this.adjustMenuSize() : this.adjustDropdownPositions();
   }
 
+  hasEyebrow() {
+    return !!this.querySelector('*[slot="eyebrow"]');
+  }
+
+  hasMenuContents() {
+    return this.hasEyebrow() || this.hasSearch() || this.hasNavigation();
+  }
+
+  hasNavigation() {
+    return !!this.querySelector('*[slot="navigation"]');
+  }
+
+  hasSearch() {
+    return !!this.querySelector('*[slot="search"]');
+  }
+
   renderBlockI() {
     return html`
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 55 79" aria-labelledby="wordmark">
@@ -129,6 +145,7 @@ export class HeaderComponent extends LitElement {
   }
 
   renderMenu() {
+    if (!this.hasMenuContents()) return null;
     return html`
       <div class="menu" id="menu">
         ${this.renderFeaturedLinks()}
@@ -138,6 +155,7 @@ export class HeaderComponent extends LitElement {
   }
 
   renderMenuToggleButton() {
+    if (!this.hasMenuContents()) return null;
     const expanded = this.menuExpanded ? 'true' : 'false';
     return html`
       <div class="menu-toggle">

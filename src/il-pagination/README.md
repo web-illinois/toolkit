@@ -1,27 +1,46 @@
 # Pagination
 
-A single-level navigation used to navigate within paged content. It provides styling for special buttons like "Next" and "Previous" and for non-link content like ellipses and the current page number.
+This is a navigation component for paged content.
 
 ```html
-<il-nav type="pagination">
-  <ul>
+<il-pagination>
+  <ol>
+    <li><a href="/posts?p=1">1</a></li>
+    <li><a href="/posts?p=2">2</a></li>
+    <li><a href="/posts?p=3" aria-current="page">3</li>
+    <li><a href="/posts?p=4">4</a></li>
+    <li><a href="/posts?p=5">5</a></li>
+  </ol>
+</il-pagination>
+```
+
+Notes on this usage:
+
+* The links **must** be contained in an ordered list.
+* The current page **must** contain the `aria-current="page"` attribute.
+
+The following affordances are provided for large collections of pages:
+* Additional links may be introduced to allow quicker access to common navigation actions (e.g. go to the next/previous page).
+* Ellipses may be used as visual emphasis for gaps in the numeric page sequence.
+
+```html
+<il-pagination>
+  <ol>
     <li><a href="/posts?p=1">First</a></li>
     <li><a href="/posts?p=2">Previous</a></li>
     <li><a href="/posts?p=1">1</a></li>
     <li><a href="/posts?p=2">2</a></li>
-    <li class="il-current">3</li>
+    <li><a href="/posts?p=3" aria-current="page">3</li>
     <li><a href="/posts?p=4">4</a></li>
-    <li><a href="/posts?p=5" class="il-ellipsis-after">5</a></li>
-    <li><a href="/posts?p=100">100</a></li>
+    <li><a href="/posts?p=5">5</a></li>
+    <li><a href="/posts?p=100" class="il-ellipsis-before">100</a></li>
     <li><a href="/posts?p=4">Next</a></li>
     <li><a href="/posts?p=5">Last</a></li>
-  </ul>
-</il-nav>
+  </ol>
+</il-pagination>
 ```
 
-These CSS classes are meaningful within a pagination navigation:
+## Accessibility features
 
-## `il-ellipsis-before`/`il-ellipsis-after`
-
-These classes can be used to place an ellipsis (&hellip;) before/after a navigation element. This should be used to indicate a gap in the sequence of pages.
+* The component wraps the list of links in a `nav` element with `aria-label="Pages"`.
 

@@ -78,14 +78,7 @@ export class PageComponent extends LitElement {
           <slot name="header"></slot>
         </header>
         <div class="content-and-footer">
-          <main>
-            <div class="hero">
-              <slot name="hero"></slot>
-            </div>
-            <div class="content">
-              <slot></slot>
-            </div>
-          </main>
+          <slot name="main"></slot>
           <footer>
             <slot name="footer"></slot>
           </footer>

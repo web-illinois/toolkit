@@ -136,7 +136,7 @@
 
       &:focus {
         z-index: 10;
-        border-color: var(--il-industrial-blue);
+        border-color: var(--il-industrial);
         border-style: dotted;
       }
     }
@@ -164,7 +164,7 @@
 
       &:focus {
         z-index: 10;
-        border-color: var(--il-industrial-blue);
+        border-color: var(--il-industrial);
         border-style: dotted;
       }
     }
@@ -194,7 +194,7 @@
 
       &:focus {
         z-index: 10;
-        border-color: var(--il-industrial-blue);
+        border-color: var(--il-industrial);
         border-style: dotted;
       }
     }
@@ -221,7 +221,7 @@
 
       &:focus {
         z-index: 10;
-        border-color: var(--il-industrial-blue);
+        border-color: var(--il-industrial);
         border-style: dotted;
       }
     }

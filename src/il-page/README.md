@@ -1,6 +1,6 @@
-# Page
+# Pages
 
-This component represents a complete web page. It includes content slots for the standard header and footer, and makes it possible to create unique layouts by grouping and featuring components in multiple ways.
+Some toolkit components can be used in isolation, but the toolkit is most useful for creating complete pages. The page component incorporates the standard campus [header](../il-header/README.md) and [footer](../il-footer/README.md) and provides default styling for most HTML elements.
 
 ## Requirements
 
@@ -20,56 +20,59 @@ These elements have the following effects on the respective page:
 
 ## A basic page
 
-The simplest version of a page contains a header, footer, and some HTML page content:
+The simplest version of a page contains a header, main contnet, and a footer:
 
 ```html
 <il-page>
   <il-header slot="header">
     <a slot="site-name" href="/">Example site</a>
   </il-header>
-  
-  <h1>Basic page</h1>
-  <p>This page contains a title and one sentence.</p>
-  
+  <main slot="main">
+    <h1>Basic page</h1>
+    <p>This page contains a title and one sentence.</p>
+  </main>
   <il-footer slot="footer">
     <a slot="site-name" href="/">Example site</a>
   </il-footer>
 </il-page>
 ```
+
+For more information about customizing the header and footer of the page, see the full documentation for the [header](../il-header/README.md) and [footer](../il-footer/README.md) components.
 
 ## Dividing pages into sections
 
+The readability of long and complicated pages can be improved by dividing a page into sections.
+
 ```html
 <il-page>
   <il-header slot="header">
     <a slot="site-name" href="/">Example site</a>
   </il-header>
-  
-  <il-section>
-    <h1>Page with multiple sections</h1>
-    <p>This is divided into multiple sections.</p>
-  </il-section>
-  
-  <il-section>
-    <h2>The second section</h2>
-    <p>The second section follows the first section.</p>
-  </il-section>
-  
-  <il-section>
-    <h2>The final section</h2>
-    <p>The third section is the final section.</p>
-  </il-section>
-  
+  <main slot="main">
+    <il-section>
+      <h1>Page with multiple sections</h1>
+      <p>This is divided into multiple sections.</p>
+    </il-section>
+    <il-section>
+      <h2>The second section</h2>
+      <p>The second section follows the first section.</p>
+    </il-section>
+    <il-section>
+      <h2>The final section</h2>
+      <p>The third section is the final section.</p>
+    </il-section>
+  </main>
   <il-footer slot="footer">
     <a slot="site-name" href="/">Example site</a>
   </il-footer>
 </il-page>
 ```
 
-For more information, see the <a href="../il-section/README.md">full documentation for the section component</a>.
+For more information, see the full documentation for the [section component](../il-section/README.md).
 
 ## Creating featured sections
 
+Special content can be highlighted by placing it in a featured section. Featured sections utilize more vivid color schemes and provide more possibilities for layout.
 
 ```html
 <il-page>
@@ -82,7 +85,7 @@ For more information, see the <a href="../il-section/README.md">full documentati
     <p>This is divided into multiple sections. It has a featured section in the middle.</p>
   </il-section>
   
-  <il-featured-section>
+  <il-featured-section class="il-blue">
     <h2>The featured section</h2>
     <p>This section is featured.</p>
   </il-featured-section>
@@ -98,62 +101,4 @@ For more information, see the <a href="../il-section/README.md">full documentati
 </il-page>
 ```
 
-For more information, see the <a href="../il-featured-section/README.md">full documentation for the featured section component</a>.
-
-
-## Base styles
-
-The page contains basic styling for the following HTML elements:
-
-### Paragraphs
-
-#### Inline styles
-
-* abbr
-* b/strong
-* cite
-* code
-* dfn
-* em/i
-* kbd
-* mark
-* s
-* samp
-* sub
-* sup
-* var
-
-#### Lede paragraphs
-
-### Headings (`h1`-`h6`)
-
-### Links
-
-### Lists
-
-* unordered lists
-* ordered lists
-* definition lists
-
-### Figures and captions
-
-### Tables
-
-* caption
-* col
-* colgroup
-* table
-* tbody
-* td
-* tfoot
-
-### Additional elements
-
-* blockquote
-* hr
-* pre
-
-And the following inline HTML elements:
-
-
-No default styling is provided for form elements.
+For more information, see the full documentation for the [featured section component](../il-featured-section/README.md).
