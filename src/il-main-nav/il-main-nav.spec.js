@@ -3,7 +3,7 @@ import {test, expect} from '@playwright/test';
 const disclosureNavigationMenuPattern = 'https://www.w3.org/WAI/ARIA/apg/patterns/disclosure/examples/disclosure-navigation/';
 const disclosureNavigationMenuWithTopLevelLinksPattern = 'https://www.w3.org/WAI/ARIA/apg/patterns/disclosure/examples/disclosure-navigation-hybrid/';
 
-// Data attributes
+// Initialization
 
 test('navigation sections have a data-level attribute after load', async ({page}) => {
   await page.goto('il-main-nav/samples/with-section-links.html');
@@ -35,9 +35,11 @@ test('clicking the toggle of an expanded section collapses the section', async (
 
 test.describe('pressing escape when any section is expanded', () => {
   test('collapses that section', async ({page}) => {
-    await page.goto('il-main-nav/samples/with-expanded-section.html');
+    await page.goto('il-main-nav/samples/with-section-links.html');
+    await page.getByTestId('first-top-level-section').getByRole('button').click();
+    await expect(page.getByTestId('first-top-level-section-contents')).toBeVisible();
     await page.keyboard.press('Escape');
-    await expect(page.getByText('Departments, units, and programs')).not.toBeVisible();
+    await expect(page.getByTestId('first-top-level-section-contents')).not.toBeVisible();
   })
   test("moves focus to that section's toggle", async ({page}) => {
   })
@@ -89,10 +91,6 @@ test.describe('when a section toggle has focus', () => {
   })
 })
 test.describe('when the toggle of a top-level section has focus', () => {
-  test.describe('and the section has a link', () => {
-    test('pressing shift+tab moves focus to the section link', async ({page}) => {
-    })
-  })
   test.describe('and the section does not have a link', () => {
     test.describe('and it is the first section in the navigation', () => {
       test('pressing shift+tab moves focus outside the navigation', async ({page}) => {
@@ -112,11 +110,30 @@ test.describe('when the toggle of a top-level section has focus', () => {
   test.describe('and the section is collapsed', () => {
     test.describe('and it is the last section in the navigation', () => {
       test('pressing tab moves focus outside the navigation', async ({page}) => {
+        await page.goto('il-main-nav/samples/with-section-links.html');
+        await page.evaluate(() => {
+          document.querySelector('*[data-testid="last-top-level-section"]').shadowRoot.querySelector('button.toggle').focus();
+        })
+        let navHasFocus = await page.evaluate(() => {
+          return document.querySelector('il-main-nav').contains(document.activeElement);
+        });
+        await expect(navHasFocus).toBeTruthy();
+        await page.keyboard.press('Tab');
+        navHasFocus = await page.evaluate(() => {
+          return document.querySelector('il-main-nav').contains(document.activeElement);
+        });
+        await expect(navHasFocus).toBeFalsy();
       })
     })
     test.describe('and it is not the last section in the navigation', () => {
       test.describe('and the next adjacent section has a link', () => {
         test('pressing tab moves focus to that link', async ({page}) => {
+          await page.goto('il-main-nav/samples/with-section-links.html');
+          await page.evaluate(() => {
+            document.querySelector('*[data-testid="second-to-last-top-level-section"]').shadowRoot.querySelector('button.toggle').focus();
+          })
+          await page.keyboard.press('Tab');
+          await expect(page.getByTestId('last-top-level-section-link')).toBeFocused();
         })
       })
       test.describe('and the next adjacent section does not have a link', () => {
