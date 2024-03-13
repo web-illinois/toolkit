@@ -1,106 +1,149 @@
 <!DOCTYPE html>
 <html lang="en" class="il-toolkit">
-<title>Main navigation without section links</title>
+<title>Main navigation with section links</title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="shortcut icon" href="https://cdn.brand.illinois.edu/favicon.ico">
-<link rel="stylesheet" href="../../toolkit.css">
-
-<link rel="stylesheet" href="../../il-header/il-header.css">
-<script src="../../il-header/il-header.js" type="module"></script>
-
-<link rel="stylesheet" href="../../il-nav-section-with-link/il-nav-section-with-link.css">
-<script src="../../il-nav-section-with-link/il-nav-section-with-link.js" type="module"></script>
-
-<link rel="stylesheet" href="../../il-page/il-page.css">
-<script src="../../il-page/il-page.js" type="module"></script>
-
-<link rel="stylesheet" href="../il-main-nav.css">
-<script src="../il-main-nav.js" type="module"></script>
+<script src="../../toolkit.js" type="module"></script>
 
 <il-page>
   <il-header slot="header" data-compact="true">
     <il-main-nav slot="navigation">
       <ul>
         <li>
-          <il-nav-section-with-link>
-            <a href="/" slot="link">About</a>
-            <ul>
-              <li><a href="/about/history">History</a></li>
-              <li><a href="/about/mission">Mission statement</a></li>
-              <li><a href="/about/staff">Staff</a></li>
-              <li><a href="/about/contact">Contact</a></li>
-            </ul>
-          </il-nav-section-with-link>
-        <li>
-          <il-nav-section-with-link data-expanded="true">
-            <a href="/" slot="link">Academics</a>
-            <ul>
-              <li>
-                <il-nav-section-with-link data-expanded="true" data-current="true">
-                  <a href="/" slot="link">Undergraduate</a>
-                  <ul>
-                    <li><a href="/academics/undergrad/majors">Majors</a></li>
-                    <li><a href="/academics/undergrad/minors">Minors</a></li>
-                    <li><a href="/academics/undergrad/majors">Certificates</a></li>
-                  </ul>
-                </il-nav-section-with-link>
-              </li>
+          <il-nav-section-with-link data-testid="first-top-level-section">
+            <a slot="link" href="#">Galena</a>
+            <ul data-testid="first-top-level-section-contents">
+              <li><a href="#">Copper</a></li>
               <li>
                 <il-nav-section-with-link>
-                  <a href="/" slot="link">Graduate</a>
+                  <a slot="link" href="#">Marcasite</a>
                   <ul>
-                    <li><a href="/academics/grad/majors">Majors</a></li>
-                    <li><a href="/academics/grad/minors">Minors</a></li>
-                    <li><a href="/academics/grad/majors">Certificates</a></li>
+                    <li><a href="#">Melanterite</a></li>
+                    <li>
+                      <il-nav-section-with-link>
+                        <a slot="link" href="#">Calcite</a>
+                        <ul>
+                          <li><a href="#">Barite</a></li>
+                          <li>
+                            <il-nav-section-with-link>
+                              <a slot="link" href="#">Cerussite</a>
+                              <ul>
+                                <li><a href="#">Siderite</a></li>
+                                <li>
+                                  <il-nav-section-with-link>
+                                    <a slot="link" href="#">Smithsonite</a>
+                                    <ul>
+                                      <li><a href="#">Amphibole</a></li>
+                                      <li><a href="#">Pyroxene</a></li>
+                                      <li><a href="#">Feldspar</a></li>
+                                    </ul>
+                                  </il-nav-section-with-link>
+                                </li>
+                                <li><a href="#">Sphalerite</a></li>
+                                <li><a href="#">Fluorite</a></li>
+                              </ul>
+                            </il-nav-section-with-link>
+                          </li>
+                          <li><a href="#">Witherite</a></li>
+                          <li><a href="#">Dolomite</a></li>
+                        </ul>
+                      </il-nav-section-with-link>
+                    </li>
+                    <li><a href="#">Muscovite</a></li>
+                    <li><a href="#">Biotite</a></li>
                   </ul>
                 </il-nav-section-with-link>
               </li>
-              <li><a href="/academics/online">Online programs</a></li>
-              <li><a href="/academics/professional">Professional education</a></li>
+              <li><a href="#">Limonite</a></li>
+              <li><a href="#">Pyrite</a></li>
             </ul>
           </il-nav-section-with-link>
         </li>
         <li>
           <il-nav-section-with-link>
-            <a href="/" slot="link">Research</a>
+            <a slot="link" href="#">Chalcedony</a>
             <ul>
-              <li><a href="/research/centers">Research centers</a></li>
-              <li><a href="/research/news">Latest research news</a></li>
-              <li><a href="/research/seminars">Seminars &amp; speakers</a></li>
+              <li><a href="#">Quartz</a></li>
+              <li>
+                <il-nav-section-with-link>
+                  <a slot="link" href="#">Garnet</a>
+                  <ul>
+                    <li><a href="#">Gneiss</a></li>
+                    <li>
+                      <il-nav-section-with-link>
+                        <a slot="link" href="#">Gabbro</a>
+                        <ul>
+                          <li><a href="#">Peridotite</a></li>
+                          <li><a href="#">Syenite</a></li>
+                          <li><a href="#">Porphyry</a></li>
+                        </ul>
+                      </il-nav-section-with-link>
+                    </li>
+                    <li><a href="#">Schist</a></li>
+                    <li><a href="#">Granite</a></li>
+                  </ul>
+                </il-nav-section-with-link>
+              </li>
+              <li><a href="#">Jasper</a></li>
+              <li><a href="#">Agate</a></li>
             </ul>
           </il-nav-section-with-link>
         </li>
         <li>
           <il-nav-section-with-link>
-            <a href="/" slot="link">Diversity</a>
+            <a slot="link" href="#">Quartzite</a>
             <ul>
-              <li><a href="/diversity/initiatives">Diversity initiatives</a></li>
-              <li><a href="/diversity/access-equity">Access &amp; equity</a></li>
-              <li><a href="/diversity/officers">Diversity officers</a></li>
+              <li><a href="#">Conglomerate</a></li>
+              <li>
+                <il-nav-section-with-link>
+                  <a slot="link" href="#">Sand</a>
+                  <ul>
+                    <li><a href="#">Sandstone</a></li>
+                    <li>
+                      <il-nav-section-with-link>
+                        <a slot="link" href="#">Basalt</a>
+                        <ul>
+                          <li><a href="#">Quartzite</a></li>
+                          <li><a href="#">Clay</a></li>
+                          <li><a href="#">Silt</a></li>
+                        </ul>
+                      </il-nav-section-with-link>
+                    </li>
+                    <li><a href="#">Chert</a></li>
+                    <li><a href="#">Felsite</a></li>
+                  </ul>
+                </il-nav-section-with-link>
+              </li>
+              <li><a href="#">Breccia</a></li>
+              <li><a href="#">Gravel</a></li>
             </ul>
           </il-nav-section-with-link>
         </li>
         <li>
           <il-nav-section-with-link>
-            <a href="/" slot="link">News &amp; Events</a>
+            <a slot="link" href="#">Siltstone</a>
             <ul>
-              <li><a href="/news">Latest news</a></li>
-              <li><a href="/calendar">Calendar</a></li>
+              <li><a href="#">Shale</a></li>
+              <li>
+                <il-nav-section-with-link>
+                  <a slot="link" href="#">Tripoli</a>
+                  <ul>
+                    <li><a href="#">Peat</a></li>
+                    <li><a href="#">Muck</a></li>
+                    <li><a href="#">Coal</a></li>
+                  </ul>
+                </il-nav-section-with-link>
+              </li>
+              <li><a href="#">Mudstone</a></li>
+              <li><a href="#">Slate</a></li>
             </ul>
           </il-nav-section-with-link>
         </li>
-        <li>
-          <il-nav-section-with-link>
-            <a href="/" slot="link">Alumni</a>
-            <ul>
-              <li><a href="/alumni/distinguished">Distinguished alumni</a></li>
-              <li><a href="/alumni/events">Upcoming alumni events</a></li>
-              <li><a href="/alumni/newsletter">Alumni newsletter</a></li>
-            </ul>
-          </il-nav-section-with-link>
-        <li>
       </ul>
     </il-main-nav>
   </il-header>
+  <main slot="main">
+    <h1>Main navigation with section links</h1>
+  </main>
 </il-page>
