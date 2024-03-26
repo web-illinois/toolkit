@@ -165,10 +165,7 @@ export class PanelsComponent extends LitElement {
   }
 
   render() {
-    return html`<div>
-      <slot></slot>
-      <button type="button" @click="${this.handleRefreshClick.bind(this)}">Refresh</button>
-    </div>`
+    return html`<div><slot></slot></div>`
   }
 }
 
