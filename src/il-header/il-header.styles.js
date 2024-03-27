@@ -80,7 +80,7 @@ export default css`
     height: 3.1875rem;
     background-color: var(--il-blue);
   }
-  .block-i svg {
+  .block-i img {
     display: block;
     position: absolute;
     top: .5rem;
@@ -88,24 +88,15 @@ export default css`
     width: 1.5rem;
     height: 2.1875rem;
   }
-  .block-i svg .outline {
-    fill: white;
-  }
-  .block-i svg .fill {
-    fill: var(--il-orange);
-  }
-  .wordmark {
+  .text {
     position: relative;
+    display: block;
+    padding: 0 .75rem;
+  }
+  .text img {
+    width: 28rem;
     height: 3.1875rem;
     display: block;
-    padding: 0 .5rem;
-    color: var(--il-blue);
-    text-transform: uppercase;
-    white-space: nowrap;
-    text-decoration: none;
-    letter-spacing: .056875rem;
-    font: 700 .875rem/3.1875rem var(--il-font-montserrat);
-    -webkit-font-smoothing: antialiased;
   }
   .featured-links {
     padding: 1.125rem 0 0 1.875rem;

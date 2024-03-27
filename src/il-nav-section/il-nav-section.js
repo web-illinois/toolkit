@@ -28,13 +28,70 @@ export class NavigationSection extends LitElement {
     this.dispatchEvent(new CustomEvent('il-nav-section', { bubbles: true }))
   }
 
+  getDirection() {
+    const LEFT = true;
+    const RIGHT = false;
+
+    let dir = LEFT;
+    const navSize = this.getNavigation().getContentRect();
+    const sectionWidth = 320;
+
+    if (!this.isTopLevel()) {
+      const level = this.getLevel();
+      const topLevel = this.getTopLevelParent();
+      dir = topLevel.getDirection() === 'left';
+      const topLevelSize = topLevel.getBoundingClientRect();
+
+    }
+
+    return dir ? 'left' : 'right';
+  }
+
   getLevel() {
+    const parent = this.getParentSection();
+    return parent ? parent.getLevel() + 1 : 1;
     let section = this, level = 0;
     do {
       level++;
       section = section.parentNode.closest('il-nav-section, il-nav-section-with-link');
     } while (section);
     return level;
+  }
+
+  getNavigation() {
+    return this.closest('il-main-nav');
+  }
+
+  getNextSectionDirection() {
+    let dir = this.getDirection();
+    if (!hasRoomInCurrentDirection) {
+      dir = !dir;
+    }
+    return dir;
+  }
+
+  getParentSection() {
+    return this.parentNode.closest('il-nav-section, il-nav-section-with-link');
+  }
+
+  getTopLevelParent() {
+    const parent = this.getParentSection();
+    return parent.isTopLevel() ? parent : parent.getTopLevelParent();
+  }
+
+  hasParentSection() {
+    return this.getParentSection() !== null;
+  }
+
+  isTopLevel() {
+    return this.getLevel() === 1;
+  }
+
+  setDataAttributes() {
+    const level = this.getLevel();
+    const dir = this.getDirection();
+    this.setAttribute('data-level', level);
+    this.setAttribute('data-dir', dir);
   }
 
   renderChevron() {

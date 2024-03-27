@@ -114,10 +114,10 @@ export class HeaderComponent extends LitElement {
         <a href="https://illinois.edu/">
           <span class="elements">
             <span class="block-i">
-              ${this.renderBlockI()}
+              <img src="https://cdn.brand.illinois.edu/header/block-i-reversed-orange.svg" alt="">
             </span>
-            <span class="wordmark" id="wordmark">
-              University of Illinois Urbana-Champaign
+            <span class="text">
+              <img src="https://cdn.brand.illinois.edu/header/university-heading-text-outlined-blue.svg" alt="University of Illinois Urbana-Champaign">
             </span>
           </span>
         </a>

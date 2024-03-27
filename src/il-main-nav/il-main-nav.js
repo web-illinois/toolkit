@@ -18,12 +18,17 @@ export class MainNavigation extends LitElement {
     window.addEventListener('click', this.handleWindowClick);
     window.addEventListener('keydown', this.handleWindowKeypress);
     this.addEventListener('il-nav-section', this.handleSectionConnect);
+    this.initializeResizeObserver();
   }
 
   disconnectedCallback() {
     super.disconnectedCallback();
     window.removeEventListener('click', this.handleWindowClick);
     window.removeEventListener('keydown', this.handleWindowKeypress);
+  }
+
+  arrangeSections() {
+
   }
 
   collapseSection(section) {
@@ -45,8 +50,25 @@ export class MainNavigation extends LitElement {
     });
   }
 
+  getContentRect() {
+    return this.querySelector('ul').getBoundingClientRect();
+  }
+
   getSections() {
     return this.querySelectorAll('il-nav-section, il-nav-section-with-link');
+  }
+
+  getTopLevelSections() {
+    return Object.values(this.getSections()).filter(section => section.isTopLevel());
+  }
+
+  handleResize() {
+    const navSize = this.getContentRect();
+    this.getTopLevelSections().forEach(section => {
+      const size = section.getBoundingClientRect();
+      const spaceToLeft = size.x - navSize.x;
+      const spaceToRight = navSize.width - spaceToLeft - size.width;
+    })
   }
 
   handleSectionConnect(evt) {
@@ -69,8 +91,14 @@ export class MainNavigation extends LitElement {
     }
   }
 
+  initializeResizeObserver() {
+    this.resizeObserver = new ResizeObserver(this.handleResize.bind(this));
+    this.resizeObserver.observe(this);
+  }
+
   initializeSection(elem) {
-    elem.setAttribute('data-level', elem.getLevel());
+    //elem.setAttribute('data-level', elem.getLevel());
+    elem.setDataAttributes();
     if (!elem.hasAttribute('data-current')) {
       elem.setAttribute('data-current', 'false');
     }

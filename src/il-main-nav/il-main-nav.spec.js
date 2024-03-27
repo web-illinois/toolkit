@@ -13,6 +13,22 @@ test('navigation sections have a data-level attribute after load', async ({page}
   await expect(firstSectionHasLevel).toBeTruthy();
 })
 
+test('navigation sections have a data-dir attribute after load', async ({page}) => {
+  await page.goto('il-main-nav/samples/with-section-links.html');
+  const firstSectionHasDir = await page.evaluate(() => {
+    return document.querySelector('il-nav-section-with-link').hasAttribute('data-dir');
+  })
+  await expect(firstSectionHasDir).toBeTruthy();
+})
+
+test('navigation sections orient themselves', async ({page}) => {
+  await page.goto('il-main-nav/samples/with-section-links.html');
+  const fifthLevelSectionDirection = await page.evaluate(() => {
+    return document.querySelector('*[data-testid="fifth-level-section"]').getAttribute('data-dir');
+  })
+  await expect(fifthLevelSectionDirection).toEqual('right');
+})
+
 // Pointer interaction
 
 test('clicking the toggle of a collapsed section expands the section', async ({page}) => {
