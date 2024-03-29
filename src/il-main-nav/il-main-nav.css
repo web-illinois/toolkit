@@ -45,7 +45,7 @@
     --il-nav-section-indicator-padding-left: .5rem;
     --il-nav-section-link-padding-right: .5rem;
     --il-nav-section-items-position: absolute;
-    --il-nav-section-items-width: 20rem;
+    --il-nav-section-items-width: 15rem;
     --il-nav-section-background: var(--il-cloud-1);
     --il-nav-item-background: var(--il-cloud-1);
     --il-nav-item-border-color: white;
@@ -65,6 +65,13 @@
       --il-nav-section-items-top: -2px;
       --il-nav-section-indicator-transform: rotate(-90deg);
       --il-nav-expanded-section-indicator-transform: rotate(-90deg);
+    }
+    il-nav-section[data-dir="right"],
+    il-nav-section-with-link[data-dir="right"] {
+      --il-nav-section-items-left: auto;
+      --il-nav-section-items-right: 100%;
+      --il-nav-section-indicator-transform: rotate(90deg);
+      --il-nav-expanded-section-indicator-transform: rotate(90deg);
     }
     > ul {
       display: flex;

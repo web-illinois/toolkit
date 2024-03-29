@@ -32,9 +32,7 @@ export class MainNavigation extends LitElement {
   }
 
   collapseSection(section) {
-    section.expanded = false;
-    section.setAttribute('data-expanded', false);
-    section.setAttribute('data-current', false);
+    this.expandSection(section.getParentSection());
   }
 
   collapseAllSections() {
@@ -47,6 +45,7 @@ export class MainNavigation extends LitElement {
       s.expanded = s.contains(section);
       s.setAttribute('data-expanded', s.expanded ? 'true' : 'false');
       s.setAttribute('data-current', isCurrent ? 'true' : 'false');
+      if (s.expanded) s.setDirection();
     });
   }
 

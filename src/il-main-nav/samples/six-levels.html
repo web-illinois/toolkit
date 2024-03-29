@@ -4,117 +4,216 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="shortcut icon" href="https://cdn.brand.illinois.edu/favicon.ico">
-<link rel="stylesheet" href="../../toolkit.css">
-
-<link rel="stylesheet" href="../../il-header/il-header.css">
-<script src="../../il-header/il-header.js" type="module"></script>
-
-<link rel="stylesheet" href="../../il-nav-section/il-nav-section.css">
-<script src="../../il-nav-section/il-nav-section.js" type="module"></script>
-
-<link rel="stylesheet" href="../../il-page/il-page.css">
-<script src="../../il-page/il-page.js" type="module"></script>
-
-<link rel="stylesheet" href="../il-main-nav.css">
-<script src="../il-main-nav.js" type="module"></script>
+<script src="../../toolkit.js" type="module"></script>
 
 <il-page>
   <il-header slot="header" data-compact="true">
     <il-main-nav slot="navigation">
       <ul>
         <li>
-          <a href="/">Item 1A</a>
-        </li>
-        <li>
-          <il-nav-section data-expanded="true">
-            <span slot="label">Item 1B</span>
-            <ul>
+          <il-nav-section-with-link data-testid="first-top-level-section">
+            <a slot="link" href="#" data-testid="first-top-level-section-link">Galena</a>
+            <ul data-testid="first-top-level-section-contents">
+              <li><a href="#">Copper</a></li>
               <li>
-                <a href="/">Item 2A</a>
-              </li>
-              <li>
-                <il-nav-section data-expanded="true">
-                  <span slot="label">Item 2B</span>
+                <il-nav-section-with-link>
+                  <a slot="link" href="#">Marcasite</a>
                   <ul>
+                    <li><a href="#">Melanterite</a></li>
                     <li>
-                      <a href="/">Item 3A</a>
-                    </li>
-                    <li>
-                      <il-nav-section data-expanded="true">
-                        <span slot="label">Item 3B</span>
+                      <il-nav-section-with-link>
+                        <a slot="link" href="#">Calcite</a>
                         <ul>
+                          <li><a href="#">Barite</a></li>
                           <li>
-                            <a href="/">Item 4A</a>
-                          </li>
-                          <li>
-                            <il-nav-section data-expanded="true">
-                              <span slot="label">Item 4B</span>
+                            <il-nav-section-with-link>
+                              <a slot="link" href="#">Cerussite</a>
                               <ul>
+                                <li><a href="#">Siderite</a></li>
                                 <li>
-                                  <a href="/">Item 5A</a>
-                                </li>
-                                <li>
-                                  <il-nav-section data-expanded="true">
-                                    <span slot="label">Item 5B</span>
+                                  <il-nav-section-with-link data-testid="fifth-level-section">
+                                    <a slot="link" href="#">Smithsonite</a>
                                     <ul>
-                                      <li>
-                                        <a href="/">Item 6A</a>
-                                      </li>
-                                      <li>
-                                        <a href="/">Item 6B</a>
-                                      </li>
-                                      <li>
-                                        <a href="/">Item 6C</a>
-                                      </li>
-                                      <li>
-                                        <a href="/">Item 6D</a>
-                                      </li>
+                                      <li><a href="#">Amphibole</a></li>
+                                      <li><a href="#">Pyroxene</a></li>
+                                      <li><a href="#">Feldspar</a></li>
                                     </ul>
-                                  </il-nav-section>
+                                  </il-nav-section-with-link>
                                 </li>
-                                <li>
-                                  <a href="/">Item 5C</a>
-                                </li>
-                                <li>
-                                  <a href="/">Item 5D</a>
-                                </li>
+                                <li><a href="#">Sphalerite</a></li>
+                                <li><a href="#">Fluorite</a></li>
                               </ul>
-                            </il-nav-section>
+                            </il-nav-section-with-link>
                           </li>
-                          <li>
-                            <a href="/">Item 4C</a>
-                          </li>
-                          <li>
-                            <a href="/">Item 4D</a>
-                          </li>
+                          <li><a href="#">Witherite</a></li>
+                          <li><a href="#">Dolomite</a></li>
                         </ul>
-                      </il-nav-section>
+                      </il-nav-section-with-link>
                     </li>
-                    <li>
-                      <a href="/">Item 3C</a>
-                    </li>
-                    <li>
-                      <a href="/">Item 3D</a>
-                    </li>
+                    <li><a href="#">Muscovite</a></li>
+                    <li><a href="#">Biotite</a></li>
                   </ul>
-                </il-nav-section>
+                </il-nav-section-with-link>
               </li>
-              <li>
-                <a href="/">Item 2C</a>
-              </li>
-              <li>
-                <a href="/">Item 2D</a>
-              </li>
+              <li><a href="#">Limonite</a></li>
+              <li><a href="#">Pyrite</a></li>
             </ul>
-          </il-nav-section>
+          </il-nav-section-with-link>
         </li>
         <li>
-          <a href="/">Item 1C</a>
+          <il-nav-section-with-link>
+            <a slot="link" href="#">Chalcedony</a>
+            <ul>
+              <li><a href="#">Copper</a></li>
+              <li>
+                <il-nav-section-with-link>
+                  <a slot="link" href="#">Marcasite</a>
+                  <ul>
+                    <li><a href="#">Melanterite</a></li>
+                    <li>
+                      <il-nav-section-with-link>
+                        <a slot="link" href="#">Calcite</a>
+                        <ul>
+                          <li><a href="#">Barite</a></li>
+                          <li>
+                            <il-nav-section-with-link>
+                              <a slot="link" href="#">Cerussite</a>
+                              <ul>
+                                <li><a href="#">Siderite</a></li>
+                                <li>
+                                  <il-nav-section-with-link>
+                                    <a slot="link" href="#">Smithsonite</a>
+                                    <ul>
+                                      <li><a href="#">Amphibole</a></li>
+                                      <li><a href="#">Pyroxene</a></li>
+                                      <li><a href="#">Feldspar</a></li>
+                                    </ul>
+                                  </il-nav-section-with-link>
+                                </li>
+                                <li><a href="#">Sphalerite</a></li>
+                                <li><a href="#">Fluorite</a></li>
+                              </ul>
+                            </il-nav-section-with-link>
+                          </li>
+                          <li><a href="#">Witherite</a></li>
+                          <li><a href="#">Dolomite</a></li>
+                        </ul>
+                      </il-nav-section-with-link>
+                    </li>
+                    <li><a href="#">Muscovite</a></li>
+                    <li><a href="#">Biotite</a></li>
+                  </ul>
+                </il-nav-section-with-link>
+              </li>
+              <li><a href="#">Limonite</a></li>
+              <li><a href="#">Pyrite</a></li>
+            </ul>
+          </il-nav-section-with-link>
         </li>
         <li>
-          <a href="/">Item 1D</a>
+          <il-nav-section-with-link data-testid="second-to-last-top-level-section">
+            <a slot="link" href="#">Quartzite</a>
+            <ul>
+              <li><a href="#">Copper</a></li>
+              <li>
+                <il-nav-section-with-link>
+                  <a slot="link" href="#">Marcasite</a>
+                  <ul>
+                    <li><a href="#">Melanterite</a></li>
+                    <li>
+                      <il-nav-section-with-link>
+                        <a slot="link" href="#">Calcite</a>
+                        <ul>
+                          <li><a href="#">Barite</a></li>
+                          <li>
+                            <il-nav-section-with-link>
+                              <a slot="link" href="#">Cerussite</a>
+                              <ul>
+                                <li><a href="#">Siderite</a></li>
+                                <li>
+                                  <il-nav-section-with-link>
+                                    <a slot="link" href="#">Smithsonite</a>
+                                    <ul>
+                                      <li><a href="#">Amphibole</a></li>
+                                      <li><a href="#">Pyroxene</a></li>
+                                      <li><a href="#">Feldspar</a></li>
+                                    </ul>
+                                  </il-nav-section-with-link>
+                                </li>
+                                <li><a href="#">Sphalerite</a></li>
+                                <li><a href="#">Fluorite</a></li>
+                              </ul>
+                            </il-nav-section-with-link>
+                          </li>
+                          <li><a href="#">Witherite</a></li>
+                          <li><a href="#">Dolomite</a></li>
+                        </ul>
+                      </il-nav-section-with-link>
+                    </li>
+                    <li><a href="#">Muscovite</a></li>
+                    <li><a href="#">Biotite</a></li>
+                  </ul>
+                </il-nav-section-with-link>
+              </li>
+              <li><a href="#">Limonite</a></li>
+              <li><a href="#">Pyrite</a></li>
+            </ul>
+          </il-nav-section-with-link>
+        </li>
+        <li>
+          <il-nav-section-with-link data-testid="last-top-level-section">
+            <a slot="link" href="#" data-testid="last-top-level-section-link">Siltstone</a>
+            <ul>
+              <li><a href="#">Copper</a></li>
+              <li>
+                <il-nav-section-with-link>
+                  <a slot="link" href="#">Marcasite</a>
+                  <ul>
+                    <li><a href="#">Melanterite</a></li>
+                    <li>
+                      <il-nav-section-with-link>
+                        <a slot="link" href="#">Calcite</a>
+                        <ul>
+                          <li><a href="#">Barite</a></li>
+                          <li>
+                            <il-nav-section-with-link>
+                              <a slot="link" href="#">Cerussite</a>
+                              <ul>
+                                <li><a href="#">Siderite</a></li>
+                                <li>
+                                  <il-nav-section-with-link>
+                                    <a slot="link" href="#">Smithsonite</a>
+                                    <ul>
+                                      <li><a href="#">Amphibole</a></li>
+                                      <li><a href="#">Pyroxene</a></li>
+                                      <li><a href="#">Feldspar</a></li>
+                                    </ul>
+                                  </il-nav-section-with-link>
+                                </li>
+                                <li><a href="#">Sphalerite</a></li>
+                                <li><a href="#">Fluorite</a></li>
+                              </ul>
+                            </il-nav-section-with-link>
+                          </li>
+                          <li><a href="#">Witherite</a></li>
+                          <li><a href="#">Dolomite</a></li>
+                        </ul>
+                      </il-nav-section-with-link>
+                    </li>
+                    <li><a href="#">Muscovite</a></li>
+                    <li><a href="#">Biotite</a></li>
+                  </ul>
+                </il-nav-section-with-link>
+              </li>
+              <li><a href="#">Limonite</a></li>
+              <li><a href="#">Pyrite</a></li>
+            </ul>
+          </il-nav-section-with-link>
         </li>
       </ul>
     </il-main-nav>
   </il-header>
+  <main slot="main">
+    <h1>Main navigation with six levels</h1>
+  </main>
 </il-page>

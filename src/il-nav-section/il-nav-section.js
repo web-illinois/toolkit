@@ -31,17 +31,26 @@ export class NavigationSection extends LitElement {
   getDirection() {
     const LEFT = true;
     const RIGHT = false;
+    const sectionWidth = 240;
 
-    let dir = LEFT;
     const navSize = this.getNavigation().getContentRect();
-    const sectionWidth = 320;
+    const topLevel = this.isTopLevel() ? this : this.getTopLevelParent();
+    const topLevelSize = topLevel.getBoundingClientRect();
 
-    if (!this.isTopLevel()) {
-      const level = this.getLevel();
-      const topLevel = this.getTopLevelParent();
-      dir = topLevel.getDirection() === 'left';
-      const topLevelSize = topLevel.getBoundingClientRect();
+    const navWidth = navSize.width;
+    const topLevelLeft = topLevelSize.x - navSize.x;
 
+    let dir = (navWidth - topLevelLeft >= sectionWidth) ? LEFT : RIGHT;
+    let pos = (dir === LEFT) ? topLevelLeft : (navSize - topLevelLeft - topLevel.width);
+
+    for (let i=1, level=this.getLevel(); i < level; i++) {
+      if (pos + sectionWidth * 2 > navWidth) {
+        dir = !dir;
+        pos = navWidth - pos;
+      }
+      else {
+        pos += sectionWidth;
+      }
     }
 
     return dir ? 'left' : 'right';
@@ -88,10 +97,16 @@ export class NavigationSection extends LitElement {
   }
 
   setDataAttributes() {
-    const level = this.getLevel();
-    const dir = this.getDirection();
-    this.setAttribute('data-level', level);
-    this.setAttribute('data-dir', dir);
+    this.setLevel();
+    this.setDirection();
+  }
+
+  setDirection() {
+    this.setAttribute('data-dir', this.getDirection());
+  }
+
+  setLevel() {
+    this.setAttribute('data-level', this.getLevel());
   }
 
   renderChevron() {

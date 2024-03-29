@@ -27,6 +27,7 @@ export const baseStyles = css`
     width: var(--il-nav-section-items-width);
     position: var(--il-nav-section-items-position);
     left: var(--il-nav-section-items-left);
+    right: var(--il-nav-section-items-right, auto);
     top: var(--il-nav-section-items-top);
     padding: var(--il-nav-items-padding, 0);
     border-top: var(--il-nav-section-items-border-top);

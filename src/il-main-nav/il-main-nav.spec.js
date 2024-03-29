@@ -23,6 +23,10 @@ test('navigation sections have a data-dir attribute after load', async ({page}) 
 
 test('navigation sections orient themselves', async ({page}) => {
   await page.goto('il-main-nav/samples/with-section-links.html');
+  await page.evaluate(() => {
+    const section = document.querySelector('*[data-testid="fifth-level-section"]');
+    document.querySelector('il-main-nav').expandSection(section);
+  })
   const fifthLevelSectionDirection = await page.evaluate(() => {
     return document.querySelector('*[data-testid="fifth-level-section"]').getAttribute('data-dir');
   })
