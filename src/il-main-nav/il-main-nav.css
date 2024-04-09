@@ -1,6 +1,6 @@
 @layer components {
 
-  il-header {
+  il-main-nav {
     ul {
       all: initial;
       display: block;
@@ -35,7 +35,7 @@
     }
   }
 
-  il-header[data-compact="false"] il-main-nav {
+  il-main-nav:not(.compact) {
     --il-nav-item-padding-left: .5rem;
     --il-nav-item-padding-right: .5rem;
     --il-nav-item-padding-top: .25rem;
@@ -112,7 +112,7 @@
     }
   }
 
-  il-header[data-compact="true"] il-main-nav {
+  il-main-nav.compact {
     --il-nav-section-background: var(--il-cloud-1);
     --il-nav-item-background: var(--il-cloud-1);
     --il-nav-item-color: var(--il-blue);

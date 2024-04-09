@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en" class="il-toolkit">
+<title>Main navigation with six levels</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="shortcut icon" href="https://cdn.brand.illinois.edu/favicon.ico">
+<script src="../../toolkit.js" type="module"></script>
+
+<header>
+  <il-main-nav>
+    <ul>
+      <li>
+        <a href="http://example.com/">Malkovich</a>
+      </li>
+      <li>
+        <a href="http://example.com/">Malkovich</a>
+      </li>
+      <li>
+        <a href="http://example.com/">Malkovich</a>
+      </li>
+      <li>
+        <a href="http://example.com/">Malkovich</a>
+      </li>
+      <li>
+        <a href="http://example.com/">Malkovich</a>
+      </li>
+      <li>
+        <il-nav-section-with-link>
+          <a slot="link" href="http://example.com">Malkovich</a>
+          <ul>
+            <li><a href="http://example.com/">Malkovich</a></li>
+            <li>
+              <il-nav-section-with-link>
+                <a slot="link" href="#">Marcasite</a>
+                <ul>
+                  <li><a href="#">Melanterite</a></li>
+                  <li>
+                    <il-nav-section-with-link>
+                      <a slot="link" href="#">Calcite</a>
+                      <ul>
+                        <li><a href="#">Barite</a></li>
+                        <li>
+                          <il-nav-section-with-link>
+                            <a slot="link" href="#">Cerussite</a>
+                            <ul>
+                              <li><a href="#">Siderite</a></li>
+                              <li>
+                                <il-nav-section-with-link data-testid="fifth-level-section">
+                                  <a slot="link" href="#">Smithsonite</a>
+                                  <ul>
+                                    <li><a href="#">Amphibole</a></li>
+                                    <li><a href="#">Pyroxene</a></li>
+                                    <li><a href="#">Feldspar</a></li>
+                                  </ul>
+                                </il-nav-section-with-link>
+                              </li>
+                              <li><a href="#">Sphalerite</a></li>
+                              <li><a href="#">Fluorite</a></li>
+                            </ul>
+                          </il-nav-section-with-link>
+                        </li>
+                        <li><a href="#">Witherite</a></li>
+                        <li><a href="#">Dolomite</a></li>
+                      </ul>
+                    </il-nav-section-with-link>
+                  </li>
+                  <li><a href="#">Muscovite</a></li>
+                  <li><a href="#">Biotite</a></li>
+                </ul>
+              </il-nav-section-with-link>
+            </li>
+            <li><a href="#">Limonite</a></li>
+            <li><a href="#">Pyrite</a></li>
+          </ul>
+        </il-nav-section-with-link>
+      </li>
+    </ul>
+  </il-main-nav>
+</header>
+
+<main slot="main">
+  <h1>Main navigation with six levels</h1>
+</main>
