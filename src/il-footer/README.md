@@ -2,7 +2,7 @@
 
 The standard campus footer should appear at the bottom of every page of a campus website. The [page component](../il-page/README.md) has a dedicated content slot for the footer.
 
-The header is placed in the `header` slot of the `il-page` component:
+The footer is placed in the `footer` slot of the `il-page` component:
 
 ```html
 <il-page>
