@@ -10,8 +10,6 @@ The Illinois Web Toolkit is a collection of pre-built components that help to cr
 Some components in the toolkit are more essential than others. This guide will walk you through the basics of using the toolkit before introducing the more specialized components.
 
 * Begin by learning to create complete [pages](./il-page/README.md).
-* Add the standard campus [header](./il-header/README.md) to your page and customize the [main navigation](./il-main-nav/README.md).
-* Add the standard campus [footer](./il-footer/README.md).
 * Divide long pages into [sections](./il-section/README.md).
 * Highlight special content with [featured sections](./il-featured-section/README.md).
 * Prompt your visitors with [calls to action](./il-call-to-action/README.md).
