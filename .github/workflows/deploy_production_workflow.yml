@@ -28,23 +28,6 @@ jobs:
     - run: npm install
     - run: npm rebuild
     - run: npm run-script build
-    - name: Configure AWS Credentials (DEPRECIATED)
-      uses: aws-actions/configure-aws-credentials@v1
-      with:
-        aws-access-key-id: ${{ secrets.CDN_ACCESS_KEY_ID }}
-        aws-secret-access-key: ${{ secrets.CDN_SECRET_ACCESS_KEY }}
-        aws-region: us-east-2
-
-    - name: Deploy toolbox to CDN BRAND S3 bucket for version (DEPRECIATED)
-      run: aws s3 sync ./dist/ s3://cdn.brand.illinois.edu/toolkit/$VERSION --delete --acl bucket-owner-full-control
-    - name: Build examples for version (DEPRECIATED)
-      run: npm run-script create-test-html -- --pathprefix=toolkit/$VERSION/examples/
-    - name: Deploy examples to CDN BRAND S3 bucket for version (DEPRECIATED)
-      run: aws s3 sync ./var/full-site-deploy/ s3://cdn.brand.illinois.edu/toolkit/$VERSION/examples --delete --acl bucket-owner-full-control
-    - name: Deploy static images in examples to CDN BRAND S3 bucket for version (DEPRECIATED)
-      run: aws s3 sync ./tests/_reference/ s3://cdn.brand.illinois.edu/toolkit/$VERSION/examples/static-images --acl bucket-owner-full-control
-    - name: Invalidate Cloudfront cache for version (DEPRECIATED)
-      run: aws cloudfront create-invalidation --distribution-id E2VPGHCUOM84HO --paths "/toolkit/$VERSION*"
 
     - name: Configure AWS Credentials
       uses: aws-actions/configure-aws-credentials@v1
