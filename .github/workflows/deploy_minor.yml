@@ -39,8 +39,8 @@ jobs:
     - name: Configure AWS Credentials
       uses: aws-actions/configure-aws-credentials@v1
       with:
-        aws-access-key-id: 'AKIAXNR47MADGK2A4HEW'
-        aws-secret-access-key: ${{ secrets.AWS_SECRET_FOR_AKIAXNR47MADGK2A4HEW }}
+        aws-access-key-id: 'AKIAXNR47MADAISLEYYZ'
+        aws-secret-access-key: ${{ secrets.AWS_SECRET_FOR_AKIAXNR47MADAISLEYYZ }}
         aws-region: us-east-2
 
     - name: Deploy toolbox to S3 bucket for minor version if not prelease
